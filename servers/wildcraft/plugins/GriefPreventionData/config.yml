@@ -1,0 +1,179 @@
+# Default values are perfect for most servers.  If you want to customize and have a question, look for the answer here first: http://dev.bukkit.org/bukkit-plugins/grief-prevention/pages/setup-and-configuration/
+
+GriefPrevention:
+  SeaLevelOverrides:
+    wwild: -1
+    wwild_nether: -1
+    wwild_the_end: -1
+  Claims:
+    Mode:
+      wwild_nether: Disabled
+      wwild: Survival
+      wwild_the_end: Disabled
+    PreventGlobalMonsterEggs: true
+    PreventTheft: true
+    ProtectCreatures: true
+    PreventButtonsSwitches: true
+    LockWoodenDoors: true
+    LockTrapDoors: false
+    LockFenceGates: true
+    EnderPearlsRequireAccessTrust: true
+    RaidTriggersRequireBuildTrust: true
+    ProtectHorses: true
+    ProtectDonkeys: true
+    ProtectLlamas: true
+    InitialBlocks: 128
+    Claim Blocks Accrued Per Hour:
+      Default: 128
+    Max Accrued Claim Blocks:
+      Default: 32768
+    Accrued Idle Threshold: 16
+    AccruedIdlePercent: 4
+    AbandonReturnRatio: 0.8
+    AutomaticNewPlayerClaimsRadius: 0
+    AutomaticNewPlayerClaimsRadiusMinimum: 0
+    ExtendIntoGroundDistance: 16
+    MinimumWidth: 5
+    MinimumArea: 100
+    MaximumDepth: -2147483648
+    InvestigationTool: STICK
+    ModificationTool: GOLDEN_SHOVEL
+    Expiration:
+      ChestClaimDays: 4
+      UnusedClaimDays: 8
+      AllClaims:
+        DaysInactive: 128
+        ExceptWhenOwnerHasTotalClaimBlocks: 8192
+        ExceptWhenOwnerHasBonusClaimBlocks: 4096
+      AutomaticNatureRestoration:
+        SurvivalWorlds: true
+    AllowTrappedInAdminClaims: true
+    MaximumNumberOfClaimsPerPlayer: 16
+    CreationRequiresWorldGuardBuildPermission: true
+    VillagerTradingRequiresPermission: true
+    CommandsRequiringAccessTrust: /sethome
+    DeliverManuals: false
+    ManualDeliveryDelaySeconds: 30
+    RavagersBreakBlocks: true
+    FireSpreadsInClaims: false
+    FireDamagesInClaims: false
+    LecternReadingRequiresAccessTrust: true
+  Spam:
+    Enabled: true
+    LoginCooldownSeconds: 4
+    LoginLogoutNotificationsPerMinute: 5
+    ChatSlashCommands: /me;/global;/local
+    WhisperSlashCommands: /tell;/pm;/r;/whisper;/msg
+    WarningMessage: "&cCHAT &8» &f채팅에 스팸성 메세지를 지속적으로 보내면 서버에서 추방될 수 있습니다."
+    BanOffenders: true
+    BanMessage: "&cCHAT &8» &f채팅에 스팸성 메세지를 지속적으로 보내 추방되었습니다."
+    AllowedIpAddresses: 1.2.3.4; 5.6.7.8
+    DeathMessageCooldownSeconds: 16
+    Logout Message Delay In Seconds: 4
+  PvP:
+    RulesEnabledInWorld:
+      wwild: true
+      wwild_nether: true
+      wwild_the_end: true
+    ProtectFreshSpawns: true
+    PunishLogout: true
+    CombatTimeoutSeconds: 16
+    AllowCombatItemDrop: false
+    BlockedSlashCommands: /home;/vanish;/spawn;/tpa;/back;/tpaccept;/tpahere;/warp;/sethome
+    ProtectPlayersInLandClaims:
+      PlayerOwnedClaims: true
+      AdministrativeClaims: true
+      AdministrativeSubdivisions: true
+    AllowLavaDumpingNearOtherPlayers:
+      PvPWorlds: true
+      NonPvPWorlds: false
+    AllowFlintAndSteelNearOtherPlayers:
+      PvPWorlds: true
+      NonPvPWorlds: false
+    ProtectPetsOutsideLandClaims: false
+  Economy:
+    ClaimBlocksMaxBonus: 1024
+    ClaimBlocksPurchaseCost: 2.0
+    ClaimBlocksSellValue: 1.0
+  ProtectItemsDroppedOnDeath:
+    PvPWorlds: false
+    NonPvPWorlds: true
+  BlockLandClaimExplosions: true
+  BlockSurfaceCreeperExplosions: true
+  BlockSurfaceOtherExplosions: true
+  LimitSkyTrees: true
+  LimitTreeGrowth: false
+  PistonMovement: EVERYWHERE
+  PistonExplosionSound: true
+  FireSpreads: false
+  FireDestroys: false
+  AdminsGetWhispers: true
+  AdminsGetSignNotifications: true
+  VisualizationAntiCheatCompatMode: false
+  SmartBan: true
+  Mute New Players Using Banned Words: true
+  MaxPlayersPerIpAddress: 4
+  SilenceBans: true
+  Siege:
+    Worlds: []
+    BreakableBlocks:
+      - BIRCH_PLANKS
+      - LIGHT_GRAY_WOOL
+      - ACACIA_PLANKS
+      - DIRT
+      - SPRUCE_PLANKS
+      - GRAVEL
+      - FERN
+      - WHITE_WOOL
+      - SHORT_GRASS
+      - SAND
+      - BLUE_WOOL
+      - GLASS_PANE
+      - PURPLE_WOOL
+      - DARK_OAK_PLANKS
+      - RED_WOOL
+      - SNOW
+      - COBBLESTONE
+      - MAGENTA_WOOL
+      - GRAY_WOOL
+      - BLACK_WOOL
+      - GLASS
+      - GREEN_WOOL
+      - PINK_WOOL
+      - YELLOW_WOOL
+      - OAK_PLANKS
+      - LIME_WOOL
+      - BROWN_WOOL
+      - DEAD_BUSH
+      - JUNGLE_PLANKS
+      - LIGHT_BLUE_WOOL
+      - CYAN_WOOL
+      - GRASS_BLOCK
+      - ORANGE_WOOL
+    DoorsOpenDelayInSeconds: 300
+    CooldownEndInMinutes: 60
+  EndermenMoveBlocks: false
+  SilverfishBreakBlocks: false
+  CreaturesTrampleCrops: false
+  RabbitsEatCrops: true
+  HardModeZombiesBreakDoors: false
+  MobProjectilesChangeBlocks: false
+  Database:
+    URL: jdbc:mysql://localhost:3306/msdwc
+    UserName: 46770d6
+    Password: 7f04916
+  UseBanCommand: false
+  BanCommandPattern: ban %name% %reason%
+  Advanced:
+    fixNegativeClaimblockAmounts: true
+    ClaimExpirationCheckRate: 60
+    OfflinePlayer_cache_days: 90
+  Abridged Logs:
+    Days To Keep: 14
+    Included Entry Types:
+      Social Activity: true
+      Suspicious Activity: true
+      Administrative Activity: true
+      Debug: false
+      Muted Chat Messages: true
+  ConfigVersion: 1

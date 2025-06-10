@@ -1,0 +1,61 @@
+Newbie:
+  CommandName: Newbie
+  Delay: 86400
+  MoneyCost: 100.0
+  ExpCost: 30
+  Group: groupName
+  Items:
+    "28":
+      DataVersion: 4325
+      id: minecraft:stone_pickaxe
+      count: 1
+      schema_version: 1
+    "29":
+      DataVersion: 4325
+      id: minecraft:stone_axe
+      count: 1
+      schema_version: 1
+    "30":
+      DataVersion: 4325
+      id: minecraft:golden_shovel
+      count: 1
+      schema_version: 1
+    "31":
+      DataVersion: 4325
+      id: minecraft:torch
+      count: 16
+      schema_version: 1
+    "35":
+      DataVersion: 4325
+      id: minecraft:cooked_beef
+      count: 8
+      schema_version: 1
+    "36":
+      DataVersion: 4325
+      id: minecraft:oak_log
+      count: 12
+      schema_version: 1
+    Helmet:
+      DataVersion: 4325
+      id: minecraft:leather_helmet
+      count: 1
+      components:
+        minecraft:enchantments: '{"minecraft:unbreaking":3}'
+      schema_version: 1
+    Chest:
+      DataVersion: 4325
+      id: minecraft:leather_chestplate
+      count: 1
+      schema_version: 1
+    Legs:
+      DataVersion: 4325
+      id: minecraft:leather_leggings
+      count: 1
+      components:
+        minecraft:enchantments: '{"minecraft:unbreaking":3}'
+      schema_version: 1
+    Boots:
+      DataVersion: 4325
+      id: minecraft:leather_boots
+      count: 1
+      schema_version: 1

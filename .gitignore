@@ -23,6 +23,10 @@ schematics/
 playerdata/
 ClaimData/
 bStats/
+backup/
+backups/
+expansions/
+flatfile/
 
 /**/litebans/server.yml
 /**/luckperms/translations/
@@ -64,3 +68,4 @@ ops.json
 
 # Include files that should not be ignored
 !.termux/.env
+!Holograms.yml
