@@ -22,7 +22,15 @@ clipboard/
 schematics/
 playerdata/
 ClaimData/
+bStats/
+
+/**/litebans/server.yml
 /**/luckperms/translations/
+/**/Geyser-Velocity/packs/
+/**/Geyser-Velocity/locales/
+/**/Geyser-Velocity/extensions/
+/**/Geyser-Velocity/custom_mappings/
+/**/Geyser-Velocity/custom-skulls.yml
 
 help.yml
 wepif.yml
