@@ -1,0 +1,37 @@
+{
+  "servers": {
+    "proxy": {
+      "engine": "velocity",
+      "plugins": {
+        "geyser": "auto://geyser-velocity*",
+        "floodgate": "auto://floodgate-velocity*",
+        "luckperms": "auto://LuckPerms-Velocity-*",
+        "viaversion": "auto://ViaVersion-*",
+        "viabackwards": "auto://ViaBackwards-*",
+        "cmiv": "manual://CMIV-*",
+        "litebans": "manual://LiteBans*"
+      }
+    },
+    "wildcraft": {
+      "engine": "paper",
+      "plugins": {
+        "Chunky": "auto://Chunky-*",
+        "ChunkyBorder": "auto://ChunkyBorder-*",
+        "mcMMO": "auto://mcMMO*",
+        "LWC": "auto://LWC-*",
+        "LuckPerms": "auto://LuckPerms-*",
+        "ProtocolLib": "auto://ProtocolLib*",
+        "PlaceholderAPI": "auto://PlaceholderAPI-*",
+        "FastAsyncWorldEdit": "auto://FastAsyncWorldEdit-Paper-*",
+        "CMI": "manual://CMI-*",
+        "CMILib": "manual://CMILib*",
+        "CoreProtect": "manual://CoreProtect-*",
+        "GreifPrevention": "manual://GriefPrevention-*",
+        "MobFarmManager": "manual://MobFarmManager*",
+        "TAB": "manual://TAB*",
+        "Vault": "manual://Vault-*",
+        "WorldGuard": "manual://worldguard-bukkit-*"
+      }
+    }
+  }
+}

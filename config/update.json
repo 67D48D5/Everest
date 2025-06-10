@@ -1,0 +1,29 @@
+{
+  "engines": {
+    "paper": {
+      "version": "1.21.5"
+    },
+    "velocity": {
+      "version": "3.4.0-SNAPSHOT"
+    }
+  },
+  "plugins": {
+    "velocity": {
+      "geyser": "https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/velocity",
+      "floodgate": "https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/velocity",
+      "luckperms": "https://ci.lucko.me/job/LuckPerms",
+      "viaversion": "https://ci.viaversion.com/job/ViaVersion",
+      "viabackwards": "https://ci.viaversion.com/job/ViaBackwards"
+    },
+    "paper": {
+      "Chunky": "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky",
+      "ChunkyBorder": "https://ci.codemc.io/view/Author/job/pop4959/job/ChunkyBorder",
+      "mcMMO": "https://popicraft.net/jenkins/job/mcMMO",
+      "LWC": "https://ci.codemc.io/view/Author/job/pop4959/job/LWC",
+      "LuckPerms": "https://ci.lucko.me/job/LuckPerms",
+      "ProtocolLib": "https://ci.dmulloy2.net/job/protocollib",
+      "PlaceholderAPI": "https://ci.extendedclip.com/job/PlaceholderAPI",
+      "FastAsyncWorldEdit": "https://ci.athion.net/job/FastAsyncWorldEdit"
+    }
+  }
+}
