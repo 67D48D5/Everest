@@ -6,6 +6,7 @@ servers/**/libraries/
 *.jar
 
 # Remove Data Files
+.termux/shell
 .paper-remapped/
 .version
 .license
@@ -28,6 +29,9 @@ backups/
 expansions/
 flatfile/
 
+/**/datapacks/
+/**/stats/*.json
+/**/advancements/*.json
 /**/litebans/server.yml
 /**/luckperms/translations/
 /**/Geyser-Velocity/packs/
@@ -35,6 +39,8 @@ flatfile/
 /**/Geyser-Velocity/extensions/
 /**/Geyser-Velocity/custom_mappings/
 /**/Geyser-Velocity/custom-skulls.yml
+
+servers/proxy/lang
 
 help.yml
 wepif.yml
@@ -46,6 +52,7 @@ banned-ips.json
 banned-players.json
 contexts.json
 ops.json
+session.lock
 
 **history**
 **log**

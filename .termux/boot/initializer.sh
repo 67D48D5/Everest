@@ -3,6 +3,9 @@
 # Prevent device sleep
 termux-wake-lock
 
+# Start SSHD Immediately
+sshd
+
 # Load environment variables
 if [ -f /data/data/com.termux/files/home/.termux/.env ]; then
   . /data/data/com.termux/files/home/.termux/.env
