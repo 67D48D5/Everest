@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Define arguments
+SERVER_NAME="${1:-}"
+ENGINE_TYPE="${2:-paper}"
+
+shift 2
+EXTRA_JAVA_FLAGS=("$@")
+
+if [[ -z "$SERVER_NAME" ]]; then
+    echo "Usage: $0 <server-name> [engine-type] [java flags...]" >&2
+    exit 1
+fi
+
+# Session name for tmux
+TMUX_SESSION="${SERVER_NAME}"
+
+# Set up directories
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
+SERVER_DIR="${ROOT_PATH}/servers/${SERVER_NAME}"
+ENGINE_DIR="${ROOT_PATH}/libraries/engines"
+
+# Ensure prerequisites
+for cmd in tmux java; do
+    command -v "$cmd" &>/dev/null || {
+        echo "❌ '$cmd' not found" >&2
+        exit 1
+    }
+done
+
+# Load environment variables
+ENV_EXPORTS=()
+if [[ -f "${ROOT_PATH}/.env" ]]; then
+    while IFS='=' read -r key val; do
+        [[ "$key" =~ ^#.*$ || -z "$key" ]] && continue
+        ENV_EXPORTS+=("$key=$val")
+        export "$key=$val"
+    done <"${ROOT_PATH}/.env"
+fi
+
+# Enter server directory
+cd "$SERVER_DIR" || {
+    echo "❌ Failed to enter $SERVER_DIR" >&2
+    exit 1
+}
+
+# Find latest engine JAR (version-aware sort)
+JAR_FILE=$(find "$ENGINE_DIR" -maxdepth 1 -type f -name "${ENGINE_TYPE}*.jar" | sort -V | tail -n1)
+if [[ -z "$JAR_FILE" || ! -f "$JAR_FILE" ]]; then
+    echo "❌ Engine not found for: $ENGINE_TYPE" >&2
+    exit 1
+fi
+
+# Common Java flags
+COMMON_FLAGS=(
+    -XX:+UseG1GC
+    -XX:+AlwaysPreTouch
+    -XX:+ParallelRefProcEnabled
+    -XX:+UnlockExperimentalVMOptions
+    -Duser.timezone=Asia/Seoul
+)
+
+case "$ENGINE_TYPE" in
+paper)
+    ENGINE_FLAGS=(
+        -XX:+DisableExplicitGC
+        -XX:+PerfDisableSharedMem
+        -XX:G1HeapRegionSize=8M
+        -XX:G1HeapWastePercent=5
+        -XX:G1MaxNewSizePercent=40
+        -XX:G1MixedGCCountTarget=4
+        -XX:G1MixedGCLiveThresholdPercent=90
+        -XX:G1NewSizePercent=30
+        -XX:G1RSetUpdatingPauseTimePercent=5
+        -XX:G1ReservePercent=20
+        -XX:InitiatingHeapOccupancyPercent=15
+        -XX:MaxGCPauseMillis=200
+        -XX:MaxTenuringThreshold=1
+        -XX:SurvivorRatio=32
+        -Dusing.aikars.flags=https://mcflags.emc.gs
+        -Daikars.new.flags=true
+        -Dpaper.disableJNA=true
+        -Djna.nosys=true
+    )
+    ;;
+velocity)
+    ENGINE_FLAGS=(
+        -XX:G1HeapRegionSize=4M
+        -XX:MaxInlineLevel=15
+    )
+    ;;
+esac
+
+# Final Java command
+START_CMD=(env "${ENV_EXPORTS[@]}" java "${COMMON_FLAGS[@]}" "${ENGINE_FLAGS[@]}" "${EXTRA_JAVA_FLAGS[@]}" -jar "$JAR_FILE" nogui)
+
+# Wrapper of tmux session
+if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
+    echo "⚠️ Tmux session '$TMUX_SESSION' already exists."
+
+    # Check if server process is alive
+    if ! pgrep -f "[j]ava.*$(basename "$JAR_FILE")" >/dev/null; then
+        echo "💀 Session alive, but server is down. Restarting..."
+        tmux send-keys -t "$TMUX_SESSION" "stop" C-m
+        sleep 1
+        tmux send-keys -t "$TMUX_SESSION" "${START_CMD[@]}" C-m
+        echo "🔁 Restarted server at $(date)"
+    else
+        echo "✅ Server is already running."
+    fi
+else
+    # Create new detached tmux session
+    tmux new-session -s "$TMUX_SESSION" -d -- "${START_CMD[@]}"
+fi
