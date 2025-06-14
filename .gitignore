@@ -74,5 +74,6 @@ session.lock
 *.tar.gz
 
 # Include files that should not be ignored
+!.env.example
 !.termux/.env
 !Holograms.yml
