@@ -14,15 +14,15 @@ settings:
   debug: false
   bungeecord: false
   save-user-cache-on-stop-only: false
-  sample-count: 12
-  player-shuffle: 0
+  sample-count: 21
+  player-shuffle: 128
   user-cache-size: 1000
   moved-wrongly-threshold: 0.0625
   moved-too-quickly-multiplier: 10.0
-  timeout-time: 60
+  timeout-time: 120
   restart-on-crash: true
-  restart-script: ./restart.sh
-  netty-threads: 4
+  restart-script: ./start.sh
+  netty-threads: -1
   attribute:
     maxAbsorption:
       max: 2048.0
@@ -36,7 +36,7 @@ settings:
   log-named-deaths: true
 messages:
   whitelist: 현재 이 서버는 화이트리스트가 설정되어 있습니다. 접속을 원하신다면 관리자에게 요청해주세요.
-  unknown-command: §c존재하지 않거나 사용할 수 없는 명령어입니다.
+  unknown-command: §cCMD &8» §f존재하지 않거나 사용할 수 없는 명령어입니다.
   server-full: 현재 서버 인원이 가득 찼습니다. 잠시 후 다시 시도해주세요.
   outdated-client: 이 서버에 접속하려면 클라이언트 버전 {0} 이상을 사용해야 합니다.
   outdated-server: 서버가 아직 {0} 버전을 사용 중입니다. 클라이언트 버전을 일치시켜주세요.
@@ -45,9 +45,9 @@ world-settings:
   default:
     below-zero-generation-in-existing-chunks: true
     merge-radius:
-      item: 0.5
-      exp: -1.0
-    mob-spawn-range: 8
+      item: 4
+      exp: 4
+    mob-spawn-range: 4
     item-despawn-rate: 6000
     seed-village: 10387312
     seed-desert: 14357617
@@ -78,20 +78,20 @@ world-settings:
       swim-multiplier: 0.01
       sprint-multiplier: 0.1
       other-multiplier: 0.0
-    max-tnt-per-tick: 100
+    max-tnt-per-tick: 50
     max-tick-time:
-      tile: 50
-      entity: 50
-    arrow-despawn-rate: 1200
-    trident-despawn-rate: 1200
+      tile: 40
+      entity: 40
+    arrow-despawn-rate: 600
+    trident-despawn-rate: 600
     zombie-aggressive-towards-villager: true
     nerf-spawner-mobs: false
-    enable-zombie-pigmen-portal-spawns: true
+    enable-zombie-pigmen-portal-spawns: false
     wither-spawn-sound-radius: 0
     end-portal-sound-radius: 0
     hanging-tick-frequency: 100
     thunder-chance: 100000
-    unload-frozen-chunks: false
+    unload-frozen-chunks: true
     growth:
       cactus-modifier: 100
       cane-modifier: 100
@@ -116,10 +116,10 @@ world-settings:
       glowberry-modifier: 100
       pitcherplant-modifier: 100
     entity-activation-range:
-      animals: 48
-      monsters: 48
+      animals: 32
+      monsters: 32
       raiders: 64
-      misc: 16
+      misc: 12
       water: 16
       villagers: 32
       flying-monsters: 48
@@ -143,14 +143,14 @@ world-settings:
       ignore-spectators: false
     entity-tracking-range:
       players: 128
-      animals: 128
-      monsters: 128
+      animals: 64
+      monsters: 64
       misc: 96
-      display: 128
+      display: 64
       other: 64
     ticks-per:
       hopper-transfer: 8
-      hopper-check: 1
+      hopper-check: 8
     hopper-amount: 1
     hopper-can-load-chunks: false
     dragon-death-sound-radius: 0
@@ -160,7 +160,7 @@ world-settings:
   worldeditregentempworld:
     verbose: false
 commands:
-  tab-complete: 0
+  tab-complete: 50
   send-namespaced: true
   log: true
   spam-exclusions:

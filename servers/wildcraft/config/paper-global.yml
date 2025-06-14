@@ -22,7 +22,7 @@ anticheat:
         dont-obfuscate:
           - minecraft:lodestone_tracker
         sanitize-count: true
-      enable-item-obfuscation: false
+      enable-item-obfuscation: true
       model-overrides:
         minecraft:elytra:
           also-obfuscate: []
@@ -36,12 +36,12 @@ block-updates:
   disable-tripwire-updates: false
 chunk-loading-advanced:
   auto-config-send-distance: true
-  player-max-concurrent-chunk-generates: 0
-  player-max-concurrent-chunk-loads: 0
+  player-max-concurrent-chunk-generates: 4
+  player-max-concurrent-chunk-loads: 6
 chunk-loading-basic:
   player-max-chunk-generate-rate: -1.0
-  player-max-chunk-load-rate: 100.0
-  player-max-chunk-send-rate: 75.0
+  player-max-chunk-load-rate: 60.0
+  player-max-chunk-send-rate: 60s.0
 chunk-system:
   gen-parallelism: default
   io-threads: -1
@@ -56,7 +56,7 @@ commands:
 console:
   enable-brigadier-completions: true
   enable-brigadier-highlighting: true
-  has-all-permissions: false
+  has-all-permissions: true
 item-validation:
   book:
     author: 8192
@@ -76,7 +76,7 @@ messages:
     connection-throttle: 너무 빠르게 재접속했습니다. 잠시 기다려주세요.
     flying-player: <lang:multiplayer.disconnect.flying>
     flying-vehicle: <lang:multiplayer.disconnect.flying>
-  no-permission: <red>존재하지 않거나 사용할 수 없는 명령어입니다.
+  no-permission: "<red>CMD <gray>» <white>존재하지 않거나 사용할 수 없는 명령어입니다.ㄴ"
   use-display-name-in-quit-message: false
 misc:
   chat-threads:
@@ -86,7 +86,7 @@ misc:
   compression-level: default
   fix-entity-position-desync: true
   load-permissions-yml-before-plugins: true
-  max-joins-per-tick: 5
+  max-joins-per-tick: 3
   region-file-cache-size: 256
   strict-advancement-dimension-check: false
   use-alternative-luck-formula: false
@@ -96,7 +96,7 @@ packet-limiter:
   all-packets:
     action: KICK
     interval: 7.0
-    max-packet-rate: 500.0
+    max-packet-rate: 400.0
   kick-message: <lang:disconnect.exceeded_packet_rate>
   overrides:
     ServerboundPlaceRecipePacket:
@@ -105,7 +105,7 @@ packet-limiter:
       max-packet-rate: 5.0
 player-auto-save:
   max-per-tick: -1
-  rate: -1
+  rate: 6000
 proxies:
   bungee-cord:
     online-mode: true
@@ -116,18 +116,18 @@ proxies:
     secret: b0UMK0CHfjCi
 scoreboards:
   save-empty-scoreboard-teams: true
-  track-plugin-scoreboards: false
+  track-plugin-scoreboards: true
 settings:
   allow-unsigned-chats: true
   enforce-secure-profile: false
 spam-limiter:
-  incoming-packet-threshold: 300
+  incoming-packet-threshold: 200
   recipe-spam-increment: 1
   recipe-spam-limit: 20
   tab-spam-increment: 1
   tab-spam-limit: 500
 spark:
-  enable-immediately: false
+  enable-immediately: true
   enabled: true
 timings:
   enabled: false
@@ -151,5 +151,5 @@ unsupported-settings:
   skip-vanilla-damage-tick-when-shield-blocked: false
   update-equipment-on-player-actions: true
 watchdog:
-  early-warning-delay: 10000
+  early-warning-delay: 8000
   early-warning-every: 5000

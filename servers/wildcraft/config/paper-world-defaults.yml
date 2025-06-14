@@ -16,7 +16,7 @@
 _version: 31
 anticheat:
   anti-xray:
-    enabled: false
+    enabled: true
     engine-mode: 1
     hidden-blocks:
       - copper_ore
@@ -62,13 +62,13 @@ chunks:
     snowball: -1
   fixed-chunk-inhabited-time: -1
   flush-regions-on-save: false
-  max-auto-save-chunks-per-tick: 24
-  prevent-moving-into-unloaded-chunks: false
+  max-auto-save-chunks-per-tick: 12
+  prevent-moving-into-unloaded-chunks: true
 collisions:
   allow-player-cramming-damage: false
-  allow-vehicle-collisions: true
+  allow-vehicle-collisions: false
   fix-climbing-bypassing-cramming-rule: false
-  max-entity-collisions: 8
+  max-entity-collisions: 4
   only-players-collide: false
 command-blocks:
   force-follow-perm-level: true
@@ -97,12 +97,12 @@ entities:
       zombified_piglin:
         - HARD
     ender-dragons-death-always-places-dragon-egg: false
-    experience-merge-max-value: -1
+    experience-merge-max-value: 100
     mobs-can-always-pick-up-loot:
       skeletons: false
       zombies: false
     nerf-pigmen-from-nether-portals: false
-    only-merge-items-horizontally: false
+    only-merge-items-horizontally: true
     parrots-are-unaffected-by-player-movement: false
     phantoms-do-not-spawn-on-creative-players: true
     phantoms-only-attack-insomniacs: true
@@ -238,10 +238,10 @@ environment:
     enabled: true
   generate-flat-bedrock: false
   locate-structures-outside-world-border: false
-  max-block-ticks: 65536
-  max-fluid-ticks: 65536
+  max-block-ticks: 32768
+  max-fluid-ticks: 32768
   nether-ceiling-void-damage-height: disabled
-  optimize-explosions: false
+  optimize-explosions: true
   portal-create-radius: 16
   portal-search-radius: 128
   portal-search-vanilla-dimension-scaling: true
@@ -268,7 +268,7 @@ fixes:
 hopper:
   cooldown-when-full: true
   disable-move-event: false
-  ignore-occluding-blocks: false
+  ignore-occluding-blocks: true
 lootables:
   auto-replenish: false
   max-refills: -1
@@ -294,7 +294,7 @@ misc:
   disable-sprint-interruption-on-attack: false
   legacy-ender-pearl-behavior: false
   max-leash-distance: default
-  redstone-implementation: VANILLA
+  redstone-implementation: EIGENCRAFT
   shield-blocking-delay: 5
   show-sign-click-command-failure-msgs-to-player: false
   update-pathfinding-on-block-update: true
@@ -307,7 +307,7 @@ tick-rates:
   behavior:
     villager:
       validatenearbypoi: -1
-  container-update: 1
+  container-update: 2
   dry-farmland: 1
   grass-spread: 1
   mob-spawner: 1
@@ -316,5 +316,5 @@ tick-rates:
       secondarypoisensor: 40
   wet-farmland: 1
 unsupported-settings:
-  disable-world-ticking-when-empty: false
+  disable-world-ticking-when-empty: true
   fix-invulnerable-end-crystal-exploit: true
