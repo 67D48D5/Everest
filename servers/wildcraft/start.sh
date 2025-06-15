@@ -7,8 +7,8 @@ SERVER_ENGINE="paper"
 
 # Java flags (See launcher for more details)
 JAVA_FLAGS=(
-  -Xms4096M
-  -Xmx4096M
+  -Xms2048M
+  -Xmx3072M
 )
 
 # Directory setup

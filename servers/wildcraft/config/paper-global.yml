@@ -41,7 +41,7 @@ chunk-loading-advanced:
 chunk-loading-basic:
   player-max-chunk-generate-rate: -1.0
   player-max-chunk-load-rate: 60.0
-  player-max-chunk-send-rate: 60s.0
+  player-max-chunk-send-rate: 60.0
 chunk-system:
   gen-parallelism: default
   io-threads: -1
@@ -76,7 +76,7 @@ messages:
     connection-throttle: 너무 빠르게 재접속했습니다. 잠시 기다려주세요.
     flying-player: <lang:multiplayer.disconnect.flying>
     flying-vehicle: <lang:multiplayer.disconnect.flying>
-  no-permission: "<red>CMD <gray>» <white>존재하지 않거나 사용할 수 없는 명령어입니다.ㄴ"
+  no-permission: "<red>CMD <gray>» <white>존재하지 않거나 사용할 수 없는 명령어입니다."
   use-display-name-in-quit-message: false
 misc:
   chat-threads:
