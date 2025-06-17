@@ -39,7 +39,7 @@ chunk-loading-advanced:
   player-max-concurrent-chunk-generates: 4
   player-max-concurrent-chunk-loads: 6
 chunk-loading-basic:
-  player-max-chunk-generate-rate: -1.0
+  player-max-chunk-generate-rate: 40.0
   player-max-chunk-load-rate: 60.0
   player-max-chunk-send-rate: 60.0
 chunk-system:
@@ -104,7 +104,7 @@ packet-limiter:
       interval: 4.0
       max-packet-rate: 5.0
 player-auto-save:
-  max-per-tick: -1
+  max-per-tick: 3
   rate: 6000
 proxies:
   bungee-cord:
@@ -125,7 +125,7 @@ spam-limiter:
   recipe-spam-increment: 1
   recipe-spam-limit: 20
   tab-spam-increment: 1
-  tab-spam-limit: 500
+  tab-spam-limit: 300
 spark:
   enable-immediately: true
   enabled: true

@@ -19,7 +19,7 @@ settings:
   user-cache-size: 1000
   moved-wrongly-threshold: 0.0625
   moved-too-quickly-multiplier: 10.0
-  timeout-time: 120
+  timeout-time: 60
   restart-on-crash: true
   restart-script: ./start.sh
   netty-threads: -1
@@ -47,7 +47,7 @@ world-settings:
     merge-radius:
       item: 4
       exp: 4
-    mob-spawn-range: 4
+    mob-spawn-range: 6
     item-despawn-rate: 6000
     seed-village: 10387312
     seed-desert: 14357617
@@ -81,7 +81,7 @@ world-settings:
     max-tnt-per-tick: 50
     max-tick-time:
       tile: 40
-      entity: 40
+      entity: 50
     arrow-despawn-rate: 600
     trident-despawn-rate: 600
     zombie-aggressive-towards-villager: true
@@ -140,7 +140,7 @@ world-settings:
       villagers-work-immunity-for: 20
       villagers-active-for-panic: true
       tick-inactive-villagers: true
-      ignore-spectators: false
+      ignore-spectators: true
     entity-tracking-range:
       players: 128
       animals: 64

@@ -259,9 +259,9 @@ fishing-time-range:
   maximum: 600
   minimum: 100
 fixes:
-  disable-unloaded-chunk-enderpearl-exploit: false
+  disable-unloaded-chunk-enderpearl-exploit: true
   falling-block-height-nerf: disabled
-  fix-items-merging-through-walls: false
+  fix-items-merging-through-walls: true
   prevent-tnt-from-moving-in-water: false
   split-overstacked-loot: true
   tnt-entity-height-nerf: disabled
@@ -270,13 +270,13 @@ hopper:
   disable-move-event: false
   ignore-occluding-blocks: true
 lootables:
-  auto-replenish: false
+  auto-replenish: true
   max-refills: -1
   refresh-max: 2d
   refresh-min: 12h
   reset-seed-on-fill: true
   restrict-player-reloot: true
-  restrict-player-reloot-time: disabled
+  restrict-player-reloot-time: 1d
   retain-unlooted-shulker-box-loot-table-on-non-player-break: true
 maps:
   item-frame-cursor-limit: 128
