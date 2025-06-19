@@ -4,13 +4,13 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
 
-CONFIG_FILE="${ROOT_PATH}/config/servers.json"
+CONFIG_FILE="${ROOT_PATH}/config/server.json"
 PLUGIN_ROOT="${ROOT_PATH}/libraries/plugins"
 SERVERS_ROOT="${ROOT_PATH}/servers"
 
 # Check if config file exists
 [[ -f "$CONFIG_FILE" ]] || {
-  echo "❌ servers.json not found" >&2
+  echo "❌ server.json not found" >&2
   exit 1
 }
 
