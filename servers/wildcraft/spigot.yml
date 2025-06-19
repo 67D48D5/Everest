@@ -164,18 +164,18 @@ commands:
   send-namespaced: true
   log: true
   spam-exclusions:
-    - /skill
+  - /skill
   silent-commandblock-console: false
   replace-commands:
-    - setblock
-    - summon
-    - testforblock
-    - tellraw
+  - setblock
+  - summon
+  - testforblock
+  - tellraw
   enable-spam-exclusions: false
 advancements:
   disable-saving: false
   disabled:
-    - minecraft:story/disabled
+  - minecraft:story/disabled
 players:
   disable-saving: false
 config-version: 12
