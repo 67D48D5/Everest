@@ -45,7 +45,7 @@ scoreboard-teams:
   anti-override: false
   # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Sorting-players-in-tablist
   sorting-types:
-    - "GROUPS:admin,default"
+    - "GROUPS:Admin,default"
     - "PLACEHOLDER_A_TO_Z:%player%"
   case-sensitive-sorting: true
   can-see-friendly-invisibles: false
@@ -97,17 +97,17 @@ scoreboard:
   delay-on-join-milliseconds: 0
   scoreboards:
     default:
-      title: "<gradient:#E0B11E:#FF0000>&l⛰ Everest</gradient>"
+      title: "&f&l&o⛰ <gradient:#aef1ff:#b9ffe8:#ffffff>Everest</gradient>"
       lines:
-        - "&8&m----------"
+        - "&8&m                 "
         - "&e%player_x%&7, &e%player_y%&7, &e%player_z%"
-        - "&8&m----------"
+        - "&8&m                 "
         - "&7mcMMO &8| &e%mcmmo_power_level%"
-        - "&7Money &8| &e&o%vault_eco_balance_formatted% &7₿"
-        - "&8&m----------"
+        - "&7Money &8| &e&o%vault_eco_balance_formatted%"
+        - "&8&m                 "
         - "&7TPS &8| &e&o%server_tps_1_colored%"
         - "&7Ping &8| &e&o%ping% &7ms"
-        - "&8&m----------"
+        - "&8&m                 "
 
 # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Layout
 layout:
@@ -213,7 +213,7 @@ mysql:
   useSSL: false
 
 proxy-support:
-  enabled: true
+  enabled: false
   # Supported types: PLUGIN, REDIS, RABBITMQ
   type: PLUGIN
   plugin:

@@ -144,7 +144,7 @@ data:
     # 'verifyServerCertificate' options below.
     properties:
       useUnicode: true
-      characterEncoding: utf8
+      characterEncoding: utf8mb4
       #useSSL: false
       #verifyServerCertificate: false
 
