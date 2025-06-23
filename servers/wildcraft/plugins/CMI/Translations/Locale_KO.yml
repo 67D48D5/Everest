@@ -44,11 +44,6 @@
 # If line starts with !customtext:[cTextName]! then custom text will be taken by name provided and shown for player. In case its used after !broadcast! then everyone who is online will get this custom text message
 # If line starts with !title! then player will get title message defined after this variable, in addition it can contain !subtitle! which will add subtitle message. Optional time can be defined with !title:4.5! which will keep title message for 4.5 seconds
 # If line starts with !bossbar:[name]-[timer]! then player will get bossbar message defined after this variable, in addition you can define how long this message will be visible. You need to define bossbar name which can be anything you want, but lines with same name will override each other to prevent stacking
-#
-#
-#
-# ATTENTION! As of 9.0.0.0 CMI version some of the locale lines got moved to CMILib file. This is to centralize some of most used ones across multiple plugins.
-# After you update locale in CMILib file perform `/cmil reload` command for changes to take effect
 
 info:
   Same: "&cCan't open your own inventory for editing!"
@@ -1707,8 +1702,8 @@ command:
       list: "&7집 목록: &6"
       listNonePrivate: "&f"
       listPrivate: "&2"
-      click: "&6[home]&f(으)로 이동"
-      teleported: "&aHOME &8» &6[home]&f으로 순간이동되었습니다."
+      click: "&7클릭 &8| &7순간이동"
+      teleported: "&aHOME &8» &6[home]&f(으)로 순간이동되었습니다."
       noHomes: "&cHOME &8» &f아직 위치를 저장한 집이 없습니다."
       private: "&cHOME &8» &f이 집은 비공개 상태입니다."
       remove: "&8삭제 | 쉬프트 + 우클릭"

@@ -2,7 +2,7 @@
 
 GriefPrevention:
   SeaLevelOverrides:
-    wwild: -1
+    wwild: 48
     wwild_nether: -1
     wwild_the_end: -1
   Claims:
@@ -64,9 +64,9 @@ GriefPrevention:
     LoginLogoutNotificationsPerMinute: 5
     ChatSlashCommands: /me;/global;/local
     WhisperSlashCommands: /tell;/pm;/r;/whisper;/msg
-    WarningMessage: "&cCHAT &8» &f채팅에 스팸성 메세지를 지속적으로 보내면 서버에서 추방될 수 있습니다."
+    WarningMessage: "§cCHAT §8» §f채팅에 스팸성 메세지를 지속적으로 보내면 서버에서 추방될 수 있습니다."
     BanOffenders: true
-    BanMessage: "&cCHAT &8» &f채팅에 스팸성 메세지를 지속적으로 보내 추방되었습니다."
+    BanMessage: "§cCHAT §8» §f채팅에 스팸성 메세지를 지속적으로 보내 추방되었습니다."
     AllowedIpAddresses: 1.2.3.4; 5.6.7.8
     DeathMessageCooldownSeconds: 16
     Logout Message Delay In Seconds: 4
@@ -93,7 +93,7 @@ GriefPrevention:
     ProtectPetsOutsideLandClaims: false
   Economy:
     ClaimBlocksMaxBonus: 1024
-    ClaimBlocksPurchaseCost: 2.0
+    ClaimBlocksPurchaseCost: 1.0
     ClaimBlocksSellValue: 1.0
   ProtectItemsDroppedOnDeath:
     PvPWorlds: false
