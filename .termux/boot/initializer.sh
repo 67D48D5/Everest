@@ -17,7 +17,7 @@ OPTIMIZER_SCRIPT="$HOME/.termux/optimizer.sh"
 
 # Service Watchdog
 while true; do
-  for svc in sshd mysqld php-fpm nginx; do
+  for svc in sshd mysqld; do
     sv up "$svc" || sv restart "$svc"
   done
   sleep 10
