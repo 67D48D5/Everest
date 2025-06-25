@@ -55,35 +55,35 @@
 
 info:
   # Use !prefix! in any locale line to automatically include this prefix
-  prefix: "&6Evy &8» &f"
-  NoPermission: "&cEvy &8» &f권한이 없습니다&o!"
-  CantHavePermission: "&cEvy &8» &f해당 권한을 가질 수 없습니다&o!"
-  WrongGroup: "&cEvy &8» &f잘못된 그룹에 속해있습니다&o!"
-  NoPlayerPermission: "&cEvy &8» &6[playerName]&f님은 다음 권한을 가지고 있지 않습니다: &e&o[permission]"
-  Ingame: "&cEvy &8» &f해당 기능은 게임 내에서만 사용할 수 있습니다&o!"
-  NoInformation: "&cEvy &8» &f찾은 정보가 없습니다&o!"
+  prefix: "&6System &8» &f"
+  NoPermission: "&cSystem &8» &f권한이 없습니다&o!"
+  CantHavePermission: "&cSystem &8» &f해당 권한을 가질 수 없습니다&o!"
+  WrongGroup: "&cSystem &8» &f잘못된 그룹에 속해있습니다&o!"
+  NoPlayerPermission: "&cSystem &8» &6[playerName]&f님은 다음 권한을 가지고 있지 않습니다: &e&o[permission]"
+  Ingame: "&cSystem &8» &f해당 기능은 게임 내에서만 사용할 수 있습니다&o!"
+  NoInformation: "&cSystem &8» &f찾은 정보가 없습니다&o!"
   Console: "&c콘술"
-  FromConsole: "&cEvy &8» &f해당 기능은 콘술에서만 사용이 가능합니다&o!"
-  NotOnline: "&cEvy &8» &f해당 플레이어는 온라인 상태가 아닙니다&o!"
-  NobodyOnline: "&cEvy &8» &f온라인 상태인 플레이어가 없습니다&o!"
-  NoPlayer: "&cEvy &8» &6[name]&f라는 이름의 플레이어는 존재하지 않습니다&o!"
-  NoCommand: "&cEvy &8» &f해당 이름의 명령어는 존재하지 않습니다&o!"
-  cantFindCommand: "&cEvy &8» &f명령어 &7[%1]&f를 찾을 수 없습니다. &7[%2]&f&o?"
-  nolocation: "&cEvy &8» &f적절한 장소를 찾을 수 없습니다&o!"
-  FeatureNotEnabled: "&cEvy &8» &f해당 기능은 활성화되어 있지 않습니다&o!"
-  ModuleNotEnabled: "&cEvy &8» &f해당 모듈은 활성화되어 있지 않습니다&o!"
-  versionNotSupported: "&cEvy &8» &f서버 버전이 해당 기능을 지원하지 않습니다."
-  spigotNotSupported: "&cEvy &8» &f해당 기능을 사용하려면 &6&oPaper &f서버 엔진을 사용해야 합니다."
-  bungeeNoGo: "&cEvy &8» &f해당 기능은 번지코드 네트워크 기반 서버에서는 작동하지 않습니다."
+  FromConsole: "&cSystem &8» &f해당 기능은 콘술에서만 사용이 가능합니다&o!"
+  NotOnline: "&cSystem &8» &f해당 플레이어는 온라인 상태가 아닙니다&o!"
+  NobodyOnline: "&cSystem &8» &f온라인 상태인 플레이어가 없습니다&o!"
+  NoPlayer: "&cSystem &8» &6[name]&f라는 이름의 플레이어는 존재하지 않습니다&o!"
+  NoCommand: "&cSystem &8» &f해당 이름의 명령어는 존재하지 않습니다&o!"
+  cantFindCommand: "&cSystem &8» &f명령어 &7[%1]&f를 찾을 수 없습니다. &7[%2]&f&o?"
+  nolocation: "&cSystem &8» &f적절한 장소를 찾을 수 없습니다&o!"
+  FeatureNotEnabled: "&cSystem &8» &f해당 기능은 활성화되어 있지 않습니다&o!"
+  ModuleNotEnabled: "&cSystem &8» &f해당 모듈은 활성화되어 있지 않습니다&o!"
+  versionNotSupported: "&cSystem &8» &f서버 버전이 해당 기능을 지원하지 않습니다."
+  spigotNotSupported: "&cSystem &8» &f해당 기능을 사용하려면 &6&oPaper &f서버 엔진을 사용해야 합니다."
+  bungeeNoGo: "&cSystem &8» &f해당 기능은 번지코드 네트워크 기반 서버에서는 작동하지 않습니다."
   clickToTeleport: "&f클릭하여 &o순간이동"
-  UseMaterial: "&cEvy &8» &f재료 이름만 입력할 수 있습니다&o!"
-  IncorrectMaterial: "&cEvy &8» &f올바르지 않은 재료 이름입니다&o!"
-  UseInteger: "&cEvy &8» &f숫자만 입력할 수 있습니다&o!"
-  UseBoolean: "&cEvy &8» &aTrue &f혹은 &cFalse&f만 입력할 수 있습니다&o!"
-  NoLessThan: "&cEvy &8» &f숫자는 &e[amount]&f보다 작을 수 없습니다&o!"
-  NoMoreThan: "&cEvy &8» &f값은 &e[amount]&f보다 클 수 없습니다&o!"
-  NoWorld: "&cEvy &8» &f해당 이름의 세계를 찾을 수 없습니다&o!"
-  IncorrectLocation: "&cEvy &8» &f위치가 잘못 정의되었습니다&o!"
+  UseMaterial: "&cSystem &8» &f재료 이름만 입력할 수 있습니다&o!"
+  IncorrectMaterial: "&cSystem &8» &f올바르지 않은 재료 이름입니다&o!"
+  UseInteger: "&cSystem &8» &f숫자만 입력할 수 있습니다&o!"
+  UseBoolean: "&cSystem &8» &aTrue &f혹은 &cFalse&f만 입력할 수 있습니다&o!"
+  NoLessThan: "&cSystem &8» &f숫자는 &e[amount]&f보다 작을 수 없습니다&o!"
+  NoMoreThan: "&cSystem &8» &f값은 &e[amount]&f보다 클 수 없습니다&o!"
+  NoWorld: "&cSystem &8» &f해당 이름의 세계를 찾을 수 없습니다&o!"
+  IncorrectLocation: "&cSystem &8» &f위치가 잘못 정의되었습니다&o!"
   Show: "&f보기"
   Remove: "&c제거"
   Back: "&f이전"
@@ -95,10 +95,10 @@ info:
   Preview: "&6미리보기"
   PasteOld: "&f이전 내용 붙여넣기"
   ClickToPaste: "&f클릭하여 채팅에 붙여넣기"
-  CantTeleportWorld: "&cEvy &8» &f해당 세계로 텔레포트할 수 없습니다&o!"
-  CantTeleportNoWorld: "&cEvy &8» &f대상 세계가 존재하지 않습니다&o!"
-  ClickToConfirmDelete: "&bEvy &8» &f이곳을 클릭하여 &6[name]&f를 제거하세요."
-  teleported: "&aEvy &8» &f순간이동되었습니다&o!"
+  CantTeleportWorld: "&cSystem &8» &f해당 세계로 텔레포트할 수 없습니다&o!"
+  CantTeleportNoWorld: "&cSystem &8» &f대상 세계가 존재하지 않습니다&o!"
+  ClickToConfirmDelete: "&bSystem &8» &f이곳을 클릭하여 &6[name]&f를 제거하세요."
+  teleported: "&aSystem &8» &f순간 이동되었습니다&o!"
   PlayerSpliter: "&6[playerDisplayName]"
   Spliter: ""
   SpliterValue: "&e[value]"
@@ -107,38 +107,38 @@ info:
   ListSpliter: ", "
   ProgressBarFill: "&2▏"
   ProgressBarEmpty: "&e▏"
-  nothingInHand: "&cEvy &8» &f손에 아이템을 들어야합니다&o!"
-  nothingInHandLeather: "&cEvy &8» &f손에 가죽 아이템을 들어야합니다&o!"
-  nothingToShow: "&cEvy &8» &f정보가 없습니다&o!"
-  noItem: "&cEvy &8» &f아이템을 찾을 수 없습니다&o!"
-  dontHaveItem: "&cEvy &8» &f인벤토리에 &6[amount]x [itemName] 만큼의 아이템이 없습니다&o!"
-  wrongWorld: "&cEvy &8» &f해당 세계에서는 해당 기능을 사용할 수 없습니다&o!"
-  differentWorld: "&cEvy &8» &f다른 세계입니다&o!"
-  HaveItem: "&cEvy &8» &fYou have &6[amount]x [itemName] &cin your inventory"
-  cantDoInGamemode: "&cEvy &8» &f현재 게임 모드에서는 할 수 없습니다&o!"
-  cantDoForPlayer: "&cEvy &8» &6[playerDisplayName]&f님에게 해당 기능을 사용할 수 없습니다&o!"
-  cantDoForYourSelf: "&cEvy &8» &f해당 기능은 자신에게 사용할 수 없습니다&o!"
-  cantDetermineMobType: "&cEvy &8» &fCan't determine mob type from &e[type] &cvariable"
-  cantRename: "&cEvy &8» &f해당 이름을 사용할 수 없습니다&o!"
-  confirmRedefine: "&bEvy &8» &f클릭하여 다시 정의합니다."
-  cantEdit: "&cEvy &8» &f수정할 수 없습니다&o!"
-  wrongName: "&cEvy &8» &f잘못된 이름입니다&o!"
+  nothingInHand: "&cSystem &8» &f손에 아이템을 들어야합니다&o!"
+  nothingInHandLeather: "&cSystem &8» &f손에 가죽 아이템을 들어야합니다&o!"
+  nothingToShow: "&cSystem &8» &f정보가 없습니다&o!"
+  noItem: "&cSystem &8» &f아이템을 찾을 수 없습니다&o!"
+  dontHaveItem: "&cSystem &8» &f인벤토리에 &6[amount]x [itemName] 만큼의 아이템이 없습니다&o!"
+  wrongWorld: "&cSystem &8» &f해당 세계에서는 해당 기능을 사용할 수 없습니다&o!"
+  differentWorld: "&cSystem &8» &f다른 세계입니다&o!"
+  HaveItem: "&cSystem &8» &fYou have &6[amount]x [itemName] &cin your inventory"
+  cantDoInGamemode: "&cSystem &8» &f현재 게임 모드에서는 할 수 없습니다&o!"
+  cantDoForPlayer: "&cSystem &8» &6[playerDisplayName]&f님에게 해당 기능을 사용할 수 없습니다&o!"
+  cantDoForYourSelf: "&cSystem &8» &f해당 기능은 자신에게 사용할 수 없습니다&o!"
+  cantDetermineMobType: "&cSystem &8» &fCan't determine mob type from &e[type] &cvariable"
+  cantRename: "&cSystem &8» &f해당 이름을 사용할 수 없습니다&o!"
+  confirmRedefine: "&bSystem &8» &f클릭하여 다시 정의합니다."
+  cantEdit: "&cSystem &8» &f수정할 수 없습니다&o!"
+  wrongName: "&cSystem &8» &f잘못된 이름입니다&o!"
   unknown: "&c알 수 없음"
-  invalidName: "&cEvy &8» &f올바르지 않은 이름입니다&o!"
-  alreadyexist: "&cEvy &8» &f해당 이름은 이미 사용 중입니다&o!"
-  dontexist: "&cEvy &8» &f해당 이름은 존재하지 않습니다&o!"
-  worldDontExist: "&cEvy &8» &f해당 세계는 더이상 접근할 수 없습니다&o!"
+  invalidName: "&cSystem &8» &f올바르지 않은 이름입니다&o!"
+  alreadyexist: "&cSystem &8» &f해당 이름은 이미 사용 중입니다&o!"
+  dontexist: "&cSystem &8» &f해당 이름은 존재하지 않습니다&o!"
+  worldDontExist: "&cSystem &8» &f해당 세계는 더이상 접근할 수 없습니다&o!"
   notSet: "&c설정 안 됨"
-  lookAtSign: "&bEvy &8» &f표지판을 바라보세요&o!"
-  lookAtBlock: "&bEvy &8» &f블록을 바라보세요&o!"
-  lookAtEntity: "&bEvy &8» &f엔티티를 바라보세요&o!"
-  noSpace: "&cEvy &8» &f남는 공간이 충분하지 않습니다&o!"
-  notOnGround: "&cEvy &8» &f비행 도중 해당 기능을 사용할 수 없습니다&o!"
+  lookAtSign: "&bSystem &8» &f표지판을 바라보세요&o!"
+  lookAtBlock: "&bSystem &8» &f블록을 바라보세요&o!"
+  lookAtEntity: "&bSystem &8» &f엔티티를 바라보세요&o!"
+  noSpace: "&cSystem &8» &f남는 공간이 충분하지 않습니다&o!"
+  notOnGround: "&cSystem &8» &f비행 도중 해당 기능을 사용할 수 없습니다&o!"
   bungee:
     Online: "&a온라인"
     Offline: "&c오프라인"
-    not: "&cEvy &8» &f서버가 번지코드 네트워크에 속해 있지 않습니다&o!"
-    noserver: "&cEvy &8» &f해당 이름의 서버를 찾을 수 없습니다&o!"
+    not: "&cSystem &8» &f서버가 번지코드 네트워크에 속해 있지 않습니다&o!"
+    noserver: "&cSystem &8» &f해당 이름의 서버를 찾을 수 없습니다&o!"
     server: "&f서버: &7[name]"
   variables:
     am: "&7오전"
@@ -158,9 +158,9 @@ info:
     flying: "&a비행 중"
     notflying: "&c비행 중이지 않음"
   Inventory:
-    Full: "&cEvy &8» &f인벤토리가 가득 찼습니다. 더이상 아이템을 추가할 수 없습니다."
-    FullDrop: "&cEvy &8» &f인벤토리가 가득 찼습니다. 남은 아이템을 바닥에 떨어뜨립니다."
-  TimeNotRecorded: "&cEvy &8» &f기록이 존재하지 않습니다&o!"
+    Full: "&cSystem &8» &f인벤토리가 가득 찼습니다. 더이상 아이템을 추가할 수 없습니다."
+    FullDrop: "&cSystem &8» &f인벤토리가 가득 찼습니다. 남은 아이템을 바닥에 떨어뜨립니다."
+  TimeNotRecorded: "&cSystem &8» &f기록이 존재하지 않습니다&o!"
   months: "&e[months] 달 "
   oneMonth: "&e[months] 달 "
   weeks: "&e[weeks] 주 "
@@ -173,7 +173,7 @@ info:
   oneHour: "&e[hours] 시간 "
   min: "&e[mins] 분 "
   sec: "&e[secs] 초 "
-  nextPageConsole: "&fFor next page perform &5[command]"
+  nextPageConsole: "&bSystem &8» &f다음 페이지로 넘어가려면 &e[command]&f를 입력하세요."
   prevPage: "&2----<< &6이전 "
   prevCustomPage: "&2----<< &6[value] "
   prevPageGui: "&6Previous page "
@@ -197,9 +197,9 @@ info:
   circle: "&3Circle"
   square: "&5Square"
   clear: "&7Clear"
-  protectedArea: "&cEvy &8» &f해당 지역은 보호되어 있습니다&o!"
-  valueToLong: "&cEvy &8» &f해당 값은 너무 큽니다. 최대: [max]"
-  valueToShort: "&cEvy &8» &f해당 값은 너무 작습니다. 최소: [min]"
+  protectedArea: "&cSystem &8» &f해당 지역은 보호되어 있습니다&o!"
+  valueToLong: "&cSystem &8» &f해당 값은 너무 큽니다. 최대: [max]"
+  valueToShort: "&cSystem &8» &f해당 값은 너무 작습니다. 최소: [min]"
   pickIcon: "&8아이콘 선택"
   Spawner: "&r[type] 스포너"
   DamageCause:
@@ -390,127 +390,127 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    binding_curse: Binding_curse
+    thorns: Thorns
     wind_burst: Wind_burst
-    multishot: Multishot
-    dig_speed: Dig_speed
-    sweeping_edge: Sweeping_edge
-    lure: Lure
-    protection_fall: Protection_fall
-    loot_bonus_blocks: Loot_bonus_blocks
-    channeling: Channeling
-    loot_bonus_mobs: Loot_bonus_mobs
-    soul_speed: Soul_speed
-    piercing: Piercing
-    riptide: Riptide
-    impaling: Impaling
+    damage_arthropods: Damage_arthropods
     arrow_damage: Arrow_damage
-    durability: Durability
-    damage_undead: Damage_undead
+    damage_all: Damage_all
+    loot_bonus_blocks: Loot_bonus_blocks
+    swift_sneak: Swift_sneak
     arrow_infinite: Arrow_infinite
-    silk_touch: Silk_touch
+    arrow_knockback: Arrow_knockback
     mending: Mending
+    multishot: Multishot
+    fire_aspect: Fire_aspect
+    soul_speed: Soul_speed
+    sweeping_edge: Sweeping_edge
+    dig_speed: Dig_speed
     oxygen: Oxygen
+    impaling: Impaling
+    luck: Luck
+    binding_curse: Binding_curse
+    channeling: Channeling
+    protection_fall: Protection_fall
+    frost_walker: Frost_walker
+    lure: Lure
+    piercing: Piercing
+    vanishing_curse: Vanishing_curse
+    loot_bonus_mobs: Loot_bonus_mobs
+    durability: Durability
+    density: Density
+    quick_charge: Quick_charge
+    water_worker: Water_worker
+    depth_strider: Depth_strider
+    arrow_fire: Arrow_fire
+    protection_projectile: Protection_projectile
+    riptide: Riptide
     loyalty: Loyalty
     protection_fire: Protection_fire
-    water_worker: Water_worker
-    quick_charge: Quick_charge
-    protection_explosions: Protection_explosions
-    fire_aspect: Fire_aspect
-    breach: Breach
-    frost_walker: Frost_walker
-    protection_environmental: Protection_environmental
-    damage_all: Damage_all
-    swift_sneak: Swift_sneak
-    depth_strider: Depth_strider
-    thorns: Thorns
-    damage_arthropods: Damage_arthropods
-    protection_projectile: Protection_projectile
-    arrow_fire: Arrow_fire
     knockback: Knockback
-    vanishing_curse: Vanishing_curse
-    arrow_knockback: Arrow_knockback
-    density: Density
-    luck: Luck
+    protection_explosions: Protection_explosions
+    protection_environmental: Protection_environmental
+    silk_touch: Silk_touch
+    damage_undead: Damage_undead
+    breach: Breach
   PotionEffectAliases:
-    instanthealth:
-      - Instant health
-    absorption:
-      - Absorption
-    luck:
-      - Luck
-    speed:
-      - Speed
-    jumpboost:
-      - Jump boost
-    poison:
-      - Poison
-    oozing:
-      - Oozing
-    wither:
-      - Wither
-    fireresistance:
-      - Fire resistance
-    levitation:
-      - Levitation
-    trialomen:
-      - Trial omen
-    invisibility:
-      - Invisibility
-    healthboost:
-      - Health boost
-    conduitpower:
-      - Conduit power
-    saturation:
-      - Saturation
-    regeneration:
-      - Regeneration
-    badomen:
-      - Bad omen
-    haste:
-      - Haste
-    nausea:
-      - Nausea
     dolphinsgrace:
       - Dolphins grace
-    nightvision:
-      - Night vision
-    raidomen:
-      - Raid omen
-    waterbreathing:
-      - Water breathing
-    windcharged:
-      - Wind charged
-    strength:
-      - Strength
+    fireresistance:
+      - Fire resistance
     glowing:
       - Glowing
-    blindness:
-      - Blindness
-    darkness:
-      - Darkness
-    heroofthevillage:
-      - Hero of the village
-    hunger:
-      - Hunger
-    slowness:
-      - Slowness
+    instanthealth:
+      - Instant health
     infested:
       - Infested
-    miningfatigue:
-      - Mining fatigue
-    resistance:
-      - Resistance
+    saturation:
+      - Saturation
     unluck:
       - Unluck
-    slowfalling:
-      - Slow falling
+    regeneration:
+      - Regeneration
+    waterbreathing:
+      - Water breathing
+    invisibility:
+      - Invisibility
     instantdamage:
       - Instant damage
-    weakness:
-      - Weakness
+    luck:
+      - Luck
+    trialomen:
+      - Trial omen
+    badomen:
+      - Bad omen
+    nightvision:
+      - Night vision
+    blindness:
+      - Blindness
+    oozing:
+      - Oozing
+    miningfatigue:
+      - Mining fatigue
+    conduitpower:
+      - Conduit power
+    poison:
+      - Poison
+    heroofthevillage:
+      - Hero of the village
+    darkness:
+      - Darkness
+    slowfalling:
+      - Slow falling
+    nausea:
+      - Nausea
+    speed:
+      - Speed
+    windcharged:
+      - Wind charged
+    resistance:
+      - Resistance
+    healthboost:
+      - Health boost
+    jumpboost:
+      - Jump boost
+    raidomen:
+      - Raid omen
+    levitation:
+      - Levitation
+    wither:
+      - Wither
+    strength:
+      - Strength
+    slowness:
+      - Slowness
+    hunger:
+      - Hunger
     weaving:
       - Weaving
+    absorption:
+      - Absorption
+    weakness:
+      - Weakness
+    haste:
+      - Haste
 direction:
   n: 북
   ne: 북동
@@ -521,113 +521,112 @@ direction:
   w: 서
   nw: 북서
 modify:
-  middlemouse: "&2Middle mouse click to edit"
-  qButtonEdit: "&2Click Q to edit"
-  newItem: "&7Place new item here"
-  newLine: "&2<NewLine>"
-  newLineHover: "&2Add new line"
-  newPage: "&2<NewPage>"
-  newPageHover: "&2Create new page"
-  removePage: "&c<RemovePage>"
-  removePageHover: "&cRemove page"
+  middlemouse: "&f휠 클릭으로 편집"
+  qButtonEdit: "&fQ 키를 눌러 편집"
+  newItem: "&7여기에 새 항목을 놓으세요"
+  newLine: "&2<새 줄>"
+  newLineHover: "&2새 줄 추가"
+  newPage: "&2<새 페이지>"
+  newPageHover: "&2새 페이지 만들기"
+  removePage: "&c<페이지 삭제>"
+  removePageHover: "&c페이지 삭제"
   deleteSymbol: " &c[X]"
-  deleteSymbolHover: "&cDelete &e[text]"
+  deleteSymbolHover: "&c삭제: &e[text]"
   extraEditSymbol: " &6&o!"
   addSymbol: "&2[+]"
-  addSymbolHover: "&2Add new"
+  addSymbolHover: "&2새 항목 추가"
   cancelSymbol: " &7&l[X]"
-  cancelSymbolHover: "&aCancel"
+  cancelSymbolHover: "&a취소"
   acceptSymbol: " &2&l[✔]"
-  acceptSymbolHover: "&aAccept"
+  acceptSymbolHover: "&a확인"
   denySymbol: " &4&l[X]"
-  denySymbolHover: "&cDeny"
+  denySymbolHover: "&c거부"
   enabledSymbol: "&2[+]"
   disabledSymbol: "&c[-]"
-  enabled: "&2Enabled"
-  disabled: "&cDisabled"
-  running: "&2Running"
-  paused: "&cPaused"
+  enabled: "&a활성화됨"
+  disabled: "&c비활성화됨"
+  running: "&a실행 중"
+  paused: "&c일시 정지됨"
   editSymbol: "&e✎"
-  editSymbolHover: "&eEdit &6[text]"
+  editSymbolHover: "&f편집: &6[text]"
   editLineColor: "&f"
   listUpSymbol: "&6⇑"
-  listUpSymbolHover: "&eUp"
+  listUpSymbolHover: "&e위로"
   listDownSymbol: "&6⇓"
-  listDownSymbolHover: "&eDown"
-  listNumbering: "&e[number]. "
+  listDownSymbolHover: "&e아래로"
+  listNumbering: "&b[number]. "
   listAlign: "&80"
-  ChangeHover: "&eClick to change"
-  ChangeCommands: "&eCommands"
+  ChangeHover: "&f클릭하여 변경"
+  ChangeCommands: "&e명령어"
   enabledColor: "&6"
   disabledColor: "&7"
   commandTitle: " &e--- &6[name] &e---"
   commandList: " &e[command]  "
-  emptyLine: "&7[Empty line]"
-  commandEdit: "&eEdit list"
-  nameAddInfo: "&eEnter new name. Type &6cancel &eto cancel"
-  lineAddInfo: "&eEnter new line. Type &6cancel &eto cancel"
-  commandAddInfo: "&eEnter new command. Type &6cancel &eto cancel"
-  commandAddInformationHover:
-    "&e[playerName] can be used to get player name \n&eTo\
-    \ include delay in commands: \n&edelay! 5 \n&eSpecialized commands are supported.\
-    \ More info at \n&ehttps://www.zrips.net/cmi/commands/specialized/"
-  commandEditInfo: "&eClick to paste old text. Type &6cancel &eto cancel action"
-  listLimit: "&eList can't be bigger than &6[amount] &eentries"
-  commandEditInfoHover: "&eClick to paste old text"
+  emptyLine: "&7[빈 줄]"
+  commandEdit: "&f목록 편집"
+  nameAddInfo: "&bSystem &8» &f새 이름을 입력하세요. 취소하려면 &6cancel &e입력"
+  lineAddInfo: "&bSystem &8» &f새 줄을 입력하세요. 취소하려면 &6cancel &e입력"
+  commandAddInfo: "&bSystem &8» &f새 명령어를 입력하세요. 취소하려면 &6cancel &e입력"
+  commandAddInformationHover: |
+    &f[playerName] → 플레이어 이름 대입
+    &f지연 포함 시: delay! 5
+    &f전용 명령어 사용 가능
+  commandEditInfo: "&f기존 텍스트 붙여넣기 (취소: &6cancel&e 입력)"
+  listLimit: "&cSystem &8» &f목록은 최대 &6[amount]&7개 까지만 추가할 수 있습니다"
+  commandEditInfoHover: "&f클릭하여 기존 텍스트 붙여넣기"
 teleportation:
-  relocation:
-    "&bEvy &8» &fYour teleport location was obstructed. 안전한 장소로 순간이동합니다."
+  relocation: "&bSystem &8» &f순간이동 장소가 온전하지 않습니다. 안전한 장소로 순간이동합니다."
 econ:
-  noMoney: "&cEvy &8» &f돈이 부족합니다&o!"
-  charged: "&aEvy &8» &e[amount] &f이 지불되었습니다."
-  notEnoughMoney: "&cEvy &8» &fYou don't have enough money. Required (&6[amount]&c)"
-  tooMuchMoney: "&cEvy &8» &f보유한 돈이 너무 많습니다&o!"
+  noMoney: "&cSystem &8» &f돈이 부족합니다&o!"
+  charged: "&aSystem &8» &e[amount] &f이 지불되었습니다."
+  notEnoughMoney: "&cSystem &8» &f돈이 부족합니다&o! 필요한 돈: &e[amount]"
+  tooMuchMoney: "&cSystem &8» &f보유한 돈이 너무 많습니다&o!"
 Selection:
-  SelectPoints: "&cSelect 2 points with selection tool! AKA: &6[tool]"
-  PrimaryPoint: "&ePlaced &6Primary &eSelection Point [point]"
-  SecondaryPoint: "&ePlaced &6Secondary &eSelection Point [point]"
-  CoordsTop: "&eX:&6[x] &eY:&6[y] &eZ:&6[z]"
-  CoordsBottom: "&eX:&6[x] &eY:&6[y] &eZ:&6[z]"
-  Area: "&7[world] &f(&6[x1]:[y1]:[z1] &e[x2]:[y2]:[z2]&f)"
+  SelectPoints: "&bSystem &8» &f선택 도구로 두 지점을 지정하세요! 현재 도구: &6[tool]"
+  PrimaryPoint: "&aSystem &8» &f기준 &6첫 번째 &e지점을 선택했습니다 [point]"
+  SecondaryPoint: "&aSystem &8» &f기준 &6두 번째 &e지점을 선택했습니다 [point]"
+  CoordsTop: "&fX:&e[x] &fY:&e[y] &fZ:&e[z]"
+  CoordsBottom: "&fX:&e[x] &fY:&e[y] &fZ:&e[z]"
+  Area: "&e[world] @&7[x1]:[y1]:[z1] &7[x2]:[y2]:[z2]"
 Location:
-  Title: "&8Players location"
-  Killer: "&eKiller: &6[killer]"
-  OneLiner: "&eLocation: &6[location]"
-  DeathReason: "&eDeath Reason: &6[reason]"
+  Title: "&8플레이어 위치 정보"
+  Killer: "&e처치자: &6[killer]"
+  OneLiner: "&e위치: &6[location]"
+  DeathReason: "&e사망 원인: &6[reason]"
   Full: "&7[world] &f[x]&7:&f[y]&7:&f[z]"
-  World: "&eWorld: &6[world]"
+  World: "&e월드: &6[world]"
   X: "&eX: &6[x]"
   Y: "&eY: &6[y]"
   Z: "&eZ: &6[z]"
   Pitch: "&ePitch: &6[pitch]"
   Yaw: "&eYaw: &6[yaw]"
   WorldNames:
-    - wwild-&2Wwild
-    - wwild_nether-&2Wwild Nether
-    - wwild_the_end-&2Wwild The End
-Locations: "&7Locations: "
+    - wwild-&2오버월드
+    - wwild_nether-&2네더월드
+    - wwild_the_end-&2엔더월드
+Locations: "&bSystem &8» &f위치들: "
 command:
   help:
     output:
-      usage: "&eUsage: &7%usage%"
-      cmdInfoFormat: "[command] &f- &e[description]"
-      cmdFormat: "&6/[command]&f[arguments]"
-      helpPageDescription: "&e* [description]"
-      explanation: "&e * [explanation]"
-      title: "&e------ ======= &6Help&e &e======= ------"
+      usage: "&bSystem &8» &7%usage%"
+      cmdInfoFormat: "[command] &7[description]"
+      cmdFormat: "&f/[command]&7[arguments]"
+      helpPageDescription: "&7[description]"
+      explanation: "&7[explanation]"
+      title: "&bSystem &8» &f명령 도움말"
   nocmd:
     help:
-      info: "&eShows all available commands"
+      info: "&f사용 가능한 모든 명령어를 표시합니다"
       args: ""
   clearcache:
     help:
-      info: "&eClear cache"
+      info: "&f캐시를 초기화합니다"
       args: ""
   reload:
     help:
-      info: "&eReloads plugins config and locale files"
+      info: "&f플러그인 설정 및 언어 파일을 다시 불러옵니다"
       args: ""
     info:
-      feedback: "&6CMIL Configs and locale files reloaded! Took [ms]ms"
-      failedConfig: "&4Failed to load config file! Check spelling&o!"
-      failedLocale: "&4Failed to load locale file! Check spelling&o!"
+      feedback: "&aSystem &8» &f라이브러리 설정 및 언어 파일을 다시 불러왔습니다! 소요 시간: &e&o[ms] &7ms"
+      failedConfig: "&cSystem &8» &f설정 파일을 불러오는 데 실패했습니다! 오타를 확인하세요&o!"
+      failedLocale: "&cSystem &8» &f언어 파일을 불러오는 데 실패했습니다! 오타를 확인하세요&o!"

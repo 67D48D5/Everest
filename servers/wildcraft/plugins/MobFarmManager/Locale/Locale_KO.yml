@@ -1,68 +1,67 @@
 info:
   prefix: "&e[&aMFM&e] "
-  ArmorStandlLimit: "&6You cant place armor stand in this chunk. Max alowed is &e[amount]&6!"
-  ItemFrameLimit: "&6You cant place item frame in this chunk. Max alowed is &e[amount]&6!"
-  GeneralLimit: "&6Limit reached. Max alowed is &e[amount]&6!"
-  WolfCount: "&cTo many wolfs following you, &7[amount] &cgot seated down"
-  BlockLimit:
-    "&cTo many [type] blocks in one chunk, &7You can only place &e[amount]
-    &7of them"
-  cleanup: "&7Auto cleaned entities: &e[amount]"
+  ArmorStandlLimit: "&6이 청크에 갑옷 거치대를 놓을 수 없습니다. 최대 허용 수는 &e[amount]&6입니다!"
+  ItemFrameLimit: "&6이 청크에 아이템 액자를 놓을 수 없습니다. 최대 허용 수는 &e[amount]&6입니다!"
+  GeneralLimit: "&6제한에 도달했습니다. 최대 허용 수는 &e[amount]&6입니다!"
+  WolfCount: "&c너무 많은 늑대가 따라오고 있습니다. &7[amount] &c마리가 앉았습니다."
+  BlockLimit: "&c한 청크에 너무 많은 [type] 블록이 있습니다. &7최대 &e[amount]
+    &7개만 놓을 수 있습니다."
+  cleanup: "&7자동으로 정리된 엔티티: &e[amount]"
   hoverList: "&f[type]&7: [amount]"
 command:
   help:
     output:
       CommandColor: "&2"
       VariableColor: "&6"
-      usage: "&eUsage: &6%usage%"
+      usage: "&e사용법: &6%usage%"
       title: "&e-------&e ======= &6MFM &e======= &e-------"
-      page: "&e-----&e ====== Page &6[1] &eof &6[2] &e====== &e-----"
+      page: "&e-----&e ====== 페이지 &6[1] &e/ &6[2] &e====== &e-----"
   nocmd:
     help:
-      info: "&eShows all available commands"
+      info: "&e사용 가능한 모든 명령어를 표시합니다"
       args: ""
   reload:
     help:
-      info: "&eReload config and locale file"
+      info: "&e구성 및 로케일 파일을 다시 로드합니다"
       args: ""
     info:
-      response: "&eConfiguration files was reloaded"
+      response: "&e구성 파일이 다시 로드되었습니다"
   clean:
     help:
-      info: "&2Cleans chunks around players"
+      info: "&2플레이어 주변 청크를 정리합니다"
       args: ""
     info:
       ClearedList: "&f[type]&6(&7[amount]&6)"
-      Cleared: "&6Cleared &f[entities] &6entities from &7[chunks]&6 chunks: [list]"
-      Nothing: "&6Nothing to remove"
-      Hover: "&f[time]ms &6to check &f[count] &6chunks"
+      Cleared: "&6&f[entities] &6개의 엔티티를 &7[chunks]&6 청크에서 정리했습니다: [list]"
+      Nothing: "&6제거할 것이 없습니다"
+      Hover: "&f[time]ms &6동안 &f[count] &6개의 청크를 확인했습니다"
   list:
     help:
-      info: "&2List chunks with most entities in them"
+      info: "&2엔티티가 가장 많은 청크를 나열합니다"
       args: (range)
     info:
-      ListP: "&e[place]. &6[x]&e:&6[z] &6Inside: &e[amount]"
-      around: " &6Around: &7[near]"
+      ListP: "&e[place]. &6[x]&e:&6[z] &6내부: &e[amount]"
+      around: " &6주변: &7[near]"
       Command: /tppos [x] [y] [z] [world]
-      Hover: "&6Teleport: &e[world]:[x]:[y]:[z]"
+      Hover: "&6텔레포트: &e[world]:[x]:[y]:[z]"
   limits:
     help:
-      info: "&2Show limits by your location"
+      info: "&2현재 위치의 제한을 표시합니다"
       args: ""
     info:
-      size: "&fArea: &7[range]&fx&7[range] &fChunks: &7[chunks]"
-      byGroups: "&eBy groups:"
-      byTypes: "&eBy types:"
+      size: "&f영역: &7[range]&fx&7[range] &f청크: &7[chunks]"
+      byGroups: "&e그룹별:"
+      byTypes: "&e유형별:"
       prefix: "[color][type]"
       count: ": &7[count]&8/&7[max]"
   hoppers:
     help:
-      info: "&2List chunks with most active hoppers in them"
+      info: "&2활성 호퍼가 가장 많은 청크를 나열합니다"
       args: ""
     info:
       RemovedList: "&6[target](&e[amount]&6)"
-      Removed: "&6Removed: [list]!"
+      Removed: "&6제거됨: [list]!"
       List: "&e[place]. &6[x]&e:&6[z] &e(&6[amount]&e)"
       Command: /tppos [x] [y] [z] [world]
-      Hover: "&6Teleport \n&e[world]"
-      notEnabled: "&cHoper control is not enabled!"
+      Hover: "&6텔레포트 \n&e[world]"
+      notEnabled: "&c호퍼 제어가 활성화되어 있지 않습니다!"
