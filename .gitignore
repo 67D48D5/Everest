@@ -39,6 +39,7 @@ flatfile/
 /**/Geyser-Velocity/extensions/
 /**/Geyser-Velocity/custom_mappings/
 /**/Geyser-Velocity/custom-skulls.yml
+/**/Translations/*
 
 servers/proxy/lang
 
@@ -77,3 +78,5 @@ session.lock
 # Include files that should not be ignored
 !.termux/.env
 !Holograms.yml
+!items_KO.yml
+!Locale_KO.yml
