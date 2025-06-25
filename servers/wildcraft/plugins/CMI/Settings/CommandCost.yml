@@ -10,7 +10,7 @@ Enabled: false
 # Keep in mind: base CMI commands will double check if command was successfully performed before charging money, while custom alias will charge money despite commands success
 # So in example of /cmi warp player will not be charged if he enters incorrect warp name, while having custom alias will charge money even if command fails to be performed
 Commands:
-  - cmi heal:100.5:true:true
-  - cmi feed:100.5:true:true
-  - cmi home :30:true:true
-  - cmi warp :10:true:true
+- cmi heal:100.5:true:true
+- cmi feed:100.5:true:true
+- cmi home :30:true:true
+- cmi warp :10:true:true

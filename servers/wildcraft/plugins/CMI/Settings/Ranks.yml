@@ -86,130 +86,130 @@
 
 Newbie:
   Enabled: true
-  DisplayName: "&2Newbie"
+  DisplayName: '&2Newbie'
   DefaultRank: true
   AutoRankup: true
   NextRanks:
-    - Branch1
-    - Branch2
+  - Branch1
+  - Branch2
 Branch1:
   Enabled: true
-  DisplayName: "&2Branch1"
+  DisplayName: '&2Branch1'
   AutoRankup: true
   RankupConfirmation: true
   Votes: 5
   PermissionRequirement:
-    - cmi.command.fly:Fly
+  - cmi.command.fly:Fly
   McMMORequirement:
-    - woodcutting:10
-    - power:20
+  - woodcutting:10
+  - power:20
   JobsRequirement:
-    - miner:10
-    - totallevel:20
+  - miner:10
+  - totallevel:20
   AuraSkillsRequirement:
-    - miner:10
-    - power:20
+  - miner:10
+  - power:20
   AureliumRequirement:
-    - fishing:10
-    - power:30
+  - fishing:10
+  - power:30
   ItemRequirement:
-    - stone:10
-    - stone:1:20
-    - book:20
+  - stone:10
+  - stone:1:20
+  - book:20
   NextRanks:
-    - Branch1Rank1
+  - Branch1Rank1
   MoneyCost: 100
   Commands:
-    - broadcast! &6[playerDisplayName] &eleveled up to Branch1 rank!
+  - broadcast! &6[playerDisplayName] &eleveled up to Branch1 rank!
   StatsRequirements:
-    - PlayTime:3600
-    - travel:1000
-    - MonsterKills:zombie:10
-    - MonsterKills:slime:5
-    - MonsterKills:wolf:5
-    - AccountAge:1209600
+  - PlayTime:3600
+  - travel:1000
+  - MonsterKills:zombie:10
+  - MonsterKills:slime:5
+  - MonsterKills:wolf:5
+  - AccountAge:1209600
 Branch1Rank1:
   Enabled: true
-  DisplayName: "&2Branch1Rank1"
+  DisplayName: '&2Branch1Rank1'
   DefaultRank: false
   AutoRankup: true
   RankupConfirmation: false
   PermissionRequirement:
-    - cmi.command.heal:Heal
+  - cmi.command.heal:Heal
   NextRanks:
-    - Last
+  - Last
   MoneyCost: 300
   ExpCost: 350
   Commands:
-    - broadcast! &6[playerDisplayName] &eleveled up to Branch1Rank1 rank!
+  - broadcast! &6[playerDisplayName] &eleveled up to Branch1Rank1 rank!
   StatsRequirements:
-    - travel:10000
-    - blocksmined:3000
-    - blocksmined:diamond_ore:30
-    - MonsterKills:1000
-    - AccountAge:1209600
+  - travel:10000
+  - blocksmined:3000
+  - blocksmined:diamond_ore:30
+  - MonsterKills:1000
+  - AccountAge:1209600
   McMMORequirement:
-    - taming:10
-    - unarmed:30
+  - taming:10
+  - unarmed:30
 Branch2:
   Enabled: true
-  DisplayName: "&2Branch2"
+  DisplayName: '&2Branch2'
   AutoRankup: true
   RankupConfirmation: true
   MoneyCost: 150
   NextRanks:
-    - Branch2Rank1
+  - Branch2Rank1
   Commands:
-    - broadcast! &6[playerDisplayName] &eleveled up to Branch2 rank!
+  - broadcast! &6[playerDisplayName] &eleveled up to Branch2 rank!
   PermissionRequirement:
-    - cmi.command.tp:Teleport
+  - cmi.command.tp:Teleport
   StatsRequirements:
-    - PlayTime:3600
-    - travel:2000
-    - MonsterKills:zombie:15
-    - MonsterKills:slime:10
+  - PlayTime:3600
+  - travel:2000
+  - MonsterKills:zombie:15
+  - MonsterKills:slime:10
 Branch2Rank1:
   Enabled: true
-  DisplayName: "&2Branch2Rank1"
+  DisplayName: '&2Branch2Rank1'
   AutoRankup: true
   RankupConfirmation: false
   MoneyCost: 100
   ExpCost: 150
   NextRanks:
-    - Branch2Rank2
+  - Branch2Rank2
   Commands:
-    - broadcast! &6[playerDisplayName] &eleveled up to Branch1Rank1 rank!
+  - broadcast! &6[playerDisplayName] &eleveled up to Branch1Rank1 rank!
   StatsRequirements:
-    - PlayTime:4600
-    - Swim:1000
-    - SneakTime:180
-    - MonsterKills:100
+  - PlayTime:4600
+  - Swim:1000
+  - SneakTime:180
+  - MonsterKills:100
 Branch2Rank2:
   Enabled: true
-  DisplayName: "&2Branch2Rank2"
+  DisplayName: '&2Branch2Rank2'
   AutoRankup: true
   RankupConfirmation: false
   MoneyCost: 100
   ExpCost: 150
   NextRanks:
-    - Last
+  - Last
   Commands:
-    - broadcast! &6[playerDisplayName] &eleveled up to Branch2Rank2 rank!
+  - broadcast! &6[playerDisplayName] &eleveled up to Branch2Rank2 rank!
   StatsRequirements:
-    - walk:15000
-    - HorseTravel:1000
-    - ItemsUsed:10000
-    - PlayerKills:10
+  - walk:15000
+  - HorseTravel:1000
+  - ItemsUsed:10000
+  - PlayerKills:10
 Last:
   Enabled: true
-  DisplayName: "&2Last"
+  DisplayName: '&2Last'
   AutoRankup: true
   StatsRequirements:
-    - PlayTime:21600
-    - walk:30000
-    - MonsterKills:1000
-    - blocksmined:30000
+  - PlayTime:21600
+  - walk:30000
+  - MonsterKills:1000
+  - blocksmined:30000
   Commands:
-    - broadcast! &6[playerDisplayName] &eleveled up to Last rank!
-    - cmi heal [playerName]
-    - money give [playerName] 100
+  - broadcast! &6[playerDisplayName] &eleveled up to Last rank!
+  - cmi heal [playerName]
+  - money give [playerName] 100

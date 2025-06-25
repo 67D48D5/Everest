@@ -13,7 +13,7 @@ Homes:
       # When enabled we will expand area for homes from 10 to 28
       Expanded: false
       # Keep it empty if you want to use global infill material
-      Border: ""
+      Border: ''
       # Material around homes when its not in expanded state
       Infill: WHITE_STAINED_GLASS_PANE
       InfoButton:
@@ -22,13 +22,13 @@ Homes:
         Slot: 1
         Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDZiYTYzMzQ0ZjQ5ZGQxYzRmNTQ4OGU5MjZiZjNkOWUyYjI5OTE2YTZjNTBkNjEwYmI0MGE1MjczZGM4YzgyIn19fQ==
         Commands:
-          - closeinv!
+        - closeinv!
       CloseButton:
         Use: true
         Slot: 9
         Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNjYmY5ODgzZGQzNTlmZGYyMzg1YzkwYTQ1OWQ3Mzc3NjUzODJlYzQxMTdiMDQ4OTVhYzRkYzRiNjBmYyJ9fX0=
         Commands:
-          - closeinv!
+        - closeinv!
       bedButton:
         Use: true
         Slot: 4
@@ -88,9 +88,9 @@ Homes:
         Amount: 3
         # World list where this limit should apply to. Multiple worlds can be defined if you want to group them up
         Worlds:
-          - testWorld
+        - testWorld
       Example2:
         Amount: 5
         Worlds:
-          - testWorld2
-          - testWorld3
+        - testWorld2
+        - testWorld3

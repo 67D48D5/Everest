@@ -59,7 +59,7 @@ Scavenge:
   Cost:
     # Defined base cost of extraction. Set to 0 if you want to make it free
     Base: 100.0
-    # Extra cost which depends on enchantment worth which can be defined with /cmi setenchantworth
+    # Extra cost which depends on enchantment worth which can be defined with /cmi setenchantworth 
     # This value is in percentage from worth value of that each enchantment and item
     # So if you have base cost of 100, extra cost of 5% and you are trying to extract sharpness 5 which worth is 1000 and item sell hand worth is 100, then you will have to pay 155 for extraction process
     Extra: 5.0
@@ -68,12 +68,12 @@ Scavenge:
   WithoutIngredients: false
   # List of materials to block from being scavenged
   BlackList:
-    - diamond
-    - ironingot
-    - goldingot
-    - coal
-    - IRON_NUGGET
-    - GOLD_NUGGET
+  - diamond
+  - ironingot
+  - goldingot
+  - coal
+  - IRON_NUGGET
+  - GOLD_NUGGET
   # When set to true, balck list becomes whitelist and will allow scavanging of items defined in a blacklist only
   BlackToWhiteList: false
   # When set to false while player have open scavange UI they will not be able to pickup item from ground

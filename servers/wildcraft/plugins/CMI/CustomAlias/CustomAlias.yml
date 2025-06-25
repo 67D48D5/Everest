@@ -6,7 +6,7 @@
 # delay! 5
 # This will delay next commands by defines time in seconds
 # If command is shortened and you need to provide some changing variables like target player name you need to define what and where it should be placed
-# Example: /cmi heal Zrips
+# Example: /cmi heal Zrips 
 # Can be shortened with custom alias to something like /h zrips by using alias command like
 # cmi heal $1
 # If you need to add more than one variable, use $1- format. Number represents variable place when used in alias command
@@ -16,4 +16,10 @@
 # In this case if player performs /ca wrongsub or /ca anotherwrong
 # Commands under this alias will get executed. Exelent way to show help page and correct usage if needed
 
-{}
+CustomAlias:
+  넴주:
+    Cmds:
+    - spawn
+  gs:
+    Cmds:
+    - asConsole! cmi gm 0 [playerName]

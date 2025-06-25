@@ -12,8 +12,7 @@
 regions:
     __global__:
         members: {}
-        flags: {other-explosion: deny, wither-damage: deny, creeper-explosion: deny,
-            tnt: deny, ghast-fireball: deny, fire-spread: deny, enderdragon-block-damage: deny}
+        flags: {}
         owners: {}
         type: global
         priority: 0

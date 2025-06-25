@@ -16,5 +16,5 @@ wwild:
     activationRange: 16
     commandsWithoutTp: true
     commands:
-      - cmi effect [playerName] blindness 2 1 -s
-      - asConsole! cmi rt [playerName]
+    - cmi effect [playerName] blindness 2 1 -s
+    - asConsole! cmi rt [playerName]

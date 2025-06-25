@@ -22,7 +22,7 @@ Economy:
     Unknown: true
     Transfer: true
     IgnoredUsers:
-      - E098B8A
+    - E098B8A
   Cheque:
     # Determines max amount of cheque player can create
     # Set it to 0 to remove the limit
@@ -44,26 +44,26 @@ Economy:
     # List of suffixes we should accept and what amount they result in.
     # Only one letter is acceptable when defining suffix
     values:
-      - k-1000
-      - m-1000000
-      - b-1000000000
-      - t-1000000000000
-      - q-1000000000000000
+    - k-1000
+    - m-1000000
+    - b-1000000000
+    - t-1000000000000
+    - q-1000000000000000
   BalTop:
     # List of players to exclude from baltop list
     Exclude:
-      - E098B8A
+    - E098B8A
     # When enabled baltop list will show short money values, like 12.5M instead of 12501234
     DisplayWithShorts: false
     # List of names to exclude from baltop
     # Can be used to filter out towny towns
     ExcludeStartingWith:
-      - town_
-      - town-
-      - towny_
-      - towny-
-      - debt-
-      - debt_
+    - town_
+    - town-
+    - towny_
+    - towny-
+    - debt-
+    - debt_
     # When set to true some fake accounts will be included into baltop list
     # This should include some previously marked accounts as fake which have been created for town usage or similar things
     IncludeFakes: false
@@ -86,23 +86,23 @@ Economy:
     # Currency symbol to be used when showing balance or similar
     CurrencySymbol: ₿
     # Format used for displaying money
-    MoneyFormat: "###,###"
+    MoneyFormat: '###,###'
     # Converts long numbers to short ones, like 12305122 to 12.3m
     UseShortNumbers: false
     # This format is only for amounts which gets defines suffix like '1.23k' while numbers lover than 1k will use MoneyFormat
-    shortNumbersFormat: "###,###"
+    shortNumbersFormat: '###,###'
     # Suffixes for short numbers
     ShortNumbersSuffixes:
-      - ""
-      - k-1000
-      - m-1000000
-      - b-1000000000
-      - t-1000000000000
-      - q-1000000000000000
+    - ''
+    - k-1000
+    - m-1000000
+    - b-1000000000
+    - t-1000000000000
+    - q-1000000000000000
     # Replaces to western format where decimals are separated by , and thousands by . In example 1,000,000.00 changes to 1.000.000,00
     SwitchPlaces: false
     # Placing of currency symbol
-    Placing: "[money][symbol]"
+    Placing: '[money][symbol]'
 FileSave:
   # Change this to true only if you have issues with drives I/O and you need to save players files in async mode to lower waiting time for mc server
   Async: false
@@ -138,6 +138,10 @@ Optimizations:
     # When set to true, plugin will check if player can manipulate armor stand by sending fake block place event and checking if any plugin would want to prevent this action
     # This can help out to minimize posibility for players to manipulate armor stands when they don't have build permission in area where armorstand is standing
     CheckBlockPlace: false
+    # Minimal armorstand scale which can be set in armor stand editor
+    MinScale: 0.5
+    # Max armorstand scale which can be set in armor stand editor
+    MaxScale: 3
     Templates:
       # When set to true, the player will be required to have cmi.command.armorstand.template.[templatename] permission node to deploy saved template
       SpecificPermission: false
@@ -154,16 +158,16 @@ Optimizations:
   ShowDecoratedPotInformation: true
   # Sets indicator when creating elevator signs. Its case insensitive
   ElevatorIndicator:
-    - "[Elevator]"
+  - '[Elevator]'
   SignEdit:
     # Defines sign top line by which player will not be able to edit sign with /cmi se command
     BlackList:
-      - "[Private]"
-      - "[More Users]"
-      - "[Everyone]"
-      - "[Elevator]"
+    - '[Private]'
+    - '[More Users]'
+    - '[Everyone]'
+    - '[Elevator]'
   # Defines elevator type. If this is used on second line of sing, then player will be teleported directly in front of it instead of keeping original players x and z coordinates
-  ElevatorStaticIndicator: "[*]"
+  ElevatorStaticIndicator: '[*]'
   # Used to show date in places like mail, checkban, infopage and similar locations
   LongDateFormat2: dd/MM/yyyy HH:mm:ss
   # Used to show date in places like inv gui and similar locations
@@ -173,7 +177,7 @@ Optimizations:
   # When set to true players with same name but different capitalization will be denyied from joining server to avoid possible issues. In example if on first day player Zrips joined server and on second day player zRips tries to join server, he will be rejected
   # RECOMMENDED to keep this at true
   PreventDifferentCapitalizationNames: true
-  # When this set to true by using any command, requiring players name, in case plugin cant determine player by given full name, then partial matches from online players will be used. In example: /cmi heal rips can heal player Zrips
+  # When this set to true by using any command, requiring players name, in case plugin cant determine player by given full name, then partial matches from online players will be used. In example: /cmi heal rips can heal player Zrips 
   # Useful when you have players with complicated names
   PartialPlayerName: true
   # If you want to prioritize online players when using partial player name enable this setting
@@ -220,7 +224,7 @@ Optimizations:
     # Time in seconds player should be invulnerable after teleporting to this world
     # If world isn't defined then default timer will be used
     InvulnerabilityPerWorld:
-      - testWorld-5
+    - testWorld-5
     # Situations where teleport invulnerability gets disabled
     DisableInvulnerability:
       # Disables if player breaks or places block
@@ -275,10 +279,10 @@ Optimizations:
       # Item and amount (if not defined, defaults to 0) we want to protect
       # Separate amount with : in example IronOre:5 what will limit ironOre block in players inventory up to 5, more than that and player cant teleport
       List:
-        - Diamond
-        - DiamondBlock
-        - DiamondOre
-        - ironore:5
+      - Diamond
+      - DiamondBlock
+      - DiamondOre
+      - ironore:5
     Back:
       # Back location will not be triggered if player teleports closer than defined amount of blocks
       MinDistance: 5
@@ -287,13 +291,13 @@ Optimizations:
       WithWE: true
       # List of worlds to which players can't return using the /back command
       BlackList:
-        - TeztWorldz
+      - TeztWorldz
       # Time in seconds /back command should expire. Set to 0 to disable
       Expiration: 0
     DBack:
       # List of worlds to which players can't return using the /dback command
       BlackList:
-        - TeztWorldz
+      - TeztWorldz
       # Time in seconds /dback command should expire. Set to 0 to disable
       Expiration: 0
   Hat:
@@ -341,7 +345,7 @@ Optimizations:
   CMIPlayTimeTracking: true
   # Player names to be excluded from playtimetop list
   PlaytimeTopExclude:
-    - Notch
+  - Notch
   # Time in days for player to be offline when he will be excluded from playtimetop list
   # Set to 0 if you want to disable this
   PlaytimeTopOffline: 0
@@ -356,7 +360,7 @@ Optimizations:
     MaxLength: 64
     # List of materials to block from itemName command
     TypeBlackList:
-      - gold_nugget
+    - gold_nugget
     # When set to true items which lore got changed with itemname command will be marked with NBT data as 'ModifiedLore' boolean type
     MarkChanged: false
   OnDurabilityLoss:
@@ -422,7 +426,7 @@ Optimizations:
       # List of players which you should not be able to open inventories
       # This can still be bypassed if you are OP
       BlackList:
-        - Notch
+      - Notch
       # Do you want to disable inv command on players who are offline
       DisableOffline: false
     Clear:
@@ -430,8 +434,8 @@ Optimizations:
       Confirmation: true
       # List of NBT paths we should check before removing item from inventory. Each line should start with NBT: this is for the future updates which will involve aditional optional checks
       Exclude:
-        - NBT:ItemJoin Name
-        - NBT:ItemJoin.Name
+      - NBT:ItemJoin Name
+      - NBT:ItemJoin.Name
     List:
       # Sorts players custom groups in Ascending or descending order
       ASCOrder: true
@@ -500,8 +504,8 @@ Compass:
   # Compass update interval in milliseconds
   UpdateInterval: 200
   # Keep same spacing between each direction. Length can be any you want
-  Shape: "------------SW-------------W-------------NW-------------N-------------NE-------------E-------------SE-------------S-"
-  Color: "&7"
+  Shape: '------------SW-------------W-------------NW-------------N-------------NE-------------E-------------SE-------------S-'
+  Color: '&7'
   ShowHome: true
   Home: ۩
   ShowSpawn: true
@@ -545,7 +549,7 @@ Worth:
   # Defines lore that will prevent an item from being sold using /cmi sell.
   # Color codes and capitalization are being ignored
   BadLore:
-    - Creative item by Gasha
+  - Creative item by Gasha
   # If enabled any item with custom name will not be allowed to be sold with /cmi sell command
   CustomNameBlocking: false
   # If enabled any item with custom lore will not be allowed to be sold with /cmi sell command
@@ -567,7 +571,7 @@ BossBar:
   HpBarEnabled: true
   # List of mob types which will be excluded from hp boss bar
   HpBarBlackList:
-    - Ender_dragon
+  - Ender_dragon
 Ban:
   # When set to true players who are banned will get messages modified by CMI instead of seeing vanilla type of message
   OverrideLoginMessage: true
@@ -589,32 +593,32 @@ ReSpawn:
     # anchor is location defined by interacting with respawn anchor. This in general will only apply when you die in nether world, otherwise bed location is used
     # warp![warpName] can be any valid warp you set for players to be teleported, they will bypass any requirements for that warp
     PriorityOrder:
-      - anchor
-      - bedLocation
-      - spawn
-      - homeLocation
-      - worldSpawn
+    - anchor
+    - bedLocation
+    - spawn
+    - homeLocation
+    - worldSpawn
   # Defines respawn order for defined worlds
   # Set respawn priority to [] or to random respawn criteria if you want to leave respawn handling for server or 3rd party plugin
   Specific:
     wwild:
-      - anchor
-      - bedLocation
-      - spawn
-      - homeLocation
-      - worldSpawn
+    - anchor
+    - bedLocation
+    - spawn
+    - homeLocation
+    - worldSpawn
     wwild_nether:
-      - anchor
-      - bedLocation
-      - spawn
-      - homeLocation
-      - worldSpawn
+    - anchor
+    - bedLocation
+    - spawn
+    - homeLocation
+    - worldSpawn
     wwild_the_end:
-      - anchor
-      - bedLocation
-      - spawn
-      - homeLocation
-      - worldSpawn
+    - anchor
+    - bedLocation
+    - spawn
+    - homeLocation
+    - worldSpawn
 Holograms:
   # Defines in milliseconds how often to check if player entered holograms trigger area
   # Bigger numbers can help slightly lower server load
@@ -649,26 +653,26 @@ Votifier:
   # Supports specialized commands and placeholders
   # [serviceName] variable can be used to insert address
   CommandsOnVote:
-    - cmi broadcast !&6[playerDisplayName] &evoted!
-    - cmi give [playerName] diamond
+  - cmi broadcast !&6[playerDisplayName] &evoted!
+  - cmi give [playerName] diamond
   # Keep it at false if you don't want to give out extra rewards
   ExtraRewardsEnabled: false
   # Commands will be performed when player collect determined amount of votes
   ExtraRewards:
-    "10":
-      - cmi heal [playerName]
-      - cmi money give [playerName] 100
-    "100":
-      - cmi heal [playerName]
-      - cmi money give [playerName] 1000
-      - cmi give [playerName] diamond 32
+    '10':
+    - cmi heal [playerName]
+    - cmi money give [playerName] 100
+    '100':
+    - cmi heal [playerName]
+    - cmi money give [playerName] 1000
+    - cmi give [playerName] diamond 32
   # List of players to be excluded from top voter list
   ExcludeList:
-    - None
+  - None
 Ranks:
   # If set to true we will check players rank by his access to rank by permission node and prioritize any rank which has more weight over current one
   # This means that in case player has access to third rank while recorded one is first one, we will prioritize third one
-  # While this is active using command like /cmi setrank will set players rank to highest one he has access too, so as long as player has permission access to third rank you cant go lower than this,
+  # While this is active using command like /cmi setrank will set players rank to highest one he has access too, so as long as player has permission access to third rank you cant go lower than this, 
   # you will have to remove access to specific rank by removing permission node before trying to derank him
   PermissionCheck: false
   # Defines how often in minutes plugin will recalculate players group
@@ -704,7 +708,7 @@ Signs:
   # Defines list sign top lines which cant be edited with shift right click
   # Usually used for preventing shop sign modifications
   editBlackList:
-    - "[Shop]"
+  - '[Shop]'
 Skins:
   # Applies skin to player automatically on his login to server if he doesnt have one already set
   # This will always set to skin by target player name
@@ -732,10 +736,10 @@ GroundClean:
   WhiteList:
     # List of item types not to be removed on ground clean action
     Material:
-      - itemType
+    - itemType
     # List of item types not to be removed on ground clean action
     EntityType:
-      - entityType
+    - entityType
 Command:
   CommandFilter:
     Duplicate:
@@ -749,10 +753,10 @@ Command:
       MinAmount: 2
       # Whitelisted commands to ignore
       WhiteList:
-        - msg
-        - tell
-        - login
-        - register
+      - msg
+      - tell
+      - login
+      - register
     # Priority of command spam listener
     # Changed priority will only take effect on full server restart
     # Possible options: LOWEST, LOW, NORMAL, HIGH, HIGHEST
@@ -767,8 +771,8 @@ Command:
     # Commands in this list will not be shown when command spy is enabled for player for security/privacy reasons
     # This can be bypassed with cmi.command.commandspy.bypass permission node
     BlackListed:
-      - register
-      - login
+    - register
+    - login
     # Players without cmi.security.admin will only see commands from this list with command spy feature
     # Keeping it empty will include all commands except the black listed ones
     CommandList: []
@@ -783,13 +787,17 @@ Command:
     # How many mails we should keep for each player
     # When email limit is reached oldest one will be removed
     MaxMails: 50
+    # Name of mail sender when command is performed from console
+    # This name will be used as indicator who sent it and who should receive reply if player responds to it
+    # For best experience set this value to your staff member responsible for communications with players
+    ConsoleMailSender: server
 DisplayName:
   # If you have 3rd party plugin changing players display name, set this to false
   Change: true
   # Format of players display name. By default only nick name will be visible, if its set, if not, then players name
   # Possible custom varibales: {prefix} {suffix} {nicknameprefix}
   # Supports placeholders
-  Format: "{nicknameprefix}{nickName}"
+  Format: '{nicknameprefix}{nickName}'
   # Defines regex for valid nick name
   # By default only letters and numbers are allowed
   # If you want to allow any letter from any language use [^\p{L}0-9\-\_]
@@ -800,17 +808,17 @@ NickName:
   # cmi.command.nick.bypassblacklist
   # to bypass protection against already in use name/nickname use cmi.command.nick.bypassinuse
   BlackList:
-    - admin
-    - administrator
-    - server
-    - staff
-    - staf
+  - admin
+  - administrator
+  - server
+  - staff
+  - staf
   # Min length of nick name, can be bypassed with cmi.command.nick.bypass.length
   MinLength: 4
   # Max length of nick name, can be bypassed with cmi.command.nick.bypass.length
   MaxLength: 16
   # Adds prefix for players nickname to indicate that its not real name. This can be added to display name with {nicknameprefix}
-  Prefix: "!"
+  Prefix: '!'
   # When true, will only add nickname prefix when its not same as original name. This can allow colorization or capitalization change without adding prefix
   PrefixWhenDifferent: true
   TabComplete:
@@ -935,7 +943,7 @@ ItemRenaming:
   CheckSource: true
   # List of materials followed with optional regex code which can prevent specific naming, like renaming mob spawners into another type while still allowing renaming spawner into anything else
   List:
-    - mobspawner:([A-z]+ (?i)\w*spawner)
+  - mobspawner:([A-z]+ (?i)\w*spawner)
 SpawnMob:
   # Defines how many passengers entities can be spawned at once
   MaxQuantity: 25
@@ -971,7 +979,7 @@ Portals:
     PerformCommands: true
     # Commands to be performed on teleport event
     Commands:
-      - cmi effect [playerName] blindness 2 1 -s
+    - cmi effect [playerName] blindness 2 1 -s
 Animations:
   # Enable sitting on stair block by clicking on them with empty hand or by looking and using command
   # Requires cmi.command.sit.stairs
@@ -992,8 +1000,8 @@ Animations:
 # Negative values will heal player instead of damaging him
 # If player have more than one permission node for same damage cause, then last one in list will be used to determine final damage
 DamageControl:
-  - nowalldamage:fly_into_wall:1
-  - lowermagmacubedamage:hot_floor:0.9
+- nowalldamage:fly_into_wall:1
+- lowermagmacubedamage:hot_floor:0.9
 Totem:
   # When this set to true, on players death totem will be used even if he is not holding it in hand
   RemoveFromInventory: false
@@ -1018,11 +1026,11 @@ Totem:
     Absorbtion: 5
   # Worlds where totem handling will be left for server default behavior
   BlackListedWorlds:
-    - TestWorld
-    - DeathWorld
+  - TestWorld
+  - DeathWorld
   # Worlds where totem usage is disabled entirely
   FullDisableInWorlds:
-    - YouDied
+  - YouDied
 Elytra:
   # cmi.elytra - allows usage of elytra
   # cmi.elytra.boost - allows usage of boost
@@ -1155,9 +1163,9 @@ Messages:
     ForLogin: false
     ForLogout: false
     Regex:
-      - b[a@][s\$][t\+][a@]rd
-      - (c|k|ck|q)[o0](c|k|ck|q)[s\$]u(c|k|ck|q)[e3]r
-      - mast(e|ur)b(8|ait|ate)
+    - b[a@][s\$][t\+][a@]rd
+    - (c|k|ck|q)[o0](c|k|ck|q)[s\$]u(c|k|ck|q)[e3]r
+    - mast(e|ur)b(8|ait|ate)
 Books:
   # Defines default creator name for books when using getbook command
   DefaultAuthor: Everest
@@ -1173,32 +1181,32 @@ Warnings:
     # Warning point amount player receives for warning
     Points: 1
     # Default reason used when reason is not provided when warning player
-    DefaultReason: "&7Violated server rules"
+    DefaultReason: '&7Violated server rules'
   Categories:
     Swear:
       LifeTime: 86400
       Points: 3
-      DefaultReason: "&7Swearing"
+      DefaultReason: '&7Swearing'
     Grief:
       LifeTime: 86400
       Points: 10
-      DefaultReason: "&7Griefing"
+      DefaultReason: '&7Griefing'
     Bug:
       LifeTime: 86400
       Points: 30
-      DefaultReason: "&7Using bugs"
+      DefaultReason: '&7Using bugs'
     Cheat:
       LifeTime: 86400
       Points: 50
-      DefaultReason: "&7Using cheats"
+      DefaultReason: '&7Using cheats'
   Perform:
-    "3":
-      - cmi mute [playerName] 10m
-      - cmi msg [playerName] !&cMuted for &710 &cminutes for getting &73 &cwarnings!
-    "5":
-      - cmi kick [playerName] &cKicked for getting 5 warnings!
-    "10":
-      - cmi tempban [playerName] 5m &cTemporary banned for getting 10 warnings!
+    '3':
+    - cmi mute [playerName] 10m
+    - cmi msg [playerName] !&cMuted for &710 &cminutes for getting &73 &cwarnings!
+    '5':
+    - cmi kick [playerName] &cKicked for getting 5 warnings!
+    '10':
+    - cmi tempban [playerName] 5m &cTemporary banned for getting 10 warnings!
 Spawn:
   # Forces players to login in defined spawn point when logging into server
   # Can be bypasses with cmi.spawnonjoin.bypass permission node
@@ -1242,14 +1250,14 @@ Kits:
       Slot: 9
       Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNjYmY5ODgzZGQzNTlmZGYyMzg1YzkwYTQ1OWQ3Mzc3NjUzODJlYzQxMTdiMDQ4OTVhYzRkYzRiNjBmYyJ9fX0=
       Commands:
-        - closeinv!
+      - closeinv!
     InfoButton:
       # Extra button to be used in case you want to provide any aditional information when clicking on it
       Use: false
       Slot: 1
       Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDZiYTYzMzQ0ZjQ5ZGQxYzRmNTQ4OGU5MjZiZjNkOWUyYjI5OTE2YTZjNTBkNjEwYmI0MGE1MjczZGM4YzgyIn19fQ==
       Commands:
-        - closeinv!
+      - closeinv!
 Warps:
   # When set to true, warps list will be shown in GUI instead of chat list
   GUI: true
@@ -1271,14 +1279,14 @@ Warps:
       Slot: 9
       Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNjYmY5ODgzZGQzNTlmZGYyMzg1YzkwYTQ1OWQ3Mzc3NjUzODJlYzQxMTdiMDQ4OTVhYzRkYzRiNjBmYyJ9fX0=
       Commands:
-        - closeinv!
+      - closeinv!
     InfoButton:
       # Extra button to be used in case you want to provide any aditional information when clicking on it
       Use: false
       Slot: 1
       Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDZiYTYzMzQ0ZjQ5ZGQxYzRmNTQ4OGU5MjZiZjNkOWUyYjI5OTE2YTZjNTBkNjEwYmI0MGE1MjczZGM4YzgyIn19fQ==
       Commands:
-        - closeinv!
+      - closeinv!
 DynamicViewRange:
   # By setting to true will enable dynamic view range feature. Its still in beta stage and can result in some CPU load increase.
   # Don't enable if you are not using this feature on your server
@@ -1288,43 +1296,43 @@ WorldLimits:
   Enabled: false
   # World list with default game modes
   # If player will have cmi.worldlimit.gamemode.bypass permission node, game mode wont be changed
-  # Possible modes: creative, survival, adventure, spectator,
+  # Possible modes: creative, survival, adventure, spectator, 
   Gamemode:
-    - testWorld:Survival
+  - testWorld:Survival
   # If player will have cmi.worldlimit.fly.bypass permission node, fly mode wont be changed
   Fly:
-    - testWorld:False
+  - testWorld:False
   # When enabled player will be able to fly after death if they were flying before death
   ReenabledFlyAfterDeath: false
   # If player will have cmi.worldlimit.elytra.bypass permission node, elytra flight will not be prevented
   # Players joining worlds with disable elytra flight will get their elytra dismounted if possible
   ElytraFlight:
-    - worldName:False
+  - worldName:False
   # When set to false, only players with cmi.worldlimit.fly.aboveroof can fly above world build limit
   FlyAboveRoof: true
   # When set to false, only players with cmi.worldlimit.fly.aboveroof can fly above world build limit
   FlyAboveRoofLimitations:
-    - wwild-320
-    - wwild_nether-128
-    - wwild_the_end-256
+  - wwild-320
+  - wwild_nether-128
+  - wwild_the_end-256
   # If player will have cmi.worldlimit.god.bypass permission node, god mode wont be changed
   GodMode:
-    - testWorld:False
+  - testWorld:False
   # Prevents particular entity spawn reasons in defined worlds. All possible reasons: NATURAL, JOCKEY, CHUNK_GEN, SPAWNER, TRIAL_SPAWNER, EGG, SPAWNER_EGG, LIGHTNING, BUILD_SNOWMAN, BUILD_IRONGOLEM, BUILD_WITHER, VILLAGE_DEFENSE, VILLAGE_INVASION, BREEDING, SLIME_SPLIT, REINFORCEMENTS, NETHER_PORTAL, DISPENSE_EGG, INFECTION, CURED, OCELOT_BABY, SILVERFISH_BLOCK, MOUNT, TRAP, ENDER_PEARL, SHOULDER_ENTITY, DROWNED, SHEARED, EXPLOSION, RAID, PATROL, BEEHIVE, PIGLIN_ZOMBIFIED, SPELL, FROZEN, METAMORPHOSIS, DUPLICATION, COMMAND, ENCHANTMENT, OMINOUS_ITEM_SPAWNER, BUCKET, POTION_EFFECT, CUSTOM, DEFAULT
   SpawnReasons:
     wwild:
-      - None
+    - None
     wwild_nether:
-      - None
+    - None
     wwild_the_end:
-      - None
+    - None
 # Checks if players name changed from last known
 CheckForNameChange:
   # Do you want to perform commands
   PerformCommandsOnNewName: false
   # Command list to be performed in case player logs in with new name
   NameChangeCommands:
-    - "asConsole! cmi broadcast !&2[oldname] logged in with new name: [newname]"
+  - 'asConsole! cmi broadcast !&2[oldname] logged in with new name: [newname]'
 inv:
   # Do you want to save the player's inventory on his death
   SaveOnDeath: false
@@ -1350,7 +1358,7 @@ inv:
     # List of materials we should not save
     # Keep in mind that you might need to include all materials for colored items, like wool or shulker boxes
     BlackListedItems:
-      - ""
+    - ''
 hunger:
   # Do you want to give more than 20 hunger for players
   overide: false
@@ -1359,22 +1367,22 @@ heal:
     # Do you want to remove negative potion effects from player on heal
     use: true
     List:
-      - blindness
-      - confusion
-      - harm
-      - hunger
-      - poison
-      - slow
-      - slow_digging
-      - weakness
-      - wither
+    - blindness
+    - confusion
+    - harm
+    - hunger
+    - poison
+    - slow
+    - slow_digging
+    - weakness
+    - wither
 Cuff:
   # When set to false will allow players to talk who is cuffed
   Mute: true
   AllowedCommands:
-    - msg
-    - r
-    - tell
+  - msg
+  - r
+  - tell
 Mute:
   # When set to true, player will not be allowed to send private messages while he is muted
   DenyPrivateMessages: true
@@ -1408,7 +1416,7 @@ ItemRepair:
   Repair:
     # List of custom model data id's we should not allow to be repaired with /repair command
     BlockedCustomDataID:
-      - 298785423
+    - 298785423
     # When item costs money, player will be required to confirm repair action by clicking message in chat
     Confirmation: true
     # When set to true, item repair with /cmi repair will cost money depending on setup
@@ -1441,8 +1449,8 @@ Cooldowns:
   # ATTENTION! If you have command like "/cmi home" and you want to prevent teleportation to home but allow gui opening without restrictions, use space after command, in example "cmi home :10"
   Enabled: true
   List:
-    - cmi spawn:128
-    - spawn:128
+  - cmi spawn:128
+  - spawn:128
 ShulkerBoxes:
   # When set to true, players will not have option to open shulker boxes while in combat
   # Combat timer can be defined under combat section
@@ -1483,14 +1491,14 @@ Player:
       Slot: 9
       Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNjYmY5ODgzZGQzNTlmZGYyMzg1YzkwYTQ1OWQ3Mzc3NjUzODJlYzQxMTdiMDQ4OTVhYzRkYzRiNjBmYyJ9fX0=
       Commands:
-        - closeinv!
+      - closeinv!
     InfoButton:
       # Extra button to be used in case you want to provide any aditional information when clicking on it
       Use: false
       Slot: 1
       Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDZiYTYzMzQ0ZjQ5ZGQxYzRmNTQ4OGU5MjZiZjNkOWUyYjI5OTE2YTZjNTBkNjEwYmI0MGE1MjczZGM4YzgyIn19fQ==
       Commands:
-        - closeinv!
+      - closeinv!
     # Defines default states for player options
     # This will not have any effect if player already edited his options with /cmi options command
     Defaults:
@@ -1551,12 +1559,12 @@ WarmUps:
     Enabled: true
     Color: blue
     # Options: 1, 6, 10, 12, 20
-    Segments: "1"
+    Segments: '1'
   List:
-    - cmi tp :5:false
-    - cmi back:3:true
-    - cmi warp :3:false
-    - cmi home :3:false
+  - cmi tp :5:false
+  - cmi back:3:true
+  - cmi warp :3:false
+  - cmi home :3:false
 Jail:
   # Defines in milliseconds how often to check if player leaves jail area
   # Bigger numbers can help slightly lower server load
@@ -1580,14 +1588,14 @@ Jail:
   Commands:
     # Commands to be performed when player gets jailed
     OnJail:
-      - ""
+    - ''
     # Commands to be performed when player gets unjailed
     OnUnJail:
-      - ""
+    - ''
   # If you want to white list base CMI command then use its full name and not its shortened alias version
   WhiteListedCmds:
-    - cmi msg
-    - cmi reply
+  - cmi msg
+  - cmi reply
 scan:
   # TPS cap from which to start adjusting scan speed
   SoftCap: 19.0
@@ -1652,10 +1660,10 @@ Selection:
   Tool: wooden_shovel
 Time:
   # Defines preset time
-  Day: "12:00"
-  Night: "24:00"
+  Day: '12:00'
+  Night: '24:00'
   Morning: 06:00
-  Dusk: "18:00"
+  Dusk: '18:00'
   AutoTime:
     # Time in seconds time in game will be adjusted to match real
     # Keep it at arround one minute
@@ -1668,7 +1676,7 @@ Time:
     SmoothSpeed: 100
     # Worlds effected by autotime adjustment
     Worlds:
-      - ""
+    - ''
   # Allows you to change vanilla time speed to your own liking and needs
   TimeSpeed:
     # Time is defined in seconds. Vanilla 24 hour ingame duration is 1200 seconds of real time
@@ -1777,7 +1785,7 @@ BlueMap:
     IconAnchor: 16
     # List of warp names we should not show. Keep in mind that hidden warps are not shown by default already
     BlackList: []
-# If you want to disable particular sound entirely, set it to ""
+# If you want to disable particular sound entirely, set it to "" 
 Sounds:
   Enabled: true
   WarpGuiOpen: entity_bat_takeoff:0.5:1

@@ -24,7 +24,7 @@
 # DontTranslatePlaceholders: (true/false) if set to true we will not translate placeholders inside commands before sending them to later processing
 #   This defaults to false and placeholders will be translated before hand
 #   Exception for delay! specialized command variable which always gets translated before hand
-# Commands: List of commands to be performed when time is correct.
+# Commands: List of commands to be performed when time is correct. 
 #   You can multiple commands defined in single line, separate each one with ;; for example: command1;;command2;;command3
 #   If command starts with msg! and then player name is given, simple message will be sent to that player if he is online.
 #   If command starts with broadcast! then message will be sent to everyone on server in simple manear
@@ -33,7 +33,7 @@
 #   If command starts with subtitle! then all players will get subtitle message defined after this variable
 #   If command starts with kickall! then all players will be kicked from server with defined message. Usefull before server stop.
 #   If command starts with perm:[permissionNode]! then command will get performed if player has permission node. This will not work when we don't know who is target player. In example: perm:cmi.announce.vip! broadcast! Hello vip guys
-#   If command starts with moneycost:[amount]! then command will get performed if player has enough money.
+#   If command starts with moneycost:[amount]! then command will get performed if player has enough money. 
 #   If command starts with expcost:[amount]! then command will get performed if player has enough exp.
 #   If command starts with allPlayers! then command will get performed by using everyones who is online name. Command itself need to contain [allPlayers] to indicate where player name needs to be added
 #   Insert line with 'delay! 5' to perform rest of commands after 5 seconds from scheduler trigger. This allows to create in example counter before server stop. Check example.
@@ -47,42 +47,42 @@ GiveDiamonds:
   FeedBack: true
   Repeat: true
   PerformOn:
-    "1":
+    '1':
       Hour: 18
   Commands:
-    - cmi give [randomPlayer] diamond %rand/1-5%
-    - msg! [randomPlayer] &eYou just got diamonds!
+  - cmi give [randomPlayer] diamond %rand/1-5%
+  - msg! [randomPlayer] &eYou just got diamonds!
 StopServer:
   Enabled: false
   PerformOn:
-    "1":
+    '1':
       Hour: 3
       Minute: 59
       Second: 30
   Commands:
-    - actionbar! &eServer will stop in &630 &esec!
-    - delay! 5
-    - actionbar! &eServer will stop in &625 &esec!
-    - delay! 5
-    - actionbar! &eServer will stop in &620 &esec!
-    - delay! 5
-    - actionbar! &eServer will stop in &615 &esec!
-    - delay! 5
-    - actionbar! &eServer will stop in &610 &esec!
-    - delay! 5
-    - actionbar! &eServer will stop in &65 &esec!
-    - delay! 1
-    - actionbar! &eServer will stop in &64 &esec!
-    - delay! 1
-    - actionbar! &eServer will stop in &63 &esec!
-    - delay! 1
-    - actionbar! &eServer will stop in &62 &esec!
-    - delay! 1
-    - actionbar! &eServer will stop in &61 &esec!
-    - delay! 1
-    - kickall! &eServer will be back online soon!
-    - delay! 1
-    - stop
+  - actionbar! &eServer will stop in &630 &esec!
+  - delay! 5
+  - actionbar! &eServer will stop in &625 &esec!
+  - delay! 5
+  - actionbar! &eServer will stop in &620 &esec!
+  - delay! 5
+  - actionbar! &eServer will stop in &615 &esec!
+  - delay! 5
+  - actionbar! &eServer will stop in &610 &esec!
+  - delay! 5
+  - actionbar! &eServer will stop in &65 &esec!
+  - delay! 1
+  - actionbar! &eServer will stop in &64 &esec!
+  - delay! 1
+  - actionbar! &eServer will stop in &63 &esec!
+  - delay! 1
+  - actionbar! &eServer will stop in &62 &esec!
+  - delay! 1
+  - actionbar! &eServer will stop in &61 &esec!
+  - delay! 1
+  - kickall! &eServer will be back online soon!
+  - delay! 1
+  - stop
 AllInOneJustExample:
   Enabled: false
   MinPlayers: 3
@@ -91,21 +91,21 @@ AllInOneJustExample:
   Delay: 600
   Repeat: true
   PerformOn:
-    "1":
+    '1':
       Month: 12
       Day: monday
       Hour: 18
       Minute: 36
       Second: 15
-    "2":
+    '2':
       Hour: 18
   Commands:
-    - cmi give [randomPlayer] diamond %rand/1-5%
-    - msg! [randomPlayer] &eYou just got diamonds!
-    - broadcast! &e[randomPlayer] just got some stuff!
-    - delay! 1
-    - actionbar! &eServer will stop in &61 &esec!
-    - kickall! &eServer will be back online soon!
+  - cmi give [randomPlayer] diamond %rand/1-5%
+  - msg! [randomPlayer] &eYou just got diamonds!
+  - broadcast! &e[randomPlayer] just got some stuff!
+  - delay! 1
+  - actionbar! &eServer will stop in &61 &esec!
+  - kickall! &eServer will be back online soon!
 Announcer:
   Enabled: false
   MinPlayers: 1
@@ -114,7 +114,7 @@ Announcer:
   Repeat: true
   Randomize: true
   Commands:
-    - broadcast! &eRules can be found at &e/rules
-    - broadcast! &eKits can be accesed with &e/kits
-    - broadcast! &eIf you need help, ask staff
-    - broadcast! &eAdvertisement of other servers will be punished
+  - broadcast! &eRules can be found at &e/rules
+  - broadcast! &eKits can be accesed with &e/kits
+  - broadcast! &eIf you need help, ask staff
+  - broadcast! &eAdvertisement of other servers will be punished

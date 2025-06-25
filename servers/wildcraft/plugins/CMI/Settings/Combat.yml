@@ -19,7 +19,7 @@ Combat:
     ShowBossBar: false
     # When enabled we will show damage numbers in a form of holograms when damaging players
     ShowDamageNumbers: true
-    DamageNumbersFormat: "&c⚔[damage]"
+    DamageNumbersFormat: '&c⚔[damage]'
     # Prevents damage from players with god mode enabled
     # Can be bypassed with cmi.pvp.godBypass permission node
     noGodDamage: false
@@ -29,8 +29,8 @@ Combat:
     # This only applies for pvp type combat
     BlockCommands: false
     AllowedCommands:
-      - cmi msg
-      - cmi reply
+    - cmi msg
+    - cmi reply
     # When set to true AllowedCommands become black list which will define which commands player cant use
     MakeBlackList: false
   Mob:
@@ -49,7 +49,7 @@ Combat:
     IncludeEnvironment: true
     # When enabled we will show damage numbers in a form of holograms when damaging mobs
     ShowDamageNumbers: true
-    DamageNumbersFormat: "&c❤[damage]"
+    DamageNumbersFormat: '&c❤[damage]'
     # Prevents damage from players with god mode enabled
     # Can be bypassed with cmi.pve.godBypass permission node
     noGodDamage: false
@@ -59,7 +59,7 @@ Combat:
     # This only applies for pve type combat
     BlockCommands: false
     AllowedCommands:
-      - cmi msg
-      - cmi reply
+    - cmi msg
+    - cmi reply
     # When set to true AllowedCommands become black list which will define which commands player cant use
     MakeBlackList: false

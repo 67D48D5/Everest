@@ -4,22 +4,22 @@
 version: 1
 border-options:
   check-interval: 20
-  message: "&cWorldBorder &8» &f세계의 경계에 도달했습니다&o!"
+  message: '&cWorldBorder &8» &f세계의 경계에 도달했습니다&o!'
   use-action-bar: true
-  effect: ENDER_SIGNAL
-  sound: BLOCK_BEACON_AMBIENT
-  prevent-mob-spawns: true
-  prevent-enderpearl: true
-  prevent-chorus-fruit: true
-  visualizer-enabled: true
-  visualizer-range: 24
+  effect: ender_signal
+  sound: entity_enderman_teleport
+  prevent-mob-spawns: false
+  prevent-enderpearl: false
+  prevent-chorus-fruit: false
+  visualizer-enabled: false
+  visualizer-range: 8
   visualizer-color: 20A0FF
 map-options:
   enable:
     bluemap: true
-    dynmap: false
-    pl3xmap: false
-    squaremap: false
+    dynmap: true
+    pl3xmap: true
+    squaremap: true
   label: 세계의 경계
   hide-by-default: false
   color: FF0000

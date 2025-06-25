@@ -1,9 +1,9 @@
 # These first 6 aren't configurable
 issues: "https://github.com/IntellectualSites/FastAsyncWorldEdit/issues"
 wiki: "https://intellectualsites.github.io/fastasyncworldedit-documentation/"
-date: "Wed Jul 09 00:00:00 KST 2025"
-build: "https://ci.athion.net/job/FastAsyncWorldEdit/1116"
-commit: "https://github.com/IntellectualSites/FastAsyncWorldEdit/commit/f26aa15a"
+date: "Fri Jul 18 00:00:00 KST 2025"
+build: "https://ci.athion.net/job/FastAsyncWorldEdit/1119"
+commit: "https://github.com/IntellectualSites/FastAsyncWorldEdit/commit/fdd74e2b"
 platform: "Bukkit"
 # Set true to enable WorldEdit restrictions per region (e.g. PlotSquared or WorldGuard).
 # To be allowed to WorldEdit in a region, users need the appropriate
@@ -28,7 +28,7 @@ enabled-components:
   # Whether or not FAWE should notify you on startup about new releases.
   release-update-notifications: true
   # Whether or not FAWE should notify you for updates (snapshot / release) on join (with the required permission)
-  notify-update-ingame: false
+  notify-update-ingame: true
 
 clipboard:
   # Store the clipboard on disk instead of memory
@@ -104,14 +104,14 @@ web:
   #  - Adding '*' to the list will allow any host, but this is NOT adviseable
   #  - Crash exploits exist with malformed images
   #  - See: https://medium.com/chargebee-engineering/perils-of-parsing-pixel-flood-attack-on-java-imageio-a97aeb06637d
-  allowed-image-hosts:
-    - "i.imgur.com"
+  allowed-image-hosts: 
+  - "i.imgur.com"
 
 extent:
   # Don't bug console when these plugins slow down WorldEdit operations
   #  - You'll see a message in console or ingame if you need to change this option
-  allowed-plugins:
-    - "net.coreprotect.worldedit.CoreProtectLogger"
+  allowed-plugins: 
+  - "net.coreprotect.worldedit.CoreProtectLogger"
   # Should debug messages be sent when third party extents are used?
   debug: true
 
@@ -287,13 +287,13 @@ region-restrictions-options:
   #  - Currently only implemented for WorldGuard
   #  - see region-restrictions-options.worldguard-region-blacklist
   allow-blacklists: false
-  # List of plugin mask managers that should be exclusive. Exclusive managers are not
-  # checked for edit restrictions if another manager already allowed an edit, and further
+  # List of plugin mask managers that should be exclusive. Exclusive managers are not 
+  # checked for edit restrictions if another manager already allowed an edit, and further 
   # managers are not checked if an exclusive manager allows an edit.
   #  - May be useful to add PlotSquared if using both P2 and WorldGuard on a server
   #  - Some custom-implementations in other plugins may override this setting
-  exclusive-managers:
-    - "ExamplePlugin"
+  exclusive-managers: 
+  - "ExamplePlugin"
   # If a worldguard-protected world should be considered as a region blacklist.
   #  - This will create a blacklist of regions where an edit cannot operate.
   #  - Useful for a "freebuild" worlds with few protected areas.
@@ -314,7 +314,7 @@ general:
   limit-unlimited-confirms: true
 # The "default" limit group affects those without a specific limit permission.
 # To grant someone different limits, copy the default limits group
-# and give it a different name (e.g. newbie). Then give the user the limit
+# and give it a different name (e.g. newbie). Then give the user the limit 
 # permission node with that limit name (e.g. fawe.limit.newbie  )
 limits:
   default:
@@ -338,8 +338,8 @@ limits:
     max-brush-radius: 100
     # Max allowed butcher radius
     max-butcher-radius: -1
-    # Blockstates include Banner, Beacon, BrewingStand, Chest, CommandBlock,
-    # CreatureSpawner, Dispenser, Dropper, EndGateway, Furnace, Hopper, Jukebox,
+    # Blockstates include Banner, Beacon, BrewingStand, Chest, CommandBlock, 
+    # CreatureSpawner, Dispenser, Dropper, EndGateway, Furnace, Hopper, Jukebox, 
     # NoteBlock, Sign, Skull, Structure
     max-blockstates: 1337
     # Maximum size of the player's history in Megabytes:
@@ -390,10 +390,10 @@ limits:
     #  - "minecraft:conduit[waterlogged=true]"
     #  - "minecraft:piston[extended=false,facing=west]"
     #  - "minecraft:wheat[age=7]"
-    disallowed-blocks:
-      - "minecraft:wheat"
-      - "minecraft:fire"
-      - "minecraft:redstone_wire"
+    disallowed-blocks: 
+    - "minecraft:wheat"
+    - "minecraft:fire"
+    - "minecraft:redstone_wire"
     # List of block properties that should be remapped if used in an edit. Entries should take the form
     # "property_name[value1_old:value1_new,value2_old:value2_new]". For example:
     #  - "waterlogged[true:false]"

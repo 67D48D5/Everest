@@ -1,4 +1,4 @@
-# If you want to disable particular particle entirely, set it to ""
+# If you want to disable particular particle entirely, set it to "" 
 # More information how to set up this one can be found at https://www.zrips.net/cmi/extra/particles/
 Particles:
   Enabled: true
@@ -49,98 +49,98 @@ Particles:
 # Animation names should be used from Particles section from above like TpUp
 TeleportEffects:
   Unknown:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Elevator:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   SafeLogin:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Spawn:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   NetherRoof:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   BelowBedrock:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Back:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   DBack:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Home:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Jump:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Patrol:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Portal:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   WarmUp:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Biome:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   FlightCharge:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   InvEdit:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   TimedCommand:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   TpaAll:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Tp:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Bungee:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Top:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Down:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   TpAll:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   TpHere:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   TpPos:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   TpoPos:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Warp:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   JoinSpawn:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   Totem:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   randomTp:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   World:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
   HoloEdit:
-    From: ""
-    To: ""
+    From: ''
+    To: ''
