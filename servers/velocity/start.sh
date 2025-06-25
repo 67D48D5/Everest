@@ -2,13 +2,13 @@
 set -euo pipefail
 
 # Configuration
-SERVER_NAME="proxy"
+SERVER_NAME="velocity"
 SERVER_ENGINE="velocity"
 
 # Java flags (See launcher for more details)
 JAVA_FLAGS=(
-  -Xms512M
-  -Xmx1024M
+  -Xms128M
+  -Xmx128M
 )
 
 # Directory setup
