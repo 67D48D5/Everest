@@ -23,7 +23,8 @@
       "LuckPerms": "https://ci.lucko.me/job/LuckPerms",
       "ProtocolLib": "https://ci.dmulloy2.net/job/protocollib",
       "PlaceholderAPI": "https://ci.extendedclip.com/job/PlaceholderAPI",
-      "FastAsyncWorldEdit": "https://ci.athion.net/job/FastAsyncWorldEdit"
+      "FastAsyncWorldEdit": "https://ci.athion.net/job/FastAsyncWorldEdit",
+      "WorldGuard": "https://builds.enginehub.org/job/worldguard/last-successful?branch=version/7.0.x"
     }
   }
 }

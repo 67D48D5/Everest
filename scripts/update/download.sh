@@ -67,17 +67,70 @@ resolve_jenkins() { # <url> <engineKeyword>
     printf '%s' "$final"
 }
 
+# Resolve GitHub release URLs to direct download links
+resolve_github() { # <github-release-url>
+    local url="$1"
+    local api_url repo tag asset_url
+    repo=$(sed -E 's|https://github.com/([^/]+/[^/]+).*|\1|' <<<"$url")
+    api_url="https://api.github.com/repos/$repo/releases/latest"
+
+    # GitHub API 호출 (필요 시 토큰 인증 추가 가능)
+    local resp=$(curl -fsSL "$api_url") || return 1
+    asset_url=$(jq -r '.assets[].browser_download_url' <<<"$resp" |
+        grep -Ei '\.jar$' | grep -viE '(-sources|-javadoc)\.jar$' | head -n1)
+
+    [[ -z "$asset_url" ]] && return 1
+    printf '%s' "$asset_url"
+}
+
+# Resolve EngineHub URLs to direct download links
+resolve_enginehub() { # <url>
+    local url="$1"
+    local final_url html jar_url
+
+    # Follow redirect
+    final_url=$(curl -Ls -o /dev/null -w '%{url_effective}' "$url")
+    [[ -z "$final_url" ]] && return 1
+
+    # Fetch HTML
+    html=$(curl -fsSL --retry 3 --retry-delay 5 "$final_url") || return 1
+
+    # Grep .jar URL
+    jar_url=$(grep -Eo 'https://ci\.enginehub\.org/repository/download/[^"]+\.jar\?[^"]+' <<<"$html" | head -n1)
+    [[ -z "$jar_url" ]] && return 1
+
+    # Decode &amp; to &
+    jar_url=$(sed 's/&amp;/\&/g' <<<"$jar_url")
+
+    printf '%s' "$jar_url"
+}
+
 update_plugins_for_engine() { # <engine>
     local engine="$1"
     local auto_dir="$PLUGIN_ROOT/$engine/autoupdate"
     mkdir -p "$auto_dir"
-    echo "🧩 $engine"
+    echo "🧩 Plugin for $engine"
 
     while IFS=$'\t' read -r PLUGIN URL; do
         # Skip for manual://
         [[ "$URL" == manual://* ]] && continue
 
-        # Jenkins URL 해결
+        # If URL is empty, skip
+        [[ -z "$URL" ]] && {
+            echo "  ⚠️ Skip $PLUGIN due to empty URL" >&2
+            continue
+        }
+
+        # EngineHub special-case
+        if [[ "$URL" == https://builds.enginehub.org/job/* && "$URL" != *.jar ]]; then
+            echo "  🔍 Resolve EngineHub: $PLUGIN"
+            URL=$(resolve_enginehub "$URL") || {
+                echo "  ⚠️ Skip $PLUGIN due to EngineHub resolution failure" >&2
+                continue
+            }
+        fi
+
+        # Jenkins URL
         if [[ "$URL" == *"/job/"* && "$URL" != *.jar ]]; then
             echo "  🔍 Resolve Jenkins: $PLUGIN"
             URL=$(resolve_jenkins "$URL" "$engine") || {
@@ -86,7 +139,17 @@ update_plugins_for_engine() { # <engine>
             }
         fi
 
-        local JAR=$(basename "$URL")
+        # GitHub URL
+        if [[ "$URL" == https://github.com/*/releases* && "$URL" != *.jar ]]; then
+            echo "  🔍 Resolve GitHub Release: $PLUGIN"
+            URL=$(resolve_github "$URL") || {
+                echo "  ⚠️ Skip $PLUGIN due to GitHub resolution failure" >&2
+                continue
+            }
+        fi
+
+        # Get clean filename
+        local JAR=$(basename "${URL%%\?*}")
         [[ "$JAR" != *.jar ]] && JAR="${PLUGIN}-${JAR}.jar"
 
         echo "  ⬇️ $PLUGIN → $JAR"
