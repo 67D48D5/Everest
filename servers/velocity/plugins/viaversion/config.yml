@@ -52,7 +52,7 @@ velocity-ping-save: true
 # It will fall back to the default option if none found.
 velocity-servers:
   default: 393
-  wildcraft: 770
+  wildcraft: 771
 #
 #----------------------------------------------------------#
 #                  GLOBAL PACKET LIMITER                   #
