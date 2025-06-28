@@ -12,8 +12,8 @@ check_updates: true
 cloud_enabled: true
 cloud_sorting: name
 boolean:
-  'true': 'yes'
-  'false': 'no'
+  "true": "yes"
+  "false": "no"
 date_format: MM/dd/yy HH:mm:ss
 debug: false
 expansions:
@@ -36,9 +36,9 @@ expansions:
         minute: m
         second: s
     tps_color:
-      high: '&a'
-      medium: '&e'
-      low: '&c'
+      high: "&a"
+      medium: "&e"
+      low: "&c"
   player:
     ping_value:
       high: 100
@@ -53,6 +53,6 @@ expansions:
       west: W
       south_west: SW
     ping_color:
-      medium: '&e'
-      high: '&c'
-      low: '&a'
+      medium: "&e"
+      high: "&c"
+      low: "&a"

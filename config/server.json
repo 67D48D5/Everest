@@ -18,18 +18,19 @@
         "Chunky": "auto://Chunky-*",
         "ChunkyBorder": "auto://ChunkyBorder-*",
         "mcMMO": "auto://mcMMO*",
+        "LWC": "auto://LWC-*",
         "LuckPerms": "auto://LuckPerms-*",
         "ProtocolLib": "auto://ProtocolLib*",
         "PlaceholderAPI": "auto://PlaceholderAPI-*",
         "FastAsyncWorldEdit": "auto://FastAsyncWorldEdit-Paper-*",
+        "WorldGuard": "auto://worldguard-bukkit-*",
         "CMI": "manual://CMI-*",
         "CMILib": "manual://CMILib*",
         "CoreProtect": "manual://CoreProtect-*",
         "GriefPrevention": "manual://GriefPrevention-*",
         "MobFarmManager": "manual://MobFarmManager*",
         "TAB": "manual://TAB*",
-        "Vault": "manual://Vault-*",
-        "WorldGuard": "manual://worldguard-bukkit-*"
+        "Vault": "manual://Vault-*"
       }
     }
   }

@@ -16,8 +16,8 @@ Chat:
     # Defines name of global chat channel in discordsrv
     GlobalChannel: global
     # Indicator which can be used as {discord} in chat format to indicate that message came from discord and not ingame
-    Label: '&2[&7D&2]'
-    UnlinkedLabel: '&4[&cD&4]'
+    Label: "&2[&7D&2]"
+    UnlinkedLabel: "&4[&cD&4]"
     # When enabled and you have ranged messages enabled, we will send all of them to DiscordSRV
     # When disabled, only shouts and messages sent by players with cmi.chat.rangebypass permission node will be visible in discord
     RangedMessages: true
@@ -45,8 +45,8 @@ Chat:
     Enabled: true
     # Defines regex when replacing item line in chat with players item in hand information. Only works when CMI hover over chat format is enabled
     ItemRegex:
-    - (\[item\])
-    - (([&§]\S)+)?\[(([&§]\S)+)?i(([&§]\S)+)?t(([&§]\S)+)?e(([&§]\S)+)?m(([&§]\S)+)?\]
+      - (\[item\])
+      - (([&§]\S)+)?\[(([&§]\S)+)?i(([&§]\S)+)?t(([&§]\S)+)?e(([&§]\S)+)?m(([&§]\S)+)?\]
   Bungee:
     # Attention! This will require you to have CMI Bungee plugin which can be found at zrips.net
     # Or direct download https://www.zrips.net/cmi/
@@ -63,13 +63,13 @@ Chat:
     StaffMessages: true
   # Used for simple chat messages. Optional variables: {displayName} {world} {prefix} {suffix} {group} {shout} {shoutcolor} {message} {nicknameprefix}. Supporting PlaceHolderAPI variables like %player_server% %cmi_user_chatcolor%
   # ATTENTION! Don't use gradient colors for {message} variable, if you want to apply gradient for it, utilize GeneralMessageFormat section
-  GeneralFormat: '{prefix}{displayName} &8» &r{message}'
+  GeneralFormat: "{prefix}{displayName} &8» &r{message}"
   # Will define message format itself, this allows to have gradients in messages
   # It NEEDS to contain {message} otherwise we will ignore this setup
   # For 1.16+ servers you can use color gradients like '{#b3a28f>}{message}{#d7b8e6<}'
   # You can have more than 2 colors in gradient. To define it repeat {message} variable. For example '{#b3a28f>}{message}{#5c6999<>}{message}{#d7b8e6<}'
   # Use %cmi_user_chatcolor% to add players choosen chat color
-  GeneralMessageFormat: '{message}'
+  GeneralMessageFormat: "{message}"
   Ranged:
     # Defines range of regular messages to travel
     # Set to -1 to disable range restriction
@@ -80,7 +80,7 @@ Chat:
     # set to 0 to shout across all worlds, -1 to disable
     Shout: 200
     # Color code to be used as base for the shout chat message
-    ShoutColor: ''
+    ShoutColor: ""
     # Defines cost for each shout message
     ShoutCost: 0
     # List of message range limits
@@ -89,36 +89,36 @@ Chat:
     Dynamic:
       Use: false
       Limits:
-      - 1-0
-      - 10-1000
-      - 20-500
-      - 30-400
-      - 40-300
-      - 50-200
+        - 1-0
+        - 10-1000
+        - 20-500
+        - 30-400
+        - 40-300
+        - 50-200
   # Prefix used to indicate that message should be sent to public chat instead of current players chat room
   # Set it to empty field if you want this feature to be disabled
-  ChatRoomShout: '!'
+  ChatRoomShout: "!"
   # Time in seconds you want to keep chat rooms alive before removing them
   # This only applies to empty rooms after last user leaves it
   ChatRoomLife: 3600
   # Defines suggested commands when you click on public, private and similar messages. [playerName], [playerDisplayName] and [playerNickName]  can be used to include players name
   ClickSuggestions:
-    pubmsg: '/msg [playerNickName] '
-    privmsg: '/msg [playerNickName] '
-    staffmsg: '/msg [playerNickName] '
-    helpop: '/msg [playerNickName] '
-    chatroom: '/msg [playerNickName] '
-    discord: '/msg [playerNickName] '
+    pubmsg: "/msg [playerNickName] "
+    privmsg: "/msg [playerNickName] "
+    staffmsg: "/msg [playerNickName] "
+    helpop: "/msg [playerNickName] "
+    chatroom: "/msg [playerNickName] "
+    discord: "/msg [playerNickName] "
   # Defines command (one command per type) to be performed by player when clicked on players name
   # When this is defined then ClickSuggestions will be changed to shift+left click action for suggested command
   # Command is performed as player, if you want to perform it from console then add asConsole! variable at the start of it
   ClickCommands:
-    pubmsg: ''
-    privmsg: ''
-    staffmsg: ''
-    helpop: ''
-    chatroom: ''
-    discord: ''
+    pubmsg: ""
+    privmsg: ""
+    staffmsg: ""
+    helpop: ""
+    chatroom: ""
+    discord: ""
   # Use numeric increments to separate groups from each other. If player has more than one, then line with higher number will be used
   # Add as many lines as you need too
   # cmi.chatgroup.[id] permnission node to use
@@ -126,17 +126,17 @@ Chat:
 
   # ATTENTION! Don't use gradient colors for {message} variable, if you want to apply gradient for it, utilize GroupMessageFormat section
   GroupFormat:
-    '1': '{prefix}&f{displayName}&f: &r{message}'
-    '2': '{prefix}&f{displayName}&7: &r{message}'
-    '3': '{prefix}&f{displayName}&8: &r{message}'
+    "1": "{prefix}&f{displayName}&f: &r{message}"
+    "2": "{prefix}&f{displayName}&7: &r{message}"
+    "3": "{prefix}&f{displayName}&8: &r{message}"
   # Use numeric increments to separate groups from each other. If player has more than one, then line with higher number will be used
   # Add as many lines as you need too
   # cmi.chatmessagegroup.[id] permnission node to use
   # Permission example: cmi.chatmessagegroup.2
   GroupMessageFormat:
-    '1': '{message}'
-    '2': '{message}'
-    '3': '{message}'
+    "1": "{message}"
+    "2": "{message}"
+    "3": "{message}"
   Colors:
     PublicMessage:
       # If set to true then all public messages will be filtered from color codes and will allow to colorize them with appropriate permission node
@@ -164,24 +164,24 @@ Chat:
       # This will bypass players colorcode restrictions and will allow usage of particular chat formats
       # Applies only for public and private messages
       WhiteList:
-      - '&c❤&7'
+        - "&c❤&7"
     # If set to true then nickName will be filtered from color codes when player changes it
     # cmi.colors.nickname.[colorName]
     NickName: true
     # Determines /cmi chatcolor command contents. What player can pick will be determined by cmi.colors.publicmessage.[colorCode] and will be used in %cmi_user_chatcolor% placeholder
     Picker:
-    - '&f'
-    - '&2'
-    - '&3'
-    - '&7'
-    - '&8'
-    - '&a'
-    - '&b'
-    - '&c'
-    - '&e'
-    - '&6'
-    - '{#00e625}'
-    - '{#brown}'
+      - "&f"
+      - "&2"
+      - "&3"
+      - "&7"
+      - "&8"
+      - "&a"
+      - "&b"
+      - "&c"
+      - "&e"
+      - "&6"
+      - "{#00e625}"
+      - "{#brown}"
   # If set to true, players public message who is in your ignore list will not be shown
   IgnorePublicMessage: true
   Tag:
@@ -191,12 +191,12 @@ Chat:
     # This is allot more heavier on server than usual tagging with @, so enable if you know what you are doing
     HardCoreMode: false
     # Determines color of taged user name in chat with @ in front of name/nickname. Sender should have cmi.tag.color
-    Color: '&c'
+    Color: "&c"
     # Commands to be performed when player is tagged
     # Variables like [playerName] will be replaced with tagged player name
     # You can use [senderName] to include player name who tagged
     CommandsOnTag:
-    - asConsole! cmi sound BLOCK_NOTE_BLOCK_HARP:3:1 [playerName] -s
+      - asConsole! cmi sound BLOCK_NOTE_BLOCK_HARP:3:1 [playerName] -s
     # Will performd tag commands only when player is afk
     OnlyWhenAfk: false
     # When set to true, @ simbol will be removed
@@ -227,7 +227,7 @@ ChatBubble:
     # Default Color code, this could be overriden if text itself was colorized
     # Leave it empty for default transparent color
     # Example of color code: {#black}
-    Color: '{#black}'
+    Color: "{#black}"
     # Value between 0 and 1 where 0 means no background color and 1 is fully opaque
     Opacity: 0.5
   # Do you want to add text shadow

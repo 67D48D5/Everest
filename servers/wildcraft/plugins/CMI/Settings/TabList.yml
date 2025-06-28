@@ -29,17 +29,17 @@ TabList:
   # Full list can be checked ingame with /cmi placeholders
   GeneralFormat:
     # This will define how others see players name in tab list
-    PlayerName: '[playerDisplayName]'
+    PlayerName: "[playerDisplayName]"
     Header:
-      '1':
-      - ''
-      - '   &6&l&o⛰ &f&l&oEverest &a&l&oMC   '
-      - ''
+      "1":
+        - ""
+        - "   &6&l&o⛰ &f&l&oEverest &a&l&oMC   "
+        - ""
     Footer:
-      '1':
-      - ''
-      - '&e%cmi_user_ping% &7ms'
-      - ''
+      "1":
+        - ""
+        - "&e%cmi_user_ping% &7ms"
+        - ""
   useGeneralName: false
   # When this set to true, in case you dint defined PlayerName, Header or Footer in GroupFormat, then default one from GeneralFormat will be used
   useGeneralHeader: false
@@ -49,28 +49,28 @@ TabList:
   # Id should be a number and in case player has more than one, bigger number id will be used
   # You can have as many groups as you want by increasing increment
   GroupFormat:
-    '1':
-      PlayerName: '&2{&r[playerDisplayName]&2}'
+    "1":
+      PlayerName: "&2{&r[playerDisplayName]&2}"
       Header:
-        '1':
-        - '&f------------------------------------'
-        - '&7Online &f%server_online%&7/&f%server_max_players%'
-        - '&f------------------------------------'
+        "1":
+          - "&f------------------------------------"
+          - "&7Online &f%server_online%&7/&f%server_max_players%"
+          - "&f------------------------------------"
       Footer:
-        '1':
-        - '&f------------------------------------'
-        - '&7%player_world% &f%player_x%:&7%player_y%:&f%player_z%'
-        - '&7Time: &f%server_time_HH:mm:ss%'
-        - '&f------------------------------------'
-    '2':
-      PlayerName: '&c[&r[playerDisplayName]&c]'
+        "1":
+          - "&f------------------------------------"
+          - "&7%player_world% &f%player_x%:&7%player_y%:&f%player_z%"
+          - "&7Time: &f%server_time_HH:mm:ss%"
+          - "&f------------------------------------"
+    "2":
+      PlayerName: "&c[&r[playerDisplayName]&c]"
       Header:
-        '1':
-        - '&f------------------------------------'
-        - '&7Online &f%server_online%&7/&f%server_max_players%'
-        - '&f------------------------------------'
+        "1":
+          - "&f------------------------------------"
+          - "&7Online &f%server_online%&7/&f%server_max_players%"
+          - "&f------------------------------------"
       Footer:
-        '1':
-        - '&f------------------------------------'
-        - '&7Money: &f%vault_eco_balance_formatted% &7Time: &f%server_time_HH:mm:ss%'
-        - '&f------------------------------------'
+        "1":
+          - "&f------------------------------------"
+          - "&7Money: &f%vault_eco_balance_formatted% &7Time: &f%server_time_HH:mm:ss%"
+          - "&f------------------------------------"

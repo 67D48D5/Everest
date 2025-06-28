@@ -1,7 +1,7 @@
 announce-command-usage: "Usage: /tab announce <type> <name> <length>\nCurrently supported types: &lbar, scoreboard"
 bossbar-feature-not-enabled: "&cThis command requires the bossbar feature to be enabled."
 bossbar-announce-command-usage: "Usage: /tab announce bar <bar name> <length>"
-bossbar-not-found: "&cNo bossbar found with the name \"%name%\""
+bossbar-not-found: '&cNo bossbar found with the name "%name%"'
 bossbar-already-announced: "&cThis bossbar is already being announced"
 group-data-removed: "&3[TAB] All data has been successfully removed from group &e%group%"
 group-value-assigned: "&3[TAB] %property% '&r%value%&r&3' has been successfully assigned to group &e%group%"
@@ -16,11 +16,11 @@ team-feature-required: "This command requires scoreboard teams feature enabled"
 collision-command-usage: "Usage: /tab setcollision <player> <true/false>"
 no-permission: "&cI'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error."
 command-only-from-game: "&cThis command must be ran from the game"
-player-not-online: "&cNo online player found with the name \"%player%\""
-invalid-number: "\"%input%\" is not a number!"
+player-not-online: '&cNo online player found with the name "%player%"'
+invalid-number: '"%input%" is not a number!'
 scoreboard-feature-not-enabled: "&4This command requires the scoreboard feature to be enabled."
 scoreboard-announce-command-usage: "Usage: /tab scoreboard announce <scoreboard name> <length>"
-scoreboard-not-found: "&cNo scoreboard found with the name \"%name%\""
+scoreboard-not-found: '&cNo scoreboard found with the name "%name%"'
 reload-success: "&3[TAB] Successfully reloaded"
 reload-fail-file: "&3[TAB] &4Failed to reload, file %file% has broken syntax. Check console for more info."
 scoreboard-toggle-on: "&2Scoreboard enabled"

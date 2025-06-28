@@ -87,8 +87,6 @@ hologram-y: -0.96
 # Should we disable piston animation for 1.11/1.11.1 clients?
 # In some cases, when firing lots of pistons, it crashes them.
 piston-animation-patch: false
-# Should we fix nbt for 1.12 and above clients in chat messages (causes invalid item)
-chat-nbt-fix: true
 # Should we use prefix for team color on 1.13 and above clients?
 team-colour-fix: true
 # 1.13 introduced new auto complete which can trigger "Kicked for spamming" for servers older than 1.13, the following option will disable it completely.

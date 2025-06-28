@@ -37,11 +37,11 @@ GlobalGui:
 Spawners:
   # List of spawners to pick from while using spawner:random variable
   mysterySpawners:
-  - skeleton
-  - zombie
-  - silverfish
-  - panda
-  - fox
+    - skeleton
+    - zombie
+    - silverfish
+    - panda
+    - fox
 RMCCommands:
   # When enabled we will (where possible) include which command was performed when using rmc commands
   ConsoleLog: true
@@ -52,7 +52,7 @@ Images:
   Filler: ⬛
   # Symbol to be used to fill in empty image fields
   # Color codes are supported here
-  EmptyFiller: '&7_|'
+  EmptyFiller: "&7_|"
 Colors:
   # When enabled plugin will try to detect simplified hex color codes like #f6f6f6 or #ff6 in adition to {#f6f6f6} and {#red}
   # Keep in mind that this adds extra checks and simplified format will not support gradients or named colors so you will still need to use more complex format for those

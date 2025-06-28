@@ -117,39 +117,39 @@ GriefPrevention:
   Siege:
     Worlds: []
     BreakableBlocks:
-    - BIRCH_PLANKS
-    - LIGHT_GRAY_WOOL
-    - ACACIA_PLANKS
-    - DIRT
-    - SPRUCE_PLANKS
-    - GRAVEL
-    - FERN
-    - WHITE_WOOL
-    - SHORT_GRASS
-    - SAND
-    - BLUE_WOOL
-    - GLASS_PANE
-    - PURPLE_WOOL
-    - DARK_OAK_PLANKS
-    - RED_WOOL
-    - SNOW
-    - COBBLESTONE
-    - MAGENTA_WOOL
-    - GRAY_WOOL
-    - BLACK_WOOL
-    - GLASS
-    - GREEN_WOOL
-    - PINK_WOOL
-    - YELLOW_WOOL
-    - OAK_PLANKS
-    - LIME_WOOL
-    - BROWN_WOOL
-    - DEAD_BUSH
-    - JUNGLE_PLANKS
-    - LIGHT_BLUE_WOOL
-    - CYAN_WOOL
-    - GRASS_BLOCK
-    - ORANGE_WOOL
+      - BIRCH_PLANKS
+      - LIGHT_GRAY_WOOL
+      - ACACIA_PLANKS
+      - DIRT
+      - SPRUCE_PLANKS
+      - GRAVEL
+      - FERN
+      - WHITE_WOOL
+      - SHORT_GRASS
+      - SAND
+      - BLUE_WOOL
+      - GLASS_PANE
+      - PURPLE_WOOL
+      - DARK_OAK_PLANKS
+      - RED_WOOL
+      - SNOW
+      - COBBLESTONE
+      - MAGENTA_WOOL
+      - GRAY_WOOL
+      - BLACK_WOOL
+      - GLASS
+      - GREEN_WOOL
+      - PINK_WOOL
+      - YELLOW_WOOL
+      - OAK_PLANKS
+      - LIME_WOOL
+      - BROWN_WOOL
+      - DEAD_BUSH
+      - JUNGLE_PLANKS
+      - LIGHT_BLUE_WOOL
+      - CYAN_WOOL
+      - GRASS_BLOCK
+      - ORANGE_WOOL
     DoorsOpenDelayInSeconds: 300
     CooldownEndInMinutes: 60
   EndermenMoveBlocks: false

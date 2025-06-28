@@ -1,82 +1,33 @@
 # Remove macOS Resource Forks
 .DS_Store
 
-# Remove Compiled JARs
-servers/**/libraries/
-*.jar
-
-# Remove Data Files
+# Remove Dummy Files
 .termux/shell
-.paper-remapped/
-.version
-.license
 
 lib/
-logs/
 libs/
-cache/
-geoip/
 spark/
-sessions/
+cache/
 versions/
-clipboard/
+libraries/
+
+history/
 schematics/
-playerdata/
-ClaimData/
-bStats/
-backup/
-backups/
-expansions/
-flatfile/
+clipboard/
+sessions/
 
-/**/datapacks/
-/**/stats/*.json
-/**/advancements/*.json
-/**/litebans/server.yml
-/**/luckperms/translations/
-/**/Geyser-Velocity/packs/
-/**/Geyser-Velocity/locales/
-/**/Geyser-Velocity/extensions/
-/**/Geyser-Velocity/custom_mappings/
-/**/Geyser-Velocity/custom-skulls.yml
-/**/Translations/*
-
-servers/proxy/lang
-
-help.yml
-wepif.yml
-permissions.yml
+.license
+.version
+server.yml
 lastupdate
-whitelist.json
-usercache.json
-banned-ips.json
-banned-players.json
-contexts.json
-ops.json
-session.lock
 
-**history**
-**users**
-**log**
+**Log**
 **key**
 
-*.bd
-*.nbtt
-*.mcm
+*.dat
+*.log
 *.mca
 *.pem
-*.log
-*.db
-*.sqlite
-*.gz
+*.jar
 *.zip
-*.dat
-*.dat_old
-*.tar
-*.tar.gz
-
-# Include files that should not be ignored
-!.termux/.env
-!Holograms.yml
-!items_KO.yml
-!Locale_KO.yml
+*.gz
