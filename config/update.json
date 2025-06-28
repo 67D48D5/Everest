@@ -1,7 +1,7 @@
 {
   "engines": {
     "paper": {
-      "version": "1.21.5"
+      "version": "1.21.6"
     },
     "velocity": {
       "version": "3.4.0-SNAPSHOT"
@@ -16,15 +16,34 @@
       "viabackwards": "https://ci.viaversion.com/job/ViaBackwards"
     },
     "paper": {
+      "TAB": "https://github.com/NEZNAMY/TAB/releases",
       "Chunky": "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky",
       "ChunkyBorder": "https://ci.codemc.io/view/Author/job/pop4959/job/ChunkyBorder",
       "mcMMO": "https://popicraft.net/jenkins/job/mcMMO",
       "LuckPerms": "https://ci.lucko.me/job/LuckPerms",
-      "LWC": "https://ci.codemc.io/view/Author/job/pop4959/job/LWC",
       "ProtocolLib": "https://ci.dmulloy2.net/job/protocollib",
       "PlaceholderAPI": "https://ci.extendedclip.com/job/PlaceholderAPI",
       "FastAsyncWorldEdit": "https://ci.athion.net/job/FastAsyncWorldEdit",
       "WorldGuard": "https://builds.enginehub.org/job/worldguard/last-successful?branch=version/7.0.x"
+    }
+  },
+  "notes": {
+    "engines": {
+      "source": "https://docs.papermc.io/misc/downloads-api/"
+    },
+    "plugins": {
+      "velocity": {
+        "CMIV": "https://www.zrips.net/cmiv/",
+        "LiteBans": "https://www.spigotmc.org/resources/litebans.3715/"
+      },
+      "paper": {
+        "MobFarmManager": "https://www.spigotmc.org/resources/mob-farm-manager-supports-1-7-10-up-to-1-21-hopper-support.15127/",
+        "CMILib": "https://www.zrips.net/cmilib/",
+        "CMI": "https://www.spigotmc.org/resources/cmi-300-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/",
+        "Vault": "https://www.zrips.net/cmivault/",
+        "CoreProtect": "https://github.com/PlayPro/CoreProtect/",
+        "Lands": "https://www.spigotmc.org/resources/lands-⭕-land-claim-plugin-✅-grief-prevention-protection-gui-management-nations-wars-1-21-support.53313/"
+      }
     }
   }
 }

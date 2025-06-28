@@ -74,7 +74,7 @@ resolve_github() { # <github-release-url>
     repo=$(sed -E 's|https://github.com/([^/]+/[^/]+).*|\1|' <<<"$url")
     api_url="https://api.github.com/repos/$repo/releases/latest"
 
-    # GitHub API 호출 (필요 시 토큰 인증 추가 가능)
+    # Call GitHub API
     local resp=$(curl -fsSL "$api_url") || return 1
     asset_url=$(jq -r '.assets[].browser_download_url' <<<"$resp" |
         grep -Ei '\.jar$' | grep -viE '(-sources|-javadoc)\.jar$' | head -n1)
@@ -108,7 +108,7 @@ resolve_enginehub() { # <url>
 update_plugins_for_engine() { # <engine>
     local engine="$1"
     local auto_dir="$PLUGIN_ROOT/$engine/autoupdate"
-    mkdir -p "$auto_dir"
+    rm -r "$auto_dir" && mkdir -p "$auto_dir"
     echo "🧩 Plugin for $engine"
 
     while IFS=$'\t' read -r PLUGIN URL; do
