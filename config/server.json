@@ -29,7 +29,7 @@
         "CMI": "manual://CMI-*",
         "Vault": "manual://Vault-*",
         "CoreProtect": "manual://CoreProtect-*",
-        "Lands": "manual://Lands-*"
+        "GriefPrevention": "manual://GriefPrevention*"
       }
     }
   }

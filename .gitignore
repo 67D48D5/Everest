@@ -1,7 +1,10 @@
-# Remove macOS Resource Forks
+# Ignore macOS Resource Forks
 .DS_Store
 
-# Remove Dummy Files
+# Ignore Changing Files
+server.properties
+
+# Ignore Files
 .termux/shell
 
 lib/
@@ -10,6 +13,7 @@ spark/
 cache/
 versions/
 libraries/
+.paper-remapped/
 
 history/
 schematics/
@@ -18,16 +22,33 @@ sessions/
 
 .license
 .version
+
 server.yml
-lastupdate
+wepif.yml
+permissions.yml
 
-**Log**
+banned-ips.json
+banned-players.json
+whitelist.json
+ops.json
+
+**log**
+**old**
 **key**
+**cache**
+**history**
 
+datapacks/
+advancements/
+stats/
+
+*.lock
 *.dat
 *.log
 *.mca
+*.mcm
 *.pem
 *.jar
 *.zip
 *.gz
+*.db

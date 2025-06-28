@@ -168,7 +168,7 @@ Database_Purging:
 #  Allow mcMMO to create zip backups for config files and flatfile data on shutdown.
 # ##
 Backups:
-    Enabled: true
+    Enabled: false
     
     Keep:
         Last_24_Hours: true
