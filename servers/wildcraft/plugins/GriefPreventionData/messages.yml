@@ -11,7 +11,8 @@ Messages:
     Text: '§aLand §8» §f보호를 해제했습니다. 현재 사용 가능한 보호 블록: §e{0}§f개'
     Notes: '0: 남은 보호 블록 수'
   RestoreNatureActivate:
-    Text: §aLand §8» §f자연 복구 준비 완료! 자연을 복원하려면 우클릭하세요. 중지하려면 §e/basicclaims §f명령어를 사용하세요.
+    Text: §aLand §8» §f자연 복구 준비 완료! 자연을 복원하려면 우클릭하세요. 중지하려면 §e/basicclaims §f명령어를
+      사용하세요.
   RestoreNatureAggressiveActivate:
     Text: §cLand §8» §f공격적인 복구 모드를 활성화했습니다! 자연을 공격적으로 복원하려면 우클릭하고, 중지하려면 §e/basicclaims
       §f명령어를 사용하세요. §c보존하고 싶은 구조물 아래에서 절대 사용하지 마세요!
@@ -269,8 +270,8 @@ Messages:
   ResizeStart:
     Text: §bLand §8» §f보호 구역 크기 조정 시작! 새로운 모서리 위치에 삽을 다시 사용하세요.
   ResizeFailOverlapSubdivision:
-    Text: §cLand §8» §f여기에는 하위 보호 구역이 겹쳐 있어 만들 수 없습니다. §e/abandonclaim §f명령어로 삭제하거나, 모서리에서
-      삽을 사용해 크기를 조정해보세요.
+    Text: §cLand §8» §f여기에는 하위 보호 구역이 겹쳐 있어 만들 수 없습니다. §e/abandonclaim §f명령어로 삭제하거나,
+      모서리에서 삽을 사용해 크기를 조정해보세요.
   SubdivisionStart:
     Text: §bLand §8» §f하위 보호 구역의 첫 번째 모서리를 설정했습니다. 반대쪽 모서리에 삽을 사용하세요.
   CreateSubdivisionOverlap:
@@ -278,8 +279,8 @@ Messages:
   SubdivisionSuccess:
     Text: §aLand §8» §f하위 보호 구역이 생성되었습니다! 친구와 공유하려면 §e/trust §f명령어를 사용하세요.
   CreateClaimFailOverlap:
-    Text: §cLand §8» §f이곳은 기존 보호 구역과 겹쳐 보호 구역을 만들 수 없습니다. §e/abandonclaim §f명령어나 삽으로 크기를
-      조정해보세요.
+    Text: §cLand §8» §f이곳은 기존 보호 구역과 겹쳐 보호 구역을 만들 수 없습니다. §e/abandonclaim §f명령어나 삽으로
+      크기를 조정해보세요.
   CreateClaimFailOverlapOtherPlayer:
     Text: §cLand §8» §f이곳은 §6{0}§f님의 보호 구역과 겹쳐 보호 구역을 만들 수 없습니다.
     Notes: '0: 다른 소유자 이름'
@@ -412,10 +413,11 @@ Messages:
     Text: §aLand §8» §6{0}§f님의 드롭을 해제했습니다.
     Notes: '0: 해제 대상 플레이어'
   AdvertiseACandACB:
-    Text: §bLand §8» §f/acb 명령어로 보호 블록을 더 부여하거나, §e/adminclaims §f명령어로 무료 관리자 보호 구역을 만들
-      수 있습니다.
+    Text: §bLand §8» §f/acb 명령어로 보호 블록을 더 부여하거나, §e/adminclaims §f명령어로 무료 관리자 보호 구역을
+      만들 수 있습니다.
   AdvertiseAdminClaims:
-    Text: §bLand §8» §f관리자 보호 구역을 만들려면 §e/adminclaims §f명령어를 사용하세요. 다른 관리자와 공유할 수 있습니다.
+    Text: §bLand §8» §f관리자 보호 구역을 만들려면 §e/adminclaims §f명령어를 사용하세요. 다른 관리자와 공유할 수
+      있습니다.
   AdvertiseACB:
     Text: §bLand §8» §f/acb 명령어로 보호 블록을 추가할 수 있습니다.
   NotYourPet:
@@ -432,8 +434,8 @@ Messages:
   BecomeMayor:
     Text: §aLand §8» §f보호 구역을 하위 구역으로 나누어 마을을 운영해보세요!
   ClaimCreationFailedOverClaimCountLimit:
-    Text: §cLand §8» §f보호 구역 개수 제한에 도달했습니다. 새로 만들려면 §e/abandonclaim §f명령어로 기존 구역 중 하나를
-      삭제하세요.
+    Text: §cLand §8» §f보호 구역 개수 제한에 도달했습니다. 새로 만들려면 §e/abandonclaim §f명령어로 기존 구역 중
+      하나를 삭제하세요.
   CreateClaimFailOverlapRegion:
     Text: §cLand §8» §f이 영역 전체를 보호할 수 없습니다. 해당 지역에 건설 권한이 없습니다.
   ResizeFailOverlapRegion:
