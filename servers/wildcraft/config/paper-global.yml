@@ -76,7 +76,7 @@ messages:
     connection-throttle: 너무 빠르게 재접속했습니다. 잠시 기다려주세요.
     flying-player: <lang:multiplayer.disconnect.flying>
     flying-vehicle: <lang:multiplayer.disconnect.flying>
-  no-permission: <red>System <gray>» <white>존재하지 않거나 사용할 수 없는 명령어입니다.
+  no-permission: <red>Core <gray>» <white>존재하지 않거나 사용할 수 없는 명령어입니다.
   use-display-name-in-quit-message: false
 misc:
   chat-threads:
