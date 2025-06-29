@@ -127,7 +127,7 @@ INSERT INTO `tab_groups` (`group`, `property`, `value`, `world`, `server`)
 VALUES
 	('_DEFAULT_','tabprefix','%luckperms-prefix%',NULL,NULL),
 	('_DEFAULT_','tagprefix','%luckperms-prefix%',NULL,NULL),
-	('_DEFAULT_','customtabname','%player%',NULL,NULL),
+	('_DEFAULT_','customtabname','%displayname%',NULL,NULL),
 	('_DEFAULT_','tabsuffix','%luckperms-suffix%',NULL,NULL),
 	('_DEFAULT_','tagsuffix','%luckperms-suffix%',NULL,NULL);
 
