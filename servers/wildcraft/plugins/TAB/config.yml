@@ -1,63 +1,57 @@
 header-footer:
-  enabled: false
+  enabled: true
   header:
-  - <#FFFFFF>&m                                                </#FFFF00>
-  - '&3&lServer name'
-  - '&r&7&l>> %animation:Welcome%&3 &l%player%&7&l! &7&l<<'
-  - '&r&7Online players: &f%online%'
-  - '&6Online staff: &e%staffonline%'
-  - ''
+    - ""
+    - "   &6&l&o⛰ &f&l&oEverest &a&l&oMC   "
+    - ""
   footer:
-  - '%animation:time%'
-  - '&2Ping: %ping%'
-  - '&7&l Used memory: %memory-used% MB / %memory-max% MB'
-  - ''
-  - '&r&7Visit our webpage %animation:web%'
-  - <#FFFFFF>&m                                                </#FFFF00>
-  disable-condition: '%world%=disabledworld'
+    - ""
+    - "%server_tps_1_colored% &7/ &e&o%ping% &7ms"
+    - ""
+  disable-condition: "%world%=disabledworld"
   per-world:
     world1:
       header:
-      - an example of world with custom
+        - an example of world with custom
       footer:
-      - header/footer and prefix/suffix
+        - header/footer and prefix/suffix
     world2;world3:
       header:
-      - This is a shared header for
-      - world2 and world3
+        - This is a shared header for
+        - world2 and world3
   per-server:
     server1:
       header:
-      - an example of server with custom header
+        - an example of server with custom header
 tablist-name-formatting:
-  enabled: false
-  disable-condition: '%world%=disabledworld'
+  enabled: true
+  disable-condition: "%world%=disabledworld"
 scoreboard-teams:
-  enabled: false
+  enabled: true
   enable-collision: true
   invisible-nametags: false
   sorting-types:
-  - GROUPS:Admin,default
-  - PLACEHOLDER_A_TO_Z:%player%
+    - GROUPS:admin,default
+    - PLACEHOLDER_A_TO_Z:%player%
   case-sensitive-sorting: true
   can-see-friendly-invisibles: false
-  disable-condition: '%world%=disabledworld'
+  disable-condition: "%world%=disabledworld"
 playerlist-objective:
   enabled: false
-  value: '%ping%'
-  fancy-value: '&7Ping: %ping%'
+  value: "%ping%"
+  fancy-value: "&7Ping: %ping%"
   title: TAB
   render-type: INTEGER
-  disable-condition: '%world%=disabledworld'
+  disable-condition: "%world%=disabledworld"
 belowname-objective:
   enabled: false
-  value: '%health%'
-  title: '&cHealth'
-  fancy-value: '&c%health%'
+  value: "%health%"
+  title: "&cHealth"
+  fancy-value: "&c%health%"
   fancy-value-default: NPC
-  disable-condition: '%world%=disabledworld'
+  disable-condition: "%world%=disabledworld"
 prevent-spectator-effect:
-  enabled: false
+  enabled: true
 bossbar:
   enabled: false
   toggle-command: /bossbar
@@ -66,9 +60,9 @@ bossbar:
   bars:
     ServerInfo:
       style: PROGRESS
-      color: '%animation:barcolors%'
-      progress: '100'
-      text: '&fWebsite: &bwww.domain.com'
+      color: "%animation:barcolors%"
+      progress: "100"
+      text: "&fWebsite: &bwww.domain.com"
 scoreboard:
   enabled: true
   toggle-command: /sb
@@ -79,87 +73,76 @@ scoreboard:
   delay-on-join-milliseconds: 0
   scoreboards:
     default:
-      title: '&f&l&o⛰ <gradient:#aef1ff:#b9ffe8:#ffffff>Everest</gradient>'
+      title: "&6&l&o⛰ &f&l&oEverest"
       lines:
-      - '&8&m                 '
-      - '&e%player_x%&7, &e%player_y%&7, &e%player_z%'
-      - '&8&m                 '
-      - '&7mcMMO &8| &e%mcmmo_power_level%'
-      - '&7Money &8| &e&o%vault_eco_balance_formatted%'
-      - '&8&m                 '
-      - '&7TPS &8| &e&o%server_tps_1_colored%'
-      - '&7Ping &8| &e&o%ping% &7ms'
-      - '&8&m                 '
+        - "&8&m                 "
+        - "&7mcMMO &8| &e%mcmmo_power_level%"
+        - "&7Money &8| &e&o%vault_eco_balance_formatted%"
+        - "&8&m                 "
+        - "&f%cmi_user_rank_displayname%"
+        - "&8&m                 "
 layout:
   enabled: false
   direction: COLUMNS
   default-skin: mineskin:383747683
   enable-remaining-players-text: true
-  remaining-players-text: '... and %s more'
+  remaining-players-text: "... and %s more"
   empty-slot-ping-value: 1000
   layouts:
     default:
       fixed-slots:
-      - '1|&3Website&f:'
-      - 2|&bmyserver.net
-      - '3|&8&m                       '
-      - '4|&3Name&f:'
-      - 5|&b%player%
-      - '7|&3Rank&f:'
-      - '8|Rank: %group%'
-      - '10|&3World&f:'
-      - 11|&b%world%
-      - '13|&3Time&f:'
-      - 14|&b%time%
-      - '21|&3Teamspeak&f:'
-      - 22|&bts.myserver.net
-      - '23|&8&m                       '
-      - '41|&3Store&f:'
-      - 42|&bshop.myserver.net
-      - '43|&8&m                       '
+        - "1|&3Website&f:"
+        - 2|&bmyserver.net
+        - "3|&8&m                       "
+        - "4|&3Name&f:"
+        - 5|&b%player%
+        - "7|&3Rank&f:"
+        - "8|Rank: %group%"
+        - "10|&3World&f:"
+        - 11|&b%world%
+        - "13|&3Time&f:"
+        - 14|&b%time%
+        - "21|&3Teamspeak&f:"
+        - 22|&bts.myserver.net
+        - "23|&8&m                       "
+        - "41|&3Store&f:"
+        - 42|&bshop.myserver.net
+        - "43|&8&m                       "
       groups:
         staff:
           condition: permission:tab.staff
           slots:
-          - 24-40
+            - 24-40
         players:
           slots:
-          - 44-80
+            - 44-80
 ping-spoof:
   enabled: false
   value: 0
 placeholders:
   date-format: dd.MM.yyyy
-  time-format: '[HH:mm:ss / h:mm a]'
+  time-format: "[HH:mm:ss / h:mm a]"
   time-offset: 0
   register-tab-expansion: false
 placeholder-output-replacements:
-  '%essentials_vanished%':
-    'yes': '&7| Vanished'
-    'no': ''
+  "%essentials_vanished%":
+    "yes": "&7| Vanished"
+    "no": ""
 conditions:
   nick:
     conditions:
-    - '%player%=%essentials_nickname%'
-    true: '%player%'
+      - "%player%=%essentials_nickname%"
+    true: "%player%"
     false: ~%essentials_nickname%
 placeholder-refresh-intervals:
-  default-refresh-interval: 500
-  '%server_uptime%': 1000
-  '%server_tps_1_colored%': 1000
-  '%server_unique_joins%': 5000
-  '%player_health%': 200
-  '%player_ping%': 1000
-  '%vault_prefix%': 1000
-  '%rel_factionsuuid_relation_color%': 1000
+  default-refresh-interval: 1000
+  "%server_tps_1_colored%": 700
+  "%player_ping%": 700
 assign-groups-by-permissions: false
 primary-group-finding-list:
-- Owner
-- Admin
-- Mod
-- Helper
-- default
-permission-refresh-interval: 1000
+  - admin
+  - default
+permission-refresh-interval: 10000
 debug: false
 mysql:
   enabled: true
@@ -183,15 +166,15 @@ per-world-playerlist:
   enabled: false
   allow-bypass-permission: false
   ignore-effect-in-worlds:
-  - ignoredworld
-  - build
+    - ignoredworld
+    - build
   shared-playerlist-world-groups:
     lobby:
-    - lobby1
-    - lobby2
+      - lobby1
+      - lobby2
     minigames:
-    - paintball
-    - bedwars
+      - paintball
+      - bedwars
 compensate-for-packetevents-bug: false
 global-playerlist:
   enabled: false
@@ -200,14 +183,14 @@ global-playerlist:
   isolate-unlisted-servers: false
   update-latency: false
   spy-servers:
-  - spyserver1
-  - spyserver2
+    - spyserver1
+    - spyserver2
   server-groups:
     lobbies:
-    - lobby1
-    - lobby2
+      - lobby1
+      - lobby2
     group2:
-    - server1
-    - server2
+      - server1
+      - server2
 use-bukkit-permissions-manager: false
 use-online-uuid-in-tablist: true
