@@ -35,15 +35,16 @@
     "plugins": {
       "velocity": {
         "CMIV": "https://www.zrips.net/cmiv/",
-        "LiteBans": "https://www.spigotmc.org/resources/litebans.3715/"
+        "LiteBans": "https://www.spigotmc.org/resources/litebans.3715/updates/"
       },
       "paper": {
-        "MobFarmManager": "https://www.spigotmc.org/resources/mob-farm-manager-supports-1-7-10-up-to-1-21-hopper-support.15127/",
         "CMILib": "https://www.zrips.net/cmilib/",
-        "CMI": "https://www.spigotmc.org/resources/cmi-300-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/",
+        "CMI": "https://www.spigotmc.org/resources/cmi-300-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/updates/",
+        "MobFarmManager": "https://www.spigotmc.org/resources/mob-farm-manager-supports-1-7-10-up-to-1-21-hopper-support.15127/updates/",
         "Vault": "https://www.zrips.net/cmivault/",
         "CoreProtect": "https://github.com/PlayPro/CoreProtect/",
-        "GriefPrevention": "https://dev.bukkit.org/projects/grief-prevention/files/"
+        "GriefPrevention": "https://dev.bukkit.org/projects/grief-prevention/files/",
+        "CrackShot": "https://www.spigotmc.org/resources/crackshot-guns.48301/updates/"
       }
     }
   }
