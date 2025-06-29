@@ -1,10 +1,10 @@
-# Ignore macOS Resource Forks
-.DS_Store
-
 # Ignore Changing Files
+# If you change these files, don't forget to commit them!
 server.properties
 
 # Ignore Files
+.DS_Store
+
 .termux/shell
 
 lib/
