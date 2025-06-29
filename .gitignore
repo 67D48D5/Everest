@@ -26,6 +26,7 @@ sessions/
 server.yml
 wepif.yml
 permissions.yml
+worldNames.yml
 
 banned-ips.json
 banned-players.json
