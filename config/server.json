@@ -18,6 +18,7 @@
         "TAB": "auto://TAB*",
         "Chunky": "auto://Chunky-*",
         "ChunkyBorder": "auto://ChunkyBorder-*",
+        "DiscordSRV": "auto://DiscordSRV*",
         "mcMMO": "auto://mcMMO*",
         "LuckPerms": "auto://LuckPerms-*",
         "ProtocolLib": "auto://ProtocolLib*",
