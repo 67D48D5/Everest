@@ -238,6 +238,13 @@ EntityHeads:
     LowerWithEachDrop: 50.0
     Heads:
     - 100:Default:ZGZiNjc1Y2I1YTdlM2ZkMjVlMjlkYTgyNThmMjRmYzAyMGIzZmE5NTAzNjJiOGJjOGViMjUyZTU2ZTc0In19fQ==
+  happy_ghast:
+    DropChance: 1.0
+    LowerWithEachDrop: 50.0
+    Heads:
+    - 100:Default:YTFhMzZjYjkzZDAxNjc1YzQ2MjJkZDVjOGQ4NzIxMTA5MTFlYzEyYzM3MmU4OWFmYThiYTAzODYyODY3ZjZmYiJ9fX0=
+    - 100:Default:ZWM3OWY5MDgyZjZhYmVlZDk3NTA3NDQ0M2JlOGM4YTc5ZWExMDYwZDYxMDk0ZmY3OWEwNDk4OTM0MDQzMDYyNCJ9fX0=
+    - 100:Default:MjRiNWE0NzJkY2U5MzUwNWQ0YTQ0MDFhNzRjZTI5ZWNlZTg4ZTMyNjQyOGJjMTAzY2JhZDRkOTM5YWJlZDFiIn19fQ==
   hoglin:
     DropChance: 1.0
     LowerWithEachDrop: 50.0

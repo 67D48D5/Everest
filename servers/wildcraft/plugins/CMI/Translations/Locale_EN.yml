@@ -1602,6 +1602,7 @@ command:
       shadow: '&7Text shadow: &6[state]'
       fadeIn: '&7Fade in animation: &6[state]'
       textAlpha: '&7Text transparency: &6[alpha]'
+      textWidth: '&7Text width: &6[width]'
       bgAlpha: '&7Background transparency: &6[alpha]'
       bgColor: '&7Background color: &6[color]'
       scaleWidth: '&7Scale width: &6[scale]'
@@ -3640,6 +3641,7 @@ command:
         PIG_ONE_CM: Pig travel
         HORSE_ONE_CM: Horse travel
         AVIATE_ONE_CM: Elytra travel
+        HAPPY_GHAST_ONE_CM: Ghast travel
         JUMP: Jump
         DAMAGE_DEALT: Damage dealt
         DAMAGE_TAKEN: Damage taken

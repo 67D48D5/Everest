@@ -56,8 +56,8 @@ info:
     / 현재 이름: &e[currentName]'
   NoCommandWhileSleeping: '&cCore &8» &f잠자는 중에는 명령어를 사용할 수 없습니다&o!'
   PurgeNotEnabled: '&cCore &8» &f설정 파일에서 정리(Purge) 기능이 비활성화되어 있습니다&o!'
-  TeamManagementDisabled: '&cCore &8» &e&oDisableTeamManagement&f가 true로 설정되어 있어
-    해당 기능이 제한됩니다'
+  TeamManagementDisabled: '&cCore &8» &e&oDisableTeamManagement&f가 true로 설정되어 있어 해당
+    기능이 제한됩니다'
   NoGameMode: '&cCore &8» &f올바른 게임 모드를 입력해주세요: 0/1/2/3 또는 Survival/Creative/Adventure/Spectator
     또는 s/c/a/sp'
   NameChange: '&bCore &8» &6[playerDisplayName]&f님이 접속했습니다. 이전 이름: &6[namelist]'
@@ -76,15 +76,13 @@ info:
   ClickSpawner: '!actionbar!&7[percent]% &e드랍 확률'
   Elevator:
     created: '&aCore &8» &f엘리베이터 표지판이 생성되었습니다'
-  CantPlaceSpawner: '&eCore &8» &f스포너가 다른 스포너와 너무 가까워 설치할 수 없습니다 (&6[range]&e 블록
-    이내)'
+  CantPlaceSpawner: '&eCore &8» &f스포너가 다른 스포너와 너무 가까워 설치할 수 없습니다 (&6[range]&e 블록 이내)'
   ChunksLoading: '&eCore &8» &f월드 청크 데이터를 불러오는 중입니다. 잠시 후 다시 시도해주세요'
   CantUseNonEncrypted: '!actionbar!&c이 아이템에 연결된 명령어가 암호화되어 있지 않아 사용할 수 없습니다'
   CantUseTrident: '!actionbar!&c지금은 리타이드가 부여된 삼지창을 사용할 수 없습니다'
   CantDecode: '!actionbar!&c명령어를 복호화할 수 없습니다. 키 파일이 잘못되었습니다. 관리자에게 문의하세요'
   CantTeleport: '&eCore &8» &f한정 아이템을 너무 많이 가지고 있어 순간이동할 수 없습니다. 커서를 올려 제한 수량을 확인하세요'
-  CantTeleportDistance: '&eCore &8» &f죄송합니다. &6[amount] &e블록 이상 떨어진 곳으로는 순간이동할 수
-    없습니다'
+  CantTeleportDistance: '&eCore &8» &f죄송합니다. &6[amount] &e블록 이상 떨어진 곳으로는 순간이동할 수 없습니다'
   BlackList: '&e[material] [amount] &6최대: [max]'
   wrongPortal: '&cCore &8» &f포탈의 잘못된 영역에 위치해 있습니다'
   ItemWillBreak: '!actionbar!&e아이템이 곧 파괴됩니다: &6[itemName] &e(&e[current]&6/&e[max])'
@@ -1551,6 +1549,7 @@ command:
       shadow: '&7텍스트 그림자: &6[state]'
       fadeIn: '&7페이드 인 애니메이션: &6[state]'
       textAlpha: '&7텍스트 투명도: &6[alpha]'
+      textWidth: '&7Text width: &6[width]'
       bgAlpha: '&7배경 투명도: &6[alpha]'
       bgColor: '&7배경 색상: &6[color]'
       scaleWidth: '&7너비 비율: &6[scale]'
@@ -3572,6 +3571,7 @@ command:
         PIG_ONE_CM: Pig travel
         HORSE_ONE_CM: Horse travel
         AVIATE_ONE_CM: Elytra travel
+        HAPPY_GHAST_ONE_CM: Ghast travel
         JUMP: Jump
         DAMAGE_DEALT: Damage dealt
         DAMAGE_TAKEN: Damage taken

@@ -12,13 +12,13 @@ TabList:
     # automatically updates tab list every x seconds for ALL online players
     # If you are using static Footer and Header you can disable this by setting to -1
     # Consider setting this to -1 if its completely enough to update on player events
-    AutoInterval: 3
+    AutoInterval: 60
     OnJoin: true
     OnLeave: true
     afkStateChange: true
     OnWorldChange: true
-    OnDeath: true
-    OnTeleport: true
+    OnDeath: false
+    OnTeleport: false
     OnNickChange: true
   # When set to false we will not add header text to tablist
   addTabListHeader: true
@@ -32,14 +32,16 @@ TabList:
     PlayerName: '[playerDisplayName]'
     Header:
       '1':
-      - ''
-      - '   &6&l&o⛰ &f&l&oEverest &a&l&oMC   '
-      - ''
+      - '&f------------------------------------'
+      - '&7Welcome'
+      - '&7Online &f%server_online%&7/&f%server_max_players%'
+      - '&f------------------------------------'
     Footer:
       '1':
-      - ''
-      - '&e%cmi_user_ping% &7ms'
-      - ''
+      - '&f------------------------------------'
+      - '&7%player_world% &f%player_x%:&7%player_y%:&f%player_z%'
+      - '&7Money: &f%vault_eco_balance_formatted% &7Time: &f%server_time_HH:mm:ss%'
+      - '&f------------------------------------'
   useGeneralName: false
   # When this set to true, in case you dint defined PlayerName, Header or Footer in GroupFormat, then default one from GeneralFormat will be used
   useGeneralHeader: false

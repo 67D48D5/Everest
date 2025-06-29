@@ -709,6 +709,8 @@ Signs:
   # Usually used for preventing shop sign modifications
   editBlackList:
   - '[Shop]'
+  # When enabled player needs to be sneaking to edit signs
+  RequireSneaking: false
 Skins:
   # Applies skin to player automatically on his login to server if he doesnt have one already set
   # This will always set to skin by target player name
@@ -719,13 +721,9 @@ Skins:
   # Requests from player specific permission for that skin cmi.command.skin.perm.[skinName]
   RequireSpecificPerm: false
   # Defines time in minutes how offten we want to update skin information from online Mojang servers
-  # Keep in mind that your server can only send 1 request every minute, so keep it at a decent amount, hour or more
   # So if you have this set to 1 hour, then player skin information will be updated if player old skin information is older then 1 hour
   # This only triggers when player joins server or changes skin manually
   SkinUpdateTimer: 1320
-  # Defines time in minutes how offten we want to send requests to Mojang servers
-  # This is to limit amount of requests in specific time to avoid cluter with possible requests
-  SkinRequestFrequency: 10
 Alert:
   # Time in minutes for how long we want to keep set allert on player when performing /cmi alert command. Default is 24 hours
   Timer: 1440

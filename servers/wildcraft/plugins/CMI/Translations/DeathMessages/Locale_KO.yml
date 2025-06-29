@@ -298,6 +298,11 @@ Mob:
     - '&2[playerDisplayName] &7killed by &2[mobName]'
     Item:
     - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
+  Happy_ghast:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Hoglin:
     General:
     - '&2[playerDisplayName] &7killed by &2[mobName]'
