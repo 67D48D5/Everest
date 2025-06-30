@@ -43,7 +43,6 @@ INSERT INTO `luckperms_group_permissions` (`id`, `name`, `permission`, `value`, 
 VALUES
 	(1,'default','coreprotect.inspect',1,'global','global',0,'{}'),
 	(2,'default','weight.10',1,'global','global',0,'{}'),
-	(3,'default','displayname.Player',1,'global','global',0,'{}'),
 	(4,'admin','weight.20',1,'global','global',0,'{}'),
 	(5,'admin','displayname.Admin',1,'global','global',0,'{}'),
 	(7,'default','cmi.command.sit',1,'global','global',0,'{}'),
@@ -54,7 +53,6 @@ VALUES
 	(12,'default','cmi.command.tpa',1,'global','global',0,'{}'),
 	(22,'default','cmi.command.home',1,'global','global',0,'{}'),
 	(23,'default','cmi.command.homes',1,'global','global',0,'{}'),
-	(26,'admin','prefix.100.&c',1,'global','global',0,'{}'),
 	(28,'default','cmi.command.sethome.unlimited',1,'global','global',0,'{}'),
 	(29,'default','cmi.command.sethome.overwrite',1,'global','global',0,'{}'),
 	(31,'default','cmi.command.baltop',1,'global','global',0,'{}'),
@@ -74,7 +72,6 @@ VALUES
 	(67,'default','cmi.command.hat',1,'global','global',0,'{}'),
 	(68,'default','cmi.command.removehome',1,'global','global',0,'{}'),
 	(69,'default','cmi.command.glow',1,'global','global',0,'{}'),
-	(70,'default','prefix.10.&7',1,'global','global',0,'{}'),
 	(71,'default','cmi.command.glow.color.*',1,'global','global',0,'{}'),
 	(72,'default','cmi.command.nick.bypass.length',1,'global','global',0,'{}'),
 	(74,'default','cmi.command.nick.bypassblacklist',1,'global','global',0,'{}'),
@@ -108,7 +105,13 @@ VALUES
 	(128,'default','cmi.elytra.freeflight',1,'global','global',0,'{}'),
 	(129,'default','cmi.elytra.speedometer',1,'global','global',0,'{}'),
 	(132,'default','cmi.command.prewards',1,'global','global',0,'{}'),
-	(162,'default','cmi.kit.Newbie',1,'global','global',0,'{}');
+	(162,'default','cmi.kit.Newbie',1,'global','global',0,'{}'),
+	(164,'default','cmi.command.sit.stairs',1,'global','global',0,'{}'),
+	(165,'default','cmi.prewards.notification',1,'global','global',0,'{}'),
+	(166,'default','cmi.prewards.*',1,'global','global',0,'{}'),
+	(167,'admin','prefix.100.&cA &8∥ &c',1,'global','global',0,'{}'),
+	(168,'default','prefix.10.&6U &8∥ &6',1,'global','global',0,'{}'),
+	(169,'default','displayname.User',1,'global','global',0,'{}');
 
 /*!40000 ALTER TABLE `luckperms_group_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
