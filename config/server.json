@@ -30,7 +30,8 @@
         "CMI": "manual://CMI-*",
         "Vault": "manual://Vault-*",
         "CoreProtect": "manual://CoreProtect-*",
-        "GriefPrevention": "manual://GriefPrevention*"
+        "GriefPrevention": "manual://GriefPrevention*",
+        "PlotSquared": "manual://plotsquared-*"
       }
     }
   }
