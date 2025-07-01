@@ -2,7 +2,7 @@ header-footer:
   enabled: true
   header:
     - ""
-    - "   &6&l&o⛰ &f&l&oEverest &a&l&oMC   "
+    - "   &6&l&o⛰ &f&l&oEverest   "
     - ""
   footer:
     - ""
@@ -64,7 +64,7 @@ bossbar:
       progress: "100"
       text: "&fWebsite: &bwww.domain.com"
 scoreboard:
-  enabled: true
+  enabled: false
   toggle-command: /sb
   remember-toggle-choice: false
   hidden-by-default: false
@@ -148,7 +148,7 @@ mysql:
   enabled: true
   host: 127.0.0.1
   port: 3306
-  database: msdwc
+  database: msdgl
   username: 46770d6
   password: 7f04916
   useSSL: false
