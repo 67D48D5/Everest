@@ -24,7 +24,7 @@ done
 echo 80 >/proc/sys/vm/swappiness 2>/dev/null
 
 ## Make sure the CPU cores are online
-echo 0-7 > /dev/cpuset/moderate/cpus
+echo 0-7 >/dev/cpuset/moderate/cpus
 
 ## Set oom_score_adj for Android apps to prevent them from being killed
 (
