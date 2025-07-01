@@ -80,7 +80,6 @@ VALUES
 	(80,'default','cmi.command.sell.all',1,'global','global',0,'{}'),
 	(81,'default','cmi.command.worth',1,'global','global',0,'{}'),
 	(82,'default','cmi.command.worthlist',1,'global','global',0,'{}'),
-	(83,'default','lwc.protect',1,'global','global',0,'{}'),
 	(85,'default','cmi.keepexp',1,'global','global',0,'{}'),
 	(86,'default','cmi.informdurability',1,'global','global',0,'{}'),
 	(88,'default','cmi.command.pay',1,'global','global',0,'{}'),
@@ -111,7 +110,12 @@ VALUES
 	(166,'default','cmi.prewards.*',1,'global','global',0,'{}'),
 	(167,'admin','prefix.100.&cA &8∥ &c',1,'global','global',0,'{}'),
 	(168,'default','prefix.10.&6U &8∥ &6',1,'global','global',0,'{}'),
-	(169,'default','displayname.User',1,'global','global',0,'{}');
+	(169,'default','displayname.User',1,'global','global',0,'{}'),
+	(170,'default','fawe.plotsquared',1,'global','global',0,'{}'),
+	(171,'default','plots.permpack.basicflags',1,'global','global',0,'{}'),
+	(172,'default','plots.permpack.basicinbox',1,'global','global',0,'{}'),
+	(173,'default','plots.permpack.basic',1,'global','global',0,'{}'),
+	(174,'default','plots.plot.24',1,'global','global',0,'{}');
 
 /*!40000 ALTER TABLE `luckperms_group_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -137,6 +141,49 @@ VALUES
 
 /*!40000 ALTER TABLE `luckperms_groups` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+# Dump of table tab_groups
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `tab_groups`;
+
+CREATE TABLE `tab_groups` (
+  `group` varchar(64) DEFAULT NULL,
+  `property` varchar(16) DEFAULT NULL,
+  `value` varchar(1024) DEFAULT NULL,
+  `world` varchar(64) DEFAULT NULL,
+  `server` varchar(64) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+LOCK TABLES `tab_groups` WRITE;
+/*!40000 ALTER TABLE `tab_groups` DISABLE KEYS */;
+
+INSERT INTO `tab_groups` (`group`, `property`, `value`, `world`, `server`)
+VALUES
+	('_DEFAULT_','tabprefix','%luckperms-prefix%',NULL,NULL),
+	('_DEFAULT_','tagprefix','%luckperms-prefix%',NULL,NULL),
+	('_DEFAULT_','customtabname','%displayname%',NULL,NULL),
+	('_DEFAULT_','tabsuffix','%luckperms-suffix%',NULL,NULL),
+	('_DEFAULT_','tagsuffix','%luckperms-suffix%',NULL,NULL);
+
+/*!40000 ALTER TABLE `tab_groups` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table tab_users
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `tab_users`;
+
+CREATE TABLE `tab_users` (
+  `user` varchar(64) DEFAULT NULL,
+  `property` varchar(16) DEFAULT NULL,
+  `value` varchar(1024) DEFAULT NULL,
+  `world` varchar(64) DEFAULT NULL,
+  `server` varchar(64) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 
 
