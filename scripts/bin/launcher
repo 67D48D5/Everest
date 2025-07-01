@@ -93,8 +93,17 @@ velocity)
     ;;
 esac
 
-# Final Java command
-START_CMD=(env "${ENV_EXPORTS[@]}" java "${COMMON_FLAGS[@]}" "${ENGINE_FLAGS[@]}" "${EXTRA_JAVA_FLAGS[@]}" -jar "$JAR_FILE" nogui)
+# Final Java command (wrap with restart loop)
+START_CMD=(
+    bash -c '
+    while true; do
+      echo "▶️ Starting server..."
+      env '"${ENV_EXPORTS[*]}"' java '"${COMMON_FLAGS[*]}"' '"${ENGINE_FLAGS[*]}"' '"${EXTRA_JAVA_FLAGS[*]}"' -jar "'"$JAR_FILE"'" nogui
+      echo "🔁 Server stopped at $(date), restarting in 5 seconds..."
+      sleep 5
+    done
+  '
+)
 
 # Wrapper of tmux session
 if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
