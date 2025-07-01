@@ -41,6 +41,7 @@ ops.json
 **key**
 **cache**
 **history**
+**flatfile**
 
 datapacks/
 advancements/
