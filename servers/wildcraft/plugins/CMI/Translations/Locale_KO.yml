@@ -51,92 +51,95 @@
 # After you update locale in CMILib file perform `/cmil reload` command for changes to take effect
 
 info:
-  Same: '&cCore &8» &f자신의 인벤토리는 수정할 수 없습니다&o!'
-  cantLoginWithDifCap: '&cCore &8» &f대소문자가 다른 이름으로는 접속할 수 없습니다! 이전 이름: &e[oldName]&c
-    / 현재 이름: &e[currentName]'
-  NoCommandWhileSleeping: '&cCore &8» &f잠자는 중에는 명령어를 사용할 수 없습니다&o!'
-  PurgeNotEnabled: '&cCore &8» &f설정 파일에서 정리(Purge) 기능이 비활성화되어 있습니다&o!'
-  TeamManagementDisabled: '&cCore &8» &e&oDisableTeamManagement&f가 true로 설정되어 있어 해당
-    기능이 제한됩니다'
-  NoGameMode: '&cCore &8» &f올바른 게임 모드를 입력해주세요: 0/1/2/3 또는 Survival/Creative/Adventure/Spectator
+  Same: '&cInventory &8» &f자신의 인벤토리는 수정할 수 없습니다&o!'
+  cantLoginWithDifCap: '&cLogin &8» &f대소문자가 다른 이름으로는 접속할 수 없습니다! 이전 이름: &e[oldName]
+    &7/ 현재 이름: &6[currentName]'
+  NoCommandWhileSleeping: '&cError &8» &f잠자는 중에는 명령어를 사용할 수 없습니다&o!'
+  PurgeNotEnabled: '&cPurge &8» &f설정 파일에서 정리(Purge) 기능이 비활성화되어 있습니다&o!'
+  TeamManagementDisabled: '&cTeamManagement &8» &e&oDisableTeamManagement&f가 &atrue&f로
+    설정되어 있어 해당 기능이 제한됩니다.'
+  NoGameMode: '&cGamemode &8» &f올바른 게임 모드를 입력해주세요: 0/1/2/3 또는 Survival/Creative/Adventure/Spectator
     또는 s/c/a/sp'
-  NameChange: '&bCore &8» &6[playerDisplayName]&f님이 접속했습니다. 이전 이름: &6[namelist]'
-  Cooldowns: '&cCore &8» &f이 명령어는 &e[time]&f 후에 다시 사용할 수 있습니다'
-  specializedCooldowns: '&cCore &8» &f해당 명령어는 쿨타임 중입니다. &6[time]&f 후에 사용 가능'
-  specializedRunning: '&cCore &8» &f이 명령어는 아직 실행 중입니다. &6[time]&f 후 재시도해주세요'
-  CooldownOneTime: '&cCore &8» &f이 명령어는 한 번만 사용할 수 있습니다!'
+  NameChange: '&bName &8» &6[playerDisplayName]&f님이 접속했습니다. 이전 이름: &6[namelist]'
+  Cooldowns: '&cCooldown &8» &f해당 명령어는 &e[time]&f 후에 다시 사용할 수 있습니다.'
+  specializedCooldowns: '&cCooldown &8» &f해당 명령어는 쿨타임 중입니다. &e[time]&f후에 다시 사용 가능합니다.'
+  specializedRunning: '&cError &8» &f해당 명령어는 아직 실행 중인 상태입니다. &e[time]&f후 재시도해주세요.'
+  CooldownOneTime: '&cCooldown &8» &f해당 명령어는 한 번만 사용할 수 있습니다&o!'
   WarmUp:
-    canceled: '&eCore &8» &f움직였기 때문에 명령어가 취소되었습니다'
+    canceled: '&cWarmUp &8» &f움직임으로 인해 명령어가 취소되었습니다.'
     counter: '!actionbar!&6→ &e[time]&6초 동안 기다려주세요 ←'
-    DontMove: '!title!&6순간이동 중!!subtitle!&7움직이지 말고 &c[time]&7초간 대기하세요'
+    DontMove: '!title!&6Warm Up!!subtitle!&e움직이지 말고 &c[time]&e초 동안 대기하세요&o!'
     Boss:
-      DontMove: '&4움직이지 마세요! 남은 시간: &7[autoTimeLeft]&4초'
-      WaitFor: '&4대기 시간: &7[autoTimeLeft]&4초'
-  FailedSpawnerMine: '!actionbar!&c스포너 채굴에 실패했습니다. &7[percent]% &c드랍 확률'
-  ClickSpawner: '!actionbar!&7[percent]% &e드랍 확률'
+      DontMove: '&c움직이지 마세요! 남은 시간: &7[autoTimeLeft]&4초'
+      WaitFor: '&6대기 시간: &e[autoTimeLeft]&6초'
+  FailedSpawnerMine: '&cSpawner &8» &f스포너 채굴에 실패했습니다. (&e[percent]% &f드랍 확률)'
+  ClickSpawner: '!actionbar!&bSpawner &8» &e[percent]% &f드랍 확률'
   Elevator:
-    created: '&aCore &8» &f엘리베이터 표지판이 생성되었습니다'
-  CantPlaceSpawner: '&eCore &8» &f스포너가 다른 스포너와 너무 가까워 설치할 수 없습니다 (&6[range]&e 블록 이내)'
-  ChunksLoading: '&eCore &8» &f월드 청크 데이터를 불러오는 중입니다. 잠시 후 다시 시도해주세요'
-  CantUseNonEncrypted: '!actionbar!&c이 아이템에 연결된 명령어가 암호화되어 있지 않아 사용할 수 없습니다'
-  CantUseTrident: '!actionbar!&c지금은 리타이드가 부여된 삼지창을 사용할 수 없습니다'
-  CantDecode: '!actionbar!&c명령어를 복호화할 수 없습니다. 키 파일이 잘못되었습니다. 관리자에게 문의하세요'
-  CantTeleport: '&eCore &8» &f한정 아이템을 너무 많이 가지고 있어 순간이동할 수 없습니다. 커서를 올려 제한 수량을 확인하세요'
-  CantTeleportDistance: '&eCore &8» &f죄송합니다. &6[amount] &e블록 이상 떨어진 곳으로는 순간이동할 수 없습니다'
+    created: '&aElevator &8» &f엘리베이터 표지판이 생성되었습니다.'
+  CantPlaceSpawner: '&cSpawner &8» &f스포너가 다른 스포너와 너무 가까워 설치할 수 없습니다. (&e[range] &f블록
+    이내)'
+  ChunksLoading: '&cChunks &8» &f월드 청크 데이터를 불러오는 중입니다. 잠시 후 다시 시도해주세요&o!'
+  CantUseNonEncrypted: '&cError &8» &f해당 아이템에 연결된 명령어가 암호화되어 있지 않아 사용할 수 없습니다.'
+  CantUseTrident: '&cError &8» &f지금은 리타이드가 부여된 삼지창을 사용할 수 없습니다.'
+  CantDecode: '&cError &8» &f명령어를 복호화할 수 없습니다. 키 파일이 잘못되었습니다. 관리자에게 문의하세요&o!'
+  CantTeleport: '&cTeleport &8» &f한정 아이템을 너무 많이 가지고 있어 순간이동할 수 없습니다. 커서를 올려 제한 수량을
+    확인하세요.'
+  CantTeleportDistance: '&cTeleport &8» &e[amount] &f블록 이상 떨어진 곳으로는 순간이동할 수 없습니다.'
   BlackList: '&e[material] [amount] &6최대: [max]'
-  wrongPortal: '&cCore &8» &f포탈의 잘못된 영역에 위치해 있습니다'
-  ItemWillBreak: '!actionbar!&e아이템이 곧 파괴됩니다: &6[itemName] &e(&e[current]&6/&e[max])'
-  ArmorWillBreak: '!actionbar!&e장비가 곧 파괴됩니다: [itemName] &e(&e[current]&6/&e[max])'
-  flyingToHigh: '&cCore &8» &f너무 높이 날 수 없습니다. 최대 높이: &6[max]'
-  specializedItemFail: '&cCore &8» &f스페셜 아이템 조건을 확인할 수 없습니다: &7[value]'
+  wrongPortal: '&cPortal &8» &f포탈의 잘못된 영역에 위치해 있습니다.'
+  ItemWillBreak: '!actionbar!&cBreak &8» &f아이템이 곧 파괴됩니다: &6[itemName] &7([current]/[max])'
+  ArmorWillBreak: '!actionbar!&cBreak &8» &f장비가 곧 파괴됩니다: &6[itemName] &7([current]/[max])'
+  flyingToHigh: '&cFly &8» &f너무 높이 날 수 없습니다. 최대 높이: &6[max]'
+  specializedItemFail: '&cError &8» &f스페셜 아이템 조건을 확인할 수 없습니다: &7[value]'
   sunSpeeding: '잠자는 중: [count]/[total], 현재 시간: [hour]시, 속도: [speed]배'
-  sleepersRequired: '!actionbar!&f[sleeping] &7명 / &f[required] &7명 잠자는 중 - 밤 시간 가속
-    조건 충족'
+  sleepersRequired: '!actionbar!&bSleep &8» &f밤 시간 가속을 위해 잠을 자야합니다&o! &f(&a[sleeping]&f명
+    / &e[required]&f명)'
   sunSpeedingTitle: '&7[hour]시'
-  skippingNight: '!title!&7밤을 건너뜁니다'
+  skippingNight: '!title!&7Skipping Night&o!'
   sunSpeedingSubTitle: '&f[count]&7/&f[total] &7(&f[speed]X&7)'
-  repairConfirm: '&e수리 확인: 클릭 시 &7[items] &e개 아이템을 &7[cost]&e에 수리합니다'
+  repairConfirm: '&bConfirm &8» &f클릭 시 &e[items]&f개 아이템을 &e[cost]&f에 수리합니다.'
   bookDate: '&7작성 날짜: &f[date]'
   maintenance: '&7서버 점검 중'
-  mapLimit: '&c3,000만 블록 이상으로 이동할 수 없습니다'
-  startedEditingPainting: '&e그림 편집을 시작했습니다. 다른 블록을 클릭하면 취소됩니다'
-  canceledEditingPainting: '&e그림 편집이 취소되었습니다'
-  changedPainting: '!actionbar!&e그림이 &6[name]&e(ID: &6[id]&e)로 변경되었습니다'
-  noSpam: '!title!&c채팅 도배 금지!'
-  noCmdSpam: '!title!&c명령어 도배 금지!'
-  spamConsoleInform: '&c플레이어 (&7[playerName]&c)이(가) 필터(&7[rules]&c)에 걸림: &r[message]'
+  mapLimit: '&cLimit &8» &f3,000만 블록 이상으로 이동할 수 없습니다.'
+  startedEditingPainting: '&aPainting &8» &f그림 편집을 시작했습니다. 다른 블록을 클릭하면 취소됩니다.'
+  canceledEditingPainting: '&cPainting &8» &f그림 편집이 취소되었습니다.'
+  changedPainting: '&aPainting &8» &f그림이 &6[name]&7#[id]&f로 변경되었습니다.'
+  noSpam: '!title!&cNo Spam&o!'
+  noCmdSpam: '!title!&cNo Spam&o!'
+  spamConsoleInform: '&cSpam &8» &f플레이어 (&7[playerName]&c)이(가) 필터(&7[rules]&c)에 걸림:
+    &r[message]'
   # This line can have extra variables: [totalUsers] [onlinePlayers]
-  FirstJoin: '&aNEW &8» &6[playerDisplayName]&f님이 서버에 처음 접속하셨습니다&o!'
-  LogoutCustom: '&cQUIT &8» &6[playerDisplayName]&f님이 서버를 떠났습니다.'
-  LoginCustom: '&bJOIN &8» &6[playerDisplayName]&f님이 서버에 접속했습니다.'
-  deathlocation: '&6[world] &e의 x:&6[x] y:&6[y] z:&6[z] 위치에서 사망했습니다'
+  FirstJoin: '&aNew &8» &6[prefix][playerDisplayName]&f님이 서버에 처음 접속하셨습니다&o!'
+  LogoutCustom: '&cQuit &8» &6[prefix][playerDisplayName]&f님이 서버를 떠났습니다.'
+  LoginCustom: '&bJoin &8» &6[prefix][playerDisplayName]&f님이 서버에 접속했습니다.'
+  deathlocation: '&bDeath &8» &e[x], [y], [z] &7@[world] &f위치에서 사망했습니다.'
   book:
-    exploit: '&c페이지 수가 [amount]개를 초과하는 책은 생성할 수 없습니다'
+    exploit: '&cBook &8» &f페이지 수가 &e[amount] &f페이지를 초과하는 책은 생성할 수 없습니다.'
   combat:
     CostToOpen: '!actionbar!&e열람 비용: [amount]'
     CantUseShulkerBox: '&c플레이어와 전투 중에는 셜커 상자를 사용할 수 없습니다. 남은 시간: [time]'
     CantUseCommand: '!actionbar!&c전투 상태에서는 명령어를 사용할 수 없습니다. 남은 시간: [time]'
     bossBarPvp: '&c전투 중 &7[autoTimeLeft]초'
     bossBarPve: '&2전투 중 &7[autoTimeLeft]초'
-  noSchedule: '&c해당 이름의 일정(Schedule)을 찾을 수 없습니다'
+  noSchedule: '&c해당 이름의 일정(Schedule)을 찾을 수 없습니다.'
   totem:
     cooldown: '&e토템 쿨다운: [time]'
     warmup: '&e토템 효과 발동 중: [time]'
-    cantConsume: '&e토템 사용이 쿨다운 중이어서 차단되었습니다'
+    cantConsume: '&e토템 사용이 쿨다운 중이어서 차단되었습니다.'
   InventorySave:
     info: '&8정보: &8[playerDisplayName]'
-    saved: '&e[time] &e인벤토리가 ID: &e[id]&e로 저장되었습니다'
-    NoSavedInv: '&e해당 플레이어는 저장된 인벤토리가 없습니다'
-    NoEntries: '&4파일은 존재하지만 저장된 인벤토리를 찾을 수 없습니다!'
-    CantFind: '&e해당 ID의 인벤토리를 찾을 수 없습니다'
+    saved: '&e[time] &e인벤토리가 ID: &e[id]&e로 저장되었습니다.'
+    NoSavedInv: '&e해당 플레이어는 저장된 인벤토리가 없습니다.'
+    NoEntries: '&4파일은 존재하지만 저장된 인벤토리를 찾을 수 없습니다&o!'
+    CantFind: '&e해당 ID의 인벤토리를 찾을 수 없습니다.'
     TopLine: '&e----------- &6[playerDisplayName]님의 저장된 인벤토리 &e-----------'
     List: '&eid: &6[id]&e | &6[time]'
     KillerSymbol: '&c ☠'
     Click: '&e클릭하여 ([id]) 인벤토리 확인'
-    IdDontExist: '&4해당 저장 ID는 존재하지 않습니다!'
-    Deleted: '&e저장된 인벤토리가 성공적으로 삭제되었습니다!'
+    IdDontExist: '&4해당 저장 ID는 존재하지 않습니다&o!'
+    Deleted: '&e저장된 인벤토리가 성공적으로 삭제되었습니다&o!'
     Restored: '&e[sourcename]의 인벤토리를 &e[targetname]님에게 복원했습니다.'
-    GotRestored: '&e[sourcename] &e인벤토리로부터 &e[time]에 복원되었습니다'
+    GotRestored: '&e[sourcename] &e인벤토리로부터 &e[time]에 복원되었습니다.'
     LoadForSelf: '&e이 인벤토리를 자신에게 불러오기'
     LoadForOwner: '&e이 인벤토리를 소유자에게 불러오기'
     NextInventory: '&e다음 인벤토리'
@@ -150,25 +153,25 @@ info:
   beeinfo: '!actionbar!&7벌통 상태: 꿀 &e[level]&7/&e[maxlevel]개 | 벌 &e[count]&7/&e[maxcount]마리'
   decoratedpotinfo: '!actionbar!&7항아리 내용물: &e[items]'
   pvp:
-    noGodDamage: '!actionbar!&c무적 상태에서는 다른 플레이어를 공격할 수 없습니다'
+    noGodDamage: '!actionbar!&c무적 상태에서는 다른 플레이어를 공격할 수 없습니다.'
   pve:
-    noGodDamage: '!actionbar!&c무적 상태에서는 몬스터를 공격할 수 없습니다'
+    noGodDamage: '!actionbar!&c무적 상태에서는 몬스터를 공격할 수 없습니다.'
   InvEmpty:
-    armor: '&e방어구 슬롯이 비어 있어야 합니다!'
-    hand: '&e손에 아무것도 들고 있지 않아야 합니다!'
-    maininv: '&e메인 인벤토리가 비어 있어야 합니다!'
-    maininvslots: '&e메인 인벤토리에 최소 &6[count]&e칸의 빈 공간이 필요합니다!'
-    inv: '&e인벤토리가 비어 있어야 합니다!'
-    offhand: '&e보조 손이 비어 있어야 합니다!'
-    quickbar: '&e빠른 장비창이 비어 있어야 합니다!'
-    quickbarslots: '&e빠른 장비창에 최소 &6[count]&e칸의 빈 공간이 필요합니다!'
-    subinv: '&e서브 인벤토리가 비어 있어야 합니다!'
-    subinvslots: '&e서브 인벤토리에 최소 &6[count]&e칸의 빈 공간이 필요합니다!'
-  Relog: '&e변경 사항을 적용하려면 다시 접속해야 할 수 있습니다'
+    armor: '&e방어구 슬롯이 비어 있어야 합니다&o!'
+    hand: '&e손에 아무것도 들고 있지 않아야 합니다&o!'
+    maininv: '&e메인 인벤토리가 비어 있어야 합니다&o!'
+    maininvslots: '&e메인 인벤토리에 최소 &6[count]&e칸의 빈 공간이 필요합니다&o!'
+    inv: '&e인벤토리가 비어 있어야 합니다&o!'
+    offhand: '&e보조 손이 비어 있어야 합니다&o!'
+    quickbar: '&e빠른 장비창이 비어 있어야 합니다&o!'
+    quickbarslots: '&e빠른 장비창에 최소 &6[count]&e칸의 빈 공간이 필요합니다&o!'
+    subinv: '&e서브 인벤토리가 비어 있어야 합니다&o!'
+    subinvslots: '&e서브 인벤토리에 최소 &6[count]&e칸의 빈 공간이 필요합니다&o!'
+  Relog: '&e변경 사항을 적용하려면 다시 접속해야 할 수 있습니다.'
   Any: 모두
-  outsideWorldBorder: '&c이 위치는 월드 경계 밖입니다'
-  noWorldAccess: '&c해당 월드에 접근할 수 없습니다'
-  IncorrectColor: '&4색상 코드가 잘못 지정되었습니다!'
+  outsideWorldBorder: '&c이 위치는 월드 경계 밖입니다.'
+  noWorldAccess: '&c해당 월드에 접근할 수 없습니다.'
+  IncorrectColor: '&4색상 코드가 잘못 지정되었습니다&o!'
   time:
     # Mainly for placeholder playtime output
     # Use + sign at the start of line to force include it even if specific and previous time values are 0
@@ -177,15 +180,15 @@ info:
     hours: '&2[h]&7시간 '
     minutes: '&2[m]&7분 '
     seconds: '&2[s]&7초'
-  CommandFormat: '&c명령어 형식이 잘못되었습니다'
-  ServerSwitchOut: ' &6[playerDisplayName]&e님이 &6[serverName] &e서버로 이동하셨습니다'
-  ServerSwitchIn: ' &6[playerDisplayName]&e님이 &6[serverName] &e서버에서 들어오셨습니다'
+  CommandFormat: '&c명령어 형식이 잘못되었습니다.'
+  ServerSwitchOut: ' &6[playerDisplayName]&e님이 &6[serverName] &e서버로 이동하셨습니다.'
+  ServerSwitchIn: ' &6[playerDisplayName]&e님이 &6[serverName] &e서버에서 들어오셨습니다.'
 warp:
   list: '&e[pos]. &6[warpName] &f- &7[worldName] ([x]:[y]:[z])'
 afk:
   'off': '&7활동 중'
   # Placeholders can be used for MayNotRespond and MayNotRespondStaff
-  MayNotRespond: '&e해당 플레이어는 잠수 상태이므로 응답하지 않을 수 있습니다'
+  MayNotRespond: '&e해당 플레이어는 잠수 상태이므로 응답하지 않을 수 있습니다.'
   MayNotRespondStaff: '&e스태프가 잠수 상태입니다. 응답이 없을 수 있으니 디스코드를 통해 문의해주세요'
 BossBar:
   hpBar: '&f[victim] &e[current]&f/&e[max] &f(&c-[damage]&f)'
@@ -205,8 +208,8 @@ Information:
   tooMuchExp: '&e경험치가 너무 많습니다: &6[Exp]/[need]'
   NotEnoughVotes: '&e투표 수 부족: &6[votes]'
   TooMuchVotes: '&e투표 수가 너무 많습니다: &6[votes]'
-  BadGameMode: '&c현재 게임 모드에서는 이 작업을 할 수 없습니다'
-  BadArea: '&c이 지역에서는 해당 행동이 제한됩니다'
+  BadGameMode: '&c현재 게임 모드에서는 이 작업을 할 수 없습니다.'
+  BadArea: '&c이 지역에서는 해당 행동이 제한됩니다.'
   GameMode: '&e게임 모드: &6[GameMode]'
   Flying: '&e비행 여부: &6[Flying]'
   Uuid: '&6[uuid]'
@@ -217,26 +220,26 @@ Information:
   Group: '&e그룹: &6[group]'
 econ:
   commandCost: '&7이 명령어 비용은 &6[cost]&7입니다. 다시 입력하거나 클릭해 확인하세요'
-  disabled: '&c경제 시스템이 비활성화되어 있어 해당 명령어를 사용할 수 없습니다'
+  disabled: '&c경제 시스템이 비활성화되어 있어 해당 명령어를 사용할 수 없습니다.'
 Elytra:
   Speed: '&e비행 속도: &6[speed]&ekm/h'
   SpeedBoost: ' &a+ '
   SpeedSuperBoost: ' &2+ '
-  CanUse: '&c권한 없이 겉날개를 장착할 수 없습니다!'
-  CantGlide: '&c이 지역에서는 겉날개를 사용할 수 없습니다!'
+  CanUse: '&c권한 없이 겉날개를 장착할 수 없습니다&o!'
+  CantGlide: '&c이 지역에서는 겉날개를 사용할 수 없습니다&o!'
   Charging: '&e충전 중: &f[percentage]&e%'
 NetherPortal:
   ToHigh: '&c포탈이 너무 높습니다. 최대 높이: &6[max]'
   ToWide: '&c포탈이 너무 넓습니다. 최대 너비: &6[max]'
   Creation: '!actionbar!&7[height]x[width] 포탈 생성 완료!'
-  Disabled: '&c포탈 생성이 비활성화되어 있습니다!'
+  Disabled: '&c포탈 생성이 비활성화되어 있습니다&o!'
 Ender:
   Title: '&7엔더 상자 열기'
 Chat:
   localPrefix: ''
   shoutPrefix: '&c[확성기]&r'
   LocalNoOne: '!actionbar!&c주변에 들을 사람이 없습니다. 전체 채팅은 !를 붙여 입력하세요'
-  shoutDeduction: '!actionbar!&c전체 채팅 사용으로 &e[amount]&c원이 차감되었습니다'
+  shoutDeduction: '!actionbar!&c전체 채팅 사용으로 &e[amount]&c원이 차감되었습니다.'
   # Use \n to add new line
   publicHover: '&e전송 시각: &6%server_time_hh:mm:ss%'
   privateHover: '&e전송 시각: &6%server_time_hh:mm:ss%'
@@ -257,29 +260,29 @@ Spy:
 command:
   help:
     output:
-      usage: '&bCore &8» &7%usage%'
+      usage: '&bHelp &8» &7%usage%'
       cmdInfoFormat: '[command] &7[description]'
-      cmdFormat: '&f/[command]&7[arguments]'
+      cmdFormat: '&6/[command]&f[arguments]'
       helpPageDescription: '&7[description]'
       explanation: '&7[explanation]'
-      title: '&bCore &8» &f명령 도움말'
+      title: '&bHelp &8» &f명령 도움말'
   nocmd:
     help:
-      info: '&f사용 가능한 모든 명령어를 표시합니다'
+      info: 사용 가능한 모든 명령어를 표시합니다.
       args: ''
   actionbarmsg:
     help:
-      info: '&e플레이어에게 액션바 메시지를 보냅니다'
+      info: 플레이어에게 액션바 메시지를 보냅니다.
       args: '[playerName/all] (-s:[seconds]) [message]'
     info:
       message: '&f[message]'
   afk:
     help:
-      info: '&e잠수 모드를 전환합니다. 이유를 제공할 수 있습니다'
+      info: 잠수 모드를 전환합니다. 이유를 제공할 수 있습니다.
       args: (-p:playerName) (reason) (-s)
     info:
       # This only determines message in title message and not message shown in chat. For chat message check config.yml file
-      afkTitle: '&e이제 잠수 상태입니다'
+      afkTitle: '&e이제 잠수 상태입니다.'
       afkSubTitle:
       - '&2쿠키를 너무 많이 먹지 마세요!'
       - '&2낚시하기 좋은 날이네요'
@@ -287,25 +290,25 @@ command:
       - '&2어디에 계신가요?'
   afkcheck:
     help:
-      info: '&e플레이어의 잠수 상태 확인'
-      args: '[플레이어 이름/전체]'
+      info: 플레이어의 잠수 상태 확인
+      args: '[playerName/all]'
     info:
-      feedback: '&e[playerDisplayName]&e: &6[status]'
+      feedback: '&6[playerDisplayName]&e: &6[status]'
       feedbackInactive: '&e지난 &6[time]&e 동안 비활성 상태'
-      feedbackAll: '&e[place]. &e[playerDisplayName]&e: &6[status]'
+      feedbackAll: '&e[place]. &6[playerDisplayName]&e: &6[status]'
       feedbackReason: '&7[reason]'
   air:
     help:
-      info: '&e플레이어의 공기량 설정'
-      args: '[플레이어 이름] [양] (-s)'
+      info: 플레이어의 공기량 설정
+      args: '[playerName] [amount] (-s)'
     info:
-      feedback: '&e[playerName]&e의 공기량을 &3[amount]&e로 설정했습니다 (&3[offon]&e).'
-      targetFeedback: '&e[senderDisplayName]&e가 공기량을 &3[amount]&e로 설정했습니다.'
-      current: '&e[playerDisplayName]&e의 현재 공기량: &3[amount]'
+      feedback: '&6[playerName]&e님의 공기량을 &3[amount]&e로 설정했습니다 (&3[offon]&e).'
+      targetFeedback: '&6[senderDisplayName]&e가 공기량을 &3[amount]&e로 설정했습니다.'
+      current: '&6[playerDisplayName]&e의 현재 공기량: &3[amount]'
   alert:
     help:
-      info: '&e플레이어 로그인 시 관리자에게 알림'
-      args: '[추가/목록/제거] [플레이어 이름] (이유) (-s)'
+      info: 플레이어 로그인 시 관리자에게 알림
+      args: '[add/list/remove] [playerName] (reason) (-s)'
       explanation:
       - '&e권한:'
       - '&6command.alert.info.inform &e- 플레이어 로그인 시 알림을 볼 수 있음'
@@ -313,14 +316,14 @@ command:
       inform:
       - '&e!알림!******** &6[name] &4방금 로그인했습니다! &e*******!알림!'
       reason: '&e알림 이유: &6[reason]'
-      removed: '&6[playerDisplayName]&e가 알림 목록에서 제거되었습니다'
-      added: '&e[playerDisplayName]&e가 다음 24시간 내에 로그인하면 모든 관리자에게 알림 메시지가 전송됩니다'
-      online: '&6[playerDisplayName]&e는 이미 온라인 상태입니다'
+      removed: '&6[playerDisplayName]&e가 알림 목록에서 제거되었습니다.'
+      added: '&6[playerDisplayName]&e가 다음 24시간 내에 로그인하면 모든 관리자에게 알림 메시지가 전송됩니다.'
+      online: '&6[playerDisplayName]&e는 이미 온라인 상태입니다.'
       add: '&2추가 하루'
       list: ' &e[place]. &6[playerDisplayName] &e[time] &7이유: [reason]'
   aliaseditor:
     help:
-      info: '&e별칭 편집기'
+      info: 별칭 명령어 편집기
       args: (new) (alias-cmd)
     info:
       ListNumber: '&e[number].'
@@ -328,35 +331,35 @@ command:
       commandList: ' &e/[command]  '
       commandListDelay: ' &6[command]  '
       permRequirements: 권한
-      permReqExplanation: '&7사용하려면 &6cmi.customalias.[alias] &7권한이 필요합니다'
+      permReqExplanation: '&7사용하려면 &6cmi.customalias.[alias] &7권한이 필요합니다.'
       tab: ' 자동완성'
-      tabCompleteExplanation: '&7비활성화되면 자동완성이 작동하지 않습니다'
+      tabCompleteExplanation: '&7비활성화되면 자동완성이 작동하지 않습니다.'
       tabCompletes: '&2자동완성: '
       cTab: ' 사용자정의탭'
       file: ' &2파일명'
       fileExplanation: '&7현재 대상 파일: &e[file]'
       addTabComplete: ' 탭추가'
-      addTabExplanation: '&6활성화되면 정의된 탭을 기존 탭에 추가합니다'
+      addTabExplanation: '&6활성화되면 정의된 탭을 기존 탭에 추가합니다.'
       exact: ' 정확히'
-      addExactExplanation: '&6활성화되면 정확한 명령어가 제공될 때만 이 별칭을 사용합니다'
-      newAliasInfo: '&e새 별칭 명령어 이름을 입력하고 Enter를 누르세요'
-      addInfo: '&e새 명령어를 입력하세요. 취소하려면 &6cancel &e를 입력하세요'
+      addExactExplanation: '&6활성화되면 정확한 명령어가 제공될 때만 이 별칭을 사용합니다.'
+      newAliasInfo: '&eEnter new alias command name and press enter'
+      addInfo: '&eEnter new command. Type &6cancel &eto cancel'
       addInformationHover: "&e글로벌 변수는 발신자 범주에서 지원됩니다 \n&edelay! 5 &6명령어에 지연을 포함하려면\
         \ \n&e$1 &6제공된 변수를 가져와 새 명령어에 삽입합니다 \n&e$1- &6이 지점부터 모든 변수를 가져와 원래 명령어에 삽입\
         합니다 \n&e? &6도움말 페이지 사용을 위해 마지막 변수를 사용할 때 유효하게 만듭니다\n&efromConsole! 명령어를 콘솔\
-        에서 실행합니다"
+        에서 실행합니다."
       editInfo: '&e이전 텍스트를 붙여넣으려면 클릭하세요. 취소하려면 &6cancel &e를 입력하세요. 제거하려면 &6remove
         &e를 입력하세요'
   anvil:
     help:
-      info: '&e모루 열기'
+      info: 모루 열기
       args: (playerName) (-s)
     info:
-      feedback: '&e[playerDisplayName]&e에게 모루를 열었습니다 (&3[offon]&e).'
+      feedback: '&6[playerDisplayName]&e에게 모루를 열었습니다 (&3[offon]&e).'
       targetfeedback: '&3[senderDisplayName]&e가 모루를 열어주었습니다.'
   anvilrepaircost:
     help:
-      info: '&e아이템 수리 비용 설정'
+      info: 아이템 수리 비용 설정
       args: (playerName) [amount]
       explanation:
       - '예시:'
@@ -372,18 +375,18 @@ command:
       cantDetermineCost: '&c이 아이템의 기본 수리 비용을 결정할 수 없습니다.'
       selffeedback: '&e기본 수리 비용이 &3[playerDisplayName]&e의 손에 있는 아이템에 대해 &3[amount]&e로
         설정되었습니다 (&3[offon]&e).'
-      targetfeedback: '&e[senderDisplayName]&e가 아이템 수리 비용을 &3[amount]&e로 설정했습니다.'
+      targetfeedback: '&6[senderDisplayName]&e가 아이템 수리 비용을 &3[amount]&e로 설정했습니다.'
   armoreffect:
     help:
-      info: '&e갑옷 효과 수정'
+      info: 갑옷 효과 수정
       args: '[potionEffect]'
   armorstand:
     help:
-      info: '&e갑옷 거치대 편집기 열기'
+      info: 갑옷 거치대 편집기 열기
       args: (last/near)
     info:
-      cantClick: '&c이 작업을 수행할 수 없습니다. 누군가 이미 이 갑옷 거치대를 편집 중입니다'
-      tooFar: '&c갑옷 거치대가 너무 멀리 있습니다'
+      cantClick: '&c이 작업을 수행할 수 없습니다. 누군가 이미 이 갑옷 거치대를 편집 중입니다.'
+      tooFar: '&c갑옷 거치대가 너무 멀리 있습니다.'
       title: 편집기
       coordX: '&cX'
       coordY: '&2Y'
@@ -411,17 +414,17 @@ command:
       scale: '&7크기: &f[amount]'
       explanation: '&8좌클릭 또는 우클릭으로 값 조정'
       explanation2: '&8Shift를 누르고 있으면 10배 빠르게 조정'
-      disableGravity: '&e중력을 비활성화하면 이 값을 변경할 수 있습니다'
+      disableGravity: '&e중력을 비활성화하면 이 값을 변경할 수 있습니다.'
       copyLabel: '&7복제 선택기 열기'
       copyTitle: '&8복제하려는 항목 선택'
       click: '&e갑옷 거치대를 클릭하여 복제하거나, 아무 블록을 클릭하여 프로세스를 취소하세요'
-      canceled: '&e갑옷 거치대 복제 프로세스가 취소되었습니다'
-      updated: '&e갑옷 거치대가 업데이트되었습니다'
+      canceled: '&e갑옷 거치대 복제 프로세스가 취소되었습니다.'
+      updated: '&e갑옷 거치대가 업데이트되었습니다.'
       positionLabel: '&7위치 옵션 열기'
       saveLabel: '&7템플릿 저장기 열기'
       saveButton: '&7저장'
       saveTitle: '&8저장하려는 항목 선택'
-      receivedItem: '&e특수 갑옷 거치대를 인벤토리에 받았습니다'
+      receivedItem: '&e특수 갑옷 거치대를 인벤토리에 받았습니다.'
       armorStandItem: '&7갑옷 거치대 템플릿: &6[name]'
       action:
         helmet: '&7헬멧'
@@ -449,7 +452,7 @@ command:
         rightLeg: '&7오른다리'
   attachcommand:
     help:
-      info: '&e아이템에 명령어 첨부'
+      info: 아이템에 명령어 첨부
       args: '[command/-clear]'
       explanation:
       - 명령어를 ;;로 구분하세요
@@ -467,30 +470,30 @@ command:
       cooldown: '&7아이템이 쿨다운 중입니다. [time] 기다리세요'
   autorecharge:
     help:
-      info: '&e자동 비행 충전 토글'
+      info: 자동 비행 충전 토글
       args: (playerName) [exp/money/off/on] (-s)
     info:
       moneyState: '&e돈 충전: [state]'
       expState: '&e경험치 충전: [state]'
-      updated: '&e상태가 [state]로 변경되었습니다'
+      updated: '&e상태가 [state]로 변경되었습니다.'
   back:
     help:
-      info: '&e마지막 저장된 위치로 순간이동'
+      info: 마지막 저장된 위치로 순간이동
       args: (playerName) (-s)
     info:
-      noinfo: '&4돌아갈 저장된 위치가 없습니다!'
+      noinfo: '&4돌아갈 저장된 위치가 없습니다&o!'
       feedback: '&e마지막 저장된 위치로 돌아갔습니다 (&6[worldName]&e,&6[x]&e,&6[y]&e,&6[z]&e)!'
   balance:
     help:
-      info: '&e잔액 확인'
-      args: (플레이어 이름)
+      info: 잔액 확인
+      args: (playerName)
     info:
       balance: '&e잔액: &6[money]'
       balanceOther: '&6[playerDisplayName] &e잔액: &6[money]'
   baltop:
     help:
-      info: '&e최고 잔액 목록 확인'
-      args: (플레이어 이름)
+      info: 탑 잔액 목록 확인
+      args: (playerName)
     info:
       topLine: '&e&m-----&6 최고 잔액 &e&m-----'
       topLineHover: '&6서버 총액: &c[total]'
@@ -501,13 +504,13 @@ command:
       recalculating: '&2최고 잔액 목록이 재계산 중입니다. 몇 초 후 다시 시도하세요.'
   ban:
     help:
-      info: '&e플레이어 차단'
-      args: '[플레이어 이름] (이유) (-s)'
+      info: 플레이어 차단
+      args: '[playerName] (reason) (-s)'
       explanation:
       - cmi.command.ban.bypass - 차단 우회
     info:
       # Make sure that OverrideLoginMessage is enabled in config file
-      message: '&c이 서버에서 차단되었습니다!'
+      message: '&c이 서버에서 차단되었습니다&o!'
       reason: '&6이유: &e[reason]'
       defaultReason: '&e서버 규칙 위반'
       messageToAll: '&6[playerDisplayName] &e가 &6[senderDisplayName] &e에 의해 차단되었습니다.
@@ -518,12 +521,12 @@ command:
       cantBan: '&c이 플레이어를 차단할 수 없습니다.'
   banlist:
     help:
-      info: '&e차단 목록'
+      info: 차단 목록
       args: (-s)
   bbroadcast:
     help:
-      info: '&e모든 서버의 모든 플레이어에게 특별 메시지 전송'
-      args: (!) [메시지] (-s:[서버 이름,서버 이름])
+      info: 모든 서버의 모든 플레이어에게 특별 메시지 전송
+      args: (!) [message] (-s:[서버 이름,서버 이름])
       explanation:
       - 메시지가 !로 시작하면 깨끗한 메시지가 표시됩니다.
       - 특정 서버에서만 메시지를 브로드캐스트하도록 서버를 정의할 수 있습니다.
@@ -531,11 +534,11 @@ command:
       format: '&e[&4브로드캐스트&e] &2[message]'
   blockcycling:
     help:
-      info: '&e블록 상태 순환'
+      info: 블록 상태 순환
       args: ''
   blockinfo:
     help:
-      info: '&e블록 정보를 확인합니다'
+      info: 블록 정보를 확인합니다.
       args: ''
     info:
       Id: ' &eID: &6[id][data]'
@@ -551,13 +554,13 @@ command:
       Enchant: '&6[name]:&e[level] '
   blocknbt:
     help:
-      info: '&e블록 NBT 정보를 표시합니다'
+      info: 블록 NBT 정보를 표시합니다.
       args: ''
     info:
-      noNbt: '&e블록에 NBT 데이터가 포함되어 있지 않습니다'
+      noNbt: '&e블록에 NBT 데이터가 포함되어 있지 않습니다.'
   book:
     help:
-      info: '&e책 편집'
+      info: 책 편집
       args: '[저자/제목/잠금 해제] [값]'
     info:
       noitem: '&c손에 아이템을 들고 있지 않습니다.'
@@ -569,7 +572,7 @@ command:
       unlocked: '&eBook was unlocked'
   bossbarmsg:
     help:
-      info: '&e플레이어에게 보스바 메시지를 보냅니다'
+      info: 플레이어에게 보스바 메시지를 보냅니다.
       args: '[playerName/all] (-sec:[seconds])(-t:[timeToKeepFor]) (-n:nameOfBar)
         (-p:[maxValue/current]) (-c:[color]) (-s:[1,6,10,12,20]) (-cmd:"command;;command2")
         (-pcmd:"command;;command2") (-a:[ticks]) [message] (-cancel:nameOfBar)'
@@ -581,21 +584,21 @@ command:
       - '색상은 다음과 같습니다: 빨강, 초록, 분홍, 보라, 흰색, 노랑'
       - 최대값과 현재값은 바의 채우기를 결정하며, PlaceHolderAPI 변수를 사용하여 동적 업데이트가 가능합니다
       - '예시:'
-      - /cmi bossbar Zrips BossBarTitle
-      - /cmi bossbarmsg all -t:1s -p:%server_max_players%/%server_online% -n:testbar
-        -c:red &2Title of bar %server_online%/%server_max_players% &e%cmi_user_name%
-      - /cmi bossbarmsg all -p:+1 -n:testbar - 이름으로 현재 진행 바에 1%를 추가합니다
-      - /cmi bossbarmsg all -p:-1 -n:testbar - 이름으로 현재 진행 바에서 1%를 제거합니다
-      - /cmi bossbarmsg all -s:10 -n:testbar - 이름으로 보스바 스타일을 10 세그먼트로 설정합니다
-      - /cmi bossbarmsg all -sec:5 - 0에서 5까지 5초 동안 카운트합니다
-      - /cmi bossbarmsg all -sec:-5 - 5에서 0까지 5초 동안 카운트합니다
+      - /bossbar Zrips BossBarTitle
+      - /bossbarmsg all -t:1s -p:%server_max_players%/%server_online% -n:testbar -c:red
+        &2Title of bar %server_online%/%server_max_players% &e%cmi_user_name%
+      - /bossbarmsg all -p:+1 -n:testbar - 이름으로 현재 진행 바에 1%를 추가합니다
+      - /bossbarmsg all -p:-1 -n:testbar - 이름으로 현재 진행 바에서 1%를 제거합니다
+      - /bossbarmsg all -s:10 -n:testbar - 이름으로 보스바 스타일을 10 세그먼트로 설정합니다
+      - /bossbarmsg all -sec:5 - 0에서 5까지 5초 동안 카운트합니다
+      - /bossbarmsg all -sec:-5 - 5에서 0까지 5초 동안 카운트합니다
       - '-cmd: 단일 플레이어를 대상으로 하는 경우 명령을 실행하거나 모든 플레이어(all)를 대상으로 하는 경우 한 번만 실행합니다.
         ''all'' 변수와 함께 사용할 때 [playerName]과 같은 변수를 변환하지 않습니다. 대신 -pcmd:를 사용하세요'
-      - '-pcmd: ''all''을 대상으로 하는 경우 각 플레이어에 대해 명령을 실행합니다'
+      - '-pcmd: ''all''을 대상으로 하는 경우 각 플레이어에 대해 명령을 실행합니다.'
       - https://www.zrips.net/cmi/commands/bossbarmsg-handling/
   broadcast:
     help:
-      info: '&e모든 플레이어에게 특별 메시지를 보냅니다'
+      info: 모든 플레이어에게 특별 메시지를 보냅니다.
       args: (!) [message] (-w:[worldName,worldName]) (-r:[range]) (-c:[world;x;y;z])
       explanation:
       - 메시지가 !로 시작하면 깨끗한 메시지가 표시됩니다
@@ -604,39 +607,39 @@ command:
       format: '&e[&4브로드캐스트&e] &2[message]'
   burn:
     help:
-      info: '&e플레이어를 불태웁니다'
+      info: 플레이어를 불태웁니다.
       args: (playerName) (time) (-s)
     info:
-      feedback: '&e[playerDisplayName]&e를 &6[time]&e 동안 불태웠습니다 (&3[offon]&e).'
-      targetfeedback: '&e[senderDisplayName]&e가 &6[time]&e 동안 불태웠습니다.'
+      feedback: '&6[playerDisplayName]&e를 &6[time]&e 동안 불태웠습니다 (&3[offon]&e).'
+      targetfeedback: '&6[senderDisplayName]&e가 &6[time]&e 동안 불태웠습니다.'
   cartographytable:
     help:
-      info: '&e지도 제작 테이블을 엽니다'
+      info: 지도 제작 테이블을 엽니다.
       args: (playerName) (-s)
     info:
-      feedback: '&e[playerDisplayName]&e에게 지도 제작 테이블을 열었습니다 (&3[offon]&e).'
+      feedback: '&6[playerDisplayName]&e에게 지도 제작 테이블을 열었습니다 (&3[offon]&e).'
       targetfeedback: '&3[senderDisplayName]&e가 지도 제작 테이블을 열어주었습니다.'
   charges:
     help:
-      info: '&e남은 스포너 충전을 표시합니다'
+      info: 남은 스포너 충전을 표시합니다.
       args: '[playerName] [add/set/take/clear/reset] (-f)'
     info:
       charges: '&e* 충전: &6[current]&e/&6[max] [bypass]'
       cd: '&e* CD: &6[cdtime] &e다음: &6[time]'
       bypass: '&6(우회)'
       allUsed: '&e모든 충전이 사용되었습니다! 다음: [time]'
-      noGroup: '&e할당된 충전 그룹이 없습니다'
-      cantBreak: '&e충전 그룹이 할당될 때까지 부술 수 없습니다'
+      noGroup: '&e할당된 충전 그룹이 없습니다.'
+      cantBreak: '&e충전 그룹이 할당될 때까지 부술 수 없습니다.'
       minusCd: '&e스포너 충전 쿨다운에서 &6[sec]&e초 감소'
-      add: '&e[playerDisplayName]&e에게 &6[amount]&e 스포너 충전을 추가했습니다'
-      set: '&e[playerDisplayName]&e에게 &6[amount]&e 스포너 충전을 설정했습니다'
-      clear: '&e[playerDisplayName]&e의 모든 스포너 충전을 삭제했습니다'
-      reset: '&e[playerDisplayName]&e의 스포너 충전 그룹을 재설정했습니다'
-      take: '&e[playerDisplayName]&e에게서 &6[amount]&e 스포너 충전을 가져갔습니다'
+      add: '&6[playerDisplayName]&e에게 &6[amount]&e 스포너 충전을 추가했습니다.'
+      set: '&6[playerDisplayName]&e에게 &6[amount]&e 스포너 충전을 설정했습니다.'
+      clear: '&6[playerDisplayName]&e의 모든 스포너 충전을 삭제했습니다.'
+      reset: '&6[playerDisplayName]&e의 스포너 충전 그룹을 재설정했습니다.'
+      take: '&6[playerDisplayName]&e에게서 &6[amount]&e 스포너 충전을 가져갔습니다.'
   chat:
     help:
-      info: '&e채팅방 생성 및 참여'
-      args: '[create/join/leave/list/invite/kick/listrooms] (채팅방 이름/플레이어 이름) (-private)
+      info: 채팅방 생성 및 참여
+      args: '[create/join/leave/list/invite/kick/listrooms] (채팅방 이름/플레이어) (-private)
         (-locked) (-persistent)'
     info:
       joined: '&e채팅방에 참여했습니다: &7[chatRoomName]'
@@ -645,23 +648,23 @@ command:
       watcherSymbol: ◕‿◕
       watcherSymbolActive: '&2'
       watcherSymbolInactive: '&7'
-      joinedInfo: '&e[playerDisplayName] &7채팅방에 참여했습니다'
-      alreadyIn: '&e이미 &7[chatRoomName] 채팅방에 있습니다'
+      joinedInfo: '&e[playerDisplayName] &7joined chat room'
+      alreadyIn: '&e이미 &7[chatRoomName] 채팅방에 있습니다.'
       left: '&e채팅방을 떠났습니다: &7[chatRoomName]'
-      leftInfo: '&e[playerDisplayName] &7채팅방을 떠났습니다'
+      leftInfo: '&e[playerDisplayName] &7left chat room'
       invite: '&6[playerDisplayName] &e님이 채팅방에 초대했습니다: &7[chatRoomName]'
       sentInvite: '&e[playerDisplayName] &e님을 채팅방에 초대했습니다: &7[chatRoomName]'
       format: '&3|&7[chatRoomName]&3| &6[playerDisplayName]: &r[message]'
-      nobody: '&4채팅방에 아무도 없습니다'
-      notOwner: '&4채팅방 소유자만 이 작업을 수행할 수 있습니다'
-      wrongName: '&4잘못된 채팅방 이름입니다'
+      nobody: '&4채팅방에 아무도 없습니다.'
+      notOwner: '&4채팅방 소유자만 이 작업을 수행할 수 있습니다.'
+      wrongName: '&4잘못된 채팅방 이름입니다.'
       takenName: '&4채팅방 이름이 이미 사용 중입니다. 다른 이름을 사용하세요'
-      notIn: '&4사용자가 채팅방에 없습니다'
-      cantJoin: '&4채팅방이 비공개이며 초대가 필요합니다'
-      cantSee: '&4채팅방이 비공개이며 메시지를 볼 수 있는 권한이 없습니다'
-      kicked: '&6[playerDisplayName] &e님이 채팅방에서 추방되었습니다'
-      cantleave: '&6잠긴 채팅방을 떠날 수 없습니다'
-      gotKicked: '&4[chatRoomName] &4채팅방에서 추방되었습니다'
+      notIn: '&4사용자가 채팅방에 없습니다.'
+      cantJoin: '&4채팅방이 비공개이며 초대가 필요합니다.'
+      cantSee: '&4채팅방이 비공개이며 메시지를 볼 수 있는 권한이 없습니다.'
+      kicked: '&6[playerDisplayName] &e님이 채팅방에서 추방되었습니다.'
+      cantleave: '&6잠긴 채팅방을 떠날 수 없습니다.'
+      gotKicked: '&4[chatRoomName] &4채팅방에서 추방되었습니다.'
       list: '&e[chatRoomName]&e: &7[list]'
       globalList: '&7[number]. [joined]&e[chatRoomName][private]&e: &7[count][expires]'
       globalListPrivate: '&2(비공개)'
@@ -672,14 +675,14 @@ command:
         Names: '&7[playerDisplayName]'
   chatcolor:
     help:
-      info: '&e채팅 색상 선택'
-      args: (플레이어 이름)
+      info: 채팅 색상 선택
+      args: (playerName)
     info:
       reset: '&6초기화'
   checkaccount:
     help:
-      info: '&e플레이어의 다른 계정을 검색'
-      args: (플레이어 이름/IP)
+      info: 플레이어의 다른 계정을 검색
+      args: (플레이어/IP)
       explanation:
       - '추가 권한: cmi.command.checkaccount.showip'
     info:
@@ -689,11 +692,11 @@ command:
       nonIpList: '&e계정: &6'
       nonIpName: '&6[name]'
       click: '&e클릭하여 &6[name] &e계정 확인'
-      noData: '&c이 사용자에 대한 기록이 없습니다'
+      noData: '&c이 사용자에 대한 기록이 없습니다.'
   checkban:
     help:
-      info: '&e플레이어의 차단 상태 확인'
-      args: (플레이어 이름)
+      info: 플레이어의 차단 상태 확인
+      args: (playerName)
     info:
       list: '&6[place]&e. &e[playerDisplayName] &6[time]'
       permanent: '&3영구'
@@ -703,23 +706,23 @@ command:
       bannedWhen: '&e차단 날짜: &6[date]'
   checkcommand:
     help:
-      info: '&e키워드로 가능한 명령어 검색'
+      info: 키워드로 가능한 명령어 검색
       args: (키워드)
     info:
       list: '&e[place]. &f[command] &7[args]'
       hover: '&e[desc]'
       variableColor: '&f'
-      noCommandFound: '&7해당 키워드로 명령어를 찾을 수 없습니다'
+      noCommandFound: '&7해당 키워드로 명령어를 찾을 수 없습니다.'
   checkexp:
     help:
-      info: '&e플레이어의 경험치 확인'
-      args: (플레이어 이름)
+      info: 플레이어의 경험치 확인
+      args: (playerName)
     info:
       current: '&e레벨: &6[currentLevel] &e경험치: &6[levelExp] &e총 경험치: &6[exp]'
       need: '&e다음 레벨까지 필요한 경험치: &6[missingExp]'
   checkperm:
     help:
-      info: '&e가능한 권한 노드 확인'
+      info: 가능한 권한 노드 확인
       args: (키워드)
     info:
       list: '&e[place]. [permission]'
@@ -731,24 +734,24 @@ command:
       permissionColor: '&6'
       cmdPermissionColor: '&2'
       variableColor: '&f'
-      noPermissionFound: '&7해당 키워드로 권한을 찾을 수 없습니다'
+      noPermissionFound: '&7해당 키워드로 권한을 찾을 수 없습니다.'
   cheque:
     help:
-      info: '&e돈을 수표로 변환'
-      args: (플레이어 이름) [금액]
+      info: 돈을 수표로 변환
+      args: (playerName) [금액]
     info:
       transferred: '&e계정으로 &6[amount] &e전송되었습니다. 새 잔액: &6[balance]'
       chequeName: '&e수표 금액: &6[amount]'
       chequeLore:
       - '&r&f발행자: &7[senderDisplayName]'
       - '&r&f우클릭하여 입금'
-      holdPaper: '&e손에 종이를 들고 있어야 합니다'
-      cantUse: '&e이 종이는 이미 수표입니다!'
+      holdPaper: '&e손에 종이를 들고 있어야 합니다.'
+      cantUse: '&e이 종이는 이미 수표입니다&o!'
       clarification: '&c이 유형의 수표는 더 이상 허용되지 않습니다. 업데이트를 위해 스태프에게 문의하세요'
   clear:
     help:
-      info: '&e플레이어의 인벤토리를 정리합니다'
-      args: (플레이어 이름) (아이템(:수량)(;데이터)) (-s) (+정리 유형) -exact
+      info: 플레이어의 인벤토리를 정리합니다.
+      args: (playerName) (아이템(:수량)(;데이터)) (-s) (+정리 유형) -exact
       explanation:
       - '가능한 정리 유형: quickbar, inventory, partinventory, weapons, armorslots, tools,
         armors, mainhand, offhand'
@@ -757,43 +760,43 @@ command:
       - cmi clear +armors - 방어구 유형 아이템을 제거합니다
       - cmi clear +armorslots - 방어구 슬롯에서 아이템을 제거합니다
     info:
-      clearFeedback: '&e[playerDisplayName]&e의 인벤토리에서 &6[amount] &e개의 아이템을 제거했습니다
+      clearFeedback: '&6[playerDisplayName]&e의 인벤토리에서 &6[amount] &e개의 아이템을 제거했습니다
         (&3[offon]&e).'
       target: '&6[amount] &e개의 아이템이 &3[senderDisplayName]&e에 의해 인벤토리에서 제거되었습니다.'
-      confirm: '&7클릭하여 인벤토리를 정리하세요. &c모든 아이템이 제거됩니다!'
+      confirm: '&7클릭하여 인벤토리를 정리하세요. &c모든 아이템이 제거됩니다&o!'
   clearchat:
     help:
-      info: '&e채팅을 정리합니다'
+      info: 채팅을 정리합니다.
       args: (self) (-s)
       explanation:
       - '권한:'
       - ' &6cmi.command.clearchat.bypass &e- 채팅 정리 무시'
     info:
-      information: '&e채팅이 &6[senderDisplayName]&e에 의해 정리되었습니다'
+      information: '&e채팅이 &6[senderDisplayName]&e에 의해 정리되었습니다.'
   clearender:
     help:
-      info: '&e플레이어의 엔더 상자를 정리합니다'
-      args: '[플레이어 이름] (-s)'
+      info: 플레이어의 엔더 상자를 정리합니다.
+      args: '[playerName] (-s)'
     info:
-      feedback: '&e[playerDisplayName]&e의 엔더 상자를 정리했습니다 (&3[offon]&e).'
-      targetfeedback: '&e[senderDisplayName]&e에 의해 엔더 상자가 정리되었습니다.'
+      feedback: '&6[playerDisplayName]&e의 엔더 상자를 정리했습니다 (&3[offon]&e).'
+      targetfeedback: '&6[senderDisplayName]&e에 의해 엔더 상자가 정리되었습니다.'
   colorlimits:
     help:
-      info: '&e사용 가능한 모든 색상을 표시합니다'
-      args: (플레이어 이름)
+      info: 사용 가능한 모든 색상을 표시합니다.
+      args: (playerName)
     info:
       publicmessage: ' &e공개: '
       privatemessage: ' &e비공개: '
       nickname: ' &e닉네임: '
       signs: ' &e표지판: '
       books: ' &e책: '
-      itemname: ' &e아이템 이름: '
+      itemname: ' &e아이템: '
       itemlore: ' &e아이템 설명: '
       me: ' &e나: '
       None: '&e-'
   colorpicker:
     help:
-      info: '&e헥스 색상을 선택합니다'
+      info: 헥스 색상을 선택합니다.
       args: (헥스/색상 이름)
     info:
       hovers:
@@ -805,8 +808,8 @@ command:
       - '&fShift+Click'
   colors:
     help:
-      info: '&e사용 가능한 모든 색상을 표시합니다'
-      args: (플레이어 이름)
+      info: 사용 가능한 모든 색상을 표시합니다.
+      args: (playerName)
     info:
       List:
       - '&e***************************************'
@@ -818,35 +821,37 @@ command:
       - '&e***************************************'
   compass:
     help:
-      info: '&e플레이어의 나침반 포인트를 설정합니다'
-      args: (대상 이름) (출처 이름) (x) (z) (월드 이름) (초기화) (-s)
+      info: 플레이어의 나침반 포인트를 설정합니다.
+      args: (대상 플레이어) (출처 플레이어) (x) (z) (월드 이름) (초기화) (-s)
       explanation:
-      - '예시: /cmi compass Zhax'
-      - /cmi compass Zhax Zrips
-      - /cmi compass Zhax LT_Craft 0 0 -s
-      - /cmi compass reset Zhax
+      - '예시: /compass Zhax'
+      - /compass Zhax Zrips
+      - /compass Zhax LT_Craft 0 0 -s
+      - /compass reset Zhax
     info:
-      wrongworld: '&c정의된 월드가 존재하지 않습니다!'
-      feedback: '&e[playerDisplayName]&e의 나침반 화살표를 &3[sourceDisplayName]&e의 위치로 설정했습니다.'
-      feedbackCustom: '&e[playerDisplayName]&e의 나침반 화살표를 &3[x] [z] [world]&e의 위치로
-        설정했습니다.'
-      targetFeedback: '&e[senderName]&e에 의해 나침반 목표가 &3[sourceDisplayName]&e의 위치로 설정되었습니다.'
-      targetFeedbackCustom: '&e[senderDisplayName]&e에 의해 나침반 목표가 &3[x] [z] [world]&e의
+      wrongworld: '&cCompass &8» &f정의된 월드가 존재하지 않습니다&o!'
+      feedback: '&aCompass &8» &6[playerDisplayName]&f의 나침반 화살표를 &6[sourceDisplayName]&f의
+        위치로 설정했습니다.'
+      feedbackCustom: '&aCompass &8» &6[playerDisplayName]&f의 나침반 화살표를 &e[x], [z]
+        &7@[world]&f의 위치로 설정했습니다.'
+      targetFeedback: '&bCompass &8» &6[senderName]&f에 의해 나침반 목표가 &6[sourceDisplayName]&f의
         위치로 설정되었습니다.'
-      targetPlayerFeedback: '&3[playerDisplayName]&e가 자신의 나침반을 내 위치로 설정했습니다'
-      reset: '&e나침반 목표가 초기화되었습니다'
+      targetFeedbackCustom: '&bCompass &8» &6[senderDisplayName]&f에 의해 나침반 목표가 &e[x],
+        [z] &7@[world]&f의 위치로 설정되었습니다.'
+      targetPlayerFeedback: '&bCompass &8» &6[playerDisplayName]&f가 자신의 나침반을 내 위치로
+        설정했습니다.'
+      reset: '&cCompass &8» &f나침반 목표가 초기화되었습니다.'
   condense:
     help:
-      info: '&e아이템을 블록으로 압축합니다'
-      args: (아이템 이름) (플레이어 이름) (-s)
+      info: 아이템을 블록으로 압축합니다.
+      args: (아이템) (playerName) (-s)
     info:
-      converted: '&e[items]&e개의 아이템을 &7[blocks]&e개의 블록으로 변환했습니다'
-      nothing: '&c압축할 수 있는 아이템이 인벤토리에 없습니다.'
+      converted: '&aCondense &8» &e[items]&f개의 아이템을 &6[blocks]&f개의 블록으로 변환했습니다.'
+      nothing: '&cCondense &8» &f압축할 수 있는 아이템이 인벤토리에 없습니다.'
   counter:
     help:
-      info: '&e주변 플레이어를 위한 카운터를 시작합니다'
-      args: '[join/leave/start] (t:시간) (r:[범위/-1]) (c:[world:x:y:z]) (msg:사용자 정의 메시지)
-        (-f)'
+      info: 주변 플레이어를 위한 카운터를 시작합니다.
+      args: '[join/leave/start] (t:시간) (r:[범위/-1]) (c:[world:x:y:z]) (msg) (-f)'
       explanation:
       - '&e권한:'
       - '&6cmi.command.counter.force &e- 모든 플레이어에게 강제로 카운터를 적용 '
@@ -855,21 +860,21 @@ command:
       - '&6cmi.command.counter.msg &e- 사용자 정의 메시지 정의'
       - '&6cmi.command.counter.autojoin &e- 카운터에 자동으로 참여'
       - -f는 범위 내 모든 플레이어에게 카운터를 강제로 적용합니다
-      - '예시: /cmi counter start r:30 t:7 msg:&e사용자 정의 메시지 -f'
+      - '예시: /counter start r:30 t:7 msg:&e사용자 정의 메시지 -f'
     info:
-      join: '&e카운터에 참여했습니다'
-      leave: '&e카운터에서 나갔습니다'
-      go: '&e시작!'
-      tooFast: '&c명령어를 너무 빨리 반복할 수 없습니다. 기다리세요: &6[sec]&e초'
-      noOne: '&c이 카운터를 보는 사람이 없습니다!'
+      join: '&aCounter &8» &f카운터에 참여했습니다.'
+      leave: '&cCounter &8» &f카운터에서 나갔습니다.'
+      go: '&cGo!'
+      tooFast: '&cCounter &8» &f명령어를 너무 빨리 반복할 수 없습니다. 기다리세요: &e[sec]&f초'
+      noOne: '&cCounter &8» &f이 카운터를 보는 사람이 없습니다&o!'
   cplaytime:
     help:
-      info: '&e상세한 플레이 시간'
-      args: (플레이어 이름)
+      info: 상세한 플레이 시간
+      args: (playerName)
     info:
-      moreDetails: '&7자세한 정보를 보려면 클릭하세요'
-      title: '&8[playerDisplayName]&7의 플레이 시간'
-      date: '&8[date]'
+      moreDetails: '&f자세한 정보를 보려면 클릭하세요'
+      title: '&0[playerDisplayName]&8의 플레이 시간'
+      date: '&f[date]'
       time: '&7[hour]:00&f-&7[nextHour]:00'
       thishour: '&7현재 시간'
       hourback: '&7이전 시간'
@@ -884,37 +889,37 @@ command:
       total: '&7총합'
   ctellraw:
     help:
-      info: '&eTellraw 유형 메시지를 보냅니다'
-      args: '[플레이어 이름/전체] [포맷된 메시지]'
+      info: Tellraw 유형 메시지를 보냅니다.
+      args: '[playerName/all] [포맷된 메시지]'
       explanation:
       - 사용법은 https://www.zrips.net/cmi/custom-text/ aka customtext 명령어와 동일합니다
   ctext:
     help:
-      info: '&e사용자 정의 텍스트를 표시합니다'
-      args: '[cText] (플레이어 이름/전체) (출처 플레이어)'
+      info: 사용자 정의 텍스트를 표시합니다.
+      args: '[cText] (플레이어/전체) (출처 플레이어)'
     info:
       list: '&e사용자 정의 텍스트: &6'
       check: '&e확인: &6[text]'
   cuff:
     help:
-      info: '&e플레이어의 행동을 제한합니다'
-      args: '[플레이어 이름] (true/false) (-s)'
+      info: 플레이어의 행동을 제한합니다.
+      args: '[playerName] (true/false) (-s)'
     info:
       noChat: '&c모든 행동이 제한되었습니다. 채팅을 할 수 없습니다.'
       noCommand: '&c명령어를 사용할 수 없습니다. &e허용된 명령어: &6/msg, /r, /tell'
       cuffed: '&6[playerDisplayName] &e구속됨'
       unCuffed: '&6[playerDisplayName] &e구속 해제됨'
-      free: '&e이제 자유입니다'
-      gotCuffed: '&e구속되었습니다'
-      cuffedInfo: '&e구속 상태입니다'
-      cantCuff: '&c이 플레이어를 구속할 수 없습니다!'
+      free: '&e이제 자유입니다.'
+      gotCuffed: '&e구속되었습니다.'
+      cuffedInfo: '&eYou are cuffed'
+      cantCuff: '&c이 플레이어를 구속할 수 없습니다&o!'
   customrecipe:
     help:
-      info: '&e아이템의 사용자 정의 레시피를 관리합니다'
+      info: 아이템의 사용자 정의 레시피를 관리합니다.
       args: ''
     info:
       removed: '&e레시피 제거됨: [id]. 완전한 효과를 위해 서버를 재시작해야 합니다.'
-      noRecipe: '&e이 ID로 사용자 정의 레시피가 없습니다'
+      noRecipe: '&e이 ID로 사용자 정의 레시피가 없습니다.'
       edit: '&8레시피 편집 (&6[type]&8)'
       addNew: '&e새 레시피 추가 (&6[type]&e)'
       shapelessRecipe: '&6새로운 비형식 레시피 만들기'
@@ -926,81 +931,81 @@ command:
       blastingRecipe: '&2새로운 폭파 레시피 만들기'
       smokingRecipe: '&2새로운 흡연 레시피 만들기'
       exact: '&2정확한 재료 요구: [state]'
-      exists: '&4이와 같은 레시피가 이미 존재합니다'
+      exists: '&4이와 같은 레시피가 이미 존재합니다.'
       mainTitle: '&8사용자 정의 레시피 (&7[current]&8/&7[total]&8)'
   dback:
     help:
-      info: '&e죽은 위치로 돌아갑니다'
-      args: (플레이어 이름) (-s)
+      info: 죽은 위치로 돌아갑니다.
+      args: (playerName) (-s)
     info:
-      noinfo: '&4저장된 위치 정보가 없습니다!'
-      feedback: '&6마지막 저장된 위치로 돌아갔습니다 ([world],[x],[y],[z])!'
+      noinfo: '&cdBack &8» §f저장된 위치 정보가 없습니다&o!'
+      feedback: '&adBack &8» §f마지막 저장된 위치, &e[x], [y], [z] &7@[world]&f로 돌아갔습니다&o!'
   disableenchant:
     help:
-      info: '&e마법 부여를 비활성화합니다'
+      info: 마법 부여를 비활성화합니다.
       args: (마법/id) (비활성화/활성화)
     info:
       title: 마법 비활성화기
-      feedback: '&6[enchantName] &e가 [state] 상태로 변경되었습니다'
+      feedback: '&6[enchantName] &e가 [state] 상태로 변경되었습니다.'
   dispose:
     help:
-      info: '&e불필요한 아이템을 처리합니다'
-      args: (플레이어 이름)
+      info: 불필요한 아이템을 처리합니다.
+      args: (playerName)
     info:
       title: '&c필요 없는 아이템을 모두 배치하세요'
-      cant: '&c이 아이템은 처리할 수 없습니다'
+      cant: '&c이 아이템은 처리할 수 없습니다.'
   distance:
     help:
-      info: '&e두 지점 간의 거리를 확인합니다'
-      args: (플레이어 이름) (플레이어 이름)
+      info: 두 지점 간의 거리를 확인합니다.
+      args: (playerName) (playerName)
     info:
       feedback: '&7거리: &e[dist] &7x:&e[x] &7y:&e[y] &7z:&e[z] &7방향:&e[dir]'
   donate:
     help:
-      info: '&e들고 있는 아이템을 기부합니다'
-      args: '[플레이어 이름] (수량)'
+      info: 들고 있는 아이템을 기부합니다.
+      args: '[playerName] (수량)'
     info:
-      donated: '&e&6[type]&eX&6[amount] &e아이템을 &6[playerDisplayName]에게 기부했습니다'
-      got: '&e&6[type]&eX&6[amount] &e아이템을 &6[playerDisplayName]로부터 기부받았습니다'
+      donated: '&e&6[type]&eX&6[amount] &e아이템을 &6[playerDisplayName]에게 기부했습니다.'
+      got: '&e&6[type]&eX&6[amount] &e아이템을 &6[playerDisplayName]로부터 기부받았습니다.'
       sentOffer: '&e&6[playerDisplayName]&e에게 기부를 보냈습니다. 플레이어가 수락할 때까지 기다리세요'
       gotOffer: '&e&6[sourceDisplayName]&e로부터 &6[type]&eX&6[amount] &e아이템 기부를 받았습니다.
         클릭하여 수락하세요.'
-      doesnthave: '&e플레이어가 더 이상 이 아이템을 가지고 있지 않습니다'
-      'no': '&e대기 중인 기부가 없습니다'
+      doesnthave: '&e플레이어가 더 이상 이 아이템을 가지고 있지 않습니다.'
+      'no': '&e대기 중인 기부가 없습니다.'
       list: '&7[number]. &e[playerDisplayName] &e- &7[material] &6x &e[amount]'
   down:
     help:
-      info: '&e한 층 아래로 순간이동합니다'
-      args: '[플레이어 이름] (-s) (최대)'
+      info: 한 층 아래로 순간이동합니다.
+      args: '[playerName] (-s) (최대)'
     info:
-      notFound: '&e적합한 위치를 찾을 수 없습니다'
+      notFound: '&e적합한 위치를 찾을 수 없습니다.'
   dsign:
     help:
-      info: '&e동적 표지판을 관리합니다'
+      info: 동적 표지판을 관리합니다.
       args: (새로 만들기)
       explanation:
-      - 표지판을 보고 /cmi dsign new 명령어를 실행하세요
+      - 표지판을 보고 /dsign new 명령어를 실행하세요
     info:
-      howTo: '&c이 표지판은 동적 표지판이 아닙니다. 새로 만들려면 &e/cmi dsign new 명령어를 실행하세요'
+      howTo: '&c이 표지판은 동적 표지판이 아닙니다. 새로 만들려면 &e/dsign new 명령어를 실행하세요'
       gui: '&7---- &f<GUI 열기> &7----'
       guiHover: '&7동적 표지판 설정 GUI 열기'
       individual: '&7개별: [state]'
       individualLore:
-      - '&2True &7- 각 플레이어에게 다른 표지판 결과를 표시합니다'
-      - '&2True &7- 플레이어 플레이스홀더를 업데이트합니다'
-      - '&2False &7- 표지판을 물리적으로 업데이트합니다'
-      - '&2False &7- 더 효율적이지만 제한적입니다'
+      - '&2True &7- 각 플레이어에게 다른 표지판 결과를 표시합니다.'
+      - '&2True &7- 플레이어 플레이스홀더를 업데이트합니다.'
+      - '&2False &7- 표지판을 물리적으로 업데이트합니다.'
+      - '&2False &7- 더 효율적이지만 제한적입니다.'
       interval: '&7매 &6[second] &7초마다 업데이트'
       intervalLore:
       - '&7표지판 정보가 업데이트되는 빈도(초)'
-      - '&7이 값은 라인 스크롤 속도도 정의합니다'
+      - '&7이 값은 라인 스크롤 속도도 정의합니다.'
       range: '&7활성화 범위: &6[blocks]'
       rangeLore:
-      - '&7표지판 주변 영역을 정의하여 업데이트를 트리거합니다'
+      - '&7표지판 주변 영역을 정의하여 업데이트를 트리거합니다.'
   dye:
     help:
-      info: '&e가죽 갑옷을 염색합니다'
-      args: (플레이어 이름) (red,green,blue/hexCode/colorName/random/clear/rainbow/day/biome/health)
+      info: 가죽 갑옷을 염색합니다.
+      args: (playerName) (red,green,blue/hexCode/colorName/random/clear/rainbow/day/biome/health)
         (-s)
     info:
       color: '&e현재 색상 - &c[red],&2[green],&9[blue] &eHex:&6#[hex]'
@@ -1009,23 +1014,24 @@ command:
       boundName: '[playerName]'
   editctext:
     help:
-      info: '&e사용자 정의 텍스트 편집기'
+      info: 사용자 정의 텍스트 편집기
       args: ''
     info:
-      noCText: '&c이름 ([name])으로 사용자 정의 텍스트를 찾을 수 없습니다'
+      noCText: '&c이름 ([name])으로 사용자 정의 텍스트를 찾을 수 없습니다.'
       editInfo: '&e이전 텍스트를 붙여넣으려면 클릭하세요. &6cancel &e을 입력하여 작업을 취소하거나 &6remove &e을
         입력하여 줄을 제거하세요'
-      addInfo: '&e새 줄 텍스트를 입력하세요. &6cancel &e을 입력하여 작업을 취소하세요'
+      addInfo: '&eEnter new line text. Type &6cancel &eto cancel'
       addInformationHover: "&e글로벌 변수가 발신자 범주에서 지원됩니다 \n&e클릭 가능한 메시지를 포함하려면: \n&e<T>&r텍\
         스트&e</T><H>&r호버 텍스트&e</H><C>&r명령어&e</C><SC>&r제안된 텍스트&e</SC> \n&6<T> &e및 &6</T>\
         \ &e필수, 다른 것은 선택 사항 \n&e\\u005Cn을 사용하여 줄을 나눕니다 \n&e여러 JSON 메시지를 사용하려면 <Next>를\
         \ 사용하세요 \n&6<SC> &e클릭 시 텍스트를 제안합니다 \n&6<SI> &eShift 클릭 시 텍스트를 제안하며 현재 텍스트를\
         \ 덮어쓰지 않습니다 \n&6<CC> &e클릭 시 콘솔 명령어를 실행합니다 \n&6<CCI> &e플레이어가 텍스트를 클릭할 때마다 콘\
-        솔 명령어를 실행합니다 \n&6<URL> &e웹 페이지로 리디렉션하는 URL을 추가할 수 있습니다"
-      newInfo: '&e새 사용자 정의 텍스트 이름을 입력하세요. &6cancel &e을 입력하여 작업을 취소하세요'
-      deleteInfo: '&e제거를 확인하려면 &6confirm &e을 입력하거나 작업을 취소하려면 &6cancel &e을 입력하세요'
-      deleted: '&e사용자 정의 텍스트 (&6[ctext]&e)가 제거되었습니다'
-      createdNew: '&e사용자 정의 텍스트 (&6[ctext]&e)가 생성되었습니다'
+        솔 명령어를 실행합니다 \n&6<URL> &e웹 페이지로 리디렉션하는 URL을 추가할 수 있습니다."
+      newInfo: '&eEnter name of new custom text. Type &6cancel &eto cancel'
+      deleteInfo: '&eType in &6confirm &eto confirm removal or type &6cancel &eto
+        cancel this action'
+      deleted: '&e사용자 정의 텍스트 (&6[ctext]&e)가 제거되었습니다.'
+      createdNew: '&e사용자 정의 텍스트 (&6[ctext]&e)가 생성되었습니다.'
       hidden: '&e숨김: &6[state]'
       autoPage: '&e자동 페이지: &6[state]'
       autoAlias: '&e자동 별칭: &6[state]'
@@ -1036,33 +1042,33 @@ command:
       listFormat: '&6[name]&7: &r[extra]'
   editlocale:
     help:
-      info: '&e로케일 파일을 편집합니다'
+      info: 로케일 파일을 편집합니다.
       args: (키워드(-s))
     info:
       found: '&7********* &e찾음: [found] &7*********'
   editplaytime:
     help:
-      info: '&e플레이어의 플레이 시간을 수정합니다'
-      args: (플레이어 이름) [추가/제거/설정] [값] (-s)
+      info: 플레이어의 플레이 시간을 수정합니다.
+      args: (playerName) [추가/제거/설정] [값] (-s)
     info:
-      cantSet: '&c플레이 시간을 변경하는 데 실패했습니다'
-      set: '&e[old]에서 [new]로 변경되었습니다'
+      cantSet: '&c플레이 시간을 변경하는 데 실패했습니다.'
+      set: '&e[old]에서 [new]로 변경되었습니다.'
   editwarnings:
     help:
-      info: '&e플레이어 경고를 확인합니다'
-      args: (플레이어 이름/모두 삭제) (삭제)
+      info: 플레이어 경고를 확인합니다.
+      args: (플레이어/모두 삭제) (삭제)
     info:
       list: '&7[place]. &e[time] &6by [warnedBy] &cfor: &7[warnedFor]'
       hover: '&7만료까지: [time]'
-      cleared: '&e플레이어의 모든 경고가 삭제되었습니다'
-      allCleared: '&e모든 플레이어의 모든 경고가 삭제되었습니다'
+      cleared: '&e플레이어의 모든 경고가 삭제되었습니다.'
+      allCleared: '&e모든 플레이어의 모든 경고가 삭제되었습니다.'
   editwarp:
     help:
-      info: '&e워프를 수정합니다'
+      info: 워프를 수정합니다.
       args: (워프 이름) (새 이름)
     info:
       exists: '&c이 이름(&7[newName]&c)의 워프가 이미 존재합니다. 다른 이름을 선택하세요'
-      updated: '&e[oldName]에서 [newName]으로 이름이 업데이트되었습니다'
+      updated: '&e[oldName]에서 [newName]으로 이름이 업데이트되었습니다.'
       placeItem: '&2아이템을 배치하여 사용자 정의 아이콘을 설정하세요'
       placeOffItem: '&2아이템을 배치하여 사용자 정의 비활성 아이콘을 설정하세요'
       autoLore: '&2자동 설명 생성: [state]'
@@ -1083,31 +1089,31 @@ command:
       notSet: '&e설정되지 않음'
   effect:
     help:
-      info: '&e플레이어에게 포션 효과를 추가합니다. clear를 사용하여 모든 효과를 제거합니다'
-      args: '[플레이어 이름/전체] [효과/clear] (지속 시간/무한) (배율) (-s) (-visual)'
+      info: 플레이어에게 포션 효과를 추가합니다. clear를 사용하여 모든 효과를 제거합니다.
+      args: '[playerName/all] [효과/clear] (지속 시간/무한) (배율) (-s) (-visual)'
       explanation:
       - -visual은 눈에 보이는 거품과 오른쪽 상단 아이콘을 추가합니다
       - '예시:'
-      - /cmi effect zrips nightvision 60 1 - Zrips에게 60초 동안 야간 투시를 부여합니다
-      - /cmi effect zrips nightvision +10 - 현재 야간 투시 시간에 10초를 추가합니다
-      - /cmi effect zrips nightvision -10 - 현재 야간 투시 시간에서 10초를 제거합니다
-      - /cmi effect all health_boost 60 1 - 모든 온라인 사용자에게 HP를 1 증가시킵니다
+      - /effect zrips nightvision 60 1 - Zrips에게 60초 동안 야간 투시를 부여합니다
+      - /effect zrips nightvision +10 - 현재 야간 투시 시간에 10초를 추가합니다
+      - /effect zrips nightvision -10 - 현재 야간 투시 시간에서 10초를 제거합니다
+      - /effect all health_boost 60 1 - 모든 온라인 사용자에게 HP를 1 증가시킵니다
     info:
       feedback: '&e포션 효과 &6[effect] &e가 &3[playerDisplayName]&e에게 &6[sec]초 동안 &6[power]의
         강도로 추가되었습니다 (&3[offon]&e).'
       cleared: '&e포션 효과가 &3[playerDisplayName]&e에게서 제거되었습니다 (&3[offon]&e).'
   emojipicker:
     help:
-      info: '&e이모지 선택'
+      info: 이모지 선택
       args: ''
     info:
       hovers:
       - '&fShift+Click'
   enchant:
     help:
-      info: '&e아이템에 마법 부여'
-      args: (플레이어 이름) [마법] [레벨] (-o) (-onlyvalid) (-keeponlyvalid) (-inform) (-s)
-        (-i:[아이템 이름(:데이터)]) (clear)
+      info: 아이템에 마법 부여
+      args: (playerName) [마법] [레벨] (-o) (-onlyvalid) (-keeponlyvalid) (-inform) (-s)
+        (-i:[아이템(:데이터)]) (clear)
       explanation:
       - -o는 보조 손에서 아이템을 가져옵니다
     info:
@@ -1116,19 +1122,19 @@ command:
       clear: '&e아이템에서 마법 부여가 제거되었습니다 &3[playerDisplayName]에게'
       clearOne: '&e아이템에서 &3[enchant] &e마법 부여가 제거되었습니다 &3[playerDisplayName]에게'
       noitem: '&c손에 아이템을 들고 있지 않습니다.'
-      invalidEnchant: '&c잘못된 마법 부여를 아이템에 추가할 권한이 없습니다'
-      clearedInvalid: '&e아이템에서 &6[amount] &e개의 잘못된 마법 부여가 제거되었습니다'
+      invalidEnchant: '&c잘못된 마법 부여를 아이템에 추가할 권한이 없습니다.'
+      clearedInvalid: '&e아이템에서 &6[amount] &e개의 잘못된 마법 부여가 제거되었습니다.'
       inccorectId: '&e잘못된 마법 이름 또는 ID입니다.'
-      wrongItem: '&e손에 잘못된 아이템이 있습니다'
-      enchantlimit: '&c이 마법 부여에 대한 접근 권한이 없습니다'
+      wrongItem: '&e손에 잘못된 아이템이 있습니다.'
+      enchantlimit: '&c이 마법 부여에 대한 접근 권한이 없습니다.'
       levellimit: '&c레벨이 너무 높습니다. 최대 허용 레벨은 &e[level]입니다.'
       conflict: '&c충돌하는 마법 부여 &7[enchant1] &c-> &7[enchant2]'
       possible: '&e가능한 마법 부여: '
       possibleList: '&6[enchant]'
   ender:
     help:
-      info: '&e플레이어의 엔더 상자를 엽니다'
-      args: (플레이어 이름) (플레이어 이름)
+      info: 플레이어의 엔더 상자를 엽니다.
+      args: (playerName) (playerName)
       explanation:
       - cmi.command.ender.preventmodify - 인벤토리 수정 방지
       - cmi.enderedit - 열린 인벤토리 수정 허용
@@ -1137,15 +1143,15 @@ command:
       feedback: '&e[playerDisplayName] &e의 엔더 상자를 수정 중입니다 (&3[offon]&e).'
   endgateway:
     help:
-      info: '&e엔드 게이트웨이 빔 토글'
+      info: 엔드 게이트웨이 빔 토글
       args: ''
     info:
-      'off': '&7빔이 &e꺼짐으로 토글되었습니다'
-      'on': '&7빔이 &6켜짐으로 토글되었습니다'
+      'off': '&7빔이 &e꺼짐으로 토글되었습니다.'
+      'on': '&7빔이 &6켜짐으로 토글되었습니다.'
   entityinfo:
     help:
-      info: '&e엔티티 정보를 확인합니다'
-      args: (플레이어 이름)
+      info: 엔티티 정보를 확인합니다.
+      args: (playerName)
     info:
       type: '&e엔티티 유형: &6[type]'
       customName: '&e사용자 정의 이름: &6[name]'
@@ -1161,12 +1167,13 @@ command:
       subTypes: '&e하위 유형: &6[list]'
   entitynbt:
     help:
-      info: '&e엔티티 NBT 정보를 확인합니다'
-      args: (플레이어 이름) (-console)
+      info: 엔티티 NBT 정보를 확인합니다.
+      args: (playerName) (-console)
   exp:
     help:
-      info: '&e플레이어의 경험치를 설정합니다. L을 사용하여 레벨을 설정하세요'
-      args: '[플레이어 이름] [추가/설정/제거/초기화] [양][%rand/10-20%][1%[min-max][[플레이어 이름]]] (-s)'
+      info: 플레이어의 경험치를 설정합니다. L을 사용하여 레벨을 설정하세요
+      args: '[playerName] [추가/설정/제거/초기화] [amount][%rand/10-20%][1%[min-max][[playerName]]]
+        (-s)'
       explanation:
       - '예시:'
       - /exp 10
@@ -1183,37 +1190,37 @@ command:
       targetFeedback: '&e경험치가 &3[exp]&e로 &3[senderDisplayName]&e에 의해 설정되었습니다.'
   ext:
     help:
-      info: '&e플레이어를 진화시킵니다'
-      args: (플레이어 이름) (-s)
+      info: 플레이어를 진화시킵니다.
+      args: (playerName) (-s)
     info:
-      feedback: '&e[playerDisplayName]&e를 진화시켰습니다 (&3[offon]&e).'
-      targetfeedback: '&e[senderDisplayName]&e에 의해 진화되었습니다.'
+      feedback: '&6[playerDisplayName]&e를 진화시켰습니다 (&3[offon]&e).'
+      targetfeedback: '&6[senderDisplayName]&e에 의해 진화되었습니다.'
   falldistance:
     help:
-      info: '&e플레이어의 낙하 거리를 설정합니다'
-      args: (플레이어 이름) (숫자) (-s)
+      info: 플레이어의 낙하 거리를 설정합니다.
+      args: (playerName) (숫자) (-s)
     info:
-      feedback: '&e[playerDisplayName]&e의 낙하 거리를 &3[amount]&e로 설정했습니다 (&3[offon]&e).'
+      feedback: '&6[playerDisplayName]&e의 낙하 거리를 &3[amount]&e로 설정했습니다 (&3[offon]&e).'
   feed:
     help:
-      info: '&e플레이어를 먹입니다'
-      args: (플레이어 이름/전체) (-s)
+      info: 플레이어를 먹입니다.
+      args: (플레이어/전체) (-s)
     info:
-      feedback: '&e[playerDisplayName]&e를 먹였습니다 (&3[offon]&e).'
+      feedback: '&6[playerDisplayName]&e를 먹였습니다 (&3[offon]&e).'
       feedbackMulti: '&e[count]&e명의 플레이어를 먹였습니다.'
-      targetfeedback: '&e[senderDisplayName]&e에 의해 먹였습니다.'
+      targetfeedback: '&6[senderDisplayName]&e에 의해 먹였습니다.'
   findbiome:
     help:
-      info: '&e가장 가까운 바이옴을 이름으로 찾습니다'
+      info: 가장 가까운 바이옴을 이름으로 찾습니다.
       args: '&3(biomeName/stop/stopall)'
     info:
       infoShow: '&6TPS: &3[tps] &6남은 시간: &e[left] &6(&e[time]&6) &6속도: &e[speed]'
-      stopped: '&e중지되었습니다!'
+      stopped: '&e중지되었습니다&o!'
       cantFindBiome: '&e원하는 바이옴을 찾을 수 없습니다. &6[amount]&e개의 청크를 확인했습니다.'
       teleportedTo: '&e[biome]&e 바이옴으로 순간이동했습니다.'
   fixchunk:
     help:
-      info: '&e손상된 청크를 스캔합니다'
+      info: 손상된 청크를 스캔합니다.
       args: '&ew &6[worldName]&e r &6[range in chunks]&e c &6[x:z]&e '
       explanation:
       - '&6하위 명령어:'
@@ -1231,18 +1238,18 @@ command:
       - /fixchunk w LT_Craft r g
       - /fixchunk fix
     info:
-      startScanning: '&e[amount]&e개의 청크를 확인했습니다. 시작합니다!'
-      paused: '&e스캔이 일시 중지되었습니다. 계속하려면 &6/cmi fixchunk continue&6를 사용하세요.'
+      startScanning: '&e[amount]&e개의 청크를 확인했습니다. 시작합니다&o!'
+      paused: '&e스캔이 일시 중지되었습니다. 계속하려면 &6/fixchunk continue&6를 사용하세요.'
       continuing: '&e스캔을 계속합니다.'
-      stoped: '&e스캔이 중지되었습니다. 결과를 확인하려면 &6/cmi fixchunk info&6를 사용하세요.'
+      stoped: '&e스캔이 중지되었습니다. 결과를 확인하려면 &6/fixchunk info&6를 사용하세요.'
       speedChange: '&e속도가 [amount]&e로 변경되었습니다.'
       autospeedChange: '&e자동 속도가 [state]&e로 변경되었습니다.'
       messagesChange: '&e메시지 상태가 [state]&e로 변경되었습니다.'
-      NoInfo: '&e정보가 없습니다.'
+      NoInfo: '&eThere is no info'
       InfoShow: '&6TPS: &3[tps] &6남은 시간: &e[left] &6(&e[min]m:[sec]s&6) &6속도: &e[speed]
         &6발견됨: &e[found]'
       scanList: '&2[number]. &7X:&f[x] &7Z:&f[z]'
-      finished: '&e스캔이 완료되었습니다. &6/cmi fixchunk fix&6를 사용하여 발견된 문제를 수정하세요. &c청크가 재생성됩니다!'
+      finished: '&e스캔이 완료되었습니다. &6/fixchunk fix&6를 사용하여 발견된 문제를 수정하세요. &c청크가 재생성됩니다&o!'
       fixed: '&2[number]&e개의 청크가 수정되었습니다.'
       total: '&e[current]/[until]&e에서 총 [total]&e 중 확인됨'
       stats:
@@ -1257,8 +1264,8 @@ command:
       - '&e************************************************************'
   flightcharge:
     help:
-      info: '&e비행 충전을 관리하고 확인합니다'
-      args: (add/take/set/show/expcharge/moneycharge/recharge) (플레이어 이름) (양) (-s)
+      info: 비행 충전을 관리하고 확인합니다.
+      args: (add/take/set/show/expcharge/moneycharge/recharge) (playerName) (양) (-s)
     info:
       charge: '&e현재 충전: &6[charge]&e/&6[max]'
       changed: '&e비행 충전 레벨이 &6[charge]&e로 변경되었습니다.'
@@ -1279,63 +1286,63 @@ command:
       cost: '&e[charge]&e 비행 충전을 위해 &6[amount]&e가 충전되었습니다.'
   fly:
     help:
-      info: '&e플레이어의 비행 모드를 설정합니다 (true 또는 false)'
-      args: '[플레이어 이름] (true/false) (-s)'
+      info: 플레이어의 비행 모드를 설정합니다 (true 또는 false)
+      args: '[playerName] (true/false) (-s)'
     info:
-      feedback: '&e[playerDisplayName]&e의 비행 모드를 &3[boolean]&e로 설정했습니다 (&3[offon]&e).'
-      targetFeedback: '&e[senderDisplayName]&e에 의해 비행 모드가 &3[boolean]&e로 설정되었습니다.'
+      feedback: '&6[playerDisplayName]&e의 비행 모드를 &3[boolean]&e로 설정했습니다 (&3[offon]&e).'
+      targetFeedback: '&6[senderDisplayName]&e에 의해 비행 모드가 &3[boolean]&e로 설정되었습니다.'
   flyc:
     help:
-      info: '&e비행 충전 모드를 토글합니다'
-      args: (플레이어 이름) (true/false) (-s)
+      info: 비행 충전 모드를 토글합니다.
+      args: (playerName) (true/false) (-s)
     info:
-      feedback: '&e[playerDisplayName]&e의 비행 충전 모드를 &3[boolean]&e로 설정했습니다 (&3[offon]&e).'
-      targetFeedback: '&e[senderDisplayName]&e에 의해 비행 충전 모드가 &3[boolean]&e로 설정되었습니다.'
+      feedback: '&6[playerDisplayName]&e의 비행 충전 모드를 &3[boolean]&e로 설정했습니다 (&3[offon]&e).'
+      targetFeedback: '&6[senderDisplayName]&e에 의해 비행 충전 모드가 &3[boolean]&e로 설정되었습니다.'
       targetFeedbackSelf: '&e비행 충전 모드가 &3[boolean]&e로 설정되었습니다.'
       noCharge: '&e비행 충전이 소진되었습니다.'
   flyspeed:
     help:
-      info: '&e플레이어의 비행 속도를 0에서 10까지 설정합니다'
-      args: (플레이어 이름) [속도] (-s)
+      info: 플레이어의 비행 속도를 0에서 10까지 설정합니다.
+      args: (playerName) [속도] (-s)
     info:
-      feedback: '&e[playerDisplayName]&e의 비행 속도를 &3[amount]&e로 설정했습니다 (&3[offon]&e).'
-      targetfeedback: '&e[senderDisplayName]&e에 의해 비행 속도가 &3[amount]&e로 설정되었습니다.'
+      feedback: '&6[playerDisplayName]&e의 비행 속도를 &3[amount]&e로 설정했습니다 (&3[offon]&e).'
+      targetfeedback: '&6[senderDisplayName]&e에 의해 비행 속도가 &3[amount]&e로 설정되었습니다.'
       max: '&e최대 허용 비행 속도는 &6[max]&e입니다.'
   gamerule:
     help:
-      info: '&e게임 규칙을 관리합니다'
+      info: 게임 규칙을 관리합니다.
       args: (월드) (게임 규칙) (값)
     info:
       updated: '&e게임 규칙 (&6[rule]&e)이 &6[world]&e에서 &6[value]&e로 변경되었습니다.'
   generateworth:
     help:
-      info: '&e가능한 아이템 가치 값을 자동 생성합니다'
+      info: 가능한 아이템 가치 값을 자동 생성합니다.
       args: ''
   getbook:
     help:
-      info: '&e책을 가져옵니다'
-      args: '[cTextName] (플레이어 이름)'
+      info: 책을 가져옵니다.
+      args: '[cTextName] (playerName)'
     info:
       list: '&e책 목록: &6'
       check: '&e확인: &6[text]'
       title: '&7[title]'
   giftpet:
     help:
-      info: '&e길들인 애완동물을 다른 플레이어에게 선물합니다'
-      args: '[플레이어 이름] (-s)'
+      info: 길들인 애완동물을 다른 플레이어에게 선물합니다.
+      args: '[playerName] (-s)'
     info:
       notTameable: '&e이 엔티티는 길들일 수 없습니다.'
       notTamed: '&e이 엔티티는 길들여지지 않았습니다.'
       notOwner: '&e이 엔티티의 소유자가 아닙니다.'
-      gifted: '&e[playerDisplayName]&e에게 &6[type]&e 엔티티를 선물했습니다.'
+      gifted: '&6[playerDisplayName]&e에게 &6[type]&e 엔티티를 선물했습니다.'
       received: '&e[sourceDisplayName]&e로부터 &6[type]&e 엔티티를 받았습니다.'
   give:
     help:
-      info: '&e플레이어에게 아이템을 줍니다'
-      args: (플레이어 이름) [아이템 데이터/손] (플레이어 이름) (-slot:[숫자]) (unstack) (-s)
+      info: 플레이어에게 아이템을 줍니다.
+      args: (playerName) [아이템 데이터/손] (playerName) (-slot:[숫자]) (unstack) (-s)
       explanation:
       - |-
-        예시: /cmi give diamondsword;{#Gray}My_Uber_Sword;&2Goblin_Slayer!
+        예시: /give diamondsword;{#Gray}My_Uber_Sword;&2Goblin_Slayer!
         {#pink}With_Love!;sharpness:3,durability:3;hideenchants
       - <T>자세한 정보는 www.zrips.net/cmi/commands/icwol/에서 확인하세요</T><URL>https://www.zrips.net/cmi/commands/icwol/</URL>
     info:
@@ -1346,17 +1353,17 @@ command:
       maxLimitResize: '&c한 번에 &7[max]&c개 이상의 아이템을 줄 수 없습니다. 제한에 맞게 크기를 조정합니다.'
   giveall:
     help:
-      info: '&e모든 플레이어에게 아이템을 줍니다'
-      args: '[아이템 이름] (수량) (e|l|n|offline)'
+      info: 모든 플레이어에게 아이템을 줍니다.
+      args: '[아이템] (수량) (e|l|n|offline)'
       explanation:
-      - '&e- 아이템 이름 또는 ID를 데이터 값과 함께 제공합니다.'
+      - '&e- 아이템 또는 ID를 데이터 값과 함께 제공합니다.'
       - '&e- 선택적으로 제공할 수량을 입력합니다.'
-      - '&e- &6n &e- 아이템 이름을 정의합니다.'
+      - '&e- &6n &e- 아이템을 정의합니다.'
       - '&e- &6l &e- 아이템 설명을 정의합니다.'
       - '&e- &6e &e - 아이템 마법 부여를 정의합니다.'
       - '&e- &6-s &e - 피드백 메시지를 표시하지 않습니다.'
-      - '&e- &6h &e - 플레이어 이름 뒤에 사용하여 손에 있는 아이템을 줍니다.'
-      - '&e- &6inv &e - 플레이어 이름 뒤에 사용하여 전체 인벤토리를 다른 사람에게 줍니다.'
+      - '&e- &6h &e - 플레이어 뒤에 사용하여 손에 있는 아이템을 줍니다.'
+      - '&e- &6inv &e - 플레이어 뒤에 사용하여 전체 인벤토리를 다른 사람에게 줍니다.'
       - '&e- &6offline &e- 오프라인 플레이어를 포함합니다.'
       - '&ecmi giveall stone 1 n &2Uber_stone l &3Stone_lore offline'
       - '&ecmi giveall h Zrips'
@@ -1367,42 +1374,42 @@ command:
       feedback: '&6Finished. &e[amount] &6players got item.'
   glow:
     help:
-      info: '&e플레이어의 발광 모드 설정'
-      args: (플레이어 이름) [true/false/color/gui]
+      info: 플레이어의 발광 모드 설정
+      args: (playerName) [true/false/color/gui]
       explanation:
       - '예시: /glow Zrips red'
       - '권한: cmi.command.glow.color.[color] - 특정 발광 색상을 설정할 수 있음'
     info:
-      feedback: '&e[playerDisplayName]&e에게 [color]발광 모드를 &3[boolean]&e로 설정했습니다 (&3[offon]&e).'
-      targetfeedback: '&e[senderDisplayName]&e가 [color]발광 모드를 &3[boolean]&e로 설정했습니다.'
+      feedback: '&6[playerDisplayName]&e에게 [color]발광 모드를 &3[boolean]&e로 설정했습니다 (&3[offon]&e).'
+      targetfeedback: '&6[senderDisplayName]&e가 [color]발광 모드를 &3[boolean]&e로 설정했습니다.'
       title: 발광 색상 선택
       incorrect: '&4잘못된 색상 이름'
       lore: '&2클릭하여 색상 선택'
-      noPerm: '&4권한이 없습니다'
+      noPerm: '&4권한이 없습니다.'
   gm:
     help:
-      info: '&e플레이어의 게임 모드 설정'
-      args: (플레이어 이름) [게임 모드]
+      info: 플레이어의 게임 모드 설정
+      args: (playerName) [게임 모드]
     info:
-      feedback: '&e[playerDisplayName]&e의 게임 모드를 &3[gameMode]&e로 설정했습니다 (&3[offon]&e).'
-      targetfeedback: '&e[senderDisplayName]&e가 게임 모드를 &3[gameMode]&e로 설정했습니다.'
+      feedback: '&6[playerDisplayName]&e의 게임 모드를 &3[gameMode]&e로 설정했습니다 (&3[offon]&e).'
+      targetfeedback: '&6[senderDisplayName]&e가 게임 모드를 &3[gameMode]&e로 설정했습니다.'
   god:
     help:
-      info: '&e플레이어의 신 모드 설정'
-      args: '[플레이어 이름] (true/false) (-s)'
+      info: 플레이어의 신 모드 설정
+      args: '[playerName] (true/false) (-s)'
     info:
-      feedback: '&e[playerDisplayName]&e에게 신 모드를 &3[boolean]&e로 설정했습니다 (&3[offon]&e).'
-      targetfeedback: '&e[senderDisplayName]&e가 신 모드를 &3[boolean]&e로 설정했습니다.'
+      feedback: '&6[playerDisplayName]&e에게 신 모드를 &3[boolean]&e로 설정했습니다 (&3[offon]&e).'
+      targetfeedback: '&6[senderDisplayName]&e가 신 모드를 &3[boolean]&e로 설정했습니다.'
   grindstone:
     help:
-      info: '&e숫돌 열기'
-      args: (플레이어 이름) (-s)
+      info: 숫돌 열기
+      args: (playerName) (-s)
     info:
-      feedback: '&e[playerDisplayName]&e에게 숫돌을 열었습니다 (&3[offon]&e).'
+      feedback: '&6[playerDisplayName]&e에게 숫돌을 열었습니다 (&3[offon]&e).'
       targetfeedback: '&3[senderDisplayName]&e가 숫돌을 열어주었습니다.'
   groundclean:
     help:
-      info: '&e서버에서 불필요한 아이템 제거'
+      info: 서버에서 불필요한 아이템 제거
       args: (+cb) (+cm) (+ci) (+b) (+sh) (+tnt) (+all) (+fl) (+named) (-w:[worldName])
         (-s)
       explanation:
@@ -1426,8 +1433,8 @@ command:
       nothing: '&e제거할 것이 없습니다.'
   haspermission:
     help:
-      info: '&e플레이어가 특정 권한을 가지고 있는지 확인'
-      args: (플레이어 이름) [권한 노드]
+      info: 플레이어가 특정 권한을 가지고 있는지 확인
+      args: (playerName) [권한 노드]
     info:
       title: '&6[playerDisplayName] &e-> &6[permission]'
       none: '&e플레이어에게 권한이 설정되지 않았으며 OP가 아닙니다. 결과는 &6[state]'
@@ -1438,33 +1445,33 @@ command:
       minMax: '&e최소: &6[min] &e최대: &6[max]'
   hat:
     help:
-      info: '&e아이템을 모자로 착용'
-      args: (플레이어 이름)
+      info: 아이템을 모자로 착용
+      args: (playerName)
     info:
-      feedback: '!actionbar!&6모자가 성공적으로 변경되었습니다!'
-      targetfeedback: '&6[senderDisplayName]&e가 모자를 변경했습니다!'
-      fullinv: '&3[playerDisplayName]&e의 인벤토리가 가득 차 있어 모자를 변경할 수 없습니다!'
+      feedback: '!actionbar!&6모자가 성공적으로 변경되었습니다&o!'
+      targetfeedback: '&6[senderDisplayName]&e가 모자를 변경했습니다&o!'
+      fullinv: '&3[playerDisplayName]&e의 인벤토리가 가득 차 있어 모자를 변경할 수 없습니다&o!'
       incorrect: '&3머리 슬롯에 잘못된 아이템이 있어 새 아이템으로 교체할 수 없습니다. 수동으로 제거하세요.'
       cantUse: '&3이 아이템은 모자로 사용할 수 없습니다.'
   head:
     help:
-      info: '&e플레이어의 머리 가져오기'
+      info: 플레이어의 머리 가져오기
       args: '[sourceName] (targetName) (-s) (amount)'
     info:
-      Feedback: '&3[headName]&e 머리가 생성되었습니다!'
-      targetFeedback: '&e[senderDisplayName]&e가 &3[headName]&e 머리를 주었습니다!'
+      Feedback: '&3[headName]&e 머리가 생성되었습니다&o!'
+      targetFeedback: '&6[senderDisplayName]&e가 &3[headName]&e 머리를 주었습니다&o!'
   heal:
     help:
-      info: '&e플레이어를 치유'
-      args: '[플레이어 이름/전체] (치유량/치유 퍼센트) (-nofeed) (-ignoreffects) (-dontextinguish)'
+      info: 플레이어를 치유
+      args: '[playerName/all] (치유량/치유 퍼센트) (-nofeed) (-ignoreffects) (-dontextinguish)'
     info:
-      feedback: '&e[playerDisplayName]&e를 치유했습니다 (&3[offon]&e).'
+      feedback: '&6[playerDisplayName]&e를 치유했습니다 (&3[offon]&e).'
       feedbackMulti: '&e[count]&e명의 플레이어를 치유했습니다.'
-      targetfeedback: '&e[senderDisplayName]&e가 치유했습니다.'
+      targetfeedback: '&6[senderDisplayName]&e가 치유했습니다.'
   helpop:
     help:
-      info: '&e스태프에게 도움 요청 메시지 보내기'
-      args: '[메시지]'
+      info: 스태프에게 도움 요청 메시지 보내기
+      args: '[message]'
       explanation:
       - 메시지를 보려면 cmi.command.helpop.inform 권한이 필요합니다
     info:
@@ -1473,8 +1480,8 @@ command:
       offline: '&c[도움]&7현재 온라인 상태인 스태프가 없습니다. 나중에 시도하세요.'
   hideflags:
     help:
-      info: '&e아이템 플래그 숨기기'
-      args: (플레이어 이름) [플래그 이름/초기화] (플래그 이름)
+      info: 아이템 플래그 숨기기
+      args: (playerName) [플래그 이름/초기화] (플래그 이름)
     info:
       feedback: '&e아이템에 새로운 플래그를 추가했습니다 &3[playerDisplayName]&e (&3[offon]&e).'
       cleared: '&e아이템에서 모든 플래그를 제거했습니다 &3[playerDisplayName]&e (&3[offon]&e).'
@@ -1482,10 +1489,10 @@ command:
       inccorectId: '&e잘못된 플래그 이름입니다.'
   hologram:
     help:
-      info: '&e홀로그램 관리'
+      info: 홀로그램 관리
       args: ''
     info:
-      howTo: '&c새로운 홀로그램을 생성하려면 &e/cmi hologram new &6[name] 명령어를 실행하세요'
+      howTo: '&c새로운 홀로그램을 생성하려면 &e/hologram new &6[name] 명령어를 실행하세요'
       gui: '&7---- &f<설정 GUI 열기> &7----'
       guiHover: '&7홀로그램 설정 GUI 열기'
       interval: '&7매 &6[second] &7초마다 업데이트'
@@ -1495,23 +1502,23 @@ command:
       pageInterval: '&7페이지 변경 간격: &6[second] &7초'
       pageIntervalLore:
       - '&7홀로그램 페이지가 자동으로 변경되는 빈도(초)'
-      pageIntervalNoPages: '&4이 홀로그램에는 아직 페이지가 없습니다'
+      pageIntervalNoPages: '&4이 홀로그램에는 아직 페이지가 없습니다.'
       text: '&7텍스트 간격: &6[space]'
       usync: '&7텍스트 변경 동기화: &6[state]'
       reqPermission: '&7볼 수 있는 권한 필요: &6[state]'
       teleport: '&7홀로그램 위치로 순간이동'
       icon: '&7아이콘 간격: &6[space]'
       iconLore:
-      - '&7객체 간의 거리를 정의합니다'
+      - '&7객체 간의 거리를 정의합니다.'
       range: '&7표시 범위: &6[blocks]'
       rangeLore:
-      - '&7홀로그램을 표시하거나 숨길 수 있는 영역을 정의합니다'
+      - '&7홀로그램을 표시하거나 숨길 수 있는 영역을 정의합니다.'
       updateRange: '&7업데이트 범위: &6[blocks]'
       updateRangeLore:
-      - '&7홀로그램 업데이트를 트리거하는 영역을 정의합니다'
+      - '&7홀로그램 업데이트를 트리거하는 영역을 정의합니다.'
       relocate: '&7재배치'
       relocateLore:
-      - '&7홀로그램을 현재 위치로 재배치합니다'
+      - '&7홀로그램을 현재 위치로 재배치합니다.'
       los: '&7시야선 고려: &6[state]'
       losLore:
       - '&7체크 간격: [interval]'
@@ -1520,7 +1527,7 @@ command:
       big: '&7큰 버튼: &6[state]'
       bigLore:
       - '&7큰 버튼 모드가 활성화되면'
-      - '&7이동이 제한될 수 있습니다'
+      - '&7이동이 제한될 수 있습니다.'
       order: '&7아래로 배치: &6[state]'
       commands: '&7명령어:'
       newMethod: '&7새로운 방법 사용: &6[state]'
@@ -1570,10 +1577,10 @@ command:
       nextPage: <T>  &6>>>></T><H>  &e>>>></H>
       autoButton: '&7자동으로 페이지 버튼 생성'
       autoButtonLore:
-      - '&e현재 홀로그램에는 생성된 페이지가 없습니다'
+      - '&e현재 홀로그램에는 생성된 페이지가 없습니다.'
       - '&e새 줄에 &6!nextpage! &e를 사용하여 다음 페이지를 만드세요'
-      autoButtonForward: '&2이 홀로그램에는 이미 앞으로 버튼이 생성되었습니다'
-      autoButtonBackward: '&2이 홀로그램에는 이미 뒤로 버튼이 생성되었습니다'
+      autoButtonForward: '&2이 홀로그램에는 이미 앞으로 버튼이 생성되었습니다.'
+      autoButtonBackward: '&2이 홀로그램에는 이미 뒤로 버튼이 생성되었습니다.'
       moveX: '&7X:&e[x]'
       moveY: '&7Y:&e[y]'
       moveZ: '&7Z:&e[z]'
@@ -1585,27 +1592,27 @@ command:
         &7Head:[headOwner]'
   hologrampages:
     help:
-      info: '&7홀로그램 페이지 관리'
+      info: 홀로그램 페이지 관리
       args: '[holoName] (playerName) (next/prev/[pageNumber])'
   home:
     help:
-      info: '&7저장한 집으로 순간이동'
+      info: 저장한 집으로 순간이동
       args: (homeName) (playerName) (whoTeleport)
     info:
       list: '&7집 목록: &6'
       listNonePrivate: '&f'
       listPrivate: '&2'
       click: '&7클릭 &8| &7순간이동'
-      teleported: '&aHOME &8» &6[home]&f(으)로 순간이동되었습니다.'
-      noHomes: '&cHOME &8» &f아직 위치를 저장한 집이 없습니다.'
-      private: '&cHOME &8» &f이 집은 비공개 상태입니다.'
+      teleported: '&aHome &8» &6[home]&f(으)로 순간이동되었습니다.'
+      noHomes: '&cHome &8» &f아직 위치를 저장한 집이 없습니다.'
+      private: '&cHome &8» &f이 집은 비공개 상태입니다.'
       remove: '&8삭제 | 쉬프트 + 우클릭'
-      missingBed: '&cHOME &8» &f집 위치에 침대가 없습니다.'
-      notAccessible: '&cHOME &8» &f집이 있는 세계&7([worldName])&f가 존재하지 않습니다&o!'
+      missingBed: '&cHome &8» &f집 위치에 침대가 없습니다.'
+      notAccessible: '&cHome &8» &f집이 있는 월드&7([worldName])&f가 존재하지 않습니다&o!'
       guiTitle: '&0[playerDisplayName]&8님의 집 &7([current]/[max])'
   homes:
     help:
-      info: '&7집 목록 페이지 보기'
+      info: 집 목록 페이지 보기
       args: (playerName/near:[range])
     info:
       nearList: '&f&l[number]. &6[playerDisplayName]님의 &e[homeName] (&e[direction]&f방향으로
@@ -1624,14 +1631,14 @@ command:
       edit: '&7Click Q to edit'
   hunger:
     help:
-      info: '&7플레이어의 배고픔 설정'
-      args: '[플레이어 이름] [양] (-s)'
+      info: 플레이어의 배고픔 설정
+      args: '[playerName] [amount] (-s)'
     info:
-      feedback: '&e[playerDisplayName]&e의 배고픔을 &3[hunger]&e로 설정했습니다 (&3[offon]&e).'
-      targetfeedback: '&e[senderDisplayName]&e에 의해 배고픔이 &3[hunger]&e로 설정되었습니다.'
+      feedback: '&6[playerDisplayName]&e의 배고픔을 &3[hunger]&e로 설정했습니다 (&3[offon]&e).'
+      targetfeedback: '&6[senderDisplayName]&e에 의해 배고픔이 &3[hunger]&e로 설정되었습니다.'
   ic:
     help:
-      info: '&e인터랙티브 명령어 생성'
+      info: 인터랙티브 명령어 생성
       args: (새로 만들기) (이름)
     info:
       public: ' &2[공개]'
@@ -1640,7 +1647,7 @@ command:
       noPerm: ' &7[권한 필요]'
       cancelEvent: ' &2[이벤트 취소]'
       passEvent: ' &7[이벤트 통과]'
-      permHover: ' &e이 표지판을 배치하려면 &7[permission] &e권한이 필요합니다'
+      permHover: ' &e이 표지판을 배치하려면 &7[permission] &e권한이 필요합니다.'
       editSign: ' &e[표지판 줄 편집]'
       publicHover: "&e공개 상태 변경. \n표지판 상단 줄 &7[ic:[name]]"
       createdPublic: '&e새로운 인터랙티브 표지판 생성됨'
@@ -1654,69 +1661,69 @@ command:
       manageBlockEnt: '&e블록/엔티티 편집기로 전환'
       locationList: '&6[type]'
       entityList: '&2[type]'
-      notPublicIc: '&c이 명령어는 공개되지 않았으므로 사용할 수 없습니다'
+      notPublicIc: '&c이 명령어는 공개되지 않았으므로 사용할 수 없습니다.'
       block: (블록)
       entity: (엔티티)
       both: (둘 다)
       none: (없음)
-      addedNew: '&e새로운 블록/엔티티가 &6[name]&e에 추가되었습니다'
-      dontExist: '&c이 이름으로 인터랙티브 명령어가 존재하지 않습니다'
-      exists: '&c이 이름으로 인터랙티브 명령어가 이미 존재합니다'
-      blockExist: '&c이 블록은 이미 &e[name]&c에 의해 사용되고 있습니다'
-      entityExist: '&c이 엔티티는 이미 &e[name]&c에 의해 사용되고 있습니다'
-      addInfo: '&e새로운 명령어를 입력하세요. &6cancel &e을 입력하여 취소하세요'
+      addedNew: '&e새로운 블록/엔티티가 &6[name]&e에 추가되었습니다.'
+      dontExist: '&c이 이름으로 인터랙티브 명령어가 존재하지 않습니다.'
+      exists: '&c이 이름으로 인터랙티브 명령어가 이미 존재합니다.'
+      blockExist: '&c이 블록은 이미 &e[name]&c에 의해 사용되고 있습니다.'
+      entityExist: '&c이 엔티티는 이미 &e[name]&c에 의해 사용되고 있습니다.'
+      addInfo: '&eEnter new command. Type &6cancel &eto cancel'
       addInformationHover: "&e발신자 범주로 글로벌 변수가 지원됩니다 \n&e명령어에 지연을 포함하려면: \n&edelay!\
         \ 5 \n&e추가 변수를 사용하여 새 명령어에 변수를 삽입할 수 있습니다 \n&e$1은 제공된 변수를 가져와 새 명령어에 삽입합니다\
-        \ \n&e$1-은 이 지점부터 모든 변수를 가져와 원래 명령어에 삽입합니다"
+        \ \n&e$1-은 이 지점부터 모든 변수를 가져와 원래 명령어에 삽입합니다."
       editInfo: '&e이전 텍스트를 붙여넣으려면 클릭하세요. &6cancel &e을 입력하여 작업을 취소하거나 &6remove &e을
         입력하여 줄을 제거하세요'
   ifoffline:
     help:
-      info: '&e플레이어가 오프라인일 때만 명령어 실행'
-      args: '[플레이어 이름] (명령어)'
+      info: 플레이어가 오프라인일 때만 명령어 실행
+      args: '[playerName] (명령어)'
   ifonline:
     help:
-      info: '&e플레이어가 온라인일 때만 명령어 실행'
-      args: '[플레이어 이름] (명령어)'
+      info: 플레이어가 온라인일 때만 명령어 실행
+      args: '[playerName] (명령어)'
   ignore:
     help:
-      info: '&e플레이어를 무시합니다'
-      args: (플레이어 이름/UUID/전체) (-p:[플레이어 이름])
+      info: 플레이어를 무시합니다.
+      args: (플레이어/UUID/전체) (-p:[playerName])
       explanation:
       - cmi.command.ignore.bypass - 무시 목록을 우회
     info:
-      self: '&c자신을 무시할 수 없습니다'
-      added: '&e이제 &6[playerDisplayName]&e를 무시합니다'
-      addedAll: '&e이제 모든 사람을 무시합니다'
+      self: '&c자신을 무시할 수 없습니다.'
+      added: '&e이제 &6[playerDisplayName]&e를 무시합니다.'
+      addedAll: '&e이제 모든 사람을 무시합니다.'
       all: '&e모든 사람'
-      removed: '&e이제 &6[playerDisplayName]&e를 더 이상 무시하지 않습니다'
-      removedAll: '&e이제 모든 사람을 더 이상 무시하지 않습니다'
+      removed: '&e이제 &6[playerDisplayName]&e를 더 이상 무시하지 않습니다.'
+      removedAll: '&e이제 모든 사람을 더 이상 무시하지 않습니다.'
       list: '&e[place]. [playerDisplayName]  '
-      ignoringYou: '&c[playerDisplayName] &e가 무시하고 있습니다'
-      empty: '&7무시 목록이 비어 있습니다'
+      ignoringYou: '&c[playerDisplayName] &e가 무시하고 있습니다.'
+      empty: '&7무시 목록이 비어 있습니다.'
   importfrom:
     help:
-      info: '&e다른 플러그인에서 데이터를 가져옵니다'
+      info: 다른 플러그인에서 데이터를 가져옵니다.
       args: '[essentials/hd] [home/warp/nick/logoutlocation/money/mail]'
     info:
       converted: '&e변환됨: &6[done]&e/&6[total] &e사용자'
       convertedWarps: '&e변환된 워프 &6[amount]'
-      noInfo: '&c무엇을 가져올지 정확히 제공하지 않았습니다'
-      savingInProgress: '&e저장해야 할 항목 수에 따라 데이터가 몇 분 내에 데이터베이스에 저장됩니다'
+      noInfo: '&c무엇을 가져올지 정확히 제공하지 않았습니다.'
+      savingInProgress: '&e저장해야 할 항목 수에 따라 데이터가 몇 분 내에 데이터베이스에 저장됩니다.'
       HDfile: '&cHolographicDisplays 플러그인 데이터베이스 파일을 찾을 수 없습니다. 중단합니다.'
       HDexist: '&c&7[name] &c이름의 홀로그램이 이미 존재합니다. 건너뜁니다.'
       HDfailed: '&c홀로그램을 로드할 수 없습니다 (&7[name]&c)'
       HDimported: '&e가져온 홀로그램 &7[amount]'
   importoldusers:
     help:
-      info: '&e메인 월드 폴더의 playerdata 폴더에서 사용자를 가져옵니다. 가져오는 동안 서버에 랙 스파이크가 발생할 수 있습니다'
+      info: 메인 월드 폴더의 playerdata 폴더에서 사용자를 가져옵니다. 가져오는 동안 서버에 랙 스파이크가 발생할 수 있습니다.
       args: ''
     info:
       starting: '&e가져오기 시작'
       feedback: '&e가져온 새 사용자 &6[amount]'
   info:
     help:
-      info: '&eShow players information'
+      info: Show players information
       args: '[playerName/uuid]'
     info:
       feedback:
@@ -1839,7 +1846,7 @@ command:
       - '&e-----------------------------------------'
   inv:
     help:
-      info: '&eOpens players inventory'
+      info: Opens players inventory
       args: '[playerName]'
       explanation:
       - cmi.command.inv.preventmodify - prevents inventory editing
@@ -1849,33 +1856,33 @@ command:
       feedback: '&eYou are editing &3[playerDisplayName] &einventory (&3[offon]&e).'
   invcheck:
     help:
-      info: '&eOpen saved inventory in preview mode'
+      info: Open saved inventory in preview mode
       args: (playerName) [id] (-e) (last)
   invlist:
     help:
-      info: '&eShow saved inventories list'
+      info: Show saved inventories list
       args: (playerName)
   invload:
     help:
-      info: '&eLoad saved inventory'
+      info: Load saved inventory
       args: (sourceName) (targetName) [id/last]
   invremove:
     help:
-      info: '&eRemove saved inventories for player'
+      info: Remove saved inventories for player
       args: (playerName) [id/all/last]
   invremoveall:
     help:
-      info: '&eRemoves all saved inventories'
+      info: Removes all saved inventories
       args: '[confirmed]'
     info:
       removed: '&eAll saved inventories removed ([count])'
   invsave:
     help:
-      info: '&eSave inventory'
+      info: Save inventory
       args: (playerName) (id) (-s)
   ipban:
     help:
-      info: '&eBan ip'
+      info: Ban ip
       args: '[ip/playerName] (reason) (-s)'
       explanation:
       - cmi.command.banip.bypass - to bypass ban
@@ -1888,7 +1895,7 @@ command:
       replacer: '*'
   ipbanlist:
     help:
-      info: '&eBan ip list'
+      info: Ban ip list
       args: ''
     info:
       banList: '&7[ip] &e- &6[reason]  '
@@ -1899,11 +1906,11 @@ command:
         &f[list]
   item:
     help:
-      info: '&eGive item to yourself'
+      info: Give item to yourself
       args: '[itemdata/hand] (-slot:[number]) (unstack) (-s)'
   itemcmdata:
     help:
-      info: '&eCheck or modify items custom model data'
+      info: Check or modify items custom model data
       args: '[set/delete/list] (playerName) (integerId) (-s)'
     info:
       nothing: '&eDoesn''t contain any model data'
@@ -1912,7 +1919,7 @@ command:
       deleted: '&eRemoved model data: &6[value]'
   itemframe:
     help:
-      info: '&eManage item frames'
+      info: Manage item frames
       args: (invisible/fixed/invulnerable/all)
     info:
       enabled: Enabled
@@ -1920,7 +1927,7 @@ command:
       feedback: '&e[count] &6item frames are invisible around you'
   iteminfo:
     help:
-      info: '&eShow item information'
+      info: Show item information
       args: (playerName)
     info:
       nameMat: ' &eName: &7[name] &eMaterial: &7[material]'
@@ -1936,7 +1943,7 @@ command:
       stackSize: ' &eMax stack size: &6[size]'
   itemlore:
     help:
-      info: '&eChange items lore'
+      info: Change items lore
       args: (-p:[playerName]) [linenumber/*] [remove/insert/ new lore line]
     info:
       feedback: '&eYou have changed lore line (&6[line]&e) to ''&r&5[loreLine]&e''
@@ -1951,7 +1958,7 @@ command:
       nomodification: '&cYou can''t modify existing lore lines'
   itemname:
     help:
-      info: '&eRename items'
+      info: Rename items
       args: (-p:[playerName]) [remove/your new item name]
     info:
       feedback: '&eYou have renamed item to [itemname]&e for &3[playerDisplayName]&e
@@ -1962,7 +1969,7 @@ command:
       maxLength: '&cNew value is to long. Max length &e[length] &ccharacters'
   itemnbt:
     help:
-      info: '&eShow item NBT information'
+      info: Show item NBT information
       args: (playerName)
     info:
       jump: '&6[key][type]'
@@ -1972,7 +1979,7 @@ command:
       noNbt: '&eItem does not contain any NBT data'
   jail:
     help:
-      info: '&eJail player for time period'
+      info: Jail player for time period
       args: '[playerName] (time) (jailName) (cellId) (-s) (r:jail_reason)'
     info:
       jailed: '&eYou put &6[playerDisplayName] &einto jail for the next [time]'
@@ -1987,7 +1994,7 @@ command:
       noCommand: '&cYou can''t use this command while jailed!'
   jailedit:
     help:
-      info: '&eEdit jails'
+      info: Edit jails
       args: ''
     info:
       notInArea: '&cYou are not standing in jail area'
@@ -2011,7 +2018,7 @@ command:
       areaShow: '&7[S] '
   jaillist:
     help:
-      info: '&eList jails'
+      info: List jails
       args: (jailName) (cellId)
     info:
       jailList: '&6[place]. &e[jailName] &7Cells:&e[cellCount] &7Jailed:&6[count]'
@@ -2021,13 +2028,13 @@ command:
       Release: '&7Click to release'
   jump:
     help:
-      info: '&eJump to target block'
+      info: Jump to target block
       args: ''
     info:
       tooFar: '&cNo block in sight or it''s too far (max [max] blocks)'
   kick:
     help:
-      info: '&eKick player with custom message'
+      info: Kick player with custom message
       args: '[playerName/all] (message) (-s)'
       explanation:
       - cmi.command.kick.bypass - prevents from being kicked out
@@ -2039,7 +2046,7 @@ command:
       all: '&eKicked &6[amount] &eplayers from server'
   kill:
     help:
-      info: '&eKill player'
+      info: Kill player
       args: '[playerName] (-forced) (damageCause) (-s) (-lightning)'
     info:
       cantKill: '&6Can''t kill, protected by another plugin, game/god mode. Use -forced
@@ -2048,7 +2055,7 @@ command:
       killed: '&6Killed [playerDisplayName]'
   killall:
     help:
-      info: '&eKill mobs around you'
+      info: Kill mobs around you
       args: (-monsters/-pets/-npc/-animals/-ambient/-named/-f/-lightning/-list/-m:[mobType])
         (-r:range) (-s) (-w:[worldName])
     info:
@@ -2065,7 +2072,7 @@ command:
       named: With custom name
   kit:
     help:
-      info: '&eGives predefined kit.'
+      info: Gives predefined kit.
       args: '[kitName] (playerName) (-s) (-open) (-preview) (-c)'
       explanation:
       - '&ePermissions:'
@@ -2073,7 +2080,7 @@ command:
       - '&6cmi.kit.bypass.money &e- bypass money requirement'
       - '&6cmi.kit.bypass.exp &e- bypass exp requirement'
       - '&6cmi.kit.bypass.onetimeuse &e- bypass one time use'
-      - '&6/cmi kit [kitName] [playerName] &e- will give kit to another player'
+      - '&6/kit [kitName] [playerName] &e- will give kit to another player'
     info:
       noMoney: '&eNot enough money. Cost: &6[cost] &eyou have &6[balance]'
       noExp: '&eNot enough exp. Cost: &6[cost] &eyou have &6[balance]'
@@ -2111,7 +2118,7 @@ command:
       list: '&7[number]. &e[kitName] &6- [description]'
   kitcdreset:
     help:
-      info: '&eReset kit timer'
+      info: Reset kit timer
       args: (kitName) (playerName/all)
     info:
       notCd: '&eKit is not in cooldown stage'
@@ -2122,14 +2129,14 @@ command:
       noCd: '&eThere are no kit''s on cooldown'
   kiteditor:
     help:
-      info: '&eKit editor.'
+      info: Kit editor.
       args: ''
       explanation:
       - '&ePermissions:'
       - '&6cmi.kit.[kitName] &e- allows to use particular kit'
       - '&6cmi.kit.bypass.money &e- bypass money requirement'
       - '&6cmi.kit.bypass.exp &e- bypass exp requirement'
-      - '&6/cmi kiteditor &e- shows kit list'
+      - '&6/kiteditor &e- shows kit list'
     info:
       kits: '&eKits: '
       iconSet: '&eNew icon set for &6[kitname] &ekit'
@@ -2224,7 +2231,7 @@ command:
       iconCd: '&eIcon used when kit is &cunavailable'
   kitusagereset:
     help:
-      info: '&eReset kit usage counter'
+      info: Reset kit usage counter
       args: (kitName) (playerName)
     info:
       notLimited: '&eKit has no limited amount of usage'
@@ -2234,7 +2241,7 @@ command:
       noCd: '&eThere are no kit''s with usage above 0'
   lastonline:
     help:
-      info: '&eShow played players from last x minutes'
+      info: Show played players from last x minutes
       args: (-p:[page])
     info:
       searching: '&eSearching &6[checked]&e/&6[total] &e(&6[found]&e)'
@@ -2243,7 +2250,7 @@ command:
         30 days (&6[time4]&e)'
   launch:
     help:
-      info: '&eLaunch at direction you are looking or at angle'
+      info: Launch at direction you are looking or at angle
       args: (playerName) (p:[power]) (a:[angle]) (d:[direction]) (loc:[x]:[y]:[z])
         (-nodamage)
       explanation:
@@ -2263,7 +2270,7 @@ command:
       feedback: '!actionbar!&6[&fWhoosh!&6]'
   lfix:
     help:
-      info: '&eFix light in chunks around you'
+      info: Fix light in chunks around you
       args: (range) (playerName) (stop/stopall)
     info:
       NoMore: '&eRange can''t be more than server view range. Changed to maximum allowed.'
@@ -2273,7 +2280,7 @@ command:
       Stopped: '&eStopped'
   list:
     help:
-      info: '&eShows online player list'
+      info: Shows online player list
       args: ''
       explanation:
       - 'Perm: '
@@ -2313,7 +2320,7 @@ command:
       noGroupLine: '&eList'
   lockip:
     help:
-      info: '&ePrevents logging into account from different ip'
+      info: Prevents logging into account from different ip
       args: (playername) [add/remove/list/clear] [ip]
     info:
       CantLogin: '&cYou can''t login from this ip address'
@@ -2325,14 +2332,14 @@ command:
       list: '&6[place]&e. &6[ip]'
   loom:
     help:
-      info: '&eOpen loom'
+      info: Open loom
       args: (playerName)
     info:
       feedback: '&eYou have opened loom for &3[playerDisplayName]&e (&3[offon]&e).'
       targetfeedback: '&3[senderDisplayName]&e opened loom for you.'
   mail:
     help:
-      info: '&eSend and receive mail'
+      info: Send and receive mail
       args: '[send/clear/read/sendtemp] [playerName] (time) (message)'
     info:
       sentMail: '&eMail sent to &6[playerDisplayName]'
@@ -2347,7 +2354,7 @@ command:
       waitingMail: '&eYou have &6[amount] &emails. Click to check them out.'
   mailall:
     help:
-      info: '&eCheck or send mail to all players'
+      info: Check or send mail to all players
       args: '[send/clear/remove] [message]'
     info:
       sentMail: '&eSent &6[amount] &email(s)'
@@ -2355,7 +2362,7 @@ command:
       removedMail: '&eRemoved &6[amount] &email(s)'
   maintenance:
     help:
-      info: '&eSet server into maintenance mode'
+      info: Set server into maintenance mode
       args: (true/false) (message)
       explanation:
       - cmi.command.maintenance.bypass - to bypass maintenance mode
@@ -2364,14 +2371,14 @@ command:
       set: '&eServer maintenance mode set to &6[state] &ewith message: [message]'
   maxhp:
     help:
-      info: '&eSet a player''s max hp'
+      info: Set a player's max hp
       args: '[set/add/take/clear] [playerName] [amount] (-s)'
     info:
       feedback: '&eYou have set &3[maxHp] &emax hp for &3[playerDisplayName]&e (&3[offon]&e).'
       targetfeedback: '&eYour max HP was set to &3[maxHp] &eby &3[senderDisplayName]&e.'
   maxplayers:
     help:
-      info: '&eChanges maximum amount of players who can connect to server'
+      info: Changes maximum amount of players who can connect to server
       args: '[amount]'
       explanation:
       - '&ePermissions: '
@@ -2381,13 +2388,13 @@ command:
         &6[current]'
   me:
     help:
-      info: '&eSends special message to all players'
+      info: Sends special message to all players
       args: '[message]'
     info:
       format: '&5* [senderDisplayName] &5[message]'
   merchant:
     help:
-      info: '&eOpen merchant trade window'
+      info: Open merchant trade window
       args: '[type] (playerName) (level)'
     info:
       incorrect: '&cIncorrect profession.'
@@ -2410,11 +2417,11 @@ command:
         fisherman: Fisherman
   migratedatabase:
     help:
-      info: '&eChanges database Core and migrates all data'
+      info: Changes database system and migrates all data
       args: ''
   mirror:
     help:
-      info: '&eStarts block place/break mirroring.'
+      info: Starts block place/break mirroring.
       args: (start/stop)
     info:
       started: '&eMirroring started'
@@ -2457,7 +2464,7 @@ command:
           Location: '&eSets mirroring center location'
   mobhead:
     help:
-      info: '&eGet mob head'
+      info: Get mob head
       args: '[mobType] (entryNumber) (playerName) (-s)'
     info:
       got: '&eGot &6[type] &emob head'
@@ -2468,7 +2475,7 @@ command:
       title: '&7[current]&8/&7[total]'
   money:
     help:
-      info: '&eManage money balance'
+      info: Manage money balance
       args: '[pay/give/take/set] [playerName/all/alloffline/allonline] [amount][%rand/1-1000%][1%[min-max][[playerName]]]
         (-s)'
     info:
@@ -2488,7 +2495,7 @@ command:
         in how many he can hold at once'
   more:
     help:
-      info: '&eFills item stack to maximum amount'
+      info: Fills item stack to maximum amount
       args: (playerName) (-clone/[amount])
       explanation:
       - '&ePermissions:'
@@ -2497,7 +2504,7 @@ command:
       feedback: '&eFilled stack to &3[amount]&e for &3[playerDisplayName]&e (&3[offon]&e).'
   msg:
     help:
-      info: '&eSends message to player'
+      info: Sends message to player
       args: '[playerName] [message]'
       explanation:
       - If message starts with ! then clean message without sender name will be shown
@@ -2512,15 +2519,15 @@ command:
       badGroup: '&cCan''t send private messages to this group of players'
   mute:
     help:
-      info: '&eMute player'
+      info: Mute player
       args: '[playerName] (time) (-s) (reason)'
       explanation:
       - 'Examples: '
-      - /cmi mute zrips 1m
-      - /cmi mute zrips +30s
-      - /cmi mute zrips -15m
-      - /cmi mute zrips 1h
-      - /cmi mute zrips 1h For swearing
+      - /mute zrips 1m
+      - /mute zrips +30s
+      - /mute zrips -15m
+      - /mute zrips 1h
+      - /mute zrips 1h For swearing
     info:
       mutedFor: '&e[playerDisplayName] muted for &6[time]'
       muted: '&eYou are muted for &6[time]'
@@ -2528,19 +2535,19 @@ command:
       badTimeRanges: '&cYou can''t mute for longer than [time] &6([seconds])'
   mutechat:
     help:
-      info: '&ePrevent public messages'
+      info: Prevent public messages
       args: (time) (-s) (reason)
       explanation:
       - 'Examples: '
-      - /cmi mutechat 1m
-      - '/cmi mutechat 1h '
+      - /mutechat 1m
+      - '/mutechat 1h '
     info:
       mutedFor: '&ePublic chat muted for &6[time]'
       isMuted: '!actionbar!&ePublic chat is muted for &6[time]'
       muteReason: '&4Mute reason: &7[reason]'
   nameplate:
     help:
-      info: '&eSet players name plate prefix, suffix or its color'
+      info: Set players name plate prefix, suffix or its color
       args: (playerName) (-pref:[some_prefix]) (-suf:[some_suffix]) (-c:[colorCode])
         (reset) (-s)
       explanation:
@@ -2551,7 +2558,7 @@ command:
       namePlate: '&e[playerDisplayName] name plate: &f[namePlate]'
   near:
     help:
-      info: '&eCheck who is near you'
+      info: Check who is near you
       args: (distance)
     info:
       nope: '&eNobody is near you'
@@ -2559,7 +2566,7 @@ command:
       aproxList: '&e[place]. &6[playerDisplayName] &e- &6[dir] &7~[distance]m'
   nick:
     help:
-      info: '&eChanges player name'
+      info: Changes player name
       args: '[newNickName/off] (playerName) (-s)'
       explanation:
       - 'To change into different nick name: cmi.command.nick.different'
@@ -2576,14 +2583,14 @@ command:
       inUse: '&cNick name is already being used by another player'
   notarget:
     help:
-      info: '&eToggle no-mob target mode'
+      info: Toggle no-mob target mode
       args: (playerName) (true/false) (-s)
     info:
       enabled: '&eMonsters will no longer attack you!'
       disabled: '&eMonsters will now attack you!'
   note:
     help:
-      info: '&eManage players notes'
+      info: Manage players notes
       args: (playerName) [add/remove/clear/list] (id/note)
     info:
       newNote: '&eAdded new note for player'
@@ -2594,17 +2601,17 @@ command:
       listNotes: '&7[note]'
   openbook:
     help:
-      info: '&eOpen book gui'
+      info: Open book gui
       args: (cText) (playerName) (fileName.txt)
   oplist:
     help:
-      info: '&eCheck operator player list'
+      info: Check operator player list
       args: ''
     info:
       feedback: '&e* &6[number]. &e[playerName]'
   options:
     help:
-      info: '&eModify personal options'
+      info: Modify personal options
       args: (playerName) (option) (enable/disable/toggle/status) (-s)
       explanation:
       - 'Possible actions: visibleHolograms, shiftSignEdit, totemBossBar, bossBarCompass,
@@ -2635,13 +2642,13 @@ command:
         receivePets: '&eDo you want to receive pets as gifts'
   panimation:
     help:
-      info: '&ePlay custom particle animation'
+      info: Play custom particle animation
       args: (variable/playerName/stopAll) (stop)
       explanation:
       - Information on usage can be found at https://www.zrips.net/cmi/extra/particles/
   patrol:
     help:
-      info: '&ePatrol'
+      info: Patrol
       args: ''
     info:
       noPatrol: '&eCurrently there is no players you can patrol'
@@ -2650,18 +2657,18 @@ command:
       notes: '&eHas &6[amount] &enotes'
   pay:
     help:
-      info: '&ePerform money transaction'
+      info: Perform money transaction
       args: '[playerName] [amount] (-s)'
   ping:
     help:
-      info: '&eShows players ping'
+      info: Shows players ping
       args: (playerName/message)
     info:
       feedback: '&e[playerName] ping: &6[ping]ms'
       selffeedback: '&eYour ping is &6[ping]ms'
   placeholders:
     help:
-      info: '&eList out all placeholders'
+      info: List out all placeholders
       args: (parse) (placeholder) (playerName)
     info:
       list: '&e[place]. &6[placeholder]'
@@ -2669,7 +2676,7 @@ command:
       parse: '&6[placeholder] &eby [source] &6result &8|&f[result]&8|'
   playercollision:
     help:
-      info: '&eSet players collision mode'
+      info: Set players collision mode
       args: (playerName) [true/false] (-s)
     info:
       feedback: '&eYou have set collision to &3[boolean]&e for &3[playerDisplayName]&e
@@ -2677,14 +2684,14 @@ command:
       targetfeedback: '&eYour collision mode changed to &3[boolean]'
   playtime:
     help:
-      info: '&eShows player total play time'
+      info: Shows player total play time
       args: (playername)
     info:
       total: '&e* Total play time: [time]'
       joined: '&e* Joined on: &6[time]'
   playtimetop:
     help:
-      info: '&eShows top list of player total play time'
+      info: Shows top list of player total play time
       args: '[page]'
     info:
       topLine: '&e----- TopPlaytime &e-----'
@@ -2696,11 +2703,11 @@ command:
       ownLine: '&2[number]. &2[playerDisplayName] &2- &2[time]'
   point:
     help:
-      info: '&ePoint to block'
+      info: Point to block
       args: (particleName) (playerName) (-self) (time) (-s:[speed])
   portals:
     help:
-      info: '&eSet portals'
+      info: Set portals
       args: (new/nearest/forceupdate/setlocation/enabled) (portalName) (world:x:y:z:yaw:pitch)
     info:
       collides: '&cCollides with &6[portalName] &cportal'
@@ -2740,7 +2747,7 @@ command:
       cantUsePortal: '&cYou can''t use this portal'
   pos:
     help:
-      info: '&eShow current position of a player'
+      info: Show current position of a player
       args: (playerName)
     info:
       feedback: '&e[playerDisplayName] &e(&3[offon]&e) ([world]&e,&6[x]&e:&6[y]&e:&6[z]&e)'
@@ -2752,7 +2759,7 @@ command:
       normalCoord: '&eNormal world coord: &e(&6[x]&e:&6[y]&e:&6[z]&e)'
   preview:
     help:
-      info: '&eLoad chunk for given range'
+      info: Load chunk for given range
       args: '[range] (innerrange)'
     info:
       NoMore: '&eRange can''t be more than 32 chunks. Changed to maximum allowed.'
@@ -2762,7 +2769,7 @@ command:
         side.'
   prewards:
     help:
-      info: '&eCheck playtime rewards'
+      info: Check playtime rewards
       args: (playerName)
     info:
       list: '&e[place]. &6[rewardName] &ereward in &6[time]'
@@ -2774,7 +2781,7 @@ command:
       inform: '!actionbar!&2You have unclaimed rewards waiting for you! /prewards'
   ptime:
     help:
-      info: '&eControls player personal time'
+      info: Controls player personal time
       args: (freeze/unfreeze/day/night/dusk/morning/realtime/reset) (playerName) (-s)
       explanation:
       - 'Example:'
@@ -2796,13 +2803,13 @@ command:
       setto: '&eTime set to &6[24h] &eor &6[12h] &eor &6[ticks]ticks &efor &6[playerDisplayName]'
   purge:
     help:
-      info: '&eCleans player data from world folder by inactive days'
+      info: Cleans player data from world folder by inactive days
       args: (stop)
     info:
       stopped: Purge stopped.
   pweather:
     help:
-      info: '&eControls player weather'
+      info: Controls player weather
       args: (playerName) [sun/rain/reset] (-s)
     info:
       check: '&ePersonal weather: &6[weather]'
@@ -2812,7 +2819,7 @@ command:
       reset: '&eWeather reset'
   rankdown:
     help:
-      info: '&eDecrease your rank'
+      info: Decrease your rank
       args: (playerName) (rankName) (confirm) (-cmd) (-cost)
       explanation:
       - -cmd will perform command defined for previous rank rankup
@@ -2825,7 +2832,7 @@ command:
       downranked: '&eRanked down to &6[rank]'
   rankinfo:
     help:
-      info: '&eYour rank information'
+      info: Your rank information
       args: (playerName) (rankName)
     info:
       distanceCM: '[value]cm'
@@ -2869,7 +2876,7 @@ command:
       progressBarHover: '&eProgress [percent]%'
   ranklist:
     help:
-      info: '&eList of possible ranks'
+      info: List of possible ranks
       args: ''
     info:
       list: '&e[place]. [currentRankMarker]&6[rankName][currentRankMarker]'
@@ -2878,7 +2885,7 @@ command:
       hoverLast: '&2Last rank'
   rankset:
     help:
-      info: '&eSet a players rank'
+      info: Set a players rank
       args: (playerName) [rankName] (-cmd) (-cost)
       explanation:
       - -cmd will perform command defined for that rank rankup
@@ -2890,7 +2897,7 @@ command:
       set: '&eRank changed for &6[playerDisplayName] &eto &6[rankName]'
   rankup:
     help:
-      info: '&eIncrease your rank'
+      info: Increase your rank
       args: (playerName) (rankName) (confirm)
     info:
       noRank: ' &eYou don''t have any rank associated with you'
@@ -2900,13 +2907,13 @@ command:
       confirm: '&eClick me to confirm rankup to &6[ranks]'
   realname:
     help:
-      info: '&eCheck players real name'
+      info: Check players real name
       args: (playerName/nickName)
     info:
       feedback: '&r[playerDisplayName] &ereal name &r[playerName]'
   recipe:
     help:
-      info: '&eCheck item recipe'
+      info: Check item recipe
       args: (itemName) (-c)
     info:
       type: '&0[type]'
@@ -2928,13 +2935,13 @@ command:
       noRecipes: '&cCant find any recipes for this item'
   releasepet:
     help:
-      info: '&eRelease your tamed pet'
+      info: Release your tamed pet
       args: (-s)
     info:
       released: '&eYou have released &6[type] &einto wilderness!'
   reload:
     help:
-      info: '&f플러그인 설정 및 언어 파일을 다시 불러옵니다'
+      info: 플러그인 설정 및 언어 파일을 다시 불러옵니다.
       args: ''
     info:
       feedback: '&aCore &8» &f라이브러리 설정 및 언어 파일을 다시 불러왔습니다! 소요 시간: &e&o[ms] &7ms'
@@ -2942,7 +2949,7 @@ command:
       failedLocale: '&cCore &8» &f언어 파일을 불러오는 데 실패했습니다! 오타를 확인하세요&o!'
   removehome:
     help:
-      info: '&eRemove home'
+      info: Remove home
       args: (homeName) (playerName)
     info:
       remove: '&cClick to remove'
@@ -2950,14 +2957,14 @@ command:
       list: '&c[home]'
   removeuser:
     help:
-      info: '&eRemoves user and its data'
+      info: Removes user and its data
       args: '[uuid/duplicates]'
     info:
       removed: '&eUser (&6[uuid]&e) removed'
       removedDuplicate: '&6[amount]/[max] &eduplicates removed'
   removewarp:
     help:
-      info: '&eRemove warp'
+      info: Remove warp
       args: (warpName)
     info:
       remove: '&cClick to remove'
@@ -2965,7 +2972,7 @@ command:
       notYours: '&cThis warp doesn''t belong to you!'
   repair:
     help:
-      info: '&eRepair items'
+      info: Repair items
       args: '[hand/offhand/armor/all] (playerName)'
       explanation:
       - cmi.command.repair.hand - allows a user to repair items in their hand
@@ -2985,14 +2992,14 @@ command:
       cantUse: '!title!&cCan''t use this item!!subtitle!&eRepair it your self!'
   repaircost:
     help:
-      info: '&eCheck items repair cost'
+      info: Check items repair cost
       args: (hand/armor/all) (playerName)
     info:
       feedback: '&eRepair cost: &6[amount]'
       noNeed: '&eNo need to repair'
   replaceblock:
     help:
-      info: '&eReplaces blocks in current world around you'
+      info: Replaces blocks in current world around you
       args: '&eid &6[blockName:data/id:data]&e w &6[blockName:data/id:data] &er &6[range
         in chunks/g]&e y &6[max height]'
       explanation:
@@ -3004,13 +3011,13 @@ command:
       - '- &6autospeed [true/false] &e- set autospeed turned off or on'
       - '- &6messages [true/false] &e- set message output to off or on'
       - 'Example:'
-      - /cmi replaceblock id 52 w stone r 10
-      - /cmi replaceblock id 52,gold_block w stone r 15 y 100
-      - /cmi replaceblock id 52 w air r g y 100
-      - /cmi replaceblock id iron_ore%75 w stone%90,dirt%5 r g
+      - /replaceblock id 52 w stone r 10
+      - /replaceblock id 52,gold_block w stone r 15 y 100
+      - /replaceblock id 52 w air r g y 100
+      - /replaceblock id iron_ore%75 w stone%90,dirt%5 r g
     info:
       startScanning: '&eFound &6[amount] &echunks to check. Starting!'
-      paused: '&eReplacing paused, to continue use &6/cmi blockreplace continue.'
+      paused: '&eReplacing paused, to continue use &6/blockreplace continue.'
       continuing: '&eReplacing continuing'
       stoped: '&eReplacing stopped.'
       speedChange: '&eSpeed changed to [amount]'
@@ -3021,26 +3028,26 @@ command:
       finished: '&eFinished!!! Replaced: &6[amount] &eblocks! In &6[time]&e.'
   reply:
     help:
-      info: '&eReply to last message sender'
+      info: Reply to last message sender
       args: '[message]'
     info:
       noOneToReply: '&eThere is no one to reply'
   resetback:
     help:
-      info: '&eResets players back location'
+      info: Resets players back location
       args: (playerName) (reason) (-death) (-s)
     info:
       feedback: '&eBack location got a reset!'
   resetdbfields:
     help:
-      info: '&eResets particular database columns to default value'
+      info: Resets particular database columns to default value
       args: '[columnName] (-w:[worldName]) (-p:[playerName])'
     info:
       feedback: '&eUpdated &7[amount] &eplayers'
       nofield: '&cCant find field by this name'
   ride:
     help:
-      info: '&eRide target entity'
+      info: Ride target entity
       args: ''
       explanation:
       - ' cmi.command.ride.[entityType] - to have access in riding entity'
@@ -3053,7 +3060,7 @@ command:
       canRide: '&eCan ride: &6[list]'
   rt:
     help:
-      info: '&eTeleports to random location'
+      info: Teleports to random location
       args: (playerName) (worldName) (-s)
     info:
       possible: '&ePossible worlds: &6[worlds]'
@@ -3065,13 +3072,13 @@ command:
       searching: '!actionbar!&7Searching'
   sameip:
     help:
-      info: '&eList players logged in from same ip'
+      info: List players logged in from same ip
       args: ''
     info:
       list: '&e[place]. &6'
   saturation:
     help:
-      info: '&eSet players saturation'
+      info: Set players saturation
       args: (playerName) [amount]
     info:
       feedback: '&eYou have set &3[amount]&e saturation for &3[playerDisplayName]&e
@@ -3079,7 +3086,7 @@ command:
       targetfeedback: '&eYour saturation was set to &3[amount]&e by &3[senderDisplayName]&e.'
   saveall:
     help:
-      info: '&eSaves every player inventory'
+      info: Saves every player inventory
       args: (daysRange/-online)
       explanation:
       - -online variable can be used to save only online player inventories
@@ -3089,7 +3096,7 @@ command:
       saved: '&eSave finished. Saved: &6[saved] &eSkipped: &6[skipped]'
   saveditems:
     help:
-      info: '&eSave or manage saved items'
+      info: Save or manage saved items
       args: '[save/get/remove/list] (savedItemName) (-t:playerName) (-a:amount) (-c:category/all)
         (-s)'
     info:
@@ -3105,7 +3112,7 @@ command:
       category: '&7Category: &f[category]'
   sc:
     help:
-      info: '&eStarts sign copy process'
+      info: Starts sign copy process
       args: (playerName)
     info:
       punch: '&ePunch sign to paste text into it, or punch any non-sign block to cancel
@@ -3114,7 +3121,7 @@ command:
       updated: '&eSign updated'
   scale:
     help:
-      info: '&eSet entities scale'
+      info: Set entities scale
       args: '[set/add/take/clear] (playerName) [amount] (-s)'
     info:
       feedback: '&eYou have set &3[scale] &e scale for &3[entityName]&e.'
@@ -3122,14 +3129,14 @@ command:
       targetfeedback: '&eYour scale was set to &3[scale] &eby &3[senderDisplayName]&e.'
   scan:
     help:
-      info: '&eScans for items in current world'
+      info: Scans for items in current world
       args: ''
       explanation:
       - More information at https://www.zrips.net/cmi/extra/scan/
     info:
       baseListEntity: '&f[number]. &7[location] &6[type] &7[amount]'
       baseListBlock: '&f[number]. &7[location] &e[type] &7[amount]'
-      pause: '&eScanning paused, to continue use &6/cmi scan continue'
+      pause: '&eScanning paused, to continue use &6/scan continue'
       resume: '&eScanning resumed'
       noInformation: '&eThere is no information'
       nothing: '&cProvided criteria for scan are incorrect'
@@ -3139,7 +3146,7 @@ command:
       teleport: '&ePress to teleport'
   scavenge:
     help:
-      info: '&eRecycle item and its enchantments'
+      info: Recycle item and its enchantments
       args: (playerName)
     info:
       enchantWorth: '&eEnchantment worth: &7[price]'
@@ -3165,17 +3172,17 @@ command:
       title: '&2Scavenger'
   schedule:
     help:
-      info: '&eTrigger schedule'
+      info: Trigger schedule
       args: '[scheduleName] (-updatetimer)'
   se:
     help:
-      info: '&eChanges sign text line.'
+      info: Changes sign text line.
       args: (SignLine) [Text]
       explanation:
       - Use \n for additional line
   search:
     help:
-      info: '&eSearch from all players of specific items or stats'
+      info: Search from all players of specific items or stats
       args: ''
       explanation:
       - More information at https://www.zrips.net/cmi/extra/search/
@@ -3201,17 +3208,17 @@ command:
         PlayerVault: '&ePlayerVault'
   seen:
     help:
-      info: '&eCheck when player was last seen'
+      info: Check when player was last seen
       args: '[playerName/uuid]'
     info:
       feedback: '&6[playerDisplayName] &ehas been &6[offon] &esince &6[time]&eago!'
   select:
     help:
-      info: '&eManage selection area'
+      info: Manage selection area
       args: (pos1/pos2/shift/expand/contract/clear) (amount)
   sell:
     help:
-      info: '&eSell items from inventory'
+      info: Sell items from inventory
       args: (all/blocks/hand/same/gui/material) (playerName) (-s)
     info:
       total: '&eEarned &6[total] &eby selling &6[amount] &eitems. New balance &6[balance]'
@@ -3219,21 +3226,21 @@ command:
       sellInfo: '&8Sell for: &2[price]'
   sendall:
     help:
-      info: '&eSend all online players to target server'
+      info: Send all online players to target server
       args: '[serverName]'
   server:
     help:
-      info: '&eConnect to bungeecord server'
+      info: Connect to bungeecord server
       args: '[serverName] (playerName) (-f)'
   serverlinks:
     help:
-      info: '&eSet server links'
+      info: Set server links
       args: ''
       explanation:
       - Separate display name and link with ;
   serverlist:
     help:
-      info: '&eShow server list'
+      info: Show server list
       args: ''
     info:
       listOnline: '&7[place]. &2[serverName] &6[count]&7/&6[max]'
@@ -3241,7 +3248,7 @@ command:
       consoleInfo: ' &f(&2[ip]&f:&2[port]&f)'
   servertime:
     help:
-      info: '&eShow server time'
+      info: Show server time
       args: ''
     info:
       time: '&eServer time: &6[time]'
@@ -3251,32 +3258,32 @@ command:
       timeZoneOffset: '&eTime zone offset: &6[offset]'
   setenchantworth:
     help:
-      info: '&eChange enchantment worth'
+      info: Change enchantment worth
       args: ''
   setfirstspawn:
     help:
-      info: '&e첫 번째 스폰 지점을 설정합니다'
-      args: (플레이어 이름)
+      info: 첫 번째 스폰 지점을 설정합니다.
+      args: (playerName)
     info:
       feedback: '&e첫 번째 스폰 지점이 설정되었습니다 (&6[world]&e,&6[x]&e,&6[y]&e,&6[z]&e)!'
   sethome:
     help:
-      info: '&e집 위치를 설정합니다'
-      args: (집 이름) (플레이어 이름) (-p) (-l:월드 이름;x;y;z) (블록/재료) (슬롯 번호) (-덮어쓰기)
+      info: 집 위치를 설정합니다.
+      args: (집 이름) (playerName) (-p) (-l:월드 이름;x;y;z) (블록/재료) (슬롯 번호) (-덮어쓰기)
       explanation:
       - cmi.command.sethome.unlimited
       - -l은 새로운 집 위치를 위한 사용자 정의 위치를 정의하며, 이를 위해 cmi.command.sethome.customloc 권한 노드가
         필요합니다
     info:
-      set: '&e[homeName]&e 이름으로 집을 성공적으로 생성했습니다!'
-      setBed: '&e침대 리스폰 위치가 생성되었습니다'
+      set: '&e[homeName]&e 이름으로 집을 성공적으로 생성했습니다&o!'
+      setBed: '&e침대 리스폰 위치가 생성되었습니다.'
       private: ' &2(비공개)'
-      maxFavorites: '&c한 번에 최대 &e[amount] &c개의 즐겨찾기 집만 가질 수 있습니다'
-      noMore: '&c최대 집 설정 제한에 도달했습니다'
+      maxFavorites: '&c한 번에 최대 &e[amount] &c개의 즐겨찾기 집만 가질 수 있습니다.'
+      noMore: '&c최대 집 설정 제한에 도달했습니다.'
       exist: "&c이 이름 (&6[name]&c)으로 집 위치가 이미 존재합니다! \n&e덮어쓰기를 확인하려면 클릭하세요."
       noOverwrite: "&c기존 집 위치를 덮어쓸 권한이 없습니다. \n기존 위치를 제거하거나 다른 집 이름을 선택하세요."
       slotTaken: '!actionbar!&c집 슬롯이 이미 &7[homeName]&c에 의해 사용되었습니다. 다른 슬롯을 고려하세요.'
-      setIcon: '!actionbar:3!&7집 아이콘을 &6[material] &7재료로 설정했습니다'
+      setIcon: '!actionbar:3!&7집 아이콘을 &6[material] &7재료로 설정했습니다.'
       tooManyInWorld: '&c이 월드에서 더 이상 집을 가질 수 없습니다. 최대 &6[max]&c개가 허용되며, 현재 &6[current]&c개를
         가지고 있습니다.'
   setmotd:
@@ -3290,7 +3297,7 @@ command:
       changed: '&eChanged motd to:'
   setrt:
     help:
-      info: '&eSet random teleport bounds'
+      info: Set random teleport bounds
       args: (worldName) (center:[x]:[z]) (min:[range]) (max:[range]) (square/circle)
         (enabled/disabled)
     info:
@@ -3298,41 +3305,41 @@ command:
         [type]'
   setspawn:
     help:
-      info: '&e스폰 명령어 텔레포트 지점을 설정합니다'
-      args: (플레이어 이름) (true/false) (-g:[그룹 이름]) (-rng:[범위]) (-w:world,world_nether)
+      info: 스폰 명령어 텔레포트 지점을 설정합니다.
+      args: (playerName) (true/false) (-g:[그룹 이름]) (-rng:[범위]) (-w:world,world_nether)
         (-loc:[world;x;y;z;yaw;pitch])
       explanation:
       - 명령어 사용에 대한 자세한 정보는 https://www.zrips.net/cmi/commands/spawn/에서 확인하세요
     info:
-      feedback: '&6스폰 지점 설정됨 ([world],[x],[y],[z])!'
+      feedback: '&6스폰 지점 설정됨 &e[x], [y], [z] &7@[world]!'
       group: ' &e([그룹])'
       rng: ' &e(범위: [rng])'
       respawn: '&7이 스폰 지점을 리스폰 위치로 설정하려면 클릭하세요'
   setwarp:
     help:
-      info: '&e워프 위치를 설정합니다'
-      args: '[워프 이름] (권한 필요) (손/머리/머리:[플레이어 이름]) (슬롯) (자동 설명) (-g:[그룹 이름]) (world;x;y;z;yaw;pitch)
+      info: 워프 위치를 설정합니다.
+      args: '[워프 이름] (권한 필요) (손/머리/머리:[playerName]) (슬롯) (자동 설명) (-g:[그룹 이름]) (world;x;y;z;yaw;pitch)
         (-확인)'
       explanation:
       - '예시:'
-      - /cmi setwarp spawn - 스폰으로 간단한 워프 생성
-      - /cmi setwarp spawn true - 워프 생성 및 cmi.command.warp.[warpname] 권한 노드 필요
-      - /cmi setwarp spawn hand - 워프 생성 및 GUI에서 이 워프를 표시할 아이템을 손에서 가져옴
-      - /cmi setwarp spawn 13 - 워프 생성 및 GUI에서 사용할 슬롯 설정 (1-54)
-      - /cmi setwarp spawn true hand 13 - 아이콘을 손에서 가져오고, 슬롯 13을 사용하며, 권한이 필요한 워프 생성
-      - /cmi setwarp spawn true hand 13 false - 이전과 동일하지만 설명을 생성하지 않음
+      - /setwarp spawn - 스폰으로 간단한 워프 생성
+      - /setwarp spawn true - 워프 생성 및 cmi.command.warp.[warpname] 권한 노드 필요
+      - /setwarp spawn hand - 워프 생성 및 GUI에서 이 워프를 표시할 아이템을 손에서 가져옴
+      - /setwarp spawn 13 - 워프 생성 및 GUI에서 사용할 슬롯 설정 (1-54)
+      - /setwarp spawn true hand 13 - 아이콘을 손에서 가져오고, 슬롯 13을 사용하며, 권한이 필요한 워프 생성
+      - /setwarp spawn true hand 13 false - 이전과 동일하지만 설명을 생성하지 않음
     info:
       newSet: '&e새로운 워프 (&6[warp]&e) 설정됨'
-      noSet: '&c이 이름으로 워프가 이미 존재합니다'
+      noSet: '&c이 이름으로 워프가 이미 존재합니다.'
       noMore: '&c허용된 최대 워프 제한에 도달했습니다. ([max])'
   setworth:
     help:
-      info: '&e아이템 가치를 변경합니다'
-      args: (아이템 이름) -s:(판매 가격)
+      info: 아이템 가치를 변경합니다.
+      args: (아이템) -s:(판매 가격)
     info:
       setSell: '&e아이템 판매 가격 설정됨 &7[amount]'
       setBuy: '&e아이템 구매 가격 설정됨 &7[amount]'
-      notInUse: '&e주로 가능한 악용 탐지에 사용됩니다'
+      notInUse: '&e주로 가능한 악용 탐지에 사용됩니다.'
       sellPrice: '&f판매 가격: &e[amount]'
       buyPrice: '&f구매 가격: &2[amount]'
       exploit: '&4가능한 악용!'
@@ -3343,38 +3350,38 @@ command:
       result: '&2제작 결과 &7[result]&f(&7[amount]&f)'
       ingredientsPrice: '&c재료 가격: &7[price]'
       resultPrice: '&c판매 가능 가격: &7[price]'
-      explanation: '&2구매 가격은 주로 가능한 악용 탐지에 사용됩니다'
+      explanation: '&2구매 가격은 주로 가능한 악용 탐지에 사용됩니다.'
   shadowmute:
     help:
-      info: '&e플레이어를 알리지 않고 음소거합니다'
-      args: '[플레이어 이름] (시간) (-s) (이유)'
+      info: 플레이어를 알리지 않고 음소거합니다.
+      args: '[playerName] (시간) (-s) (reason)'
   shakeitoff:
     help:
-      info: '&e자신 또는 대상 플레이어를 타고 있는 엔티티를 내립니다'
-      args: (플레이어 이름) (-s)
+      info: 자신 또는 대상 플레이어를 타고 있는 엔티티를 내립니다.
+      args: (playerName) (-s)
     info:
       shaked: '&e내렸습니다: &6[엔티티]'
-      nothing: '&e내릴 것이 없습니다'
+      nothing: '&e내릴 것이 없습니다.'
   shoot:
     help:
-      info: '&e발사체를 발사합니다'
-      args: (플레이어 이름) (-t:대상 플레이어) (유형) (속도)
+      info: 발사체를 발사합니다.
+      args: (playerName) (-t:대상 플레이어) (유형) (속도)
   silence:
     help:
-      info: '&e공개 메시지를 차단합니다'
+      info: 공개 메시지를 차단합니다.
       args: ''
       explanation:
       - cmi.command.silence.bypass - 침묵 모드를 우회합니다
     info:
       enabled: '&e침묵 모드 &2활성화됨'
       disabled: '&e침묵 모드 &c비활성화됨'
-      inMode: '&e플레이어가 침묵 모드에 있습니다'
+      inMode: '&e플레이어가 침묵 모드에 있습니다.'
   silentchest:
     help:
-      info: '&e조용한 상자를 토글합니다'
+      info: 조용한 상자를 토글합니다.
       args: ''
       explanation:
-      - '&e주변 플레이어는 상자를 열 때 열리는 애니메이션을 보지 못합니다'
+      - '&e주변 플레이어는 상자를 열 때 열리는 애니메이션을 보지 못합니다.'
       - '&e이 기능이 작동하려면 Protocollib이 필요합니다.'
     info:
       feedback: '&e조용한 상자 모드를 &3[offon]로 토글했습니다.'
@@ -3382,74 +3389,74 @@ command:
       cantOpen: '&c열 수 없습니다. 아직 전리품이 생성되지 않았습니다.'
   sit:
     help:
-      info: '&e현재 위치에 앉습니다'
-      args: (플레이어 이름) (-persistent) (-s) (위치) (on/off)
+      info: 현재 위치에 앉습니다.
+      args: (playerName) (-persistent) (-s) (위치) (on/off)
     info:
-      onSit: '!actionbar!&e이제 앉아 있습니다'
-      onStandUp: '!actionbar!&e더 이상 앉아 있지 않습니다'
-      accupied: '!actionbar!&c이미 누군가가 여기에 앉아 있습니다!'
+      onSit: '!actionbar!&e이제 앉아 있습니다.'
+      onStandUp: '!actionbar!&e더 이상 앉아 있지 않습니다.'
+      accupied: '!actionbar!&c이미 누군가가 여기에 앉아 있습니다&o!'
   skin:
     help:
-      info: '&e플레이어의 스킨을 변경합니다'
-      args: '[스킨 이름/off/update] (플레이어 이름) (-s)'
+      info: 플레이어의 스킨을 변경합니다.
+      args: '[스킨 이름/off/update] (playerName) (-s)'
     info:
-      changed: '&e스킨을 &6[skinOwner] &e모습으로 변경했습니다'
-      failed: '&e스킨 적용에 실패했습니다'
-      resetSteve: '&e스킨을 제거했습니다'
-      reset: '&e기본 스킨을 적용했습니다'
-      update: '&e스킨을 업데이트했습니다'
+      changed: '&e스킨을 &6[skinOwner] &e모습으로 변경했습니다.'
+      failed: '&e스킨 적용에 실패했습니다.'
+      resetSteve: '&e스킨을 제거했습니다.'
+      reset: '&e기본 스킨을 적용했습니다.'
+      update: '&e스킨을 업데이트했습니다.'
   smite:
     help:
-      info: '&e땅이나 플레이어에게 번개를 내리칩니다'
-      args: (플레이어 이름/위치) (-safe) (-s)
+      info: 땅이나 플레이어에게 번개를 내리칩니다.
+      args: (플레이어/위치) (-safe) (-s)
     info:
-      gotSmited: '&e번개를 맞았습니다!'
-      targetSmited: '&e대상에게 번개를 내립니다!'
+      gotSmited: '&e번개를 맞았습니다&o!'
+      targetSmited: '&e대상에게 번개를 내립니다&o!'
   smithingtable:
     help:
-      info: '&e대장장이 테이블 열기'
-      args: (플레이어 이름)
+      info: 대장장이 테이블 열기
+      args: (playerName)
     info:
-      feedback: '&e[playerDisplayName]&e에게 대장장이 테이블을 열었습니다 (&3[offon]&e).'
+      feedback: '&6[playerDisplayName]&e에게 대장장이 테이블을 열었습니다 (&3[offon]&e).'
       targetfeedback: '&3[senderDisplayName]&e가 대장장이 테이블을 열어주었습니다.'
   solve:
     help:
-      info: '&e수식 해결'
+      info: 수식 해결
       args: '[수식]'
     info:
       result: '&7결과: &e[res]'
       incorrect: '&c잘못된 입력: &e[input]'
   sound:
     help:
-      info: '&e대상 위치에서 소리 재생'
-      args: '[소리] (-p:[음높이]) (-v:[볼륨]) (플레이어 이름/-all/-l:플레이어 이름) (world;x;y;z) (-r:[반경])
-        (-s)'
+      info: 대상 위치에서 소리 재생
+      args: '[sound] (-p:[pitch]) (-v:[volume]) (playerName/-all/-l:playerName) (world;x;y;z)
+        (-r:[radius]) (-s)'
     info:
-      playing: "&e[world] [x]:[y]:[z]에서 &6[sound]&e 소리를 재생 중 \n&e음높이: &6[pitch] &e볼\
-        륨: &6[volume]"
-      playingMultiple: "&e[amount]명의 플레이어에게 &6[sound]&e 소리를 재생 중 \n&e음높이: &6[pitch]\
-        \ &e볼륨: &6[volume]"
+      playing: "&ePlaying &6[sound] &eat [world] [x]:[y]:[z] \n&ePitch: &6[pitch]\
+        \ &eVolume: &6[volume]"
+      playingMultiple: "&ePlaying &6[sound] &efor &6[amount] &eplayers \n&ePitch:\
+        \ &6[pitch] &eVolume: &6[volume]"
   spawn:
     help:
-      info: '&e스폰 위치로 순간이동'
-      args: (플레이어 이름) (-s)
+      info: 스폰 위치로 순간이동합니다.
+      args: (playerName) (-s)
     info:
-      notset: '&4스폰 지점이 설정되지 않았습니다!'
-      feedback: '&6스폰으로 순간이동했습니다.'
-      feedbackother: '&e[playerDisplayName]&6님이 스폰으로 순간이동했습니다.'
+      notset: '&cSpawn &8» &f스폰 지점이 설정되지 않았습니다&o!'
+      feedback: '&aSpawn &8» &f스폰으로 순간이동했습니다.'
+      feedbackother: '&aSpawn &8» &6[playerDisplayName]&f님을 스폰으로 순간이동했습니다.'
   spawner:
     help:
-      info: '&e스포너 설정'
-      args: '[엔티티 유형]'
+      info: 스포너의 엔티티를 설정합니다.
+      args: '[EntityType]'
     info:
-      feedback: '&e스포너가 &6[type]&e 유형으로 설정되었습니다'
-      wrongEntityIdName: '&c잘못된 엔티티 ID 또는 이름'
-      cantSet: '&c이 유형의 스포너를 설정할 수 없습니다'
-      cantDetect: '&c스포너 블록을 감지할 수 없습니다'
-      pickOne: '&8스포너 유형 선택'
+      feedback: '&aSpawner &8» &f스포너가 &e[type]&f(으)로 설정되었습니다.'
+      wrongEntityIdName: '&cSpawner &8» &f잘못된 엔티티 ID 또는 이름입니다.'
+      cantSet: '&cSpawner &8» &f해당 유형의 스포너를 설정할 수 없습니다.'
+      cantDetect: '&cSpawner &8» &f스포너 블록을 감지할 수 없습니다.'
+      pickOne: '&1엔티티 선택'
   spawnereditor:
     help:
-      info: '&e스포너 편집'
+      info: 스포너 편집기를 열어 스포너를 설정합니다.
       args: ''
     info:
       type: '&7유형 변경: &e[type]'
@@ -3462,32 +3469,32 @@ command:
       spawnrange: '&7스폰 범위: &e[range]'
   spawnmob:
     help:
-      info: '&e현재 위치에 엔티티 스폰'
-      args: '[엔티티 유형]'
+      info: 현재 위치에 엔티티를 소환합니다.
+      args: '[EntityType]'
       explanation:
-      - '예시: /cmi spawnmob sheep:adult:rainbow 3 sp:5'
+      - '예시: /spawnmob sheep:adult:rainbow 3 sp:5'
       - <T>자세한 정보는 www.zrips.net/cmi/commands/spawnmob/에서 확인하세요</T><URL>https://www.zrips.net/cmi/commands/spawnmob/</URL>
     info:
-      wrongEntityName: '&e잘못된 엔티티 이름'
-      spawnedEntities: '&e[entities]개의 엔티티를 스폰했습니다 '
-      spawnedPasangers: '&e그리고 &6[passengers]개의 승객을 스폰했습니다'
-      nothingSpawned: '&e스폰된 엔티티가 없습니다'
-      cantSpawn: '&e이 유형의 엔티티를 스폰할 수 없습니다'
+      wrongEntityName: '&cSpawnMob &8» &f잘못된 엔티티 이름입니다.'
+      spawnedEntities: '&aSpawnMob &8» &e[entities]&f개의 엔티티를 스폰했습니다. '
+      spawnedPasangers: '&f그리고, &e[passengers]&f개의 Pasangers를 스폰했습니다.'
+      nothingSpawned: '&cSpawnMob &8» &f스폰된 엔티티가 없습니다.'
+      cantSpawn: '&cSpawnMob &8» &f해당 유형의 엔티티를 스폰할 수 없습니다.'
   speed:
     help:
-      info: '&e플레이어의 걷기 또는 비행 속도 설정'
-      args: (플레이어 이름) [속도] (-s)
+      info: 플레이어의 걷기 또는 비행 속도를 설정합니다.
+      args: (playerName) [amount] (-s)
   staffmsg:
     help:
-      info: '&e스태프 채널에 메시지 보내기'
-      args: '[메시지/토글/켜기/끄기]'
+      info: 스태프 채널에 메시지를 보냅니다.
+      args: '[message/toggle/on/off]'
     info:
-      message: '&2[스태프]&4[&7[senderDisplayName]&4]&r&c [message]'
-      toggledOn: '&e지속적인 스태프 채팅이 시작되었습니다. 이제 공개 채팅에 메시지를 작성할 수 있습니다.'
-      toggledOff: '&e지속적인 스태프 채팅이 비활성화되었습니다.'
+      message: '&6StaffMsg &8» &6[senderDisplayName] &8» &f[message]'
+      toggledOn: '&aStaffMsg &8» &f지속적인 스태프 채팅이 시작되었습니다. 이제 공개 채팅에 메시지를 작성할 수 있습니다.'
+      toggledOff: '&cStaffMsg &8» &f지속적인 스태프 채팅이 비활성화되었습니다.'
   stats:
     help:
-      info: '&eCheck players stats'
+      info: 플레이어의 통계를 확인합니다.
       args: (playerName)
     info:
       distanceCM: '&e[value]&6cm'
@@ -3639,15 +3646,16 @@ command:
         TOTAL_WORLD_TIME: Time in world
   statsedit:
     help:
-      info: '&eEdit players statistics'
+      info: 플레이어의 통계를 편집합니다.
       args: (playerName) [add/take/set] [statistic] (subType) [amount] (-s)
     info:
-      cantSet: '&cCan''t set this type of statistics'
-      reqSubType: '&cThis statistic requires defined &6[type] &csubtype'
-      set: '&eChanged from &6[old] &eto &6[new] &evalue for &6[statistic] &e(&6[extra]&e)'
+      cantSet: '&cStatsEdit &8» &f해당 통계 유형을 설정할 수 없습니다.'
+      reqSubType: '&cStatsEdit &8» &fThis statistic requires defined &6[type] &csubtype.'
+      set: '&aStatsEdit &8» &fChanged from &6[old] &eto &6[new] &fvalue for &6[statistic]
+        &e(&6[extra]&e)'
   status:
     help:
-      info: '&e서버 상태를 표시합니다'
+      info: 서버 상태를 표시합니다.
       args: ''
     info:
       Platform: ' &e플랫폼: &6[platform] &e(&6[os]&e) &e실행 중인 스레드: &6[threads]'
@@ -3671,30 +3679,31 @@ command:
       MostEntities: '&7가장 많은 엔티티 (&f[entities]&7) 위치: &f[coord] &7청크'
   stonecutter:
     help:
-      info: '&e석재 절단기 열기'
-      args: (플레이어 이름) (-s)
+      info: 석재 절단기를 엽니다.
+      args: (playerName) (-s)
     info:
-      feedback: '&e[playerDisplayName] &e에게 석재 절단기를 열었습니다 (&3[offon]&e).'
-      targetfeedback: '&3[senderDisplayName]&e가 석재 절단기를 열어주었습니다.'
+      feedback: '&aStoneCutter &8» &6[playerDisplayName] &7([offon])&f님에게 석재 절단기를
+        열었습니다.'
+      targetfeedback: '&aStoneCutter &8» &6[senderDisplayName]&f님이 석재 절단기를 열어주었습니다.'
   sudo:
     help:
-      info: '&e다른 플레이어에게 명령어를 강제로 실행시킵니다'
-      args: '[플레이어 이름] (명령어/c:[텍스트])'
+      info: 다른 플레이어에게 명령어를 강제로 실행시킵니다.
+      args: '[playerName] (command/c:[text])'
       explanation:
       - cmi.command.sudo.bypass - 플레이어를 '트롤'로부터 보호합니다
     info:
-      performed: '&e플레이어 &6[playerDisplayName] &e로서 ''&6[command]&e'' 명령어를 실행했습니다'
+      performed: '&aSudo &8» &6[playerDisplayName]&f님에게 ''&6[command]&f'' 명령어를 실행했습니다.'
   suicide:
     help:
-      info: '&e자신을 죽입니다'
-      args: '[플레이어 이름] (-s)'
+      info: 자신을 죽입니다.
+      args: '[playerName] (-s)'
     info:
       feedback: '&eGoodbye cruel world...'
       message: '&6[playerDisplayName] &etook their own life'
       totem: '&6Can''t use while holding totem'
   switchplayerdata:
     help:
-      info: '&eSwitch all data from one player to another'
+      info: Switch all data from one player to another
       args: '[sourcePlayerName/uuid] [targetPlayerName/uuid]'
       explanation:
       - Use UUID for more accurate transfers, especially when usernames matching each
@@ -3705,45 +3714,45 @@ command:
       failed: '&cFailed to switch player data'
   tablistupdate:
     help:
-      info: '&e탭리스트를 모든 플레이어나 특정 플레이어에 대해 강제로 업데이트합니다'
-      args: (플레이어 이름) (-s)
+      info: 탭리스트를 모든 플레이어나 특정 플레이어에 대해 강제로 업데이트합니다.
+      args: (playerName) (-s)
     info:
-      updated: '&e탭리스트가 업데이트되었습니다'
+      updated: '&aTablist &8» &f탭리스트가 업데이트되었습니다.'
   tempban:
     help:
-      info: '&e플레이어를 임시 차단합니다'
-      args: '[플레이어 이름] [시간 값] (이유) (-s)'
+      info: 플레이어를 임시 차단합니다.
+      args: '[playerName] [timeValue] (reason) (-s)'
       explanation:
       - 차단 최대 범위는 cmi.command.tempban.max.[amount]에 따라 달라집니다
       - cmi.command.tempban.max.unlimited - 원하는 만큼 차단할 수 있습니다
       - 플레이어가 아무것도 없을 경우, 최대 값은 60초가 됩니다
       - '예시: '
-      - /cmi tempban zrips 5m 욕설 사용
+      - /tempban zrips 5m 욕설 사용
     info:
-      message: '&c임시 차단되었습니다!'
+      message: '&c임시 차단되었습니다&o!'
       messageToAll: '&6[playerDisplayName] &e님이 &6[senderDisplayName] &e에 의해 &6[time]
         동안 차단되었습니다. 이유: &6[reason]'
       banedSilent: '&7[&8조용히&7]&6[playerDisplayName] &e님이 &6[senderDisplayName] &e에
         의해 &6[time] 동안 차단되었습니다. 이유: &6[reason]'
-      time: '&6[time] &e후에 차단이 해제됩니다'
-      badTime: '&c시간이 잘못 정의되었습니다'
-      badTimeRanges: '&c[time] &6([seconds]) 이상으로 차단할 수 없습니다'
+      time: '&6[time] &e후에 차단이 해제됩니다.'
+      badTime: '&c시간이 잘못 정의되었습니다.'
+      badTimeRanges: '&c[time] &6([seconds]) 이상으로 차단할 수 없습니다.'
   tempipban:
     help:
-      info: '&eIP를 임시 차단합니다'
-      args: '[IP/플레이어 이름] [시간] (이유) (-s)'
+      info: IP를 임시 차단합니다.
+      args: '[IP/playerName] [time] (reason) (-s)'
       explanation:
       - cmi.command.banip.bypass - 차단을 우회합니다
     info:
-      message: '&c임시 IP 차단되었습니다!'
+      message: '&c임시 IP 차단되었습니다&o!'
       messageToAll: '&6[playerDisplayName] &7님이 &7[time] 동안 &6[senderDisplayName]
         &7에 의해 차단되었습니다. 이유: &6[reason]'
       banedSilent: '&7[&8조용히&7]&6[playerDisplayName] &7님이 &7[time] 동안 차단되었습니다. 이유:
         &6[reason]'
   tfly:
     help:
-      info: '&e플레이어의 비행 모드를 임시로 설정합니다 (재접속 또는 시간이 끝날 때까지)'
-      args: (플레이어 이름) (시간(초)) (-s)
+      info: 플레이어의 비행 모드를 (재접속 또는 시간이 끝날 때까지) 임시로 설정합니다.
+      args: (playerName) (timeInSec) (-s)
       explanation:
       - '예시:'
       - tfly Zrips 30 - 다음 30초 동안 비행 모드 활성화
@@ -3751,42 +3760,42 @@ command:
       - tfly Zrips 0 - 재접속할 때까지 비행 모드 활성화
       - tfly Zrips - 플레이어가 tfly 모드가 활성화되어 있는지 확인하고 언제까지인지 확인
     info:
-      setTimedFly: '&6[playerDisplayName]&e에게 다음 [time] 동안 임시 비행을 설정했습니다'
-      addTimedFly: '&6[playerDisplayName]&e에게 추가로 [addTime] ([time]) 동안 비행을 추가했습니다'
-      takeTimedFly: '&6[playerDisplayName]&e에게서 [addTime] ([time]) 동안 비행을 제거했습니다'
-      setUntilRelogFly: '&6[playerDisplayName]&e에게 재접속할 때까지 임시 비행을 설정했습니다'
-      targetTimedEnabled: '&3[senderDisplayName]&e에 의해 다음 [time] 동안 임시 비행 모드가 활성화되었습니다'
-      targetTimedEnabledAdd: '&e비행 시간이 [addTime] ([time])만큼 증가했습니다'
-      targetTimedEnabledTake: '&e비행 시간이 [addTime] ([time])만큼 감소했습니다'
-      targetUntilRelogEnabled: '&3[senderDisplayName]&e에 의해 재접속할 때까지 임시 비행 모드가 활성화되었습니다'
-      setFor: '&e다음 [time] 동안 임시 비행 모드가 활성화되었습니다'
-      setForRelog: '&e재접속할 때까지 임시 비행 모드가 활성화되었습니다'
-      notSet: '&e플레이어에게 임시 비행 모드가 활성화되지 않았습니다'
-      willBeDisabled: '&e비행 모드가 [time] 후에 비활성화됩니다'
-      disabled: '&e임시 비행 모드가 비활성화되었습니다!'
+      setTimedFly: '&6[playerDisplayName]&e에게 다음 [time] 동안 임시 비행을 설정했습니다.'
+      addTimedFly: '&6[playerDisplayName]&e에게 추가로 [addTime] ([time]) 동안 비행을 추가했습니다.'
+      takeTimedFly: '&6[playerDisplayName]&e에게서 [addTime] ([time]) 동안 비행을 제거했습니다.'
+      setUntilRelogFly: '&6[playerDisplayName]&e에게 재접속할 때까지 임시 비행을 설정했습니다.'
+      targetTimedEnabled: '&3[senderDisplayName]&e에 의해 다음 [time] 동안 임시 비행 모드가 활성화되었습니다.'
+      targetTimedEnabledAdd: '&e비행 시간이 [addTime] ([time])만큼 증가했습니다.'
+      targetTimedEnabledTake: '&e비행 시간이 [addTime] ([time])만큼 감소했습니다.'
+      targetUntilRelogEnabled: '&3[senderDisplayName]&e에 의해 재접속할 때까지 임시 비행 모드가 활성화되었습니다.'
+      setFor: '&e다음 [time] 동안 임시 비행 모드가 활성화되었습니다.'
+      setForRelog: '&e재접속할 때까지 임시 비행 모드가 활성화되었습니다.'
+      notSet: '&e플레이어에게 임시 비행 모드가 활성화되지 않았습니다.'
+      willBeDisabled: '&e비행 모드가 [time] 후에 비활성화됩니다.'
+      disabled: '&e임시 비행 모드가 비활성화되었습니다&o!'
   tgod:
     help:
-      info: '&e플레이어의 신 모드를 임시로 설정합니다 (재접속 또는 시간이 끝날 때까지)'
-      args: '[플레이어 이름] &3(시간(초)) (-s)'
+      info: 플레이어의 신 모드를 (재접속 또는 시간이 끝날 때까지) 임시로 설정합니다.
+      args: '[playerName] (timeInSec) (-s)'
       explanation:
       - '예시:'
       - tgod Zrips 30 - 다음 30초 동안 신 모드 활성화
       - tgod Zrips 0 - 재접속할 때까지 신 모드 활성화
       - tgod Zrips - 플레이어가 tgod 모드가 활성화되어 있는지 확인하고 언제까지인지 확인
     info:
-      setTimedGod: '&6[playerDisplayName]&e에게 다음 [time] 동안 임시 신 모드를 설정했습니다'
-      setUntilRelogGod: '&6[playerDisplayName]&e에게 재접속할 때까지 임시 신 모드를 설정했습니다'
-      targetTimedEnabled: '&3[senderDisplayName]&e에 의해 다음 [time] 동안 임시 신 모드가 활성화되었습니다'
-      targetUntilRelogEnabled: '&3[senderDisplayName]&e에 의해 재접속할 때까지 임시 신 모드가 활성화되었습니다'
-      setFor: '&e다음 [time] 동안 임시 신 모드가 활성화되었습니다'
-      setForRelog: '&e재접속할 때까지 임시 신 모드가 활성화되었습니다'
-      notSet: '&e플레이어에게 임시 신 모드가 활성화되지 않았습니다'
-      willBeDisabled: '&e신 모드가 [time] 후에 비활성화됩니다'
-      disabled: '&e임시 신 모드가 비활성화되었습니다!'
+      setTimedGod: '&6[playerDisplayName]&e에게 다음 [time] 동안 임시 신 모드를 설정했습니다.'
+      setUntilRelogGod: '&6[playerDisplayName]&e에게 재접속할 때까지 임시 신 모드를 설정했습니다.'
+      targetTimedEnabled: '&3[senderDisplayName]&e에 의해 다음 [time] 동안 임시 신 모드가 활성화되었습니다.'
+      targetUntilRelogEnabled: '&3[senderDisplayName]&e에 의해 재접속할 때까지 임시 신 모드가 활성화되었습니다.'
+      setFor: '&e다음 [time] 동안 임시 신 모드가 활성화되었습니다.'
+      setForRelog: '&e재접속할 때까지 임시 신 모드가 활성화되었습니다.'
+      notSet: '&e플레이어에게 임시 신 모드가 활성화되지 않았습니다.'
+      willBeDisabled: '&e신 모드가 [time] 후에 비활성화됩니다.'
+      disabled: '&e임시 신 모드가 비활성화되었습니다&o!'
   time:
     help:
-      info: '&e서버 시간을 제어합니다'
-      args: (시간) (월드) (변경 [값]) (-smooth)
+      info: 서버 시간을 제어합니다.
+      args: (time) (world) (alter [value]) (-smooth)
       explanation:
       - '예시:'
       - /day
@@ -3806,152 +3815,158 @@ command:
     info:
       check: '&e시간: &6[24h] &e또는 &6[12h] &e또는 &6[ticks]ticks &e월드: &6[world]'
       frozen: ' &c(-)'
-      frozenTime: '&e시간이 고정되었습니다'
+      frozenTime: '&e시간이 고정되었습니다.'
       real: ' &6(+)'
       realTime: '&e자동 실시간'
-      autorealstart: '&e자동 시간 조정이 &6[world] &e에서 시작되었습니다'
-      autorealstop: '&e자동 시간 조정이 &6[world] &e에서 중지되었습니다'
-      gotfrozen: '&6[world] &e시간이 고정되었습니다'
-      gotunfrozen: '&6[world] &e시간이 고정 해제되었습니다'
-      cantset: '&e이 값으로 시간을 설정할 수 없습니다'
+      autorealstart: '&e자동 시간 조정이 &6[world] &e에서 시작되었습니다.'
+      autorealstop: '&e자동 시간 조정이 &6[world] &e에서 중지되었습니다.'
+      gotfrozen: '&6[world] &e시간이 고정되었습니다.'
+      gotunfrozen: '&6[world] &e시간이 고정 해제되었습니다.'
+      cantset: '&e이 값으로 시간을 설정할 수 없습니다.'
       setto: '&e시간이 &6[24h] &e또는 &6[12h] &e또는 &6[ticks]ticks &e로 설정되었습니다 &6[world]'
   titlemsg:
     help:
-      info: '&e플레이어에게 타이틀 메시지를 보냅니다'
-      args: "[플레이어 이름/all] [타이틀 \n 서브타이틀] (-in:[틱]) (-out:[틱]) (-keep:[틱])"
+      info: 플레이어에게 타이틀 메시지를 보냅니다.
+      args: "[playerName/all] [title \n subtitle] (-in:[ticks]) (-out:[ticks]) (-keep:[ticks])"
     info:
       message: '&f[message]'
   toast:
     help:
-      info: '&e플레이어에게 토스트 메시지를 보냅니다'
-      args: '[플레이어 이름/all] (-t:[advType]) (-icon:[material]) [메시지]'
+      info: 플레이어에게 토스트 메시지를 보냅니다.
+      args: '[playerName/all] (-t:[advType]) (-icon:[material]) [message]'
     info:
       message: '&f[message]'
   top:
     help:
-      info: '&e현재 위치에서 가장 높은 지점으로 순간이동합니다'
-      args: '[플레이어 이름] (-s)'
+      info: 현재 위치에서 가장 높은 지점으로 순간이동합니다.
+      args: '[playerName] (-s)'
   tp:
     help:
-      info: '&e플레이어의 위치로 순간이동합니다'
-      args: '[플레이어 이름] (플레이어 이름)'
+      info: 플레이어의 위치로 순간이동합니다.
+      args: '[playerName] (playerName)'
     info:
-      feedback: '&6[sourceDisplayName] &e의 위치로 순간이동했습니다 (&3[offon]&e).'
+      feedback: '&aTeleport &8» &6[sourceDisplayName] &7([offon])&f님의 위치로 순간이동했습니다.'
       bad:
-        msg: '&c순간이동 위치가 안전하지 않습니다. [reason]'
-        extraMsg: '&e사용 &6/tpbypass &e로 이를 우회하세요. &e[time]'
-        badfloor: '&c나쁜 바닥 ([material])'
-        void: '&c공허'
-        fall: '&c낙하 ([distance])'
+        msg: '&cTeleport &8» &f순간이동 위치가 안전하지 않습니다: [reason]'
+        extraMsg: '&bTeleport &8» &f/tpbypass &f명령어로 이를 우회하세요. &e[time] 남았습니다.'
+        badfloor: '&c나쁜 바닥 &e([material])'
+        void: '&c허공'
+        fall: '&c낙하 &e([distance])'
         suffocation: '&c질식'
         unknown: '&c알 수 없음'
-        plugin: '&c3rd party plugin'
-      notAllowed: '&c이 플레이어에게 순간이동할 수 없습니다'
-      prevented: '&c다른 플러그인에 의해 순간이동이 방지되었습니다'
+        plugin: '&c제3자 플러그인'
+      notAllowed: '&cTeleport &8» §f해당 플레이어에게 순간이동할 수 없습니다.'
+      prevented: '&cTeleport &8» §f다른 플러그인에 의해 순간이동이 방지되었습니다.'
   tpa:
     help:
-      info: '&e플레이어에게 순간이동할 수 있는지 요청합니다'
-      args: '[플레이어 이름] (플레이어 이름) (-c)'
+      info: 플레이어에게 순간이동할 수 있는지 요청합니다.
+      args: '[playerName] (playerName) (-c)'
     info:
-      requestSent: '&e요청이 &6[playerDisplayName] &e에게 전송되었습니다'
-      gotRequest: '&6[senderDisplayName] &e가 순간이동 요청을 보냈습니다!'
-      time: '&e[time]&e 내에 이 요청을 수락해야 합니다'
-      canceled: '&e순간이동 요청이 취소되었습니다'
+      requestSent: '&aTeleport &8» &f요청이 &6[playerDisplayName]&f님에게 전송되었습니다.'
+      gotRequest: '&bTeleport &8» &6[senderDisplayName] &e가 순간이동 요청을 보냈습니다&o!'
+      time: '&e[time] &f내에 이 요청을 수락해야 합니다.'
+      canceled: '&cTeleport &8» &f순간이동 요청이 취소되었습니다.'
       # This line cant contain anything else then default variables ([message][cancelButton]), you can switch them around to your liking tho
       senderFeedbackMessageFormat: '[message][cancelButton]'
-      alreadyRequesting: '&e이미 &6[playerDisplayName] &e에게 순간이동 요청을 보내고 있습니다'
-      banned: '&6[playerDisplayName] &e에게 순간이동 요청을 보낼 수 없습니다 &e[time]'
+      alreadyRequesting: '&cTeleport &8» &f이미 &6[playerDisplayName]&f님에게 순간이동 요청을
+        보냈습니다.'
+      banned: '&cTeleport &8» &f&6[playerDisplayName] &e에게 순간이동 요청을 보낼 수 없습니다. &e[time]
+        &f후에 다시 시도하세요.'
   tpaall:
     help:
-      info: '&e모든 온라인 플레이어에게 내 위치로 순간이동 요청을 보냅니다'
+      info: 모든 온라인 플레이어에게 내 위치로 순간이동 요청을 보냅니다.
       args: ''
     info:
-      requestSent: '&e요청이 모든 플레이어에게 전송되었습니다'
+      requestSent: '&aTeleport &8» §f요청이 모든 플레이어에게 전송되었습니다.'
   tpaccept:
     help:
-      info: '&7플레이어의 순간이동 요청 수락'
-      args: (플레이어 이름)
+      info: 플레이어의 순간이동 요청 수락
+      args: (playerName)
     info:
-      noRequest: '&cTPA &8» &f순간이동 요청이 없습니다.'
-      NotOnline: '&cTPA &8» &f해당 플레이어는 더 이상 온라인 상태가 아닙니다.'
-      accepted: '&aTPA &8» &6[playerDisplayName]&f님이 순간이동 요청을 수락했습니다.'
-      youAccepted: '&aTPA &8» &f순간이동 요청을 수락했습니다.'
+      noRequest: '&cTeleport &8» &f순간이동 요청이 없습니다.'
+      NotOnline: '&cTeleport &8» &f해당 플레이어는 더 이상 온라인 상태가 아닙니다.'
+      accepted: '&aTeleport &8» &6[playerDisplayName]&f님이 순간이동 요청을 수락했습니다.'
+      youAccepted: '&aTeleport &8» &f순간이동 요청을 수락했습니다.'
   tpahere:
     help:
-      info: '&e플레이어에게 내 위치로 순간이동 요청을 보냅니다'
-      args: '[플레이어 이름] (플레이어 이름) (-c)'
+      info: 플레이어에게 내 위치로 순간이동 요청을 보냅니다.
+      args: '[playerName] (playerName) (-c)'
     info:
-      requestSent: '&e요청이 &6[playerDisplayName] &e에게 전송되었습니다'
-      gotRequest: '&6[senderDisplayName] &e가 순간이동 요청을 보냈습니다!'
+      requestSent: '&aTeleport &8» &f요청이 &6[playerDisplayName]&f님에게 전송되었습니다.'
+      gotRequest: '&bTeleport &8» &6[senderDisplayName]&f님이 순간이동 요청을 보냈습니다&o!'
       accept: '&6순간이동 요청을 수락하려면 클릭하세요!'
   tpall:
     help:
-      info: '&e모든 온라인 플레이어를 위치로 순간이동합니다'
-      args: (플레이어 이름)
+      info: 모든 온라인 플레이어를 위치로 순간이동합니다.
+      args: (playerName)
     info:
-      feedback: '&6[playerDisplayName] &e에게([world],[x],[y],[z]) 위치로 순간이동되었습니다.'
+      feedback: '&aTeleport &8» &6[playerDisplayName]&f님의 위치로 순간이동되었습니다.'
   tpallworld:
     help:
-      info: '&e특정 월드의 모든 플레이어를 순간이동합니다'
-      args: '[월드 이름] (월드 이름;x;y;z(;yaw;pitch)) (-a)'
+      info: 특정 월드의 모든 플레이어를 순간이동합니다.
+      args: '[worldName] (worldName;x;y;z(;yaw;pitch)) (-a)'
       explanation:
       - -a 변수는 더 이상 존재하지 않는 월드에 있는 모든 플레이어를 대상 위치로 순간이동시킵니다
     info:
-      started: '&e순간이동이 시작되었습니다!'
-      current: '&e현재 &7[amount] &e명의 플레이어를 순간이동했고 &7[files] &e개의 파일을 확인했습니다'
-      total: '&e총 &7[amount] &e명의 플레이어를 순간이동했고 &7[files] &e개의 파일을 확인했습니다'
-      WorldNotFound: '&e제공된 &7[name] &e이름의 월드가 로드되지 않았습니다. 올바른 이름인지 확인하세요. 그대로 사용하겠습니다.'
+      started: '&aTeleport &8» &f순간이동이 시작되었습니다&o!'
+      current: '&bTeleport &8» &f현재 &e[amount]&f명의 플레이어를 순간이동했고 &e[files]&f개의 파일을
+        확인했습니다.'
+      total: '&aTeleport &8» &f총 &e[amount]&f명의 플레이어를 순간이동했고 &e[files]&f개의 파일을 확인했습니다.'
+      WorldNotFound: '&cTeleport &8» &e[name] &f이름의 월드가 로드되지 않았습니다. 올바른 이름인지 확인하세요.
+        그대로 사용하겠습니다.'
   tpbypass:
     help:
-      info: '&e안전하지 않은 위치로 순간이동을 우회합니다'
-      args: (플레이어 이름)
+      info: 안전하지 않은 위치로 순간이동을 우회합니다.
+      args: (playerName)
     info:
-      noSavedTp: '&c저장된 안전하지 않은 순간이동 위치가 없습니다'
-      feedback: '&e안전하지 않은 위치로 순간이동했습니다'
+      noSavedTp: '&cTeleport &8» &f저장된 안전하지 않은 순간이동 위치가 없습니다.'
+      feedback: '&cTeleport &8» &f안전하지 않은 위치로 순간이동했습니다.'
   tpdeny:
     help:
-      info: '&e순간이동 요청을 거부합니다'
-      args: (플레이어 이름)
+      info: 순간이동 요청을 거부합니다.
+      args: (playerName)
     info:
-      noRequest: '&e활성화된 순간이동 요청이 없습니다!'
-      youDenied: '&e순간이동 요청이 거부되었습니다!'
-      denied: '&e[senderDisplayName] &e가 요청을 거부했습니다.'
+      noRequest: '&cTeleport &8» &f활성화된 순간이동 요청이 없습니다&o!'
+      youDenied: '&cTeleport &8» &f순간이동 요청이 거부되었습니다&o!'
+      denied: '&cTeleport &8» &6[senderDisplayName]&f님이 요청을 거부했습니다.'
   tphere:
     help:
-      info: '&e플레이어를 내 위치로 순간이동합니다'
-      args: '[플레이어 이름] (플레이어 이름) (-s)'
+      info: 플레이어를 내 위치로 순간이동합니다.
+      args: '[playerName] (playerName) (-s)'
     info:
       feedback:
-        offline: '&e([world],[x],[y],[z]) 위치를 &3[playerDisplayName] &e의 스폰 위치로 설정했습니다
-          (&3[offon]&e).'
-        online: '&6[playerDisplayName] &e를 내 위치로 순간이동시켰습니다'
-        player: '&6[sourceDisplayName] &e의 위치로 순간이동되었습니다'
-      notAllowed: '&e이 플레이어를 순간이동시킬 수 없습니다'
+        offline: '&aTeleport &8» &e[x], [y], [z] &7@[world] &f위치를 &6[playerDisplayName]
+          &7([offon])&f님의 스폰 위치로 설정했습니다.'
+        online: '&aTeleport &8» &6[playerDisplayName]&f님을 내 위치로 순간이동시켰습니다.'
+        player: '&aTeleport &8» &6[sourceDisplayName]&f님의 위치로 순간이동되었습니다.'
+      notAllowed: '&cTeleport &8» &f해당 플레이어를 순간이동시킬 수 없습니다.'
   tpo:
     help:
-      info: '&e플레이어의 위치로 강제로 순간이동합니다'
-      args: '[플레이어 이름] (플레이어 이름)'
+      info: 플레이어의 위치로 강제로 순간이동합니다.
+      args: '[playerName] (playerName)'
   tpohere:
     help:
-      info: '&e플레이어를 내 위치로 강제로 순간이동합니다'
-      args: '[플레이어 이름] (플레이어 이름)'
+      info: 플레이어를 내 위치로 강제로 순간이동합니다.
+      args: '[playerName] (playerName)'
   tpopos:
     help:
-      info: '&e강제로 특정 위치로 순간이동합니다'
-      args: (-p:플레이어 이름) [x] [y] [z] (월드) (pitch) (yaw) (-rng:[범위])
+      info: 강제로 특정 위치로 순간이동합니다.
+      args: (-p:플레이어) [x] [y] [z] (월드) (pitch) (yaw) (-rng:[범위])
     info:
-      feedback: '&e([world],[x],[y],[z]) 위치로 순간이동되었습니다.'
-      feedbackOther: '&e[playerDisplayName] 님이 ([world],[x],[y],[z]) 위치로 순간이동되었습니다.'
+      feedback: '&aTeleport &8» &e[x], [y], [z] &7@[world] &f위치로 순간이동되었습니다.'
+      feedbackOther: '&aTeleport &8» &6[playerDisplayName]&f님이 &e[x], [y], [z] &7@[world]
+        &f위치로 순간이동되었습니다.'
   tppos:
     help:
-      info: '&e특정 위치로 순간이동합니다'
-      args: (-p:플레이어 이름) [x] [y] [z] (월드) (pitch) (yaw) (-rng:[범위])
+      info: 특정 위치로 순간이동합니다.
+      args: (-p:플레이어) [x] [y] [z] (월드) (pitch) (yaw) (-rng:[범위])
     info:
-      feedback: ([world],[x],[y],[z]) 위치로 순간이동되었습니다.
-      feedbackOther: '&e[playerDisplayName] 님이 ([world],[x],[y],[z]) 위치로 순간이동되었습니다.'
+      feedback: '&aTeleport &8» &e[x], [y], [z] &7@[world] &f&f위치로 순간이동되었습니다.'
+      feedbackOther: '&aTeleport &8» &6[playerDisplayName]&f님이 &e[x], [y], [z] &7@[world]
+        &f위치로 순간이동되었습니다.'
   tps:
     help:
-      info: '&e서버의 TPS 상태를 확인합니다'
+      info: 서버의 TPS 상태를 확인합니다.
       args: (-spikes)
     info:
       tps: '&eTPS: '
@@ -3964,14 +3979,14 @@ command:
       - '&7[time]'
   tree:
     help:
-      info: '&e바라보고 있는 위치에 나무를 생성합니다'
+      info: 바라보고 있는 위치에 나무를 생성합니다.
       args: (TreeType) (-p:[playerName])
     info:
       feedback: '&6[tree] &e가 생성되었습니다.'
       cantSpawn: '&c이 블록 위에 (&e[tree]&c) 나무를 생성할 수 없습니다.'
   unban:
     help:
-      info: '&e플레이어 또는 IP의 차단을 해제합니다'
+      info: 플레이어 또는 IP의 차단을 해제합니다.
       args: '[playerName/ip] (-s)'
     info:
       unBaned: '!broadcast!&6[playerDisplayName] &e차단 해제됨'
@@ -3979,7 +3994,7 @@ command:
       notBanned: '&6[playerDisplayName] &e차단되지 않음'
   unbreakable:
     help:
-      info: '&e아이템을 깨지지 않게 만듭니다'
+      info: 아이템을 깨지지 않게 만듭니다.
       args: (playerName) (true/false) (-o)
     info:
       feedback: '&e아이템을 [state] &e로 설정했습니다 &3[playerDisplayName]&e (&3[offon]&e).'
@@ -3987,58 +4002,58 @@ command:
       unbreakable: '&6깨지지 않음'
   uncondense:
     help:
-      info: '&e아이템을 작은 부분으로 분해합니다'
+      info: 아이템을 작은 부분으로 분해합니다.
       args: (itemName) (playerName) (-s)
     info:
-      converted: '&e[blocks] 블록을 [items] 아이템으로 변환했습니다'
+      converted: '&e[blocks] 블록을 [items] 아이템으로 변환했습니다.'
       nothing: '&c분해할 수 있는 아이템이 인벤토리에 없습니다.'
   unjail:
     help:
-      info: '&e플레이어를 감옥에서 석방합니다'
+      info: 플레이어를 감옥에서 석방합니다.
       args: '[playerName] (-s)'
     info:
-      notInJail: '&c대상 플레이어가 감옥에 있지 않습니다'
-      unjailed: '&e[playerDisplayName] &e를 감옥에서 석방했습니다'
-      unjailedTarget: '&e감옥에서 석방되었습니다!'
+      notInJail: '&c대상 플레이어가 감옥에 있지 않습니다.'
+      unjailed: '&e[playerDisplayName] &e를 감옥에서 석방했습니다.'
+      unjailedTarget: '&e감옥에서 석방되었습니다&o!'
   unloadchunks:
     help:
-      info: '&e서버 메모리에서 청크를 언로드합니다'
+      info: 서버 메모리에서 청크를 언로드합니다.
       args: (-f)
       explanation:
       - -f 변수는 모든 청크를 한 번에 강제로 언로드합니다.
     info:
       removed: '&e제거됨 -[list]'
-      startScanning: '&e[amount] 청크를 언로드할 준비가 되었습니다. 시작합니다!'
+      startScanning: '&e[amount] 청크를 언로드할 준비가 되었습니다. 시작합니다&o!'
       InfoShow: '&6TPS: &3[tps] &6남음 &e[left] &6(&e[min]m:[sec]s&6) &6속도: &e[speed]
         &6언로드됨: &e[found]'
       Finished: '&e완료!!! 언로드됨: &6[amount] &e청크! 소요 시간: &6[minutes] &e분 &6[seconds]
         &e초.'
   unmute:
     help:
-      info: '&e플레이어의 음소거를 해제합니다'
+      info: 플레이어의 음소거를 해제합니다.
       args: '[playerName] (-s)'
     info:
-      notMuted: '&e플레이어가 음소거되지 않았습니다'
-      unmuted: '&e플레이어가 이제 말할 수 있습니다'
-      unmutedTarget: '&e이제 말할 수 있습니다'
+      notMuted: '&e플레이어가 음소거되지 않았습니다.'
+      unmuted: '&e플레이어가 이제 말할 수 있습니다.'
+      unmutedTarget: '&e이제 말할 수 있습니다.'
   unmutechat:
     help:
-      info: '&e공개 채팅의 음소거를 해제합니다'
+      info: 공개 채팅의 음소거를 해제합니다.
       args: (-s)
     info:
-      unmuted: '&e공개 채팅의 음소거가 해제되었습니다'
+      unmuted: '&e공개 채팅의 음소거가 해제되었습니다.'
   usermeta:
     help:
-      info: '&e플레이어의 메타 데이터를 관리합니다'
+      info: 플레이어의 메타 데이터를 관리합니다.
       args: '[playerName] [add/remove/clear/list/increment] (key) (value) (-s)'
       explanation:
       - 설정된 메타는 %cmi_user_meta_[key]% 플레이스홀더를 사용하여 플러그인 주변에서 표시할 수 있습니다
     info:
-      added: '&e[playerDisplayName] &e에게 키 &6[key] &e와 값 &6[value] &e로 메타를 추가했습니다'
-      cleared: '&e[playerDisplayName] &e의 메타를 삭제했습니다'
-      removed: '&e[playerDisplayName] &e의 메타 &6[key] &e를 제거했습니다'
+      added: '&e[playerDisplayName] &e에게 키 &6[key] &e와 값 &6[value] &e로 메타를 추가했습니다.'
+      cleared: '&e[playerDisplayName] &e의 메타를 삭제했습니다.'
+      removed: '&e[playerDisplayName] &e의 메타 &6[key] &e를 제거했습니다.'
       changed: '&e[playerDisplayName] &e의 메타 &6[key] &e를 &6[oldValue] &e에서 &6[newValue]
-        &e로 변경했습니다'
+        &e로 변경했습니다.'
       ls: '&6[key]&e: [value]'
   util:
     help:
@@ -4048,20 +4063,20 @@ command:
       removedSits: '&e모든 월드에서 &6[count] &e개의 빈 좌석을 제거했습니다.'
   vanish:
     help:
-      info: '&e플레이어를 숨깁니다'
-      args: (플레이어 이름/목록) (켜기/끄기) (-s)
+      info: 플레이어를 숨깁니다.
+      args: (플레이어/목록) (켜기/끄기) (-s)
     info:
-      vanished: '&e세상에서 숨겨졌습니다'
-      unvanish: '&e세상에 다시 보이게 되었습니다'
-      targetVanished: '&6[playerDisplayName] &e가 숨겨졌습니다'
-      targetUnvanish: '&6[playerDisplayName] &e가 다시 보이게 되었습니다'
+      vanished: '&e세상에서 숨겨졌습니다.'
+      unvanish: '&e세상에 다시 보이게 되었습니다.'
+      targetVanished: '&6[playerDisplayName] &e가 숨겨졌습니다.'
+      targetUnvanish: '&6[playerDisplayName] &e가 다시 보이게 되었습니다.'
       list: '&e[place]. &6[playerDisplayName] &e(&6[offon]&e)'
-      noVanished: '&e숨겨진 플레이어가 없습니다'
+      noVanished: '&e숨겨진 플레이어가 없습니다.'
       noMsg: '&c숨겨진 상태에서는 메시지를 보낼 수 없습니다. Vanishedit에서 업데이트하세요'
   vanishedit:
     help:
-      info: '&e플레이어의 숨김 모드를 편집합니다'
-      args: (플레이어 이름) (작업) (true/false)
+      info: 플레이어의 숨김 모드를 편집합니다.
+      args: (playerName) (작업) (true/false)
     info:
       isVanished: '&e숨김 상태'
       damageToEntity: '&e다른 대상에게 피해를 줄 수 있음'
@@ -4089,7 +4104,7 @@ command:
       bossbarTitle: '&f숨김 상태'
   version:
     help:
-      info: '&eShow plugin version'
+      info: Show plugin version
       args: ''
     info:
       cmiVersion: '&eCMI: &6[version]'
@@ -4106,7 +4121,7 @@ command:
       cmilVersionNew: '&e-> [newVersion]'
   viewrange:
     help:
-      info: '&eChange view range'
+      info: Change view range
       args: '[range] (playerName)'
     info:
       changed: '&eView range changed to &6[range]'
@@ -4114,7 +4129,7 @@ command:
       NoMore: '&eRange can''t be more than 32 chunks. Changed to 32.'
   voteedit:
     help:
-      info: '&eManage players votes'
+      info: Manage players votes
       args: (playerName) [add/set/take/clear] [amount] (-s)
       explanation:
       - 'Example:'
@@ -4129,7 +4144,7 @@ command:
       targetFeedback: '&eYour vote count was set to &3[votes]&e by &3[senderDisplayName]&e.'
   votes:
     help:
-      info: '&eCheck players vote count'
+      info: Check players vote count
       args: (playerName)
     info:
       currentVoteSelf: '&eYou made &6[votes] &evotes'
@@ -4139,7 +4154,7 @@ command:
         wait &6[time]&eto vote again'
   votetop:
     help:
-      info: '&eCheck top vote list'
+      info: Check top vote list
       args: (playerName)
     info:
       topLine: '&e----- TopVotes &e-----'
@@ -4147,7 +4162,7 @@ command:
       ownLine: '&2[place]. &2[playerDisplayName]: &2[votes]'
   walkspeed:
     help:
-      info: '&eSet players walk speed from 0 to 5'
+      info: Set players walk speed from 0 to 5
       args: (playerName) [amount] (-s)
     info:
       feedback: '&eYou have set &3[amount]&e walk speed for &3[playerDisplayName]&e
@@ -4156,43 +4171,43 @@ command:
       max: '&eMax allowed walk speed for you is &6[max]&e.'
   warn:
     help:
-      info: '&e플레이어에게 경고를 보냅니다'
-      args: '[플레이어 이름] (카테고리) (이유) (-s)'
+      info: 플레이어에게 경고를 보냅니다.
+      args: '[playerName] (카테고리) (reason) (-s)'
     info:
-      noSelfWarning: '&c자신에게 경고를 보낼 수 없습니다'
-      cantBan: '&c이 플레이어에게 경고를 보낼 수 없습니다'
+      noSelfWarning: '&c자신에게 경고를 보낼 수 없습니다.'
+      cantBan: '&c이 플레이어에게 경고를 보낼 수 없습니다.'
       messageToAll: '&6[playerDisplayName] &c님이 &6[senderDisplayName] &c님에게 경고를 받았습니다:
         &6[reason]'
       banedSilent: '&7[&8조용히&7]&6[playerDisplayName] &c님이 &6[senderDisplayName] &c님에게
         경고를 받았습니다: &6[reason]'
   warnings:
     help:
-      info: '&e플레이어의 경고를 확인합니다'
-      args: (플레이어 이름)
+      info: 플레이어의 경고를 확인합니다.
+      args: (playerName)
     info:
       totalPoints: '&7---- &e[playerDisplayName] &e님의 총 위반 점수: &6[totalPoints] &7----'
-      noWarnings: '&e플레이어에게 경고가 없습니다'
+      noWarnings: '&e플레이어에게 경고가 없습니다.'
       list: '&7[place]. &e[time] &6by [warnedBy] &cfor: &7[warnedFor]'
       hover:
       - '&7만료까지: &e[time]'
       - '&7위반 점수: &e[points]'
   warp:
     help:
-      info: '&e워프 위치로 순간이동합니다'
-      args: (워프 이름) (플레이어 이름) (-s) (-g:[그룹 이름]) (-p:[페이지 번호])
+      info: 워프 위치로 순간이동합니다.
+      args: (워프 이름) (playerName) (-s) (-g:[그룹 이름]) (-p:[페이지 번호])
     info:
       list: '&e워프 목록: &6'
-      click: '&e클릭하여 &6[warp] &e로 순간이동합니다'
+      click: '&e클릭하여 &6[warp] &e로 순간이동합니다.'
       teleported: '&e워프 위치로 순간이동했습니다: &6[warp]'
-      noWarps: '&c저장된 워프가 없습니다'
+      noWarps: '&c저장된 워프가 없습니다.'
       autoLoreName: '&7[warpName]'
       autoLoreFormat:
       - '&7[worldName]'
       - '&e[x]:[y]:[z]'
       - '[creator]'
       creator: '&e생성자: &6[creator]'
-      noWarpByName: '&c이 이름의 워프가 없습니다'
-      noAccess: '&c이 워프에 접근할 수 없습니다'
+      noWarpByName: '&c이 이름의 워프가 없습니다.'
+      noAccess: '&c이 워프에 접근할 수 없습니다.'
       guiTitle: '&6워프'
       pageTitles:
       - '&2워프 1'
@@ -4200,13 +4215,13 @@ command:
       - '&0워프 3'
   warpgroups:
     help:
-      info: '&e워프 그룹 목록을 표시합니다'
+      info: 워프 그룹 목록을 표시합니다.
       args: ''
     info:
       list: '&e[number]. &7[group] &6(&e[amount]&6)'
   weather:
     help:
-      info: '&e서버 날씨를 제어합니다'
+      info: 서버 날씨를 제어합니다.
       args: (맑음/비/폭풍) (잠금/지속 시간) (월드 이름/전체)
       explanation:
       - '추가 시간 형식은 다음을 포함할 수 있습니다: s/m/h/d/w/M/Y'
@@ -4227,22 +4242,22 @@ command:
       thundering: 폭풍
   workbench:
     help:
-      info: '&e작업대를 엽니다'
-      args: (플레이어 이름) (-s)
+      info: 작업대를 엽니다.
+      args: (playerName) (-s)
     info:
       feedback: '&e[playerDisplayName] &e에게 작업대를 열었습니다 (&3[offon]&e).'
       targetfeedback: '&3[senderDisplayName]&e가 작업대를 열어주었습니다.'
   world:
     help:
-      info: '&e다른 월드로 순간이동합니다'
-      args: (일반/네더/엔드/1/2/3...) (플레이어 이름) (-s)
+      info: 다른 월드로 순간이동합니다.
+      args: (일반/네더/엔드/1/2/3...) (playerName) (-s)
       explanation:
       - 기본 권한 노드 외에도 cmi.command.world.[worldName] 권한이 필요합니다
     info:
-      here: '&e이미 여기에 있습니다'
+      here: '&e이미 여기에 있습니다.'
   worth:
     help:
-      info: '&7아이템 가치를 확인합니다'
+      info: 아이템 가치를 확인합니다.
       args: (전체/블록/손/재료)
     info:
       worthless: '&c가치 &8» &f가치가 없습니다.'
@@ -4254,8 +4269,8 @@ command:
       total: '&e총 가치: &7[total]'
   worthlist:
     help:
-      info: '&e설정된 판매 가격이 있는 아이템 목록을 확인합니다'
-      args: (플레이어 이름) (-누락)
+      info: 설정된 판매 가격이 있는 아이템 목록을 확인합니다.
+      args: (playerName) (-누락)
     info:
       type: '&7[type]'
       worth: '&7가치: &e[price]'
