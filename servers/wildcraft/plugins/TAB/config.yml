@@ -148,7 +148,7 @@ mysql:
   enabled: true
   host: 127.0.0.1
   port: 3306
-  database: msdwc
+  database: msdgl
   username: 46770d6
   password: 7f04916
   useSSL: false
