@@ -1024,7 +1024,7 @@ Elytra:
   # cmi.elytra.speedometer - allows to see speedometer
   Boost:
     # Max speed until player wont get any boost
-    SpeedLimit: 8
+    SpeedLimit: 128
     # When enabled items/exp wont be consumed if player is over speed limit
     SpeedLimitStop: false
     # Do you want to show decimals in speed
@@ -1203,20 +1203,20 @@ Spawn:
   # RespawnLocation will indicate if you want to use this location as possible respawn point for player after death
   # TeleportFrom will indicate list of worlds from which player should be teleported to this spawn point
   Main:
-    Location: world;0.5;13.0;0.5;-135.09;-0.15
+    Location: world;0.5;65.0;0.5;179.9;-1.19
     RespawnLocation: true
     Rng: 0
     TeleportFrom: []
   # Defines players first spawn point when he logs into server for the first time
   FirstSpawn:
-    Use: true
-    Location: world;0.5;13.0;0.5;-135.09;-0.15
+    Use: false
+    Location: world;0.5;65.0;0.5;179.9;-1.19
 Newbie:
   # Kit name to give for new players joining server
   Kit: Newbie
 Kits:
   # When set to true, kit list will be shown in GUI instead of chat list
-  GUI: false
+  GUI: true
   # When set to true, kit selection gui empty fields will get filled with definet item
   FillEmptyFields: true
   # When enabled players can preview kits they have access to or have cmi.kit.[kitName].preview or cmi.kit.[kitName].* permission node
