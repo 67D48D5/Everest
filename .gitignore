@@ -1,6 +1,6 @@
 # Ignore Changing Files
 # If you change these files, don't forget to commit them!
-server.properties
+*.properties
 
 # Ignore Files
 .DS_Store
@@ -25,6 +25,7 @@ sessions/
 .license
 .version
 
+lastupdate
 server.yml
 wepif.yml
 permissions.yml
@@ -45,6 +46,7 @@ datapacks/
 advancements/
 stats/
 
+*.template
 *.lock
 *.dat
 *.log
