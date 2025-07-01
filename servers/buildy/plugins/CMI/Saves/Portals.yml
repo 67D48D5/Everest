@@ -1,0 +1,20 @@
+# Command section can utilize same custom variables as scheduler. Check Schedules.yml file for all possible variables.
+
+world:
+  spawn:
+    Loc: -1.0:11.0:-1.0:1.0:11.0:1.0
+    enabled: true
+    effect: Dust
+    color: 8224125
+    showParticles: false
+    kickBack: true
+    particlesByPermission: false
+    requiresPerm: false
+    informOnMissingPerm: false
+    particleAmount: 20
+    particleHide: 0
+    activationRange: 16
+    commandsWithoutTp: true
+    commands:
+    - cmi effect [playerName] blindness 2 1 -s
+    - asConsole! cmi rt [playerName]
