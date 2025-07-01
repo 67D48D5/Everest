@@ -24,7 +24,7 @@
 firstJoinServer:
   Enabled: true
   Commands:
-  - plots auto [playerName]
+  - cmi sudo [playerName] plots auto
 joinServer:
   Enabled: false
   Commands:
