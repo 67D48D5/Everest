@@ -23,6 +23,9 @@ done
 ## Set swappiness
 echo 80 >/proc/sys/vm/swappiness 2>/dev/null
 
+## If Termux uses efficient CPU cores, set them to performance cores
+echo 6-7 > /dev/cpuset/moderate/cpus
+
 ## Set oom_score_adj for Android apps to prevent them from being killed
 (
   while true; do
