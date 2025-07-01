@@ -169,11 +169,11 @@ Optimizations:
   # Defines elevator type. If this is used on second line of sing, then player will be teleported directly in front of it instead of keeping original players x and z coordinates
   ElevatorStaticIndicator: '[*]'
   # Used to show date in places like mail, checkban, infopage and similar locations
-  LongDateFormat2: dd/MM/yyyy HH:mm:ss
+  LongDateFormat2: yyyy/MM/dd/ HH:mm:ss
   # Used to show date in places like inv gui and similar locations
-  ShortDateFormat: dd/MM/yy
+  ShortDateFormat: yy/MM/dd
   # Do you want to record sell hand actions into file
-  SellLog: true
+  SellLog: false
   # When set to true players with same name but different capitalization will be denyied from joining server to avoid possible issues. In example if on first day player Zrips joined server and on second day player zRips tries to join server, he will be rejected
   # RECOMMENDED to keep this at true
   PreventDifferentCapitalizationNames: true
@@ -244,11 +244,11 @@ Optimizations:
     JumpDefault: 50
     Tpa:
       # Defines time in seconds for accepting tpa or tpahere requests
-      Time: 60
+      Time: 16
       # Defines time in seconds for player being teleported after tpa or tpahere is being accepted
       Warmup: 3
       # Defines if player can move when tpa or tpahere is being accepted
-      Move: false
+      Move: true
       # Defines time in seconds for blocking player teleport offers after denying their request
       Block: 120
       # Distance in blocks for max teleportation range
@@ -329,7 +329,7 @@ Optimizations:
     # Try to keep this value higher than your login plugin's allowed login time so that we are recording actual players IP who has permission to use this name
     delay: 30
   # Max amount of hp you can get when using /cmi maxhp command
-  MaxHp: 1000
+  MaxHp: 1024
   # When set to true, player play time will be grabbed from user stats file instead of from CMI user data file
   # This can help to get more accurate play time if you have older server and using players stats feature
   # Recommended to keep this at true
@@ -345,7 +345,7 @@ Optimizations:
   CMIPlayTimeTracking: true
   # Player names to be excluded from playtimetop list
   PlaytimeTopExclude:
-  - Notch
+  - E098B8A
   # Time in days for player to be offline when he will be excluded from playtimetop list
   # Set to 0 if you want to disable this
   PlaytimeTopOffline: 0
@@ -367,10 +367,10 @@ Optimizations:
     # Do you want to inform player when item durability gets lower than set threshold
     # Player should have cmi.informDurability
     Tools:
-      Use: true
+      Use: false
       Percentage: 10
     Armor:
-      Use: true
+      Use: false
       Percentage: 10
   OnLimitedItemUse:
     # Informs about left uses of item
@@ -381,8 +381,8 @@ Optimizations:
     Animals: false
     Villagers: false
   PreventBedExplosion:
-    Nether: false
-    TheEnd: false
+    Nether: true
+    TheEnd: true
   # Will teleport players down from nether 'roof'
   PreventPlayersOnNetherRoof: false
   # Will define nether roof height. Keeping it at 0 will use default nether height, which is 128
@@ -426,7 +426,7 @@ Optimizations:
       # List of players which you should not be able to open inventories
       # This can still be bypassed if you are OP
       BlackList:
-      - Notch
+      - E098B8A
       # Do you want to disable inv command on players who are offline
       DisableOffline: false
     Clear:
@@ -463,7 +463,7 @@ Sleeping:
   Speedup:
     # When set to true, players can speedup night by sleeping in bed
     # This will allow to speed up night in percentage depending how many players are sleeping in beds in that world
-    Enabled: true
+    Enabled: false
     # List of worlds where this should be applied.
     # Keep in mind that time speed up only works on a normal type world and by default you will have only one
     # Set this list to [] if you want to include all possible worlds
@@ -776,7 +776,7 @@ Command:
     # Name of mail sender when command is performed from console
     # This name will be used as indicator who sent it and who should receive reply if player responds to it
     # For best experience set this value to your staff member responsible for communications with players
-    ConsoleMailSender: server
+    ConsoleMailSender: Everest
 DisplayName:
   # If you have 3rd party plugin changing players display name, set this to false
   Change: true
@@ -821,7 +821,7 @@ ShowNewVersion: false
 Spawners:
   # If you experiencing issues with spawner handling, set this to true to avoid any spawner manipulations from CMI side
   # This will disable features like, spawner placement, spawner drops, spawner charges and so on
-  FullDisable: false
+  FullDisable: true
   Break:
     # ATTENTION! cmi.dropspawner will be required to get spawner dropping for the player
     # Enable or disable spawner handler for spawner break
@@ -1024,7 +1024,7 @@ Elytra:
   # cmi.elytra.speedometer - allows to see speedometer
   Boost:
     # Max speed until player wont get any boost
-    SpeedLimit: 256
+    SpeedLimit: 8
     # When enabled items/exp wont be consumed if player is over speed limit
     SpeedLimitStop: false
     # Do you want to show decimals in speed
@@ -1204,7 +1204,7 @@ Spawn:
   # TeleportFrom will indicate list of worlds from which player should be teleported to this spawn point
   Main:
     Location: world;0.5;13.0;0.5;-135.09;-0.15
-    RespawnLocation: false
+    RespawnLocation: true
     Rng: 0
     TeleportFrom: []
   # Defines players first spawn point when he logs into server for the first time
@@ -1216,7 +1216,7 @@ Newbie:
   Kit: Newbie
 Kits:
   # When set to true, kit list will be shown in GUI instead of chat list
-  GUI: true
+  GUI: false
   # When set to true, kit selection gui empty fields will get filled with definet item
   FillEmptyFields: true
   # When enabled players can preview kits they have access to or have cmi.kit.[kitName].preview or cmi.kit.[kitName].* permission node
@@ -1315,7 +1315,7 @@ CheckForNameChange:
   - 'asConsole! cmi broadcast !&2[oldname] logged in with new name: [newname]'
 inv:
   # Do you want to save the player's inventory on his death
-  SaveOnDeath: false
+  SaveOnDeath: true
   # When set to true, empty inventories (no items in inventory) will not be saved on players death
   IgnoreEmpty: false
   # If set to true then player should have cmi.saveinv permission node for inventory to be saved on death
@@ -1532,7 +1532,7 @@ WarmUps:
   # ATTENTION! cmi home command is being handled in special way and to prevent double warmup, add space, example: - cmi home :5:false
   # Experimental: add GlyphHead to the warmup to show particle effect while command is on warmup period. Like
   # - cmi warp :3:false:GlyphHead
-  Enabled: true
+  Enabled: false
   InformOnNoMove: true
   showCounterBarInfo: true
   BossBarInfo:
@@ -1755,7 +1755,7 @@ BlueMap:
   Warps:
     # Do you want to show warps in BlueMap?
     # For most settings to take effect you need to restart the server
-    Enabled: true
+    Enabled: false
     ToggledOffDefault: false
     # Name of the markers in BlueMap
     Label: CMIWarps
@@ -1781,4 +1781,4 @@ Sounds:
 PotionEffects:
   # When set to true player poition effect will expire even if player is offline
   # Keep in mind that player potion effect durability will be updated on players login event so by checking players potions effect while he is offline can show incorrect state
-  DeductWhileOffline: false
+  DeductWhileOffline: true

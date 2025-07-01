@@ -12,7 +12,7 @@ Chat:
     ClickHoverMessages: true
   DiscordSRV:
     # Enables support for DiscordSRV plugin
-    Enabled: false
+    Enabled: true
     # Defines name of global chat channel in discordsrv
     GlobalChannel: global
     # Indicator which can be used as {discord} in chat format to indicate that message came from discord and not ingame
