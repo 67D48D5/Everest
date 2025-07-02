@@ -6,14 +6,14 @@ info:
   WolfCount: '&c!prefix!너무 많은 늑대가 있습니다. 현재 &e[amount]&f마리가 앉았습니다.'
   BlockLimit: '&c!prefix!한 청크에 너무 많은 &e[type]&f블록이 있습니다. 최대 &e[amount]&f개만 놓을 수 있습니다.'
   cleanup: '&b!prefix!자동으로 정리된 엔티티: &e[amount]'
-  hoverList: '&f[type]&7: [amount]'
+  hoverList: '&f[type] &7× &e[amount]'
 command:
   help:
     output:
       CommandColor: '&6'
       VariableColor: '&f'
-      usage: '&e사용법: &6%usage%'
-      title: \n&6!prefix!명령 도움말\n
+      usage: '&c!prefix!%usage%'
+      title: '&6!prefix!명령 도움말'
       page: ''
   nocmd:
     help:
@@ -55,7 +55,7 @@ command:
       count: ': &7[count]&8/&7[max]'
   hoppers:
     help:
-      info: '&7활성 호퍼가 가장 많은 청크를 나열합니다.\n'
+      info: '&7활성 호퍼가 가장 많은 청크를 나열합니다.'
       args: ''
     info:
       RemovedList: '&6[target] &f× &7[amount]'
