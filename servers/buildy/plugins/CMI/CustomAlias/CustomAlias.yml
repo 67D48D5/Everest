@@ -16,4 +16,19 @@
 # In this case if player performs /ca wrongsub or /ca anotherwrong
 # Commands under this alias will get executed. Exelent way to show help page and correct usage if needed
 
-{}
+CustomAlias:
+  claim:
+    Cmds:
+    - plots claim
+  auto:
+    Cmds:
+    - plots auto
+  merge:
+    Cmds:
+    - plots merge
+  info:
+    Cmds:
+    - plots info
+  home:
+    Cmds:
+    - plots home
