@@ -37,7 +37,9 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
   AUTO_DIR="${PLUGIN_ROOT}/${ENGINE}/autoupdate"
   STATIC_DIR="${PLUGIN_ROOT}/${ENGINE}"
 
-  mkdir -p "$DEST_DIR"
+  # Clean up old plugin jar links
+  rm -rf "$DEST_DIR"/*.jar
+  [[ -d "$DEST_DIR" ]] || mkdir -p "$DEST_DIR"
   echo "🔗 ${SERVER}  (engine: ${ENGINE})"
 
   jq -r ".servers[\"$SERVER\"].plugins | to_entries[] | \"\(.key)\t\(.value)\"" <<<"$CONFIG" |
