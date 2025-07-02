@@ -22,6 +22,7 @@ for cmd in curl jq; do
   }
 done
 
+# Load the configuration file
 CONFIG="$(cat "$CONFIG_FILE")"
 
 # Find the latest file matching a pattern in a directory

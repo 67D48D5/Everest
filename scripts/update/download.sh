@@ -24,6 +24,7 @@ for cmd in curl jq; do
     }
 done
 
+# Load the configuration file
 CONFIG="$(cat "$CONFIG_FILE")"
 
 # For engines, we will fetch the latest builds from PaperMC API
