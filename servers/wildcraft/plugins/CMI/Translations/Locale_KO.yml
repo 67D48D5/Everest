@@ -304,7 +304,7 @@ command:
       args: '[playerName] [amount] (-s)'
     info:
       feedback: '&aAir &8» &6[playerName] &7([offon])&f님의 공기량을 &e[amount]&f로 설정했습니다.'
-      targetfeedback: '&bAir &8» &6[senderDisplayName]&f님이 공기량을 &e[amount]&f로 설정했습니다.'
+      targetFeedback: '&bAir &8» &6[senderDisplayName]&f님이 공기량을 &e[amount]&f로 설정했습니다.'
       current: '&bAir &8» &6[playerDisplayName]&f님의 현재 공기량: &e[amount]'
   alert:
     help:
@@ -374,8 +374,10 @@ command:
       current: '&bAnvilRepairCost &8» &f현재 아이템의 기본 수리 비용: &e[cost].'
       noitem: '&cAnvilRepairCost &8» &f손에 아이템을 들고 있지 않습니다.'
       cantDetermineCost: '&cAnvilRepairCost &8» &f이 아이템의 기본 수리 비용을 결정할 수 없습니다.'
-      selffeedback: '&cAnvilRepairCost &8» &f기본 수리 비용이 &6[playerDisplayName] &7([offon])&f님의 손에 있는 아이템에 대해 &e[amount]&f로 설정되었습니다.'
-      targetfeedback: '&bAnvilRepairCost &8» &6[senderDisplayName]&f님이 아이템 수리 비용을 &e[amount]&f로 설정했습니다.'
+      selffeedback: '&cAnvilRepairCost &8» &f기본 수리 비용이 &6[playerDisplayName] &7([offon])&f님의
+        손에 있는 아이템에 대해 &e[amount]&f로 설정되었습니다.'
+      targetfeedback: '&bAnvilRepairCost &8» &6[senderDisplayName]&f님이 아이템 수리 비용을
+        &e[amount]&f로 설정했습니다.'
   armoreffect:
     help:
       info: 갑옷 효과를 수정합니다.
@@ -762,7 +764,8 @@ command:
       - cmi clear +armors - 방어구 유형 아이템을 제거합니다
       - cmi clear +armorslots - 방어구 슬롯에서 아이템을 제거합니다
     info:
-      clearFeedback: '&6[playerDisplayName] &7([offon])&f님의 인벤토리에서 &e[amount]&f개의 아이템을 제거했습니다'
+      clearFeedback: '&6[playerDisplayName] &7([offon])&f님의 인벤토리에서 &e[amount]&f개의
+        아이템을 제거했습니다'
       target: '&e[amount]&f개의 아이템이 &6[senderDisplayName]&f님에 의해 인벤토리에서 제거되었습니다.'
       confirm: '&7클릭하여 인벤토리를 정리하세요. &c모든 아이템이 제거됩니다&o!'
   clearchat:
@@ -1102,8 +1105,8 @@ command:
       - /effect zrips nightvision -10 - 현재 야간 투시 시간에서 10초를 제거합니다
       - /effect all health_boost 60 1 - 모든 온라인 사용자에게 HP를 1 증가시킵니다
     info:
-      feedback: '&e포션 효과 &6[effect]&f님이 &6[playerDisplayName] &7([offon])&f님에게 &6[sec]초 동안 &6[power]의
-        강도로 추가되었습니다.'
+      feedback: '&e포션 효과 &6[effect]&f님이 &6[playerDisplayName] &7([offon])&f님에게 &6[sec]초
+        동안 &6[power]의 강도로 추가되었습니다.'
       cleared: '&e포션 효과가 &6[playerDisplayName] &7([offon])&f님에게서 제거되었습니다.'
   emojipicker:
     help:
@@ -1189,8 +1192,9 @@ command:
     info:
       current: '&bExp &8» &6[playerDisplayName]&f님의 현재 레벨은 &6[lvl]&f이며 경험치는 &6[currentExp]&f입니다.
         총 경험치는 &e[exp]&f입니다.'
-      selfFeedback: '&aExp &8» &6[playerDisplayName] &7([offon])&f님의 경험치가 &e[exp]&f로 설정되었습니다.'
-      targetfeedback: '&bExp &8» &f경험치가 &3[exp]&f로 &6[senderDisplayName]&f님에 의해 설정되었습니다.'
+      selfFeedback: '&aExp &8» &6[playerDisplayName] &7([offon])&f님의 경험치가 &e[exp]&f로
+        설정되었습니다.'
+      targetFeedback: '&eYour exp was set to &3[exp]&e by &3[senderDisplayName]&e.'
   ext:
     help:
       info: 플레이어를 진화시킵니다.
@@ -1203,7 +1207,8 @@ command:
       info: 플레이어의 낙하 거리를 설정합니다.
       args: (playerName) (number) (-s)
     info:
-      feedback: '&aFallDistance &8» &6[playerDisplayName] &7([offon])&f님의 낙하 거리를 &e[amount]&f로 설정했습니다.'
+      feedback: '&aFallDistance &8» &6[playerDisplayName] &7([offon])&f님의 낙하 거리를 &e[amount]&f로
+        설정했습니다.'
   feed:
     help:
       info: 플레이어의 배고픔을 채웁니다.
@@ -1217,7 +1222,8 @@ command:
       info: 가장 가까운 바이옴을 이름으로 찾습니다.
       args: (biomeName/stop/stopall)
     info:
-      infoShow: '!actionbar!&6TPS: &3[tps] &6남은 시간: &e[left] &6(&e[time]&6) &6속도: &e[speed]'
+      infoShow: '!actionbar!&6TPS: &3[tps] &6남은 시간: &e[left] &6(&e[time]&6) &6속도:
+        &e[speed]'
       stopped: '&cFindBiome &8» &f중지되었습니다&o!'
       cantFindBiome: '&cFindBiome &8» &f원하는 바이옴을 찾을 수 없습니다. &e[amount]&f개의 청크를 확인했습니다.'
       teleportedTo: '&cFindBiome &8» &e[biome] &f바이옴으로 순간이동했습니다.'
@@ -1350,8 +1356,8 @@ command:
         {#pink}With_Love!;sharpness:3,durability:3;hideenchants
       - <T>자세한 정보는 www.zrips.net/cmi/commands/icwol/에서 확인하세요</T><URL>https://www.zrips.net/cmi/commands/icwol/</URL>
     info:
-      feedback: '&6[playerDisplayName]&f님에게 &6[itemname] &f(&6[customitemname]&e) 아이템
-        &e[amount]&f개를 줍니다.'
+      feedback: '&6[playerDisplayName]&f님에게 &6[itemname] &f(&6[customitemname]&e)
+        아이템 &e[amount]&f개를 줍니다.'
       maxLimit: '&c한 번에 &7[max]&c개 이상의 아이템을 줄 수 없습니다.'
       notItem: '&c이 아이템은 줄 수 없습니다. 아이템이 아닙니다.'
       maxLimitResize: '&c한 번에 &7[max]&c개 이상의 아이템을 줄 수 없습니다. 제한에 맞게 크기를 조정합니다.'
@@ -1384,7 +1390,8 @@ command:
       - '예시: /glow Zrips red'
       - '권한: cmi.command.glow.color.[color] - 특정 발광 색상을 설정할 수 있음'
     info:
-      feedback: '&6[playerDisplayName] &7([offon])&f님에게 [color]발광 모드를 &3[boolean]&f로 설정했습니다.'
+      feedback: '&6[playerDisplayName] &7([offon])&f님에게 [color]발광 모드를 &3[boolean]&f로
+        설정했습니다.'
       targetfeedback: '&6[senderDisplayName]&f님이 [color]발광 모드를 &3[boolean]&f로 설정했습니다.'
       title: 발광 색상 선택
       incorrect: '&4잘못된 색상 이름'
@@ -1638,8 +1645,10 @@ command:
       info: 플레이어의 배고픔의 정도를 설정합니다.
       args: '[playerName] [amount] (-s)'
     info:
-      feedback: '&aHunger &8» &6[playerDisplayName] &7([offon])&f님의 배고픔을 &3[hunger]&f로 설정했습니다.'
-      targetfeedback: '&bHunger &8» &6[senderDisplayName]&f님에 의해 배고픔이 &3[hunger]&f로 설정되었습니다.'
+      feedback: '&aHunger &8» &6[playerDisplayName] &7([offon])&f님의 배고픔을 &3[hunger]&f로
+        설정했습니다.'
+      targetfeedback: '&bHunger &8» &6[senderDisplayName]&f님에 의해 배고픔이 &3[hunger]&f로
+        설정되었습니다.'
   ic:
     help:
       info: 인터랙티브 명령어를 생성합니다.
@@ -1699,7 +1708,7 @@ command:
       self: '&cIgnore &8» &f자신을 무시할 수 없습니다.'
       added: '&cIgnore &8» &f이제 &6[playerDisplayName]&f님을 무시합니다.'
       addedAll: '&cIgnore &8» &f이제 모든 사람을 무시합니다.'
-      all: '모든 사람'
+      all: 모든 사람
       removed: '&aIgnore &8» &f이제 &6[playerDisplayName]&f님을 더 이상 무시하지 않습니다.'
       removedAll: '&aIgnore &8» &f이제 모든 사람을 더 이상 무시하지 않습니다.'
       list: '&e&o[place] &8» &6[playerDisplayName] '
@@ -3422,7 +3431,8 @@ command:
       info: 대장장이 테이블을 엽니다.
       args: (playerName)
     info:
-      feedback: '&aSmithingTable &8» &6[playerDisplayName] &7([offon])&f님에게 대장장이 테이블을 열었습니다.'
+      feedback: '&aSmithingTable &8» &6[playerDisplayName] &7([offon])&f님에게 대장장이 테이블을
+        열었습니다.'
       targetfeedback: '&aSmithingTable &8» &6[senderDisplayName]&f님이 대장장이 테이블을 열어주었습니다.'
   solve:
     help:
@@ -3437,10 +3447,10 @@ command:
       args: '[sound] (-p:[pitch]) (-v:[volume]) (playerName/-all/-l:playerName) (world;x;y;z)
         (-r:[radius]) (-s)'
     info:
-      playing: "&aSound &8» &fPlaying &6[sound] &eat [world] [x]:[y]:[z] \n&ePitch: &6[pitch]\
-        \ &eVolume: &6[volume]"
-      playingMultiple: "&aSound &8» &fPlaying &6[sound] &efor &e[amount] &eplayers \n&ePitch:\
+      playing: "&aSound &8» &fPlaying &6[sound] &eat [world] [x]:[y]:[z] \n&ePitch:\
         \ &6[pitch] &eVolume: &6[volume]"
+      playingMultiple: "&aSound &8» &fPlaying &6[sound] &efor &e[amount] &eplayers\
+        \ \n&ePitch: &6[pitch] &eVolume: &6[volume]"
   spawn:
     help:
       info: 스폰 위치로 순간이동합니다.

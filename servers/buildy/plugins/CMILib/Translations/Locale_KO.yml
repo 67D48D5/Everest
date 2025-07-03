@@ -55,7 +55,7 @@
 
 info:
   # Use !prefix! in any locale line to automatically include this prefix
-  prefix: ''
+  prefix: System &8» &f
   NoPermission: '&cError &8» §f존재하지 않거나 사용할 수 없는 명령어입니다&o!'
   CantHavePermission: '&cError &8» &f해당 권한을 가질 수 없습니다&o!'
   WrongGroup: '&cError &8» &f잘못된 그룹에 속해있습니다&o!'
@@ -98,82 +98,82 @@ info:
   CantTeleportWorld: '&cTeleport &8» &f해당 월드로 텔레포트할 수 없습니다&o!'
   CantTeleportNoWorld: '&cTeleport &8» &f대상 월드가 존재하지 않습니다&o!'
   ClickToConfirmDelete: '&bConfirm &8» &f이곳을 클릭하여 &6[name]&f를 제거하세요.'
-  teleported: '&aCore &8» &f순간 이동되었습니다&o!'
-  PlayerSpliter: '&6[playerDisplayName]'
+  teleported: '&aTeleport &8» &f순간 이동되었습니다&o!'
+  PlayerSpliter: '&6[prefix][playerDisplayName]'
   Spliter: ''
-  SpliterValue: '&e[value]'
+  SpliterValue: '&7[value]'
   singleSpliter: '&7-'
   SpliterMiddle: ' &6[value] '
   ListSpliter: ', '
-  ProgressBarFill: '&2▏'
-  ProgressBarEmpty: '&e▏'
+  ProgressBarFill: '&6▏'
+  ProgressBarEmpty: '&0▏'
   nothingInHand: '&cError &8» &f손에 아이템을 들어야합니다&o!'
   nothingInHandLeather: '&cError &8» &f손에 가죽 아이템을 들어야합니다&o!'
   nothingToShow: '&cError &8» &f정보가 없습니다&o!'
   noItem: '&cError &8» &f아이템을 찾을 수 없습니다&o!'
-  dontHaveItem: '&cError &8» &f인벤토리에 &6[amount]x [itemName] 만큼의 아이템이 없습니다&o!'
+  dontHaveItem: '&cError &8» &f인벤토리에 &6[itemName] &7x &e[amount]&f만큼의 아이템이 없습니다&o!'
   wrongWorld: '&cError &8» &f해당 월드에서는 해당 기능을 사용할 수 없습니다&o!'
   differentWorld: '&cError &8» &f다른 월드입니다&o!'
-  HaveItem: '&cError &8» &fYou have &6[amount]x [itemName] &cin your inventory'
+  HaveItem: '&cError &8» &f인벤토리에 &6[itemName] &7x &e[amount]&f만큼을 가지고 있습니다&o!'
   cantDoInGamemode: '&cError &8» &f현재 게임 모드에서는 할 수 없습니다&o!'
   cantDoForPlayer: '&cError &8» &6[playerDisplayName]&f님에게 해당 기능을 사용할 수 없습니다&o!'
   cantDoForYourSelf: '&cError &8» &f해당 기능은 자신에게 사용할 수 없습니다&o!'
-  cantDetermineMobType: '&cError &8» &fCan''t determine mob type from &e[type] &cvariable'
+  cantDetermineMobType: '&cError &8» &e[type] &f변수에서 몹 유형을 확인할 수 없습니다&o!'
   cantRename: '&cError &8» &f해당 이름을 사용할 수 없습니다&o!'
-  confirmRedefine: '&bCore &8» &f클릭하여 다시 정의합니다.'
+  confirmRedefine: '&bConfirm &8» &f클릭하여 다시 정의합니다.'
   cantEdit: '&cError &8» &f수정할 수 없습니다&o!'
   wrongName: '&cError &8» &f잘못된 이름입니다&o!'
-  unknown: '&c알 수 없음'
+  unknown: 알 수 없음
   invalidName: '&cError &8» &f올바르지 않은 이름입니다&o!'
   alreadyexist: '&cError &8» &f해당 이름은 이미 사용 중입니다&o!'
   dontexist: '&cError &8» &f해당 이름은 존재하지 않습니다&o!'
   worldDontExist: '&cError &8» &f해당 월드는 더이상 접근할 수 없습니다&o!'
-  notSet: '&c설정 안 됨'
-  lookAtSign: '&bCore &8» &f표지판을 바라보세요&o!'
-  lookAtBlock: '&bCore &8» &f블록을 바라보세요&o!'
-  lookAtEntity: '&bCore &8» &f엔티티를 바라보세요&o!'
+  notSet: 설정 안 됨
+  lookAtSign: '&bSign &8» &f표지판을 바라보세요&o!'
+  lookAtBlock: '&bBlock &8» &f블록을 바라보세요&o!'
+  lookAtEntity: '&bEntity &8» &f엔티티를 바라보세요&o!'
   noSpace: '&cError &8» &f남는 공간이 충분하지 않습니다&o!'
   notOnGround: '&cError &8» &f비행 도중 해당 기능을 사용할 수 없습니다&o!'
   bungee:
-    Online: '&a온라인'
-    Offline: '&c오프라인'
+    Online: 온라인
+    Offline: 오프라인
     not: '&cError &8» &f서버가 번지코드 네트워크에 속해 있지 않습니다&o!'
     noserver: '&cError &8» &f해당 이름의 서버를 찾을 수 없습니다&o!'
-    server: '&f서버: &7[name]'
+    server: '&f서버: &6[name]'
   variables:
-    am: '&7오전'
-    pm: '&7오후'
-    Online: '&a온라인'
-    Offline: '&c오프라인'
-    TrueColor: '&a'
-    FalseColor: '&c'
-    'True': '&aT'
-    'False': '&cF'
-    Enabled: '&a활성화됨'
-    Disabled: '&c비활성화됨'
-    survival: '&e서바이벌'
-    creative: '&e크리에이티브'
-    adventure: '&e어드벤처'
-    spectator: '&e관전'
-    flying: '&a비행 중'
-    notflying: '&c비행 중이지 않음'
+    am: 오전
+    pm: 오후
+    Online: 온라인
+    Offline: 오프라인
+    TrueColor: ''
+    FalseColor: ''
+    'True': T
+    'False': F
+    Enabled: 활성화됨
+    Disabled: 비활성화됨
+    survival: 서바이벌
+    creative: 크리에이티브
+    adventure: 어드벤처
+    spectator: 관전
+    flying: 비행 중
+    notflying: 비행 중이지 않음
   Inventory:
     Full: '&cError &8» &f인벤토리가 가득 찼습니다. 더이상 아이템을 추가할 수 없습니다.'
     FullDrop: '&cError &8» &f인벤토리가 가득 찼습니다. 남은 아이템을 바닥에 떨어뜨립니다.'
   TimeNotRecorded: '&cError &8» &f기록이 존재하지 않습니다&o!'
-  months: '&e[months] 달 '
-  oneMonth: '&e[months] 달 '
-  weeks: '&e[weeks] 주 '
-  oneWeek: '&e[weeks] 주 '
-  years: '&e[years] 년 '
-  oneYear: '&e[years] 년 '
-  day: '&e[days] 일 '
-  oneDay: '&e[days] 일 '
-  hour: '&e[hours] 시간 '
-  oneHour: '&e[hours] 시간 '
-  min: '&e[mins] 분 '
-  sec: '&e[secs] 초 '
-  nextPageConsole: '&bCore &8» &f다음 페이지로 넘어가려면 &e[command]&f를 입력하세요.'
+  months: '&e[months]&f달'
+  oneMonth: '&e[months]&f달'
+  weeks: '&e[weeks]&f주'
+  oneWeek: '&e[weeks]&f주'
+  years: '&e[years]&f년'
+  oneYear: '&e[years]&f년'
+  day: '&e[days]&f일'
+  oneDay: '&e[days]&f일'
+  hour: '&e[hours]&f시간'
+  oneHour: '&e[hours]&f시간'
+  min: '&e[mins]&f분'
+  sec: '&e[secs]&f초'
+  nextPageConsole: '&bPage &8» &f다음 페이지로 넘어가려면 &e[command]&f를 입력하세요.'
   prevPage: '&2----<< &6이전 '
   prevCustomPage: '&2----<< &6[value] '
   prevPageGui: '&6Previous page '
@@ -194,12 +194,12 @@ info:
   pageCountHover: '&e[totalEntries] entries'
   skullOwner: '!actionbar!&7Owner:&r [playerName]'
   mobHeadName: '&eHead of &f[mobName]'
-  circle: '&3Circle'
-  square: '&5Square'
-  clear: '&7Clear'
-  protectedArea: '&cError &8» &f해당 지역은 보호되어 있습니다&o!'
-  valueToLong: '&cError &8» &f해당 값은 너무 큽니다. 최대: [max]'
-  valueToShort: '&cError &8» &f해당 값은 너무 작습니다. 최소: [min]'
+  circle: '&3원형'
+  square: '&5사각형'
+  clear: '&7지우기'
+  protectedArea: '&cError &8» &f이 지역은 보호되어 있습니다&o!'
+  valueToLong: '&cError &8» &f이 값은 너무 큽니다. 최대: &e[max]'
+  valueToShort: '&cError &8» &f이 값은 너무 작습니다. 최소: &e[min]'
   pickIcon: '&8아이콘 선택'
   Spawner: '&r[type] 스포너'
   DamageCause:
@@ -391,127 +391,127 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    silk_touch: Silk_touch
-    durability: Durability
-    soul_speed: Soul_speed
-    vanishing_curse: Vanishing_curse
-    knockback: Knockback
     multishot: Multishot
-    lure: Lure
-    thorns: Thorns
-    frost_walker: Frost_walker
-    damage_all: Damage_all
+    soul_speed: Soul_speed
     channeling: Channeling
-    luck: Luck
-    mending: Mending
-    dig_speed: Dig_speed
-    quick_charge: Quick_charge
-    depth_strider: Depth_strider
-    arrow_damage: Arrow_damage
-    loot_bonus_mobs: Loot_bonus_mobs
-    piercing: Piercing
+    arrow_knockback: Arrow_knockback
     water_worker: Water_worker
-    arrow_fire: Arrow_fire
-    binding_curse: Binding_curse
-    protection_explosions: Protection_explosions
+    lure: Lure
+    loot_bonus_mobs: Loot_bonus_mobs
+    damage_all: Damage_all
     loot_bonus_blocks: Loot_bonus_blocks
+    arrow_fire: Arrow_fire
+    protection_fall: Protection_fall
+    frost_walker: Frost_walker
+    swift_sneak: Swift_sneak
+    piercing: Piercing
+    arrow_infinite: Arrow_infinite
+    protection_fire: Protection_fire
+    vanishing_curse: Vanishing_curse
+    density: Density
+    luck: Luck
+    thorns: Thorns
+    mending: Mending
+    knockback: Knockback
+    impaling: Impaling
+    quick_charge: Quick_charge
+    silk_touch: Silk_touch
+    protection_projectile: Protection_projectile
+    damage_undead: Damage_undead
     fire_aspect: Fire_aspect
     damage_arthropods: Damage_arthropods
     protection_environmental: Protection_environmental
-    wind_burst: Wind_burst
     loyalty: Loyalty
-    density: Density
-    riptide: Riptide
-    protection_fall: Protection_fall
-    arrow_knockback: Arrow_knockback
-    swift_sneak: Swift_sneak
-    sweeping_edge: Sweeping_edge
-    arrow_infinite: Arrow_infinite
-    protection_projectile: Protection_projectile
-    oxygen: Oxygen
-    impaling: Impaling
-    damage_undead: Damage_undead
+    wind_burst: Wind_burst
+    arrow_damage: Arrow_damage
     breach: Breach
-    protection_fire: Protection_fire
+    dig_speed: Dig_speed
+    oxygen: Oxygen
+    riptide: Riptide
+    protection_explosions: Protection_explosions
+    sweeping_edge: Sweeping_edge
+    durability: Durability
+    depth_strider: Depth_strider
+    binding_curse: Binding_curse
   PotionEffectAliases:
-    darkness:
-    - Darkness
     invisibility:
     - Invisibility
-    glowing:
-    - Glowing
-    trialomen:
-    - Trial omen
-    speed:
-    - Speed
-    wither:
-    - Wither
-    resistance:
-    - Resistance
-    regeneration:
-    - Regeneration
-    blindness:
-    - Blindness
-    infested:
-    - Infested
-    fireresistance:
-    - Fire resistance
-    badomen:
-    - Bad omen
-    saturation:
-    - Saturation
-    unluck:
-    - Unluck
-    oozing:
-    - Oozing
-    raidomen:
-    - Raid omen
-    absorption:
-    - Absorption
-    conduitpower:
-    - Conduit power
-    healthboost:
-    - Health boost
-    weakness:
-    - Weakness
-    jumpboost:
-    - Jump boost
+    darkness:
+    - Darkness
     waterbreathing:
     - Water breathing
-    levitation:
-    - Levitation
-    instanthealth:
-    - Instant health
-    instantdamage:
-    - Instant damage
-    nausea:
-    - Nausea
-    dolphinsgrace:
-    - Dolphins grace
+    heroofthevillage:
+    - Hero of the village
+    infested:
+    - Infested
+    blindness:
+    - Blindness
     haste:
     - Haste
+    slowfalling:
+    - Slow falling
+    instantdamage:
+    - Instant damage
+    trialomen:
+    - Trial omen
+    jumpboost:
+    - Jump boost
+    badomen:
+    - Bad omen
+    unluck:
+    - Unluck
+    instanthealth:
+    - Instant health
+    levitation:
+    - Levitation
+    slowness:
+    - Slowness
+    wither:
+    - Wither
+    conduitpower:
+    - Conduit power
+    windcharged:
+    - Wind charged
+    glowing:
+    - Glowing
+    luck:
+    - Luck
+    oozing:
+    - Oozing
+    hunger:
+    - Hunger
+    poison:
+    - Poison
+    regeneration:
+    - Regeneration
+    resistance:
+    - Resistance
+    saturation:
+    - Saturation
+    fireresistance:
+    - Fire resistance
+    weakness:
+    - Weakness
+    absorption:
+    - Absorption
+    dolphinsgrace:
+    - Dolphins grace
+    nausea:
+    - Nausea
     strength:
     - Strength
     weaving:
     - Weaving
-    heroofthevillage:
-    - Hero of the village
+    speed:
+    - Speed
+    raidomen:
+    - Raid omen
     nightvision:
     - Night vision
     miningfatigue:
     - Mining fatigue
-    windcharged:
-    - Wind charged
-    hunger:
-    - Hunger
-    slowness:
-    - Slowness
-    luck:
-    - Luck
-    slowfalling:
-    - Slow falling
-    poison:
-    - Poison
+    healthboost:
+    - Health boost
 direction:
   n: 북
   ne: 북동
@@ -565,42 +565,42 @@ modify:
   commandList: ' &e[command]  '
   emptyLine: '&7[빈 줄]'
   commandEdit: '&f목록 편집'
-  nameAddInfo: '&bEnter &8» &f새 이름을 입력하세요. 취소하려면 &ecancel &f입력'
-  lineAddInfo: '&bEnter &8» &f새 줄을 입력하세요. 취소하려면 &ecancel &f입력'
-  commandAddInfo: '&bEnter &8» &f새 명령어를 입력하세요. 취소하려면 &ecancel &f입력'
+  nameAddInfo: '&bEnter &8» &f새 이름을 입력하세요. 취소하려면 &ecancel&f을 입력하세요.'
+  lineAddInfo: '&bEnter &8» &f새 줄을 입력하세요. 취소하려면 &ecancel&f을 입력하세요.'
+  commandAddInfo: '&bEnter &8» &f새 명령어를 입력하세요. 취소하려면 &ecancel&f을 입력하세요.'
   commandAddInformationHover: |
-    &f[playerName] → 플레이어 이름 대입
-    &f지연 포함 시: delay! 5
+    &e[playerName] &7→ &f플레이어 이름 대입
+    &f지연 포함 시: &edelay! 5
     &f전용 명령어 사용 가능
-  commandEditInfo: '&eClick to paste old text. Type &6cancel &eto cancel action'
-  listLimit: '&cLimit &8» &f목록은 최대 &e[amount]&f개 까지만 추가할 수 있습니다.'
+  commandEditInfo: '&f클릭하여 기존 텍스트를 붙여넣습니다. 취소하려면 &ecancel&f을 입력하세요.'
+  listLimit: '&cLimit &8» &f목록은 최대 &e[amount]&f개까지만 추가할 수 있습니다.'
   commandEditInfoHover: '&f클릭하여 기존 텍스트 붙여넣기'
 teleportation:
   relocation: '&cTeleportation &8» &f순간이동 장소가 온전하지 않습니다. 안전한 장소로 순간이동합니다.'
 econ:
   noMoney: '&cMoney &8» &f돈이 부족합니다&o!'
-  charged: '&aMoney &8» &e[amount] &f이 지불되었습니다.'
+  charged: '&aMoney &8» &e[amount]&f이 지불되었습니다.'
   notEnoughMoney: '&cMoney &8» &f돈이 부족합니다&o! 필요한 돈: &e[amount]'
   tooMuchMoney: '&cMoney &8» &f보유한 돈이 너무 많습니다&o!'
 Selection:
   SelectPoints: '&bSelection &8» &f선택 도구로 두 지점을 지정하세요! 현재 도구: &e[tool]'
-  PrimaryPoint: '&aSelection &8» &f첫 번째 기준 지점을 선택했습니다. [point]'
-  SecondaryPoint: '&aSelection &8» &f두 번째 기준 지점을 선택했습니다. [point]'
+  PrimaryPoint: '&aSelection &8» &f첫 번째 기준 지점을 선택했습니다. &e[point]'
+  SecondaryPoint: '&aSelection &8» &f두 번째 기준 지점을 선택했습니다. &e[point]'
   CoordsTop: '&e[x], [y], [z]'
   CoordsBottom: '&e[x], [y], [z]'
-  Area: '&e[x1]:[y1]:[z1], &b[x2]:[y2]:[z2] &7@[world]'
+  Area: '&e[x1], [y1], [z1]&7; &6[x2], [y2], [z2] &7@[world]'
 Location:
   Title: '&8플레이어 위치 정보'
-  Killer: '&e처치자: &6[killer]'
-  OneLiner: '&e위치: &6[location]'
-  DeathReason: '&e사망 원인: &6[reason]'
+  Killer: '&f처치자: &6[killer]'
+  OneLiner: '&e[location]'
+  DeathReason: '&e[reason]'
   Full: '&7[world] &f[x]&7:&f[y]&7:&f[z]'
-  World: '&e월드: &6[world]'
-  X: '&eX: &6[x]'
-  Y: '&eY: &6[y]'
-  Z: '&eZ: &6[z]'
-  Pitch: '&ePitch: &6[pitch]'
-  Yaw: '&eYaw: &6[yaw]'
+  World: '&f월드: &6[world]'
+  X: '&fX: &e[x]'
+  Y: '&fY: &e[y]'
+  Z: '&fZ: &e[z]'
+  Pitch: '&fPitch: &e[pitch]'
+  Yaw: '&fYaw: &e[yaw]'
   WorldNames:
   - world-&2오버월드
   - world_nether-&2네더월드
@@ -609,11 +609,11 @@ Locations: '&bLocations &8» &f '
 command:
   help:
     output:
-      usage: '&bHelp &8» &7%usage%'
-      cmdInfoFormat: '[command] &7[description]'
+      usage: '&cHelp &8» &6%usage%'
+      cmdInfoFormat: '[command] &7- &f[description]'
       cmdFormat: '&6/[command]&f[arguments]'
-      helpPageDescription: '&7[description]'
-      explanation: '&7[explanation]'
+      helpPageDescription: '&f[description]'
+      explanation: '&f[explanation]'
       title: '&bHelp &8» &f명령 도움말'
   nocmd:
     help:
@@ -628,6 +628,6 @@ command:
       info: 플러그인 설정 및 언어 파일을 다시 불러옵니다.
       args: ''
     info:
-      feedback: '&aLibrary &8» &f라이브러리 설정 및 언어 파일을 다시 불러왔습니다! 소요 시간: &e&o[ms] &7ms'
-      failedConfig: '&cLibrary &8» &f설정 파일을 불러오는 데 실패했습니다! 오타를 확인하세요&o!'
-      failedLocale: '&cLibrary &8» &f언어 파일을 불러오는 데 실패했습니다! 오타를 확인하세요&o!'
+      feedback: '&aCMILib &8» &f라이브러리 설정 및 언어 파일을 다시 불러왔습니다&o! &f소요 시간: &e&o[ms] &7ms'
+      failedConfig: '&cCMILib &8» &f설정 파일을 불러오는 데 실패했습니다&o! &f오타를 확인하세요&o!'
+      failedLocale: '&cCMILib &8» &f언어 파일을 불러오는 데 실패했습니다&o! &f오타를 확인하세요&o!'
