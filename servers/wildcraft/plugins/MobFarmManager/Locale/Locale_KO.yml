@@ -39,7 +39,7 @@ command:
       info: '&7엔티티가 가장 많은 청크를 나열합니다.'
       args: (range)
     info:
-      ListP: '&7[place]. &6[x]&e:&6[z] &f내부: &e[amount]'
+      ListP: '&7&o[place] &8» &6[x]&e:&6[z] &f내부: &e[amount]'
       around: ' &f주변: &7[near]'
       Command: /tppos [x] [y] [z] [world]
       Hover: '&e[x], [y], [z] &7@[world]'
@@ -60,7 +60,7 @@ command:
     info:
       RemovedList: '&6[target] &f× &7[amount]'
       Removed: '&a!prefix!다음 항목이 제거되었습니다: [list]!'
-      List: '&e[place]. &6[x]&e:&6[z] &e(&6[amount]&e)'
+      List: '&7&o[place] &8» &e[x], [z] &e(&6[amount]&e)'
       Command: /tppos [x] [y] [z] [world]
       Hover: '&e[world]'
       notEnabled: '&c!prefix!호퍼 제어가 활성화되어 있지 않습니다&o!'
