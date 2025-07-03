@@ -40,7 +40,6 @@
         "ProtocolLib": "auto://ProtocolLib*",
         "PlaceholderAPI": "auto://PlaceholderAPI-*",
         "FastAsyncWorldEdit": "auto://FastAsyncWorldEdit-Paper-*",
-        "WorldGuard": "auto://worldguard-bukkit-*",
         "CMILib": "manual://CMILib*",
         "CMI": "manual://CMI-*",
         "Vault": "manual://Vault-*",
