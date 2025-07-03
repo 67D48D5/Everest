@@ -173,7 +173,7 @@ commands:
   - tellraw
   enable-spam-exclusions: false
 advancements:
-  disable-saving: false
+  disable-saving: true
   disabled:
   - minecraft:story/disabled
 players:
