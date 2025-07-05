@@ -2083,6 +2083,9 @@ command:
       ambient: Ambient
       vehicles: Vehicles
       named: With custom name
+      withitems: With items
+      force: Force
+      custom: By type
   kit:
     help:
       info: Gives predefined kit.
