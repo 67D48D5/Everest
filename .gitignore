@@ -8,7 +8,7 @@
 .termux/shell
 
 lib/
-libs/
+libs
 spark/
 
 cache

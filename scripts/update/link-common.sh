@@ -116,6 +116,46 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
         ln -sfn "$SOURCE_PAPER_REMAPPED_DIR" "$DEST_PAPER_REMAPPED_DIR"
     fi
 
+    # 5. Link 'PlaceholderAPI/expansions' (for Paper servers only)
+    # Source: ROOT_PATH/libraries/common/plugins/PlaceholderAPI/expansions
+    # Destination: SERVERS_ROOT/${SERVER}/plugins/PlaceholderAPI/expansions
+    if [[ "$ENGINE" == "paper" ]]; then
+        SOURCE_PAPER_REMAPPED_DIR="${COMMON_ROOT}/plugins/PlaceholderAPI/expansions"
+        DEST_PAPER_REMAPPED_DIR="${SERVER_DIR}/plugins/PlaceholderAPI/expansions"
+
+        # Ensure source directory exists
+        [[ -d "$SOURCE_PAPER_REMAPPED_DIR" ]] || mkdir -p "$SOURCE_PAPER_REMAPPED_DIR"
+
+        if [[ -L "$DEST_PAPER_REMAPPED_DIR" ]]; then
+            echo "   - 'PlaceholderAPI/expansions' is already a symlink. Removing old link."
+            rm "$DEST_PAPER_REMAPPED_DIR"
+        elif [[ -d "$DEST_PAPER_REMAPPED_DIR" ]]; then
+            echo "   - 'PlaceholderAPI/expansions' is a directory. Removing existing directory."
+            rm -rf "$DEST_PAPER_REMAPPED_DIR"
+        fi
+        echo "   - Linking 'PlaceholderAPI/expansions' from ${SOURCE_PAPER_REMAPPED_DIR} to ${DEST_PAPER_REMAPPED_DIR}"
+        ln -sfn "$SOURCE_PAPER_REMAPPED_DIR" "$DEST_PAPER_REMAPPED_DIR"
+    fi
+
+    # 6. Link 'LuckPerms/libs'
+    # Source: ROOT_PATH/libraries/common/plugins/LuckPerms/libs
+    # Destination: SERVERS_ROOT/${SERVER}/plugins/LuckPerms/libs
+    SOURCE_PAPER_REMAPPED_DIR="${COMMON_ROOT}/plugins/LuckPerms/libs"
+    DEST_PAPER_REMAPPED_DIR="${SERVER_DIR}/plugins/LuckPerms/libs"
+
+    # Ensure source directory exists
+    [[ -d "$SOURCE_PAPER_REMAPPED_DIR" ]] || mkdir -p "$SOURCE_PAPER_REMAPPED_DIR"
+
+    if [[ -L "$DEST_PAPER_REMAPPED_DIR" ]]; then
+        echo "   - 'LuckPerms/libs' is already a symlink. Removing old link."
+        rm "$DEST_PAPER_REMAPPED_DIR"
+    elif [[ -d "$DEST_PAPER_REMAPPED_DIR" ]]; then
+        echo "   - 'LuckPerms/libs' is a directory. Removing existing directory."
+        rm -rf "$DEST_PAPER_REMAPPED_DIR"
+    fi
+    echo "   - Linking 'LuckPerms/libs' from ${SOURCE_PAPER_REMAPPED_DIR} to ${DEST_PAPER_REMAPPED_DIR}"
+    ln -sfn "$SOURCE_PAPER_REMAPPED_DIR" "$DEST_PAPER_REMAPPED_DIR"
+
 done
 
 echo "✅ Common resource linking complete."
