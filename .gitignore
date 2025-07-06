@@ -10,10 +10,11 @@
 lib/
 libs/
 spark/
-cache/
-versions/
-libraries/
-.paper-remapped/
+
+cache
+versions
+libraries
+.paper-remapped
 
 history/
 schematics/
