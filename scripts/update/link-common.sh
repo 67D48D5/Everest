@@ -95,49 +95,7 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
         ln -sfn "$SOURCE_VERSIONS_DIR" "$DEST_VERSIONS_DIR"
     fi
 
-    # 4. Link '.paper-remapped' (for Paper servers only)
-    # Source: ROOT_PATH/libraries/common/plugins/.paper-remapped (or a more specific path if needed)
-    # Destination: SERVERS_ROOT/${SERVER}/plugins/.paper-remapped
-    if [[ "$ENGINE" == "paper" ]]; then
-        SOURCE_PAPER_REMAPPED_DIR="${COMMON_ROOT}/plugins/.paper-remapped"
-        DEST_PAPER_REMAPPED_DIR="${SERVER_DIR}/plugins/.paper-remapped"
-
-        # Ensure source directory exists
-        [[ -d "$SOURCE_PAPER_REMAPPED_DIR" ]] || mkdir -p "$SOURCE_PAPER_REMAPPED_DIR"
-
-        if [[ -L "$DEST_PAPER_REMAPPED_DIR" ]]; then
-            echo "   - '.paper-remapped' is already a symlink. Removing old link."
-            rm "$DEST_PAPER_REMAPPED_DIR"
-        elif [[ -d "$DEST_PAPER_REMAPPED_DIR" ]]; then
-            echo "   - '.paper-remapped' is a directory. Removing existing directory."
-            rm -rf "$DEST_PAPER_REMAPPED_DIR"
-        fi
-        echo "   - Linking '.paper-remapped' from ${SOURCE_PAPER_REMAPPED_DIR} to ${DEST_PAPER_REMAPPED_DIR}"
-        ln -sfn "$SOURCE_PAPER_REMAPPED_DIR" "$DEST_PAPER_REMAPPED_DIR"
-    fi
-
-    # 5. Link 'PlaceholderAPI/expansions' (for Paper servers only)
-    # Source: ROOT_PATH/libraries/common/plugins/PlaceholderAPI/expansions
-    # Destination: SERVERS_ROOT/${SERVER}/plugins/PlaceholderAPI/expansions
-    if [[ "$ENGINE" == "paper" ]]; then
-        SOURCE_PAPER_REMAPPED_DIR="${COMMON_ROOT}/plugins/PlaceholderAPI/expansions"
-        DEST_PAPER_REMAPPED_DIR="${SERVER_DIR}/plugins/PlaceholderAPI/expansions"
-
-        # Ensure source directory exists
-        [[ -d "$SOURCE_PAPER_REMAPPED_DIR" ]] || mkdir -p "$SOURCE_PAPER_REMAPPED_DIR"
-
-        if [[ -L "$DEST_PAPER_REMAPPED_DIR" ]]; then
-            echo "   - 'PlaceholderAPI/expansions' is already a symlink. Removing old link."
-            rm "$DEST_PAPER_REMAPPED_DIR"
-        elif [[ -d "$DEST_PAPER_REMAPPED_DIR" ]]; then
-            echo "   - 'PlaceholderAPI/expansions' is a directory. Removing existing directory."
-            rm -rf "$DEST_PAPER_REMAPPED_DIR"
-        fi
-        echo "   - Linking 'PlaceholderAPI/expansions' from ${SOURCE_PAPER_REMAPPED_DIR} to ${DEST_PAPER_REMAPPED_DIR}"
-        ln -sfn "$SOURCE_PAPER_REMAPPED_DIR" "$DEST_PAPER_REMAPPED_DIR"
-    fi
-
-    # 6. Link 'LuckPerms/libs'
+    # 4. Link 'LuckPerms/libs'
     # Source: ROOT_PATH/libraries/common/plugins/LuckPerms/libs
     # Destination: SERVERS_ROOT/${SERVER}/plugins/LuckPerms/libs
     SOURCE_PAPER_REMAPPED_DIR="${COMMON_ROOT}/plugins/LuckPerms/libs"
