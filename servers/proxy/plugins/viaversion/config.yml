@@ -52,7 +52,7 @@ velocity-ping-save: true
 # It will fall back to the default option if none found.
 velocity-servers:
   default: 393
-  Wildcraft: 772
+  Wildy: 772
   Buildy: 772
 #
 #----------------------------------------------------------#

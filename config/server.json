@@ -12,7 +12,7 @@
         "cmiv": "manual://CMIV-*"
       }
     },
-    "wildcraft": {
+    "wildy": {
       "engine": "paper",
       "plugins": {
         "TAB": "auto://TAB*",

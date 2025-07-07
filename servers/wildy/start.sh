@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Configuration
-SERVER_NAME="wildcraft"
+SERVER_NAME="wildy"
 SERVER_ENGINE="paper"
 
 # Java flags (See launcher for more details)
