@@ -1,6 +1,6 @@
 {
   "servers": {
-    "velocity": {
+    "proxy": {
       "engine": "velocity",
       "plugins": {
         "geyser": "auto://geyser-velocity*",

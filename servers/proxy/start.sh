@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Configuration
-SERVER_NAME="velocity"
+SERVER_NAME="proxy"
 SERVER_ENGINE="velocity"
 
 # Java flags (See launcher for more details)
