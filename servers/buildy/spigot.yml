@@ -78,7 +78,7 @@ world-settings:
       swim-multiplier: 0.01
       sprint-multiplier: 0.1
       other-multiplier: 0.0
-    max-tnt-per-tick: 50
+    max-tnt-per-tick: 24
     max-tick-time:
       tile: 40
       entity: 50
@@ -89,7 +89,7 @@ world-settings:
     enable-zombie-pigmen-portal-spawns: false
     wither-spawn-sound-radius: 0
     end-portal-sound-radius: 0
-    hanging-tick-frequency: 100
+    hanging-tick-frequency: 128
     thunder-chance: 100000
     unload-frozen-chunks: true
     growth:
@@ -160,7 +160,7 @@ world-settings:
   worldeditregentempworld:
     verbose: false
 commands:
-  tab-complete: 50
+  tab-complete: 24
   send-namespaced: true
   log: true
   spam-exclusions:

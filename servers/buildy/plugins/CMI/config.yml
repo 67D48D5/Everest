@@ -13,7 +13,7 @@ Economy:
   # Attention! For economy to work properly with other plugins you will need either an injector or a recompiled Vault version.
   # You can find both option at top of plugins page
   # ATTENTION! If you disabled CMI economy while server was running, you will need to perform a full server restart for this to take effect and avoid issues when retrieving players' balances.
-  Enabled: false
+  Enabled: true
   # Determines if player needs to confirm money payment by clicking on chat message
   Confirmation: true
   # Set to true if you want to log money transfers between players
