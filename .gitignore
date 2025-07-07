@@ -9,12 +9,12 @@
 
 lib/
 spark/
+.paper-remapped/
 
 libs
 cache
 versions
 libraries
-.paper-remapped
 
 history/
 schematics/
