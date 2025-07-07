@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/sh
 
 # Prevent device sleep
-termux-wake-lock
+sudo termux-wake-lock
 
 # Start SSHD Immediately
 sshd
