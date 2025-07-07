@@ -94,26 +94,6 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
         echo "   - Linking 'versions' from ${SOURCE_VERSIONS_DIR} to ${DEST_VERSIONS_DIR}"
         ln -sfn "$SOURCE_VERSIONS_DIR" "$DEST_VERSIONS_DIR"
     fi
-
-    # 4. Link 'LuckPerms/libs'
-    # Source: ROOT_PATH/libraries/common/plugins/LuckPerms/libs
-    # Destination: SERVERS_ROOT/${SERVER}/plugins/LuckPerms/libs
-    SOURCE_PAPER_REMAPPED_DIR="${COMMON_ROOT}/plugins/LuckPerms/libs"
-    DEST_PAPER_REMAPPED_DIR="${SERVER_DIR}/plugins/LuckPerms/libs"
-
-    # Ensure source directory exists
-    [[ -d "$SOURCE_PAPER_REMAPPED_DIR" ]] || mkdir -p "$SOURCE_PAPER_REMAPPED_DIR"
-
-    if [[ -L "$DEST_PAPER_REMAPPED_DIR" ]]; then
-        echo "   - 'LuckPerms/libs' is already a symlink. Removing old link."
-        rm "$DEST_PAPER_REMAPPED_DIR"
-    elif [[ -d "$DEST_PAPER_REMAPPED_DIR" ]]; then
-        echo "   - 'LuckPerms/libs' is a directory. Removing existing directory."
-        rm -rf "$DEST_PAPER_REMAPPED_DIR"
-    fi
-    echo "   - Linking 'LuckPerms/libs' from ${SOURCE_PAPER_REMAPPED_DIR} to ${DEST_PAPER_REMAPPED_DIR}"
-    ln -sfn "$SOURCE_PAPER_REMAPPED_DIR" "$DEST_PAPER_REMAPPED_DIR"
-
 done
 
 echo "✅ Common resource linking complete."
