@@ -58,3 +58,6 @@ stats/
 *.zip
 *.gz
 *.db
+
+# But not these
+!lwc_ko.properties
