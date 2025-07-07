@@ -5,8 +5,9 @@
 # https://sequel-ace.com/
 # https://github.com/Sequel-Ace/Sequel-Ace
 #
+# Host: ? (MySQL 11.8.2-MariaDB)
 # Database: msdgl
-# Generation Time: 2025-07-05 00:30:31 +0000
+# Generation Time: 2025-07-07 04:33:56 +0000
 # ************************************************************
 
 
@@ -118,7 +119,6 @@ VALUES
 	(179,'default','fawe.plotsquared.member',1,'buildy','global',0,'{}'),
 	(181,'default','cmi.command.give',1,'buildy','global',0,'{}'),
 	(182,'default','cmi.command.walkspeed',1,'buildy','global',0,'{}'),
-	(185,'default','cmi.command.effect*',1,'buildy','global',0,'{}'),
 	(186,'default','cmi.command.flyspeed.*',1,'buildy','global',0,'{}'),
 	(188,'default','cmi.command.flyspeed',1,'buildy','global',0,'{}'),
 	(190,'default','plots.permpack.basicinbox',1,'buildy','global',0,'{}'),
@@ -137,7 +137,10 @@ VALUES
 	(209,'admin','litebans.*',1,'global','global',0,'{}'),
 	(210,'admin','velocity.*',1,'global','global',0,'{}'),
 	(211,'admin','floodgate.*',1,'global','global',0,'{}'),
-	(212,'admin','geyser.*',1,'global','global',0,'{}');
+	(212,'admin','geyser.*',1,'global','global',0,'{}'),
+	(216,'default','cmi.command.gm',1,'buildy','global',0,'{}'),
+	(218,'default','cmi.command.effect',1,'buildy','global',0,'{}'),
+	(220,'default','cmi.command.gm.*',1,'buildy','global',0,'{}');
 
 /*!40000 ALTER TABLE `luckperms_group_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
