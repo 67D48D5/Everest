@@ -733,5 +733,7 @@
   "plotjukebox.jukebox_header": "주크박스",
   "plotjukebox.click_to_play": "<green>클릭하여 재생하세요!",
   "plotjukebox.cancel_music": "<gold>음악 취소",
-  "plotjukebox.reset_music": "<red>클릭하여 음악을 제거하세요!"
+  "plotjukebox.reset_music": "<red>클릭하여 음악을 제거하세요!",
+  "info.plot_info_categories.use_rating": "<prefix><gold>Categories: </gold> <gray>members, alias, biome, seen, denied, flags, id, size, trusted, owner, rating</gray>",
+  "info.plot_info_categories.use_likes": "<prefix><gold>Categories: </gold> <gray>members, alias, biome, seen, denied, flags, id, size, trusted, owner, likes</gray>"
 }
