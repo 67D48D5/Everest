@@ -54,7 +54,7 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
     fi
 
     # 2. Link 'libraries' directory (for Paper servers only)
-    # Source: ROOT_PATH/libraries/common/libraries (or similar if you have one, otherwise create)
+    # Source: ROOT_PATH/libraries/common/libraries
     # Destination: SERVERS_ROOT/${SERVER}/libraries
     if [[ "$ENGINE" == "paper" ]]; then
         SOURCE_LIBS_DIR="${COMMON_ROOT}/libraries"
@@ -94,6 +94,30 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
         echo "   - Linking 'versions' from ${SOURCE_VERSIONS_DIR} to ${DEST_VERSIONS_DIR}"
         ln -sfn "$SOURCE_VERSIONS_DIR" "$DEST_VERSIONS_DIR"
     fi
+
+    # 4. Link 'LuckPerms/libs'
+    # Source: ROOT_PATH/libraries/common/plugins/LuckPerms/libs
+    # Destination: SERVERS_ROOT/${SERVER}/plugins/LuckPerms/libs
+    SOURCE_LUCKPERMS_DIR="${COMMON_ROOT}/plugins/LuckPerms/libs"
+    DEST_LUCKPERMS_DIR="${SERVER_DIR}/plugins/LuckPerms/libs"
+    if [[ "$ENGINE" == "velocity" ]]; then
+        DEST_LUCKPERMS_DIR="${SERVER_DIR}/plugins/luckperms/libs"
+    fi
+
+    # Ensure source directory exists
+    [[ -d "$SOURCE_LUCKPERMS_DIR" ]] || mkdir -p "$SOURCE_LUCKPERMS_DIR"
+
+    if [[ -L "$DEST_LUCKPERMS_DIR" ]]; then
+        echo "   - 'LuckPerms/libs' is already a symlink. Removing old link."
+        rm "$DEST_LUCKPERMS_DIR"
+    elif [[ -d "$DEST_LUCKPERMS_DIR" ]]; then
+        echo "   - 'LuckPerms/libs' is a directory. Removing existing directory."
+        rm -rf "$DEST_LUCKPERMS_DIR"
+    fi
+    echo "   - Linking 'LuckPerms/libs' from ${SOURCE_LUCKPERMS_DIR} to ${DEST_LUCKPERMS_DIR}"
+    ln -sfn "$SOURCE_LUCKPERMS_DIR" "$DEST_LUCKPERMS_DIR"
+
+    echo
 done
 
 echo "✅ Common resource linking complete."
