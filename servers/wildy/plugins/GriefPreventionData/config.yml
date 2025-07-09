@@ -7,8 +7,8 @@ GriefPrevention:
     world_the_end: -1
   Claims:
     Mode:
-      world_nether: Disabled
       world: Survival
+      world_nether: Disabled
       world_the_end: Disabled
     PreventGlobalMonsterEggs: true
     PreventTheft: true
@@ -24,17 +24,17 @@ GriefPrevention:
     ProtectLlamas: true
     InitialBlocks: 128
     Claim Blocks Accrued Per Hour:
-      Default: 128
+      Default: 16
     Max Accrued Claim Blocks:
       Default: 32768
     Accrued Idle Threshold: 16
     AccruedIdlePercent: 4
     AbandonReturnRatio: 0.8
-    AutomaticNewPlayerClaimsRadius: 0
-    AutomaticNewPlayerClaimsRadiusMinimum: 0
+    AutomaticNewPlayerClaimsRadius: 8
+    AutomaticNewPlayerClaimsRadiusMinimum: 4
     ExtendIntoGroundDistance: 16
-    MinimumWidth: 5
-    MinimumArea: 100
+    MinimumWidth: 4
+    MinimumArea: 128
     MaximumDepth: -2147483648
     InvestigationTool: STICK
     ModificationTool: GOLDEN_SHOVEL
@@ -92,7 +92,7 @@ GriefPrevention:
       NonPvPWorlds: false
     ProtectPetsOutsideLandClaims: false
   Economy:
-    ClaimBlocksMaxBonus: 1024
+    ClaimBlocksMaxBonus: 12288
     ClaimBlocksPurchaseCost: 1.0
     ClaimBlocksSellValue: 1.0
   ProtectItemsDroppedOnDeath:
