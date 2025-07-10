@@ -58,7 +58,7 @@ Messages:
   ClaimBlockLimit:
     Text: §cLand §8» §f보호 블록 최대치에 도달했습니다. 더 이상 구매할 수 없습니다.
   InsufficientFunds:
-    Text: '§cLand §8» §f잔액이 부족합니다. 필요한 금액: §c{0} §f/ 현재 보유 금액: §a{1}§f'
+    Text: '§cLand §8» §f잔액이 부족합니다. 필요한 금액: §c{0} §8/ 현재 보유 금액: §a{1}§f'
     Notes: '0: 총 비용; 1: 플레이어의 잔액'
   MaxBonusReached:
     Text: §cLand §8» §e{0}§f개의 보호 블록을 더 구매할 수 없습니다. 서버에서는 최대 §e{1}§f개의 보너스 블록만 허용됩니다.
@@ -124,9 +124,8 @@ Messages:
   NoSiegeDefenseless:
     Text: §bLand §8» §f해당 플레이어는 방어력이 없습니다. 다른 대상을 찾으세요.
   AlreadyUnderSiegePlayer:
-    TText: §bLand §8» §6{0}§f님은 이미 공성 중입니다. 함께 싸워보세요!
+    Text: §bLand §8» §6{0}§f님은 이미 공성 중입니다. 함께 싸워보세요!
     Notes: '0: 방어 중인 플레이어'
-    Text: '{0} is already under siege.  Join the party!'
   AlreadyUnderSiegeArea:
     Text: §bLand §8» §f이 지역은 이미 공성 중입니다. 참여해보세요!
   NoSiegeAdminClaim:
@@ -220,7 +219,7 @@ Messages:
     Notes: '{0}: 영상 링크'
   TrappedChatKeyword:
     Text: trapped;stuck;갇힘;꺼내;구출;구조
-    Notes: 채팅에 이 단어들이 언급되면 /trapped 명령어 정보를 제공합니다.
+    Notes: 채팅에 이 단어들이 언급되면 §e/trapped §f명령어 정보를 제공합니다.
   TrappedInstructions:
     Text: §bLand §8» §f다른 사람의 보호 구역에 갇히셨나요? §e/trapped §f명령어를 사용해보세요.
   PvPNoDrop:
@@ -236,7 +235,7 @@ Messages:
   PvPImmunityEnd:
     Text: §aLand §8» §f이제 다른 플레이어와 전투할 수 있습니다.
   NoBedPermission:
-    Text: §cLand §8» §6{0}§f님이 이 침대 사용 권한을 부여하지 않았습니다.
+    Text: §cLand §8» §6{0}§f님이 이 침대를 사용할 권한을 부여하지 않았습니다.
     Notes: '0: 보호 구역 소유자'
   NoWildernessBuckets:
     Text: §cLand §8» §f버킷은 보호 구역 안이나 지하에서만 사용할 수 있습니다.
@@ -325,13 +324,13 @@ Messages:
   NoOwnerBuildUnderSiege:
     Text: §cLand §8» §f공성 중에는 변경할 수 없습니다.
   NoAccessPermission:
-    Text: §cLand §8» §6{0}§f님의 사용 권한이 없습니다.
+    Text: §cLand §8» §6{0}§f님의 권한이 없습니다.
     Notes: '0: 소유자 이름 — 버튼, 레버, 침대 포함'
   NoContainersSiege:
     Text: §cLand §8» §f이 보호 구역은 §6{0}§f님이 공성 중인 상태입니다. 지금은 상자에 접근할 수 없습니다.
     Notes: '0: 공격자 이름'
   NoContainersPermission:
-    Text: §cLand §8» §6{0}§f님의 사용 권한이 없습니다.
+    Text: §cLand §8» §6{0}§f님의 권한이 없습니다.
     Notes: '0: 소유자 이름 — 작업대 등 포함'
   OwnerNameForAdminClaims:
     Text: 관리자
@@ -360,7 +359,7 @@ Messages:
   NoBuildOutsideClaims:
     Text: §bLand §8» §f이곳은 보호되지 않았습니다. 먼저 토지를 보호하세요!
   PlayerOfflineTime:
-    Text: '  마지막 접속: §e{0}§f일 전'
+    Text: '  §f마지막 접속: §e{0}§f일 전'
     Notes: '0: 마지막 접속으로부터 지난 일 수'
   BuildingOutsideClaims:
     Text: §bLand §8» §f다른 플레이어도 이곳에 건설할 수 있습니다. 보호 구역을 만들어 건축물을 지켜보세요!
@@ -380,7 +379,7 @@ Messages:
   NoTNTDamageClaims:
     Text: '§bLand §8» §f경고: 보호 구역에서는 TNT가 블록을 파괴하지 않습니다.'
   IgnoreClaimsAdvertisement:
-    Text: §bLand §8» §f보호 무시 모드를 사용하려면 §e/ignoreclaims §f명령어를 입력하세요.
+    Text: §f보호 무시 모드를 사용하려면 §e/ignoreclaims §f명령어를 입력하세요.
   NoPermissionForCommand:
     Text: §cLand §8» §f이 명령어를 사용할 권한이 없습니다.
   ClaimsListNoPermission:
@@ -413,13 +412,13 @@ Messages:
     Text: §aLand §8» §6{0}§f님의 드롭을 해제했습니다.
     Notes: '0: 해제 대상 플레이어'
   AdvertiseACandACB:
-    Text: §bLand §8» §f/acb 명령어로 보호 블록을 더 부여하거나, §e/adminclaims §f명령어로 무료 관리자 보호 구역을
-      만들 수 있습니다.
+    Text: §bLand §8» §e/acb §f명령어로 보호 블록을 더 부여하거나, §e/adminclaims §f명령어로 무료 관리자 보호
+      구역을 만들 수 있습니다.
   AdvertiseAdminClaims:
     Text: §bLand §8» §f관리자 보호 구역을 만들려면 §e/adminclaims §f명령어를 사용하세요. 다른 관리자와 공유할 수
       있습니다.
   AdvertiseACB:
-    Text: §bLand §8» §f/acb 명령어로 보호 블록을 추가할 수 있습니다.
+    Text: §bLand §8» §e/acb §f명령어로 보호 블록을 추가할 수 있습니다.
   NotYourPet:
     Text: §cLand §8» §f이 동물은 §6{0}§f님의 소유입니다. §e/givepet §f명령어로 소유권을 넘겨야 사용할 수 있습니다.
     Notes: '0: 소유자 이름'
@@ -473,15 +472,15 @@ Messages:
   Access:
     Text: 접근
   HasSubclaimRestriction:
-    Text: §7이 하위 보호 구역은 상위 보호 구역의 권한을 상속받지 않습니다.
+    Text: §c이 하위 보호 구역은 상위 보호 구역의 권한을 상속받지 않습니다.
   StartBlockMath:
-    Text: '§7플레이에서 얻은 블록: {0} + 보너스: {1} = 총합: {2}'
+    Text: '§bLand §8» §f플레이에서 얻은 블록: §e{0} §f+ 보너스: §e{1} §f= 총합: §e{2}'
   ClaimsListHeader:
-    Text: '§f보호 구역 목록:'
+    Text: §bLand §8» §f보호 구역 목록
   ContinueBlockMath:
-    Text: ' (-{0} 블록 사용)'
+    Text: ' §f(§e{0} §f블록 사용)'
   EndBlockMath:
-    Text: ' = 남은 블록: {0}'
+    Text: '§8» §f남은 블록: §e{0}'
   NoClaimDuringPvP:
     Text: §cLand §8» §fPvP 전투 중에는 보호 구역을 생성할 수 없습니다.
   UntrustAllOwnerOnly:
@@ -553,5 +552,4 @@ Messages:
     Text: §aLand §8» §f이 하위 보호 구역은 이제 상위 구역의 권한을 상속받습니다.
   NetherPortalTrapDetectionMessage:
     Text: §bLand §8» §f지옥 포탈에 갇힌 것 같습니다. 몇 초 내로 구조가 시작됩니다!
-    Notes: Sent to player on join, if they left while inside a nether portal.
-  Notes: 플레이어가 지옥 포탈 안에서 나갔고 다시 접속했을 때 표시됨
+    Notes: 플레이어가 지옥 포탈 안에서 나갔고 다시 접속했을 때 표시됨
