@@ -183,6 +183,12 @@ info:
   CommandFormat: '&c명령어 형식이 잘못되었습니다.'
   ServerSwitchOut: ' &6[playerDisplayName]&e님이 &6[serverName] &e서버로 이동하셨습니다.'
   ServerSwitchIn: ' &6[playerDisplayName]&e님이 &6[serverName] &e서버에서 들어오셨습니다.'
+dialog:
+  signEditor: Sign Editor
+  update: Update
+  save: Save
+  close: Close
+  line: Line [line]
 warp:
   list: '&e[pos]. &6[warpName] &f- &7[worldName] ([x]:[y]:[z])'
 afk:
@@ -2000,6 +2006,7 @@ command:
       reason: ' &eFor: &c[reason]'
       leftTime: '!title!&7Jail time:!subtitle![time]'
       jailedTarget: '&eYou have been jailed! [time]'
+      jailedTimeChange: '&eJail time changed to [time]'
       cantTalk: '&cYou cant talk while you are jailed'
       cantTalkRange: '!actionbar!&fYour chat range is limited to &c[range] &fblocks'
       failed: '&cFailed to jail player. Check target jail name, cell id or time format'
@@ -2656,6 +2663,7 @@ command:
         pvpDamageNumbers: '&eShows PvP damage numbers'
         InformDurability: '&eInform on item durability loss'
         receivePets: '&eDo you want to receive pets as gifts'
+        deathMessages: '&eDo you want to show death messages'
   panimation:
     help:
       info: 사용자 정의 입자 애니메이션을 재생합니다.

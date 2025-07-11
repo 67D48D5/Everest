@@ -711,6 +711,9 @@ Signs:
   - '[Shop]'
   # When enabled player needs to be sneaking to edit signs
   RequireSneaking: false
+  # When enabled sign editor will be represented with new Dialog editor introduced in 1.21.6
+  # Only for Paper servers
+  DialogEditor: true
 Skins:
   # Applies skin to player automatically on his login to server if he doesnt have one already set
   # This will always set to skin by target player name
@@ -1521,6 +1524,7 @@ Player:
       pvpDamageNumbers: true
       InformDurability: true
       receivePets: true
+      deathMessages: true
     Icons:
       visibleHolograms: BLACK_STAINED_GLASS
       shiftSignEdit: OAK_SIGN
@@ -1540,6 +1544,7 @@ Player:
       pvpDamageNumbers: DIAMOND_SWORD
       InformDurability: ANVIL
       receivePets: LEAD
+      deathMessages: DEAD_BUSH
 WarmUps:
   # You can enable any command warmup to prevent instant command usage
   # tp:5:false means that when player performs /tp command he will need to wait 5 sec
