@@ -6,7 +6,7 @@ header-footer:
     - ""
   footer:
     - ""
-    - "%server_tps_1_colored% &7/ &e&o%ping% &7ms"
+    - "%server_tps_1_colored% &8/ &e&o%ping% &7ms"
     - ""
   disable-condition: "%world%=disabledworld"
   per-world:
