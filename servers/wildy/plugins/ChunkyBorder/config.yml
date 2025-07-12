@@ -4,7 +4,7 @@
 version: 1
 border-options:
   check-interval: 20
-  message: '&cWorldBorder &8» &f세계의 경계에 도달했습니다&o!'
+  message: '&cWorldBorder &8» &f세계의 경계에 도달했습니다!'
   use-action-bar: true
   effect: ender_signal
   sound: entity_enderman_teleport

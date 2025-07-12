@@ -379,7 +379,7 @@ Messages:
   NoTNTDamageClaims:
     Text: '§bLand §8» §f경고: 보호 구역에서는 TNT가 블록을 파괴하지 않습니다.'
   IgnoreClaimsAdvertisement:
-    Text: §f보호 무시 모드를 사용하려면 §e/ignoreclaims §f명령어를 입력하세요.
+    Text: §bLand §8» §f보호 무시 모드를 사용하려면 §e/ignoreclaims §f명령어를 입력하세요.
   NoPermissionForCommand:
     Text: §cLand §8» §f이 명령어를 사용할 권한이 없습니다.
   ClaimsListNoPermission:

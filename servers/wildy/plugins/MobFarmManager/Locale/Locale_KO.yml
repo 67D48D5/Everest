@@ -1,8 +1,8 @@
 info:
   prefix: MFM &8» &f
-  ArmorStandlLimit: '&c!prefix!이 청크에 갑옷 거치대를 놓을 수 없습니다. 최대 허용 수는 &e[amount]&f입니다&o!'
-  ItemFrameLimit: '&c!prefix!이 청크에 아이템 액자를 놓을 수 없습니다. 최대 허용 수는 &e[amount]&f입니다&o!'
-  GeneralLimit: '&c!prefix!제한에 도달했습니다. 최대 허용 수는 &e[amount]&f입니다&o!'
+  ArmorStandlLimit: '&c!prefix!이 청크에 갑옷 거치대를 놓을 수 없습니다. 최대 허용 수는 &e[amount]&f입니다!'
+  ItemFrameLimit: '&c!prefix!이 청크에 아이템 액자를 놓을 수 없습니다. 최대 허용 수는 &e[amount]&f입니다!'
+  GeneralLimit: '&c!prefix!제한에 도달했습니다. 최대 허용 수는 &e[amount]&f입니다!'
   WolfCount: '&c!prefix!너무 많은 늑대가 있습니다. 현재 &e[amount]&f마리가 앉았습니다.'
   BlockLimit: '&c!prefix!한 청크에 너무 많은 &e[type]&f블록이 있습니다. 최대 &e[amount]&f개만 놓을 수 있습니다.'
   cleanup: '&b!prefix!자동으로 정리된 엔티티: &e[amount]'
@@ -32,8 +32,8 @@ command:
     info:
       ClearedList: '&e[type] &f× &7[amount]'
       Cleared: '&a!prefix![entities]&f개의 엔티티를 &7[chunks]&f개의 청크에서 정리했습니다: [list]'
-      Nothing: '&c!prefix!제거할 엔티티가 없습니다&o!'
-      Hover: '&e[time]&7ms &f동안 &e[count]&f개의 청크를 확인했습니다&o!'
+      Nothing: '&c!prefix!제거할 엔티티가 없습니다!'
+      Hover: '&e[time]&7ms &f동안 &e[count]&f개의 청크를 확인했습니다!'
   list:
     help:
       info: '&7엔티티가 가장 많은 청크를 나열합니다.'
@@ -63,4 +63,4 @@ command:
       List: '&7&o[place] &8» &e[x], [z] &e(&6[amount]&e)'
       Command: /tppos [x] [y] [z] [world]
       Hover: '&e[world]'
-      notEnabled: '&c!prefix!호퍼 제어가 활성화되어 있지 않습니다&o!'
+      notEnabled: '&c!prefix!호퍼 제어가 활성화되어 있지 않습니다!'
