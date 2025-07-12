@@ -6,7 +6,7 @@ Log:
   Enabled: true
   # Amount of entities need to be removed for log entry to be created
   # Helps out to void recording small amounts of regular cleanings
-  From: 5
+  From: 8
 HopperControl:
   #  
   # Enables or disable hopper item transfer rate
@@ -14,7 +14,7 @@ HopperControl:
   # By enabling this any contraptions based on regular hopper ticking will break and hopper transfer rate will be adjust dinamicaly
   # In case hopper is being used intensively, its transfer interval will get increased until max limit to lower load on server
   # It will get reseted if hopper is not used for particular time frame
-  Enabled: false
+  Enabled: true
   # Defines default item transfer rate in ticks (20 ticks 1 second). 8 is default vanilla behavior
   Default: 8
   # Defines max interval between item transfer. 40 will result in 1 item every 2 seconds.
@@ -25,7 +25,7 @@ WolfControl:
   #  
   # Checks tamed wolfs in defined chunk range and if its above allowed limit then makes them sit down
   # This is limit per player so value of 2-3 is more than enough
-  Enabled: false
+  Enabled: true
   # Defines max allowed wolfs per player which can follow him
   # This will be checked on general entity amount check defined belove
   Max: 3
@@ -66,7 +66,7 @@ AutoClean:
   # Set to 0 if you want to disable limit
   MaxRemoved: 0
   # When set to true and value for ChunkRadius is provided, we will group more then one chunk into check
-  GroupChunks: false
+  GroupChunks: true
   # Range around player in chunks to check. 2 means that 9 chunks will be checked, 3 - 25 chunks and so on
   # Max value is 5 to avoid unnecessary load on server
   # 1 = 1x1 area = 1 total chunks
@@ -84,7 +84,7 @@ Commands:
     # If this set to true, chunks will be grouped up and counted as one. In example with range 2 all 9 (3x3) chunks will be counted as one and limits will be used as for one chunk
     # This will give wider range of mob cleaning
     # This only applies for clean command. If you want to keep similar or same behavior as other options, like auto clean or spawn listener, set this to the same values as those ones
-    GroupChunks: false
+    GroupChunks: true
     GroupChunksRadius: 1
 Ignore:
   #  
@@ -117,7 +117,7 @@ Ignore:
   #  
   # List of worlds to be ignored by plugin
   Worlds:
-  - Test
+  - ExcludedWorld
 #  
 # When enabled we will exclude disabled worlds from /mfm list command output
 ExcludeDisabledFromList: false
@@ -628,7 +628,7 @@ EntityTypes:
     Limit: -1
   VILLAGER:
     Use: true
-    Limit: -1
+    Limit: 16
   VINDICATOR:
     Use: true
     Limit: -1
