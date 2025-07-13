@@ -1225,7 +1225,7 @@ Spawn:
   # Defines players first spawn point when he logs into server for the first time
   FirstSpawn:
     Use: true
-    Location: world;0.5;13.0;0.5;-135.09;-0.15
+    Location: world;0.5;13.2;0.5;-134.93;7.35
 Newbie:
   # Kit name to give for new players joining server
   Kit: Newbie
