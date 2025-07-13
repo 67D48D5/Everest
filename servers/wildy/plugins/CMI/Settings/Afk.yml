@@ -45,7 +45,7 @@ Afk:
     Default: -1
     # Player count from which auto kick should start working
     # Setting it to 0 will kick players independent of how many are online
-    # Recommended value: 43
+    # Recommended value: 59
     FromPlayerCount: 0
     # List of autoKick times based by online player count ([playerCount]-[seconds])
     # This only aplies if default kick time is set to more than -1
