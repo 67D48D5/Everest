@@ -31,6 +31,21 @@
         "CoreProtect": "manual://CoreProtect-*",
         "GriefPrevention": "manual://GriefPrevention*"
       }
+    },
+    "buildy": {
+      "engine": "paper",
+      "plugins": {
+        "TAB": "auto://TAB*",
+        "LuckPerms": "auto://LuckPerms-*",
+        "ProtocolLib": "auto://ProtocolLib*",
+        "PlaceholderAPI": "auto://PlaceholderAPI-*",
+        "FastAsyncWorldEdit": "auto://FastAsyncWorldEdit-Paper-*",
+        "CMILib": "manual://CMILib*",
+        "CMI": "manual://CMI-*",
+        "Vault": "manual://Vault-*",
+        "CoreProtect": "manual://CoreProtect-*",
+        "PlotSquared": "manual://plotsquared-*"
+      }
     }
   }
 }

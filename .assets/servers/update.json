@@ -42,7 +42,8 @@
         "MobFarmManager": "https://www.spigotmc.org/resources/mob-farm-manager-supports-1-7-10-up-to-1-21-hopper-support.15127/updates/",
         "Vault": "https://www.zrips.net/cmivault/",
         "CoreProtect": "https://github.com/PlayPro/CoreProtect/",
-        "GriefPrevention": "https://dev.bukkit.org/projects/grief-prevention/files/"
+        "GriefPrevention": "https://dev.bukkit.org/projects/grief-prevention/files/",
+        "PlotSquared": "https://www.spigotmc.org/resources/plotsquared-v7.77506/updates/"
       }
     }
   }
