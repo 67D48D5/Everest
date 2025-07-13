@@ -62,3 +62,4 @@ stats/
 # But not these
 !lwc_ko.properties
 !PlaceholderAPI
+!server.properties
