@@ -19,7 +19,7 @@ mysql:
 # Save operation will not be performed if there is no changes to save
 # !ATTENTION! Keep it in low numbers, around 60 seconds
 # Minimal interval is 10 seconds
-AutoSaveInterval: 15
+AutoSaveInterval: 16
 # Player data will be recorded straight after he logs out, without any delay
 ForceSaveOnLogOut: false
 # EXPERIMENTAL. This is not fully tested yet and some minor issues can happen when ussing on bungee network

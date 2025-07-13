@@ -12,29 +12,29 @@ Afk:
   # Prevents damage to mobs from player who is afk
   PreventMobDamage: true
   # Defines how often in seconds plugin will check for afk players state
-  CheckInterval: 10
+  CheckInterval: 8
   # When set to true, players playtime counter stops
   # As of nature how this system works you can see +-1second jumping up and down while checking players playtime
-  StopPlayTime: false
+  StopPlayTime: true
   # Defines how long to wait after player stops moving to set him as afk
   # Player needs to have cmi.command.afk.auto permission node
   # Set to 0 if you want to disable it
-  AutoAfkIn: 300
+  AutoAfkIn: 1024
   # Defines commands to be performed when player enters afk mode automatically while addling
   # Supports specialized commands
   AutoAfkCmds:
-  - cmi broadcast !&6[playerDisplayName] &eis now AFK
+  - ''
   # Defines commands to be performed when player enters /cmi afk
   # Supports specialized commands
   ManualAfkCmds:
-  - cmi broadcast !&6[playerDisplayName] &eis now AFK
+  - ''
   LeaveCmds:
     # Defines commands to be performed when player leaves afk mode after he entered it manually
     Manual:
-    - cmi broadcast !&6[playerDisplayName] &eis no longer AFK
+    - ''
     # Defines commands to be performed when player leaves afk mode after he entered it automatically
     Auto:
-    - cmi broadcast !&6[playerDisplayName] &eis no longer AFK
+    - ''
   AutoKickTimes:
     # Defines how long to wait after player stops moving to kick player
     # This is additional timer to AutoAfkIn and in case player entered afk mode manually he will get kicked after AutoAfkIn+AutoKickIn seconds
@@ -59,17 +59,16 @@ Afk:
     - 40-350
     - 50-300
   # This will define how long to wait before performing kick commands again
-  RepeatingAutoKickInterval: 300
+  RepeatingAutoKickInterval: 1024
   # When set to true, kick command will be repeated each RepeatingAutoKickInterval seconds
   RepeatKickCommand: false
   # Defines commands to be performed when player can be kicked
   # If player is not kicked then commands will be repeated every RepeatingAutoKickInterval seconds
   AutoKickCmds:
-  - cmi kick [playerName] &eYou have been kicked for idling more than [time]
+  - cmi kick [playerName] &e[time]초 &f이상의 장시간 잠수로 인해 서버와의 연결이 종료되었습니다.
   # Defines worlds where players will not be placed into afk mode after they idled for defined time
   DisabledWorlds:
-  - oneTestWorld
-  - secondTestWorld
+  - DisabledWorld
   # Disables afk on interaction
   DisableOnInteract: true
   # Prevents player from going bypassing afk mode while continuously holding one button with particular items or on particular blocks
@@ -96,7 +95,7 @@ Afk:
   # Disables afk on camera movement
   DisableOnLookAround: false
   # Disables afk on fishing when you catch fish
-  DisableOnFishing: false
+  DisableOnFishing: true
   # Disables item pickup while afk
   DisableItemPickup: false
   PreventMobSpawning:

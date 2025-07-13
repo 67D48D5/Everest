@@ -12,12 +12,12 @@ Chat:
     ClickHoverMessages: true
   DiscordSRV:
     # Enables support for DiscordSRV plugin
-    Enabled: false
+    Enabled: true
     # Defines name of global chat channel in discordsrv
     GlobalChannel: global
     # Indicator which can be used as {discord} in chat format to indicate that message came from discord and not ingame
-    Label: '&2[&7D&2]'
-    UnlinkedLabel: '&4[&cD&4]'
+    Label: '&3Discord &8» &r'
+    UnlinkedLabel: '&bDiscord &8» &r'
     # When enabled and you have ranged messages enabled, we will send all of them to DiscordSRV
     # When disabled, only shouts and messages sent by players with cmi.chat.rangebypass permission node will be visible in discord
     RangedMessages: true
@@ -29,11 +29,11 @@ Chat:
   # If ReplyToLastMessenger is set to false, then timeOut will be taken into consideration to who you should reply
   # If you had conversation in last 120 seconds (default) then even receiving message from 3rd person, you will still reply to original player
   # If you had conversation in longer then 120 seconds period, then you will reply to latest person who send you a message
-  LastMessengerTimeOut: 120
+  LastMessengerTimeOut: 128
   # When set to true players will need to have cmi.command.msg.[groupname].send where [groupName] is receivers main permission group
   PrivateMessagesGroups: false
   # When set to false, web pge links in a chat will not get shortened to default [LINK] format
-  TranslateLink: true
+  TranslateLink: false
   # Defines regex when replacing url in chat with short word
   # Examples:
   # (https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})
@@ -100,7 +100,7 @@ Chat:
   ChatRoomShout: '!'
   # Time in seconds you want to keep chat rooms alive before removing them
   # This only applies to empty rooms after last user leaves it
-  ChatRoomLife: 3600
+  ChatRoomLife: 4192
   # Defines suggested commands when you click on public, private and similar messages. [playerName], [playerDisplayName] and [playerNickName]  can be used to include players name
   ClickSuggestions:
     pubmsg: '/msg [playerNickName] '
@@ -126,9 +126,9 @@ Chat:
 
   # ATTENTION! Don't use gradient colors for {message} variable, if you want to apply gradient for it, utilize GroupMessageFormat section
   GroupFormat:
-    '1': '{prefix}&f{displayName}&f: &r{message}'
-    '2': '{prefix}&f{displayName}&7: &r{message}'
-    '3': '{prefix}&f{displayName}&8: &r{message}'
+    '1': '{prefix}&f{displayName} &8» &r{message}'
+    '2': '{prefix}&f{displayName} &8» &r{message}'
+    '3': '{prefix}&f{displayName} &8» &r{message}'
   # Use numeric increments to separate groups from each other. If player has more than one, then line with higher number will be used
   # Add as many lines as you need too
   # cmi.chatmessagegroup.[id] permnission node to use
@@ -191,7 +191,7 @@ Chat:
     # This is allot more heavier on server than usual tagging with @, so enable if you know what you are doing
     HardCoreMode: false
     # Determines color of taged user name in chat with @ in front of name/nickname. Sender should have cmi.tag.color
-    Color: '&c'
+    Color: '&c&o'
     # Commands to be performed when player is tagged
     # Variables like [playerName] will be replaced with tagged player name
     # You can use [senderName] to include player name who tagged

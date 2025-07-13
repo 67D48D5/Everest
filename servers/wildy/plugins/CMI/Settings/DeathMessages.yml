@@ -3,16 +3,16 @@
 
 # Not all death situations might be included and future updates might be needed
 # Report any missing death situation you encountered to github issue section with exact way to reproduce death situation
-EnableCustom: false
+EnableCustom: true
 # Defines number of players from which to automatically start hiding death messages
 # Set to -1 to disable this
-AutoHideFrom: -1
+AutoHideFrom: 12
 # Range in blocks we should broadcast players death message
 # Setting this to any range will automatically exclude players in other worlds
 Range: -1
 # Where should we should death message
 # Options: plain, actionBar
-Destination: plain
+Destination: actionBar
 # List of worlds where deaths from them are never announced
 DisabledWorlds:
 - ''

@@ -3,7 +3,7 @@ RandomTeleportation:
   Cooldown: 14
   # How many times to try find correct location for teleportation.
   # Keep it at low number, as player always can try again after delay
-  MaxTries: 20
+  MaxTries: 16
   # List of biomes to exclude from random teleportation
   ExcludedBiomes:
   - Ocean
@@ -29,9 +29,9 @@ RandomTeleportation:
       Range:
         # Max coordinate to teleport, setting to 1000, player can be teleported between -1000 and 1000 blocks between defined center location
         # For example having centerX at 2000 and centerZ at 3000 while MaxRange is set to 1500 we will teleport player between x:500;z:1500 and x:3500;z:4500 coordinates
-        Max: 2048
+        Max: 4096
         # If maxcord set to 1000 and mincord to 500, then player can be teleported between -1000 to -500 and 1000 to 500 coordinates
-        Min: 512
+        Min: 128
       Center:
         X: 0
         Z: 0
@@ -71,7 +71,7 @@ RandomTeleportation:
       Cooldown: 0
       Range:
         Max: 2048
-        Min: 512
+        Min: 64
       Center:
         X: 0
         Z: 0
@@ -96,8 +96,8 @@ RandomTeleportation:
       MaxTries: 0
       Cooldown: 0
       Range:
-        Max: 2048
-        Min: 512
+        Max: 1024
+        Min: 64
       Center:
         X: 0
         Z: 0

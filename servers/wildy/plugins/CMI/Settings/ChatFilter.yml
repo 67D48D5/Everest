@@ -1,5 +1,5 @@
 ChatFilter:
-  Enabled: false
+  Enabled: true
   # Priority of chat filter listener
   # Changed priority will only take effect on full server restart
   # Possible options: LOWEST, LOW, NORMAL, HIGH, HIGHEST
@@ -8,7 +8,7 @@ ChatFilter:
   Deny:
     ipBlock:
       # If not set to true, this filter will not be used
-      Enabled: true
+      Enabled: false
       # Defines filter group and defines required permission node to bypass this filter: cmi.chatfilter.bypass.[groupName]
       Group: Advertising
       # When set to true, each time player triggers filter, console will receive information about who triggered it, which filter and with what message
@@ -33,7 +33,7 @@ ChatFilter:
       # Use [updatedmessage] to include new modified message
       Commands: []
     swearing1:
-      Enabled: true
+      Enabled: false
       Group: Swearing
       InformConsole: true
       Regex:
@@ -45,7 +45,7 @@ ChatFilter:
       Commands:
       - msg [senderName] &eDon't swear!
     swearing2:
-      Enabled: true
+      Enabled: false
       Group: Swearing
       InformConsole: true
       Regex:
@@ -62,7 +62,7 @@ ChatFilter:
   - \bspigotmc.\s?([a-zA-Z]{2,4})\b
   DuplicatedMessagePrevention:
     # When set to true, plugin will prevent spaming of same or similar messages in short time range. Can be bypased with cmi.chatfilter.spambypass permission
-    Use: false
+    Use: true
     # Priority of chat spam listener
     # Changed priority will only take effect on full server restart
     # Possible options: LOWEST, LOW, NORMAL, HIGH, HIGHEST
@@ -77,7 +77,7 @@ ChatFilter:
   Caps:
     # When nebaled we will try to prevent chat messages with multiple capitalized letters by defined criteria
     # Can be bypassed with cmi.chatfilter.capbypass permission node
-    Filter: true
+    Filter: false
     # Priority of chat capitalization listener
     # Changed priority will only take effect on full server restart
     # Possible options: LOWEST, LOW, NORMAL, HIGH, HIGHEST
