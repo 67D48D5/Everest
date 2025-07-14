@@ -490,7 +490,7 @@ command:
       args: (playerName) (-s)
     info:
       noinfo: '&cBack &8» &f돌아갈 저장된 위치가 없습니다!'
-      feedback: '&aBack &8» &f마지막 저장된 위치 &e[x], [z] &7@[world]&f(으)로 돌아갔습니다.'
+      feedback: '&aBack &8» &f마지막 저장된 위치 &e[x], [y], [z] &7@[world]&f(으)로 돌아갔습니다.'
   balance:
     help:
       info: 잔액을 확인합니다.
@@ -842,8 +842,8 @@ command:
       wrongworld: '&cCompass &8» &f정의된 월드가 존재하지 않습니다!'
       feedback: '&aCompass &8» &6[playerDisplayName]&f의 나침반 화살표를 &6[sourceDisplayName]&f의
         위치로 설정했습니다.'
-      feedbackCustom: '&aCompass &8» &6[playerDisplayName]&f의 나침반 화살표를 &e[x], [z]
-        &7@[world]&f의 위치로 설정했습니다.'
+      feedbackCustom: '&aCompass &8» &6[playerDisplayName]&f의 나침반 화살표를 &e[x], [y],
+        [z] &7@[world]&f의 위치로 설정했습니다.'
       targetFeedback: '&bCompass &8» &6[senderName]&f에 의해 나침반 목표가 &6[sourceDisplayName]&f의
         위치로 설정되었습니다.'
       targetFeedbackCustom: '&bCompass &8» &6[senderDisplayName]&f에 의해 나침반 목표가 &e[x],
