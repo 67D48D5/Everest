@@ -5,9 +5,8 @@
 # https://sequel-ace.com/
 # https://github.com/Sequel-Ace/Sequel-Ace
 #
-# MySQL 11.8.2-MariaDB
 # Database: msdgl
-# Generation Time: 2025-07-13 11:23:45 +0000
+# Host: MySQL 11.8.2-MariaDB
 # ************************************************************
 
 
@@ -114,6 +113,21 @@ VALUES
 	(168,'default','prefix.10.&6U &8∥ &6',1,'global','global',0,'{}'),
 	(169,'default','displayname.User',1,'global','global',0,'{}'),
 	(175,'admin','*',1,'global','global',0,'{}'),
+	(176,'default','fawe.plotsquared',1,'buildy','global',0,'{}'),
+	(177,'default','fawe.permpack.basic',1,'buildy','global',0,'{}'),
+	(179,'default','fawe.plotsquared.member',1,'buildy','global',0,'{}'),
+	(181,'default','cmi.command.give',1,'buildy','global',0,'{}'),
+	(182,'default','cmi.command.walkspeed',1,'buildy','global',0,'{}'),
+	(186,'default','cmi.command.flyspeed.*',1,'buildy','global',0,'{}'),
+	(188,'default','cmi.command.flyspeed',1,'buildy','global',0,'{}'),
+	(190,'default','plots.permpack.basicinbox',1,'buildy','global',0,'{}'),
+	(191,'default','plots.permpack.basicflags',1,'buildy','global',0,'{}'),
+	(192,'default','plots.permpack.basic',1,'buildy','global',0,'{}'),
+	(196,'default','plots.merge.*',1,'buildy','global',0,'{}'),
+	(197,'default','plots.plot.48',1,'buildy','global',0,'{}'),
+	(198,'default','worldedit.navigation.thru.tool',1,'buildy','global',0,'{}'),
+	(199,'default','worldedit.navigation.jumpto.tool',1,'buildy','global',0,'{}'),
+	(200,'default','worldedit.schematic.load.web',1,'buildy','global',0,'{}'),
 	(201,'default','velocity.command.glist',1,'global','global',0,'{}'),
 	(202,'default','floodgate.command.unlinkaccount',1,'global','global',0,'{}'),
 	(203,'default','floodgate.command.linkaccount',1,'global','global',0,'{}'),
@@ -123,6 +137,9 @@ VALUES
 	(210,'admin','velocity.*',1,'global','global',0,'{}'),
 	(211,'admin','floodgate.*',1,'global','global',0,'{}'),
 	(212,'admin','geyser.*',1,'global','global',0,'{}'),
+	(216,'default','cmi.command.gm',1,'buildy','global',0,'{}'),
+	(218,'default','cmi.command.effect',1,'buildy','global',0,'{}'),
+	(220,'default','cmi.command.gm.*',1,'buildy','global',0,'{}');
 
 /*!40000 ALTER TABLE `luckperms_group_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
