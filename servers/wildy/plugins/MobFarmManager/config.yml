@@ -182,6 +182,7 @@ SpawnReasons:
   OMINOUS_ITEM_SPAWNER: true
   BUCKET: true
   POTION_EFFECT: true
+  REHYDRATION: true
   CUSTOM: true
   DEFAULT: true
 #  
