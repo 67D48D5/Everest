@@ -2422,6 +2422,7 @@ command:
     info:
       changed: '&eChanged max allowed players from &6[old] &eto &6[new]&e. Online:
         &6[current]'
+      label: 'Max Players. Currently: [online]/[max]'
   me:
     help:
       info: Sends special message to all players
