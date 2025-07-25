@@ -25,6 +25,7 @@ sessions/
 .version
 
 lastupdate
+status.json
 server.yml
 wepif.yml
 permissions.yml
