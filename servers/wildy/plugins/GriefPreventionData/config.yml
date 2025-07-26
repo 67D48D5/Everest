@@ -7,15 +7,15 @@ GriefPrevention:
     world_the_end: -1
   Claims:
     Mode:
-      world_nether: Disabled
       world: Survival
+      world_nether: Disabled
       world_the_end: Disabled
     PreventGlobalMonsterEggs: true
     PreventTheft: true
     ProtectCreatures: true
     PreventButtonsSwitches: true
     LockWoodenDoors: true
-    LockTrapDoors: false
+    LockTrapDoors: true
     LockFenceGates: true
     EnderPearlsRequireAccessTrust: true
     RaidTriggersRequireBuildTrust: true
@@ -92,7 +92,7 @@ GriefPrevention:
       NonPvPWorlds: false
     ProtectPetsOutsideLandClaims: false
   Economy:
-    ClaimBlocksMaxBonus: 12288
+    ClaimBlocksMaxBonus: 49152
     ClaimBlocksPurchaseCost: 1.0
     ClaimBlocksSellValue: 1.0
   ProtectItemsDroppedOnDeath:
@@ -154,10 +154,10 @@ GriefPrevention:
     CooldownEndInMinutes: 60
   EndermenMoveBlocks: false
   SilverfishBreakBlocks: false
-  CreaturesTrampleCrops: false
+  CreaturesTrampleCrops: true
   RabbitsEatCrops: true
-  HardModeZombiesBreakDoors: false
-  MobProjectilesChangeBlocks: false
+  HardModeZombiesBreakDoors: true
+  MobProjectilesChangeBlocks: true
   Database:
     URL: jdbc:mysql://localhost:3306/msdwc
     UserName: 46770d6
