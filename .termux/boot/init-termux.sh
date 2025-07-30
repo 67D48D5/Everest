@@ -7,7 +7,7 @@ termux-wake-lock
 ENV_FILE="$HOME/.termux/.env"
 [ -f "$ENV_FILE" ] && . "$ENV_FILE"
 
-# Service Watchdog
+# Service watchdog
 while true; do
   for svc in sshd mysqld; do
     sv up "$svc" || sv restart "$svc"
