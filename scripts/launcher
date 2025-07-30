@@ -18,7 +18,7 @@ TMUX_SESSION="${SERVER_NAME}"
 
 # Set up directories
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
+ROOT_PATH="$(realpath "${SCRIPT_DIR}/..")"
 SERVER_DIR="${ROOT_PATH}/servers/${SERVER_NAME}"
 ENGINE_DIR="${ROOT_PATH}/libraries/engines"
 
