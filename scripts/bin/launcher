@@ -81,8 +81,6 @@ paper)
         -XX:SurvivorRatio=32
         -Dusing.aikars.flags=https://mcflags.emc.gs
         -Daikars.new.flags=true
-        -Dpaper.disableJNA=true
-        -Djna.nosys=true
     )
     ;;
 velocity)
@@ -97,9 +95,9 @@ esac
 START_CMD=(
     bash -c '
     while true; do
-      echo "▶️ Starting server..."
+      echo "[$(date '+%H:%M:%S') INFO]: Starting server..."
       env '"${ENV_EXPORTS[*]}"' java '"${COMMON_FLAGS[*]}"' '"${ENGINE_FLAGS[*]}"' '"${EXTRA_JAVA_FLAGS[*]}"' -jar "'"$JAR_FILE"'" nogui
-      echo "🔁 Server stopped at $(date), restarting in 5 seconds..."
+      echo "[$(date '+%H:%M:%S') WARN]: Server stopped at $(date), restarting in 5 seconds..."
       sleep 5
     done
   '

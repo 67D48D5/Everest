@@ -5,10 +5,9 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
 
 CONFIG_FILE="${ROOT_PATH}/config/update.json"
-ENGINE_DIR="${ROOT_PATH}/libraries/engines"
 PLUGIN_ROOT="${ROOT_PATH}/libraries/plugins"
 
-mkdir -p "$ENGINE_DIR" "$PLUGIN_ROOT"
+mkdir -p "$PLUGIN_ROOT"
 
 # Check if config file exists
 [[ -f "$CONFIG_FILE" ]] || {
@@ -27,34 +26,7 @@ done
 # Load the configuration file
 CONFIG="$(cat "$CONFIG_FILE")"
 
-# For engines, we will fetch the latest builds from PaperMC API
-clean_old() { # <dir> <prefix>
-    find "$1" -maxdepth 1 -type f -name "$2-*.jar" -delete
-}
-
-download_engine() { # <project> <version>
-    local project="$1" version="$2"
-    echo "🔄 Get $project with version $version"
-    local api="https://api.papermc.io/v2/projects/$project/versions/$version/builds"
-    local resp build jar url
-    resp=$(curl -fsSL --retry 3 --retry-delay 5 "$api") || {
-        echo "  ⚠️ API fetch failed for $project $version" >&2
-        return
-    }
-    build=$(jq -r '.builds[-1].build' <<<"$resp")
-    jar="${project}-${version}-${build}.jar"
-    url="https://api.papermc.io/v2/projects/$project/versions/$version/builds/$build/downloads/$jar"
-    echo "  ⬇️ Downloading $jar" && curl -fsSL --retry 3 --retry-delay 5 -o "$ENGINE_DIR/$jar" "$url" && echo "  ✅ Downloaded at $ENGINE_DIR/$jar"
-}
-
-jq -r '.engines | to_entries[] | "\(.key)\t\(.value.version)"' <<<"$CONFIG" |
-    while IFS=$'\t' read -r ENGINE VERSION; do
-        clean_old "$ENGINE_DIR" "$ENGINE"
-        download_engine "$ENGINE" "$VERSION"
-        echo
-    done
-
-# For plugins, we will resolve URLs and download them
+# Resolve URLs and download them
 resolve_jenkins() { # <url> <engineKeyword>
     local url="$1" key="$2" api final
     api="${url%/}/lastSuccessfulBuild/api/json"
@@ -166,4 +138,4 @@ update_plugins_for_engine() { # <engine>
 
 jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r ENG; do update_plugins_for_engine "$ENG"; done
 
-echo "🎉 Updates complete."
+echo "🎉 Getting plugins is complete."
