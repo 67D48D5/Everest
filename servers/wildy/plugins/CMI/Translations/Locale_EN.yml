@@ -975,6 +975,10 @@ command:
     info:
       noinfo: '&4There is no saved location to return to!'
       feedback: '&6Returned to last saved location ([world],[x],[y],[z])!'
+  dialogs:
+    help:
+      info: '&eShows specified dialog'
+      args: '[dialogName] (playerName) (-s)'
   disableenchant:
     help:
       info: '&eDisable enchantment'

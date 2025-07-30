@@ -9,6 +9,8 @@
 # Discord: https://discord.gg/papermc
 # Website: https://papermc.io/
 
+# This is the Bukkit configuration file in Paper.
+# As you can see, there's actually not that much to configure without any plugins.
 settings:
   allow-end: true
   warn-on-overload: true
@@ -41,3 +43,6 @@ ticks-per:
   ambient-spawns: 32
   autosave: 6000
 aliases: now-in-commands.yml
+worlds:
+  wplot:
+    generator: PlotSquared

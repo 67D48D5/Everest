@@ -951,6 +951,10 @@ command:
     info:
       noinfo: '&cdBack &8» §f저장된 위치 정보가 없습니다!'
       feedback: '&adBack &8» §f마지막 저장된 위치, &e[x], [y], [z] &7@[world]&f(으)로 돌아갔습니다!'
+  dialogs:
+    help:
+      info: '&eShows specified dialog'
+      args: '[dialogName] (playerName) (-s)'
   disableenchant:
     help:
       info: 마법 부여를 비활성화합니다.

@@ -236,6 +236,10 @@ Alias:
   dback:
     Enabled: true
     Tab: true
+  # /cmi dialogs $1-
+  dialogs:
+    Enabled: true
+    Tab: true
   # /cmi disableenchant $1-
   disableenchant:
     Enabled: true

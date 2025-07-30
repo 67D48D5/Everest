@@ -711,7 +711,7 @@ Signs:
   - '[Shop]'
   # When enabled player needs to be sneaking to edit signs
   RequireSneaking: false
-  # When enabled sign editor will be represented with new Dialog editor introduced in 1.21.6
+  # When enabled sign editor will be represented with new Dialog editor introduced in 1.21.7+
   # Only for Paper servers
   DialogEditor: true
 Skins:
