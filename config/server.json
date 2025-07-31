@@ -37,6 +37,8 @@
       "engine": "paper",
       "plugins": {
         "TAB": "auto://TAB*",
+        "Chunky": "auto://Chunky-*",
+        "ChunkyBorder": "auto://ChunkyBorder-*",
         "LuckPerms": "auto://LuckPerms-*",
         "ProtocolLib": "auto://ProtocolLib*",
         "PlaceholderAPI": "auto://PlaceholderAPI-*",
