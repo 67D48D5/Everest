@@ -35,12 +35,14 @@ settings:
   log-villager-deaths: true
   log-named-deaths: true
 messages:
-  whitelist: 현재 이 서버는 화이트리스트가 설정되어 있습니다. 접속을 원하신다면 관리자에게 요청해주세요.
-  unknown-command: §cError &8» §f존재하지 않거나 사용할 수 없는 명령어입니다.
-  server-full: 현재 서버 인원이 가득 찼습니다. 잠시 후 다시 시도해주세요.
-  outdated-client: 이 서버에 접속하려면 클라이언트 버전 {0} 이상을 사용해야 합니다.
-  outdated-server: 서버가 아직 {0} 버전을 사용 중입니다. 클라이언트 버전을 일치시켜주세요.
-  restart: 서버가 재시작 중입니다. 곧 다시 접속하실 수 있습니다.
+  whitelist: The server is currently whitelisted. Please contact an administrator
+    if you wish to join.
+  unknown-command: §cError &8» §fThe command does not exist or cannot be used.
+  server-full: The server is currently full. Please try again later.
+  outdated-client: You must use client version {0} or higher to join this server.
+  outdated-server: The server is still running version {0}. Please match your client
+    version.
+  restart: The server is restarting. You will be able to join again soon.
 world-settings:
   default:
     below-zero-generation-in-existing-chunks: true

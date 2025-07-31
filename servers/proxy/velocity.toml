@@ -8,7 +8,7 @@ bind = "0.0.0.0:25565"
 # their server list. Only MiniMessage format is accepted.
 motd = """
 <gradient:#5e4fa2:#f79459><bold>⛰ Everest MC</bold></gradient>
-<gray>▶ 자유로운 생존과 창조의 세계</gray>
+<gray>▶ Survival, Build, Explore</gray>
 """
 
 # What should we display for the maximum number of players? (Velocity does not support a cap
