@@ -9,7 +9,7 @@ worlds:
       filling: minecraft:stone
       auto_merge: false
       bedrock: true
-      create_signs: true
+      create_signs: false
       floor: minecraft:grass_block
     wall:
       filling: minecraft:light_gray_concrete
