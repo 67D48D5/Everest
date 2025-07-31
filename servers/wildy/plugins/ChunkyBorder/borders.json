@@ -25,5 +25,14 @@
     "radiusZ": 12288.0,
     "shape": "circle",
     "wrap": "default"
+  },
+  "wplot": {
+    "world": "wplot",
+    "centerX": 0.0,
+    "centerZ": 0.0,
+    "radiusX": 4096.0,
+    "radiusZ": 4096.0,
+    "shape": "circle",
+    "wrap": "none"
   }
 }

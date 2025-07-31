@@ -6,16 +6,16 @@ debug: true
 # The activity of high-frequency event listener can be deactivated here to improve the server performance. 
 # Affected settings: 'redstone' settings here below. Affected flags: 'disable-physics', 'redstone'. 
 # Only deactivate this setting if you do not need any of the mentioned settings or flags.
-high-frequency-listener: true
+high-frequency-listener: false
 
 # Redstone related settings
 redstone:
   # Disable redstone in unoccupied plots
-  disable-unoccupied: false
+  disable-unoccupied: true
   # Disable redstone when all owners/trusted/members are offline
-  disable-offline: false
+  disable-offline: true
   # Detect and cancel invalid pistons on the edge of plots (e.g. placed with WorldEdit)
-  detect-invalid-edge-pistons: false
+  detect-invalid-edge-pistons: true
 
 # UUID settings
 # DO NOT EDIT them unless you know what you are doing.
@@ -69,27 +69,27 @@ enabled-components:
   # Allow WorldEdit to be restricted to plots
   worldedit-restrictions: true
   # Allow economy to be used to sell, claim or buy plots.
-  economy: false
+  economy: true
   # Expiry will clear old or simplistic plots
-  plot-expiry: false
+  plot-expiry: true
   # Processes chunks (trimming, or entity/tile limits) 
-  chunk-processor: false
+  chunk-processor: true
   # Kill mobs on roads (Chicken, Cow, etc.)
-  kill-road-mobs: false
+  kill-road-mobs: true
   # Also kill any road mobs that are being ridden, or are leashed
   kill-owned-road-mobs: false
   # Also kill any road mobs that are named
   kill-named-road-mobs: false
   # Kill items on roads (Stick, Paper, etc.)
-  kill-road-items: false
+  kill-road-items: true
   # Kill vehicles on roads (Boat, Minecart, etc.)
-  kill-road-vehicles: false
+  kill-road-vehicles: true
   # Notify a player of any missed plot comments upon plot entry
   comment-notifier: true
   # Let players claim entire worlds with PlotSquared
   worlds: false
   # Actively purge invalid database entries
-  database-purger: false
+  database-purger: true
   # Delete plots when a player is banned.
   # Note: This only works with the /minecraft:ban command. Any punishment plugin is not supported.
   ban-deleter: false
@@ -101,25 +101,16 @@ enabled-components:
   # Read more about components here: https://intellectualsites.gitbook.io/plotsquared/customization/plot-components
   component-presets: true
   # Enable per user locale
-  per-user-locale: false
+  per-user-locale: true
   # The default locale. Before changing the language, make sure you downloaded the appropriate file and put it in the 'lang' folder.
   # You can find additional translations here: https://intellectualsites.crowdin.com/plotsquared
-  default-locale: "en"
+  default-locale: "ko"
   # Use UUID cache to complete usernames
   extended-username-completion: true
   # Command aliases that will be tab completed
   tab-completed-aliases: 
-  - "plot"
   - "plots"
   - "p"
-  - "plotsquared"
-  - "plot2"
-  - "p2"
-  - "ps"
-  - "2"
-  - "plotme"
-  - "plotz"
-  - "ap"
   # Whether PlotSquared should hook into MvDWPlaceholderAPI or not
   use-mvdwapi: true
   # Prevent cross plot beacon effects
@@ -131,7 +122,7 @@ auto-clear:
     threshold: -1
     required-plots: -1
     confirmation: true
-    days: 90
+    days: 180
     skip-account-age-days: -1
     # True, if a plot should be deleted if the plot owner is unknown to the server
     delete-if-owner-is-unknown: false
@@ -157,9 +148,9 @@ done:
   # Only plots marked as done can be rated
   required-for-ratings: false
   # Restrict building when a plot is marked as done
-  restrict-building: false
+  restrict-building: true
   # The limit being how many plots a player can claim
-  counts-towards-limit: true
+  counts-towards-limit: false
 
 # Configure the paths that will be used
 paths:
@@ -180,7 +171,7 @@ web:
 # Rating related settings
 ratings:
   # Replace the rating system with a like system. Will add /plot like/dislike, and remove the rating command
-  use-likes: false
+  use-likes: true
   # Rating categories
   categories: []
   # The blocks to use for the rating GUI if categories are set above
@@ -197,11 +188,11 @@ ratings:
 # Teleportation related settings
 teleport:
   # Teleport to your plot on death
-  on-death: false
+  on-death: true
   # Teleport to your plot on login
   on-login: false
   # Teleport to your plot on claim (/plot claim)
-  on-claim: true
+  on-claim: false
   # Teleport to your plot on auto (/plot auto)
   on-auto: true
   # Add a delay to all teleport commands (in seconds)
@@ -222,11 +213,11 @@ teleport:
 # See https://intellectualsites.gitbook.io/plotsquared/optimization/chunk-processor for more information.
 chunk-processor:
   # Auto trim will not save chunks which aren't claimed
-  auto-trim: false
+  auto-trim: true
   # Max tile entities per chunk
   max-tiles: 4096
   # Max entities per chunk
-  max-entities: 512
+  max-entities: 128
   # Disable block physics
   disable-physics: false
 
@@ -242,7 +233,7 @@ limit:
   # The max range of integer permissions to check for, e.g. 'plots.plot.127' or 'plots.set.flag.mob-cap.127'
   # The value covers the permission range to check, you need to assign the permission to players/groups still
   # Modifying the value does NOT change the amount of plots players can claim
-  max-plots: 127
+  max-plots: 128
 
 # Settings related to flags
 flags:
@@ -265,7 +256,7 @@ titles:
   # Changes the notification method on plot entry from Title + SubTitle -> ActionBar.
   # The message still sent to the player is pulled from the lang key "titles.title_entered_plot".
   # If you would like to still show the owner of the plot, append the contents of "titles.title_entered_plot_sub" onto the former lang key.
-  titles-as-actionbar: false
+  titles-as-actionbar: true
   # If the default title should be displayed on plots with server-plot flag set.
   # Titles will still be sent if the plot-title flag is set.
   display-default-on-server-plot: false
@@ -308,7 +299,7 @@ paper-components:
   # Prevent entities from leaving plots
   entity-pathing: true
   # Prevent entities from leaving plots, even by pushing or pulling
-  entity-movement: false
+  entity-movement: true
   # Cancel entity spawns when the chunk is loaded if the PlotArea's mob spawning is off
   cancel-chunk-spawn: true
   # Use paper's PlayerLaunchProjectileEvent to cancel projectiles
@@ -320,7 +311,7 @@ paper-components:
   # Check the tile entity limit on block placement
   tile-entity-check: true
   # Use Paper's async tab completion
-  async-tab-completion: false
+  async-tab-completion: true
 
 # Enable or disable all of or parts of the FastAsyncWorldEdit-PlotSquared hook
 fawe-components:
@@ -334,7 +325,7 @@ fawe-components:
 # Confirmation timeout related settings
 confirmation:
   # Timeout before a confirmation prompt expires
-  confirmation-timeout-seconds: 20
+  confirmation-timeout-seconds: 16
 
 # Backup related settings
 # See https://intellectualsites.gitbook.io/plotsquared/plot-backups for more information.
@@ -342,9 +333,9 @@ backup:
   # Automatically backup plots when destructive commands are performed, e.g. /plot clear
   automatic-backups: true
   # Maximum amount of backups associated with a plot
-  backup-limit: 3
+  backup-limit: 4
   # Whether or not backups should be deleted when the plot is unclaimed
-  delete-on-unclaim: true
+  delete-on-unclaim: false
 
 # Chat related settings
 chat:
@@ -352,7 +343,7 @@ chat:
   log-plotchat-to-console: true
   # Whether an action bar message should be send over a chat message for notification purposes such for the 
   # notify-enter, notify-leave, greeting or farewell flag.
-  notification-as-actionbar: false
+  notification-as-actionbar: true
   # The click event actions that should be removed from user input in e.g. plot flags like 'greeting'.
   # Actions like 'RUN_COMMAND' may be used maliciously as players could trick staff into clicking on messages
   # triggering destructive commands.
@@ -363,15 +354,13 @@ chat:
   - "SUGGEST_COMMAND"
   - "CHANGE_PAGE"
   - "COPY_TO_CLIPBOARD"
-  - "SHOW_DIALOG"
-  - "CUSTOM"
 
 # Used to format the plot creation date placeholder. Modifying the format does not affect the storage time.
 timeformat:
   # The date used formatted in ISO 8601
-  date-format: "yyyy-MM-dd HH:mm:ss z"
+  date-format: "MM/dd/yyyy z HH:mm:ss"
   # The time zone used
-  time-zone: "GMT"
+  time-zone: "KST"
 
 # Schematic web interface related settings
 arkitektonika:
@@ -416,7 +405,7 @@ general:
   # Replace wall when merging
   merge-replace-wall: true
   # Always show explosion Particles, even if explosion flag is set to false
-  always-show-explosions: false
+  always-show-explosions: true
   # Blocks that may not be used in plot components
   # Checkout the wiki article regarding plot components before modifying: https://intellectualsites.gitbook.io/plotsquared/customization/plot-components
   invalid-blocks: 
