@@ -1,6 +1,6 @@
 # Command section can utilize same custom variables as scheduler. Check Schedules.yml file for all possible variables.
 
-world:
+wwild:
   spawn:
     Loc: -1.0:11.0:-1.0:1.0:11.0:1.0
     enabled: true
