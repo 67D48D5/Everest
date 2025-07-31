@@ -5,8 +5,6 @@
 # Ignore Files
 .DS_Store
 
-.termux/shell
-
 lib/
 spark/
 .paper-remapped/
@@ -30,6 +28,7 @@ server.yml
 wepif.yml
 permissions.yml
 worldNames.yml
+SkinsCache.yml
 
 banned-ips.json
 banned-players.json
