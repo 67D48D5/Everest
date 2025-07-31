@@ -3,8 +3,8 @@
     "world": "world_nether",
     "centerX": 0.0,
     "centerZ": 0.0,
-    "radiusX": 8192.0,
-    "radiusZ": 8192.0,
+    "radiusX": 4096.0,
+    "radiusZ": 4096.0,
     "shape": "circle",
     "wrap": "none"
   },
@@ -12,8 +12,8 @@
     "world": "world_the_end",
     "centerX": 0.0,
     "centerZ": 0.0,
-    "radiusX": 8192.0,
-    "radiusZ": 8192.0,
+    "radiusX": 4096.0,
+    "radiusZ": 4096.0,
     "shape": "circle",
     "wrap": "none"
   },
@@ -21,8 +21,8 @@
     "world": "world",
     "centerX": 0.0,
     "centerZ": 0.0,
-    "radiusX": 12288.0,
-    "radiusZ": 12288.0,
+    "radiusX": 4096.0,
+    "radiusZ": 4096.0,
     "shape": "circle",
     "wrap": "default"
   },
