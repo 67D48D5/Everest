@@ -115,7 +115,7 @@ proxies:
   velocity:
     enabled: true
     online-mode: true
-    secret: b0UMK0CHfjCi
+    secret: Everest
 scoreboards:
   save-empty-scoreboard-teams: true
   track-plugin-scoreboards: true
