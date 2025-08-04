@@ -5,7 +5,7 @@
     "centerZ": 0.0,
     "radiusX": 4096.0,
     "radiusZ": 4096.0,
-    "shape": "circle",
+    "shape": "pentagon",
     "wrap": "none"
   }
 }

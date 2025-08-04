@@ -1,38 +1,29 @@
 {
-  "world_nether": {
-    "world": "world_nether",
+  "wwild_nether": {
+    "world": "wwild_nether",
     "centerX": 0.0,
     "centerZ": 0.0,
-    "radiusX": 4096.0,
-    "radiusZ": 4096.0,
-    "shape": "circle",
+    "radiusX": 8192.0,
+    "radiusZ": 8192.0,
+    "shape": "pentagon",
     "wrap": "none"
   },
-  "world_the_end": {
-    "world": "world_the_end",
+  "wwild_the_end": {
+    "world": "wwild_the_end",
     "centerX": 0.0,
     "centerZ": 0.0,
     "radiusX": 4096.0,
     "radiusZ": 4096.0,
-    "shape": "circle",
+    "shape": "pentagon",
     "wrap": "none"
   },
-  "world": {
-    "world": "world",
+  "wwild": {
+    "world": "wwild",
     "centerX": 0.0,
     "centerZ": 0.0,
-    "radiusX": 4096.0,
-    "radiusZ": 4096.0,
+    "radiusX": 12288.0,
+    "radiusZ": 12288.0,
     "shape": "circle",
     "wrap": "default"
-  },
-  "wplot": {
-    "world": "wplot",
-    "centerX": 0.0,
-    "centerZ": 0.0,
-    "radiusX": 4096.0,
-    "radiusZ": 4096.0,
-    "shape": "circle",
-    "wrap": "none"
   }
 }
