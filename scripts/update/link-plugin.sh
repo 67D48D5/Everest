@@ -35,7 +35,7 @@ pick_latest() { # <dir> <glob>
 jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
   ENGINE=$(jq -r ".servers[\"$SERVER\"].engine" <<<"$CONFIG")
   DEST_DIR="${SERVERS_ROOT}/${SERVER}/plugins"
-  AUTO_DIR="${PLUGIN_ROOT}/${ENGINE}/autoupdate"
+  AUTO_DIR="${PLUGIN_ROOT}/${ENGINE}/auto"
   STATIC_DIR="${PLUGIN_ROOT}/${ENGINE}"
 
   # Clean up old plugin jar links

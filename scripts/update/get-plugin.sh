@@ -80,7 +80,7 @@ resolve_enginehub() { # <url>
 
 update_plugins_for_engine() { # <engine>
     local engine="$1"
-    local auto_dir="$PLUGIN_ROOT/$engine/autoupdate"
+    local auto_dir="$PLUGIN_ROOT/$engine/auto"
     rm -r "$auto_dir" && mkdir -p "$auto_dir"
     echo "🧩 Plugin for $engine"
 
