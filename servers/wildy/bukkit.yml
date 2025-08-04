@@ -44,6 +44,3 @@ ticks-per:
   ambient-spawns: 32
   autosave: 6000
 aliases: now-in-commands.yml
-worlds:
-  wplot:
-    generator: PlotSquared
