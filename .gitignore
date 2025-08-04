@@ -60,6 +60,7 @@ stats/
 *.db
 
 # But not these
+!/libraries
 !lwc_ko.properties
 !PlaceholderAPI
 !server.properties
