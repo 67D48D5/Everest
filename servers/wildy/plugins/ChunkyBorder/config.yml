@@ -4,7 +4,7 @@
 version: 1
 border-options:
   check-interval: 20
-  message: '&cWorldBorder &8» &f세계의 경계에 도달했습니다!'
+  message: '&cWorldBorder &8» &fYou have reached the world border&o!'
   use-action-bar: true
   effect: ender_signal
   sound: entity_enderman_teleport
@@ -20,7 +20,7 @@ map-options:
     dynmap: true
     pl3xmap: true
     squaremap: true
-  label: 세계의 경계
+  label: 'The Boundaries of the World'
   hide-by-default: false
   color: FF0000
   weight: 3

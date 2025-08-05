@@ -73,13 +73,13 @@ scoreboard:
   delay-on-join-milliseconds: 0
   scoreboards:
     default:
-      title: "&6&l&o⛰ &f&l&oEverest"
+      title: "&6&l&o⛰ &f&l&oEverest &a&l&oMC"
       lines:
         - "&8&m                 "
         - "&7mcMMO &8| &e%mcmmo_power_level%"
         - "&7Money &8| &e&o%vault_eco_balance_formatted%"
         - "&8&m                 "
-        - "&f%cmi_user_rank_displayname%"
+        - "&7Rank &8| &f%cmi_user_rank_displayname%"
         - "&8&m                 "
 layout:
   enabled: false

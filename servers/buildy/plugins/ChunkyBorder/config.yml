@@ -20,7 +20,7 @@ map-options:
     dynmap: true
     pl3xmap: true
     squaremap: true
-  label: WorldBorder
+  label: 'The Boundaries of the World'
   hide-by-default: false
   color: FF0000
   weight: 3
