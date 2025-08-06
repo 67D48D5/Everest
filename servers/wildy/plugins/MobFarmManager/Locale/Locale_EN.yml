@@ -1,67 +1,67 @@
 info:
-  prefix: '&e[&aMFM&e] '
-  ArmorStandlLimit: '&6You cant place armor stand in this chunk. Max alowed is &e[amount]&6!'
-  ItemFrameLimit: '&6You cant place item frame in this chunk. Max alowed is &e[amount]&6!'
-  GeneralLimit: '&6Limit reached. Max alowed is &e[amount]&6!'
-  WolfCount: '&cTo many wolfs following you, &7[amount] &cgot seated down'
-  BlockLimit: '&cTo many [type] blocks in one chunk, &7You can only place &e[amount]
-    &7of them'
-  cleanup: '&7Auto cleaned entities: &e[amount]'
-  hoverList: '&f[type]&7: [amount]'
+  prefix: 'MFM &8» &f'
+  ArmorStandlLimit: '&c!prefix!You cant place armor stand in this chunk. Max alowed is &e[amount]&f&o!'
+  ItemFrameLimit: '&c!prefix!You cant place item frame in this chunk. Max alowed is &e[amount]&f&o!'
+  GeneralLimit: '&c!prefix!Limit reached. Max alowed is &e[amount]&f&o!'
+  WolfCount: '&c!prefix!To many wolfs following you, &7[amount] &fgot seated down'
+  BlockLimit: '&c!prefix!To many &e[type] &fblocks in one chunk, You can only place &e[amount]
+    &fof them'
+  cleanup: '&b!prefix!Auto cleaned entities: &e[amount]'
+  hoverList: '&f[type] &7× [amount]'
 command:
   help:
     output:
-      CommandColor: '&2'
-      VariableColor: '&6'
-      usage: '&eUsage: &6%usage%'
+      CommandColor: '&6'
+      VariableColor: '&f'
+      usage: '&c!prefix!%usage%'
       title: '&e-------&e ======= &6MFM &e======= &e-------'
       page: '&e-----&e ====== Page &6[1] &eof &6[2] &e====== &e-----'
   nocmd:
     help:
-      info: '&eShows all available commands'
+      info: '&7Shows all available commands'
       args: ''
   reload:
     help:
-      info: '&eReload config and locale file'
+      info: '&7Reload config and locale file'
       args: ''
     info:
-      response: '&eConfiguration files was reloaded'
+      response: '&a!prefix!Configuration files was reloaded'
   clean:
     help:
-      info: '&2Cleans chunks around players'
+      info: '&7Cleans chunks around players'
       args: ''
     info:
-      ClearedList: '&f[type]&6(&7[amount]&6)'
-      Cleared: '&6Cleared &f[entities] &6entities from &7[chunks]&6 chunks: [list]'
-      Nothing: '&6Nothing to remove'
-      Hover: '&f[time]ms &6to check &f[count] &6chunks'
+      ClearedList: '&f[type]&7([amount])'
+      Cleared: '&a!prefix!Cleared &e[entities] &fentities from &e[chunks] &fchunks: [list]'
+      Nothing: '&c!prefix!Nothing to remove&o!'
+      Hover: '&e[time]&fms to check &e[count] &fchunks'
   list:
     help:
-      info: '&2List chunks with most entities in them'
+      info: '&7List chunks with most entities in them'
       args: (range)
     info:
-      ListP: '&e[place]. &6[x]&e:&6[z] &6Inside: &e[amount]'
+      ListP: '&7&o[place] &8» &6[x]&e:&6[z] &fInside: &e[amount]'
       around: ' &6Around: &7[near]'
       Command: /tppos [x] [y] [z] [world]
-      Hover: '&6Teleport: &e[world]:[x]:[y]:[z]'
+      Hover: '&e[x], [y], [z] &7@[world]'
   limits:
     help:
-      info: '&2Show limits by your location'
+      info: '&7Show limits by your location'
       args: ''
     info:
-      size: '&fArea: &7[range]&fx&7[range] &fChunks: &7[chunks]'
-      byGroups: '&eBy groups:'
-      byTypes: '&eBy types:'
+      size: '&b!prefix!Area: &7[range]&fx&7[range] &fChunks: &7[chunks]'
+      byGroups: '&6By groups:'
+      byTypes: '&6By types:'
       prefix: '[color][type]'
       count: ': &7[count]&8/&7[max]'
   hoppers:
     help:
-      info: '&2List chunks with most active hoppers in them'
+      info: '&7List chunks with most active hoppers in them'
       args: ''
     info:
       RemovedList: '&6[target](&e[amount]&6)'
-      Removed: '&6Removed: [list]!'
-      List: '&e[place]. &6[x]&e:&6[z] &e(&6[amount]&e)'
+      Removed: '&a!prefix!Removed: [list]&o!'
+      List: '&7&o[place] &8» &6[x]&e:&6[z] &e(&6[amount]&e)'
       Command: /tppos [x] [y] [z] [world]
-      Hover: "&6Teleport \n&e[world]"
-      notEnabled: '&cHoper control is not enabled!'
+      Hover: "&e[world]"
+      notEnabled: '&c!prefix!Hopper control is not enabled&o!'
