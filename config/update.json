@@ -9,27 +9,27 @@
   },
   "plugins": {
     "velocity": {
-      "geyser": "https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/velocity",
       "floodgate": "https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/velocity",
+      "geyser": "https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/velocity",
       "luckperms": "https://ci.lucko.me/job/LuckPerms",
-      "viaversion": "https://ci.viaversion.com/job/ViaVersion",
-      "viabackwards": "https://ci.viaversion.com/job/ViaBackwards"
+      "viabackwards": "https://ci.viaversion.com/job/ViaBackwards",
+      "viaversion": "https://ci.viaversion.com/job/ViaVersion"
     },
     "paper": {
-      "TAB": "https://github.com/NEZNAMY/TAB/releases",
       "Chunky": "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky",
       "ChunkyBorder": "https://ci.codemc.io/view/Author/job/pop4959/job/ChunkyBorder",
-      "mcMMO": "https://popicraft.net/jenkins/job/mcMMO",
-      "LuckPerms": "https://ci.lucko.me/job/LuckPerms",
-      "ProtocolLib": "https://ci.dmulloy2.net/job/protocollib",
-      "PlaceholderAPI": "https://ci.extendedclip.com/job/PlaceholderAPI",
       "FastAsyncWorldEdit": "https://ci.athion.net/job/FastAsyncWorldEdit",
-      "WorldGuard": "https://builds.enginehub.org/job/worldguard/last-successful?branch=version/7.0.x"
+      "LuckPerms": "https://ci.lucko.me/job/LuckPerms",
+      "PlaceholderAPI": "https://ci.extendedclip.com/job/PlaceholderAPI",
+      "ProtocolLib": "https://ci.dmulloy2.net/job/protocollib",
+      "TAB": "https://github.com/NEZNAMY/TAB/releases",
+      "WorldGuard": "https://builds.enginehub.org/job/worldguard/last-successful?branch=version/7.0.x",
+      "mcMMO": "https://popicraft.net/jenkins/job/mcMMO"
     }
   },
   "notes": {
     "engines": {
-      "source": "https://docs.papermc.io/misc/downloads-api/"
+      "source": "https://papermc.io/downloads/"
     },
     "plugins": {
       "velocity": {
@@ -39,15 +39,14 @@
         "PluginHidePro": "https://www.spigotmc.org/resources/✔%EF%B8%8F-plugin-hide-pro-decide-which-commands-are-executable-and-visible-spigot-bungee-velocity-✔%EF%B8%8F.77112/updates/"
       },
       "paper": {
-        "Citizens": "https://ci.citizensnpcs.co/job/citizens2",
-        "CMILib": "https://www.zrips.net/cmilib/",
         "CMI": "https://www.spigotmc.org/resources/cmi-300-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/updates/",
         "MobFarmManager": "https://www.spigotmc.org/resources/mob-farm-manager-supports-1-7-10-up-to-1-21-hopper-support.15127/updates/",
-        "Vault": "https://www.zrips.net/cmivault/",
-        "CoreProtect": "https://github.com/PlayPro/CoreProtect/",
-        "GriefPrevention": "https://dev.bukkit.org/projects/grief-prevention/files/",
         "PlotSquared": "https://www.spigotmc.org/resources/plotsquared-v7.77506/updates/",
-        "ShopGUI+": "https://www.spigotmc.org/resources/shopgui-1-8-1-21.6515/updates/"
+        "ShopGUI+": "https://www.spigotmc.org/resources/shopgui-1-8-1-21.6515/updates/",
+        "GriefPrevention": "https://dev.bukkit.org/projects/grief-prevention/files/",
+        "CoreProtect": "https://github.com/PlayPro/CoreProtect/",
+        "CMILib": "https://www.zrips.net/cmilib/",
+        "Vault": "https://www.zrips.net/cmivault/"
       }
     }
   }

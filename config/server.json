@@ -3,50 +3,50 @@
     "proxy": {
       "engine": "velocity",
       "plugins": {
-        "geyser": "auto://geyser-velocity*",
         "floodgate": "auto://floodgate-velocity*",
+        "geyser": "auto://geyser-velocity*",
         "luckperms": "auto://LuckPerms-Velocity-*",
-        "viaversion": "auto://ViaVersion-*",
         "viabackwards": "auto://ViaBackwards-*",
-        "litebans": "manual://LiteBans*",
-        "cmiv": "manual://CMIV-*"
+        "viaversion": "auto://ViaVersion-*",
+        "cmiv": "manual://CMIV-*",
+        "litebans": "manual://LiteBans*"
       }
     },
     "wildy": {
       "engine": "paper",
       "plugins": {
-        "TAB": "auto://TAB*",
         "Chunky": "auto://Chunky-*",
         "ChunkyBorder": "auto://ChunkyBorder-*",
-        "mcMMO": "auto://mcMMO*",
-        "LuckPerms": "auto://LuckPerms-*",
-        "ProtocolLib": "auto://ProtocolLib*",
-        "PlaceholderAPI": "auto://PlaceholderAPI-*",
         "FastAsyncWorldEdit": "auto://FastAsyncWorldEdit-Paper-*",
+        "LuckPerms": "auto://LuckPerms-*",
+        "PlaceholderAPI": "auto://PlaceholderAPI-*",
+        "ProtocolLib": "auto://ProtocolLib*",
+        "TAB": "auto://TAB*",
         "WorldGuard": "auto://worldguard-bukkit-*",
-        "MobFarmManager": "manual://MobFarmManager*",
-        "CMILib": "manual://CMILib*",
+        "mcMMO": "auto://mcMMO*",
         "CMI": "manual://CMI-*",
-        "Vault": "manual://Vault-*",
+        "CMILib": "manual://CMILib*",
         "CoreProtect": "manual://CoreProtect-*",
-        "GriefPrevention": "manual://GriefPrevention*"
+        "GriefPrevention": "manual://GriefPrevention*",
+        "MobFarmManager": "manual://MobFarmManager*",
+        "Vault": "manual://Vault-*"
       }
     },
     "buildy": {
       "engine": "paper",
       "plugins": {
-        "TAB": "auto://TAB*",
         "Chunky": "auto://Chunky-*",
         "ChunkyBorder": "auto://ChunkyBorder-*",
-        "LuckPerms": "auto://LuckPerms-*",
-        "ProtocolLib": "auto://ProtocolLib*",
-        "PlaceholderAPI": "auto://PlaceholderAPI-*",
         "FastAsyncWorldEdit": "auto://FastAsyncWorldEdit-Paper-*",
-        "CMILib": "manual://CMILib*",
+        "LuckPerms": "auto://LuckPerms-*",
+        "PlaceholderAPI": "auto://PlaceholderAPI-*",
+        "ProtocolLib": "auto://ProtocolLib*",
+        "TAB": "auto://TAB*",
         "CMI": "manual://CMI-*",
-        "Vault": "manual://Vault-*",
+        "CMILib": "manual://CMILib*",
         "CoreProtect": "manual://CoreProtect-*",
-        "PlotSquared": "manual://plotsquared-*"
+        "PlotSquared": "manual://plotsquared-*",
+        "Vault": "manual://Vault-*"
       }
     }
   }
