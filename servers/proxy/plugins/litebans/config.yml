@@ -317,14 +317,14 @@ ignored_kick_messages:
 notification_throttle_ticks: 12000
 
 # If enabled, a kick reason must be provided, otherwise players will get an error.
-require_kick_reason: false
+require_kick_reason: true
 
 # If enabled, a ban or mute reason must be provided, otherwise players will get an error.
 # When set to false, "default_ban_reason" and "default_mute_reason" in messages.yml are used as reasons when no reason is provided.
-require_ban_mute_reason: false
+require_ban_mute_reason: true
 
 # If enabled, an unban or unmute reason must be provided, otherwise players will get an error.
-require_unban_unmute_reason: false
+require_unban_unmute_reason: true
 
 # After configuring import options, run "/litebans import start" to begin the import.
 # The import process occurs while the server is running, no downtime is required.

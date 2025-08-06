@@ -78,8 +78,8 @@
 # Example time format with hours + minutes:
 # time_format: 'dd/MM/yyyy HH:mm'
 # Example locales: [en, fr, de] (system locale is used by default)
-locale: system
-time_format: yyyy-MM-dd
+locale: en
+time_format: MM/dd/yyyy
 default_ban_reason: The Ban Hammer has spoken!
 default_mute_reason: Spamming
 default_unban_reason: No reason specified.
