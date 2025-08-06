@@ -61,6 +61,8 @@ stats/
 
 # But not these
 !/libraries
+!Dialogs
+
 !lwc_ko.properties
 !PlaceholderAPI
 !server.properties
