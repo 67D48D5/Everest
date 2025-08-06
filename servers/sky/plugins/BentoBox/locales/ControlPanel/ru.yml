@@ -1,0 +1,22 @@
+controlpanel:
+  messages:
+    import-count: Импортированные [number] панели управления
+    control-panels-wiped: '&2 Все панели управления в [gamemode] удалены'
+  errors:
+    no-load: '&4Не удается загрузить файл controlPanels.yml: [message]'
+    no-file: '&4Отсутствует файл controlPanels.yml'
+    not-a-gamemode-world: '&4 Не удалось найти правильный игровой режим.'
+    no-valid-panels: '&4Не удалось найти действительную панель управления.'
+    no-valid-panels-op: '&4Не удалось найти действительную панель управления. Вы должны
+      попытаться импортировать его, используя /[admin] cp import'
+  commands:
+    admin:
+      help:
+        description: показывает команды помощи администратора
+      import:
+        parameters: '[overwrite]'
+        description: импортирует панели управления из controlPanels.yml
+        confirmation: Подтвердите, что вы хотите удалить существующие панели управления
+          из [gamemode] и импортировать панели управления из [file]
+    help:
+      description: открывает панель управления

@@ -1,0 +1,78 @@
+bank:
+  admin:
+    description: admin příkaz pro ostrovní banku
+    give:
+      parameters: <hráč> <množství>
+      description: přidat částku na hráčův ostrovní účet
+      success: '&a Úspěch! Zůstatek ostrovní banky [name] je nyní [number].'
+    take:
+      parameters: <hráč> <množství>
+      description: vezměte částku z hráčova ostrova
+    balance:
+      parameters: <hráč>
+      description: zobrazit zůstatek ostrovního účtu hráče
+    set:
+      parameters: <hráč> <množství>
+      description: nastavit částku na hráčově ostrovním účtu
+      success: '&a Účet uživatele [name] byl nastaven na [number].'
+    statement:
+      parameters: <hráč>
+      description: zobrazit výpis z banky pro hráče
+  balance:
+    description: ukazuje zůstatek vaší ostrovní banky
+    island-balance: '&a Zůstatek na ostrovní bance je [number].'
+  baltop:
+    description: zobrazit hodnocení zůstatku
+    description-syntax: '&d [number]'
+    highest: Řadit podle nejvyššího
+    lowest: Řadit podle nejnižší
+    name-syntax: '&d [name]'
+    title: Nejlepší zůstatky
+  deposit:
+    description: vložte částku na svůj ostrovní účet
+    parameters: <množství>
+    success: '&a Úspěch! Váš nový zůstatek na ostrovní bance je [number].'
+  errors:
+    bank-error: '&c Chyba při načítání informací o bankovním účtu - zkuste to znovu
+      později'
+    low-balance: '&c Váš zůstatek na ostrovní bance není dostatečně vysoký!'
+    too-low: '&c Rovnováha na ostrově je příliš nízká.'
+    must-be-a-number: '&c Částka musí být číslo'
+    no-rank: '&c Vaše pozice není dostatečně vysoká, abyste mohli banku používat.'
+    too-much: '&c Tuto částku nemáte k uložení.'
+    value-must-be-positive: '&c Částka musí být kladná.'
+    scientific: '&c Vědecká notace není podporována.'
+    too-long: '&c Hodnota musí být menší než 10 číslic'
+  statement:
+    balance:
+      name: '&9 Zůstatek:'
+      description: '&6 [number]'
+    deposit: Vklad
+    description: ukažte historii své ostrovní banky
+    give: Správce dát
+    interest: Zájem
+    latest: Řadit podle nejnovějších
+    oldest: Řadit podle nejstarších
+    set: Sada správce
+    syntax: |-
+      &9 [date]
+      &9 [time]
+      &7 [name]
+      &6 [number]
+    take: Admin Vezměte
+    title: Historie účtu
+    unknown: Neznámý typ
+    withdrawal: Vybrání
+  user:
+    description: příkaz ostrovní banky
+  withdraw:
+    description: vybrat částku ze svého ostrovního účtu
+    parameters: <množství>
+    success: '&a Úspěch! Váš nový zůstatek na ostrovní bance je [number].'
+protection:
+  flags:
+    BANK_ACCESS:
+      description: |-
+        &f Povolit přístup k
+        &f a ostrovní banka
+      name: Přístup na ostrovní banku

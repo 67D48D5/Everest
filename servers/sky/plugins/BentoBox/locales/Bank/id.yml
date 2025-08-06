@@ -1,0 +1,79 @@
+bank:
+  admin:
+    description: perintah admin untuk bank pulau
+    give:
+      parameters: <player> <amount>
+      description: menambah jumlah saldo ke rekening pulau pemain
+      success: '&a Sukses! Saldo bank pulau [name] sekarang [number].'
+    take:
+      parameters: <player> <amount>
+      description: mengambil jumlah saldo dari rekening pulau pemain
+    balance:
+      parameters: <player>
+      description: melihat saldo rekening pulau pemain
+    set:
+      parameters: <player> <amount>
+      description: mengatur jumlah saldo di rekening pulau pemain
+      success: '&a Rekening [name] diatur menjadi [number].'
+    statement:
+      parameters: <player>
+      description: melihat rekening koran pulau untuk pemain
+  balance:
+    description: menunjukkan saldo bank pulau kamu
+    island-balance: '&a Saldo bank pulau adalah [number].'
+  baltop:
+    description: menunjukkan peringkat saldo
+    description-syntax: '&d [number]'
+    highest: Urutkan dari Tertinggi
+    lowest: Urutkan dari Terendah
+    name-syntax: '&d [name]'
+    title: Saldo Teratas
+  deposit:
+    description: menyetor jumlah saldo ke rekening pulau kamu
+    parameters: <amount>
+    success: '&a Sukses! Saldo bank pulau kamu yang baru adalah [number].'
+    alert: '&a [name] menyetor [number] ke bank pulau.'
+  errors:
+    bank-error: '&c Kesalahan memuat info rekening bank - silahkan coba lagi nanti'
+    low-balance: '&c Saldo bank pulau kamu tidak cukup tinggi!'
+    too-low: '&c Saldo pulau terlalu rendah.'
+    must-be-a-number: '&c Jumlah harus berupa angka'
+    no-rank: '&c Rank kamu tidak cukup tinggi untuk menggunakan bank.'
+    too-much: '&c Kamu tidak punya jumlah tersebut untuk disetor.'
+    value-must-be-positive: '&c Jumlah harus positif.'
+    scientific: '&c Notasi ilmiah tidak didukung.'
+    too-long: '&c Nilai harus kurang dari 10 digit'
+  statement:
+    balance:
+      name: '&9 Saldo:'
+      description: '&6 [number]'
+    deposit: Setor
+    description: menunjukkan sejarah bank pulau kamu
+    give: Admin Memberi
+    interest: Bunga
+    latest: Urut dari terbaru
+    oldest: Urut dari terlama
+    set: Admin Mengubah
+    syntax: |
+      &9 [date]
+      &9 [time]
+      &7 [name]
+      &6 [number]
+    take: Admin Mengambil
+    title: Sejarah rekening
+    unknown: Tipe Tidak Diketahui
+    withdrawal: Penarikan
+  user:
+    description: perintah bank pulau
+  withdraw:
+    description: menarik jumlah saldo dari rekening pulau kamu
+    parameters: <amount>
+    success: '&a Sukses! Saldo bank pulau kamu yang baru adalah [number].'
+    alert: '&a [name] menarik [number] dari bank pulau.'
+protection:
+  flags:
+    BANK_ACCESS:
+      description: |-
+        &f Mengizinkan akses ke
+        &f bank pulau
+      name: Akses Bank Pulau

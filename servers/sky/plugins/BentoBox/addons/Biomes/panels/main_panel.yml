@@ -1,0 +1,87 @@
+main_panel:
+  title: biomes.gui.titles.player-panel
+  type: INVENTORY
+  background:
+    icon: BLACK_STAINED_GLASS_PANE
+    title: "&b&r" # Empty text
+  border:
+    icon: BLACK_STAINED_GLASS_PANE
+    title: "&b&r"  # Empty text
+  force-shown: []
+  content:
+    1:
+      9:
+        icon: DIAMOND
+        title: biomes.gui.buttons.buy.name
+        description: biomes.gui.buttons.buy.description
+        data:
+          type: PURCHASE
+        action:
+          left:
+            tooltip: biomes.gui.tips.click-to-view
+    2:
+      2: biomes_button
+      3: biomes_button
+      4: biomes_button
+      5: biomes_button
+      6: biomes_button
+      7: biomes_button
+      8: biomes_button
+    # In this case, the icon is defined as a TIPPED_ARROW with a color.
+    # CustomPotionColor uses the Decimal description of a Color, just as leather armor does.
+    # All you need to do is take a hex code of a color (like #ff00aa) which represents red, 
+    # green, blue as 2 hex digits each and convert that number into a decimal, using a hex to decimal calculator.       
+    3:
+      1:
+        icon: tipped_arrow[potion_contents={custom_color:11546150}]
+        title: biomes.gui.buttons.previous.name
+        description: biomes.gui.buttons.previous.description
+        data:
+          type: PREVIOUS
+          indexing: true
+        action:
+          left:
+            tooltip: biomes.gui.tips.click-to-previous
+      2: biomes_button
+      3: biomes_button
+      4: biomes_button
+      5: biomes_button
+      6: biomes_button
+      7: biomes_button
+      8: biomes_button
+      9:
+        icon: tipped_arrow[potion_contents={custom_color:8439583}]
+        title: biomes.gui.buttons.next.name
+        description: biomes.gui.buttons.next.description
+        data:
+          type: NEXT
+          indexing: true
+        action:
+          left:
+            tooltip: biomes.gui.tips.click-to-next
+    4:
+      2: biomes_button
+      3: biomes_button
+      4: biomes_button
+      5: biomes_button
+      6: biomes_button
+      7: biomes_button
+      8: biomes_button
+    6:
+      9:
+        icon: OAK_DOOR
+        data:
+          type: RETURN
+  reusable:
+    biomes_button:
+      data:
+        type: BIOME
+      actions:
+        left:
+          type: CHANGE
+          # Supports ISLAND | CHUNK:NUMBER | RANGE:NUMBER
+          content: ISLAND
+          tooltip: biomes.gui.tips.left-click-to-apply
+        right:
+          type: ADVANCED_PANEL
+          tooltip: biomes.gui.tips.right-click-to-open

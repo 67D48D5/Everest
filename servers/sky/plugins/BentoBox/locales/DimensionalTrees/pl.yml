@@ -1,0 +1,4 @@
+dimensionaltrees:
+  invalid-material: '&c Nie można wyhodować drzewa. Wykryto nieprawidłowy materiał.'
+  reloaded: '&a Drzewa wymiarowe zostały ponownie załadowane.'
+  error: błąd
