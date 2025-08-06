@@ -23,7 +23,7 @@ SERVER_DIR="${ROOT_PATH}/servers/${SERVER_NAME}"
 ENGINE_DIR="${ROOT_PATH}/libraries/engines"
 
 # Ensure prerequisites
-for cmd in tmux java; do
+for cmd in tmux java realpath; do
     command -v "$cmd" &>/dev/null || {
         echo "❌ '$cmd' not found" >&2
         exit 1

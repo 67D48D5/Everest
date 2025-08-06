@@ -15,7 +15,7 @@ SERVERS_ROOT="${ROOT_PATH}/servers"
 }
 
 # Check for required dependencies
-for cmd in jq; do
+for cmd in jq realpath; do
     command -v "$cmd" >/dev/null || {
         echo "❌ Missing dependency: $cmd" >&2
         exit 1
