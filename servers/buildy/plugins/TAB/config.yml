@@ -78,7 +78,7 @@ scoreboard:
         - "&8&m                 "
         - "&7Playtime &8| &e%cmi_user_playtime_hourst%"
         - "&8&m                 "
-        - "&7Owner &8| &6&o%plotsquared_currentplot_owner%"
+        - "&6%plotsquared_currentplot_owner%"
         - "&7Address &8| &e&o%plotsquared_currentplot_xy%"
         - "&8&m                 "
 layout:
