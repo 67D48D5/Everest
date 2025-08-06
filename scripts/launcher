@@ -32,12 +32,12 @@ done
 
 # Load environment variables
 ENV_EXPORTS=()
-if [[ -f "${ROOT_PATH}/.termux/.env" ]]; then
+if [[ -f "${ROOT_PATH}/.env" ]]; then
     while IFS='=' read -r key val; do
         [[ "$key" =~ ^#.*$ || -z "$key" ]] && continue
         ENV_EXPORTS+=("$key=$val")
         export "$key=$val"
-    done <"${ROOT_PATH}/.termux/.env"
+    done <"${ROOT_PATH}/.env"
 fi
 
 # Enter server directory
