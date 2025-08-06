@@ -60,8 +60,9 @@ stats/
 *.db
 
 # But not these
+!/**/BentoBox/addons/*.jar
 !/libraries
-!Dialogs
+!Dialogs/
 
 !lwc_ko.properties
 !PlaceholderAPI
