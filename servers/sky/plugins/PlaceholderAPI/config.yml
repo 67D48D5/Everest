@@ -12,8 +12,8 @@ check_updates: true
 cloud_enabled: true
 cloud_sorting: name
 boolean:
-  "true": "yes"
-  "false": "no"
+  'true': 'yes'
+  'false': 'no'
 date_format: MM/dd/yy HH:mm:ss
 debug: false
 expansions:
@@ -29,6 +29,13 @@ expansions:
         minute: m
         second: s
     tps_color:
-      high: "&a"
-      medium: "&e"
-      low: "&c"
+      high: '&a'
+      medium: '&e'
+      low: '&c'
+  vault:
+    formatting:
+      thousands: k
+      millions: M
+      billions: B
+      trillions: T
+      quadrillions: Q

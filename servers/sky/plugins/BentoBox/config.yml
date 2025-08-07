@@ -33,7 +33,7 @@ general:
     # If you use MONGODB, you must also run the BSBMongo plugin (not addon).
     # See https://github.com/tastybento/bsbMongo/releases/.
     # You can find more details in this video: https://youtu.be/FFzCk5-y7-g
-    type: MariaDB
+    type: MARIADB
     host: localhost
     # Port 3306 is MySQL's default. Port 27017 is MongoDB's default.
     port: 3306
