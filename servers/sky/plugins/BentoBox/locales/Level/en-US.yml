@@ -88,7 +88,7 @@ level:
           [members]
           [place]
           [level]
-# Text that is replacing [name] if island do not have a name
+        # Text that is replacing [name] if island do not have a name
         owners-island: '[player]''s Island'
         # Text for [owner] in description.
         owner: '&7&l Owner: &r&b [player]'

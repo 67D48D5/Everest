@@ -82,13 +82,13 @@ challenges:
         description: |-
           &7 Displays a list of
           &7 free challenges
-# Button that is used to return to previous GUI or exit it completely.
+      # Button that is used to return to previous GUI or exit it completely.
       return:
         name: '&f&l Return'
         description: |-
           &7 Return to the previous menu
           &7 or exit the GUI
-# Button that is used in multi-page GUIs which allows to return to previous page.
+      # Button that is used in multi-page GUIs which allows to return to previous page.
       previous:
         name: '&f&l Previous Page'
         description: '&7 Switch to page &e [number]' # Button that is used in multi-page GUIs which allows to go to next page.
@@ -106,7 +106,7 @@ challenges:
         description: |-
           &7 Complete challenge &e [number]
           &7 time(s)
-# Button that allows to quit the current gui.
+      # Button that allows to quit the current gui.
       quit:
         name: '&f&l Quit'
         description: '&7 Exit the GUI.' # All following buttons are mainly for Admin GUI.
@@ -878,7 +878,7 @@ challenges:
           [cooldown]
           [requirements]
           [rewards]
-# Contains a text generated inside [status] lore
+        # Contains a text generated inside [status] lore
         status:
           # Status message for completed unrepeatable challenge
           completed: '&2&l Completed'
@@ -894,7 +894,7 @@ challenges:
           lore: |-
             [timeout]
             [wait-time]
-# Text message that shows challenge timeout.
+          # Text message that shows challenge timeout.
           timeout: '&7&l Cool down: &r&7 [time]'
           # Text message that shows challenge wait time if it is larger than 0.
           wait-time: '&c&l Available after: &r&c [time]'
@@ -912,7 +912,7 @@ challenges:
             [environment]
             [type-requirement]
             [permissions]
-# Message that will replace [environment] placeholder if there is just a single environment.
+          # Message that will replace [environment] placeholder if there is just a single environment.
           environment-single: '&7 Limited to [environment]'
           # Message that will replace [environment] placeholder if there are multiple environments.
           environment-title: '&7 Limited to: '
@@ -932,7 +932,7 @@ challenges:
               [search-radius]
               [warning-block]
               [warning-entity]
-# Title that will be used if there are defined blocks in an island challenge
+            # Title that will be used if there are defined blocks in an island challenge
             blocks-title: '&7&l Required Blocks:'
             # Listing of blocks that are required on the island.
             block-value: '  &7 - &e [material]'
@@ -952,7 +952,7 @@ challenges:
             lore: |-
               [items]
               [warning]
-# Title that will be used if there is a list of items for the challenge
+            # Title that will be used if there is a list of items for the challenge
             item-title: '&7&l Required Items:'
             # Listing of an item that is required once or multiple times.
             item-value: '  &7 - &e [item]'
@@ -967,7 +967,7 @@ challenges:
               [money]
               [money-warning]
               [level]
-# Text for required experience
+            # Text for required experience
             experience: '&7&l Required Experience: &r&e [number]'
             # Warning that experience will be reduced
             experience-warning: '&e Experience will be &c removed'
@@ -982,7 +982,7 @@ challenges:
             lore: |-
               [statistic]
               [warning]
-# Type of statistic for multiple target counter. Target may be entity or material/block
+            # Type of statistic for multiple target counter. Target may be entity or material/block
             multiple-target: '&7&l [statistic]: &r&e [number] x [target]'
             # Type of statistic for a single target. Target may be entity or material/block
             single-target: '&7&l [statistic]: &r&e [target]'
@@ -999,7 +999,7 @@ challenges:
             [experience]
             [money]
             [commands]
-# Title that will be used if there is a list of items for rewards
+          # Title that will be used if there is a list of items for rewards
           item-title: '&7 Items:'
           # Listing of an item that is rewarded multiple times.
           item-value: '  &7 - &e [item]'
@@ -1019,7 +1019,7 @@ challenges:
           [status]
           [waiver]
           [rewards]
-# Status is either challengeLevel.unlockMessage or the current status of the level
+        # Status is either challengeLevel.unlockMessage or the current status of the level
         status:
           # Status message for a completed unrepeatable challenge
           completed: '&2&l Completed'
@@ -1031,11 +1031,11 @@ challenges:
           missing-challenges: |-
             &7 [number] more challenges need to be
             &7 completed to unlock this level.
-# Contains text for the waiver amount to unlock the next level
+        # Contains text for the waiver amount to unlock the next level
         waiver: |-
           &7&l [number] challenge(s) can be
           &7 skipped to unlock the next level.
-# Contains text generated inside [rewards] lore
+        # Contains text generated inside [rewards] lore
         rewards:
           lore: |-
             &7&l Rewards:

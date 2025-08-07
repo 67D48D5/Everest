@@ -183,7 +183,7 @@ stone-generator:
         drag-and-drop: |-
           &7 Supports drag and drop
           &7 items to empty spaces.
-# Section for blocks and treasures icons in Generator View GUI.
+      # Section for blocks and treasures icons in Generator View GUI.
       block-icon:
         name: '&f&l [material]'
         # Supports [number], [#.#], [#.##], [#.###], [#.####], [#.#####]
@@ -222,7 +222,7 @@ stone-generator:
         description: |-
           &7 Show only active
           &7 generators
-# Button that is used to return to previous GUI or exit it completely.
+      # Button that is used to return to previous GUI or exit it completely.
       return:
         name: '&f&l Return'
         description: '&7 Return to previous menu'
@@ -292,7 +292,7 @@ stone-generator:
         description: |-
           &7 Clear generator and bundle
           &7 data in the current gamemode.
-# Buttons in Bundle Edit GUI
+      # Buttons in Bundle Edit GUI
       bundle_name:
         name: '&f&l Bundle Name'
         description: '&7 Change the bundle name.'
@@ -494,7 +494,7 @@ stone-generator:
           &7 Resets all island values
           &7 to the default values from
           &7 the settings.
-# Buttons in Island Management GUI
+      # Buttons in Island Management GUI
       is_online:
         name: '&f&l Online Players'
         description: |-
@@ -608,7 +608,7 @@ stone-generator:
           &7 Created for [gamemode]
           &7 Language: [lang]
           &7 Version: [version]
-# Button in GUI that allows to choose blocks for generators to be generated.
+      # Button in GUI that allows to choose blocks for generators to be generated.
       accept_blocks:
         name: '&f&l Accept the blocks'
         description: |-
@@ -656,7 +656,7 @@ stone-generator:
           &7 for this material.
           &7 It will use the generator's
           &7 default height range instead.
-# This section contains names for filter biome groups.
+      # This section contains names for filter biome groups.
       biome-groups:
         temperate:
           name: '&f&l Temperate'
@@ -802,7 +802,7 @@ stone-generator:
           [height-range]
           [requirements]
           [status]
-# Generates [blocks] section
+        # Generates [blocks] section
         blocks:
           # First line in blocks section. Empty line will not be displayed.
           title: '&7&l Blocks:'
@@ -823,7 +823,7 @@ stone-generator:
             [biomes]
             [level]
             [missing-permissions]
-# Generates [level] message.
+          # Generates [level] message.
           level: '&c&l Required Level: &r&c [number]'
           # Generates [missing-permission] message title.
           permission-title: '&c&l Missing Permissions:'
@@ -861,7 +861,7 @@ stone-generator:
         &7 Permission that must be
         &7 assigned to player:
         &7&o [gamemode].stone-generator.bundle.[id]
-# String that are before listing all generators assigned to bundle.
+      # String that are before listing all generators assigned to bundle.
       generators: '&7 Bundle Generators: '
       # Each generator name in listing
       generator-list: '&7 - [generator]'
