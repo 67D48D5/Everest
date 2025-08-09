@@ -11,10 +11,10 @@ General:
     # When players reach certain level milestones messages will be broadcast
     Level_Up_Chat_Broadcasts:
         # Whether level up broadcasts are enabled
-        Enabled: true
+        Enabled: false
         # Whether you want power level milestones to be broadcast
         Broadcast_Powerlevels:
-            Enabled: true
+            Enabled: false
             # How often to broadcast, you can change this to 1 to always broadcast a level up event, a setting of 100 will limit it to every 100 levels (for example level 100, level 200, etc)
             Milestone_Interval: 100
             Broadcast_Targets:
@@ -47,8 +47,8 @@ General:
     # Everything in your config related to skill level requirements, skill level bonuses, etc. will be multiplied by 10 when this mode is on
     # This change is purely cosmetic, it retains the old feel of mcMMO where you could level up thousands of times
     RetroMode:
-        Enabled: true
-    Locale: ko_KR
+        Enabled: false
+    Locale: en_US
     PowerLevel:
         Skill_Mastery:
             Enabled: true
@@ -283,7 +283,7 @@ Items:
 # ##
 Party:
     # Enable Hurting other players in the same party
-    FriendlyFire: false
+    FriendlyFire: true
     # Maximum size for a party, -1 for infinite
     MaxSize: -1
     # Amount of time (in hours) to wait between automatically kicking old party members
@@ -676,7 +676,7 @@ Commands:
         # Prevents players from spamming /mctop or /mcrank
         Player_Cooldown: 1750
     mcmmo:
-        Donate_Message: true
+        Donate_Message: false
     inspect:
         Max_Distance: 30.0
     ptp:
