@@ -112,3 +112,6 @@ Afk:
   # Attention! Because of weird minecraft handling of exp orbs, best way is to set orb to 0exp and allow it to be obsorbed
   # So by enabling this exp obsorbed by afk players will have no effect
   DisableExpPickup: false
+  Disable:
+    # Disables shulker targeting at the player who is in afk mode
+    ShulkerTargeting: true
