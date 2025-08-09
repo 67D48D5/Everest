@@ -75,7 +75,7 @@ explosions: true
 entity-change: true
 
 # Logs killed entities, such as killed cows and enderman.
-entity-kills: false
+entity-kills: true
 
 # Logs text on signs. If disabled, signs will be blank when rolled back.
 sign-text: true
