@@ -1,7 +1,7 @@
 announce-command-usage: "Usage: /tab announce <type> <name> <length>\nCurrently supported types: &lbar, scoreboard"
-bossbar-feature-not-enabled: "&cThis command requires the bossbar feature to be enabled."
+bossbar-feature-not-enabled: "&cError &8» &fThis command requires the bossbar feature to be enabled."
 bossbar-announce-command-usage: "Usage: /tab announce bar <bar name> <length>"
-bossbar-not-found: '&cNo bossbar found with the name "%name%"'
+bossbar-not-found: '&cError &8» &fNo bossbar found with the name "%name%"'
 bossbar-already-announced: "&cThis bossbar is already being announced"
 group-data-removed: "&3[TAB] All data has been successfully removed from group &e%group%"
 group-value-assigned: "&3[TAB] %property% '&r%value%&r&3' has been successfully assigned to group &e%group%"

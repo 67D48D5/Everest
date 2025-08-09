@@ -13,7 +13,7 @@ LootMobBonus:
 useDefaultHeadLore: true
 # Default lore used when head doesnt have defined head lore set
 defaultHeadLore:
-- '&7Killed by &6[playerName]'
+- '&fKilled by &6[playerName]'
 PlayerHead:
   # Defines if you want to use player head lore
   UseLore: true
@@ -21,7 +21,7 @@ PlayerHead:
   # Global variables can be used for simple identification who was killed and who killed player
   # Aditionally placeholders can be used too, but we will use victim as source for their translation if placeholder requires source player
   Lore:
-  - '&7Killed by &6[playerName]'
+  - '&fKilled by &6[playerName]'
 HeadHandling:
   Maintain:
     # Defines if we should maintain heads custom name when head is placed and then broken
@@ -30,7 +30,7 @@ HeadHandling:
     Lore: false
     Enchants: false
 Player:
-  Drop: false
+  Drop: true
   # Percentage from 0 to 100 for head to be dropped. Decimals are acceptable, like 0.2
   # 100 will mean that head will be dropped every time player kills another player
   # 1 will mean that there is 1% that player will drop head if he is killed by another player
@@ -54,7 +54,7 @@ Player:
 Mob:
   # Enables custom mob heads dropping from mobs with particular chance
   # Check CustomHeads.yml for customization by entityType
-  Drop: false
+  Drop: true
   # List of worlds where we should drop mob heads. Keep it empty if you want to include all possible ones
   Worlds: []
 # Custom heads of every entity

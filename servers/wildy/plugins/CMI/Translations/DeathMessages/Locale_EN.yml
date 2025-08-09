@@ -330,6 +330,11 @@ Mob:
     Item:
     - '&2[playerDisplayName] &7fell to &2[mobName] &7and their electrifying powers,
       armed with &2[item]'
+  Happy_ghast:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Hoglin:
     General:
     - '&2[playerDisplayName] &7became hog-tied in a battle with a &2[mobName]'

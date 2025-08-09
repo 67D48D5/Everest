@@ -33,7 +33,7 @@ Chat:
   # When set to true players will need to have cmi.command.msg.[groupname].send where [groupName] is receivers main permission group
   PrivateMessagesGroups: false
   # When set to false, web pge links in a chat will not get shortened to default [LINK] format
-  TranslateLink: false
+  TranslateLink: true
   # Defines regex when replacing url in chat with short word
   # Examples:
   # (https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})

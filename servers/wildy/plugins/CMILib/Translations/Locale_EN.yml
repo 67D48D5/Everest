@@ -55,80 +55,81 @@
 
 info:
   # Use !prefix! in any locale line to automatically include this prefix
-  prefix: '&e[&aCMI&e] '
-  NoPermission: '&cYou don''t have permission!'
-  CantHavePermission: '&cYou can''t have this permission!'
-  WrongGroup: '&cYou are in wrong group for this!'
-  NoPlayerPermission: '&c[playerName] doesn''t have permission for: [permission]'
-  Ingame: '&cYou can only use this in game!'
-  NoInformation: '&cNo information found!'
-  Console: '&6Server'
-  FromConsole: '&cYou can only use this in the console!'
-  NotOnline: '&cThe player is not online!'
-  NobodyOnline: '&cThere is no one online!'
-  NoPlayer: '&cCan''t find player with this name! (&6[name]&c)'
-  NoCommand: '&cThere is no command by this name!'
-  cantFindCommand: '&5Couldn''t find &7[%1]&5 command, did you mean &7[%2]&5?'
-  nolocation: '&4Can''t find suitable location'
-  FeatureNotEnabled: '&cThis feature is not enabled!'
-  ModuleNotEnabled: '&cThis module is not enabled!'
-  versionNotSupported: '&cServer version is not supported for this feature'
-  spigotNotSupported: '&cYou need PaperSpigot branch type server for this to work'
-  bungeeNoGo: '&cThis feature will not work on bungee network based servers'
+  prefix: System &8» &f
+  NoPermission: '&cError &8» &fYou don''t have permission&o!'
+  CantHavePermission: '&cError &8» &fYou can''t have this permission&o!'
+  WrongGroup: '&cError &8» &fYou are in wrong group for this&o!'
+  NoPlayerPermission: '&cError &8» &6[playerName] doesn''t have permission for: &e[permission]'
+  Ingame: '&cError &8» &fYou can only use this in game&o!'
+  NoInformation: '&cError &8» &fNo information found&o!'
+  Console: '&cConsole'
+  FromConsole: '&cError &8» &fYou can only use this in the console&o!'
+  NotOnline: '&cError &8» &fThe player is not online&o!'
+  NobodyOnline: '&cError &8» &fThere is no one online&o!'
+  NoPlayer: '&cError &8» &fCan''t find player with this name: &6[name]'
+  NoCommand: '&cError &8» &fThere is no command by this name&o!'
+  cantFindCommand: '&cError &8» &fCouldn''t find &7[%1]&5 command, did you mean &7[%2]&5?'
+  nolocation: '&cError &8» &fCan''t find suitable location'
+  FeatureNotEnabled: '&cError &8» &fThis feature is not enabled&o!'
+  ModuleNotEnabled: '&cError &8» &fThis module is not enabled&o!'
+  versionNotSupported: '&cError &8» &fServer version is not supported for this feature'
+  spigotNotSupported: '&cError &8» &fYou need PaperSpigot branch type server for this
+    to work'
+  bungeeNoGo: '&cError &8» &fThis feature will not work on bungee network based servers'
   clickToTeleport: '&eClick to teleport'
-  UseMaterial: '&4Please use material names!'
-  IncorrectMaterial: '&4Incorrect material name!'
-  UseInteger: '&4Please use numbers!'
-  UseBoolean: '&4Please use True or False!'
-  NoLessThan: '&4Number can''t be less than [amount]!'
-  NoMoreThan: '&4Value can''t be more than [amount]'
-  NoWorld: '&4Can''t find world with this name!'
-  IncorrectLocation: '&4Location defined incorrectly!'
-  Show: '&eShow'
+  UseMaterial: '&cError &8» &fPlease use material names&o!'
+  IncorrectMaterial: '&cError &8» &fIncorrect material name&o!'
+  UseInteger: '&cError &8» &fPlease use numbers&o!'
+  UseBoolean: '&cError &8» &fPlease use True or False&o!'
+  NoLessThan: '&cError &8» &fNumber can''t be less than &e[amount]&o!'
+  NoMoreThan: '&cError &8» &fValue can''t be more than &e[amount]'
+  NoWorld: '&cError &8» &fCan''t find world with this name&o!'
+  IncorrectLocation: '&cError &8» &fLocation defined incorrectly&o!'
+  Show: '&fShow'
   Remove: '&cRemove'
-  Back: '&eBack'
-  Forward: '&eForward'
-  Update: '&eUpdate'
-  Save: '&eSave'
+  Back: '&fBack'
+  Forward: '&fForward'
+  Update: '&bUpdate'
+  Save: '&aSave'
   Delete: '&cDelete'
-  Click: '&eClick'
-  Preview: '&ePreview'
-  PasteOld: '&ePaste old'
-  ClickToPaste: '&eClick to paste into chat'
-  CantTeleportWorld: '&eYou can''t teleport to this world'
-  CantTeleportNoWorld: '&cTarget world doesn''t exist. Teleportation canceled'
-  ClickToConfirmDelete: '&eClick to confirm removal of &6[name]'
-  teleported: '&eYou have been teleported.'
+  Click: '&aClick'
+  Preview: '&bPreview'
+  PasteOld: '&bPaste old'
+  ClickToPaste: '&aClick &8» &fClick to paste into chat'
+  CantTeleportWorld: '&cError &8» &fYou can''t teleport to this world'
+  CantTeleportNoWorld: '&cError &8» &fTarget world doesn''t exist. Teleportation canceled'
+  ClickToConfirmDelete: '&cConfirm &8» &fClick to confirm removal of &6[name]'
+  teleported: '&bTeleport &8» &fYou have been teleported.'
   PlayerSpliter: '&e----- &6[playerDisplayName] &e-----'
-  Spliter: '&e--------------------------------------------------'
+  Spliter: ''
   SpliterValue: '&e------------------ &6[value] &e------------------'
   singleSpliter: '&e-'
   SpliterMiddle: ' &6[value] '
   ListSpliter: ', '
   ProgressBarFill: '&2▏'
   ProgressBarEmpty: '&e▏'
-  nothingInHand: '!actionbar!&eYou need to hold item in hand'
-  nothingInHandLeather: '&eYou need to hold leather item in hand'
-  nothingToShow: '&eNothing to show'
-  noItem: '&cCan''t find item'
-  dontHaveItem: '&cYou don''t have &6[amount]x [itemName] &cin your inventory'
-  wrongWorld: '&cCan''t do this in this world'
+  nothingInHand: '!actionbar!&cError &8» &fYou need to hold item in hand'
+  nothingInHandLeather: '&cError &8» &fYou need to hold leather item in hand'
+  nothingToShow: '&cError &8» &fNothing to show'
+  noItem: '&cError &8» &fCan''t find item'
+  dontHaveItem: '&cError &8» &fYou don''t have &6[amount]x [itemName] &fin your inventory'
+  wrongWorld: '&cError &8» &fCan''t do this in this world'
   differentWorld: '&cDifferent worlds'
-  HaveItem: '&cYou have &6[amount]x [itemName] &cin your inventory'
-  cantDoInGamemode: '&eYou can''t do this in this game mode'
-  cantDoForPlayer: '&eYou can''t do this to &6[playerDisplayName]'
-  cantDoForYourSelf: '&eYou can''t do this to yourself'
-  cantDetermineMobType: '&cCan''t determine mob type from &e[type] &cvariable'
-  cantRename: '!actionbar!&eYou can''t use this name'
-  confirmRedefine: '&eClick to confirm redefining'
-  cantEdit: '&eYou can''t edit this'
+  HaveItem: '&cError &8» &fYou have &6[amount]x [itemName] &fin your inventory'
+  cantDoInGamemode: '&cError &8» &fYou can''t do this in this game mode'
+  cantDoForPlayer: '&cError &8» &fYou can''t do this to &6[playerDisplayName]'
+  cantDoForYourSelf: '&cError &8» &fYou can''t do this to yourself'
+  cantDetermineMobType: '&cError &8» &fCan''t determine mob type from &e[type] &cvariable'
+  cantRename: '&cError &8» &fYou can''t use this name'
+  confirmRedefine: '&cError &8» &fClick to confirm redefining'
+  cantEdit: '&cError &8» &fYou can''t edit this'
   wrongName: '&cWrong name'
   unknown: unknown
   invalidName: '&cInvalid name'
-  alreadyexist: '&4This name is taken'
-  dontexist: '&4Nothing found by this name'
-  worldDontExist: '&cTarget world can''t be accessed anymore. Can''t teleport you
-    there!'
+  alreadyexist: '&cError &8» &fThis name is taken'
+  dontexist: '&cError &8» &fNothing found by this name'
+  worldDontExist: '&cError &8» &fTarget world can''t be accessed anymore. Can''t teleport
+    you there&o!'
   notSet: not set
   lookAtSign: '&eLook at sign'
   lookAtBlock: '&eLook at block'
@@ -136,31 +137,32 @@ info:
   noSpace: '&eNot enough free space'
   notOnGround: '&eYou can''t perform this while flying'
   bungee:
-    Online: '&6Online'
+    Online: '&aOnline'
     Offline: '&cOffline'
     not: '&cServer doesn''t belong to bungee network'
-    noserver: '&cCan''t find server by this name!'
+    noserver: '&cCan''t find server by this name&o!'
     server: '&eServer: &7[name]'
   variables:
-    am: '&eAM'
-    pm: '&ePM'
-    Online: '&6Online'
-    Offline: '&cOffline'
+    am: AM
+    pm: PM
+    Online: Online
+    Offline: Offline
     TrueColor: '&2'
     FalseColor: '&c'
-    'True': '&6True'
+    'True': '&aTrue'
     'False': '&cFalse'
-    Enabled: '&6Enabled'
+    Enabled: '&aEnabled'
     Disabled: '&cDisabled'
     survival: '&6Survival'
     creative: '&6Creative'
     adventure: '&6Adventure'
     spectator: '&6Spectator'
-    flying: '&6Flying'
-    notflying: '&6Not flying'
+    flying: '&aFlying'
+    notflying: '&cNot flying'
   Inventory:
-    Full: '&5Your inventory is full. Can''t add item'
-    FullDrop: '&5Not all items fit in your inventory. They have been dropped on ground'
+    Full: '&cInventory &8» &fYour inventory is full. Can''t add item'
+    FullDrop: '&cInventory &8» &fNot all items fit in your inventory. They have been
+      dropped on ground'
   TimeNotRecorded: '&e-No record-'
   months: '&e[months] &6months '
   oneMonth: '&e[months] &6month '
@@ -174,7 +176,7 @@ info:
   oneHour: '&e[hours] &6hour '
   min: '&e[mins] &6min '
   sec: '&e[secs] &6sec '
-  nextPageConsole: '&fFor next page perform &5[command]'
+  nextPageConsole: '&bPage &8» &fFor next page perform &6[command]'
   prevPage: '&2----<< &6Prev '
   prevCustomPage: '&2----<< &6[value] '
   prevPageGui: '&6Previous page '
@@ -193,16 +195,16 @@ info:
   lastPageHover: '&7>|'
   pageCount: '&2[current]&7/&2[total]'
   pageCountHover: '&e[totalEntries] entries'
-  skullOwner: '!actionbar!&7Owner:&r [playerName]'
-  mobHeadName: '&eHead of &f[mobName]'
+  skullOwner: '!actionbar!&cSkull &8» &6[playerName]'
+  mobHeadName: '&fHead of &e[mobName]'
   circle: '&3Circle'
   square: '&5Square'
   clear: '&7Clear'
-  protectedArea: '&cProtected area. Can''t do this here.'
-  valueToLong: '&eValue is too high. Max: [max]'
-  valueToShort: '&eValue is too low. Min: [min]'
+  protectedArea: '&cError &8» &fProtected area. Can''t do this here.'
+  valueToLong: '&cError &8» &fValue is too high. Max: &e[max]'
+  valueToShort: '&cError &8» &fValue is too low. Min: &e[min]'
   pickIcon: '&8Pick icon'
-  Spawner: '&r[type] Spawner'
+  Spawner: '&e[type] &fSpawner'
   DamageCause:
     block_explosion: Explosion
     campfire: campfire
@@ -392,127 +394,127 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    damage_arthropods: Damage_arthropods
-    dig_speed: Dig_speed
-    vanishing_curse: Vanishing_curse
-    piercing: Piercing
-    protection_fall: Protection_fall
-    arrow_infinite: Arrow_infinite
-    arrow_damage: Arrow_damage
-    riptide: Riptide
-    binding_curse: Binding_curse
-    silk_touch: Silk_touch
-    swift_sneak: Swift_sneak
-    water_worker: Water_worker
-    arrow_fire: Arrow_fire
-    density: Density
-    depth_strider: Depth_strider
-    breach: Breach
-    loyalty: Loyalty
-    protection_fire: Protection_fire
-    knockback: Knockback
-    lure: Lure
-    protection_projectile: Protection_projectile
-    damage_all: Damage_all
-    soul_speed: Soul_speed
-    channeling: Channeling
-    fire_aspect: Fire_aspect
-    loot_bonus_blocks: Loot_bonus_blocks
-    thorns: Thorns
     arrow_knockback: Arrow_knockback
+    swift_sneak: Swift_sneak
+    protection_projectile: Protection_projectile
+    vanishing_curse: Vanishing_curse
+    binding_curse: Binding_curse
+    wind_burst: Wind_burst
+    loyalty: Loyalty
+    soul_speed: Soul_speed
+    damage_undead: Damage_undead
+    protection_explosions: Protection_explosions
+    arrow_damage: Arrow_damage
+    breach: Breach
+    protection_fire: Protection_fire
     loot_bonus_mobs: Loot_bonus_mobs
+    quick_charge: Quick_charge
+    silk_touch: Silk_touch
+    dig_speed: Dig_speed
+    protection_fall: Protection_fall
+    channeling: Channeling
+    lure: Lure
+    density: Density
+    damage_arthropods: Damage_arthropods
+    depth_strider: Depth_strider
+    arrow_fire: Arrow_fire
+    luck: Luck
+    oxygen: Oxygen
+    arrow_infinite: Arrow_infinite
+    water_worker: Water_worker
     multishot: Multishot
     durability: Durability
-    protection_environmental: Protection_environmental
-    oxygen: Oxygen
-    sweeping_edge: Sweeping_edge
-    impaling: Impaling
-    wind_burst: Wind_burst
-    frost_walker: Frost_walker
-    luck: Luck
-    quick_charge: Quick_charge
-    protection_explosions: Protection_explosions
-    damage_undead: Damage_undead
+    knockback: Knockback
+    loot_bonus_blocks: Loot_bonus_blocks
     mending: Mending
+    thorns: Thorns
+    damage_all: Damage_all
+    sweeping_edge: Sweeping_edge
+    protection_environmental: Protection_environmental
+    fire_aspect: Fire_aspect
+    frost_walker: Frost_walker
+    impaling: Impaling
+    riptide: Riptide
+    piercing: Piercing
   PotionEffectAliases:
-    infested:
-    - Infested
+    oozing:
+    - Oozing
+    glowing:
+    - Glowing
+    weakness:
+    - Weakness
+    dolphinsgrace:
+    - Dolphins grace
+    slowfalling:
+    - Slow falling
+    saturation:
+    - Saturation
+    heroofthevillage:
+    - Hero of the village
+    jumpboost:
+    - Jump boost
+    weaving:
+    - Weaving
+    resistance:
+    - Resistance
+    regeneration:
+    - Regeneration
+    speed:
+    - Speed
+    instantdamage:
+    - Instant damage
+    blindness:
+    - Blindness
+    raidomen:
+    - Raid omen
+    nightvision:
+    - Night vision
+    slowness:
+    - Slowness
+    strength:
+    - Strength
     poison:
     - Poison
     miningfatigue:
     - Mining fatigue
-    waterbreathing:
-    - Water breathing
-    fireresistance:
-    - Fire resistance
-    weaving:
-    - Weaving
-    heroofthevillage:
-    - Hero of the village
-    slowness:
-    - Slowness
-    luck:
-    - Luck
-    haste:
-    - Haste
-    regeneration:
-    - Regeneration
-    glowing:
-    - Glowing
-    oozing:
-    - Oozing
-    instanthealth:
-    - Instant health
-    blindness:
-    - Blindness
-    nightvision:
-    - Night vision
     trialomen:
     - Trial omen
-    speed:
-    - Speed
-    absorption:
-    - Absorption
-    nausea:
-    - Nausea
-    healthboost:
-    - Health boost
-    badomen:
-    - Bad omen
-    darkness:
-    - Darkness
-    jumpboost:
-    - Jump boost
-    invisibility:
-    - Invisibility
-    slowfalling:
-    - Slow falling
-    wither:
-    - Wither
+    waterbreathing:
+    - Water breathing
     windcharged:
     - Wind charged
-    raidomen:
-    - Raid omen
-    dolphinsgrace:
-    - Dolphins grace
-    instantdamage:
-    - Instant damage
-    saturation:
-    - Saturation
-    conduitpower:
-    - Conduit power
-    weakness:
-    - Weakness
-    strength:
-    - Strength
+    haste:
+    - Haste
+    luck:
+    - Luck
+    instanthealth:
+    - Instant health
+    badomen:
+    - Bad omen
+    unluck:
+    - Unluck
+    invisibility:
+    - Invisibility
+    healthboost:
+    - Health boost
     levitation:
     - Levitation
     hunger:
     - Hunger
-    resistance:
-    - Resistance
-    unluck:
-    - Unluck
+    conduitpower:
+    - Conduit power
+    wither:
+    - Wither
+    absorption:
+    - Absorption
+    darkness:
+    - Darkness
+    nausea:
+    - Nausea
+    fireresistance:
+    - Fire resistance
+    infested:
+    - Infested
 dialog:
   signEditor: Sign Editor
   update: Update
@@ -540,7 +542,7 @@ modify:
   removePageHover: '&cRemove page'
   deleteSymbol: ' &c[X]'
   deleteSymbolHover: '&cDelete &e[text]'
-  extraEditSymbol: ' &6!'
+  extraEditSymbol: ' &6&o!'
   addSymbol: '&2[+]'
   addSymbolHover: '&2Add new'
   cancelSymbol: ' &7&l[X]'
@@ -582,26 +584,26 @@ modify:
   listLimit: '&eList can''t be bigger than &6[amount] &eentries'
   commandEditInfoHover: '&eClick to paste old text'
 teleportation:
-  relocation: '!actionbar!&4Your teleport location was obstructed. You have been teleported
-    to a safe location.'
+  relocation: '&cTeleport &8» &fYour teleport location was obstructed. You have been
+    teleported to a safe location.'
 econ:
-  noMoney: '&cYou have no money'
-  charged: '!actionbar!&fCharged: &6[amount]'
-  notEnoughMoney: '&cYou don''t have enough money. Required (&6[amount]&c)'
-  tooMuchMoney: '&cYou have too much money'
+  noMoney: '&cMoney &8» &fYou have no money'
+  charged: '&aMoney &8» &fCharged: &e[amount]'
+  notEnoughMoney: '&cMoney &8» &fYou don''t have enough money. Required: &e[amount]'
+  tooMuchMoney: '&cMoney &8» &fYou have too much money'
 Selection:
-  SelectPoints: '&cSelect 2 points with selection tool! AKA: &6[tool]'
-  PrimaryPoint: '&ePlaced &6Primary &eSelection Point [point]'
-  SecondaryPoint: '&ePlaced &6Secondary &eSelection Point [point]'
-  CoordsTop: '&eX:&6[x] &eY:&6[y] &eZ:&6[z]'
-  CoordsBottom: '&eX:&6[x] &eY:&6[y] &eZ:&6[z]'
-  Area: '&7[world] &f(&6[x1]:[y1]:[z1] &e[x2]:[y2]:[z2]&f)'
+  SelectPoints: '&bSelection &8» &fSelect 2 points with selection tool! AKA: &6[tool]'
+  PrimaryPoint: '&aSelection &8» &fPlaced &cPrimary &fSelection Point [point]'
+  SecondaryPoint: '&aSelection &8» &fPlaced &bSecondary &fSelection Point [point]'
+  CoordsTop: '&7[x]&f, &7[y]&f, &7[z]'
+  CoordsBottom: '&7[x]&f, &7[y]&f, &7[z]'
+  Area: '&7[x1]&f, &7[y1]&f, &7[z1] to &7[x2]&f, &7[y2]&f, &7[z2] &8@[world]'
 Location:
   Title: '&8Players location'
   Killer: '&eKiller: &6[killer]'
   OneLiner: '&eLocation: &6[location]'
   DeathReason: '&eDeath Reason: &6[reason]'
-  Full: '&7[world] &f[x]&7:&f[y]&7:&f[z]'
+  Full: '&7[x]&f, &7[y]&f, &7[z] &8@[world]'
   World: '&eWorld: &6[world]'
   X: '&eX: &6[x]'
   Y: '&eY: &6[y]'
@@ -609,32 +611,33 @@ Location:
   Pitch: '&ePitch: &6[pitch]'
   Yaw: '&eYaw: &6[yaw]'
   WorldNames:
-  - world-&2world
-  - world_nether-&2world Nether
-  - world_the_end-&2world The End
-Locations: '&7Locations: '
+  - world-&2Overworld
+  - world_nether-&2Nether
+  - world_the_end-&2The End
+Locations: '&bLocations &8» &f '
 command:
   help:
     output:
-      usage: '&eUsage: &7%usage%'
-      cmdInfoFormat: '[command] &f- &e[description]'
+      usage: '&cHelp &8» &6%usage%'
+      cmdInfoFormat: '[command] &7- &f[description]'
       cmdFormat: '&6/[command]&f[arguments]'
-      helpPageDescription: '&e* [description]'
-      explanation: '&e * [explanation]'
-      title: '&e------ ======= &6Help&e &e======= ------'
+      helpPageDescription: '&f[description]'
+      explanation: '&f[explanation]'
+      title: '&bHelp &8» &f'
   nocmd:
     help:
-      info: '&eShows all available commands'
+      info: Shows all available commands
       args: ''
   clearcache:
     help:
-      info: '&eClear cache'
+      info: Clear cache
       args: ''
   reload:
     help:
-      info: '&eReloads plugins config and locale files'
+      info: Reloads plugins config and locale files
       args: ''
     info:
-      feedback: '&6CMIL Configs and locale files reloaded! Took [ms]ms'
-      failedConfig: '&4Failed to load config file! Check spelling!'
-      failedLocale: '&4Failed to load locale file! Check spelling!'
+      feedback: '&aCMILib &8» &fCMIL Configs and locale files reloaded! Took &e&o[ms]
+        &fms'
+      failedConfig: '&cCMILib &8» &fFailed to load config file! Check spelling&o!'
+      failedLocale: '&cCMILib &8» &fFailed to load locale file! Check spelling&o!'

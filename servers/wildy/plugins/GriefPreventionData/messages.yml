@@ -4,552 +4,610 @@
 
 Messages:
   RespectingClaims:
-    Text: §aLand §8» §f이제 보호된 지역을 §a존중§f합니다.
+    Text: §aLand §8» §fNow §arespecting §fclaims.
   IgnoringClaims:
-    Text: §cLand §8» §f이제 보호된 지역을 §c무시§f합니다.
+    Text: §cLand §8» §fNow §cignoring §fclaims.
   SuccessfulAbandon:
-    Text: '§aLand §8» §f보호를 해제했습니다. 현재 사용 가능한 보호 블록: §e{0}§f개'
-    Notes: '0: 남은 보호 블록 수'
+    Text: §aLand §8» §fClaims abandoned. You now have §a{0} §favailable claim blocks.
+    Notes: '0: remaining blocks'
   RestoreNatureActivate:
-    Text: §aLand §8» §f자연 복구 준비 완료! 자연을 복원하려면 우클릭하세요. 중지하려면 §e/basicclaims §f명령어를
-      사용하세요.
+    Text: §aLand §8» §fReady to restore some nature! Right click to restore nature,
+      and use §6/basicclaims §fto stop.
   RestoreNatureAggressiveActivate:
-    Text: §cLand §8» §f공격적인 복구 모드를 활성화했습니다! 자연을 공격적으로 복원하려면 우클릭하고, 중지하려면 §e/basicclaims
-      §f명령어를 사용하세요. §c보존하고 싶은 구조물 아래에서 절대 사용하지 마세요!
+    Text: §aLand §8» §fAggressive mode §aactivated§f. Do NOT use this underneath anything
+      you want to keep! Right click to aggressively restore nature, and use §6/basicclaims
+      §fto stop.
   FillModeActive:
-    Text: §aLand §8» §f채우기 모드가 반경 §e{0}§f으로 활성화되었습니다. 영역을 우클릭하면 채워집니다.
-    Notes: '0: 채우기 반경'
+    Text: §aLand §8» §fFill mode activated with radius §e{0}§f. Right click an area
+      to fill.
+    Notes: '0: fill radius'
   TransferClaimPermission:
-    Text: §cLand §8» §f이 명령어를 사용하려면 관리자 보호 권한이 필요합니다.
+    Text: §cLand §8» §fThat command requires the administrative claims permission.
   TransferClaimMissing:
-    Text: §cLand §8» §f여기에는 보호가 없습니다. 이전하려는 관리자 보호 구역 안에 서서 다시 시도하세요.
+    Text: §cLand §8» §fThere's no claim here. Stand in the administrative claim you
+      want to transfer.
   TransferClaimAdminOnly:
-    Text: §cLand §8» §f관리자 보호 구역만 플레이어에게 이전할 수 있습니다.
+    Text: §cLand §8» §fOnly administrative claims may be transferred to a player.
   PlayerNotFound2:
-    Text: §cLand §8» §f해당 이름의 플레이어는 최근에 접속한 기록이 없습니다.
+    Text: §cLand §8» §fNo player by that name has logged in recently.
   TransferTopLevel:
-    Text: §cLand §8» §f최상위 보호 구역만 이전할 수 있습니다. 하위 보호 구역 밖으로 나가 다시 시도하세요.
+    Text: §cLand §8» §fOnly top level claims (not subdivisions) may be transferred.
+      Stand outside of the subdivision and try again.
   TransferSuccess:
-    Text: §aLand §8» §f보호 구역을 성공적으로 이전했습니다.
+    Text: §aLand §8» §fClaim transferred.
   TrustListNoClaim:
-    Text: §cLand §8» §f확인하려는 보호 구역 안에 서 있어야 합니다.
+    Text: §cLand §8» §fStand inside the claim you're curious about.
   ClearPermsOwnerOnly:
-    Text: §cLand §8» §f권한을 모두 초기화할 수 있는 사람은 보호 구역 소유자뿐입니다.
+    Text: §cLand §8» §fOnly the claim owner can clear all permissions.
   UntrustIndividualAllClaims:
-    Text: §aLand §8» §6{0}§f님의 모든 보호 구역에 대한 접근 권한을 해제했습니다. 개별 보호 구역의 권한을 설정하려면 그 안에
-      서 계세요.
-    Notes: '0: 권한 해제된 플레이어'
+    Text: §aLand §8» §fRevoked §6{0}§f's access to ALL your claims. To set permissions
+      for a single claim, stand inside it.
+    Notes: '0: untrusted player'
   UntrustEveryoneAllClaims:
-    Text: §aLand §8» §f모든 보호 구역의 권한을 초기화했습니다. 개별 보호 구역의 권한을 설정하려면 해당 구역 안에 서 계세요.
+    Text: §aLand §8» §fCleared permissions in ALL your claims. To set permissions
+      for a single claim, stand inside it.
   NoPermissionTrust:
-    Text: §cLand §8» §f여기에서 권한을 설정하려면 §6{0}§f님의 권한이 필요합니다.
-    Notes: '0: 보호 구역 소유자 이름'
+    Text: §cLand §8» §fYou don't have §6{0}§f's permission to manage permissions here.
+    Notes: '0: claim owner''s name'
   ClearPermissionsOneClaim:
-    Text: §aLand §8» §f이 보호 구역의 권한을 초기화했습니다. 모든 보호 구역의 권한을 설정하려면 보호 구역 밖에 서 계세요.
+    Text: §aLand §8» §fCleared permissions in this claim. To set permission for ALL
+      your claims, stand outside them.
   UntrustIndividualSingleClaim:
-    Text: §aLand §8» §6{0}§f님의 이 보호 구역에 대한 접근 권한을 해제했습니다. 모든 보호 구역에 대해 설정하려면 보호 구역
-      밖에 서 계세요.
-    Notes: '0: 권한 해제된 플레이어'
+    Text: §aLand §8» §fRevoked §6{0}§f's access to this claim. To set permissions
+      for a ALL your claims, stand outside them.
+    Notes: '0: untrusted player'
   OnlySellBlocks:
-    Text: §cLand §8» §f보호 블록은 구매할 수 없고 판매만 가능합니다.
+    Text: §cLand §8» §fClaim blocks may only be sold, not purchased.
   BlockPurchaseCost:
-    Text: '§bLand §8» §f보호 블록 1개의 가격은 §a{0}§f입니다. 현재 잔액: §a{1}§f'
-    Notes: '0: 블록당 가격; 1: 플레이어의 잔액'
+    Text: §bLand §8» §fEach claim block costs §a{0}§f. Your balance is §b{1}§f.
+    Notes: '0: cost of one block; 1: player''s account balance'
   ClaimBlockLimit:
-    Text: §cLand §8» §f보호 블록 최대치에 도달했습니다. 더 이상 구매할 수 없습니다.
+    Text: §cLand §8» §fYou've reached your claim block limit. You can't purchase more.
   InsufficientFunds:
-    Text: '§cLand §8» §f잔액이 부족합니다. 필요한 금액: §c{0} §8/ 현재 보유 금액: §a{1}§f'
-    Notes: '0: 총 비용; 1: 플레이어의 잔액'
+    Text: §cLand §8» §fYou don't have enough money. You need §c{0}§f, but you only
+      have §a{1}§f.
+    Notes: '0: total cost; 1: player''s account balance'
   MaxBonusReached:
-    Text: §cLand §8» §e{0}§f개의 보호 블록을 더 구매할 수 없습니다. 서버에서는 최대 §e{1}§f개의 보너스 블록만 허용됩니다.
-    Notes: '0: 블록 수; 1: 보너스 블록 한도'
+    Text: §cLand §8» §fCan't purchase §c{0} §fmore claim blocks. The server has a
+      limit of §a{1} §fbonus claim blocks.
+    Notes: '0: block count; 1: bonus claims limit'
   PurchaseConfirmation:
-    Text: '§aLand §8» §f계정에서 §e{0}§f을(를) 차감했습니다. 현재 사용 가능한 보호 블록: §e{1}§f개'
-    Notes: '0: 총 비용; 1: 남은 블록 수'
+    Text: §aLand §8» §fWithdrew §a{0} §ffrom your account. You now have §a{1} §favailable
+      claim blocks.
+    Notes: '0: total cost; 1: remaining blocks'
   OnlyPurchaseBlocks:
-    Text: §cLand §8» §f보호 블록은 판매할 수 없고 구매만 가능합니다.
+    Text: §cLand §8» §fClaim blocks may only be purchased, not sold.
   BlockSaleValue:
-    Text: '§bLand §8» §f보호 블록 1개의 판매 가격은 §a{0}§f입니다. 현재 판매 가능한 블록: §a{1}§f개'
-    Notes: '0: 블록당 가격; 1: 판매 가능한 블록 수'
+    Text: §bLand §8» §fEach claim block is worth §a{0}§f. You have §b{1}§f available
+      for sale.
+    Notes: '0: block value; 1: available blocks'
   NotEnoughBlocksForSale:
-    Text: §cLand §8» §f판매 가능한 보호 블록이 부족합니다.
+    Text: §cLand §8» §fYou don't have that many claim blocks available for sale.
   BlockSaleConfirmation:
-    Text: '§aLand §8» §f계정에 §e{0}§f을(를) 입금했습니다. 현재 사용 가능한 보호 블록: §e{1}§f개'
-    Notes: '0: 입금된 금액; 1: 남은 블록 수'
+    Text: §aLand §8» §fDeposited §a{0} §fin your account. You now have §a{1} §favailable
+      claim blocks.
+    Notes: '0: amount deposited; 1: remaining blocks'
   AdminClaimsMode:
-    Text: §aLand §8» §f관리자 보호 모드가 활성화되었습니다. 생성되는 보호 구역은 비용 없이 만들어지며, 다른 관리자도 수정할 수
-      있습니다.
+    Text: §aLand §8» §fAdministrative claims mode active. Any claims created will
+      be free and editable by other administrators.
   BasicClaimsMode:
-    Text: §aLand §8» §f기본 보호 구역 생성 모드로 돌아왔습니다.
+    Text: §aLand §8» §fReturned to basic claim creation mode.
   SubdivisionMode:
-    Text: §aLand §8» §f하위 보호 모드가 활성화되었습니다. 삽을 사용하여 기존 보호 구역 내에 하위 보호 구역을 만들 수 있습니다.
-      종료하려면 §e/basicclaims §f명령어를 사용하세요.
+    Text: §aLand §8» §fSubdivision mode. Use your shovel to create subdivisions in
+      your existing claims. Use §6/basicclaims §fto exit.
   SubdivisionVideo2:
-    Text: '§bLand §8» §f하위 보호 도움말 보기: §7{0}'
-    Notes: '0: 동영상 URL'
+    Text: '§bLand §8» §fClick for Subdivision Help: §7{0}'
+    Notes: 0:video URL
   DeleteClaimMissing:
-    Text: §cLand §8» §f여기에는 보호 구역이 없습니다.
+    Text: §cLand §8» §fThere's no claim here.
   DeletionSubdivisionWarning:
-    Text: §cLand §8» §f이 보호 구역에는 하위 보호 구역이 포함되어 있습니다. 정말 삭제하시려면 §e/deleteclaim §f명령어를
-      한 번 더 입력하세요.
+    Text: §cLand §8» §fThis claim includes subdivisions. If you're sure you want to
+      delete it, use §6/deleteclaim §fagain.
   DeleteSuccess:
-    Text: §aLand §8» §f보호 구역이 삭제되었습니다.
+    Text: §aLand §8» §fClaim deleted.
   CantDeleteAdminClaim:
-    Text: §cLand §8» §f관리자 보호 구역은 삭제할 권한이 없습니다.
+    Text: §cLand §8» §fYou don't have permission to delete administrative claims.
   DeleteAllSuccess:
-    Text: §aLand §8» §6{0}§f님의 모든 보호 구역을 삭제했습니다.
-    Notes: '0: 보호 구역 소유자 이름'
+    Text: §aLand §8» §fDeleted all of §6{0}§f's claims.
+    Notes: '0: owner''s name'
   NoDeletePermission:
-    Text: §cLand §8» §f보호 구역을 삭제할 권한이 없습니다.
+    Text: §cLand §8» §fYou don't have permission to delete claims.
   AllAdminDeleted:
-    Text: §aLand §8» §f모든 관리자 보호 구역을 삭제했습니다.
+    Text: §aLand §8» §fDeleted all administrative claims.
   AdjustBlocksSuccess:
-    Text: '§aLand §8» §6{0}§f님의 보너스 보호 블록을 §e{1}§f만큼 조정했습니다. 총 보너스 블록: §e{2}§f개'
-    Notes: '0: 플레이어; 1: 조정량; 2: 최종 보너스 블록 수'
+    Text: '§aLand §8» §fAdjusted §6{0}§f''s bonus claim blocks by §b{1}. New total
+      bonus blocks: §a{2}.'
+    Notes: '0: player; 1: adjustment; 2: new total'
   NotTrappedHere:
-    Text: §bLand §8» §f여기서는 블럭 설치가 가능합니다. 스스로 탈출하세요!
+    Text: §aLand §8» §fYou can build here. Save yourself.
   RescuePending:
-    Text: §bLand §8» §f10초간 움직이지 않으면 밖으로 순간이동됩니다. 잠시만 기다려주세요.
+    Text: §aLand §8» §fIf you stay put for §a10 §fseconds, you'll be teleported out.
+      Please wait.
   NonSiegeWorld:
-    Text: §cLand §8» §f이 월드에서는 공성전이 비활성화되어 있습니다.
+    Text: §cLand §8» §fSiege is disabled here.
   AlreadySieging:
-    Text: §cLand §8» §f이미 공성전에 참여 중입니다.
+    Text: §cLand §8» §fYou're already involved in a siege.
   NotSiegableThere:
-    Text: §bLand §8» §6{0}§f님은 해당 위치에서 보호받고 있지 않습니다.
-    Notes: '0: 방어 중인 플레이어'
+    Text: §cLand §8» §6{0} §fisn't protected there.
+    Notes: '0: defending player'
   SiegeTooFarAway:
-    Text: §cLand §8» §f공성하기엔 거리가 너무 멉니다.
+    Text: §cSiege §8» §fYou're too far away to siege.
   NoSiegeYourself:
-    Text: §bLand §8» §f자기 자신을 공성할 수는 없습니다. 진정하세요!
+    Text: §cSiege §8» §fYou cannot siege yourself, don't be silly
   NoSiegeDefenseless:
-    Text: §bLand §8» §f해당 플레이어는 방어력이 없습니다. 다른 대상을 찾으세요.
+    Text: §cSiege §8» §fThat player is defenseless. Go pick on somebody else.
   AlreadyUnderSiegePlayer:
-    Text: §bLand §8» §6{0}§f님은 이미 공성 중입니다. 함께 싸워보세요!
-    Notes: '0: 방어 중인 플레이어'
+    Text: §cSiege §8» §6{0} §fis already under siege. Join the party!
+    Notes: '0: defending player'
   AlreadyUnderSiegeArea:
-    Text: §bLand §8» §f이 지역은 이미 공성 중입니다. 참여해보세요!
+    Text: §bSiege §8» §fThat area is already under siege. Join the party!
   NoSiegeAdminClaim:
-    Text: §cLand §8» §f이 지역은 관리자 보호 구역으로 공성이 불가능합니다.
+    Text: §cSiege §8» §fSiege is disabled in this area.
   SiegeOnCooldown:
-    Text: §cLand §8» §f해당 방어자 또는 보호 구역은 아직 공성 쿨다운 중입니다. 다른 대상을 찾으세요.
+    Text: §cSiege §8» §fYou're still on siege cooldown for this defender or claim.
+      Find another victim.
   SiegeAlert:
-    Text: §cLand §8» §f당신은 현재 공성 중입니다! 지금 로그아웃하면 사망합니다. §6{0}§f님을 물리치거나, 포기하거나, 탈출하세요.
-    Notes: '0: 공격자 이름'
+    Text: §cSiege §8» §fYou're under siege! If you log out now, you will die. You
+      must defeat §6{0}§f, wait for him to give up, or escape.
+    Notes: '0: attacker name'
   SiegeConfirmed:
-    Text: §cLand §8» §f공성이 시작되었습니다! 지금 로그아웃하면 사망합니다. §6{0}§f님을 물리치거나, 쫓아내거나, 포기하고
-      떠나세요.
-    Notes: '0: 방어자 이름'
+    Text: §cSiege §8» §fThe siege has begun! If you log out now, you will die. You
+      must defeat §6{0}§f, chase him away, or admit defeat and walk away.
+    Notes: '0: defender name'
   AbandonClaimMissing:
-    Text: §cLand §8» §f삭제하려는 보호 구역 안에 서 계세요. 또는 §e/abandonallclaims §f명령어를 고려해보세요.
+    Text: §cLand §8» §fStand in the claim you want to delete, or consider §6/abandonallclaims§f.
   NotYourClaim:
-    Text: §cLand §8» §f이 보호 구역은 당신의 것이 아닙니다.
+    Text: §cLand §8» §fThis isn't your claim.
   DeleteTopLevelClaim:
-    Text: §cLand §8» §f하위 보호 구역을 삭제하려면 해당 구역 안에 서 있어야 합니다. 이 보호 구역과 하위 구역 전체를 삭제하려면
-      §e/abandontoplevelclaim 명령어를 사용하세요.
+    Text: §cLand §8» §fTo delete a subdivision, stand inside it. Otherwise, use §6/abandontoplevelclaim
+      §fto delete this claim and all subdivisions.
   AbandonSuccess:
-    Text: '§aLand §8» §f보호 구역을 해제했습니다. 현재 사용 가능한 보호 블록: §e{0}§f개'
-    Notes: '0: 남은 보호 블록 수'
+    Text: §aLand §8» §fClaim abandoned. You now have §a{0} §favailable claim blocks.
+    Notes: '0: remaining claim blocks'
   ConfirmAbandonAllClaims:
-    Text: §cLand §8» §f정말 모든 보호 구역을 해제하시겠습니까? §e/abandonallclaims confirm §f명령어로 확인해주세요.
+    Text: §cLand §8» §fAre you sure you want to abandon ALL of your claims? Please
+      confirm with §6/abandonallclaims confirm§f.
   CantGrantThatPermission:
-    Text: §cLand §8» §f자신이 가지지 않은 권한은 부여할 수 없습니다.
+    Text: §cLand §8» §fYou can't grant a permission you don't have yourself.
   GrantPermissionNoClaim:
-    Text: §cLand §8» §f권한을 부여하려는 보호 구역 안에 서 계세요.
+    Text: §cLand §8» §fStand inside the claim where you want to grant permission.
   GrantPermissionConfirmation:
-    Text: §aLand §8» §6{0}§f님에게 §e{1}§f 권한을 §7{2}§f에 부여했습니다.
-    Notes: '0: 대상 플레이어; 1: 권한 설명; 2: 적용 범위'
+    Text: §aLand §8» §fGranted §6{0} §fpermission to §e{1} §7{2}§f.
+    Notes: '0: target player; 1: permission description; 2: scope (changed claims)'
   ManageUniversalPermissionsInstruction:
-    Text: §bLand §8» §f모든 보호 구역의 권한을 관리하려면 보호 구역 밖에 서 계세요.
+    Text: §bLand §8» §fTo manage permissions for ALL your claims, stand outside them.
   ManageOneClaimPermissionsInstruction:
-    Text: §bLand §8» §f특정 보호 구역의 권한을 관리하려면 그 안에 서 계세요.
+    Text: §bLand §8» §fTo manage permissions for a specific claim, stand inside it.
   CollectivePublic:
-    Text: 공개 대상
-    Notes: ‘공개 권한 부여’ 등에서 사용되는 표현
+    Text: the public
+    Notes: as in 'granted the public permission to...'
   BuildPermission:
-    Text: 건설
+    Text: build
   ContainersPermission:
-    Text: 상자 및 동물 접근
+    Text: access containers and animals
   AccessPermission:
-    Text: 버튼 및 레버 사용
+    Text: use buttons and levers
   PermissionsPermission:
-    Text: 권한 설정 관리
+    Text: manage permissions
   LocationCurrentClaim:
-    Text: 현재 보호 구역에서
+    Text: in this claim
   LocationAllClaims:
-    Text: 모든 보호 구역에서
+    Text: in all your claims
   PvPImmunityStart:
-    Text: §bLand §8» §f인벤토리가 비어 있는 동안, 다른 플레이어의 공격으로부터 보호됩니다.
+    Text: §aPvP §8» §fYou're protected from attack by other players as long as your
+      inventory is empty.
   SiegeNoDrop:
-    Text: §cLand §8» §f공성 중에는 아이템을 줄 수 없습니다.
+    Text: §cSiege §8» §fYou can't give away items while involved in a siege.
   DonateItemsInstruction:
-    Text: §bLand §8» §f손에 든 아이템을 기부하려면 상자를 다시 좌클릭하세요.
+    Text: §bLand §8» §fTo give away the item(s) in your hand, left-click the chest
+      again.
   ChestFull:
-    Text: §cLand §8» §f이 상자는 가득 찼습니다.
+    Text: §cLand §8» §fThis chest is full.
   DonationSuccess:
-    Text: §aLand §8» §f아이템이 상자에 전달되었습니다!
+    Text: §aLand §8» §fItem(s) transferred to chest!
   PlayerTooCloseForFire2:
-    Text: §cLand §8» §f다른 플레이어가 너무 가까워 불을 지필 수 없습니다.
+    Text: §cLand §8» §fYou can't start a fire this close to another player.
   TooDeepToClaim:
-    Text: §cLand §8» §f이 상자는 너무 깊은 지하에 있어 보호할 수 없습니다. 위치를 옮겨보세요.
+    Text: §cLand §8» §fThis chest can't be protected because it's too deep underground.
+      Consider moving it.
   ChestClaimConfirmation:
-    Text: §aLand §8» §f이 상자는 보호되었습니다.
+    Text: §aLand §8» §fThis chest is §aprotected§f.
   AutomaticClaimNotification:
-    Text: §aLand §8» §f이 상자와 주변 블록은 파괴 및 절도로부터 보호됩니다.
+    Text: §aLand §8» §fThis chest and nearby blocks are protected from breakage and
+      theft.
   AutomaticClaimOtherClaimTooClose:
-    Text: §cLand §8» §f다른 보호 구역이 너무 가까워 상자 보호를 생성할 수 없습니다!
+    Text: §cLand §8» §fCannot create a claim for your chest, there is another claim
+      too close!
   UnprotectedChestWarning:
-    Text: §cLand §8» §f이 상자는 보호되지 않았습니다. 황금 삽으로 기존 보호 구역을 확장하거나 새로 생성해보세요.
+    Text: §cLand §8» §fThis chest is NOT protected. Consider using a golden shovel
+      to expand an existing claim or to create a new one.
   ThatPlayerPvPImmune:
-    Text: §cLand §8» §f무방비 상태의 플레이어를 공격할 수 없습니다.
+    Text: §cLand §8» §fYou can't injure defenseless players.
   CantFightWhileImmune:
-    Text: §cLand §8» §fPvP 보호 상태에서는 전투에 참여할 수 없습니다.
+    Text: §cLand §8» §fYou can't fight someone while you're protected from PvP.
   NoDamageClaimedEntity:
-    Text: §cLand §8» §f해당 생명체는 §6{0}§f님의 소유입니다.
-    Notes: '0: 소유자 이름'
+    Text: §cLand §8» §fThat entity belongs to §6{0}§f.
+    Notes: '0: owner name'
   ShovelBasicClaimMode:
-    Text: §aLand §8» §f삽이 기본 보호 구역 생성 모드로 전환되었습니다.
+    Text: §aLand §8» §fShovel returned to basic claims mode.
   RemainingBlocks:
-    Text: §bLand §8» §f보호할 수 있는 블록이 §a{0}§f개 남았습니다.
-    Notes: '0: 남은 보호 블록'
+    Text: §bLand §8» §fYou may claim up to §a{0} §fmore blocks.
+    Notes: '0: remaining blocks'
   CreativeBasicsVideo2:
-    Text: '§bLand §8» §f보호 구역 도움말 보기: §7{0}'
-    Notes: '{0}: 영상 링크'
+    Text: '§bLand §8» §fClick for Land Claim Help: §7{0}'
+    Notes: '{0}: video URL'
   SurvivalBasicsVideo2:
-    Text: '§bLand §8» §f보호 구역 도움말 보기: §7{0}'
-    Notes: '{0}: 영상 링크'
+    Text: '§bLand §8» §fClick for Land Claim Help: §7{0}'
+    Notes: '{0}: video URL'
   TrappedChatKeyword:
-    Text: trapped;stuck;갇힘;꺼내;구출;구조
-    Notes: 채팅에 이 단어들이 언급되면 §e/trapped §f명령어 정보를 제공합니다.
+    Text: trapped;stuck
+    Notes: When mentioned in chat, players get information about the /trapped command
+      (multiple words can be separated with semi-colons)
   TrappedInstructions:
-    Text: §bLand §8» §f다른 사람의 보호 구역에 갇히셨나요? §e/trapped §f명령어를 사용해보세요.
+    Text: §bLand §8» §fAre you trapped in someone's land claim? Try the §6/trapped
+      §fcommand.
   PvPNoDrop:
-    Text: §cLand §8» §fPvP 중에는 아이템을 버릴 수 없습니다.
+    Text: §cLand §8» §fYou can't drop items while in PvP combat.
   SiegeNoTeleport:
-    Text: §cLand §8» §f공성 중인 지역에서는 순간이동할 수 없습니다.
+    Text: §cLand §8» §fYou can't teleport out of a besieged area.
   BesiegedNoTeleport:
-    Text: §cLand §8» §f공성 중인 지역으로 순간이동할 수 없습니다.
+    Text: §cLand §8» §fYou can't teleport into a besieged area.
   SiegeNoContainers:
-    Text: §cLand §8» §f공성 중에는 상자를 사용할 수 없습니다.
+    Text: §cSiege §8» §fYou can't access containers while involved in a siege.
   PvPNoContainers:
-    Text: §cLand §8» §fPvP 중에는 상자를 사용할 수 없습니다.
+    Text: §cLand §8» §fYou can't access containers during PvP combat.
   PvPImmunityEnd:
-    Text: §aLand §8» §f이제 다른 플레이어와 전투할 수 있습니다.
+    Text: §aPvP §8» §fNow you can §bfight §fwith other players.
   NoBedPermission:
-    Text: §cLand §8» §6{0}§f님이 이 침대를 사용할 권한을 부여하지 않았습니다.
-    Notes: '0: 보호 구역 소유자'
+    Text: §cLand §8» §6{0} §fhasn't given you permission to sleep here.
+    Notes: '0: claim owner'
   NoWildernessBuckets:
-    Text: §cLand §8» §f버킷은 보호 구역 안이나 지하에서만 사용할 수 있습니다.
+    Text: §cLand §8» §fYou may only dump buckets inside your claim(s) or underground.
   NoLavaNearOtherPlayer:
-    Text: §cLand §8» §6{0}§f님 근처에는 용암을 놓을 수 없습니다.
-    Notes: '0: 주변 플레이어'
+    Text: §cLand §8» §fYou can't place lava this close to §6{0}§f.
+    Notes: '0: nearby player'
   TooFarAway:
-    Text: §cLand §8» §f너무 멀리 떨어져 있습니다.
+    Text: §cLand §8» §fThat's too far away.
   BlockNotClaimed:
-    Text: §cLand §8» §f이 블록은 누구도 보호하고 있지 않습니다.
+    Text: §bLand §8» §fNo one has claimed this block.
   BlockClaimed:
-    Text: §bLand §8» §f이 블록은 §6{0}§f님이 보호하고 있습니다.
-    Notes: '0: 보호자 이름'
+    Text: §bLand §8» §fThat block has been claimed by §6{0}§f.
+    Notes: '0: claim owner'
   SiegeNoShovel:
-    Text: §cLand §8» §f공성 중에는 삽을 사용할 수 없습니다.
+    Text: §cSiege §8» §fYou can't use your shovel tool while involved in a siege.
   RestoreNaturePlayerInChunk:
-    Text: §cLand §8» §6{0}§f님이 해당 청크에 있어 자연 복구를 실행할 수 없습니다.
-    Notes: '0: 근처 플레이어'
+    Text: §cLand §8» §fUnable to restore. §6{0} §fis in that chunk.
+    Notes: '0: nearby player'
   NoCreateClaimPermission:
-    Text: §cLand §8» §f토지를 보호할 권한이 없습니다.
+    Text: §cLand §8» §fYou don't have permission to claim land.
   ResizeNeedMoreBlocks:
-    Text: §cLand §8» §f이 크기로 조정하려면 블록이 §e{0}§f개 더 필요합니다.
-    Notes: '0: 필요한 블록 수'
+    Text: §cLand §8» §fYou don't have enough blocks for this size. You need §c{0}
+      §fmore.
+    Notes: '0: how many needed'
   NoCreativeUnClaim:
-    Text: §cLand §8» §f이 땅은 해제할 수 없습니다. 크기를 확장하거나 새로운 보호 구역을 만드세요.
+    Text: §cLand §8» §fYou can't unclaim this land. You can only make this claim larger
+      or create additional claims.
   ClaimResizeSuccess:
-    Text: '§aLand §8» §f보호 구역이 조정되었습니다. 남은 보호 블록: §e{0}§f개'
-    Notes: '0: 남은 보호 블록'
+    Text: §aLand §8» §fClaim resized. §a{0} §favailable claim blocks remaining.
+    Notes: '0: remaining blocks'
   ResizeFailOverlap:
-    Text: §cLand §8» §f여기서는 보호 구역이 다른 보호 구역과 겹쳐 확장할 수 없습니다.
+    Text: §cLand §8» §fCan't resize here because it would overlap another nearby claim.
   ResizeStart:
-    Text: §bLand §8» §f보호 구역 크기 조정 시작! 새로운 모서리 위치에 삽을 다시 사용하세요.
+    Text: §cLand §8» §fResizing claim. Use your shovel again at the new location for
+      this corner.
   ResizeFailOverlapSubdivision:
-    Text: §cLand §8» §f여기에는 하위 보호 구역이 겹쳐 있어 만들 수 없습니다. §e/abandonclaim §f명령어로 삭제하거나,
-      모서리에서 삽을 사용해 크기를 조정해보세요.
+    Text: §cLand §8» §fYou can't create a subdivision here because it would overlap
+      another subdivision. Consider §6/abandonclaim §fto delete it, or use your shovel
+      at a corner to resize it.
   SubdivisionStart:
-    Text: §bLand §8» §f하위 보호 구역의 첫 번째 모서리를 설정했습니다. 반대쪽 모서리에 삽을 사용하세요.
+    Text: §aLand §8» §fSubdivision corner set! Use your shovel at the location for
+      the opposite corner of this new subdivision.
   CreateSubdivisionOverlap:
-    Text: §cLand §8» §f선택한 영역이 다른 하위 보호 구역과 겹칩니다.
+    Text: §cLand §8» §fYour selected area overlaps another subdivision.
   SubdivisionSuccess:
-    Text: §aLand §8» §f하위 보호 구역이 생성되었습니다! 친구와 공유하려면 §e/trust §f명령어를 사용하세요.
+    Text: §aLand §8» §fSubdivision created! Use /trust to share it with friends.
   CreateClaimFailOverlap:
-    Text: §cLand §8» §f이곳은 기존 보호 구역과 겹쳐 보호 구역을 만들 수 없습니다. §e/abandonclaim §f명령어나 삽으로
-      크기를 조정해보세요.
+    Text: §cLand §8» §fYou can't create a claim here because it would overlap your
+      other claim. Use /abandonclaim to delete it, or use your shovel at a corner
+      to resize it.
   CreateClaimFailOverlapOtherPlayer:
-    Text: §cLand §8» §f이곳은 §6{0}§f님의 보호 구역과 겹쳐 보호 구역을 만들 수 없습니다.
-    Notes: '0: 다른 소유자 이름'
+    Text: §cLand §8» §fYou can't create a claim here because it would overlap §6{0}§f's
+      claim.
+    Notes: '0: other claim owner'
   ClaimsDisabledWorld:
-    Text: §cLand §8» §f이 월드에서는 보호 구역 기능이 비활성화되어 있습니다.
+    Text: §cLand §8» §fLand claims are disabled in this world.
   ClaimStart:
-    Text: §bLand §8» §f첫 번째 모서리 설정 완료! 반대쪽 모서리에 삽을 사용해 직사각형 영역을 보호하세요. 취소하려면 삽을 들지
-      마세요.
+    Text: §aLand §8» §fClaim corner set! Use the shovel again at the opposite corner
+      to claim a rectangle of land. To cancel, put your shovel away.
   NewClaimTooNarrow:
-    Text: §cLand §8» §f이 보호 구역은 너무 작습니다. 최소 §e{0}§f 블록 이상이어야 합니다.
-    Notes: '0: 최소 너비'
+    Text: §cLand §8» §fThis claim would be too small. Any claim must be at least §c{0}
+      §fblocks wide.
+    Notes: '0: minimum claim width'
   CreateClaimInsufficientBlocks:
-    Text: §cLand §8» §f해당 지역을 보호하기에는 보호 블록이 부족합니다. §e{0}§f개 더 필요합니다.
-    Notes: '0: 추가로 필요한 블록 수'
+    Text: §cLand §8» §fYou don't have enough blocks to claim that entire area. You
+      need §c{0} §fmore blocks.
+    Notes: '0: additional blocks needed'
   AbandonClaimAdvertisement:
-    Text: §bLand §8» §f다른 보호 구역을 삭제하고 블록을 확보하려면 §e/abandonclaim §f명령어를 사용하세요.
+    Text: §bLand §8» §fTo delete another claim and free up some blocks, use §6/abandonclaim§f.
   CreateClaimFailOverlapShort:
-    Text: §cLand §8» §f선택한 영역이 기존 보호 구역과 겹칩니다.
+    Text: §cLand §8» §fYour selected area overlaps an existing claim.
   CreateClaimSuccess:
-    Text: §aLand §8» §f보호 구역이 생성되었습니다! 친구와 공유하려면 §e/trust §f명령어를 사용하세요.
+    Text: §aLand §8» §fClaim created! Use §6/trust §fto share it with friends.
   SiegeWinDoorsOpen:
-    Text: §aLand §8» §f축하합니다! 버튼과 레버가 잠시 동안 열려 있습니다.
+    Text: §aLand §8» §fCongratulations! Buttons and levers are temporarily unlocked.
   RescueAbortedMoved:
-    Text: §cLand §8» §f움직이셨기 때문에 구조가 취소되었습니다.
+    Text: §cLand §8» §fYou moved! Rescue cancelled.
   SiegeDoorsLockedEjection:
-    Text: §cLand §8» §f약탈 시간이 끝났습니다! 보호 구역에서 퇴장됩니다.
+    Text: §cSiege §8» §fLooting time is up! Ejected from the claim.
   NoModifyDuringSiege:
-    Text: §cLand §8» §f공성 중에는 보호 구역을 수정할 수 없습니다.
+    Text: §cSiege §8» §fClaims can't be modified while under siege.
   OnlyOwnersModifyClaims:
-    Text: §cLand §8» §f이 보호 구역은 §6{0}§f님만 수정할 수 있습니다.
-    Notes: '0: 보호 구역 소유자'
+    Text: §cLand §8» §fOnly §6{0} §fcan modify this claim.
+    Notes: '0: owner name'
   NoBuildUnderSiege:
-    Text: §cLand §8» §f이 보호 구역은 §6{0}§f님의 공성 중입니다. 아무도 건설할 수 없습니다.
-    Notes: '0: 공격자 이름'
+    Text: §cSiege §8» §fThis claim is under siege by §6{0}§f. No one can build here.
+    Notes: '0: attacker name'
   NoBuildPvP:
-    Text: §cLand §8» §fPvP 전투 중에는 보호 구역에서 건설할 수 없습니다.
+    Text: §cLand §8» §fYou can't build in claims during PvP combat.
   NoBuildPermission:
-    Text: §cLand §8» §6{0}§f님의 건설 권한이 없습니다.
-    Notes: '0: 소유자 이름'
+    Text: §cLand §8» §fYou don't have §6{0}§f's permission to build here.
+    Notes: '0: owner name'
   NonSiegeMaterial:
-    Text: §cLand §8» §f이 재료는 너무 단단해 부술 수 없습니다.
+    Text: §cLand §8» §fThat material is too tough to break.
   NoOwnerBuildUnderSiege:
-    Text: §cLand §8» §f공성 중에는 변경할 수 없습니다.
+    Text: §cSiege §8» §fYou can't make changes while under siege.
   NoAccessPermission:
-    Text: §cLand §8» §6{0}§f님의 권한이 없습니다.
-    Notes: '0: 소유자 이름 — 버튼, 레버, 침대 포함'
+    Text: §cLand §8» §fYou don't have §6{0}§f's permission to use that.
+    Notes: '0: owner name. access permission controls buttons, levers, and beds'
   NoContainersSiege:
-    Text: §cLand §8» §f이 보호 구역은 §6{0}§f님이 공성 중인 상태입니다. 지금은 상자에 접근할 수 없습니다.
-    Notes: '0: 공격자 이름'
+    Text: §cSiege §8» §fThis claim is under siege by §6{0}§f. No one can access containers
+      here right now.
+    Notes: '0: attacker name'
   NoContainersPermission:
-    Text: §cLand §8» §6{0}§f님의 권한이 없습니다.
-    Notes: '0: 소유자 이름 — 작업대 등 포함'
+    Text: §cLand §8» §fYou don't have §6{0}§f's permission to use that.
+    Notes: '0: owner''s name. containers also include crafting blocks'
   OwnerNameForAdminClaims:
-    Text: 관리자
-    Notes: '''해당 구역은 관리자의 권한이 필요합니다''와 같은 문맥에서 사용'
+    Text: an administrator
+    Notes: as in 'You don't have an administrator's permission to build here.'
   ClaimTooSmallForEntities:
-    Text: §cLand §8» §f이 보호 구역은 너무 작아 생명체를 둘 수 없습니다. 구역을 확장해보세요.
+    Text: §cLand §8» §fThis claim isn't big enough for that. Try enlarging it.
   TooManyEntitiesInClaim:
-    Text: §cLand §8» §f이 보호 구역에는 이미 너무 많은 생명체가 있습니다. 구역을 확장하거나 일부 동물, 몬스터, 그림, 광차
-      등을 제거해보세요.
+    Text: §cLand §8» §fThis claim has too many entities already. Try enlarging the
+      claim or removing some animals, monsters, paintings, or minecarts.
   YouHaveNoClaims:
-    Text: §cLand §8» §f당신은 아직 보호 구역을 가지고 있지 않습니다.
+    Text: §cLand §8» §fYou don't have any land claims.
   ConfirmFluidRemoval:
-    Text: §cLand §8» §f이 보호 구역을 포기하면 내부의 용암이 제거됩니다. 정말로 삭제하시려면 §e/abandonclaim §f명령어를
-      한 번 더 입력하세요.
+    Text: §cLand §8» §fAbandoning this claim will remove lava inside the claim. If
+      you're sure, use §6/abandonclaim §fagain.
   AutoBanNotify:
-    Text: §cLand §8» §6{0}§7({1})§f님이 자동 차단되었습니다. 자세한 내용은 로그를 확인하세요.
-    Notes: '0: 플레이어 이름, 1: 식별자(IP 등)'
+    Text: §cAutoBan §8» §fAuto-banned §6{0}§e({1})§f. See logs for details.
   AdjustGroupBlocksSuccess:
-    Text: '§aLand §8» §e{0} §f권한을 가진 플레이어들의 보너스 보호 블록을 §e{1}§f만큼 조정했습니다. 새 총합: §e{2}§f개'
-    Notes: '0: 권한 이름; 1: 조정량; 2: 조정된 총 보너스 수'
+    Text: '§aLand §8» §fAdjusted bonus claim blocks for players with the §e{0} permission
+      by §6{1}. New total: §a{2}.'
+    Notes: '0: permission; 1: adjustment amount; 2: new total bonus'
   InvalidPermissionID:
-    Text: §cLand §8» §f플레이어 이름 또는 [권한명] 형식으로 입력하세요.
+    Text: §cLand §8» §fPlease specify a player name, or a permission in [brackets].
   HowToClaimRegex:
     Text: (^|.*\W)how\W.*\W(claim|protect|lock)(\W.*|$)
-    Notes: 정규 표현식입니다. 수정 전 주의! 사용자가 'how to claim' 같은 질문을 할 때 도움말 영상 표시용
+    Notes: This is a Java Regular Expression. Look it up before editing! It's used
+      to tell players about the demo video when they ask how to claim land.
   NoBuildOutsideClaims:
-    Text: §bLand §8» §f이곳은 보호되지 않았습니다. 먼저 토지를 보호하세요!
+    Text: §cLand §8» §fYou can't build here unless you claim some land first.
   PlayerOfflineTime:
-    Text: '  §f마지막 접속: §e{0}§f일 전'
-    Notes: '0: 마지막 접속으로부터 지난 일 수'
+    Text: '  Last login: §c{0} §fdays ago.'
+    Notes: '0: number of full days since last login'
   BuildingOutsideClaims:
-    Text: §bLand §8» §f다른 플레이어도 이곳에 건설할 수 있습니다. 보호 구역을 만들어 건축물을 지켜보세요!
+    Text: §bLand §8» §fOther players can build here, too. Consider creating a land
+      claim to protect your work!
   TrappedWontWorkHere:
-    Text: §cLand §8» §f안전한 텔레포트 위치를 찾을 수 없습니다. 관리자에게 문의하세요.
+    Text: §cLand §8» §fSorry, unable to find a safe location to teleport you to. Contact
+      an admin.
   CommandBannedInPvP:
-    Text: §cLand §8» §fPvP 전투 중에는 해당 명령어를 사용할 수 없습니다.
+    Text: §cPvP §8» §fYou can't use that command while in PvP combat.
   UnclaimCleanupWarning:
-    Text: §bLand §8» §f보호를 해제한 토지는 다른 플레이어가 변경하거나 관리자가 정리할 수 있습니다. 소중한 구조물이 있다면 다시
-      보호하세요!
+    Text: §cLand §8» §fThe land you've unclaimed may be changed by other players or
+      cleaned up by administrators. If you've built something there you want to keep,
+      you should reclaim it.
   BuySellNotConfigured:
-    Text: §cLand §8» §f보호 블록의 구매/판매 기능은 비활성화되어 있습니다.
+    Text: §cLand §8» §fSorry, buying and selling claim blocks is disabled.
   NoTeleportPvPCombat:
-    Text: §cLand §8» §fPvP 중에는 순간이동할 수 없습니다.
+    Text: §cPvP §8» §fYou can't teleport while fighting another player.
   NoTNTDamageAboveSeaLevel:
-    Text: §bLand §8» §f해수면 위에서는 TNT가 블록을 파괴하지 않습니다.
+    Text: §cWarning §8» §fTNT will not destroy blocks above sea level.
   NoTNTDamageClaims:
-    Text: '§bLand §8» §f경고: 보호 구역에서는 TNT가 블록을 파괴하지 않습니다.'
+    Text: §cWarning §8» §fTNT will not destroy claimed blocks.
   IgnoreClaimsAdvertisement:
-    Text: §bLand §8» §f보호 무시 모드를 사용하려면 §e/ignoreclaims §f명령어를 입력하세요.
+    Text: To override, use §6/ignoreclaims§f.
   NoPermissionForCommand:
-    Text: §cLand §8» §f이 명령어를 사용할 권한이 없습니다.
+    Text: §cLand §8» §fYou don't have permission to do that.
   ClaimsListNoPermission:
-    Text: §cLand §8» §f다른 플레이어의 보호 구역 정보를 확인할 권한이 없습니다.
+    Text: §cLand §8» §fYou don't have permission to get information about another
+      player's land claims.
   ExplosivesDisabled:
-    Text: §aLand §8» §f이 보호 구역은 이제 폭발로부터 보호됩니다. 다시 보호를 해제하려면 §e/claimexplosions §f명령어를
-      입력하세요.
+    Text: §aLand §8» §fThis claim is now §aprotected from explosions. Use §6/claimexplosions
+      §fagain to disable.
   ExplosivesEnabled:
-    Text: §cLand §8» §f이 보호 구역은 이제 폭발에 취약합니다. 다시 보호하려면 §e/claimexplosions §f명령어를 입력하세요.
+    Text: §cLand §8» §fThis claim is now §cvulnerable to explosions. Use §6/claimexplosions
+      §fagain to re-enable protections.
   ClaimExplosivesAdvertisement:
-    Text: §bLand §8» §f이 보호 구역에서 폭발이 블록을 파괴하도록 허용하려면 §e/claimexplosions §f명령어를 사용하세요.
+    Text: §bLand §8» §fTo allow explosives to destroy blocks in this land claim, use
+      §6/claimexplosions§f.
   PlayerInPvPSafeZone:
-    Text: §bLand §8» §f해당 플레이어는 PvP 안전 구역에 있습니다.
+    Text: §cPvP §8» §fThat player is in a PvP safe zone.
   NoPistonsOutsideClaims:
-    Text: §bLand §8» §f피스톤은 보호 구역 밖의 블록을 움직일 수 없습니다.
+    Text: §cWarning §8» §fPistons won't move blocks outside land claims.
   SoftMuted:
-    Text: §cLand §8» §6{0}§f님을 소프트 뮤트했습니다.
-    Notes: '0: 변경된 플레이어 이름'
+    Text: §cSoftMute §8» §fSoft-muted §6{0}§f.
+    Notes: '0: The changed player''s name.'
   UnSoftMuted:
-    Text: §aLand §8» §6{0}§f님의 소프트 뮤트를 해제했습니다.
-    Notes: '0: 변경된 플레이어 이름'
+    Text: §aSoftMute §8» §fUn-soft-muted §6{0}§f.
+    Notes: '0: The changed player''s name.'
   DropUnlockAdvertisement:
-    Text: §bLand §8» §f아이템을 떨어뜨리면 다른 플레이어가 주울 수 없습니다. §e/unlockdrops §f명령어를 먼저 사용하세요.
+    Text: §bLand §8» §fOther players can't pick up your dropped items unless you §6/unlockdrops
+      §ffirst.
   PickupBlockedExplanation:
-    Text: §bLand §8» §6{0}§f님이 §e/unlockdrops §f명령어를 사용하지 않으면 이 아이템을 주울 수 없습니다.
-    Notes: '0: 아이템 소유자'
+    Text: §cLand §8» §fYou can't pick this up unless §6{0} §fuses §6/unlockdrops§f.
+    Notes: '0: The item stack''s owner.'
   DropUnlockConfirmation:
-    Text: §aLand §8» §f드롭이 해제되었습니다. 다른 플레이어가 아이템을 주울 수 있습니다 (다음 사망 전까지).
+    Text: §aLand §8» §fUnlocked your drops. Other players may now pick them up (until
+      you die again).
   DropUnlockOthersConfirmation:
-    Text: §aLand §8» §6{0}§f님의 드롭을 해제했습니다.
-    Notes: '0: 해제 대상 플레이어'
+    Text: §aLand §8» §fUnlocked §6{0}§f's drops.
+    Notes: '0: The owner of the unlocked drops.'
   AdvertiseACandACB:
-    Text: §bLand §8» §e/acb §f명령어로 보호 블록을 더 부여하거나, §e/adminclaims §f명령어로 무료 관리자 보호
-      구역을 만들 수 있습니다.
+    Text: §bLand §8» §fYou may use §6/acb §fto give yourself more claim blocks, or
+      §6/adminclaims §fto create a free administrative claim.
   AdvertiseAdminClaims:
-    Text: §bLand §8» §f관리자 보호 구역을 만들려면 §e/adminclaims §f명령어를 사용하세요. 다른 관리자와 공유할 수
-      있습니다.
+    Text: §bLand §8» §fYou could create an administrative land claim instead using
+      §6/adminclaims§f, which you'd share with other administrators.
   AdvertiseACB:
-    Text: §bLand §8» §e/acb §f명령어로 보호 블록을 추가할 수 있습니다.
+    Text: §bLand §8» §fYou may use §6/acb §fto give yourself more claim blocks.
   NotYourPet:
-    Text: §cLand §8» §f이 동물은 §6{0}§f님의 소유입니다. §e/givepet §f명령어로 소유권을 넘겨야 사용할 수 있습니다.
-    Notes: '0: 소유자 이름'
+    Text: §cLand §8» §fThat belongs to §6{0} §funtil it's given to you with §6/givepet§f.
+    Notes: '0: owner name'
   PetGiveawayConfirmation:
-    Text: §aLand §8» §f펫이 성공적으로 양도되었습니다.
+    Text: §aLand §8» §fPet transferred.
   PetTransferCancellation:
-    Text: §cLand §8» §f펫 양도가 취소되었습니다.
+    Text: §cLand §8» §fPet giveaway cancelled.
   ReadyToTransferPet:
-    Text: §aLand §8» §f양줄 준비가 완료되었습니다! 양도할 펫을 우클릭하거나 §e/givepet cancel §f명령어로 취소하세요.
+    Text: §aLand §8» §fReady to transfer! Right-click the pet you'd like to give away,
+      or cancel with §6/givepet cancel§f.
   AvoidGriefClaimLand:
-    Text: §bLand §8» §f그리핑을 방지하세요! 땅을 보호하면 그리핑을 막을 수 있습니다.
+    Text: §bLand §8» §fPrevent grief! If you claim your land, you will be grief-proof.
   BecomeMayor:
-    Text: §aLand §8» §f보호 구역을 하위 구역으로 나누어 마을을 운영해보세요!
+    Text: §bLand §8» §fSubdivide your land claim and become a mayor!
   ClaimCreationFailedOverClaimCountLimit:
-    Text: §cLand §8» §f보호 구역 개수 제한에 도달했습니다. 새로 만들려면 §e/abandonclaim §f명령어로 기존 구역 중
-      하나를 삭제하세요.
+    Text: §cLand §8» §fYou've reached your limit on land claims. Use §6/abandonclaim
+      §fto remove one before creating another.
   CreateClaimFailOverlapRegion:
-    Text: §cLand §8» §f이 영역 전체를 보호할 수 없습니다. 해당 지역에 건설 권한이 없습니다.
+    Text: §cLand §8» §fYou can't claim all of this because you're not allowed to build
+      here.
   ResizeFailOverlapRegion:
-    Text: §cLand §8» §f해당 지역에 건설 권한이 없어 보호 구역 크기를 조정할 수 없습니다.
+    Text: §cLand §8» §fYou don't have permission to build there, so you can't claim
+      that area.
   ShowNearbyClaims:
-    Text: §aLand §8» §f주변에서 보호 구역 §e{0}§f개를 찾았습니다.
-    Notes: '0: 보호 구역 개수'
+    Text: §bLand §8» §fFound §e{0} §fland claims.
+    Notes: '0: Number of claims found.'
   NoChatUntilMove:
-    Text: §bLand §8» §f죄송합니다! 약간 더 움직이셔야 채팅이 가능합니다:)
+    Text: §cChat §8» §fSorry, but you have to move a little more before you can chat.
+      We get lots of spam bots here. :)
   SiegeImmune:
-    Text: §bLand §8» §f해당 플레이어는 §e/siege§f에 면역입니다.
+    Text: §cSiege §8» §fThat player is immune to §6/siege§f.
   SetClaimBlocksSuccess:
-    Text: §aLand §8» §f누적 보호 블록 수가 갱신되었습니다.
+    Text: §aLand §8» §fUpdated accrued claim blocks.
   IgnoreConfirmation:
-    Text: §cLand §8» §f해당 플레이어의 채팅 메시지를 무시합니다.
+    Text: §aIgnore §8» §fYou're now ignoring chat messages from that player.
   NotIgnoringPlayer:
-    Text: §aLand §8» §f해당 플레이어를 무시 중이 아닙니다.
+    Text: §cIgnore §8» §fYou're not ignoring that player.
   UnIgnoreConfirmation:
-    Text: §aLand §8» §f해당 플레이어의 채팅 메시지를 더 이상 무시하지 않습니다.
+    Text: §aIgnore §8» §fYou're no longer ignoring chat messages from that player.
   SeparateConfirmation:
-    Text: §aLand §8» §f이제 해당 플레이어들은 서로의 채팅을 무시하게 됩니다.
+    Text: §aIgnore §8» §fThose players will now ignore each other in chat.
   UnSeparateConfirmation:
-    Text: §aLand §8» §f이제 해당 플레이어들은 서로의 채팅을 무시하지 않습니다.
+    Text: §aIgnore §8» §fThose players will no longer ignore each other in chat.
   NotIgnoringAnyone:
-    Text: §aLand §8» §f현재 무시 중인 플레이어가 없습니다.
+    Text: §aIgnore §8» §fYou're not ignoring anyone.
   TrustListHeader:
-    Text: '§bLand §8» §f명시된 권한 목록:'
-    Notes: '0: 보호 구역 소유자'
+    Text: '§bLand §8» §fExplicit permissions here:'
+    Notes: '0: The claim''s owner'
   Manage:
-    Text: 관리
+    Text: Manage
   Build:
-    Text: 건설
+    Text: Build
   Containers:
-    Text: 상자
+    Text: Containers
   Access:
-    Text: 접근
+    Text: Access
   HasSubclaimRestriction:
-    Text: §c이 하위 보호 구역은 상위 보호 구역의 권한을 상속받지 않습니다.
+    Text: §cLand §8» §fThis subclaim does not inherit permissions from the parent
   StartBlockMath:
-    Text: '§bLand §8» §f플레이에서 얻은 블록: §e{0} §f+ 보너스: §e{1} §f= 총합: §e{2}'
+    Text: '{0} blocks from play + {1} bonus = {2} total.'
   ClaimsListHeader:
-    Text: §bLand §8» §f보호 구역 목록
+    Text: 'Claims:'
   ContinueBlockMath:
-    Text: ' §f(§e{0} §f블록 사용)'
+    Text: ' (-{0} blocks)'
   EndBlockMath:
-    Text: '§8» §f남은 블록: §e{0}'
+    Text: ' = {0} blocks left to spend'
   NoClaimDuringPvP:
-    Text: §cLand §8» §fPvP 전투 중에는 보호 구역을 생성할 수 없습니다.
+    Text: §cLand §8» §fYou can't claim lands during PvP combat.
   UntrustAllOwnerOnly:
-    Text: §cLand §8» §f보호 구역 소유자만 모든 권한을 해제할 수 있습니다.
+    Text: §cLand §8» §fOnly the claim owner can clear all its permissions.
   ManagersDontUntrustManagers:
-    Text: §cLand §8» §f관리자는 관리자 권한을 제거할 수 없습니다. 소유자만 가능합니다.
+    Text: §cLand §8» §fOnly the claim owner can demote a manager.
   BookAuthor:
-    Text: Everest
+    Text: §f§l§oWildy
   BookTitle:
-    Text: 토지 보호 가이드
+    Text: How to Claim Land
   BookIntro:
-    Text: 아이템을 보호하려면 땅을 보호하세요! 위 링크를 클릭하면 3분 안에 보호 시스템을 이해할 수 있습니다. :)
+    Text: Claim land to protect your stuff! Click the link above to learn land claims
+      in 3 minutes or less. :)
   BookDisabledChestClaims:
-    Text: '  이 서버에서는 상자를 설치해도 자동으로 보호되지 않습니다.'
+    Text: '  On this server, placing a chest will NOT claim land for you.'
   BookUsefulCommands:
-    Text: '유용한 명령어:'
+    Text: 'Useful Commands:'
   BookLink:
-    Text: '클릭: §7{0}'
-    Notes: '{0}: 동영상 URL'
+    Text: 'Click: {0}'
+    Notes: '{0}: video URL'
   BookTools:
-    Text: 보호 도구는 §e{0}§f과(와) §e{1}§f입니다.
-    Notes: '0: 보호 설정 도구 이름; 1: 보호 정보 확인 도구 이름'
+    Text: Our claim tools are §6{0} §fand §6{1}.
+    Notes: '0: claim modification tool name; 1:claim information tool name'
   ResizeClaimTooNarrow:
-    Text: §cLand §8» §f조정된 크기가 너무 작습니다. 보호 구역은 최소 너비 §e{0} §f블록 이상이어야 합니다.
-    Notes: '0: 최소 너비'
+    Text: §cLand §8» §fThis new size would be too small. Claims must be at least §c{0}
+      §fblocks wide.
+    Notes: '0: minimum claim width'
   ResizeClaimInsufficientArea:
-    Text: §cLand §8» §f이 보호 구역의 면적이 너무 작습니다. 최소 §e{0} §f블록 이상의 크기를 사용해야 합니다.
-    Notes: '0: 최소 면적'
+    Text: §cLand §8» §fThis claim would be too small. Any claim must use at least
+      §c{0} §ftotal claim blocks.
+    Notes: '0: minimum claim area'
   NoProfanity:
-    Text: §cLand §8» §f언어를 정중하게 사용해주세요.
+    Text: §cWarning §8» §fPlease moderate your language.
   PlayerNotIgnorable:
-    Text: §cLand §8» §f해당 플레이어는 무시할 수 없습니다.
+    Text: §cIgnore §8» §fYou can't ignore that player.
   NoEnoughBlocksForChestClaim:
-    Text: §cLand §8» §f사용 가능한 보호 블록이 없어 상자 설치로 자동 보호가 생성되지 않았습니다. §e/claimslist §f명령어로
-      사용 가능한 보호 블록 수를 확인하세요.
+    Text: §cLand §8» §fBecause you don't have any claim blocks available, no automatic
+      land claim was created for you. You can use §6/claimslist §fto monitor your
+      available claim block total.
   IsIgnoringYou:
-    Text: §bLand §8» §f해당 플레이어가 당신의 채팅을 무시하고 있습니다.
+    Text: §cIgnore §8» §fThat player is ignoring you.
   MustHoldModificationToolForThat:
-    Text: §cLand §8» §f이 작업을 하려면 황금 삽을 손에 들고 있어야 합니다.
+    Text: §cLand §8» §fYou must be holding a golden shovel to do that.
   StandInClaimToResize:
-    Text: §cLand §8» §f크기를 조정하려는 보호 구역 안에 서 있어야 합니다.
+    Text: §cLand §8» §fStand inside the land claim you want to resize.
   ClaimsExtendToSky:
-    Text: §bLand §8» §f보호 구역은 항상 최고 건축 높도까지 확장됩니다.
+    Text: §bLand §8» §fLand claims always extend to max build height.
   ClaimsAutoExtendDownward:
-    Text: §bLand §8» §f보호 구역은 그 아래에 블록을 설치할 경우, 지하로 자동 확장됩니다.
+    Text: §bLand §8» §fLand claims auto-extend deeper into the ground when you place
+      blocks under them.
   MinimumRadius:
-    Text: §bLand §8» §f최소 반지름은 §e{0} §f블럭입니다.
-    Notes: '0: 최소 반지름 값'
+    Text: §cLand §8» §fMinimum radius is §c{0}§f.
+    Notes: '0: minimum radius'
   RadiusRequiresGoldenShovel:
-    Text: §cLand §8» §f반지름을 지정하려면 황금 삽을 들고 있어야 합니다.
+    Text: §cLand §8» §fYou must be holding a golden shovel when specifying a radius.
   ClaimTooSmallForActiveBlocks:
-    Text: §cLand §8» §f이 보호 구역은 호퍼, 스포너, 비콘 등과 같은 활성 블록을 설치하기엔 너무 작습니다. 먼저 크기를 늘리세요.
+    Text: §cLand §8» §fThis claim isn't big enough to support any active block types
+      (hoppers, spawners, beacons...). Make the claim bigger first.
   TooManyActiveBlocksInClaim:
-    Text: §cLand §8» §f이 보호 구역에는 활성 블록이 너무 많습니다. (호퍼, 스포너, 비콘 등) 크기를 늘리거나 일부 블록을 제거하세요.
+    Text: §cLand §8» §fThis claim is at its limit for active block types (hoppers,
+      spawners, beacons...). Either make it bigger, or remove other active blocks
+      first.
   ConsoleOnlyCommand:
-    Text: §cLand §8» §f이 명령어는 서버 콘솔에서만 실행할 수 있습니다.
+    Text: §cLand §8» §fThat command may only be executed from the server console.
   WorldNotFound:
-    Text: §cLand §8» §f해당 월드를 찾을 수 없습니다.
+    Text: §cLand §8» §fWorld not found.
   AdjustBlocksAllSuccess:
-    Text: §aLand §8» §f온라인 플레이어 전원의 보너스 보호 블록을 §e{0}§f만큼 조정했습니다.
-    Notes: '0: 조정된 블록 수'
+    Text: §aLand §8» §fAdjusted all online players' bonus claim blocks by §a{0}§f.
+    Notes: '0: adjustment amount'
   TooMuchIpOverlap:
-    Text: §cLand §8» §f동일한 IP 주소에서 로그인한 플레이어 수가 너무 많습니다.
+    Text: §cLogin §8» §fSorry, there are too many players logged in with your IP address.
   StandInSubclaim:
-    Text: §cLand §8» §f하위 보호 구역의 권한을 제한하려면 해당 구역 안에 서 있어야 합니다.
+    Text: §cLand §8» §fYou need to be standing in a subclaim to restrict it
   SubclaimRestricted:
-    Text: §aLand §8» §f이 하위 보호 구역은 더 이상 상위 구역의 권한을 상속받지 않습니다.
+    Text: §aLand §8» §fThis subclaim's permissions will no longer inherit from the
+      parent claim
   SubclaimUnrestricted:
-    Text: §aLand §8» §f이 하위 보호 구역은 이제 상위 구역의 권한을 상속받습니다.
+    Text: §aLand §8» §fThis subclaim's permissions will now inherit from the parent
+      claim
   NetherPortalTrapDetectionMessage:
-    Text: §bLand §8» §f지옥 포탈에 갇힌 것 같습니다. 몇 초 내로 구조가 시작됩니다!
-    Notes: 플레이어가 지옥 포탈 안에서 나갔고 다시 접속했을 때 표시됨
+    Text: §bLand §8» §fIt seems you might be stuck inside a nether portal. We will
+      rescue you in a few seconds if that is the case!
+    Notes: Sent to player on join, if they left while inside a nether portal.

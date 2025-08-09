@@ -25,7 +25,7 @@ expansions:
       trillions: T
       quadrillions: Q
   server:
-    server_name: A Minecraft Server
+    server_name: Wildy
     time:
       locale: en
       zone: Asia/Seoul

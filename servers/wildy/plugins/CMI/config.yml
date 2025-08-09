@@ -3,7 +3,7 @@
 # ********************************************
 
 # Language file you want to use
-Language: KO
+Language: EN
 # Defines if you want to auto download default locale files from github repository
 # You can disable this if you are using EN or you already have your locale set up and you don't need other languages to be downloaded.
 LanguageDownload: false
@@ -102,7 +102,7 @@ Economy:
     # Replaces to western format where decimals are separated by , and thousands by . In example 1,000,000.00 changes to 1.000.000,00
     SwitchPlaces: false
     # Placing of currency symbol
-    Placing: '[money][symbol]'
+    Placing: '[money] [symbol]'
 FileSave:
   # Change this to true only if you have issues with drives I/O and you need to save players files in async mode to lower waiting time for mc server
   Async: false
@@ -558,7 +558,7 @@ Worth:
   RequireFullDurability: false
   # When enabled items which doesnt have full durability will be worth less. 30% left durability will result in items worth going down by 70%
   # This only works while RequireFullDurability is disabled
-  DevalueByDurability: false
+  DevalueByDurability: true
   AutoGenerate:
     # Value in percentages in how much more we should add to end product while auto calculating items price based on its ingredient worth
     # For example one stick is worth 0.1 and diamond 44 then end result as diamond_hoe will be worth 88.2 and with extra 2% this will be changed to 89.96
@@ -653,8 +653,7 @@ Votifier:
   # Supports specialized commands and placeholders
   # [serviceName] variable can be used to insert address
   CommandsOnVote:
-  - cmi broadcast !&6[playerDisplayName] &evoted!
-  - cmi give [playerName] diamond
+  - ''
   # Keep it at false if you don't want to give out extra rewards
   ExtraRewardsEnabled: false
   # Commands will be performed when player collect determined amount of votes
@@ -665,7 +664,7 @@ Votifier:
     '100':
     - cmi heal [playerName]
     - cmi money give [playerName] 1000
-    - cmi give [playerName] diamond 32
+    - cmi give [playerName] diamond 14
   # List of players to be excluded from top voter list
   ExcludeList:
   - None
@@ -697,7 +696,7 @@ Ranks:
   ListSamePathOnly: false
   EffectUp: GColumn
   # When set to true requirements which involve time will be shown in short format like '50 hours' instead of '2 days 2 hours'
-  OnlyHours: false
+  OnlyHours: true
   # When OnlyHours set to true you can add minutes to the output message instead of showing fractions. So you can have '5 hours 30 minutes' instead of 5.5hours'
   includeMinutes: true
 Signs:
@@ -710,7 +709,7 @@ Signs:
   editBlackList:
   - '[Shop]'
   # When enabled player needs to be sneaking to edit signs
-  RequireSneaking: false
+  RequireSneaking: true
   # When enabled sign editor will be represented with new Dialog editor introduced in 1.21.7+
   # Only for Paper servers
   DialogEditor: true
@@ -791,7 +790,7 @@ Command:
     # Name of mail sender when command is performed from console
     # This name will be used as indicator who sent it and who should receive reply if player responds to it
     # For best experience set this value to your staff member responsible for communications with players
-    ConsoleMailSender: server
+    ConsoleMailSender: Everest
 DisplayName:
   # If you have 3rd party plugin changing players display name, set this to false
   Change: true
@@ -842,10 +841,10 @@ Spawners:
     # Enable or disable spawner handler for spawner break
     # If enabled player will get spawner if using silktouch pickaxe and have cmi.dropspawner permission node
     # If player has cmi.dropspawner.nosilk permission node, player is not required to use silk touch pickaxe to get droped spawner
-    Enabled: false
+    Enabled: true
     # When enabled instead of dropping spawner on the ground, player will received this item directly into their inventory
     # In case inventory is full then item will be dropped on the ground
-    IntoInventory: false
+    IntoInventory: true
     # If set to true, player will need to have particular permission node to break and get particular spawner.
     # In example: player should have cmi.dropspawner.pig to break pig spawner and get it dropped, or cmi.dropspawner.zombie to get zombie spawner
     RequiresExactPermission: false
@@ -903,7 +902,7 @@ Spawners:
     # Cooldown determines how often new charge will be given
     # Bonus is optional and it will determine by how many seconds to lower cooldown for next charge when placing spawner
     # Option to bypass limitations with cmi.spawners.charge.bypass
-    Use: false
+    Use: true
     # If set to true when player runs out of spawner charges spawner will be destroyed without droping it
     BreakWithoutCharge: false
     List:
@@ -1011,13 +1010,13 @@ Totem:
   RequirePermission: false
   Cooldown:
     # When this set to true player can use totem only every X second's
-    Use: false
+    Use: true
     Time: 600
   Warmup:
     # When this set to true player can use totem to have X amount of second's, during which he can die and be resurected
     # Totem will be consumed durring activation and wont be returned even if resurection is not used during warmup time
-    Use: false
-    Time: 10
+    Use: true
+    Time: 14
   # If player falls into void while having totem, he will be teleported to respawn location and totem gets consumed
   ProtectFromVoid: true
   Effects:
@@ -1039,7 +1038,7 @@ Elytra:
   # cmi.elytra.speedometer - allows to see speedometer
   Boost:
     # Max speed until player wont get any boost
-    SpeedLimit: 256
+    SpeedLimit: 128
     # When enabled items/exp wont be consumed if player is over speed limit
     SpeedLimitStop: false
     # Do you want to show decimals in speed
@@ -1781,7 +1780,7 @@ BlueMap:
     Enabled: true
     ToggledOffDefault: false
     # Name of the markers in BlueMap
-    Label: CMIWarps
+    Label: Warps
     # Path to an icon image. Make sure to have correctly sized icon which normally should be around 32x32 pixels
     Icon: https://www.zrips.net/ICON_Warp.png
     # This should generally be half the size of icon's size
