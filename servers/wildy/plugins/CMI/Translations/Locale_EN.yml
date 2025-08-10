@@ -2906,7 +2906,7 @@ command:
       list: '&6&o[place] &8» &6[rewardName] &freward in &e[time]'
       listNoStack: '&6&o[place] &8» &6[rewardName]'
       listOneTime: '&6&o[place] &8» &6[rewardName]'
-      claim: ' &fClaim&o!'
+      claim: ' &aClaim&o!'
       claimAmount: ' &fClaim(x[amount])&o!'
       claimHover: '&fClick to Claim reward&o!'
       inform: '!actionbar!&bPRewards &8» &fYou have unclaimed rewards waiting for
