@@ -97,7 +97,7 @@ info:
   wrongPortal: '&cPortal &8» &fYou are in incorrect area of effect'
   ItemWillBreak: '!actionbar!&cBreak &8» &fYour item &6[itemName] &fwill break soon!
     &c[current]&7/&f[max]'
-  ArmorWillBreak: '!actionbar!&cBreak &8» &fYour &6[itemName] &fwill break soon! &c[current]&7/&f[max]'
+  ArmorWillBreak: '!actionbar!&cBreak &8» &fYour &6[itemName] &fwill break soon! &c[current]&8/&7[max]'
   flyingToHigh: '&cFly &8» &fYou can''t fly so high, max height is &c[max]&o!'
   specializedItemFail: '&cCan''t determine specialized item requirement by value:
     &7[value]'
@@ -2904,10 +2904,10 @@ command:
       info: Check playtime rewards
       args: (playerName)
     info:
-      list: '&6&o[place] &8» &6[rewardName] &freward in &e[time]'
+      list: '&6&o[place] &8» &6[rewardName] &8» &fReward in &e[time]'
       listNoStack: '&6&o[place] &8» &6[rewardName]'
       listOneTime: '&6&o[place] &8» &6[rewardName]'
-      claim: ' &aClaim&o!'
+      claim: ' &8» &aClaim&o!'
       claimAmount: ' &fClaim(x[amount])&o!'
       claimHover: '&fClick to Claim reward&o!'
       inform: '!actionbar!&bPRewards &8» &fYou have unclaimed rewards waiting for

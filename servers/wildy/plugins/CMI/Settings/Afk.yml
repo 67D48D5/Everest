@@ -12,7 +12,7 @@ Afk:
   # Prevents damage to mobs from player who is afk
   PreventMobDamage: true
   # Defines how often in seconds plugin will check for afk players state
-  CheckInterval: 8
+  CheckInterval: 12
   # When set to true, players playtime counter stops
   # As of nature how this system works you can see +-1second jumping up and down while checking players playtime
   StopPlayTime: true
@@ -65,7 +65,8 @@ Afk:
   # Defines commands to be performed when player can be kicked
   # If player is not kicked then commands will be repeated every RepeatingAutoKickInterval seconds
   AutoKickCmds:
-  - cmi kick [playerName] &e[time]초 &f이상의 장시간 잠수로 인해 서버와의 연결이 종료되었습니다.
+  - cmi kick [playerName] &cAFK &8» &fDisconnected from the server due to being AFK
+    for more than &c[time] &fseconds.
   # Defines worlds where players will not be placed into afk mode after they idled for defined time
   DisabledWorlds:
   - DisabledWorld

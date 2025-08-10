@@ -89,7 +89,3 @@ Homes:
         # World list where this limit should apply to. Multiple worlds can be defined if you want to group them up
         Worlds:
         - testWorld
-      Example2:
-        Amount: 5
-        Worlds:
-        - testWorld2

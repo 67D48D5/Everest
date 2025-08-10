@@ -13,7 +13,7 @@ LootMobBonus:
 useDefaultHeadLore: true
 # Default lore used when head doesnt have defined head lore set
 defaultHeadLore:
-- '&fKilled by &6[playerName]'
+- '&7Killed by &6[playerName]'
 PlayerHead:
   # Defines if you want to use player head lore
   UseLore: true
@@ -21,7 +21,7 @@ PlayerHead:
   # Global variables can be used for simple identification who was killed and who killed player
   # Aditionally placeholders can be used too, but we will use victim as source for their translation if placeholder requires source player
   Lore:
-  - '&fKilled by &6[playerName]'
+  - '&7Killed by &6[playerName]'
 HeadHandling:
   Maintain:
     # Defines if we should maintain heads custom name when head is placed and then broken

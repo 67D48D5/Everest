@@ -394,127 +394,127 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    mending: Mending
+    loot_bonus_blocks: Loot_bonus_blocks
+    protection_projectile: Protection_projectile
+    arrow_infinite: Arrow_infinite
+    damage_arthropods: Damage_arthropods
+    protection_environmental: Protection_environmental
+    oxygen: Oxygen
+    damage_all: Damage_all
     breach: Breach
+    silk_touch: Silk_touch
+    loot_bonus_mobs: Loot_bonus_mobs
+    arrow_fire: Arrow_fire
+    soul_speed: Soul_speed
+    density: Density
+    channeling: Channeling
+    depth_strider: Depth_strider
+    fire_aspect: Fire_aspect
     wind_burst: Wind_burst
     impaling: Impaling
-    damage_undead: Damage_undead
-    protection_explosions: Protection_explosions
-    fire_aspect: Fire_aspect
-    quick_charge: Quick_charge
-    dig_speed: Dig_speed
-    arrow_fire: Arrow_fire
-    protection_projectile: Protection_projectile
-    damage_all: Damage_all
     loyalty: Loyalty
-    lure: Lure
-    multishot: Multishot
-    arrow_infinite: Arrow_infinite
-    loot_bonus_mobs: Loot_bonus_mobs
     riptide: Riptide
-    loot_bonus_blocks: Loot_bonus_blocks
-    arrow_knockback: Arrow_knockback
-    soul_speed: Soul_speed
     sweeping_edge: Sweeping_edge
-    protection_fire: Protection_fire
     durability: Durability
+    protection_fire: Protection_fire
+    multishot: Multishot
+    swift_sneak: Swift_sneak
     binding_curse: Binding_curse
-    arrow_damage: Arrow_damage
-    oxygen: Oxygen
-    knockback: Knockback
-    thorns: Thorns
-    damage_arthropods: Damage_arthropods
-    piercing: Piercing
-    protection_environmental: Protection_environmental
     vanishing_curse: Vanishing_curse
-    silk_touch: Silk_touch
-    channeling: Channeling
+    damage_undead: Damage_undead
+    protection_fall: Protection_fall
+    mending: Mending
+    arrow_knockback: Arrow_knockback
+    knockback: Knockback
+    lure: Lure
+    dig_speed: Dig_speed
+    arrow_damage: Arrow_damage
+    piercing: Piercing
+    thorns: Thorns
+    frost_walker: Frost_walker
+    quick_charge: Quick_charge
     water_worker: Water_worker
     luck: Luck
-    protection_fall: Protection_fall
-    frost_walker: Frost_walker
-    density: Density
-    depth_strider: Depth_strider
-    swift_sneak: Swift_sneak
+    protection_explosions: Protection_explosions
   PotionEffectAliases:
-    blindness:
-    - Blindness
-    luck:
-    - Luck
-    infested:
-    - Infested
-    oozing:
-    - Oozing
-    darkness:
-    - Darkness
-    raidomen:
-    - Raid omen
-    weaving:
-    - Weaving
-    resistance:
-    - Resistance
-    heroofthevillage:
-    - Hero of the village
-    fireresistance:
-    - Fire resistance
-    strength:
-    - Strength
-    wither:
-    - Wither
-    conduitpower:
-    - Conduit power
-    nausea:
-    - Nausea
-    haste:
-    - Haste
-    hunger:
-    - Hunger
-    nightvision:
-    - Night vision
-    poison:
-    - Poison
-    unluck:
-    - Unluck
-    windcharged:
-    - Wind charged
-    badomen:
-    - Bad omen
-    saturation:
-    - Saturation
-    slowness:
-    - Slowness
-    glowing:
-    - Glowing
     invisibility:
     - Invisibility
-    levitation:
-    - Levitation
-    regeneration:
-    - Regeneration
-    miningfatigue:
-    - Mining fatigue
-    dolphinsgrace:
-    - Dolphins grace
-    slowfalling:
-    - Slow falling
-    speed:
-    - Speed
-    trialomen:
-    - Trial omen
-    jumpboost:
-    - Jump boost
     absorption:
     - Absorption
-    instanthealth:
-    - Instant health
-    healthboost:
-    - Health boost
+    wither:
+    - Wither
+    windcharged:
+    - Wind charged
+    conduitpower:
+    - Conduit power
+    slowness:
+    - Slowness
     waterbreathing:
     - Water breathing
+    resistance:
+    - Resistance
+    fireresistance:
+    - Fire resistance
+    glowing:
+    - Glowing
+    darkness:
+    - Darkness
+    slowfalling:
+    - Slow falling
+    instanthealth:
+    - Instant health
+    poison:
+    - Poison
+    speed:
+    - Speed
+    raidomen:
+    - Raid omen
+    saturation:
+    - Saturation
+    healthboost:
+    - Health boost
+    infested:
+    - Infested
     instantdamage:
     - Instant damage
+    luck:
+    - Luck
+    levitation:
+    - Levitation
+    dolphinsgrace:
+    - Dolphins grace
+    hunger:
+    - Hunger
+    oozing:
+    - Oozing
+    badomen:
+    - Bad omen
+    haste:
+    - Haste
+    strength:
+    - Strength
+    miningfatigue:
+    - Mining fatigue
+    heroofthevillage:
+    - Hero of the village
     weakness:
     - Weakness
+    nausea:
+    - Nausea
+    jumpboost:
+    - Jump boost
+    regeneration:
+    - Regeneration
+    blindness:
+    - Blindness
+    weaving:
+    - Weaving
+    unluck:
+    - Unluck
+    trialomen:
+    - Trial omen
+    nightvision:
+    - Night vision
 dialog:
   signEditor: Sign Editor
   update: Update
@@ -593,9 +593,9 @@ econ:
   notEnoughMoney: '&cMoney &8» &fYou don''t have enough money. Required: &e[amount]'
   tooMuchMoney: '&cMoney &8» &fYou have too much money'
 Selection:
-  SelectPoints: '&bSelection &8» &fSelect 2 points with selection tool! AKA: &6[tool]'
-  PrimaryPoint: '&aSelection &8» &fPlaced &cPrimary &fSelection Point [point]'
-  SecondaryPoint: '&aSelection &8» &fPlaced &bSecondary &fSelection Point [point]'
+  SelectPoints: '&bSelection &8» &fSelect 2 points with selection tool! AKA: &b[tool]'
+  PrimaryPoint: '&aSelection &8» &fPlaced &cPrimary &fSelection Point &o[point]'
+  SecondaryPoint: '&aSelection &8» &fPlaced &bSecondary &fSelection Point &o[point]'
   CoordsTop: '&7[x]&f, &7[y]&f, &7[z]'
   CoordsBottom: '&7[x]&f, &7[y]&f, &7[z]'
   Area: '&7[x1]&f, &7[y1]&f, &7[z1] to &7[x2]&f, &7[y2]&f, &7[z2] &8@[world]'
