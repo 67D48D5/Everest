@@ -1476,7 +1476,7 @@ command:
       title: Pick glow color
       incorrect: '&cGlow &8» &fIncorrect color name'
       lore: '&fClick to select color'
-      noPerm: '&cNo permission yet'
+      noPerm: '&c/No permission yet'
   gm:
     help:
       info: Set players game mode
@@ -1545,19 +1545,20 @@ command:
       info: Place item like hat
       args: (playerName)
     info:
-      feedback: '!actionbar!&6You have successfully changed hat&o!'
-      targetfeedback: '&6Your hat was changed by &6[senderDisplayName]&6&o!'
-      fullinv: '&6[playerDisplayName] &6inventory is full, can''t change hat&o!'
-      incorrect: '&3Incorrect item in head slot, cant replace with new one. Remove
-        it manually'
-      cantUse: '&3Can''t use this item as a hat'
+      feedback: '&aHat &8» &fYou have successfully changed hat&o!'
+      targetfeedback: '&aHat &8» &fYour hat was changed by &6[senderDisplayName]&f&o!'
+      fullinv: '&cHat &8» &6[playerDisplayName] &6inventory is full, can''t change
+        hat&o!'
+      incorrect: '&cHat &8» &fIncorrect item in head slot, cant replace with new one.
+        Remove it manually'
+      cantUse: '&cHat &8» &fCan''t use this item as a hat'
   head:
     help:
       info: Get players head
       args: '[sourceName] (targetName) (-s) (amount)'
     info:
-      Feedback: '&3[headName] &6head created&o!'
-      targetFeedback: '&eYou got &3[headName] &ehead from &6[senderDisplayName]&e!'
+      Feedback: '&aHead &8» &6[headName] &fhead created&o!'
+      targetFeedback: '&aHead &8» &fYou got &6[headName] &fhead from &6[senderDisplayName]&f&o!'
   heal:
     help:
       info: Heal player
@@ -1573,9 +1574,9 @@ command:
       explanation:
       - Requires cmi.command.helpop.inform too see messages
     info:
-      message: '&c[Help]&4[&7[senderDisplayName]&4]&r&c [message]'
-      feedback: '&c[Help]&7Your question was submitted to online staff'
-      offline: '&c[Help]&7There are no staff members currently online, try later'
+      message: '&cHelp &8» &6[senderDisplayName] &8» &r[message]'
+      feedback: '&aHelp &8» &7Your question was submitted to online staff'
+      offline: '&cHelp &8» &7There are no staff members currently online, try later'
   hideflags:
     help:
       info: Hides item flags
@@ -1706,7 +1707,7 @@ command:
       teleported: '&aHome &8» &fTeleported to home: &6[home]'
       noHomes: '&cHome &8» &fThere is no saved homes'
       private: '&cHome &8» &fThis home location is private&o!'
-      remove: '&cShift+Right click to remove home'
+      remove: '&cShift & Right click to remove home'
       missingBed: '&cHome &8» &fMissing bed for your home location'
       notAccessible: '&cHome &8» &fHome location world &7[worldName] &fdoesn''t exist&o!'
       guiTitle: '&0[playerDisplayName]&8''s homes ([current]/[max])'
@@ -2926,12 +2927,12 @@ command:
       - /ptime realtime
       - /ptime reset
     info:
-      check: '&bPTime &8» Personal Time: &b[24h] &for &b[12h] &for &b[ticks]&fticks'
+      check: '&bPTime &8» &fPersonal Time: &b[24h] &for &b[12h] &for &b[ticks] &fticks'
       frozen: ' &c(-)'
       gotreseted: '&aPTime &8» &6[playerDisplayName] &ftime has been &areset'
       gotfrozen: '&aPTime &8» &6[playerDisplayName] &ftime has been &afrozen'
       gotunfrozen: '&aPTime &8» &6[playerDisplayName] &ftime has been &aunfrozen'
-      setto: '&aPTime &8» &fTime set to &a[24h] &for &a[12h] &for &a[ticks]&fticks
+      setto: '&aPTime &8» &fTime set to &a[24h] &for &a[12h] &for &a[ticks] &fticks
         for &6[playerDisplayName]'
   purge:
     help:
@@ -2967,45 +2968,45 @@ command:
       info: Your rank information
       args: (playerName) (rankName)
     info:
-      distanceCM: '[value]cm'
+      distanceCM: '[value]/cm'
       distanceM: '[value]m'
       distanceKm: '[value]km'
-      requiredMoney: ' &eMoney: [color][current]&e/&6[needed]'
-      requiredExp: ' &eExp: [color][current]&e/&6[needed]'
-      requiredVotes: ' &eVotes: [color][current]&e/&6[needed]'
-      requiredPerm: ' &ePerm: '
-      requiredPlaceholder: ' &eCustom: '
+      requiredMoney: ' &fMoney: [color][current] &f/ &6[needed]'
+      requiredExp: ' &fExp: [color][current] &f/ &6[needed]'
+      requiredVotes: ' &fVotes: [color][current] &f/ &6[needed]'
+      requiredPerm: ' &fPerm: '
+      requiredPlaceholder: ' &fCustom: '
       requiredPlaceholderList: '[color][message]'
-      requiredPlaceholderHover: '&e[color][current]&e/&6[needed]'
-      requiredMcmmo: ' &eMcmmo: '
-      requiredMcmmoList: '&e[color][name]'
-      requiredMcmmoListHover: ' &e[color][current]&e/&6[needed]'
+      requiredPlaceholderHover: '&f[color][current] &f/ &6[needed]'
+      requiredMcmmo: ' &fmcMMO: '
+      requiredMcmmoList: '&f[color][name]'
+      requiredMcmmoListHover: ' &f[color][current] &f/ &6[needed]'
       requiredMcmmoPower: Power
-      requiredAurelium: ' &eAurelium: '
-      requiredAureliumList: '&e[color][name]'
-      requiredAureliumListHover: ' &e[color][current]&e/&6[needed]'
-      requiredAuraSkills: ' &eAuraSkills: '
-      requiredAuraSkillsList: '&e[color][name]'
-      requiredAuraSkillsListHover: ' &e[color][current]&e/&6[needed]'
-      requiredJobs: ' &eJobs: '
-      requiredJobsList: ' &e[color][name]'
-      requiredJobsListHover: ' &e[color][current]&e/&6[needed]'
+      requiredAurelium: ' &fAurelium: '
+      requiredAureliumList: '&f[color][name]'
+      requiredAureliumListHover: ' &f[color][current] &f/ &6[needed]'
+      requiredAuraSkills: ' &fAuraSkills: '
+      requiredAuraSkillsList: '&f[color][name]'
+      requiredAuraSkillsListHover: ' &f[color][current] &f/ &6[needed]'
+      requiredJobs: ' &fJobs: '
+      requiredJobsList: ' &f[color][name]'
+      requiredJobsListHover: ' &f[color][current] &f/ &6[needed]'
       requiredJobsTotalLevel: TotalLevel
-      requiredItem: ' &eItems: '
-      requiredItemsList: '&e[color][name]'
-      requiredItemListHover: '&e[color][current]&e/&6[needed]'
-      currentRank: ' &eYour current rank: &6[rankName]'
+      requiredItem: ' &fItems: '
+      requiredItemsList: '&f[color][name]'
+      requiredItemListHover: '&f[color][current] &f/ &6[needed]'
+      currentRank: '&bRankInfo &8» &fYour current rank: &r[rankName]'
       elseCurrentRank: ' &6[playerDisplayName] &fcurrent rank: &6[rankName]'
-      rankNameLine: ' &e------ &6[rankName] &e[rankupState] &e------'
-      canRankup: ' &2Can rankup&o!'
-      cantRankup: ''
-      requiredStats: ' &e[name][extra]&e: [color][current]&e/&6[needed]'
-      requiredStatsExtra: ' (&6[type]&e)'
-      nextRanks: ' &eNext ranks: &6'
-      finalRank: ' &eThis is last rank'
-      noRank: ' &eCant find rank'
-      check: '&eCheck &6[rank] &erank'
-      progressBarHover: '&eProgress [percent]%'
+      rankNameLine: '&bRankInfo &8» &6[rankName] &7([rankupState]&7)'
+      canRankup: '&aRank Up Now&o!'
+      cantRankup: Not Yet&o!
+      requiredStats: ' &f[name][extra]&f: [color][current] &f/ &6[needed]'
+      requiredStatsExtra: ' (&6[type]&f)'
+      nextRanks: ' &7Next ranks: &6'
+      finalRank: ' &7This is last rank'
+      noRank: ' &fCant find rank'
+      check: '&fCheck &6[rank] &frank'
+      progressBarHover: '&fProgress &a[percent]%'
   ranklist:
     help:
       info: List of possible ranks
