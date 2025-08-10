@@ -36,9 +36,9 @@ bossbar:
   bars:
     Example:
       style: PROGRESS
-      color: "%animation:barcolors%"
-      progress: "100"
-      text: "&5&lEverest &oMC"
+      color: "YELLOW"
+      progress: "81"
+      text: "&6&oEverest &lMC"
 
 scoreboard:
   enabled: true
