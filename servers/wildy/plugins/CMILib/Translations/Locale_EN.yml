@@ -59,7 +59,7 @@ info:
   NoPermission: '&cError &8» &fYou don''t have permission&o!'
   CantHavePermission: '&cError &8» &fYou can''t have this permission&o!'
   WrongGroup: '&cError &8» &fYou are in wrong group for this&o!'
-  NoPlayerPermission: '&cError &8» &6[playerName] doesn''t have permission for: &e[permission]'
+  NoPlayerPermission: '&cError &8» &6[playerName] doesn''t have permission for: &c[permission]'
   Ingame: '&cError &8» &fYou can only use this in game&o!'
   NoInformation: '&cError &8» &fNo information found&o!'
   Console: '&cConsole'
@@ -68,7 +68,7 @@ info:
   NobodyOnline: '&cError &8» &fThere is no one online&o!'
   NoPlayer: '&cError &8» &fCan''t find player with this name: &6[name]'
   NoCommand: '&cError &8» &fThere is no command by this name&o!'
-  cantFindCommand: '&cError &8» &fCouldn''t find &7[%1]&5 command, did you mean &7[%2]&5?'
+  cantFindCommand: '&cError &8» &fCouldn''t find &c[%1] &fcommand, did you mean &a[%2]&f&o?'
   nolocation: '&cError &8» &fCan''t find suitable location'
   FeatureNotEnabled: '&cError &8» &fThis feature is not enabled&o!'
   ModuleNotEnabled: '&cError &8» &fThis module is not enabled&o!'
@@ -81,8 +81,8 @@ info:
   IncorrectMaterial: '&cError &8» &fIncorrect material name&o!'
   UseInteger: '&cError &8» &fPlease use numbers&o!'
   UseBoolean: '&cError &8» &fPlease use True or False&o!'
-  NoLessThan: '&cError &8» &fNumber can''t be less than &e[amount]&o!'
-  NoMoreThan: '&cError &8» &fValue can''t be more than &e[amount]'
+  NoLessThan: '&cError &8» &fNumber can''t be less than &c[amount]&o!'
+  NoMoreThan: '&cError &8» &fValue can''t be more than &c[amount]&o!'
   NoWorld: '&cError &8» &fCan''t find world with this name&o!'
   IncorrectLocation: '&cError &8» &fLocation defined incorrectly&o!'
   Show: '&fShow'
@@ -131,11 +131,11 @@ info:
   worldDontExist: '&cError &8» &fTarget world can''t be accessed anymore. Can''t teleport
     you there&o!'
   notSet: not set
-  lookAtSign: '&eLook at sign'
-  lookAtBlock: '&eLook at block'
-  lookAtEntity: '&eLook at entity'
-  noSpace: '&eNot enough free space'
-  notOnGround: '&eYou can''t perform this while flying'
+  lookAtSign: '&bLook &8» &fLook at sign'
+  lookAtBlock: '&bLook &8» &fLook at block'
+  lookAtEntity: '&bLook &8» &fLook at entity'
+  noSpace: '&cError &8» &fNot enough free space'
+  notOnGround: '&cError &8» &fYou can''t perform this while flying'
   bungee:
     Online: '&aOnline'
     Offline: '&cOffline'
@@ -158,24 +158,24 @@ info:
     adventure: '&6Adventure'
     spectator: '&6Spectator'
     flying: '&aFlying'
-    notflying: '&cNot flying'
+    notflying: '&cNot Flying'
   Inventory:
     Full: '&cInventory &8» &fYour inventory is full. Can''t add item'
     FullDrop: '&cInventory &8» &fNot all items fit in your inventory. They have been
       dropped on ground'
   TimeNotRecorded: '&e-No record-'
-  months: '&e[months] &6months '
-  oneMonth: '&e[months] &6month '
-  weeks: '&e[weeks] &6weeks '
-  oneWeek: '&e[weeks] &6week '
-  years: '&e[years] &6years '
-  oneYear: '&e[years] &6year '
-  day: '&e[days] &6days '
-  oneDay: '&e[days] &6day '
-  hour: '&e[hours] &6hours '
-  oneHour: '&e[hours] &6hour '
-  min: '&e[mins] &6min '
-  sec: '&e[secs] &6sec '
+  months: '&e[months] &fmonths '
+  oneMonth: '&e[months] &fmonth '
+  weeks: '&e[weeks] &fweeks '
+  oneWeek: '&e[weeks] &fweek '
+  years: '&e[years] &fyears '
+  oneYear: '&e[years] &fyear '
+  day: '&e[days] &fdays '
+  oneDay: '&e[days] &fday '
+  hour: '&e[hours] &fhours '
+  oneHour: '&e[hours] &fhour '
+  min: '&e[mins] &fmin '
+  sec: '&e[secs] &fsec '
   nextPageConsole: '&bPage &8» &fFor next page perform &6[command]'
   prevPage: '&2----<< &6Prev '
   prevCustomPage: '&2----<< &6[value] '
@@ -201,10 +201,10 @@ info:
   square: '&5Square'
   clear: '&7Clear'
   protectedArea: '&cError &8» &fProtected area. Can''t do this here.'
-  valueToLong: '&cError &8» &fValue is too high. Max: &e[max]'
-  valueToShort: '&cError &8» &fValue is too low. Min: &e[min]'
+  valueToLong: '&cError &8» &fValue is too high. Max: &c[max]'
+  valueToShort: '&cError &8» &fValue is too low. Min: &c[min]'
   pickIcon: '&8Pick icon'
-  Spawner: '&e[type] &fSpawner'
+  Spawner: '&6[type] &fSpawner'
   DamageCause:
     block_explosion: Explosion
     campfire: campfire
@@ -394,127 +394,127 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    arrow_knockback: Arrow_knockback
-    swift_sneak: Swift_sneak
-    protection_projectile: Protection_projectile
-    vanishing_curse: Vanishing_curse
-    binding_curse: Binding_curse
-    wind_burst: Wind_burst
-    loyalty: Loyalty
-    soul_speed: Soul_speed
+    fire_aspect: Fire_aspect
     damage_undead: Damage_undead
-    protection_explosions: Protection_explosions
-    arrow_damage: Arrow_damage
-    breach: Breach
+    wind_burst: Wind_burst
+    lure: Lure
+    damage_all: Damage_all
+    arrow_fire: Arrow_fire
+    frost_walker: Frost_walker
+    arrow_infinite: Arrow_infinite
     protection_fire: Protection_fire
+    multishot: Multishot
+    arrow_knockback: Arrow_knockback
+    sweeping_edge: Sweeping_edge
+    binding_curse: Binding_curse
+    mending: Mending
+    riptide: Riptide
+    protection_fall: Protection_fall
+    oxygen: Oxygen
+    loot_bonus_blocks: Loot_bonus_blocks
+    density: Density
+    breach: Breach
+    arrow_damage: Arrow_damage
+    protection_environmental: Protection_environmental
+    protection_projectile: Protection_projectile
     loot_bonus_mobs: Loot_bonus_mobs
     quick_charge: Quick_charge
-    silk_touch: Silk_touch
+    swift_sneak: Swift_sneak
     dig_speed: Dig_speed
-    protection_fall: Protection_fall
-    channeling: Channeling
-    lure: Lure
-    density: Density
-    damage_arthropods: Damage_arthropods
-    depth_strider: Depth_strider
-    arrow_fire: Arrow_fire
-    luck: Luck
-    oxygen: Oxygen
-    arrow_infinite: Arrow_infinite
     water_worker: Water_worker
-    multishot: Multishot
-    durability: Durability
-    knockback: Knockback
-    loot_bonus_blocks: Loot_bonus_blocks
-    mending: Mending
-    thorns: Thorns
-    damage_all: Damage_all
-    sweeping_edge: Sweeping_edge
-    protection_environmental: Protection_environmental
-    fire_aspect: Fire_aspect
-    frost_walker: Frost_walker
+    silk_touch: Silk_touch
     impaling: Impaling
-    riptide: Riptide
+    knockback: Knockback
+    channeling: Channeling
+    luck: Luck
+    protection_explosions: Protection_explosions
+    thorns: Thorns
+    durability: Durability
+    loyalty: Loyalty
+    vanishing_curse: Vanishing_curse
+    damage_arthropods: Damage_arthropods
     piercing: Piercing
+    soul_speed: Soul_speed
+    depth_strider: Depth_strider
   PotionEffectAliases:
-    oozing:
-    - Oozing
-    glowing:
-    - Glowing
-    weakness:
-    - Weakness
-    dolphinsgrace:
-    - Dolphins grace
-    slowfalling:
-    - Slow falling
-    saturation:
-    - Saturation
-    heroofthevillage:
-    - Hero of the village
-    jumpboost:
-    - Jump boost
-    weaving:
-    - Weaving
-    resistance:
-    - Resistance
-    regeneration:
-    - Regeneration
-    speed:
-    - Speed
-    instantdamage:
-    - Instant damage
-    blindness:
-    - Blindness
-    raidomen:
-    - Raid omen
-    nightvision:
-    - Night vision
-    slowness:
-    - Slowness
-    strength:
-    - Strength
-    poison:
-    - Poison
-    miningfatigue:
-    - Mining fatigue
-    trialomen:
-    - Trial omen
-    waterbreathing:
-    - Water breathing
-    windcharged:
-    - Wind charged
-    haste:
-    - Haste
-    luck:
-    - Luck
-    instanthealth:
-    - Instant health
     badomen:
     - Bad omen
-    unluck:
-    - Unluck
-    invisibility:
-    - Invisibility
     healthboost:
     - Health boost
-    levitation:
-    - Levitation
-    hunger:
-    - Hunger
-    conduitpower:
-    - Conduit power
-    wither:
-    - Wither
+    miningfatigue:
+    - Mining fatigue
+    heroofthevillage:
+    - Hero of the village
+    weaving:
+    - Weaving
+    invisibility:
+    - Invisibility
+    slowness:
+    - Slowness
+    infested:
+    - Infested
+    resistance:
+    - Resistance
+    windcharged:
+    - Wind charged
+    speed:
+    - Speed
+    weakness:
+    - Weakness
+    trialomen:
+    - Trial omen
+    unluck:
+    - Unluck
+    nightvision:
+    - Night vision
     absorption:
     - Absorption
+    oozing:
+    - Oozing
+    instantdamage:
+    - Instant damage
+    strength:
+    - Strength
+    conduitpower:
+    - Conduit power
+    blindness:
+    - Blindness
+    luck:
+    - Luck
+    waterbreathing:
+    - Water breathing
+    dolphinsgrace:
+    - Dolphins grace
+    raidomen:
+    - Raid omen
+    saturation:
+    - Saturation
     darkness:
     - Darkness
+    jumpboost:
+    - Jump boost
+    wither:
+    - Wither
+    haste:
+    - Haste
+    slowfalling:
+    - Slow falling
+    poison:
+    - Poison
     nausea:
     - Nausea
     fireresistance:
     - Fire resistance
-    infested:
-    - Infested
+    glowing:
+    - Glowing
+    instanthealth:
+    - Instant health
+    hunger:
+    - Hunger
+    regeneration:
+    - Regeneration
+    levitation:
+    - Levitation
 dialog:
   signEditor: Sign Editor
   update: Update
@@ -574,15 +574,16 @@ modify:
   commandList: ' &e[command]  '
   emptyLine: '&7[Empty line]'
   commandEdit: '&eEdit list'
-  nameAddInfo: '&eEnter new name. Type &6cancel &eto cancel'
-  lineAddInfo: '&eEnter new line. Type &6cancel &eto cancel'
-  commandAddInfo: '&eEnter new command. Type &6cancel &eto cancel'
-  commandAddInformationHover: "&e[playerName] can be used to get player name \n&eTo\
+  nameAddInfo: '&bEnter &8» &fEnter new name. Type &6cancel &fto cancel'
+  lineAddInfo: '&bEnter &8» &fEnter new line. Type &6cancel &fto cancel'
+  commandAddInfo: '&bEnter &8» &fEnter new command. Type &6cancel &fto cancel'
+  commandAddInformationHover: "&e[playerName] can be used to get player name \n&fto\
     \ include delay in commands: \n&edelay! 5 \n&eSpecialized commands are supported.\
     \ More info at \n&ehttps://www.zrips.net/cmi/commands/specialized/"
-  commandEditInfo: '&eClick to paste old text. Type &6cancel &eto cancel action'
-  listLimit: '&eList can''t be bigger than &6[amount] &eentries'
-  commandEditInfoHover: '&eClick to paste old text'
+  commandEditInfo: '&bEnter &8» &fClick to paste old text. Type &6cancel &fto cancel
+    action'
+  listLimit: '&cLimit &8» &fList can''t be bigger than &c[amount] &fentries'
+  commandEditInfoHover: Click to paste old text
 teleportation:
   relocation: '&cTeleport &8» &fYour teleport location was obstructed. You have been
     teleported to a safe location.'
