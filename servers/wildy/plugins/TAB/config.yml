@@ -8,24 +8,12 @@ header-footer:
     - ""
     - "%server_tps_1_colored% &8/ &e&o%ping% &7ms"
     - ""
-  disable-condition: "%world%=disabledworld"
-  per-world:
-    world1:
-      header:
-        - an example of world with custom
-      footer:
-        - header/footer and prefix/suffix
-    world2;world3:
-      header:
-        - This is a shared header for
-        - world2 and world3
-  per-server:
-    server1:
-      header:
-        - an example of server with custom header
+  disable-condition: ""
+
 tablist-name-formatting:
   enabled: true
-  disable-condition: "%world%=disabledworld"
+  disable-condition: ""
+
 scoreboard-teams:
   enabled: true
   enable-collision: true
@@ -35,34 +23,23 @@ scoreboard-teams:
     - PLACEHOLDER_A_TO_Z:%player%
   case-sensitive-sorting: true
   can-see-friendly-invisibles: false
-  disable-condition: "%world%=disabledworld"
-playerlist-objective:
-  enabled: false
-  value: "%ping%"
-  fancy-value: "&7Ping: %ping%"
-  title: TAB
-  render-type: INTEGER
-  disable-condition: "%world%=disabledworld"
-belowname-objective:
-  enabled: false
-  value: "%health%"
-  title: "&cHealth"
-  fancy-value: "&c%health%"
-  fancy-value-default: NPC
-  disable-condition: "%world%=disabledworld"
+  disable-condition: ""
+
 prevent-spectator-effect:
   enabled: true
+
 bossbar:
-  enabled: false
+  enabled: true
   toggle-command: /bossbar
   remember-toggle-choice: false
-  hidden-by-default: false
+  hidden-by-default: true
   bars:
-    ServerInfo:
+    Example:
       style: PROGRESS
       color: "%animation:barcolors%"
       progress: "100"
-      text: "&fWebsite: &bwww.domain.com"
+      text: "&5&lEverest &oMC"
+
 scoreboard:
   enabled: true
   toggle-command: /sb
@@ -82,69 +59,7 @@ scoreboard:
         - "&7mcMMO &8| &e%mcmmo_power_level%"
         - "&7Money &8| &e&o%cmi_user_balance%"
         - "&8&m                 "
-layout:
-  enabled: false
-  direction: COLUMNS
-  default-skin: mineskin:383747683
-  enable-remaining-players-text: true
-  remaining-players-text: "... and %s more"
-  empty-slot-ping-value: 1000
-  layouts:
-    default:
-      fixed-slots:
-        - "1|&3Website&f:"
-        - 2|&bmyserver.net
-        - "3|&8&m                       "
-        - "4|&3Name&f:"
-        - 5|&b%player%
-        - "7|&3Rank&f:"
-        - "8|Rank: %group%"
-        - "10|&3World&f:"
-        - 11|&b%world%
-        - "13|&3Time&f:"
-        - 14|&b%time%
-        - "21|&3Teamspeak&f:"
-        - 22|&bts.myserver.net
-        - "23|&8&m                       "
-        - "41|&3Store&f:"
-        - 42|&bshop.myserver.net
-        - "43|&8&m                       "
-      groups:
-        staff:
-          condition: permission:tab.staff
-          slots:
-            - 24-40
-        players:
-          slots:
-            - 44-80
-ping-spoof:
-  enabled: false
-  value: 0
-placeholders:
-  date-format: dd.MM.yyyy
-  time-format: "[HH:mm:ss / h:mm a]"
-  time-offset: 0
-  register-tab-expansion: false
-placeholder-output-replacements:
-  "%essentials_vanished%":
-    "yes": "&7| Vanished"
-    "no": ""
-conditions:
-  nick:
-    conditions:
-      - "%player%=%essentials_nickname%"
-    true: "%player%"
-    false: ~%essentials_nickname%
-placeholder-refresh-intervals:
-  default-refresh-interval: 1000
-  "%server_tps_1_colored%": 700
-  "%player_ping%": 700
-assign-groups-by-permissions: false
-primary-group-finding-list:
-  - admin
-  - default
-permission-refresh-interval: 10000
-debug: false
+
 mysql:
   enabled: true
   host: 127.0.0.1
@@ -153,45 +68,46 @@ mysql:
   username: 46770d6
   password: 7f04916
   useSSL: false
-proxy-support:
+
+placeholders:
+  date-format: dd.MM.yyyy
+  time-format: "[HH:mm:ss / h:mm a]"
+  time-offset: 0
+  register-tab-expansion: false
+
+placeholder-refresh-intervals:
+  default-refresh-interval: 1000
+  "%server_tps_1_colored%": 700
+  "%player_ping%": 700
+
+primary-group-finding-list:
+  - admin
+  - default
+
+permission-refresh-interval: 10000
+use-online-uuid-in-tablist: true
+
+assign-groups-by-permissions: false
+compensate-for-packetevents-bug: false
+debug: false
+layout:
   enabled: false
-  type: PLUGIN
-  plugin:
-    name: RedisBungee
-  redis:
-    url: redis://:password@localhost:6379/0
-  rabbitmq:
-    exchange: plugin
-    url: amqp://guest:guest@localhost:5672/%2F
+global-playerlist:
+  update-latency: false
+  enabled: false
 per-world-playerlist:
   enabled: false
-  allow-bypass-permission: false
-  ignore-effect-in-worlds:
-    - ignoredworld
-    - build
-  shared-playerlist-world-groups:
-    lobby:
-      - lobby1
-      - lobby2
-    minigames:
-      - paintball
-      - bedwars
-compensate-for-packetevents-bug: false
-global-playerlist:
+ping-spoof:
   enabled: false
-  display-others-as-spectators: false
-  display-vanished-players-as-spectators: true
-  isolate-unlisted-servers: false
-  update-latency: false
-  spy-servers:
-    - spyserver1
-    - spyserver2
-  server-groups:
-    lobbies:
-      - lobby1
-      - lobby2
-    group2:
-      - server1
-      - server2
-use-bukkit-permissions-manager: false
-use-online-uuid-in-tablist: true
+  value: 0
+playerlist-objective:
+  enabled: false
+  title: TAB
+  value: ""
+  render-type: INTEGER
+belowname-objective:
+  enabled: false
+  fancy-value-default: NPC
+  fancy-value: "&c%health%"
+proxy-support:
+  enabled: false
