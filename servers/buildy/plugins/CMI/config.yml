@@ -779,7 +779,7 @@ Command:
     # Name of mail sender when command is performed from console
     # This name will be used as indicator who sent it and who should receive reply if player responds to it
     # For best experience set this value to your staff member responsible for communications with players
-    ConsoleMailSender: Everest
+    ConsoleMailSender: Buildy
 DisplayName:
   # If you have 3rd party plugin changing players display name, set this to false
   Change: true
@@ -1157,7 +1157,7 @@ Messages:
     - mast(e|ur)b(8|ait|ate)
 Books:
   # Defines default creator name for books when using getbook command
-  DefaultAuthor: Everest
+  DefaultAuthor: Buildy
   # When set to true books write date will be added
   AddDate: false
 # Defines name of customtext on players login to server. To disable just set name to non existing customText
