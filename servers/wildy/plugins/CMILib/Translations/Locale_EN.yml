@@ -638,7 +638,7 @@ command:
       info: Reloads plugins config and locale files
       args: ''
     info:
-      feedback: '&aCMILib &8» &fCMIL Configs and locale files reloaded! &7Took &a[ms]
+      feedback: '&aCMILib &8» &fCMIL Configs and locale files reloaded&o! &7Took &a[ms]
         &7ms'
       failedConfig: '&cCMILib &8» &fFailed to load config file! Check spelling&o!'
       failedLocale: '&cCMILib &8» &fFailed to load locale file! Check spelling&o!'

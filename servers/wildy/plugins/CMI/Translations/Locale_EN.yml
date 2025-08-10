@@ -264,12 +264,12 @@ Chat:
     global chat'
   shoutDeduction: '!actionbar!&cChat &8» &fDeducted &c[amount] &ffor shout'
   # Use \n to add new line
-  publicHover: '&bRank &8» &r%cmi_user_rank_displayname%\n&bPlayTime &8» &f%cmi_user_playtime_hourst%\n&bmcMMO
-    &8» &f%mcmmo_power_level%\n&bMoney &8» &f%cmi_user_balance%\n\n&eSent On &8» &f%server_time_hh:mm:ss%\n&fClick
+  publicHover: '&bRank &8» &r%cmi_user_rank_displayname%\n&bPlayTime &8» &f%cmi_user_playtime_hourst%\n&bMoney
+    &8» &f%cmi_user_balance%\n&bmcMMO &8» &f%mcmmo_power_level%\n\n&eSent On &8» &f%server_time_hh:mm:ss%\n&fClick
     to message'
-  privateHover: '&bRank &8» &r%cmi_user_rank_displayname%\n&bPlayTime &8» &f%cmi_user_playtime_hourst%\n&bmcMMO
-    &8» &f%mcmmo_power_level%\n&bMoney &8» &f%cmi_user_balance%\n\n&eSent On &8» &f%server_time_hh:mm:ss%\n&fClick
-    to message'
+  privateHover: '&bRank &8» &r%cmi_user_rank_displayname%\n&bPlayTime &8» &f%cmi_user_playtime_hourst%\n&bMoney
+    &8» &f%cmi_user_balance%\n&bmcMMO &8» &f%mcmmo_power_level%\n/\n&eSent On &8»
+    &f%server_time_hh:mm:ss%\n&fClick to message'
   staffHover: '&eSent On &8» &f%server_time_hh:mm:ss%\n&fClick to message'
   helpopHover: '&eSent On &8» &f%server_time_hh:mm:ss%\n&fClick to message'
   link: '&7&oLink'
@@ -355,7 +355,7 @@ command:
       info: Alias editor
       args: (new) (alias-cmd)
     info:
-      ListNumber: '&e[number].'
+      ListNumber: '&6&o[number] &8»'
       alias: '&6[alias]'
       commandList: ' &e/[command]  '
       commandListDelay: ' &6[command]  '
@@ -719,7 +719,7 @@ command:
       cantleave: '&6Can''t leave locked room'
       gotKicked: '&4You got kicked from &7[chatRoomName] &4chat room'
       list: '&e[chatRoomName]&e: &7[list]'
-      globalList: '&7[number]. [joined]&e[chatRoomName][private]&e: &7[count][expires]'
+      globalList: '&6&o[number] &8» [joined]&e[chatRoomName][private]&e: &7[count][expires]'
       globalListPrivate: '&2(P)'
       globalListJoined: '&2+'
       globalListHover:
@@ -1040,7 +1040,7 @@ command:
         Click to accept it.'
       doesnthave: '&ePlayer doesn''t have this item anymore'
       'no': '&eNo pending donations'
-      list: '&7[number]. &6[playerDisplayName] &f- &7[material] &6x &e[amount]'
+      list: '&6&o[number] &8» &6[playerDisplayName] &f- &7[material] &6x &e[amount]'
   down:
     help:
       info: Teleport one floor down
@@ -1330,7 +1330,7 @@ command:
       NoInfo: '&eThere is no info'
       InfoShow: '&6TPS: &3[tps] &6Left &e[left] &6(&e[min]m:[sec]s&6) &6Speed: &e[speed]
         &6Found: &e[found]'
-      scanList: '&2[number]. &7X:&f[x] &7Z:&f[z]'
+      scanList: '&6&o[number] &8» &7X:&f[x] &7Z:&f[z]'
       finished: '&eScanning finished, use &6/cmi fixchunk fix &fto fix found issues.
         &cChunks will be regenerated&o!'
       fixed: '&2[number] &fchunks fixed'
@@ -1716,8 +1716,8 @@ command:
       info: A list of homes that you can click to teleport to.
       args: (playerName/near:[range])
     info:
-      nearList: '&7[number]. &6[playerDisplayName] &6[homeName] &7[distance] blocks
-        away &e[direction]'
+      nearList: '&6&o[number] &8» &6[playerDisplayName] &6[homeName] &7[distance]
+        blocks away &e[direction]'
       closeButton: '&7Close'
       infoButton: '&7Information'
       bedButton: '&7Bed location'
@@ -2227,7 +2227,7 @@ command:
       eye: ' &e☬'
       use: '&2'
       cantuse: '&7'
-      list: '&7[number]. &e[kitName] &6- [description]'
+      list: '&6&o[number] &8» &e[kitName] &6- [description]'
   kitcdreset:
     help:
       info: Reset kit timer
@@ -2346,11 +2346,11 @@ command:
       info: Reset kit usage counter
       args: (kitName) (playerName)
     info:
-      notLimited: '&eKit has no limited amount of usage'
-      reset: '&eKit (&6[kit]&e) usage amount got reset for &6[playerDisplayName]'
+      notLimited: '&cKitUsageReset &8» &fKit has no limited amount of usage'
+      reset: '&aKitUsageReset &8» &fKit &a[kit] &fusage amount got reset for &6[playerDisplayName]'
       list: '&6&o[place] &8» &6[kit] &e[used]/[usages]'
-      listHover: '&eClick to reset'
-      noCd: '&eThere are no kit''s with usage above 0'
+      listHover: '&fClick to reset'
+      noCd: '&cKitUsageReset &8» &fThere are no kit''s with usage above 0'
   lastonline:
     help:
       info: Show played players from last x minutes
@@ -2379,19 +2379,19 @@ command:
         power of 2
       - cmi launch loc:150:120:123 - will launch player to target location
     info:
-      feedback: '!actionbar!&6&lWhoosh&o!'
+      feedback: '!actionbar!&6Whoosh&o!'
   lfix:
     help:
       info: Fix light in chunks around you
       args: (range) (playerName) (stop/stopall)
     info:
-      NoMore: '&clFix &8» &fRange can''t be more than server view range. Changed to
+      NoMore: '&cLFix&8» &fRange can''t be more than server view range. Changed to
         maximum allowed.'
-      startFixing: '&alFix &8» &fFound &6[amount] &fchunks to fix. Starting&o!'
-      InfoShow: '&blFix &8» &6TPS: &3[tps] &6Left &e[left] &6(&e[min]m:[sec]s&6) &6Speed:
+      startFixing: '&aLFix&8» &fFound &6[amount] &fchunks to fix. Starting&o!'
+      InfoShow: '&bLFix&8» &6TPS: &3[tps] &6Left &e[left] &6(&e[min]m:[sec]s&6) &6Speed:
         &e[speed]'
-      Finished: '&alFix &8» &fLight fixing has finished'
-      Stopped: '&clFix &8» &fStopped'
+      Finished: '&aLFix&8» &fLight fixing has finished'
+      Stopped: '&cLFix&8» &fStopped'
   list:
     help:
       info: Shows online player list
@@ -2779,10 +2779,10 @@ command:
       info: Patrol
       args: ''
     info:
-      noPatrol: '&eCurrently there is no players you can patrol'
-      Patroling: '&eCurrently patroling: &6[playerDisplayName]'
-      lastPatrol: '&eLast time patroled &6[time]&eago'
-      notes: '&eHas &6[amount] &enotes'
+      noPatrol: '&cPatrol &8» &fCurrently there is no players you can patrol'
+      Patroling: '&aPatrol &8» &fCurrently patroling: &6[playerDisplayName]'
+      lastPatrol: '&bPatrol &8» &fLast time patroled &b[time] &fago'
+      notes: '&bPatrol &8» &fHas &b[amount] &fnotes'
   pay:
     help:
       info: Perform money transaction
@@ -2815,20 +2815,21 @@ command:
       info: Shows player total play time
       args: (playername)
     info:
-      total: '&e* Total play time: [time]'
-      joined: '&e* Joined on: &6[time]'
+      total: '&bPlayTime &8» &fTotal play time: &b[time]'
+      joined: ' &fJoined on: &6[time]'
   playtimetop:
     help:
       info: Shows top list of player total play time
       args: '[page]'
     info:
-      topLine: '&e----- TopPlaytime &e-----'
-      scanning: '&eData is being scanned currently, please wait a minute and try again'
-      loading: '&eData is &cnot &floaded yet. Scan process will start and you will
-        get result after its finished'
-      list: '&e[number]. [playerDisplayName] &e- &6[time]'
-      place: '&6[playerDisplayName] &fis in &6[place] &eplace'
-      ownLine: '&2[number]. &2[playerDisplayName] &2- &2[time]'
+      topLine: '&bPlayTimeTop &8» &fTop list of players with most play time'
+      scanning: '&bPlayTimeTop &8» &fData is being scanned currently, please wait
+        a minute and try again'
+      loading: '&bPlayTimeTop &8» &fData is &cnot &floaded yet. Scan process will
+        start and you will get result after its finished'
+      list: '&6&o[number] &8» &6[playerDisplayName] &8» &b[time]'
+      place: '&bPlayTimeTop &8» &6[playerDisplayName] &fis in &b[place] &fplace'
+      ownLine: '&6&o[number] &8» &6[playerDisplayName] &8» &b[time]'
   point:
     help:
       info: Point to block
@@ -3077,7 +3078,7 @@ command:
       info: Reloads plugins config and locale files
       args: ''
     info:
-      feedback: '&aCMI &8» &fCMI Configs and locale files reloaded! &7Took &a[ms]
+      feedback: '&aCMI &8» &fCMI Configs and locale files reloaded&o! &7Took &a[ms]
         &7ms'
       failedConfig: '&cCMI &8» &fFailed to load config file! Check spelling&o!'
       failedLocale: '&cCMI &8» &fFailed to load locale file! Check spelling&o!'
@@ -3199,12 +3200,13 @@ command:
       info: Teleports to random location
       args: (playerName) (worldName) (-s)
     info:
-      possible: '&ePossible worlds: &6[worlds]'
-      tpLimit: '&eYou can''t teleport so fast, please wait &6[time] &fand try again'
-      cantDo: '&eYou can''t use random teleport from different world'
-      IncorrectLocation: '&6Could &cnot &ffind correct teleport location, please wait
-        &e[time] &6and try again.'
-      teleported: '!actionbar!&6Whoosh!!&o!'
+      possible: '&bRT &8» &fPossible worlds: &6[worlds]'
+      tpLimit: '&cRT &8» &fYou can''t teleport so fast, please wait &c[time] &fand
+        try again'
+      cantDo: '&cRT &8» &fYou can''t use random teleport from different world'
+      IncorrectLocation: '&cRT &8» &fCould &cnot &ffind correct teleport location,
+        please wait &c[time] &fand try again.'
+      teleported: '!actionbar!&6Whoosh&o!'
       searching: '!actionbar!&7Searching'
   sameip:
     help:
@@ -3217,9 +3219,9 @@ command:
       info: Set players saturation
       args: (playerName) [amount]
     info:
-      feedback: '&aSaturation &8» &fYou have set &3[amount] &fsaturation for &6[playerDisplayName]
+      feedback: '&aSaturation &8» &fYou have set &a[amount] &fsaturation for &6[playerDisplayName]
         &7([offon]&7)&f.'
-      targetfeedback: '&aSaturation &8» &fYour saturation was set to &3[amount] &fby
+      targetfeedback: '&aSaturation &8» &fYour saturation was set to &a[amount] &fby
         &6[senderDisplayName]&f.'
   saveall:
     help:
@@ -3388,11 +3390,11 @@ command:
       info: Show server time
       args: ''
     info:
-      time: '&eServer time: &6[time]'
+      time: '&bServerTime &8» &e[time]'
       format: dd/MM/YYYY HH:mm:ss
-      timeZone: '&eTime zone name: &6[name]'
-      timeZoneId: '&eTime zone id: &6[id]'
-      timeZoneOffset: '&eTime zone offset: &6[offset]'
+      timeZone: ' &fTime zone name: &6[name]'
+      timeZoneId: ' &fTime zone id: &6[id]'
+      timeZoneOffset: ' &fTime zone offset: &e[offset]'
   setenchantworth:
     help:
       info: Change enchantment worth
