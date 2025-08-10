@@ -1,5 +1,5 @@
 # Language file you want to use
-Language: KO
+Language: EN
 # Defines if you want to auto download default locale files from github repository
 # You can disable this if you are using EN or you already have your locale setup and you don't need to have other languages being downloaded
 LanguageDownload: false
