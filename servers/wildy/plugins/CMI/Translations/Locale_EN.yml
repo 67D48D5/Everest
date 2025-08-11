@@ -1476,7 +1476,7 @@ command:
       title: Pick glow color
       incorrect: '&cGlow &8» &fIncorrect color name'
       lore: '&fClick to select color'
-      noPerm: '&c/No permission yet'
+      noPerm: '&cNo permission yet'
   gm:
     help:
       info: Set players game mode

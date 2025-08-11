@@ -56,7 +56,7 @@
 info:
   # Use !prefix! in any locale line to automatically include this prefix
   prefix: System &8» &f
-  NoPermission: '&cError &8» &fYou don''t have permission&o!'
+  NoPermission: '&cError &8» &fThe command does not exist or cannot be used&o!'
   CantHavePermission: '&cError &8» &fYou can''t have this permission&o!'
   WrongGroup: '&cError &8» &fYou are in wrong group for this&o!'
   NoPlayerPermission: '&cError &8» &6[playerName] doesn''t have permission for: &c[permission]'
