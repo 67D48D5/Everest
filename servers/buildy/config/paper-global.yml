@@ -77,7 +77,7 @@ messages:
     flying-player: <lang:multiplayer.disconnect.flying>
     flying-vehicle: <lang:multiplayer.disconnect.flying>
   no-permission: <red>Error <gray>» <white>The command does not exist or cannot be
-    used.
+    used<italic>!
   use-display-name-in-quit-message: false
 misc:
   chat-threads:

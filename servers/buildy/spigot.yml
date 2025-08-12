@@ -37,7 +37,7 @@ settings:
 messages:
   whitelist: The server is currently whitelisted. Please contact an administrator
     if you wish to join.
-  unknown-command: §cError &8» §fThe command does not exist or cannot be used.
+  unknown-command: §cError §8» §fThe command does not exist or cannot be used§o!
   server-full: The server is currently full. Please try again later.
   outdated-client: You must use client version {0} or higher to join this server.
   outdated-server: The server is still running version {0}. Please match your client
