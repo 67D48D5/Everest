@@ -56,7 +56,7 @@
 info:
   # Use !prefix! in any locale line to automatically include this prefix
   prefix: System &8» &f
-  NoPermission: '&cError &8» &fYou don''t have permission&o!'
+  NoPermission: '&cError &8» &fThe command does not exist or cannot be used&o!'
   CantHavePermission: '&cError &8» &fYou can''t have this permission&o!'
   WrongGroup: '&cError &8» &fYou are in wrong group for this&o!'
   NoPlayerPermission: '&cError &8» &6[playerName] doesn''t have permission for: &c[permission]'
@@ -395,126 +395,126 @@ info:
   # Avoid adding color codes to the enchant name
   EnchantNames:
     loot_bonus_blocks: Loot_bonus_blocks
-    protection_fire: Protection_fire
-    luck: Luck
-    swift_sneak: Swift_sneak
-    piercing: Piercing
-    arrow_infinite: Arrow_infinite
-    oxygen: Oxygen
-    durability: Durability
-    riptide: Riptide
-    water_worker: Water_worker
-    multishot: Multishot
-    protection_explosions: Protection_explosions
-    impaling: Impaling
-    loyalty: Loyalty
-    loot_bonus_mobs: Loot_bonus_mobs
-    damage_arthropods: Damage_arthropods
-    lure: Lure
-    sweeping_edge: Sweeping_edge
-    arrow_knockback: Arrow_knockback
-    soul_speed: Soul_speed
-    frost_walker: Frost_walker
-    damage_all: Damage_all
-    damage_undead: Damage_undead
-    wind_burst: Wind_burst
-    knockback: Knockback
-    depth_strider: Depth_strider
-    dig_speed: Dig_speed
-    binding_curse: Binding_curse
-    channeling: Channeling
-    fire_aspect: Fire_aspect
-    breach: Breach
-    silk_touch: Silk_touch
-    arrow_damage: Arrow_damage
-    protection_environmental: Protection_environmental
     mending: Mending
-    quick_charge: Quick_charge
     protection_fall: Protection_fall
+    arrow_infinite: Arrow_infinite
+    wind_burst: Wind_burst
+    lure: Lure
+    arrow_damage: Arrow_damage
     arrow_fire: Arrow_fire
-    protection_projectile: Protection_projectile
+    multishot: Multishot
+    durability: Durability
+    piercing: Piercing
+    sweeping_edge: Sweeping_edge
+    damage_undead: Damage_undead
+    protection_fire: Protection_fire
+    loyalty: Loyalty
+    protection_environmental: Protection_environmental
     thorns: Thorns
     density: Density
+    soul_speed: Soul_speed
+    arrow_knockback: Arrow_knockback
+    swift_sneak: Swift_sneak
+    oxygen: Oxygen
+    luck: Luck
+    breach: Breach
+    water_worker: Water_worker
+    channeling: Channeling
+    dig_speed: Dig_speed
+    riptide: Riptide
+    binding_curse: Binding_curse
+    protection_projectile: Protection_projectile
+    knockback: Knockback
+    protection_explosions: Protection_explosions
+    quick_charge: Quick_charge
+    silk_touch: Silk_touch
+    depth_strider: Depth_strider
+    fire_aspect: Fire_aspect
+    damage_all: Damage_all
     vanishing_curse: Vanishing_curse
+    damage_arthropods: Damage_arthropods
+    impaling: Impaling
+    frost_walker: Frost_walker
+    loot_bonus_mobs: Loot_bonus_mobs
   PotionEffectAliases:
-    dolphinsgrace:
-    - Dolphins grace
-    fireresistance:
-    - Fire resistance
-    raidomen:
-    - Raid omen
-    speed:
-    - Speed
-    instanthealth:
-    - Instant health
-    luck:
-    - Luck
-    wither:
-    - Wither
-    haste:
-    - Haste
-    healthboost:
-    - Health boost
-    blindness:
-    - Blindness
-    weaving:
-    - Weaving
-    slowness:
-    - Slowness
-    miningfatigue:
-    - Mining fatigue
-    waterbreathing:
-    - Water breathing
-    saturation:
-    - Saturation
-    poison:
-    - Poison
-    infested:
-    - Infested
-    weakness:
-    - Weakness
-    heroofthevillage:
-    - Hero of the village
-    nausea:
-    - Nausea
-    conduitpower:
-    - Conduit power
-    jumpboost:
-    - Jump boost
-    instantdamage:
-    - Instant damage
     absorption:
     - Absorption
-    windcharged:
-    - Wind charged
-    invisibility:
-    - Invisibility
-    badomen:
-    - Bad omen
-    glowing:
-    - Glowing
-    resistance:
-    - Resistance
     darkness:
     - Darkness
-    hunger:
-    - Hunger
-    strength:
-    - Strength
-    oozing:
-    - Oozing
-    regeneration:
-    - Regeneration
-    unluck:
-    - Unluck
-    trialomen:
-    - Trial omen
-    nightvision:
-    - Night vision
+    dolphinsgrace:
+    - Dolphins grace
+    invisibility:
+    - Invisibility
+    nausea:
+    - Nausea
+    glowing:
+    - Glowing
     slowfalling:
     - Slow falling
+    weaving:
+    - Weaving
+    healthboost:
+    - Health boost
+    conduitpower:
+    - Conduit power
     levitation:
     - Levitation
+    fireresistance:
+    - Fire resistance
+    resistance:
+    - Resistance
+    poison:
+    - Poison
+    raidomen:
+    - Raid omen
+    haste:
+    - Haste
+    speed:
+    - Speed
+    infested:
+    - Infested
+    hunger:
+    - Hunger
+    badomen:
+    - Bad omen
+    windcharged:
+    - Wind charged
+    luck:
+    - Luck
+    slowness:
+    - Slowness
+    waterbreathing:
+    - Water breathing
+    unluck:
+    - Unluck
+    blindness:
+    - Blindness
+    instanthealth:
+    - Instant health
+    heroofthevillage:
+    - Hero of the village
+    miningfatigue:
+    - Mining fatigue
+    instantdamage:
+    - Instant damage
+    strength:
+    - Strength
+    regeneration:
+    - Regeneration
+    saturation:
+    - Saturation
+    nightvision:
+    - Night vision
+    weakness:
+    - Weakness
+    jumpboost:
+    - Jump boost
+    trialomen:
+    - Trial omen
+    oozing:
+    - Oozing
+    wither:
+    - Wither
 dialog:
   signEditor: Sign Editor
   update: Update
@@ -593,9 +593,9 @@ econ:
   notEnoughMoney: '&cMoney &8» &fYou don''t have enough money. Required: &e[amount]'
   tooMuchMoney: '&cMoney &8» &fYou have too much money'
 Selection:
-  SelectPoints: '&bSelection &8» &fSelect 2 points with selection tool! AKA: &6[tool]'
-  PrimaryPoint: '&aSelection &8» &fPlaced &cPrimary &fSelection Point [point]'
-  SecondaryPoint: '&aSelection &8» &fPlaced &bSecondary &fSelection Point [point]'
+  SelectPoints: '&bSelection &8» &fSelect 2 points with selection tool! AKA: &b[tool]'
+  PrimaryPoint: '&aSelection &8» &fPlaced &cPrimary &fSelection Point &o[point]'
+  SecondaryPoint: '&aSelection &8» &fPlaced &bSecondary &fSelection Point &o[point]'
   CoordsTop: '&7[x]&f, &7[y]&f, &7[z]'
   CoordsBottom: '&7[x]&f, &7[y]&f, &7[z]'
   Area: '&7[x1]&f, &7[y1]&f, &7[z1] to &7[x2]&f, &7[y2]&f, &7[z2] &8@[world]'
@@ -638,7 +638,7 @@ command:
       info: Reloads plugins config and locale files
       args: ''
     info:
-      feedback: '&aCMILib &8» &fCMIL Configs and locale files reloaded! &7Took &a[ms]
+      feedback: '&aCMILib &8» &fCMIL Configs and locale files reloaded&o! &7Took &a[ms]
         &7ms'
       failedConfig: '&cCMILib &8» &fFailed to load config file! Check spelling&o!'
       failedLocale: '&cCMILib &8» &fFailed to load locale file! Check spelling&o!'
