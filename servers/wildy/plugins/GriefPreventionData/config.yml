@@ -3,13 +3,13 @@
 GriefPrevention:
   SeaLevelOverrides:
     wwild: 48
-    wwild_nether: -1
-    wwild_the_end: -1
+    wwild_nether: 36
+    wwild_the_end: 24
   Claims:
     Mode:
+      wwild_nether: Survival
+      wwild_the_end: Survival
       wwild: Survival
-      wwild_nether: Disabled
-      wwild_the_end: Disabled
     PreventGlobalMonsterEggs: true
     PreventTheft: true
     ProtectCreatures: true
@@ -33,8 +33,8 @@ GriefPrevention:
     AutomaticNewPlayerClaimsRadius: 8
     AutomaticNewPlayerClaimsRadiusMinimum: 4
     ExtendIntoGroundDistance: 16
-    MinimumWidth: 4
-    MinimumArea: 128
+    MinimumWidth: 8
+    MinimumArea: 64
     MaximumDepth: -2147483648
     InvestigationTool: STICK
     ModificationTool: GOLDEN_SHOVEL
@@ -48,7 +48,7 @@ GriefPrevention:
       AutomaticNatureRestoration:
         SurvivalWorlds: true
     AllowTrappedInAdminClaims: true
-    MaximumNumberOfClaimsPerPlayer: 16
+    MaximumNumberOfClaimsPerPlayer: 18
     CreationRequiresWorldGuardBuildPermission: true
     VillagerTradingRequiresPermission: true
     CommandsRequiringAccessTrust: /sethome
@@ -64,12 +64,14 @@ GriefPrevention:
     LoginLogoutNotificationsPerMinute: 5
     ChatSlashCommands: /me;/global;/local
     WhisperSlashCommands: /tell;/pm;/r;/whisper;/msg
-    WarningMessage: §cCore §8» §f채팅에 스팸성 메세지를 지속적으로 보내면 서버에서 추방될 수 있습니다.
+    WarningMessage: §cChat §8» §fIf you continue to send spam messages in chat, you
+      may be banned from the server.
     BanOffenders: true
-    BanMessage: §cCore §8» §f채팅에 스팸성 메세지를 지속적으로 보내 추방되었습니다.
+    BanMessage: §cChat §8» §fYou have been banned for continuously sending spam messages
+      in chat.
     AllowedIpAddresses: 1.2.3.4; 5.6.7.8
     DeathMessageCooldownSeconds: 16
-    Logout Message Delay In Seconds: 4
+    Logout Message Delay In Seconds: 0
   PvP:
     RulesEnabledInWorld:
       wwild: true
@@ -103,7 +105,7 @@ GriefPrevention:
   BlockSurfaceOtherExplosions: true
   LimitSkyTrees: true
   LimitTreeGrowth: false
-  PistonMovement: EVERYWHERE
+  PistonMovement: CLAIMS_ONLY
   PistonExplosionSound: true
   FireSpreads: false
   FireDestroys: false
