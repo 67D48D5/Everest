@@ -26,9 +26,6 @@ CREATE DATABASE msdwc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 # Database for the Buildy server
 CREATE DATABASE msdbd CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-# Database for the Sky server
-CREATE DATABASE msdsk CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
 # Apply the settings to the msdgl database
 # ************************************************************
 
@@ -262,16 +259,6 @@ VALUES (
         '{}'
     ),
     (
-        38,
-        'default',
-        'cmi.keepinventory',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
         40,
         'default',
         'cmi.command.playtimetop',
@@ -465,16 +452,6 @@ VALUES (
         82,
         'default',
         'cmi.command.worthlist',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        85,
-        'default',
-        'cmi.keepexp',
         1,
         'global',
         'global',
