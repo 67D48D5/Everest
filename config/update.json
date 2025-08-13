@@ -16,6 +16,7 @@
       "viaversion": "https://ci.viaversion.com/job/ViaVersion"
     },
     "paper": {
+      "BentoBox": "https://github.com/BentoBoxWorld/BentoBox/releases",
       "Chunky": "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky",
       "ChunkyBorder": "https://ci.codemc.io/view/Author/job/pop4959/job/ChunkyBorder",
       "FastAsyncWorldEdit": "https://ci.athion.net/job/FastAsyncWorldEdit",
