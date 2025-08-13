@@ -24,7 +24,6 @@ sessions/
 
 lastupdate
 status.json
-server.yml
 wepif.yml
 permissions.yml
 worldNames.yml
@@ -43,9 +42,11 @@ ops.json
 **flatfile**
 **backup**
 
+/**/litebans/server.json
+
+stats/
 datapacks/
 advancements/
-stats/
 
 *.template
 *.lock
