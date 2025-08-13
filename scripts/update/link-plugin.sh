@@ -1,70 +1,110 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# --- Configuration ---
+# Setting up our paths relative to the script's location.
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
 
+# Defining where our config and library files are.
 CONFIG_FILE="${ROOT_PATH}/config/server.json"
 PLUGIN_ROOT="${ROOT_PATH}/libraries/plugins"
 SERVERS_ROOT="${ROOT_PATH}/servers"
 
-# Check if config file exists
-[[ -f "$CONFIG_FILE" ]] || {
-  echo "❌ server.json not found" >&2
-  exit 1
-}
-
-# Check for required dependencies
-for cmd in jq realpath; do
-  command -v "$cmd" >/dev/null || {
-    echo "❌ Missing dependency: $cmd" >&2
+# --- Pre-flight Checks ---
+# Make sure we have the tools we need.
+echo "[$(date '+%H:%M:%S') INFO]: Checking for required tools..."
+for cmd in jq realpath find sort tail ln rm mv mktemp; do
+  if ! command -v "$cmd" >/dev/null; then
+    echo "[$(date '+%H:%M:%S') ERROR]: Missing dependency: '$cmd'. Please install it first." >&2
     exit 1
-  }
+  fi
 done
 
-# Load the configuration file
-CONFIG="$(cat "$CONFIG_FILE")"
+# And make sure the config file actually exists.
+if [[ ! -f "$CONFIG_FILE" ]]; then
+  echo "[$(date '+%H:%M:%S') ERROR]: File 'server.json' not found at '$CONFIG_FILE'" >&2
+  exit 1
+fi
 
-# Find the latest file matching a pattern in a directory
+# --- Helper Functions ---
+# Find the latest file matching a pattern in a directory.
+# This function is great, no changes needed here.
 pick_latest() { # <dir> <glob>
   local dir="$1" pattern="$2"
-  find "$dir" -maxdepth 1 -type f -iname "$pattern" 2>/dev/null | sort | tail -n1
+  find "$dir" -maxdepth 1 -type f -iname "$pattern" 2>/dev/null | sort -V | tail -n1
 }
 
-# Iterate over servers in the config
-jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
+# --- Main Logic ---
+# A reusable function to handle linking all plugins for a single server.
+# This uses an "atomic swap" method for safety, ensuring the server is never
+# left with an incomplete or empty plugin directory.
+link_server_plugins() {
+  local server_name="$1"
+  local engine="$2"
+  local server_dir="$3"
+
+  local dest_dir="${server_dir}/plugins"
+  local auto_dir="${PLUGIN_ROOT}/${engine}/auto"
+  local static_dir="${PLUGIN_ROOT}/${engine}"
+
+  # --- The Atomic Swap: Part 1 ---
+  # Create a secure, temporary directory to build the new plugin set.
+  # We create it next to the real plugins/ dir to ensure it's on the same filesystem.
+  mkdir -p "$server_dir"
+  local temp_plugins_dir
+  temp_plugins_dir=$(mktemp -d -p "$server_dir")
+  echo "[$(date '+%H:%M:%S') INFO]: Building new plugin set in: $(basename "$temp_plugins_dir")"
+
+  # --- Plugin Linking Loop ---
+  # Use process substitution to avoid subshells and ensure robustness.
+  while IFS=$'\t' read -r plugin spec; do
+    local scheme="${spec%%://*}"
+    local pattern="${spec#*://}"
+    local src_file=""
+
+    case "$scheme" in
+    auto) src_file=$(pick_latest "$auto_dir" "$pattern") ;;
+    manual) src_file=$(pick_latest "$static_dir" "$pattern") ;;
+    *)
+      echo "[$(date '+%H:%M:%S') WARN]: Unknown scheme '$scheme' for '$plugin'. Skipping." >&2
+      continue
+      ;;
+    esac
+
+    if [[ -n "${src_file:-}" && -f "$src_file" ]]; then
+      # Link into the temporary directory, not the live one.
+      ln -sf "$src_file" "${temp_plugins_dir}/${plugin}.jar"
+      printf "[$(date '+%H:%M:%S') INFO]: %-22s → %s\n" "${plugin}.jar" "$(basename "$src_file")"
+    else
+      printf "[$(date '+%H:%M:%S') WARN]: %-22s NOT found (pattern: %s)\n" "$plugin" "$pattern" >&2
+    fi
+  done < <(jq -r ".servers[\"$server_name\"].plugins | to_entries[] | \"\(.key)\t\(.value)\"" <<<"$CONFIG")
+
+  # --- The Atomic Swap: Part 2 ---
+  # Once all links are created in the temp dir, swap it with the live one.
+  # This is an instantaneous operation.
+  echo "[$(date '+%H:%M:%S') INFO]: Atomically swapping plugin directories..."
+  rm -rf "$dest_dir"/*.jar || true
+  mv "$temp_plugins_dir" "$dest_dir"
+}
+
+# --- Execution ---
+# Load the configuration file once.
+CONFIG="$(cat "$CONFIG_FILE")"
+
+# Use process substitution for the main server loop to keep it robust.
+while read -r SERVER; do
   ENGINE=$(jq -r ".servers[\"$SERVER\"].engine" <<<"$CONFIG")
-  DEST_DIR="${SERVERS_ROOT}/${SERVER}/plugins"
-  AUTO_DIR="${PLUGIN_ROOT}/${ENGINE}/auto"
-  STATIC_DIR="${PLUGIN_ROOT}/${ENGINE}"
+  SERVER_DIR="${SERVERS_ROOT}/${SERVER}"
 
-  # Clean up old plugin jar links
-  rm -rf "$DEST_DIR"/*.jar
-  [[ -d "$DEST_DIR" ]] || mkdir -p "$DEST_DIR"
-  echo "🔗 ${SERVER}  (engine: ${ENGINE})"
-
-  jq -r ".servers[\"$SERVER\"].plugins | to_entries[] | \"\(.key)\t\(.value)\"" <<<"$CONFIG" |
-    while IFS=$'\t' read -r PLUGIN SPEC; do
-      SCHEME="${SPEC%%://*}"
-      PATTERN="${SPEC#*://}"
-
-      case "$SCHEME" in
-      auto) SRC=$(pick_latest "$AUTO_DIR" "$PATTERN") ;;
-      manual) SRC=$(pick_latest "$STATIC_DIR" "$PATTERN") ;;
-      *)
-        echo "  ⚠️ Unknown scheme '$SCHEME' for $PLUGIN"
-        continue
-        ;;
-      esac
-
-      if [[ -n "${SRC:-}" && -f "$SRC" ]]; then
-        ln -sf "$SRC" "${DEST_DIR}/${PLUGIN}.jar"
-        printf "  ✔ %-22s → %s\n" "${PLUGIN}.jar" "$(basename "$SRC")"
-      else
-        printf "  ⚠️ %-22s NOT found (pattern: %s)\n" "$PLUGIN" "$PATTERN" >&2
-      fi
-    done
   echo
-done
+  echo "[$(date '+%H:%M:%S') INFO]: Processing plugins for server: '${SERVER}' (engine: ${ENGINE})"
 
-echo "✅ Plugin linking complete."
+  # Call our main function to handle the linking logic.
+  link_server_plugins "$SERVER" "$ENGINE" "$SERVER_DIR"
+
+done < <(jq -r '.servers | keys[]' <<<"$CONFIG")
+
+echo
+echo "[$(date '+%H:%M:%S') INFO]: Plugin linking complete."

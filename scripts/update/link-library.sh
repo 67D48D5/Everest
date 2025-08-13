@@ -1,123 +1,107 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# --- Configuration ---
+# Setting up our paths relative to the script's location.
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
 
+# Defining where our config and library files are.
 CONFIG_FILE="${ROOT_PATH}/config/server.json"
 COMMON_ROOT="${ROOT_PATH}/libraries/common"
 SERVERS_ROOT="${ROOT_PATH}/servers"
 
-# Check if config file exists
-[[ -f "$CONFIG_FILE" ]] || {
-    echo "❌ server.json not found" >&2
-    exit 1
-}
-
-# Check for required dependencies
-for cmd in jq realpath; do
-    command -v "$cmd" >/dev/null || {
-        echo "❌ Missing dependency: $cmd" >&2
+# --- Pre-flight Checks ---
+# Make sure we have the tools we need.
+echo "[$(date '+%H:%M:%S') INFO]: Checking for required tools..."
+for cmd in jq realpath ln rm; do
+    if ! command -v "$cmd" >/dev/null; then
+        echo "[$(date '+%H:%M:%S') ERROR]: Missing dependency: '$cmd'. Please install it first." >&2
         exit 1
-    }
+    fi
 done
 
-# Load the configuration file
+# And make sure the config file actually exists.
+if [[ ! -f "$CONFIG_FILE" ]]; then
+    echo "[$(date '+%H:%M:%S') ERROR]: File 'server.json' not found at '$CONFIG_FILE'" >&2
+    exit 1
+fi
+
+# --- Main Logic ---
+# A reusable function to handle the creation of a symbolic link.
+# It checks if the destination exists (as a link or directory) and cleans it up
+# before creating the new, correct symbolic link.
+# Arguments:
+#   $1: Source path (what we are linking to)
+#   $2: Destination path (where the link will be created)
+#   $3: A friendly name for the resource being linked, for logging.
+link_resource() {
+    local source_path="$1"
+    local dest_path="$2"
+    local resource_name="$3"
+
+    # Ensure the parent directory of our destination exists.
+    mkdir -p "$(dirname "$dest_path")"
+    # Ensure the source directory exists so we don't create broken links.
+    mkdir -p "$source_path"
+
+    # Check if the destination already exists and clean it up.
+    if [[ -L "$dest_path" ]]; then
+        echo "[$(date '+%H:%M:%S') INFO]: '$resource_name' is already a symlink. Removing old link."
+        rm "$dest_path"
+    elif [[ -d "$dest_path" ]]; then
+        echo "[$(date '+%H:%M:%S') INFO]: '$resource_name' is a directory. Removing existing directory."
+        rm -rf "$dest_path"
+    elif [[ -f "$dest_path" ]]; then
+        echo "[$(date '+%H:%M:%S') INFO]: '$resource_name' is a file. Removing existing file."
+        rm -f "$dest_path"
+    fi
+
+    echo "[$(date '+%H:%M:%S') INFO]: Linking '$resource_name' from '$source_path' to '$dest_path'"
+    # Use -s (symbolic), -f (force/overwrite), -n (no-dereference/treat link as a file)
+    ln -sfn "$source_path" "$dest_path"
+}
+
+# --- Execution ---
+# Load the configuration file once.
 CONFIG="$(cat "$CONFIG_FILE")"
 
-# Iterate over servers in the config
+# Iterate over each server defined in the config.
 jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
     ENGINE=$(jq -r ".servers[\"$SERVER\"].engine" <<<"$CONFIG")
     SERVER_DIR="${SERVERS_ROOT}/${SERVER}"
 
-    echo "🔗 Processing server: ${SERVER} (engine: ${ENGINE})"
-
-    # 1. Link 'cache' directory (for Paper servers only)
-    # Source: ROOT_PATH/libraries/common/cache
-    # Destination: SERVERS_ROOT/${SERVER}/cache
-    if [[ "$ENGINE" == "paper" ]]; then
-        SOURCE_CACHE_DIR="${COMMON_ROOT}/cache"
-        DEST_CACHE_DIR="${SERVER_DIR}/cache"
-
-        # Ensure source directory exists
-        [[ -d "$SOURCE_CACHE_DIR" ]] || mkdir -p "$SOURCE_CACHE_DIR"
-
-        if [[ -L "$DEST_CACHE_DIR" ]]; then
-            echo "   - 'cache' is already a symlink. Removing old link."
-            rm "$DEST_CACHE_DIR"
-        elif [[ -d "$DEST_CACHE_DIR" ]]; then
-            echo "   - 'cache' is a directory. Removing existing directory."
-            rm -rf "$DEST_CACHE_DIR"
-        fi
-        echo "   - Linking 'cache' from ${SOURCE_CACHE_DIR} to ${DEST_CACHE_DIR}"
-        ln -sfn "$SOURCE_CACHE_DIR" "$DEST_CACHE_DIR"
-    fi
-
-    # 2. Link 'libraries' directory (for Paper servers only)
-    # Source: ROOT_PATH/libraries/common/libraries
-    # Destination: SERVERS_ROOT/${SERVER}/libraries
-    if [[ "$ENGINE" == "paper" ]]; then
-        SOURCE_LIBS_DIR="${COMMON_ROOT}/libraries"
-        DEST_LIBS_DIR="${SERVER_DIR}/libraries"
-
-        # Ensure source directory exists
-        [[ -d "$SOURCE_LIBS_DIR" ]] || mkdir -p "$SOURCE_LIBS_DIR"
-
-        if [[ -L "$DEST_LIBS_DIR" ]]; then
-            echo "   - 'libraries' is already a symlink. Removing old link."
-            rm "$DEST_LIBS_DIR"
-        elif [[ -d "$DEST_LIBS_DIR" ]]; then
-            echo "   - 'libraries' is a directory. Removing existing directory."
-            rm -rf "$DEST_LIBS_DIR"
-        fi
-        echo "   - Linking 'libraries' from ${SOURCE_LIBS_DIR} to ${DEST_LIBS_DIR}"
-        ln -sfn "$SOURCE_LIBS_DIR" "$DEST_LIBS_DIR"
-    fi
-
-    # 3. Link 'versions' directory (for Paper servers only)
-    # Source: ROOT_PATH/libraries/common/versions
-    # Destination: SERVERS_ROOT/${SERVER}/versions
-    if [[ "$ENGINE" == "paper" ]]; then
-        SOURCE_VERSIONS_DIR="${COMMON_ROOT}/versions"
-        DEST_VERSIONS_DIR="${SERVER_DIR}/versions"
-
-        # Ensure source directory exists
-        [[ -d "$SOURCE_VERSIONS_DIR" ]] || mkdir -p "$SOURCE_VERSIONS_DIR"
-
-        if [[ -L "$DEST_VERSIONS_DIR" ]]; then
-            echo "   - 'versions' is already a symlink. Removing old link."
-            rm "$DEST_VERSIONS_DIR"
-        elif [[ -d "$DEST_VERSIONS_DIR" ]]; then
-            echo "   - 'versions' is a directory. Removing existing directory."
-            rm -rf "$DEST_VERSIONS_DIR"
-        fi
-        echo "   - Linking 'versions' from ${SOURCE_VERSIONS_DIR} to ${DEST_VERSIONS_DIR}"
-        ln -sfn "$SOURCE_VERSIONS_DIR" "$DEST_VERSIONS_DIR"
-    fi
-
-    # 4. Link 'LuckPerms/libs'
-    # Source: ROOT_PATH/libraries/common/plugins/LuckPerms/libs
-    # Destination: SERVERS_ROOT/${SERVER}/plugins/LuckPerms/libs
-    SOURCE_LUCKPERMS_DIR="${COMMON_ROOT}/plugins/LuckPerms/libs"
-    DEST_LUCKPERMS_DIR="${SERVER_DIR}/plugins/LuckPerms/libs"
-    if [[ "$ENGINE" == "velocity" ]]; then
-        DEST_LUCKPERMS_DIR="${SERVER_DIR}/plugins/luckperms/libs"
-    fi
-
-    # Ensure source directory exists
-    [[ -d "$SOURCE_LUCKPERMS_DIR" ]] || mkdir -p "$SOURCE_LUCKPERMS_DIR"
-
-    if [[ -L "$DEST_LUCKPERMS_DIR" ]]; then
-        echo "   - 'LuckPerms/libs' is already a symlink. Removing old link."
-        rm "$DEST_LUCKPERMS_DIR"
-    elif [[ -d "$DEST_LUCKPERMS_DIR" ]]; then
-        echo "   - 'LuckPerms/libs' is a directory. Removing existing directory."
-        rm -rf "$DEST_LUCKPERMS_DIR"
-    fi
-    echo "   - Linking 'LuckPerms/libs' from ${SOURCE_LUCKPERMS_DIR} to ${DEST_LUCKPERMS_DIR}"
-    ln -sfn "$SOURCE_LUCKPERMS_DIR" "$DEST_LUCKPERMS_DIR"
-
     echo
+    echo "[$(date '+%H:%M:%S') INFO]: Processing server: ${SERVER} (engine: ${ENGINE})"
+
+    # --- Define links needed for all server types ---
+    # This is an array of "SourceSubPath;DestSubPath;FriendlyName"
+    common_links=(
+        "plugins/LuckPerms/libs;plugins/LuckPerms/libs;LuckPerms Libs"
+    )
+
+    # --- Define links needed only for Paper servers ---
+    paper_links=(
+        "cache;cache;Paper Cache"
+        "libraries;libraries;Paper Libraries"
+        "versions;versions;Paper Versions"
+    )
+
+    # --- Process links based on engine type ---
+    if [[ "$ENGINE" == "paper" ]]; then
+        # Combine common links and paper-specific links
+        links_to_create=("${common_links[@]}" "${paper_links[@]}")
+        for link_info in "${links_to_create[@]}"; do
+            # Split the string by the semicolon delimiter
+            IFS=';' read -r src dest name <<<"$link_info"
+            link_resource "${COMMON_ROOT}/${src}" "${SERVER_DIR}/${dest}" "$name"
+        done
+    elif [[ "$ENGINE" == "velocity" ]]; then
+        # Velocity has a special path for LuckPerms
+        link_resource "${COMMON_ROOT}/plugins/LuckPerms/libs" "${SERVER_DIR}/plugins/luckperms/libs" "LuckPerms Libs"
+    fi
+
 done
 
-echo "✅ Common resource linking complete."
+echo
+echo "[$(date '+%H:%M:%S') INFO]: Common resource linking complete."
