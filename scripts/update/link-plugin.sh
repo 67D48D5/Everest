@@ -86,7 +86,8 @@ link_server_plugins() {
   # This is an instantaneous operation.
   echo "[$(date '+%H:%M:%S') INFO]: Atomically swapping plugin directories..."
   rm -rf "$dest_dir"/*.jar || true
-  mv "$temp_plugins_dir" "$dest_dir"
+  mv "$temp_plugins_dir"/*.jar "$dest_dir"
+  rm -rf "$temp_plugins_dir"
 }
 
 # --- Execution ---
