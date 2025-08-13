@@ -1,0 +1,273 @@
+visit:
+  commands:
+    admin:
+      main:
+        description: otwiera GUI, który pozwala edytować domyślne lub docelowe ustawienia
+          wyspy.
+        parameters: <gracz>
+    player:
+      main:
+        description: otwiera GUI lub odwiedza ukierunkowaną wyspę gracza.
+        parameters: <gracz>
+      configure:
+        description: otwiera GUI, który pozwala zarządzać ustawieniami odwiedzin.
+      set-location:
+        description: Pozwala zmienić lokalizację odradzania się odwiedzających.
+  gui:
+    titles:
+      choose: '&0&l Wybierz wyspę'
+      configure: '&0 Konfiguruj dostęp'
+      main: '&0 Panel administracyjny'
+      select-island: '&0&l Wybierz wyspę'
+      select-block: '&0&l Wybierz blok'
+    buttons:
+      previous:
+        name: '&f&l Poprzednia strona'
+        description: '&7 Przełącz na stronę [number]'
+      next:
+        name: '&f&l następna strona'
+        description: '&7 Przełącz na stronę [number]'
+      search:
+        name: '&f&l Szukaj'
+        description: |-
+          &7 Wyszukaj konkretny
+          &7 wyspa.
+        search: '&b Wartość: [value]'
+      filter:
+        name: '&f&l Filtr'
+        description: |-
+          &7 Pozwala tylko na pokazywanie
+          &7 filtrowanych wysp.
+        value: '&7 Aktywny filtr: [value]'
+        all_islands: '&b&o brak'
+        online_islands: '&b&o online'
+        can_visit: '&b&o dostępne'
+      island:
+        name: '&f&l [name]'
+        description: |-
+          [owner]
+          [members]
+          [noone-online]
+          [payment]
+          [no-visit]
+        owner: '&7&l Właściciel: &r&b [player]'
+        members-title: '&7&l Członkowie:'
+        member: '&b - [player]'
+        unknown: nieznany
+        noone-online: |-
+          &7 Żaden z członków wyspy
+          &7 są online.
+        payment: |-
+          &7 Wizyta kosztuje [number]
+          &7 tę wyspę.
+        no-visit: '&c Nie możesz odwiedzić wyspy.'
+      payment:
+        name: '&f&l Wartość płatności'
+        description: |-
+          &7 Umożliwia zmianę płatności
+          &7 za odwiedzenie Twojej wyspy.
+          &7 Aktualna wartość: &b&o [number]
+      offline:
+        name: '&f&l Wizyty offline'
+        description: |-
+          &7 Pozwala zmienić, jeśli gracze
+          &7 może odwiedzić wyspę, podczas gdy wszyscy?
+          &7 członków jest offline.
+        enabled: '&7 Wizyty offline &a włączone'
+        disabled: '&7 Wizyty offline &c wyłączone'
+      enabled:
+        name: '&f&l Zezwól na wizyty'
+        description: |-
+          &7 Pozwala na zmianę, jeśli
+          Wizyty &7 są włączone.
+        enabled: '&7 Wizyty są &dozwolone'
+        disabled: '&7 Wizyty są &c niedozwolone'
+      manage:
+        name: '&f&l Zarządzaj ustawieniami wysp'
+        description: |-
+          &7 Pozwala edytować wyspę
+          &7 ustawień wizyt dla
+          &7 wybrana wyspa.
+      reset:
+        name: '&f&l Przywróć domyślne'
+        description: |-
+          &7 Resetuje wszystkie wizyty na wyspie
+          &7 ustawienia do wartości domyślnych.
+      tax:
+        name: '&f&l Zarządzaj podatkiem'
+        description: |-
+          &7 Pozwala ustawić kwotę podatku
+          &7 za odwiedzenie wyspy.
+        value: '&7 Bieżący podatek: &b&o [number]'
+      default_payment:
+        name: '&f&l Domyślna płatność'
+        description: |-
+          &7 Umożliwia zmianę płatności
+          &7 wartość.
+        value: '&7 Bieżąca płatność: &b&o [number]'
+      default_offline:
+        name: '&f&l Domyślny tryb offline'
+        description: |-
+          &7 Pozwala zmienić, jeśli gracze
+          &7 może odwiedzić wyspę, podczas gdy wszyscy?
+          &7 członków jest offline.
+        enabled: |-
+          &7 Domyślnie wizyty offline
+          &7 są &włączone
+        disabled: |-
+          &7 Domyślnie wizyty offline
+          &7 są &c wyłączone
+      default_enabled:
+        name: '&f&l Domyślne odwiedziny'
+        description: |-
+          &7 Pozwala na zmianę w trakcie odwiedzin
+          &7 są domyślnie włączone.
+        enabled: |-
+          &7 Domyślne wizyty
+          &7 są &włączone
+        disabled: |-
+          &7 Domyślne wizyty
+          &7 są &c wyłączone
+      at_top:
+        name: '&f&l Filtruj wiersz u góry'
+        description: |-
+          &7 Pozwala zmienić, jeśli filtr
+          &7 rząd znajduje się na górze
+          &7 lub dół.
+        enabled: '&7 Wiersz filtrów znajduje się na górze &a.'
+        disabled: '&7 Wiersz filtrów znajduje się na dole &a.'
+      toggle_filters:
+        name: '&f&l Przełącz filtry'
+        description: |-
+          &7 Umożliwia przełączanie filtra
+          &7 wiersz w GUI użytkownika.
+        enabled: '&7 Wiersz filtra jest &a włączony.'
+        disabled: '&7 Wiersz filtra jest &c wyłączony.'
+      toggle_search:
+        name: '&f&l Przełącz wyszukiwanie'
+        description: |-
+          &7 Umożliwia przełączanie wyszukiwania
+          Przycisk &7 w GUI użytkownika.
+        enabled: '&7 Przycisk wyszukiwania jest &a włączony.'
+        disabled: '&7 Przycisk wyszukiwania jest &c wyłączony.'
+      enable_economy:
+        name: '&f&l Włącz tryb ekonomiczny'
+        description: |-
+          &7 Umożliwia przełączanie części ekonomicznej
+          &7, jeśli wtyczka Vault to
+          &7 jest obecna.
+        enabled: '&7 Ekonomia jest &a włączona.'
+        disabled: '&7 Ekonomia jest wyłączona.'
+      use_bank:
+        name: '&f&l Włącz bank'
+        description: |-
+          &7 Umożliwia przełączanie, jeśli wszystko
+          &7 płatności muszą zostać przetworzone
+          &7 przez bank wyspy.
+          &7 Dodatek bankowy jest wymagany.
+        enabled: '&7 Korzystanie z banku jest &a włączone.'
+        disabled: '&7 Korzystanie z banku jest &c wyłączone.'
+      enable_confirmation:
+        name: '&f&l Potwierdzenie płatności'
+        description: |-
+          &7 Umożliwia przełączanie, jeśli płatności
+          &7 musi zostać potwierdzony dwukrotnie.
+        enabled: '&7 Potwierdzenie jest &a włączone.'
+        disabled: '&7 Potwierdzenie jest &c wyłączone.'
+      icon:
+        name: '&f&l Domyślna ikona'
+        description: |-
+          &7 Pozwala zmienić domyślne
+          &7 ikona wyspy.
+      max_value:
+        name: '&f&l Maksymalna wartość płatności'
+        description: |-
+          &7 Pozwala ustawić maksymalną ilość
+          &7 graczy może ustawić jako płatność
+          &7 za odwiedzenie ich wyspy.
+          &7 0 lub poniżej wyłącza dowolne
+          &7 ograniczenia.
+        value: '&7 Maksymalna wartość: &b&o [number]'
+      cancel:
+        name: '&f&l Anuluj'
+        description: |-
+          &7 Anuluj i wróć do
+          &7 poprzednie menu.
+      material:
+        name: '&f&l [material]'
+        description: '&7 Identyfikator materiału: [id]'
+    tips:
+      click-to-switch: '&e Kliknij &7, aby przełączyć.'
+      click-to-previous: '&e Kliknij &7, aby wyświetlić poprzednią stronę.'
+      click-to-next: '&e Kliknij &7, aby wyświetlić następną stronę.'
+      click-to-visit: '&e Kliknij &7, aby odwiedzić.'
+      click-to-toggle: '&e Kliknij &7, aby przełączyć.'
+      click-to-change: '&e Kliknij &7, aby zmienić.'
+      click-to-edit: '&e Kliknij &7, aby edytować.'
+      click-to-choose: '&e Kliknij &7, aby wybrać.'
+      click-to-reset: '&e Kliknij &7, aby zresetować.'
+      left-click-to-edit: '&e Kliknij lewym przyciskiem &7, aby edytować.'
+      right-click-to-clear: '&e Kliknij prawym przyciskiem &7, aby wyczyścić.'
+      click-to-select: '&e Kliknij &7, aby wybrać.'
+      click-to-deselect: '&e Kliknij &7, aby odznaczyć.'
+      left-click-to-confirm: '&e Kliknij lewym przyciskiem &7, aby potwierdzić.'
+      right-click-to-cancel: '&e Kliknij prawym przyciskiem &7, aby anulować.'
+      left-click-to-cycle: '&e Kliknij lewym przyciskiem &7, aby przejść w dół.'
+      right-click-to-cycle: '&e Kliknij prawym przyciskiem myszy &7, aby przejść w
+        górę.'
+  errors:
+    no-islands: '&r&c W trybie [gamemode] nie ma wysp do odwiedzenia!'
+    noone-is-online: '&r&c Nikt z tej wyspy nie jest online!'
+    not-enough-credits: '&r&c Nie masz wystarczającej liczby kredytów, aby odwiedzić
+      tę wyspę. Niezbędne [number] kredytów.'
+    not-enough-credits-bank: '&r&c Nie masz wystarczającej ilości pieniędzy na swoim
+      koncie bankowym. Koszty zwiedzania &l&4 $[number].'
+    cannot-withdraw-credits: '&r&c Nie można wypłacić [number] z Twojego konta! Operacja
+      została anulowana.'
+    cannot-deposit-credits: '&r&c Nie można wpłacić [numer] na konto właściciela wyspy!
+      Operacja została anulowana.'
+    not-in-overworld: '&rv Musisz znajdować się w świecie, aby zmienić lokalizację
+      odradzania się gościa! Operacja została anulowana.'
+    not-in-protected-area: '&r&c Musisz znajdować się na obszarze chronionym Twojej
+      wyspy! Operacja została anulowana.'
+    not-safe-location: '&r&c Nie można ustawić tej lokalizacji, teleportacja nie jest
+      bezpieczna! Operacja została anulowana.'
+    not-in-correct-world: '&r&c Nie jesteś w świecie [gamemode]! Operacja została
+      anulowana.'
+  conversations:
+    confirm-string: prawda, wł., tak, potwierdź, y, poprawny, poprawny
+    deny-string: fałszywe, wyłączone, nie, zaprzeczyć, n, nieprawidłowe, niepoprawne
+    cancel-string: Anuluj
+    exit-string: anuluj, wyjdź, wyjdź
+    cancelled: '&c Rozmowa została anulowana!'
+    prefix: '&l&6 [BentoBox]: &r'
+    numeric-only: '&c Podana [wartość] nie jest liczbą!'
+    not-valid-value: '&e Proszę wpisać wartość wyszukiwania. (napisz „anuluj”, aby
+      wyjść)'
+    write-search: '&e Proszę wpisać wartość wyszukiwania. (napisz „anuluj”, aby wyjść)'
+    search-updated: '&a Zaktualizowano wartość wyszukiwania.'
+    input-number: '&e Wprowadź numer na czacie.'
+    confirm-island-data-deletion: '&e Potwierdź, że chcesz usunąć wszystkie dane użytkownika
+      z bazy danych dla [gamemode].'
+    user-data-removed: '&a Sukces, wszystkie dane użytkownika dla [gamemode] zostały
+      usunięte!'
+    spawn-point-updated: '&a Sukces, punkt odrodzenia został zmieniony!'
+    visit-payment: '&e Odwiedzenie wyspy [owner] będzie kosztować &l&6 $[payment].'
+    visit-paid: '&e Zapłaciłeś &l&6 $[payment] &re za odwiedzenie &l&6 [owner] &re&e
+      na wyspie.'
+    visit-paid-bank: '&e Zapłaciłeś &l&6 $[payment] &r&e ze swojego konta bankowego
+      za odwiedzenie wyspy &l&6 [właściciel] &r&e.'
+    visit-earn: '&l&6 [player] &re zapłacił ci &l&6 $[payment] &re&re za odwiedzenie
+      Twojej wyspy.'
+    visit-earn-bank: |-
+      &l&6 [player] zapłacił do twojego
+      &l&6banku [payment]$ za odwiedzenie wyspy.
+protection:
+  flags:
+    ALLOW_VISITS_FLAG:
+      name: Blokada wizyt
+      description: |-
+        &Przełącz jeśli wyspa może być
+        &a odwiedzane przez kogokolwiek.
+      hint: '&c Wizyty są wyłączone na tej wyspie'
+      icon: CIASTO DYNIOWE

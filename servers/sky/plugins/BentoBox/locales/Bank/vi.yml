@@ -1,0 +1,79 @@
+bank:
+  admin:
+    description: lệnh quản trị cho ngân hàng đảo
+    give:
+      parameters: <người chơi> <số tiền>
+      description: thêm số tiền vào tài khoản đảo của người chơi
+      success: '&a Thành công! Số dư ngân hàng đảo của [name] hiện là [number].'
+    take:
+      parameters: <người chơi> <số tiền>
+      description: lấy số tiền từ tài khoản đảo của người chơi
+    balance:
+      parameters: <người chơi>
+      description: xem số dư tài khoản đảo của người chơi
+    set:
+      parameters: <người chơi> <số lượng>
+      description: đặt số tiền trong tài khoản đảo của người chơi
+      success: ' &a Tài khoản của [name] được đặt thành [number].'
+    statement:
+      parameters: <người chơi>
+      description: xem đảo sao kê ngân hàng cho người chơi
+  balance:
+    description: hiển thị số dư ngân hàng đảo của bạn
+    island-balance: '&a Số dư ngân hàng đảo là [number].'
+  baltop:
+    description: hiển thị thứ hạng ngân hàng
+    description-syntax: '&d [number]'
+    highest: Sắp xếp theo Cao nhất
+    lowest: Sắp xếp theo Thấp nhất
+    name-syntax: '&d [name]'
+    title: Số dư hàng đầu
+  deposit:
+    description: số tiền gửi vào tài khoản đảo của bạn
+    parameters: <số tiền>
+    success: '&a Thành công! Số dư ngân hàng đảo mới của bạn là [number].'
+    alert: '&a [name] đã gửi [number] vào ngân hàng của đảo.'
+  errors:
+    bank-error: '&c Lỗi khi tải thông tin tài khoản ngân hàng - vui lòng thử lại sau'
+    low-balance: '&c Số dư ngân hàng đảo của bạn không đủ cao!'
+    too-low: '&c Số tiền của đảo quá thấp.'
+    must-be-a-number: '&c Số tiền phải là một số'
+    no-rank: '&c Xếp hạng của bạn không đủ cao để sử dụng ngân hàng.'
+    too-much: '&c Bạn không có số tiền đó để gửi.'
+    value-must-be-positive: '&c Số tiền phải là số dương.'
+    scientific: '&c Ký hiệu khoa học không được hỗ trợ.'
+    too-long: '&c Giá trị phải nhỏ hơn 10 chữ số'
+  statement:
+    balance:
+      name: '&9 Số dư:'
+      description: '&6 [number]'
+    deposit: Tiền gửi
+    description: hiển thị lịch sử ngân hàng đảo của bạn
+    give: Quản trị viên cho
+    interest: Quan tâm
+    latest: Sắp xếp theo mới nhất
+    oldest: Sắp xếp theo cũ nhất
+    set: Bộ quản trị
+    syntax: |-
+      &9 [date]
+      &9 [time]
+      &7 [name]
+      &6 [number]
+    take: quản trị viên lấy tiền
+    title: Lịch sử tài khoản
+    unknown: Loại không xác định
+    withdrawal: Rút tiền
+  user:
+    description: lệnh ngân hàng đảo
+  withdraw:
+    description: rút số tiền từ tài khoản đảo của bạn
+    parameters: <số tiền>
+    success: '&a Thành công! Số dư ngân hàng đảo mới của bạn là [number].'
+    alert: '&a [name] đã rút [number] khỏi ngân hàng của đảo.'
+protection:
+  flags:
+    BANK_ACCESS:
+      description: |-
+        &f Cho phép truy cập vào
+        &f ngân hàng của đảo
+      name: Truy cập ngân hàng đảo

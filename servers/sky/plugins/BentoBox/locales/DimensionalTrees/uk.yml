@@ -1,0 +1,4 @@
+dimensionaltrees:
+  invalid-material: '&c Не може виростити дерево. Виявлено недійсний матеріал.'
+  reloaded: '&a DimensionalTrees було перезавантажено.'
+  error: помилка

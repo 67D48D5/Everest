@@ -1,0 +1,17 @@
+islandfly:
+  fly-outside-alert: '&c 你飞出了你的岛屿范围，岛屿飞行将在 &e[number] &c秒后关闭'
+  fly-turning-off-alert: '&c 您不再被允许在这里飞行，将在&e [number] &c秒后关闭岛屿飞行'
+  disable-fly: '&c 你已关闭岛屿飞行'
+  reallowed-fly: '&a 你现在又被允许飞行了'
+  enable-fly: '&a 你已开启岛屿飞行'
+  cancel-disable: '&a 你已回到岛屿，飞行模式已恢复'
+  wrong-world: '&c 您不在指定的游戏模式世界中'
+  outside-protection-range: '&c 你不能在你的岛屿保护范围外这样做'
+  command:
+    description: '允许你在你的岛上飞行 '
+    not-allowed-fly: '&c 你没有在此岛屿飞行的权限'
+protection:
+  flags:
+    ISLAND_FLY_PROTECTION:
+      description: '&a 选择谁可以在您的岛屿上飞行'
+      name: '&a 岛屿飞行'

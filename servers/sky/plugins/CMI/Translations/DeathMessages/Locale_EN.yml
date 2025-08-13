@@ -1,0 +1,656 @@
+# Defines prefix for all death messages
+Prefix: '&4&l&o💀 '
+# Defines hover over infomation about player who died. Use basic placeholders like %cmi_user_name% to include any information you would want
+# Set this like to '' if you want to avoid including hover over message
+PlayerHover:
+- ''
+# Defines hover over infomation about player who killed. Use basic placeholders like %cmi_user_name% to include any information you would want
+# Set this like to '' if you want to avoid including hover over message
+KillerHover:
+- ''
+Escaping:
+- ' &fwhile escaping &c[sourceDisplayName]'
+- ' &fwhile fighting &c[sourceDisplayName]'
+RunningAway:
+- ' &fwhile running away from &c[prevMobName]'
+- ' &fwhile fighting &c[prevMobName]'
+Player:
+  General:
+  - '&6[playerDisplayName] &fwas killed by &c[sourceDisplayName]'
+  - '&6[playerDisplayName] &fdied by &c[sourceDisplayName] &fmighty hand'
+  - '&6[playerDisplayName] &fwas punched to death by &c[sourceDisplayName]'
+  Item:
+  - '&6[playerDisplayName] &fdied by &c[sourceDisplayName] &fhand who used &c[item]'
+  Projectile:
+  - '&6[playerDisplayName] &fwas shot by &c[sourceDisplayName] &fwith &c[type]'
+  Fireball:
+  - '&6[playerDisplayName] &fwas fireballed by &c[sourceDisplayName]'
+  Firework:
+  - '&6[playerDisplayName] &fwent off with a bang due to &c[sourceDisplayName]'
+  Tnt:
+  - '&6[playerDisplayName] &fwas blown up by &c[sourceDisplayName]'
+FallingBlocks:
+  Anvil:
+    General:
+    - '&6[playerDisplayName] &fwas squashed by a falling anvil'
+    - '&6[playerDisplayName] &fwas crushed by anvil'
+    - '&6[playerDisplayName] &fhit anvil with his head'
+  Pointed_dripstone:
+    General:
+    - '&6[playerDisplayName] &fwas skewered by a falling stalactite'
+Block:
+  Cactus:
+    General:
+    - '&6[playerDisplayName] &fwas pricked to death'
+    - '&6[playerDisplayName] &ftried to hug cactus'
+  Dispenser:
+    Arrow:
+    - '&6[playerDisplayName] &fwas killed by dispenser with arrows...'
+    Splash_potion:
+    - '&6[playerDisplayName] &fwas splashed all over by dispenser...'
+  Magma_block:
+    General:
+    - '&6[playerDisplayName] &fdiscovered the floor was lava'
+  Sweet_berry_bush:
+    General:
+    - '&6[playerDisplayName] &fwas poked to death by a sweet berry bush'
+  Campfire:
+    General:
+    - '&6[playerDisplayName] &fgot roasted on campfire'
+  Soul_campfire:
+    General:
+    - '&6[playerDisplayName] &fsoul was taken away'
+  Lava:
+    General:
+    - '&6[playerDisplayName] &ftried to swim in lava'
+  Pointed_dripstone:
+    General:
+    - '&6[playerDisplayName] &fwas impaled on stalagmite'
+Custom:
+  Block_explosion:
+    General:
+    - '&6[playerDisplayName] &fwas killed by [Intentional Game Design]'
+  World_border:
+    General:
+    - '&6[playerDisplayName] &fleft the confines of this world'
+  Starvation:
+    General:
+    - '&6[playerDisplayName] &fstarved to death'
+  Fall:
+    Low:
+      General:
+      - '&6[playerDisplayName] &fhit the ground too hard'
+    High:
+      General:
+      - '&6[playerDisplayName] &ffell from a high place'
+  Fire:
+    General:
+    - '&6[playerDisplayName] &fwent up in flames'
+  Fire_tick:
+    General:
+    - '&6[playerDisplayName] &fburned to death'
+  Lightning:
+    General:
+    - '&6[playerDisplayName] &fwas struck by lightning'
+  Suffocation:
+    General:
+    - '&6[playerDisplayName] &fsuffocated in a wall'
+  Custom:
+    General:
+    - '&6[playerDisplayName] &fdied'
+  Drowning:
+    General:
+    - '&6[playerDisplayName] &fdrowned'
+  Freeze:
+    General:
+    - '&6[playerDisplayName] &ffrozen to death'
+  Suicide:
+    General:
+    - '&6[playerDisplayName] &ftook their own life'
+  Void:
+    General:
+    - '&6[playerDisplayName] &ffell out of the world'
+  EndCrystal:
+    General:
+    - '&6[playerDisplayName] &fshattered like a crystal'
+  Wither:
+    General:
+    - '&6[playerDisplayName] &fwithered away'
+  Fly_into_wall:
+    General:
+    - '&6[playerDisplayName] &fexperienced kinetic energy'
+    - '&6[playerDisplayName] &flearned what is conservation of momentum'
+Projectile:
+  Arrow:
+  - '&6[playerDisplayName] &fwas shot by arrow'
+  Spectral_arrow:
+  - '&6[playerDisplayName] &fwas shot by spectral arrow'
+  Tipped_arrow:
+  - '&6[playerDisplayName] &fwas shot by tipped arrow'
+  Fireball:
+  - '&6[playerDisplayName] &fwas fireballed'
+  Firework:
+  - '&6[playerDisplayName] &fwent off with a bang'
+Mob:
+  Primed_tnt:
+    General:
+    - '&6[playerDisplayName] &fwas blown up'
+  Tnt_minecart:
+    General:
+    - '&6[playerDisplayName] &fblew up'
+  Allay:
+    General:
+    - '&6[playerDisplayName] &fwas lured into the abyss by the enchanting call of
+      an &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their enchanting call,
+      armed with &c[item]'
+  Armadillo:
+    General:
+    - '&6[playerDisplayName] &fkilled by &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fkilled by &c[mobName] &fwith &c[item]'
+  Armor_stand:
+    General:
+    - '&6[playerDisplayName] &fwas unexpectedly defeated by a sentient &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fwas slain by &c[mobName] &fanimated with &c[item]'
+  Axolotl:
+    General:
+    - '&6[playerDisplayName] &fcould not swim away from the voracious &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their voracious pursuit,
+      armed with &c[item]'
+  Bat:
+    General:
+    - '&6[playerDisplayName] &fwas silenced by the nocturnal wings of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their nocturnal wings,
+      armed with &c[item]'
+  Bee:
+    General:
+    - '&6[playerDisplayName] &fgot stung by the buzz of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their buzzing sting,
+      armed with &c[item]'
+  Blaze:
+    General:
+    - '&6[playerDisplayName] &fwas engulfed in the fiery wrath of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their fiery blaze, armed
+      with &c[item]'
+  Bogged:
+    General:
+    - '&6[playerDisplayName] &fkilled by &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fkilled by &c[mobName] &fwith &c[item]'
+  Breeze:
+    General:
+    - '&6[playerDisplayName] &fkilled by &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fkilled by &c[mobName] &fwith &c[item]'
+  Camel:
+    General:
+    - '&6[playerDisplayName] &fwas left stranded in the desert after an encounter
+      with a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their desert encounter,
+      armed with &c[item]'
+  Cat:
+    General:
+    - '&6[playerDisplayName] &fwas outmatched by the purring fury of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their purring fury,
+      armed with &c[item]'
+  Cave_spider:
+    General:
+    - '&6[playerDisplayName] &fwas ensnared and paralyzed by the venomous bite of
+      a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &finflicting venomous bites
+      with &c[item]'
+  Chicken:
+    General:
+    - '&6[playerDisplayName] &fwas pecked into defeat by the clucky terror of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their clucky terror,
+      armed with &c[item]'
+  Cod:
+    General:
+    - '&6[playerDisplayName] &fbecame fish food at the jaws of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their hungry jaws, armed
+      with &c[item]'
+  Cow:
+    General:
+    - '&6[playerDisplayName] &fwas milked dry by the relentless &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their relentless milking,
+      armed with &c[item]'
+  Creaking:
+    General:
+    - '&6[playerDisplayName] &fkilled by &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fkilled by &c[mobName] &fwith &c[item]'
+  Creeper:
+    General:
+    - '&6[playerDisplayName] &ffell victim to the explosive wrath of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fwas blown up by &c[mobName] &fcharged with explosive
+      &c[item]'
+  Dolphin:
+    General:
+    - '&6[playerDisplayName] &fcould not keep up with the playful agility of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their playful agility,
+      armed with &c[item]'
+  Donkey:
+    General:
+    - '&6[playerDisplayName] &fwas outmatched by the stubborn resilience of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fmet their fate at the hands of &c[mobName] &friding
+      a stubborn donkey, armed with &c[item]'
+  Drowned:
+    General:
+    - '&6[playerDisplayName] &fgot in too deep and drowned under the watchful gaze
+      of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their watery embrace,
+      armed with &c[item]'
+  Elder_guardian:
+    General:
+    - '&6[playerDisplayName] &fsuccumbed to the ancient power of &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fkilled by &c[mobName] &fwith &c[item]'
+  Ender_dragon:
+    General:
+    - '&6[playerDisplayName] &fwas defeated in a legendary battle against the mighty
+      &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fmet their end at the claws of &c[mobName] &fwith &c[item]'
+  Enderman:
+    General:
+    - '&6[playerDisplayName] &fwas outmatched in a teleportation duel with an &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fwas defeated by &c[mobName] &fteleporting with &c[item]'
+  Endermite:
+    General:
+    - '&6[playerDisplayName] &fwas overwhelmed by the otherworldly presence of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their otherworldly presence,
+      armed with &c[item]'
+  Evoker:
+    General:
+    - '&6[playerDisplayName] &fsuccumbed to the dark magic of an &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fwas ensnared by &c[mobName] &fand their dark &c[item]'
+  Fox:
+    General:
+    - '&6[playerDisplayName] &fgot outfoxed by the cunning &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their cunning tactics, armed
+      with &c[item]'
+  Frog:
+    General:
+    - '&6[playerDisplayName] &fcroaked their last in the leap of doom orchestrated
+      by a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their leaping doom,
+      armed with &c[item]'
+  Ghast:
+    General:
+    - '&6[playerDisplayName] &fwas blasted into oblivion by the ethereal fireballs
+      of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fmet their end at the hands of &c[mobName] &fshooting
+      explosive fireballs with &c[item]'
+  Giant:
+    General:
+    - '&6[playerDisplayName] &fwas crushed beneath the colossal feet of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their colossal strength,
+      armed with &c[item]'
+  Glow_squid:
+    General:
+    - '&6[playerDisplayName] &fgot lost in the luminescent embrace of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their luminescent embrace,
+      armed with &c[item]'
+  Goat:
+    General:
+    - '&6[playerDisplayName] &fcould not climb to safety from a &c[mobName]&f`s relentless
+      pursuit'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their relentless pursuit,
+      armed with &c[item]'
+  Guardian:
+    General:
+    - '&6[playerDisplayName] &fwas zapped into submission by the electrifying powers
+      of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their electrifying powers,
+      armed with &c[item]'
+  Happy_ghast:
+    General:
+    - '&6[playerDisplayName] &fkilled by &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fkilled by &c[mobName] &fwith &c[item]'
+  Hoglin:
+    General:
+    - '&6[playerDisplayName] &fbecame hog-tied in a battle with a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their hog-tying, armed
+      with &c[item]'
+  Horse:
+    General:
+    - '&6[playerDisplayName] &ffell in battle, unseated from their loyal companion,
+      a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &friding a loyal companion,
+      armed with &c[item]'
+  Husk:
+    General:
+    - '&6[playerDisplayName] &fwas drained of life by the relentless &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fmet their demise at the hands of &c[mobName] &fand
+      their &c[item]'
+  Illusioner:
+    General:
+    - '&6[playerDisplayName] &fwas deceived and overwhelmed by an &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their illusions, armed with
+      &c[item]'
+  Iron_golem:
+    General:
+    - '&6[playerDisplayName] &fwas crushed by the indomitable strength of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their indomitable strength,
+      armed with &c[item]'
+  Llama:
+    General:
+    - '&6[playerDisplayName] &fwas spit out of existence by the formidable &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their formidable spit, armed
+      with &c[item]'
+  Magma_cube:
+    General:
+    - '&6[playerDisplayName] &fwas melted and consumed by the searing heat of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fmet their end at the hands of &c[mobName] &fand their
+      searing heat, armed with &c[item]'
+  Mooshroom:
+    General:
+    - '&6[playerDisplayName] &fkilled by &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fkilled by &c[mobName] &fwith &c[item]'
+  Mule:
+    General:
+    - '&6[playerDisplayName] &fwas outmatched by the might of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &friding a mighty mule, wielding
+      &c[item]'
+  Ocelot:
+    General:
+    - '&6[playerDisplayName] &fcould not tame the wild spirit of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their wild spirit, armed
+      with &c[item]'
+  Panda:
+    General:
+    - '&6[playerDisplayName] &fmet bamboo justice at the paws of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their bamboo justice, armed
+      with &c[item]'
+  Parrot:
+    General:
+    - '&6[playerDisplayName] &ffell silent after encountering the colorful menace
+      of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their colorful menace,
+      armed with &c[item]'
+  Phantom:
+    General:
+    - '&6[playerDisplayName] &fwas haunted into defeat by the ethereal presence of
+      a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their haunting presence,
+      armed with &c[item]'
+  Pig:
+    General:
+    - '&6[playerDisplayName] &fbecame bacon after an encounter with the mischievous
+      &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their mischief, armed
+      with &c[item]'
+  Piglin:
+    General:
+    - '&6[playerDisplayName] &fcould not strike a deal and fell to the wrath of a
+      &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their wrath, armed with
+      &c[item]'
+  Piglin_brute:
+    General:
+    - '&6[playerDisplayName] &fwas no match for the brutal strength of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their brutal strength,
+      armed with &c[item]'
+  Pillager:
+    General:
+    - '&6[playerDisplayName] &fbecame the target of a relentless assault by a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their relentless assault,
+      armed with &c[item]'
+  Polar_bear:
+    General:
+    - '&6[playerDisplayName] &fbecame a frozen victim of the relentless &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fwas succumbed to &c[mobName] &fand their frozen might,
+      armed with &c[item]'
+  Pufferfish:
+    General:
+    - '&6[playerDisplayName] &fpricked themselves on the toxic spines of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their toxic spines,
+      armed with &c[item]'
+  Rabbit:
+    General:
+    - '&6[playerDisplayName] &fhopped into the afterlife, courtesy of the swift &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their swift strikes,
+      armed with &c[item]'
+  Ravager:
+    General:
+    - '&6[playerDisplayName] &fwas trampled under the mighty hooves of the fearsome
+      &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their mighty hooves,
+      armed with &c[item]'
+  Salmon:
+    General:
+    - '&6[playerDisplayName] &fswam into the waiting jaws of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their waiting jaws, armed
+      with &c[item]'
+  Sheep:
+    General:
+    - '&6[playerDisplayName] &fwas fleeced by the woolly menace of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their woolly menace, armed
+      with &c[item]'
+  Shulker:
+    General:
+    - '&6[playerDisplayName] &fwas levitated and defeated by the elusive &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their levitation, armed
+      with &c[item]'
+  Silverfish:
+    General:
+    - '&6[playerDisplayName] &fwas swarmed and overwhelmed by the relentless &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fmet their fate at the hands of &c[mobName] &fand their
+      swarm, armed with &c[item]'
+  Skeleton:
+    General:
+    - '&6[playerDisplayName] &fwas shot down by the relentless archery of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to the arrows of &c[mobName] &fequipped with &c[item]'
+  Skeleton_horse:
+    General:
+    - '&6[playerDisplayName] &fwas trampled by the spectral hooves of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &friding a spectral horse, wielding
+      &c[item]'
+  Slime:
+    General:
+    - '&6[playerDisplayName] &fwas consumed by the gooey mass of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their slime, armed with &c[item]'
+  Sniffer:
+    General:
+    - '&6[playerDisplayName] &fsniffed out danger but could not escape the clutches
+      of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their dangerous sniff,
+      armed with &c[item]'
+  Snow_golem:
+    General:
+    - '&6[playerDisplayName] &fkilled by &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fkilled by &c[mobName] &fwith &c[item]'
+  Spider:
+    General:
+    - '&6[playerDisplayName] &fwas ensnared and consumed by a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fmet their end at the fangs of &c[mobName] &finfused
+      with &c[item]'
+  Squid:
+    General:
+    - '&6[playerDisplayName] &fwas inked into submission by the aquatic prowess of
+      a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their aquatic prowess, armed
+      with &c[item]'
+  Stray:
+    General:
+    - '&6[playerDisplayName] &fwas chilled to the bone by the icy arrows of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fmet their end in the icy embrace of &c[mobName]'
+  Strider:
+    General:
+    - '&6[playerDisplayName] &fgot burned crossing paths with a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their burning path,
+      armed with &c[item]'
+  Tadpole:
+    General:
+    - '&6[playerDisplayName] &fmet a watery end in the tadpole frenzy led by a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their tadpole frenzy,
+      armed with &c[item]'
+  Trader_llama:
+    General:
+    - '&6[playerDisplayName] &ftraded their last moments with a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their trading partner,
+      armed with &c[item]'
+  Tropical_fish:
+    General:
+    - '&6[playerDisplayName] &fwas mesmerized to death by the vibrant beauty of a
+      &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their vibrant beauty,
+      armed with &c[item]'
+  Turtle:
+    General:
+    - '&6[playerDisplayName] &fcould not outrun the slow but steady wrath of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their slow but steady
+      strikes, armed with &c[item]'
+  Vex:
+    General:
+    - '&6[playerDisplayName] &fwas harassed into defeat by a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fmet their end at the hands of &c[mobName] &fand their
+      vex minion armed with &c[item]'
+  Villager:
+    General:
+    - '&6[playerDisplayName] &fbecame a casualty in the struggle for survival against
+      a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their relentless pursuit,
+      armed with &c[item]'
+  Vindicator:
+    General:
+    - '&6[playerDisplayName] &fmet their match against the relentless &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fwas overwhelmed by &c[mobName] &fand their relentless
+      &c[item]'
+  Wandering_trader:
+    General:
+    - '&6[playerDisplayName] &fcould not negotiate their way out of trouble with a
+      &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their trouble negotiation,
+      armed with &c[item]'
+  Warden:
+    General:
+    - '&6[playerDisplayName] &fsuccumbed to the heavy footsteps of the fearsome &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their heavy footsteps, armed
+      with &c[item]'
+  Witch:
+    General:
+    - '&6[playerDisplayName] &fwas ensnared by the dark arts of the malevolent &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their malevolent magic, armed
+      with &c[item]'
+  Wither:
+    General:
+    - '&6[playerDisplayName] &fwas obliterated by the chaotic power of the fearsome
+      &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their chaos, armed with
+      &c[item]'
+  Wither_skeleton:
+    General:
+    - '&6[playerDisplayName] &fsuccumbed to the withering strikes of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fmet their fate at the hands of &c[mobName] &farmed
+      with &c[item]'
+  Wolf:
+    General:
+    - '&6[playerDisplayName] &fwas howled down by the fierce &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &ffell to &c[mobName] &fand their fierce howl, armed
+      with &c[item]'
+  Zoglin:
+    General:
+    - '&6[playerDisplayName] &fbecame the target of the enraged &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their enraged pursuit,
+      armed with &c[item]'
+  Zombie:
+    General:
+    - '&6[playerDisplayName] &fwas overwhelmed by the relentless advance of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their horde, armed with
+      &c[item]'
+  Zombie_horse:
+    General:
+    - '&6[playerDisplayName] &fmet an undead steed, overwhelmed by a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fwas taken down by &c[mobName] &friding an undead horse,
+      wielding &c[item]'
+  Zombie_villager:
+    General:
+    - '&6[playerDisplayName] &fsuccumbed to the cursed transformation of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fwas turned into a zombie by &c[mobName] &fand their
+      cursed &c[item]'
+  Zombified_piglin:
+    General:
+    - '&6[playerDisplayName] &fwas overwhelmed by the undead fury of a &c[mobName]'
+    Item:
+    - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their undead horde,
+      armed with &c[item]s'

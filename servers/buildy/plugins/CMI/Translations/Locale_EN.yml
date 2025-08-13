@@ -1004,6 +1004,8 @@ command:
     help:
       info: Shows specified dialog
       args: '[dialogName] (playerName) (-s)'
+    info:
+      notFound: '&cDialog by this name was not found'
   disableenchant:
     help:
       info: Disable enchantment

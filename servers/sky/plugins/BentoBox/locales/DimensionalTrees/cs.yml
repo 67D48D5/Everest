@@ -1,0 +1,4 @@
+dimensionaltrees:
+  invalid-material: '&c Nemohu pěstovat strom. Byl zjištěn neplatný materiál.'
+  reloaded: '&a DimensionalTrees bylo znovu načteno.'
+  error: chyba

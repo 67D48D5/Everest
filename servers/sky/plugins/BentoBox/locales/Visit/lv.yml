@@ -1,0 +1,287 @@
+visit:
+  commands:
+    admin:
+      main:
+        description: atver izvēlni ar administartora opcijām.
+        parameters: <player>
+    player:
+      main:
+        description: atver izvēlni ar spēlētāju salām.
+        parameters: <player>
+      configure:
+        description: atver izvēlni ar salas iestatījumiem.
+      set-location:
+        description: ļauj mainīt salas apmeklēšanas teleporta vietu.
+  gui:
+    titles:
+      choose: '&0&l Izvēlies Salu'
+      configure: '&0&l Configurē Iestatījumus'
+      main: '&0&l Administratora Izvēlne'
+      select-island: '&0&l Izvēlies Salu'
+      select-block: '&0&l Izvēlies Bloku'
+    buttons:
+      previous:
+        name: '&f&l Iepriekšējā Lapa'
+        description: '&7 Atgriezties uz [number] lapu'
+      next:
+        name: '&f&l Nākošā Lapa'
+        description: '&7 Doties uz [number] lapu'
+      search:
+        name: '&f&l Meklēt'
+        description: '&7 Mekēt elemenu.'
+        search: '&b Vērtība: [value]'
+      filter:
+        name: '&f&l Filtri'
+        description: |-
+          &7 Rādīt salas tikai
+          &7 pēc atlasītā filtra.
+        value: '&7 Aktīvais filtrs: [value]'
+        all_islands: '&b&o Nav'
+        online_islands: '&b&o Tiešsaitē'
+        can_visit: '&b&o Apmeklējamie'
+      island:
+        name: '&f&l [name]'
+        description: |-
+          [owner]
+          [members]
+          [noone-online]
+          [payment]
+          [no-visit]
+        owner: '&7&l Īpašnieks: &r&b [player]'
+        members-title: '&7&l Biedri:'
+        member: '&b - [player]'
+        unknown: nezināms
+        noone-online: |-
+          &7 Neviens no salas biedriem
+          &7 nav tiešsaitē.
+        payment: '&7 Apmeklējums izmaksās &e €[number]'
+        no-visit: |-
+          &c Tu nevari apmeklēt
+          &c šo salu.
+      payment:
+        name: '&f&l Maksājuma Vērtība'
+        description: |-
+          &7 Ļauj uzstādīt maksājuma
+          &7 vērtību par salas apmeklēšanu.
+          &7 Maksājums: &b&o €[number]
+      offline:
+        name: '&f&l Būt Tiešsaitē'
+        description: |-
+          &7 Ļauj pārslēgt vai
+          &7 salas apmeklēšana
+          &7 iespējama kamēr
+          &7 salas bieri ir
+          &7 tiešsaitē.
+        enabled: '&7 Jābūt tiešsaitē &a izslēgts'
+        disabled: '&7 Jābūt tiešsaitē &c ieslēgts'
+      enabled:
+        name: '&f&l Apmeklēšana'
+        description: |-
+          &7 Ļauj pārslēgt vai
+          &7 apmeklēšana ir
+          &7 pieejama.
+        enabled: '&7 Apmeklēšana ir &a ieslēgta'
+        disabled: '&7 Apmeklēšana ir &c izslēgta'
+      messaging:
+        name: '&f&l Saņemt Apmeklēšanas ziņojumus'
+        description: |-
+          &7 Ļauj pārslēgt vai salas
+          &7 biedri saņems ziņu, ka
+          &7 kāds ir apmeklējis viņu
+          &7 salu.
+        enabled: '&7 Ziņošana ir &a ieslēgta'
+        disabled: '&7 Ziņošana ir &c izslēgta'
+      manage:
+        name: '&f&l Manage Island Settings'
+        description: |-
+          &7 Allows to edit island
+          &7 visit settings for
+          &7 selected island.
+      reset:
+        name: '&f&l Atjaunot Datus'
+        description: |-
+          &7 Atjauno visu salu datus
+          &7 uz noklusējuma vērtībām.
+      tax:
+        name: '&f&l Nodoklis'
+        description: |-
+          &7 Ļauj mainīt nodokli,
+          &7 ko papildus jānomaksā
+          &7 par salas apmeklēšanu.
+        value: '&7 Nodoklis: &b&o [number]'
+      default_payment:
+        name: '&f&l Maksājums'
+        description: |-
+          &7 Ļauj mainīt noklusējuma
+          &7 vērtību maksai par salas
+          &7 apmeklēšanu.
+        value: '&7 Vērtība: &b&o [number]'
+      default_offline:
+        name: '&f&l Būt Tiešsaitē'
+        description: |-
+          &7 Ļauj pārslēgt noklusējuma
+          &7 vērtību salas apmeklēšanai,
+          &7 kamēr salas bieri ir
+          &7 tiešsaitē.
+        enabled: |-
+          &7 Pēc noklusējuma
+          &7 apmeklēšana ir
+          &a ieslēgta
+        disabled: |-
+          &7 Pēc noklusējuma
+          &7 apmeklēšana ir
+          &c izslēgta
+      default_enabled:
+        name: '&f&l Apmeklēšana'
+        description: |-
+          &7 Ļauj uzstādīt noklusējuma
+          &7 vērtību salas apmeklēšanai.
+        enabled: |-
+          &7 Pēc noklusējuma
+          &7 apmeklēšana ir
+          &a ieslēgta
+        disabled: |-
+          &7 Pēc noklusējuma
+          &7 apmeklēšana ir
+          &c izslēgta
+      enable_economy:
+        name: '&f&l Ieslēgt Ekonomiku'
+        description: |-
+          &7 Ļauj pārslēgt, vai ekonomikas
+          &7 daļa ir ieslēgta.
+          &7 Vault papildinājums nepieciešams.
+        enabled: '&7 Ekonomika ir &a ieslēgta.'
+        disabled: '&7 Ekonomika ir &c izslēgta.'
+      use_bank:
+        name: '&f&l Izmantot Banku'
+        description: |-
+          &7 Ļauj pārslēgt, vai visi
+          &7 maksājumi notiek caur
+          &7 salas banku.
+          &7 Bankas paplašinājums nepieciešams.
+        enabled: '&7 Bankas izmantošana ir &a ieslēgta.'
+        disabled: '&7 Bankas izmantošana ir &c izslēgta.'
+      enable_confirmation:
+        name: '&f&l Maksājumu Apstiprināšana'
+        description: |-
+          &7 Ļauj uzstādīt vai maksājumi
+          &7 ir jāapstiprina.
+        enabled: '&7 Apstiprināšana ir &a ieslēgta.'
+        disabled: '&7 Apstiprināšana ir &c izslēgta.'
+      icon:
+        name: '&f&l Noklusējuma Ikona'
+        description: |-
+          &7 Ļauj uzstādīt noklusējuma
+          &7 ikonu salām.
+      max_value:
+        name: '&f&l Maksājuma Griezti'
+        description: |-
+          &7 Ļauj uzstādīt maksājuma
+          &7 grieztus, ko spēlētāji
+          &7 drīkst uzstādīt.
+          &7 0 vai mazāk nozīmē, ka
+          &7 griezti nav.
+        value: '&7 Lielākā vērtība: &b&o [number]'
+      cancel:
+        name: '&f&l Atcelt'
+        description: '&7 Atceļ un atgriežas.'
+      material:
+        name: '&f&l [material]'
+        description: '&7 Materiāla ID: [id]'
+    tips:
+      click-to-switch: '&e Klikšķini, &7 lai mainītu.'
+      click-to-previous: |-
+        &e Klikšķini, &7 lai
+        &7 skatītu iepriekšējo.
+      click-to-next: |-
+        &e Klikšķini, &7 lai
+        &7 skatītu nākošo.
+      click-to-visit: '&e Klikšķini, &7 lai apmeklētu.'
+      click-to-toggle: '&e Klikšķini, &7 lai pārslēgtu.'
+      click-to-change: '&e Klikšķini, &7 lai mainītu.'
+      click-to-edit: '&e Klikšķini, &7 lai labotu.'
+      click-to-choose: '&e Klikšķini, &7 lai izvēlētos.'
+      click-to-reset: '&e Klikšķini, &7 lai atjauntu.'
+      left-click-to-edit: |-
+        &e Kreisais klikšķis,
+        &7 lai labotu.
+      right-click-to-clear: |-
+        &e Labais klikšķis,
+        &7 lai notīrītu.
+      click-to-select: '&e Klikšķini, &7 lai atlasītu.'
+      click-to-deselect: |-
+        &e Klikšķini, &7 lai
+        &7 atceltu atzīmi.
+      left-click-to-confirm: |-
+        &e Kreisais Klikšķis,
+        &7 lai apstiprinātu.
+      right-click-to-cancel: |-
+        &e Labais Klikšķis,
+        &7 lai atceltu.
+      left-click-to-cycle: |-
+        &e Kreisais klikšķis,
+        &7 pārslēgtu uz leju.
+      right-click-to-cycle: |-
+        &e Labais klikšķis,
+        &7 pārslēgtu uz augšu.
+  errors:
+    no-islands: '&r&c [gamemode] nav salas, ko apmeklēt!'
+    noone-is-online: '&r&c Neviens no šīs salas biedriem nav tiešsaitē!'
+    not-enough-credits: '&r&c Tev nav pietiekoši daudz naudas. Apmeklēšana izmaksā
+      &l&4 €[number].'
+    not-enough-credits-bank: '&r&c Tev nav pietiekoši daudz līdzekļi bankas kontā.
+      Apmeklēšana izmaksā &l&4 €[number].'
+    cannot-withdraw-credits: '&r&c Neizdevās noņemt &l&4 €[number] &r&c no tava konta!
+      Operācija atcelta.'
+    cannot-deposit-credits: '&r&c Neizdevās ieksaitīt &l&4 €[number] &r&c spēlētāja
+      kontā! Operācija atcelta.'
+    not-in-overworld: '&rv Tev ir jābūt virspasaulē, lai mainītu apmeklēšanas lokāciju!
+      Operācija atcelta.'
+    not-in-protected-area: '&r&c Tev ir jābūt savā aizsardzības zonā! Operācija atcelta.'
+    not-safe-location: '&r&c Šī vieta nav droša. Izvēlies citu! Operācija atcelta.'
+    not-in-correct-world: '&r&c Tu neesi [gamemode] pasaulē! Operācija atcelta.'
+  conversations:
+    confirm-string: true, on, yes, confirm, y, valid, correct, jā, ja, apstiprinu,
+      pareizi
+    deny-string: false, off, no, deny, n, invalid, incorrect, nē, ne, neapstiprinu,
+      nepareizi
+    cancel-string: atcelt
+    exit-string: cancel, exit, quit, atcelt, iziet
+    cancelled: '&c Saruna pārtraukta!'
+    prefix: '&l&6 [BentoBox]: &r'
+    numeric-only: '&c Šis `[value]` nav skaitlis!'
+    not-valid-value: '&c Ierakstītais skaitlis [value] nav derīgs. Skaitlis nedrīkst
+      būt mazāks par [min] un lielāks par [max]!'
+    write-search: '&e Lūdzu ievadi meklēšanas vērtību. (vai ''atcelt'', lai izietu)'
+    search-updated: '&a Meklēšanas vērtība atjaunota.'
+    input-number: '&e Lūdzu ieraksti skaitli sarakstē!'
+    confirm-island-data-deletion: '&e Apstiprini, ka vēlies dzēst lietotāju datus
+      priekš [gamemode].'
+    user-data-removed: '&a Visi lietotāju dati priekš [gamemode] ir dzēsti.'
+    spawn-point-updated: '&a Teleportēšanās punkts atjaunots!'
+    visit-payment: '&l&6 [owner] &r&e salas apmeklēšana izmaksās &l&6 €[payment].'
+    visit-paid: '&e Tu samaksāji &l&6 €[payment]&r&e, lai apmeklētu &l&6 [owner] &r&e
+      salu.'
+    visit-paid-bank: '&e Tu samaksāji &l&6 €[payment] &r&e no bankas konta, lai apmeklētu
+      &l&6 [owner] &r&e salu.'
+    visit-earn: '&l&6 [player] &r&e tev samaksāja &l&6 €[payment] &r&e par salas apmeklēšanu.'
+    visit-earn-bank: '&l&6 [player] &r&e ieskaitīja tavā bankas kontā &l&6 €[payment]
+      &r&e par salas apmeklēšanu.'
+    player-visiting-island: '&e Spēlētājs &l&6 [player] &r&e apmeklē tavu salu.'
+    player-leaves-island: '&e Spēlētājs &l&6 [player] &r&e pameta tavu salu.'
+protection:
+  flags:
+    ALLOW_VISITS_FLAG:
+      name: Apmeklēšana
+      description: |-
+        &a Pārslēdz vai spēlētāji var
+        &a apmeklēt salu.
+      hint: '&c Salas apmeklēšana ir izslēgta'
+      icon: PUMPKIN_PIE
+    RECEIVE_VISIT_MESSAGE_FLAG:
+      name: Saņemt Apmeklēšanas Ziņas
+      description: |-
+        &a Pārslēdz vai salas biedri
+        &a saņems ziņu, ka kāds
+        &a apmeklē viņu salu.
+      icon: PAPER

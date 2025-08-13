@@ -1,0 +1,80 @@
+bank:
+  admin:
+    description: команда адміністратора для острівного банку
+    give:
+      parameters: <player> <amount>
+      description: додати суму на рахунок острова гравця
+      success: '&a Успіх! Баланс острівного банку [name] тепер становить [number].'
+    take:
+      parameters: <player> <amount>
+      description: взяти суму з острівного рахунку гравця
+    balance:
+      parameters: <player>
+      description: переглянути баланс острівного рахунку гравця
+    set:
+      parameters: <player> <amount>
+      description: встановити суму на острівному рахунку гравця
+      success: '&акаунт [name] встановлено на [number].'
+    statement:
+      parameters: <player>
+      description: переглянути виписку з банківського рахунку острова для гравця
+  balance:
+    description: показує баланс вашого острівного банку
+    island-balance: '&a Баланс банку острова [number].'
+  baltop:
+    description: показати рейтинг балансу
+    description-syntax: '&d [number]'
+    highest: Сортувати за найвищим
+    lowest: Сортувати за найнижчим
+    name-syntax: '&d [name]'
+    title: Топ баланси
+  deposit:
+    description: внесіть суму на свій острівний рахунок
+    parameters: <amount>
+    success: '&a Успіх! Ваш новий баланс в острівному банку становить [number].'
+    alert: '&a [name] вніс [number] в острівний банк.'
+  errors:
+    bank-error: '&c Помилка завантаження інформації про банківський рахунок - спробуйте
+      пізніше'
+    low-balance: '&c Баланс вашого острівного банку недостатньо високий!'
+    too-low: '&c Баланс острова занадто низький.'
+    must-be-a-number: '&c Сума має бути числом'
+    no-rank: '&c Ваш ранг недостатньо високий, щоб користуватися банком.'
+    too-much: '&c У вас немає такої суми для депозиту.'
+    value-must-be-positive: '&c Сума має бути додатною.'
+    scientific: '&c Наукова нотація не підтримується.'
+    too-long: '&c Значення має бути меншим за 10 цифр'
+  statement:
+    balance:
+      name: '&9 Баланс:'
+      description: '&6 [number]'
+    deposit: Депозит
+    description: показати історію вашого острівного банку
+    give: Адмін видати
+    interest: Інтерес
+    latest: Сортувати за найновішим
+    oldest: Сортувати за найстарішим
+    set: Адмін встановити
+    syntax: |
+      &9 [date]
+      &9 [time]
+      &7 [name]
+      &6 [number]
+    take: Адмін забрати
+    title: Історія облікового запису
+    unknown: Невідомий тип
+    withdrawal: Вилучення
+  user:
+    description: командування острівного банку
+  withdraw:
+    description: зняти суму зі свого острівного рахунку
+    parameters: <amount>
+    success: '&a Успіх! Ваш новий баланс у острівному банку становить [number].'
+    alert: '&a [name] зняв [number] з острівного банку.'
+protection:
+  flags:
+    BANK_ACCESS:
+      description: |-
+        &f Дозволити доступ до
+        &f острівний банк
+      name: Доступ до банку острова

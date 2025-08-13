@@ -1,0 +1,5 @@
+dimensionaltrees:
+  invalid-material: '&c Não é possível fazer crescer a árvore. Um material inválido
+    foi detectado.'
+  reloaded: '&a DimensionalTrees foi recarregado.'
+  error: erro

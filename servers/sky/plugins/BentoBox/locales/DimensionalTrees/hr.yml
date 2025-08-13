@@ -1,0 +1,4 @@
+dimensionaltrees:
+  invalid-material: '&c Ne može rasti drvo. Otkriven je nevažeći materijal.'
+  reloaded: '&a DimensionalTrees je ponovno učitan.'
+  error: greška

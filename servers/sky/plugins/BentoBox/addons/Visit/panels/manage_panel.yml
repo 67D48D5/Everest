@@ -1,0 +1,49 @@
+manage_panel:
+  title: visit.gui.titles.configure
+  type: HOPPER
+  background:
+    icon: BLACK_STAINED_GLASS_PANE
+    title: "&b&r" # Empty text
+  force-shown: []
+  content:
+    1:
+      1:
+        icon: ANVIL
+        title: visit.gui.buttons.payment.name
+        # description: visit.gui.buttons.payment.description
+        data:
+          type: PAYMENT
+        actions:
+          left:
+            type: CHANGE
+            tooltip: visit.gui.tips.click-to-change
+      3:
+        icon: REDSTONE_LAMP
+        title: visit.gui.buttons.offline.name
+        # description: visit.gui.buttons.offline.description
+        data:
+          type: OFFLINE
+        actions:
+          left:
+            type: TOGGLE
+            tooltip: visit.gui.tips.click-to-toggle
+      4:
+        icon: PAPER
+        title: visit.gui.buttons.messaging.name
+        # description: visit.gui.buttons.enabled.description
+        data:
+          type: MESSAGING
+        actions:
+          toggle:
+            click-type: UNKNOWN
+            tooltip: visit.gui.tips.click-to-toggle
+      5:
+        icon: PUMPKIN_PIE
+        title: visit.gui.buttons.enabled.name
+        # description: visit.gui.buttons.enabled.description
+        data:
+          type: ALLOWED
+        actions:
+          left:
+            type: TOGGLE
+            tooltip: visit.gui.tips.click-to-toggle

@@ -1,0 +1,4 @@
+dimensionaltrees:
+  invalid-material: '&c 无法种植树。检测到无效材料。'
+  reloaded: '&a DimensionalTrees 已重新加载。'
+  error: 错误
