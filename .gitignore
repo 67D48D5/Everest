@@ -7,7 +7,6 @@
 
 lib/
 spark/
-.paper-remapped/
 
 libs
 cache
@@ -21,6 +20,7 @@ sessions/
 
 .license
 .version
+.paper-remapped
 
 lastupdate
 status.json
