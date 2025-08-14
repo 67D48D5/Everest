@@ -32,24 +32,6 @@
         "Vault": "manual://Vault-*"
       }
     },
-    "sky": {
-      "engine": "paper",
-      "plugins": {
-        "BentoBox": "auto://BentoBox-*",
-        "FastAsyncWorldEdit": "auto://FastAsyncWorldEdit-Paper-*",
-        "LuckPerms": "auto://LuckPerms-*",
-        "PlaceholderAPI": "auto://PlaceholderAPI-*",
-        "ProtocolLib": "auto://ProtocolLib*",
-        "TAB": "auto://TAB*",
-        "WorldGuard": "auto://worldguard-bukkit-*",
-        "mcMMO": "auto://mcMMO*",
-        "CMI": "manual://CMI-*",
-        "CMILib": "manual://CMILib*",
-        "CoreProtect": "manual://CoreProtect-*",
-        "MobFarmManager": "manual://MobFarmManager*",
-        "Vault": "manual://Vault-*"
-      }
-    },
     "buildy": {
       "engine": "paper",
       "plugins": {
