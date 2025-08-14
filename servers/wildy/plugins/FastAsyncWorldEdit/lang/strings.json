@@ -1,6 +1,6 @@
 {
   "prefix": "&3WorldEdit &8» &f{0}",
-  "fawe.worldedit.history.find.element": "&2{0} {1} &7ago &3{2}m &6{3} &c/{4}",
+  "fawe.worldedit.history.find.element": "&a{0} {1} &7ago &b{2}m &6{3} &c/{4}",
   "fawe.worldedit.history.find.element.more": " - Changes: {0}\n - Bounds: {1} -> {2}\n - Extra: {3}\n - Size on Disk: {4}",
   "fawe.worldedit.history.find.hover": "{0} blocks changed, click for more info",
   "fawe.worldedit.history.distr.summary_null": "Could not find edit summary for inputs.",
@@ -541,7 +541,7 @@
   "worldedit.command.time-elapsed": "{0}s elapsed (history: {1} changed; {2} blocks/sec).",
   "worldedit.command.permissions": "You are not permitted to do that. Are you in the right mode?",
   "worldedit.command.player-only": "This command must be used with a player.",
-  "worldedit.command.error.report": "&cPlease report this error: [See console]",
+  "worldedit.command.error.report": "Please report this error: &c[See console]",
   "worldedit.command.deprecation": "This command is deprecated.",
   "worldedit.command.deprecation-message": "Please use '{0}' instead.",
   "worldedit.pastebin.uploading": "(Please wait... sending output to paste service...)",

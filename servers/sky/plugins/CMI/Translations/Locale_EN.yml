@@ -120,7 +120,7 @@ info:
   spamConsoleInform: '&cPlayer (&7[playerName]&c) triggered (&7[rules]&c) chat filter
     with:&r [message]'
   # This line can have extra variables: [totalUsers] [onlinePlayers]
-  FirstJoin: '&aNew &8» &6[playerDisplayName] &fto our server&o!'
+  FirstJoin: '&aNew &8» &6[playerDisplayName] &fWelcome to our server&o!'
   LogoutCustom: '&cQuit &8» &6[prefix][playerDisplayName] &fleft the game'
   LoginCustom: '&bJoin &8» &6[prefix][playerDisplayName] &fjoined the game'
   deathlocation: '&bDeath &8» &fYou died at &7[x]&f, &7[y]&f, &7[z] &8@[world]'

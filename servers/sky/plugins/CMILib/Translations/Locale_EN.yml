@@ -67,7 +67,7 @@ info:
   NotOnline: '&cError &8» &fThe player is not online&o!'
   NobodyOnline: '&cError &8» &fThere is no one online&o!'
   NoPlayer: '&cError &8» &fCan''t find player with this name: &6[name]'
-  NoCommand: '&cError &8» &fThere is no command by this name&o!'
+  NoCommand: '&cError &8» &fThe command does not exist or cannot be used&o!'
   cantFindCommand: '&cError &8» &fCouldn''t find &c[%1] &fcommand, did you mean &a[%2]&f&o?'
   nolocation: '&cError &8» &fCan''t find suitable location'
   FeatureNotEnabled: '&cError &8» &fThis feature is not enabled&o!'

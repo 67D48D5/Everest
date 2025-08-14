@@ -70,8 +70,8 @@ GriefPrevention:
     BanMessage: §cChat §8» §fYou have been banned for continuously sending spam messages
       in chat.
     AllowedIpAddresses: 1.2.3.4; 5.6.7.8
-    DeathMessageCooldownSeconds: 16
-    Logout Message Delay In Seconds: 0
+    DeathMessageCooldownSeconds: -1
+    Logout Message Delay In Seconds: -1
   PvP:
     RulesEnabledInWorld:
       wwild: true
