@@ -194,8 +194,8 @@ Messages:
   LocationAllClaims:
     Text: in all your claims
   PvPImmunityStart:
-    Text: §aPvP §8» §fYou're protected from attack by other players as long as your
-      inventory is empty.
+    Text: §aPvP §8» §fYou're §aprotected §ffrom attack by other players as long as
+      your inventory is empty.
   SiegeNoDrop:
     Text: §cSiege §8» §fYou can't give away items while involved in a siege.
   DonateItemsInstruction:
@@ -208,23 +208,23 @@ Messages:
   PlayerTooCloseForFire2:
     Text: §cLand §8» §fYou can't start a fire this close to another player.
   TooDeepToClaim:
-    Text: §cLand §8» §fThis chest can't be protected because it's too deep underground.
+    Text: §cLand §8» §fThis chest §ccan't §fbe protected because it's too deep underground.
       Consider moving it.
   ChestClaimConfirmation:
     Text: §aLand §8» §fThis chest is §aprotected§f.
   AutomaticClaimNotification:
-    Text: §aLand §8» §fThis chest and nearby blocks are protected from breakage and
-      theft.
+    Text: §aLand §8» §fThis chest and nearby blocks are §aprotected §ffrom breakage
+      and theft.
   AutomaticClaimOtherClaimTooClose:
     Text: §cLand §8» §fCannot create a claim for your chest, there is another claim
       too close!
   UnprotectedChestWarning:
-    Text: §cLand §8» §fThis chest is NOT protected. Consider using a golden shovel
+    Text: §cLand §8» §fThis chest is §cNOT §fprotected. Consider using a golden shovel
       to expand an existing claim or to create a new one.
   ThatPlayerPvPImmune:
     Text: §cLand §8» §fYou can't injure defenseless players.
   CantFightWhileImmune:
-    Text: §cLand §8» §fYou can't fight someone while you're protected from PvP.
+    Text: §cLand §8» §fYou can't fight someone while you're §cprotected §ffrom PvP.
   NoDamageClaimedEntity:
     Text: §cLand §8» §fThat entity belongs to §6{0}§f.
     Notes: '0: owner name'
@@ -257,7 +257,7 @@ Messages:
   PvPNoContainers:
     Text: §cLand §8» §fYou can't access containers during PvP combat.
   PvPImmunityEnd:
-    Text: §aPvP §8» §fNow you can §bfight §fwith other players.
+    Text: §aPvP §8» §fNow you can §afight §fwith other players.
   NoBedPermission:
     Text: §cLand §8» §6{0} §fhasn't given you permission to sleep here.
     Notes: '0: claim owner'

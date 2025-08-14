@@ -131,8 +131,8 @@ info:
     CantUseShulkerBox: '&cCan''t use shulker box while you are in combat with player.
       Wait: [time]'
     CantUseCommand: '!actionbar!&cCan''t use command while in combat mode. Wait: [time]'
-    bossBarPvp: '&cCombat mode'
-    bossBarPve: '&2Combat mode'
+    bossBarPvp: '&4Combat Mode'
+    bossBarPve: '&cCombat Mode'
   noSchedule: '&cSchedule by this name is &cnot &ffound'
   totem:
     cooldown: '&ftotem cooldown: [time]'
@@ -998,7 +998,7 @@ command:
       args: (playerName) (-s)
     info:
       noinfo: '&cdBack &8» &fThere is no saved location to return to&o!'
-      feedback: '&cdBack &8» &fReturned to last saved location &7[x]&f, &7[y]&f, &7[z]
+      feedback: '&adBack &8» &fReturned to last saved location &7[x]&f, &7[y]&f, &7[z]
         &8@[world]&o!'
   dialogs:
     help:
@@ -3567,9 +3567,9 @@ command:
       info: Open smithing table
       args: (playerName)
     info:
-      feedback: '&cSmithingTable &8» &fYou have opened smithing table for &6[playerDisplayName]
+      feedback: '&aSmithingTable &8» &fYou have opened smithing table for &6[playerDisplayName]
         &7([offon]&7)&f.'
-      targetfeedback: '&cSmithingTable &8» &6[senderDisplayName] &fopened smithing
+      targetfeedback: '&aSmithingTable &8» &6[senderDisplayName] &fopened smithing
         table for you.'
   solve:
     help:
@@ -3854,7 +3854,7 @@ command:
       args: '[playerName] (-s)'
     info:
       feedback: '&4Suicide &8» &fGoodbye cruel world...'
-      message: '&4Suicide &8» &6[playerDisplayName] &ftook their own life'
+      message: '&cSuicide &8» &6[playerDisplayName] &ftook their own life'
       totem: '&cSuicide &8» &fCan''t use while holding totem'
   switchplayerdata:
     help:
@@ -4128,7 +4128,7 @@ command:
       args: (-p:playerName) [x] [y] [z] (world) (pitch) (yaw) (-rng:[range])
     info:
       feedback: '&aTpOPos &8» &fYou have been teleported &7[x]&f, &7[y]&f, &7[z] &8@[world]&f.'
-      feedbackOther: '&aTpOPos &8» &6[playerDisplayName] have been teleported &7[x]&f,
+      feedbackOther: '&aTpOPos &8» &6[playerDisplayName] &fhave been teleported &7[x]&f,
         &7[y]&f, &7[z] &8@[world].'
   tppos:
     help:
@@ -4136,7 +4136,7 @@ command:
       args: (-p:playerName) [x] [y] [z] (world) (pitch) (yaw) (-rng:[range])
     info:
       feedback: '&aTpPos &8» &fYou have been teleported &7[x]&f, &7[y]&f, &7[z] &8@[world]&f.'
-      feedbackOther: '&aTpPos &8» &6[playerDisplayName] have been teleported &7[x]&f,
+      feedbackOther: '&aTpPos &8» &6[playerDisplayName] &fhave been teleported &7[x]&f,
         &7[y]&f, &7[z] &8@[world].'
   tps:
     help:
@@ -4171,7 +4171,7 @@ command:
       info: Makes item unbreakable
       args: (playerName) (true/false) (-o)
     info:
-      feedback: '&cUnbreakable &8» &fYou made item &e[state] &ffor &6[playerDisplayName]
+      feedback: '&aUnbreakable &8» &fYou made item &e&o[state] &ffor &6[playerDisplayName]
         &7([offon]&7)&f.'
       breakable: '&6breakable'
       unbreakable: '&6unbreakable'
