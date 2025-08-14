@@ -40,3 +40,6 @@ ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub
 
 git clone git@github.com:67D48D5/Everest.git
+
+# UUID=xxxx-xxxx   /data   xfs   defaults,nofail   0   2
+# /swapfile none swap sw 0 0
