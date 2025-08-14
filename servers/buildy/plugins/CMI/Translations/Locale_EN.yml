@@ -131,8 +131,8 @@ info:
     CantUseShulkerBox: '&cCan''t use shulker box while you are in combat with player.
       Wait: [time]'
     CantUseCommand: '!actionbar!&cCan''t use command while in combat mode. Wait: [time]'
-    bossBarPvp: '&cCombat mode [autoTimeLeft]'
-    bossBarPve: '&2Combat mode [autoTimeLeft]'
+    bossBarPvp: '&cCombat mode'
+    bossBarPve: '&2Combat mode'
   noSchedule: '&cSchedule by this name is &cnot &ffound'
   totem:
     cooldown: '&ftotem cooldown: [time]'
