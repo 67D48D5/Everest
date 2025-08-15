@@ -330,9 +330,9 @@ command:
       info: Set players air
       args: '[playerName] [amount] (-s)'
     info:
-      feedback: '&aAir &8» &fYou have set &3[amount] &fair for &3[playerName] &7([offon]&7)&f.'
-      targetFeedback: '&aAir &8» &fYour air was set to &3[amount] &fby &6[senderDisplayName]&f.'
-      current: '&bAir &8» &fCurrent &6[playerDisplayName] &fair: &3[amount]'
+      feedback: '&aAir &8» &fYou have set &a[amount] &fair for &6[playerName] &7([offon]&7)&f.'
+      targetFeedback: '&aAir &8» &fYour air was set to &a[amount] &fby &6[senderDisplayName]&f.'
+      current: '&bAir &8» &fCurrent &6[playerDisplayName] &fair: &b[amount]'
   alert:
     help:
       info: Alerts administration on players login
@@ -406,9 +406,9 @@ command:
       noitem: '&cAnvilRepairCost &8» &f&cnot &fholding any item in hand.'
       cantDetermineCost: '&cAnvilRepairCost &8» &fCan''t determine base repair cost
         for this item.'
-      selffeedback: '&aAnvilRepairCost &8» &fBase repair cost was set to &3[amount]
+      selffeedback: '&aAnvilRepairCost &8» &fBase repair cost was set to &a[amount]
         &ffor &6[playerDisplayName] &fitem in hand &7([offon]&7)&f.'
-      targetfeedback: '&aAnvilRepairCost &8» &fYour item repair cost was set to &3[amount]
+      targetfeedback: '&aAnvilRepairCost &8» &fYour item repair cost was set to &a[amount]
         &fby &6[senderDisplayName]&f.'
   armoreffect:
     help:
@@ -816,7 +816,7 @@ command:
       - cmi clear +armors - will remove armor type items
       - cmi clear +armorslots - will remove items from armorslots
     info:
-      clearFeedback: '&aClear &8» &fYou have removed &c[amount] &fitems from &6[playerDisplayName]
+      clearFeedback: '&aClear &8» &fYou have removed &a[amount] &fitems from &6[playerDisplayName]
         &finventory &7([offon]&7)&f.'
       target: '&cClear &8» &c[amount] &fitems got removed from your inventory by &6[senderDisplayName]&f.'
       confirm: '&cClear &8» &fClick to confirm inventory clear up. All items will
@@ -1199,7 +1199,7 @@ command:
       removed: '&aEnchant &8» &fYou have removed &a[enchant] &fenchanted from item
         for &6[playerDisplayName]'
       clear: '&aEnchant &8» &fCleared enchantments from item for &6[playerDisplayName]'
-      clearOne: '&aEnchant &8» &fRemoved &c[enchant] &fenchantment from item for &6[playerDisplayName]'
+      clearOne: '&aEnchant &8» &fRemoved &a[enchant] &fenchantment from item for &6[playerDisplayName]'
       noitem: '&cEnchant &8» &cNot &fholding any item in hand.'
       invalidEnchant: '&cEnchant &8» &fYou don''t have permission to enchant item
         with invalid enchantment'
@@ -2628,7 +2628,7 @@ command:
       - '&ePermissions:'
       - ' &6cmi.command.more.oversize &e- to get oversized stacks'
     info:
-      feedback: '&aMore &8» &fFilled stack to &3[amount] &ffor &6[playerDisplayName]
+      feedback: '&aMore &8» &fFilled stack to &a[amount] &ffor &6[playerDisplayName]
         &7([offon]&7)&f.'
   msg:
     help:
@@ -3120,11 +3120,11 @@ command:
       - cmi.command.repair.repairshare.bypass - allows a user to repair items without
         adding repair share protection
     info:
-      feedback: '&aRepair &8» &fYou have repaired &3[amount] &fitems for &6[playerDisplayName]
+      feedback: '&aRepair &8» &fYou have repaired &a[amount] &fitems for &6[playerDisplayName]
         &7([offon]&7)&f.'
       nothing: '&cRepair &8» &fNothing to repair'
       cant: '&cRepair &8» &fCan''t repair this item'
-      feedbackMoney: '&aRepair &8» &fYou have repaired &3[amount] &fitems for &6[playerDisplayName]
+      feedbackMoney: '&aRepair &8» &fYou have repaired &a[amount] &fitems for &6[playerDisplayName]
         &7([offon]&7)&f. Cost: &7[cost]'
       itemOwner: '&bRepair &8» &fLast repaired by: &6[owner]'
       cantUse: '!title!&cCan''t use this item!!subtitle!&eRepair it your self&o!'
@@ -3332,7 +3332,7 @@ command:
       baseList: '&f&l&o[number] &8» &7[location] &6[playerName][amount]'
       regularList: '&f&l&o[number] &8» &e[playerName][amount]'
       amount: ' &7(&f[totalcount]&7)'
-      found: '&eFound &3[amount] &ffrom &3[files] &echecked users'
+      found: '&eFound &a[amount] &ffrom &3[files] &echecked users'
       noresults: '&eNothing found by your criteria'
       nothing: '&cProvided criteria for search are incorrect'
       noactive: '&eNo active or existing search results'
@@ -4348,9 +4348,9 @@ command:
       info: Set players walk speed from 0 to 5
       args: (playerName) [amount] (-s)
     info:
-      feedback: '&aWalkSpeed &8» &fYou have set &3[amount] &fwalk speed for &6[playerDisplayName]
+      feedback: '&aWalkSpeed &8» &fYou have set &a[amount] &fwalk speed for &6[playerDisplayName]
         &7([offon]&7)&f.'
-      targetfeedback: '&aWalkSpeed &8» &fYour walkspeed set to &3[amount] &fby &6[senderDisplayName]&f.'
+      targetfeedback: '&aWalkSpeed &8» &fYour walkspeed set to &a[amount] &fby &6[senderDisplayName]&f.'
       max: '&cWalkSpeed &8» &fMax allowed walk speed for you is &6[max]&f.'
   warn:
     help:

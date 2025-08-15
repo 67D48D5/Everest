@@ -56,7 +56,7 @@ GriefPrevention:
     ManualDeliveryDelaySeconds: 30
     RavagersBreakBlocks: true
     FireSpreadsInClaims: false
-    FireDamagesInClaims: false
+    FireDamagesInClaims: true
     LecternReadingRequiresAccessTrust: true
   Spam:
     Enabled: true
