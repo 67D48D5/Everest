@@ -97,8 +97,8 @@ START_CMD=(
     while true; do
       echo "[$(date '+%H:%M:%S') INFO]: Starting server..."
       env '"${ENV_EXPORTS[*]}"' java '"${COMMON_FLAGS[*]}"' '"${ENGINE_FLAGS[*]}"' '"${EXTRA_JAVA_FLAGS[*]}"' -jar "'"$JAR_FILE"'" nogui
-      echo "[$(date '+%H:%M:%S') WARN]: Server stopped at $(date), restarting in 5 seconds..."
-      sleep 5
+      echo "[$(date '+%H:%M:%S') WARN]: Server stopped at $(date), restarting in 3 seconds..."
+      sleep 3
     done
   '
 )
