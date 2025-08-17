@@ -10,6 +10,7 @@ packages:
   - screen
   - tmux
   - tree
+  - htop
   - vim
   - jq
   - util-linux-user
