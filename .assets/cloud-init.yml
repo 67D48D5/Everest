@@ -23,12 +23,10 @@ system_info:
     shell: /bin/zsh
 
 runcmd:
+  # Reinstall `curl`
+  - sudo yum install --allowerasing -y curl
   # Remove Amazon Linux banner
   - sudo touch /etc/motd.d/30-banner
-  # Reinstall `curl` (Keeping this as you may have a specific reason for it)
-  - sudo yum install --allowerasing -y curl
-  # Enable and start MariaDB
-  - sudo systemctl enable --now mariadb
   # Install Oh My Zsh non-interactively for the 'ec2-user'
   # The `"" --unattended` part prevents the script from hanging.
   - su - ec2-user -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended'
