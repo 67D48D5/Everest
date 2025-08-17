@@ -165,19 +165,19 @@ info:
     Full: '&cInventory &8» &fYour inventory is full. Can''t add item'
     FullDrop: '&cInventory &8» &fNot all items fit in your inventory. They have been
       dropped on ground'
-  TimeNotRecorded: '&e-No record-'
-  months: '&e[months] &fmonths '
-  oneMonth: '&e[months] &fmonth '
-  weeks: '&e[weeks] &fweeks '
-  oneWeek: '&e[weeks] &fweek '
-  years: '&e[years] &fyears '
-  oneYear: '&e[years] &fyear '
-  day: '&e[days] &fdays '
-  oneDay: '&e[days] &fday '
-  hour: '&e[hours] &fhours '
-  oneHour: '&e[hours] &fhour '
-  min: '&e[mins] &fmin '
-  sec: '&e[secs] &fsec '
+  TimeNotRecorded: '&c- No record -'
+  months: '[months] months '
+  oneMonth: '[months] month '
+  weeks: '[weeks] weeks '
+  oneWeek: '[weeks] week '
+  years: '[years] years '
+  oneYear: '[years] year '
+  day: '[days] days '
+  oneDay: '[days] day '
+  hour: '[hours] hours '
+  oneHour: '[hours] hour '
+  min: '[mins] min '
+  sec: '[secs] sec '
   nextPageConsole: '&bPage &8» &fFor next page perform &6[command]'
   prevPage: '&a----<< &6Prev '
   prevCustomPage: '&a----<< &6[value] '
@@ -396,127 +396,127 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    multishot: Multishot
-    piercing: Piercing
-    quick_charge: Quick_charge
-    swift_sneak: Swift_sneak
-    loot_bonus_mobs: Loot_bonus_mobs
-    luck: Luck
-    protection_environmental: Protection_environmental
-    breach: Breach
-    vanishing_curse: Vanishing_curse
-    silk_touch: Silk_touch
-    binding_curse: Binding_curse
-    channeling: Channeling
-    water_worker: Water_worker
-    protection_projectile: Protection_projectile
-    depth_strider: Depth_strider
     dig_speed: Dig_speed
-    oxygen: Oxygen
-    protection_fire: Protection_fire
-    density: Density
-    durability: Durability
-    soul_speed: Soul_speed
-    protection_explosions: Protection_explosions
     damage_undead: Damage_undead
-    wind_burst: Wind_burst
+    depth_strider: Depth_strider
+    impaling: Impaling
+    durability: Durability
+    binding_curse: Binding_curse
+    arrow_fire: Arrow_fire
+    silk_touch: Silk_touch
+    channeling: Channeling
+    thorns: Thorns
+    piercing: Piercing
+    swift_sneak: Swift_sneak
+    lure: Lure
     damage_all: Damage_all
     knockback: Knockback
-    lure: Lure
-    thorns: Thorns
-    loyalty: Loyalty
-    arrow_infinite: Arrow_infinite
-    riptide: Riptide
-    damage_arthropods: Damage_arthropods
-    loot_bonus_blocks: Loot_bonus_blocks
-    fire_aspect: Fire_aspect
-    impaling: Impaling
-    frost_walker: Frost_walker
-    sweeping_edge: Sweeping_edge
-    arrow_fire: Arrow_fire
     mending: Mending
-    protection_fall: Protection_fall
     arrow_damage: Arrow_damage
+    oxygen: Oxygen
+    loot_bonus_blocks: Loot_bonus_blocks
+    multishot: Multishot
+    loyalty: Loyalty
+    breach: Breach
+    fire_aspect: Fire_aspect
+    quick_charge: Quick_charge
+    arrow_infinite: Arrow_infinite
+    wind_burst: Wind_burst
+    protection_explosions: Protection_explosions
     arrow_knockback: Arrow_knockback
+    sweeping_edge: Sweeping_edge
+    protection_fall: Protection_fall
+    frost_walker: Frost_walker
+    soul_speed: Soul_speed
+    density: Density
+    loot_bonus_mobs: Loot_bonus_mobs
+    riptide: Riptide
+    luck: Luck
+    protection_projectile: Protection_projectile
+    protection_environmental: Protection_environmental
+    water_worker: Water_worker
+    protection_fire: Protection_fire
+    damage_arthropods: Damage_arthropods
+    vanishing_curse: Vanishing_curse
   PotionEffectAliases:
-    jumpboost:
-    - Jump boost
-    poison:
-    - Poison
-    instantdamage:
-    - Instant damage
-    badomen:
-    - Bad omen
-    wither:
-    - Wither
-    saturation:
-    - Saturation
-    conduitpower:
-    - Conduit power
-    resistance:
-    - Resistance
-    nightvision:
-    - Night vision
-    windcharged:
-    - Wind charged
-    dolphinsgrace:
-    - Dolphins grace
-    luck:
-    - Luck
-    nausea:
-    - Nausea
-    hunger:
-    - Hunger
-    fireresistance:
-    - Fire resistance
-    heroofthevillage:
-    - Hero of the village
-    blindness:
-    - Blindness
-    waterbreathing:
-    - Water breathing
-    regeneration:
-    - Regeneration
-    weakness:
-    - Weakness
-    trialomen:
-    - Trial omen
-    miningfatigue:
-    - Mining fatigue
-    slowfalling:
-    - Slow falling
-    infested:
-    - Infested
-    darkness:
-    - Darkness
-    speed:
-    - Speed
-    raidomen:
-    - Raid omen
-    instanthealth:
-    - Instant health
-    strength:
-    - Strength
-    levitation:
-    - Levitation
-    weaving:
-    - Weaving
     absorption:
     - Absorption
-    slowness:
-    - Slowness
-    invisibility:
-    - Invisibility
-    glowing:
-    - Glowing
-    oozing:
-    - Oozing
+    strength:
+    - Strength
     haste:
     - Haste
+    blindness:
+    - Blindness
+    infested:
+    - Infested
+    luck:
+    - Luck
+    oozing:
+    - Oozing
+    conduitpower:
+    - Conduit power
     healthboost:
     - Health boost
+    invisibility:
+    - Invisibility
+    levitation:
+    - Levitation
+    nausea:
+    - Nausea
+    windcharged:
+    - Wind charged
+    jumpboost:
+    - Jump boost
+    badomen:
+    - Bad omen
+    resistance:
+    - Resistance
+    speed:
+    - Speed
+    instantdamage:
+    - Instant damage
+    slowness:
+    - Slowness
+    slowfalling:
+    - Slow falling
+    fireresistance:
+    - Fire resistance
+    regeneration:
+    - Regeneration
+    wither:
+    - Wither
+    hunger:
+    - Hunger
+    instanthealth:
+    - Instant health
+    saturation:
+    - Saturation
+    nightvision:
+    - Night vision
+    weakness:
+    - Weakness
+    heroofthevillage:
+    - Hero of the village
+    glowing:
+    - Glowing
+    waterbreathing:
+    - Water breathing
+    miningfatigue:
+    - Mining fatigue
+    weaving:
+    - Weaving
+    darkness:
+    - Darkness
+    dolphinsgrace:
+    - Dolphins grace
+    trialomen:
+    - Trial omen
     unluck:
     - Unluck
+    poison:
+    - Poison
+    raidomen:
+    - Raid omen
 dialog:
   signEditor: Sign Editor
   update: Update

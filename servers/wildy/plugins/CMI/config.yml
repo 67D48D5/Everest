@@ -1563,7 +1563,7 @@ WarmUps:
   showCounterBarInfo: true
   BossBarInfo:
     Enabled: true
-    Color: blue
+    Color: red
     # Options: 1, 6, 10, 12, 20
     Segments: '1'
   List:
