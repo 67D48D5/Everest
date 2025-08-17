@@ -7,8 +7,8 @@ SERVER_ENGINE="velocity"
 
 # Java flags (See launcher for more details)
 JAVA_FLAGS=(
-  -Xms1024M
-  -Xmx1024M
+  -Xms384M
+  -Xmx768M
 )
 
 # Directory setup
