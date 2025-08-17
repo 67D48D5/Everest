@@ -2826,9 +2826,9 @@ command:
       args: '[page]'
     info:
       topLine: '&bPlayTimeTop &8» &fTop list of players with most play time'
-      scanning: '&bPlayTimeTop &8» &fData is being scanned currently, please wait
+      scanning: '&cPlayTimeTop &8» &fData is being scanned currently, please wait
         a minute and try again'
-      loading: '&bPlayTimeTop &8» &fData is &cnot &floaded yet. Scan process will
+      loading: '&cPlayTimeTop &8» &fData is &cnot &floaded yet. Scan process will
         start and you will get result after its finished'
       list: '&6&o[number] &8» &6[playerDisplayName] &8» &b[time]'
       place: '&bPlayTimeTop &8» &6[playerDisplayName] &fis in &b[place] &fplace'
