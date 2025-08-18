@@ -55,7 +55,6 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
     ENGINE=$(jq -r ".servers[\"$SERVER\"].engine" <<<"$CONFIG")
     SERVER_DIR="${SERVERS_ROOT}/${SERVER}"
 
-    echo
     echo "[$(date '+%H:%M:%S') INFO] [link-library]: Processing server: ${SERVER} (engine: ${ENGINE})"
 
     # --- Define links needed for all server types ---
@@ -88,5 +87,4 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
 
 done
 
-echo
 echo "[$(date '+%H:%M:%S') INFO] [link-library]: Common resource linking complete."

@@ -117,7 +117,6 @@ CONFIG="$(cat "$CONFIG_FILE")"
 
 # Loop through each engine (paper, velocity, etc.) sequentially.
 jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
-    echo
     echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Processing plugins for '$engine'..."
 
     # Define the parent directory for this engine's plugins.
@@ -159,5 +158,4 @@ jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
     echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Finished processing plugins for '$engine'."
 done
 
-echo
 echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: All plugin updates are complete."

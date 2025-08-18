@@ -68,7 +68,7 @@ link_server_plugins() {
   # --- The Atomic Swap: Part 2 ---
   # Once all links are created in the temp dir, swap it with the live one.
   # This is an instantaneous operation.
-  echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Atomically swapping plugin directories..."
+  echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Swapping plugin directories..."
   rm -rf "$dest_dir"/*.jar || true
   mv "$temp_plugins_dir"/*.jar "$dest_dir"
   rm -rf "$temp_plugins_dir"
@@ -83,7 +83,6 @@ while read -r SERVER; do
   ENGINE=$(jq -r ".servers[\"$SERVER\"].engine" <<<"$CONFIG")
   SERVER_DIR="${SERVERS_ROOT}/${SERVER}"
 
-  echo
   echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Processing plugins for server: '${SERVER}' (engine: ${ENGINE})"
 
   # Call our main function to handle the linking logic.
@@ -91,5 +90,4 @@ while read -r SERVER; do
 
 done < <(jq -r '.servers | keys[]' <<<"$CONFIG")
 
-echo
 echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Plugin linking complete."

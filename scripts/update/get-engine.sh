@@ -71,7 +71,6 @@ process_engine() {
 # Load the configuration once.
 CONFIG="$(cat "$CONFIG_FILE")"
 
-echo
 echo "[$(date '+%H:%M:%S') INFO] [get-engine]: Processing all engines..."
 
 # This process substitution `< <(...)` prevents the while loop from running
@@ -86,5 +85,4 @@ done < <(jq -r '.engines | to_entries[] | "\(.key)\t\(.value.version)"' <<<"$CON
 # 'process_engine' job that we started has finished.
 wait
 
-echo
 echo "[$(date '+%H:%M:%S') INFO] [get-engine]: All engine updates are finished."

@@ -25,22 +25,13 @@ for config_file in server.json update.json; do
 done
 
 # --- Main Logic ---
-echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting update process..."
+echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting downloading process..."
 
-echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting engine download process..."
 bash "$SCRIPT_DIR/get-engine.sh"
-echo
-
-echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting plugin download process..."
 bash "$SCRIPT_DIR/get-plugin.sh"
-echo
 
-echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting library linking process..."
+echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting linking process..."
 bash "$SCRIPT_DIR/link-library.sh"
-echo
-
-echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting plugin linking process..."
 bash "$SCRIPT_DIR/link-plugin.sh"
-echo
 
-echo "[$(date '+%H:%M:%S') INFO] [updater]: Update process completed successfully."
+echo "[$(date '+%H:%M:%S') INFO] [updater]: Updating processes completed."
