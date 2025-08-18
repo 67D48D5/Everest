@@ -11,26 +11,10 @@ CONFIG_FILE="${ROOT_PATH}/config/update.json"
 PLUGIN_ROOT="${ROOT_PATH}/libraries/plugins"
 
 # --- Pre-flight Checks ---
-# Let's make sure our toolshed is full before we start.
-echo "[$(date '+%H:%M:%S') INFO]: Checking for required tools..."
-for cmd in curl jq realpath grep sed head mktemp; do
-    if ! command -v "$cmd" >/dev/null; then
-        echo "[$(date '+%H:%M:%S') ERROR]: Missing dependency: '$cmd'. Please install it first." >&2
-        exit 1
-    fi
-done
-
-# And make sure the config file actually exists.
-if [[ ! -f "$CONFIG_FILE" ]]; then
-    echo "[$(date '+%H:%M:%S') ERROR]: File 'update.json' not found at '$CONFIG_FILE'" >&2
-    exit 1
-fi
-
 # Let's get that plugin directory ready.
 mkdir -p "$PLUGIN_ROOT"
 
 # --- URL Resolver Functions ---
-
 resolve_jenkins() { # <url> <engineKeyword>
     local url="$1" key="$2" api final
     api="${url%/}/lastSuccessfulBuild/api/json"
@@ -69,7 +53,6 @@ resolve_enginehub() { # <url>
 }
 
 # --- Main Logic ---
-
 process_plugin() {
     local engine="$1"
     local plugin_name="$2"
@@ -79,11 +62,11 @@ process_plugin() {
 
     # --- Skip plugins marked for manual download ---
     if [[ "$url" == manual://* ]]; then
-        echo "[$(date '+%H:%M:%S') INFO]: '$plugin_name' is marked for manual download."
+        echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: '$plugin_name' is marked for manual download."
         return 0
     fi
     if [[ -z "$url" ]]; then
-        echo "[$(date '+%H:%M:%S') WARN]: '$plugin_name' has an empty URL. Skipping." >&2
+        echo "[$(date '+%H:%M:%S') WARN] [get-plugin]: '$plugin_name' has an empty URL. Skipping." >&2
         return 0
     fi
 
@@ -98,7 +81,7 @@ process_plugin() {
     fi
 
     if [[ -n "$resolution_type" ]]; then
-        echo "[$(date '+%H:%M:%S') INFO]: Resolving $resolution_type URL for '$plugin_name'..."
+        echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Resolving $resolution_type URL for '$plugin_name'..."
         case "$resolution_type" in
         EngineHub) resolved_url=$(resolve_enginehub "$url") ;;
         Jenkins) resolved_url=$(resolve_jenkins "$url" "$engine") ;;
@@ -106,7 +89,7 @@ process_plugin() {
         esac
 
         if [[ -z "$resolved_url" ]]; then
-            echo "[$(date '+%H:%M:%S') ERROR]: Failed to resolve URL for '$plugin_name'. Skipping." >&2
+            echo "[$(date '+%H:%M:%S') ERROR] [get-plugin]: Failed to resolve URL for '$plugin_name'. Skipping." >&2
             return 1
         fi
     fi
@@ -118,11 +101,11 @@ process_plugin() {
         jar_name="${plugin_name}-${jar_name}.jar"
     fi
 
-    echo "[$(date '+%H:%M:%S') INFO]: Downloading '$plugin_name' -> '$jar_name'..."
+    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Downloading '$plugin_name' -> '$jar_name'..."
     if curl -fsSL --retry 3 --retry-delay 5 -o "$target_dir/$jar_name" "$resolved_url"; then
-        echo "[$(date '+%H:%M:%S') INFO]: Downloaded '$plugin_name' successfully."
+        echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Downloaded '$plugin_name' successfully."
     else
-        echo "[$(date '+%H:%M:%S') ERROR]: Failed to download '$plugin_name' from '$resolved_url'" >&2
+        echo "[$(date '+%H:%M:%S') ERROR] [get-plugin]: Failed to download '$plugin_name' from '$resolved_url'" >&2
         rm -f "$target_dir/$jar_name"
         return 1
     fi
@@ -135,7 +118,7 @@ CONFIG="$(cat "$CONFIG_FILE")"
 # Loop through each engine (paper, velocity, etc.) sequentially.
 jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
     echo
-    echo "[$(date '+%H:%M:%S') INFO]: Processing plugins for '$engine'..."
+    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Processing plugins for '$engine'..."
 
     # Define the parent directory for this engine's plugins.
     engine_plugin_dir="$PLUGIN_ROOT/$engine"
@@ -150,7 +133,7 @@ jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
     # This prevents race conditions where downloads from different engines
     # could write to the same place at the same time.
     temp_dir=$(mktemp -d -p "$engine_plugin_dir")
-    echo "[$(date '+%H:%M:%S') INFO]: Using temporary directory: $temp_dir"
+    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Using temporary directory: $temp_dir"
 
     # --- Parallel Processing Loop ---
     # This process substitution `< <(...)` is the key. It prevents the
@@ -164,17 +147,17 @@ jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
     # This 'wait' is now in the main shell for this engine's loop.
     # It will correctly wait for ALL background 'process_plugin' jobs to finish
     # before the script proceeds to the atomic swap or the next engine.
-    echo "[$(date '+%H:%M:%S') INFO]: Waiting for all '$engine' plugin downloads to complete..."
+    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Waiting for all '$engine' plugin downloads to complete..."
     wait
 
     # --- The Atomic Swap: Part 2 ---
     # Once all downloads for this engine are successful, we swap the directories.
-    echo "[$(date '+%H:%M:%S') INFO]: All downloads for '$engine' complete. Swapping directories..."
+    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: All downloads for '$engine' complete. Swapping directories..."
     rm -rf "$auto_dir" || true
     mv "$temp_dir" "$auto_dir"
 
-    echo "[$(date '+%H:%M:%S') INFO]: Finished processing plugins for '$engine'."
+    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Finished processing plugins for '$engine'."
 done
 
 echo
-echo "[$(date '+%H:%M:%S') INFO]: All plugin updates are complete."
+echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: All plugin updates are complete."

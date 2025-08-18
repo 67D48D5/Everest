@@ -11,22 +11,6 @@ CONFIG_FILE="${ROOT_PATH}/config/server.json"
 PLUGIN_ROOT="${ROOT_PATH}/libraries/plugins"
 SERVERS_ROOT="${ROOT_PATH}/servers"
 
-# --- Pre-flight Checks ---
-# Make sure we have the tools we need.
-echo "[$(date '+%H:%M:%S') INFO]: Checking for required tools..."
-for cmd in jq realpath find sort tail ln rm mv mktemp; do
-  if ! command -v "$cmd" >/dev/null; then
-    echo "[$(date '+%H:%M:%S') ERROR]: Missing dependency: '$cmd'. Please install it first." >&2
-    exit 1
-  fi
-done
-
-# And make sure the config file actually exists.
-if [[ ! -f "$CONFIG_FILE" ]]; then
-  echo "[$(date '+%H:%M:%S') ERROR]: File 'server.json' not found at '$CONFIG_FILE'" >&2
-  exit 1
-fi
-
 # --- Helper Functions ---
 # Find the latest file matching a pattern in a directory.
 # This function is great, no changes needed here.
@@ -54,7 +38,7 @@ link_server_plugins() {
   mkdir -p "$server_dir"
   local temp_plugins_dir
   temp_plugins_dir=$(mktemp -d -p "$server_dir")
-  echo "[$(date '+%H:%M:%S') INFO]: Building new plugin set in: $(basename "$temp_plugins_dir")"
+  echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Building new plugin set in: $(basename "$temp_plugins_dir")"
 
   # --- Plugin Linking Loop ---
   # Use process substitution to avoid subshells and ensure robustness.
@@ -67,7 +51,7 @@ link_server_plugins() {
     auto) src_file=$(pick_latest "$auto_dir" "$pattern") ;;
     manual) src_file=$(pick_latest "$static_dir" "$pattern") ;;
     *)
-      echo "[$(date '+%H:%M:%S') WARN]: Unknown scheme '$scheme' for '$plugin'. Skipping." >&2
+      echo "[$(date '+%H:%M:%S') WARN] [link-plugin]: Unknown scheme '$scheme' for '$plugin'. Skipping." >&2
       continue
       ;;
     esac
@@ -75,16 +59,16 @@ link_server_plugins() {
     if [[ -n "${src_file:-}" && -f "$src_file" ]]; then
       # Link into the temporary directory, not the live one.
       ln -sf "$src_file" "${temp_plugins_dir}/${plugin}.jar"
-      printf "[$(date '+%H:%M:%S') INFO]: %-22s → %s\n" "${plugin}.jar" "$(basename "$src_file")"
+      printf "[$(date '+%H:%M:%S') INFO] [link-plugin]: %-22s → %s\n" "${plugin}.jar" "$(basename "$src_file")"
     else
-      printf "[$(date '+%H:%M:%S') WARN]: %-22s NOT found (pattern: %s)\n" "$plugin" "$pattern" >&2
+      printf "[$(date '+%H:%M:%S') WARN] [link-plugin]: %-22s NOT found (pattern: %s)\n" "$plugin" "$pattern" >&2
     fi
   done < <(jq -r ".servers[\"$server_name\"].plugins | to_entries[] | \"\(.key)\t\(.value)\"" <<<"$CONFIG")
 
   # --- The Atomic Swap: Part 2 ---
   # Once all links are created in the temp dir, swap it with the live one.
   # This is an instantaneous operation.
-  echo "[$(date '+%H:%M:%S') INFO]: Atomically swapping plugin directories..."
+  echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Atomically swapping plugin directories..."
   rm -rf "$dest_dir"/*.jar || true
   mv "$temp_plugins_dir"/*.jar "$dest_dir"
   rm -rf "$temp_plugins_dir"
@@ -100,7 +84,7 @@ while read -r SERVER; do
   SERVER_DIR="${SERVERS_ROOT}/${SERVER}"
 
   echo
-  echo "[$(date '+%H:%M:%S') INFO]: Processing plugins for server: '${SERVER}' (engine: ${ENGINE})"
+  echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Processing plugins for server: '${SERVER}' (engine: ${ENGINE})"
 
   # Call our main function to handle the linking logic.
   link_server_plugins "$SERVER" "$ENGINE" "$SERVER_DIR"
@@ -108,4 +92,4 @@ while read -r SERVER; do
 done < <(jq -r '.servers | keys[]' <<<"$CONFIG")
 
 echo
-echo "[$(date '+%H:%M:%S') INFO]: Plugin linking complete."
+echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Plugin linking complete."

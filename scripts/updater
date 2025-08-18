@@ -4,20 +4,39 @@ set -euo pipefail
 # --- Configuration ---
 # Setting up our paths relative to the script's location.
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)/update"
+ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
+
+# --- Pre-flight Checks ---
+# Make sure we have the tools we need.
+echo "[$(date '+%H:%M:%S') INFO] [updater]: Checking for required tools..."
+for cmd in jq realpath ln rm find sort tail mv mktemp curl grep sed head; do
+    if ! command -v "$cmd" >/dev/null; then
+        echo "[$(date '+%H:%M:%S') ERROR] [updater]: Missing dependency: '$cmd'. Please install it first." >&2
+        exit 1
+    fi
+done
+
+# Ensure required config files exist.
+for config_file in server.json update.json; do
+    if [[ ! -f "${ROOT_PATH}/config/${config_file}" ]]; then
+        echo "[$(date '+%H:%M:%S') ERROR] [updater]: File '${config_file}' not found at '${ROOT_PATH}/config/${config_file}'" >&2
+        exit 1
+    fi
+done
 
 # --- Main Logic ---
-echo "[$(date '+%H:%M:%S') INFO]: Starting update process..."
+echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting update process..." && echo
 
-echo "[$(date '+%H:%M:%S') INFO]: Starting engine download process..."
-bash "$SCRIPT_DIR/get-engine.sh"
+echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting engine download process..."
+bash "$SCRIPT_DIR/get-engine.sh" && echo
 
-echo "[$(date '+%H:%M:%S') INFO]: Starting plugin download process..."
-bash "$SCRIPT_DIR/get-plugin.sh"
+echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting plugin download process..."
+bash "$SCRIPT_DIR/get-plugin.sh" && echo
 
-echo "[$(date '+%H:%M:%S') INFO]: Starting library linking process..."
-bash "$SCRIPT_DIR/link-library.sh"
+echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting library linking process..."
+bash "$SCRIPT_DIR/link-library.sh" && echo
 
-echo "[$(date '+%H:%M:%S') INFO]: Starting plugin linking process..."
-bash "$SCRIPT_DIR/link-plugin.sh"
+echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting plugin linking process..."
+bash "$SCRIPT_DIR/link-plugin.sh" && echo
 
-echo "[$(date '+%H:%M:%S') INFO]: Update process completed successfully."
+echo "[$(date '+%H:%M:%S') INFO] [updater]: Update process completed successfully."

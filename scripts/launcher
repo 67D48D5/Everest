@@ -25,7 +25,7 @@ ENGINE_DIR="${ROOT_PATH}/libraries/engines"
 # Ensure prerequisites
 for cmd in tmux java realpath; do
     command -v "$cmd" &>/dev/null || {
-        echo "[$(date '+%H:%M:%S') ERROR]: '$cmd' not found" >&2
+        echo "[$(date '+%H:%M:%S') ERROR] [launcher]: '$cmd' not found" >&2
         exit 1
     }
 done
@@ -42,14 +42,14 @@ fi
 
 # Enter server directory
 cd "$SERVER_DIR" || {
-    echo "[$(date '+%H:%M:%S') ERROR]: Failed to enter '$SERVER_DIR'" >&2
+    echo "[$(date '+%H:%M:%S') ERROR] [launcher]: Failed to enter '$SERVER_DIR'" >&2
     exit 1
 }
 
 # Find latest engine JAR (version-aware sort)
 JAR_FILE=$(find "$ENGINE_DIR" -maxdepth 1 -type f -name "${ENGINE_TYPE}*.jar" | sort -V | tail -n1)
 if [[ -z "$JAR_FILE" || ! -f "$JAR_FILE" ]]; then
-    echo "[$(date '+%H:%M:%S') ERROR]: Engine not found for: '$ENGINE_TYPE'" >&2
+    echo "[$(date '+%H:%M:%S') ERROR] [launcher]: Engine not found for: '$ENGINE_TYPE'" >&2
     exit 1
 fi
 
@@ -95,9 +95,9 @@ esac
 START_CMD=(
     bash -c '
     while true; do
-      echo "[$(date '+%H:%M:%S') INFO]: Starting server..."
+      echo "[$(date '+%H:%M:%S') INFO] [launcher]: Starting server..."
       env '"${ENV_EXPORTS[*]}"' java '"${COMMON_FLAGS[*]}"' '"${ENGINE_FLAGS[*]}"' '"${EXTRA_JAVA_FLAGS[*]}"' -jar "'"$JAR_FILE"'" nogui
-      echo "[$(date '+%H:%M:%S') WARN]: Server stopped at $(date), restarting in 3 seconds..."
+      echo "[$(date '+%H:%M:%S') WARN] [launcher]: Server stopped at $(date), restarting in 3 seconds..."
       sleep 3
     done
   '
@@ -105,17 +105,17 @@ START_CMD=(
 
 # Wrapper of tmux session
 if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
-    echo "[$(date '+%H:%M:%S') WARN]: Tmux session '$TMUX_SESSION' already exists."
+    echo "[$(date '+%H:%M:%S') WARN] [launcher]: Tmux session '$TMUX_SESSION' already exists."
 
     # Check if server process is alive
     if ! pgrep -f "[j]ava.*$(basename "$JAR_FILE")" >/dev/null; then
-        echo "[$(date '+%H:%M:%S') WARN]: Session alive, but server is down. Restarting..."
+        echo "[$(date '+%H:%M:%S') WARN] [launcher]: Session alive, but server is down. Restarting..."
         tmux send-keys -t "$TMUX_SESSION" "stop" C-m
         sleep 1
         tmux send-keys -t "$TMUX_SESSION" "${START_CMD[@]}" C-m
-        echo "[$(date '+%H:%M:%S') INFO]: Restarted server at $(date)"
+        echo "[$(date '+%H:%M:%S') INFO] [launcher]: Restarted server at $(date)"
     else
-        echo "[$(date '+%H:%M:%S') INFO]: Server is already running."
+        echo "[$(date '+%H:%M:%S') INFO] [launcher]: Server is already running."
     fi
 else
     # Create new detached tmux session

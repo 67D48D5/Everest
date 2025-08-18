@@ -11,22 +11,6 @@ CONFIG_FILE="${ROOT_PATH}/config/server.json"
 COMMON_ROOT="${ROOT_PATH}/libraries/common"
 SERVERS_ROOT="${ROOT_PATH}/servers"
 
-# --- Pre-flight Checks ---
-# Make sure we have the tools we need.
-echo "[$(date '+%H:%M:%S') INFO]: Checking for required tools..."
-for cmd in jq realpath ln rm; do
-    if ! command -v "$cmd" >/dev/null; then
-        echo "[$(date '+%H:%M:%S') ERROR]: Missing dependency: '$cmd'. Please install it first." >&2
-        exit 1
-    fi
-done
-
-# And make sure the config file actually exists.
-if [[ ! -f "$CONFIG_FILE" ]]; then
-    echo "[$(date '+%H:%M:%S') ERROR]: File 'server.json' not found at '$CONFIG_FILE'" >&2
-    exit 1
-fi
-
 # --- Main Logic ---
 # A reusable function to handle the creation of a symbolic link.
 # It checks if the destination exists (as a link or directory) and cleans it up
@@ -47,17 +31,17 @@ link_resource() {
 
     # Check if the destination already exists and clean it up.
     if [[ -L "$dest_path" ]]; then
-        echo "[$(date '+%H:%M:%S') INFO]: '$resource_name' is already a symlink. Removing old link."
+        echo "[$(date '+%H:%M:%S') INFO] [link-library]: '$resource_name' is already a symlink. Removing old link."
         rm "$dest_path"
     elif [[ -d "$dest_path" ]]; then
-        echo "[$(date '+%H:%M:%S') INFO]: '$resource_name' is a directory. Removing existing directory."
+        echo "[$(date '+%H:%M:%S') INFO] [link-library]: '$resource_name' is a directory. Removing existing directory."
         rm -rf "$dest_path"
     elif [[ -f "$dest_path" ]]; then
-        echo "[$(date '+%H:%M:%S') INFO]: '$resource_name' is a file. Removing existing file."
+        echo "[$(date '+%H:%M:%S') INFO] [link-library]: '$resource_name' is a file. Removing existing file."
         rm -f "$dest_path"
     fi
 
-    echo "[$(date '+%H:%M:%S') INFO]: Linking '$resource_name' from '$source_path' to '$dest_path'"
+    echo "[$(date '+%H:%M:%S') INFO] [link-library]: Linking '$resource_name' from '$source_path' to '$dest_path'"
     # Use -s (symbolic), -f (force/overwrite), -n (no-dereference/treat link as a file)
     ln -sfn "$source_path" "$dest_path"
 }
@@ -72,7 +56,7 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
     SERVER_DIR="${SERVERS_ROOT}/${SERVER}"
 
     echo
-    echo "[$(date '+%H:%M:%S') INFO]: Processing server: ${SERVER} (engine: ${ENGINE})"
+    echo "[$(date '+%H:%M:%S') INFO] [link-library]: Processing server: ${SERVER} (engine: ${ENGINE})"
 
     # --- Define links needed for all server types ---
     # This is an array of "SourceSubPath;DestSubPath;FriendlyName"
@@ -105,4 +89,4 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
 done
 
 echo
-echo "[$(date '+%H:%M:%S') INFO]: Common resource linking complete."
+echo "[$(date '+%H:%M:%S') INFO] [link-library]: Common resource linking complete."
