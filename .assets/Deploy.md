@@ -150,3 +150,7 @@ mariadb -u root -p </data/.assets/Base.sql
 ```
 
 ### S3
+
+```sh
+aws s3 cp s3://everest-prod-storage/worlds/ . --recursive
+```
