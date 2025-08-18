@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# --- Configuration ---
+# Setting up our paths relative to the script's location.
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)/update"
+
+# --- Main Logic ---
+echo "[$(date '+%H:%M:%S') INFO]: Starting update process..."
+
+echo "[$(date '+%H:%M:%S') INFO]: Starting engine download process..."
+bash "$SCRIPT_DIR/get-engine.sh"
+
+echo "[$(date '+%H:%M:%S') INFO]: Starting plugin download process..."
+bash "$SCRIPT_DIR/get-plugin.sh"
+
+echo "[$(date '+%H:%M:%S') INFO]: Starting library linking process..."
+bash "$SCRIPT_DIR/link-library.sh"
+
+echo "[$(date '+%H:%M:%S') INFO]: Starting plugin linking process..."
+bash "$SCRIPT_DIR/link-plugin.sh"
+
+echo "[$(date '+%H:%M:%S') INFO]: Update process completed successfully."
