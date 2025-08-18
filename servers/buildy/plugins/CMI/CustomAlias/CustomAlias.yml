@@ -17,6 +17,13 @@
 # Commands under this alias will get executed. Exelent way to show help page and correct usage if needed
 
 CustomAlias:
+  initBuildy:
+    Cmds:
+    - gamerule world announceAdvancements false
+    - gamerule world spectatorsGenerateChunks false
+    - papi ecloud download server
+    - papi reload
+    Tab: false
   claim:
     Cmds:
     - plots claim

@@ -17,6 +17,17 @@
 # Commands under this alias will get executed. Exelent way to show help page and correct usage if needed
 
 CustomAlias:
+  initWildy:
+    Cmds:
+    - gamerule wwild announceAdvancements false
+    - gamerule wwild spectatorsGenerateChunks false
+    - gamerule wwild_nether announceAdvancements false
+    - gamerule wwild_nether spectatorsGenerateChunks false
+    - gamerule wwild_the_end announceAdvancements false
+    - gamerule wwild_the_end spectatorsGenerateChunks false
+    - papi ecloud download server
+    - papi reload
+    Tab: false
   넴주:
     Cmds:
     - spawn
