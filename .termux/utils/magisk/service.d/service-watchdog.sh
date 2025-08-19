@@ -27,11 +27,10 @@ while true; do
     fi
 
     # Check if `com.termux` is running
-    if ! pidof com.termux >/dev/null 2>&1; then
+    if ! pidof "$TERMUX_APP" >/dev/null 2>&1; then
         log_msg "Termux stopped... Restarting it!"
-        am start -n com.termux/.HomeActivity
+        am start -n "$TERMUX_APP/.HomeActivity"
     fi
-    sleep 10
 
     # Wait 24 seconds
     sleep 24
@@ -55,7 +54,7 @@ done
         # Ensure Termux is running
         if ! pidof "$TERMUX_APP" >/dev/null; then
             log_msg "Termux app not running, starting..."
-            am start -n com.termux/.app.TermuxActivity
+            am start -n "$TERMUX_APP/.app.TermuxActivity"
             sleep 40
         fi
 
