@@ -62,6 +62,7 @@ advancements/
 *.db
 
 # But not these
+!.termux/termux.properties
 !/**/BentoBox/addons/*.jar
 !/libraries
 !Dialogs/
