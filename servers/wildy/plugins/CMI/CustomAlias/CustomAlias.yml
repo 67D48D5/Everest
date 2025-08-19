@@ -27,6 +27,7 @@ CustomAlias:
     - gamerule wwild_the_end spectatorsGenerateChunks false
     - papi ecloud download server
     - papi reload
+    Perm: true
     Tab: false
   넴주:
     Cmds:

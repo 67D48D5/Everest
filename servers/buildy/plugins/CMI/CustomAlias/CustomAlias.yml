@@ -23,6 +23,7 @@ CustomAlias:
     - gamerule world spectatorsGenerateChunks false
     - papi ecloud download server
     - papi reload
+    Perm: true
     Tab: false
   claim:
     Cmds:
