@@ -11,29 +11,43 @@
 command-block-overrides: []
 ignore-vanilla-permissions: false
 aliases:
+  pl:
+  - []
+  plugins:
+  - []
   bukkit:pl:
   - []
   bukkit:plugins:
-  - []
-  bukkit:?:
-  - []
-  bukkit:help:
-  - []
-  bukkit:about:
-  - []
-  bukkit:ver:
-  - []
-  bukkit:version:
-  - []
-  icanhasbukkit:
   - []
   '?':
   - []
   help:
   - []
+  bukkit:?:
+  - []
+  bukkit:help:
+  - []
   about:
+  - []
+  bukkit:about:
   - []
   ver:
   - []
   version:
+  - []
+  bukkit:ver:
+  - []
+  bukkit:version:
+  - []
+  reload:
+  - []
+  rl:
+  - []
+  bukkit:reload:
+  - []
+  bukkit:rl:
+  - []
+  bukkit:timings:
+  - []
+  icanhasbukkit:
   - []
