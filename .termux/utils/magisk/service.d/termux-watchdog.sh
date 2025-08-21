@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
-# Wait for 48 seconds to ensure all services are up
-sleep 48
+# Wait for 24 seconds to ensure all services are up
+sleep 24
 
 # First time start
 am start -n com.termux/.HomeActivity
