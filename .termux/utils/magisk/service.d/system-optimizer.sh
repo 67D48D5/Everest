@@ -21,8 +21,5 @@ done
 # Set swappiness to somewhat higher value in order to prevent `OOM Killer` from killing the processes
 echo 80 >/proc/sys/vm/swappiness 2>/dev/null
 
-# Make sure the CPU cores are online
-echo 0-7 >/dev/cpuset/moderate/cpus
-
 # Set the CPU governor for the moderate cpuset
 echo performance >/sys/devices/system/cpu/cpufreq/policy0/scaling_governor
