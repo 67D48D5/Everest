@@ -1702,16 +1702,16 @@ command:
       info: Teleport to home location
       args: (homeName) (playerName) (whoTeleport)
     info:
-      list: '&aHome &8» &fHomes: &6'
-      listNonePrivate: '&f'
-      listPrivate: '&2'
-      click: '&bHome &8» &fClick to teleport to &6[home]'
+      list: '&aHome &8» &fHomes: &6&o'
+      listNonePrivate: '&6'
+      listPrivate: '&3'
+      click: '&fClick to teleport'
       teleported: '&aHome &8» &fTeleported to home: &6[home]'
       noHomes: '&cHome &8» &fThere is no saved homes'
       private: '&cHome &8» &fThis home location is private&o!'
-      remove: '&cShift & Right click to remove home'
+      remove: '&8Shift & Right click to remove home'
       missingBed: '&cHome &8» &fMissing bed for your home location'
-      notAccessible: '&cHome &8» &fHome location world &7[worldName] &fdoesn''t exist&o!'
+      notAccessible: '&cHome &8» &fHome location world &6[worldName] &fdoesn''t exist&o!'
       guiTitle: '&0[playerDisplayName]&8''s homes ([current]/[max])'
   homes:
     help:
@@ -1733,7 +1733,7 @@ command:
         &7[world]
         &f[x]&7:&f[y]&7:&f[z]
       picker: '&7Click to change icon'
-      edit: '&7Click Q to edit'
+      edit: '&7Click &oQ &7to edit'
   hunger:
     help:
       info: Set players hunger
@@ -2201,19 +2201,19 @@ command:
       noExp: '&cKit &8» &cNot &fenough exp. Cost: &c[cost] &fyou have &e[balance]'
       noCondition: '&cKit &8» &fYou don''t have special condition permission to use
         this kit: &c[condition]'
-      oneTime: '&cKit &8» &fThis is a one time use kit and you have already used it&o!'
-      cantUseNow: '&cKit &8» &fYou can''t use this kit for the next &c[time]'
+      oneTime: '&cThis is a one time use kit and you have already used it&o!'
+      cantUseNow: '&cYou can''t use this kit for the next &c[time]'
       limitedTimeUseError: '&fCan''t use more than &c[times] &ftimes'
       limitedTimeUse: '&fCan use for &c[times] &ftimes'
-      limitedTimeAllUsed: '&cKit &8» &fYou can''t get another one'
-      canUseIn: '&fCan use again in: [time]'
-      cooldown: '&fCooldown: [time]'
+      limitedTimeAllUsed: '&cYou can''t get another one'
+      canUseIn: '&fCan use again in: &b&o[time]'
+      cooldown: '&eCooldown: &6[time]'
       noKit: '&cKit &8» &fCan''t find kit by this name'
       kitDoesntExist: '&cKit &8» &fCan''t find kit: &c&o[kitName]'
-      noKitAccess: '&fYou don''t have access to this kit'
+      noKitAccess: '&cKit &8» &fYou don''t have access to this kit'
       noFoundKit: '&cKit &8» &fCan''t find any kits'
       givenKit: '&aKit &8» &fYou have given &a[kit] &fto &6[prefix][playerDisplayName]'
-      title: '&8Kits'
+      title: '&0Kits'
       # [kitName] or [kitDisplayName] can be used
       kitGuiTitle: '&8[kitDisplayName]'
       # List of custom kit GUI titles based by page
