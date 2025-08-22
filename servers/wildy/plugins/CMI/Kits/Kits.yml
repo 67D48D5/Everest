@@ -1,6 +1,7 @@
 Newbie:
   CommandName: Newbie
-  Delay: 43200
+  Delay: 3600
+  MaxUsages: 3
   Group: default
   Items:
     '28': !!binary |-

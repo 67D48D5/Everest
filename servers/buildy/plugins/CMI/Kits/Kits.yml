@@ -1,8 +1,5 @@
 Newbie:
   CommandName: Newbie
-  Delay: 43200
-  MoneyCost: 100.0
-  ExpCost: 30
   Group: default
   Items:
     '28': !!binary |-
