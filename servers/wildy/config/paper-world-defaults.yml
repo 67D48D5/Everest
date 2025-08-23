@@ -121,6 +121,7 @@ entities:
     player-insomnia-start-ticks: 72000
     should-remove-dragon: false
     spawner-nerfed-mobs-should-jump: false
+    stuck-entity-poi-retry-delay: 200
     zombie-villager-infection-chance: default
     zombies-target-turtle-eggs: true
   markers:
