@@ -629,7 +629,7 @@ EntityTypes:
     Limit: -1
   VILLAGER:
     Use: true
-    Limit: 16
+    Limit: -1
   VINDICATOR:
     Use: true
     Limit: -1
