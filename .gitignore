@@ -43,7 +43,7 @@ ops.json
 **backup**
 
 /**/litebans/server.json
-/**/CMI/moneyLog/*.yml
+/**/CMI/**Log**/*.yml
 
 stats/
 datapacks/
