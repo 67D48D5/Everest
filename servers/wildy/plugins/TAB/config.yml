@@ -56,7 +56,8 @@ scoreboard:
         - "&7Rank &8| &f%cmi_user_rank_displayname%"
         - "&7Playtime &8| &e%cmi_user_playtime_hourst%"
         - "&8&m                 "
-        - "&7Money &8| &e&o%cmi_user_balance%"
+        - "&7Money &8| &e%cmi_user_balance_formated%"
+        - "&7Block &8| &e%griefprevention_remainingclaims%"
         - "&7mcMMO &8| &e%mcmmo_power_level%"
         - "&8&m                 "
 

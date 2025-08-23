@@ -56,3 +56,17 @@ expansions:
       medium: "&e"
       high: "&c"
       low: "&a"
+  griefprevention:
+    formatting:
+      thousands: k
+      trillions: T
+      quadrillions: Q
+      billions: B
+      millions: M
+    translate:
+      not-owner: You don't own this claim!
+      unclaimed: Unclaimed
+    color:
+      trusted: '&a'
+      enemy: '&4'
+      neutral: '&7'
