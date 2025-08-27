@@ -8,8 +8,8 @@ GriefPrevention:
   Claims:
     Mode:
       wwild: Survival
-      wwild_nether: Survival
-      wwild_the_end: Survival
+      wwild_nether: Disabled
+      wwild_the_end: Disabled
     PreventGlobalMonsterEggs: true
     PreventTheft: true
     ProtectCreatures: true
