@@ -1,8 +1,8 @@
 CocoPops:
     Item_Information:
-        Item_Name: "&eCocoPops"
+        Item_Name: "&cCocoPops"
         Item_Type: 351~3
-        Item_Lore: "&eA cluster bomb that releases|&e10 bomblets upon detonation."
+        Item_Lore: "&fA cluster bomb that releases|&710 bomblets upon detonation."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
     Shooting:
@@ -36,9 +36,9 @@ CocoPops:
 
 Trinket:
     Item_Information:
-        Item_Name: "&eTrinket"
+        Item_Name: "&cTrinket"
         Item_Type: 264
-        Item_Lore: "&eLeft-click to set the owner.|&eExplodes when:|&e- picked up|&e- shot out of a dispenser|&e- a chest containing this item is opened|&e- placed in an item frame, and nearby|&e ...pressure plates are stepped on.|&e&oOwners cannot trigger their own traps."
+        Item_Lore: "&fLeft-click to set the owner.|&7Explodes when:|&7- picked up|&7- shot out of a dispenser|&7- a chest containing this item is opened|&7- placed in an item frame, and nearby|&7 ...pressure plates are stepped on.|&7&oOwners cannot trigger their own traps."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Explosive_Devices:
         Enable: true
@@ -60,9 +60,9 @@ Trinket:
 
 Putty:
     Item_Information:
-        Item_Name: "&ePutty"
+        Item_Name: "&cPutty"
         Item_Type: 404
-        Item_Lore: "&eRemote explosives.|&eRight click to throw.|&eLeft click to detonate."
+        Item_Lore: "&fRemote explosives.|&7Right click to throw.|&7Left click to detonate."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Shooting:
         Cancel_Left_Click_Block_Damage: true
@@ -83,9 +83,9 @@ Putty:
 
 C4:
     Item_Information:
-        Item_Name: "&eC4"
+        Item_Name: "&cC4"
         Item_Type: 69
-        Item_Lore: "&eRemote explosives.|&eRight click to place.|&eLeft click to detonate."
+        Item_Lore: "&fRemote explosives.|&7Right click to place.|&7Left click to detonate."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Shooting:
         Cancel_Left_Click_Block_Damage: true
@@ -114,9 +114,9 @@ C4:
 
 Airstrike:
     Item_Information:
-        Item_Name: "&eHarrier Strike"
+        Item_Name: "&cHarrier Strike"
         Item_Type: 76
-        Item_Lore: "&eCalls in an airstrike at the|&eposition of the thrown flare."
+        Item_Lore: "&fCalls in an airstrike at the|&7position of the thrown flare."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
     Shooting:
@@ -153,9 +153,9 @@ Airstrike:
 
 Grenade:
     Item_Information:
-        Item_Name: "&eFrag Grenade"
+        Item_Name: "&cFrag Grenade"
         Item_Type: 402
-        Item_Lore: "&eExplodes three seconds after launch."
+        Item_Lore: "&fExplodes three seconds after launch."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
     Shooting:
@@ -177,9 +177,9 @@ Grenade:
 
 Flashbang:
     Item_Information:
-        Item_Name: "&eFlashbang"
+        Item_Name: "&cFlashbang"
         Item_Type: 351~8
-        Item_Lore: "&eDisorientates the target upon detonation."
+        Item_Lore: "&fDisorientates the target upon detonation."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
     Shooting:
@@ -205,9 +205,9 @@ Flashbang:
 
 Toaster:
     Item_Information:
-        Item_Name: "&eToaster"
+        Item_Name: "&cToaster"
         Item_Type: 343
-        Item_Lore: "&eAnti-personnel mine.|&eTriggers a fiery explosion when:|&e- walked into by mobs or players|&e- struck with fists or items|&e- shot by projectiles"
+        Item_Lore: "&fAnti-personnel mine.|&7Triggers a fiery explosion when:|&7- walked into by mobs or players|&7- struck with fists or items|&7- shot by projectiles"
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
     Shooting:

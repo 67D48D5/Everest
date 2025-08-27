@@ -35,9 +35,9 @@ M320:
 
 Tactical_Knife:
     Item_Information:
-        Item_Name: "&eTactical Knife"
+        Item_Name: "&cTactical Knife"
         Item_Type: 288
-        Item_Lore: "&eA melee attachment.|&eNot intended for standalone use."
+        Item_Lore: "&fA melee attachment.|&7Not intended for standalone use."
         Melee_Mode: true
         Sounds_Acquired: SHOOT_ARROW-1-0-0
         Hidden_From_List: true
