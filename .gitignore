@@ -44,6 +44,7 @@ ops.json
 
 /**/litebans/server.json
 /**/CMI/**Log**/*.yml
+/**/MobFarmManager/Logs
 
 stats/
 datapacks/
