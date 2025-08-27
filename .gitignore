@@ -43,8 +43,8 @@ ops.json
 **backup**
 
 /**/litebans/server.json
-/**/CMI/**Log**/*.yml
-/**/MobFarmManager/Logs
+/**/MobFarmManager/**Log**/
+/**/CMI/**Log**/
 
 stats/
 datapacks/
