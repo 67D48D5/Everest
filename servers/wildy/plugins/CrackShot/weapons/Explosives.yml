@@ -1,8 +1,8 @@
 CocoPops:
     Item_Information:
         Item_Name: "&cCocoPops"
-        Item_Type: 351~3
-        Item_Lore: "&fA cluster bomb that releases|&710 bomblets upon detonation."
+        Item_Type: cocoa_beans
+        Item_Lore: "&fA cluster bomb that releases &c10 &fbomblets upon detonation."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
     Shooting:
@@ -10,13 +10,13 @@ CocoPops:
         Cancel_Right_Click_Interactions: true
         Projectile_Amount: 1
         Projectile_Type: grenade
-        Projectile_Subtype: 351~3
+        Projectile_Subtype: cocoa_beans
         Projectile_Speed: 12
         Sounds_Projectile: EAT-2-1-28,EAT-2-1-32,EAT-2-1-36
         Sounds_Shoot: FIRE_IGNITE-2-0-0
     Cluster_Bombs:
         Enable: true
-        Bomblet_Type: 362
+        Bomblet_Type: melon_seeds
         Delay_Before_Split: 40
         Number_Of_Splits: 1
         Number_Of_Bomblets: 10
@@ -37,7 +37,7 @@ CocoPops:
 Trinket:
     Item_Information:
         Item_Name: "&cTrinket"
-        Item_Type: 264
+        Item_Type: diamond
         Item_Lore: "&fLeft-click to set the owner.|&7Explodes when:|&7- picked up|&7- shot out of a dispenser|&7- a chest containing this item is opened|&7- placed in an item frame, and nearby|&7 ...pressure plates are stepped on.|&7&oOwners cannot trigger their own traps."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Explosive_Devices:
@@ -61,7 +61,7 @@ Trinket:
 Putty:
     Item_Information:
         Item_Name: "&cPutty"
-        Item_Type: 404
+        Item_Type: tripwire_hook
         Item_Lore: "&fRemote explosives.|&7Right click to throw.|&7Left click to detonate."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Shooting:
@@ -84,15 +84,15 @@ Putty:
 C4:
     Item_Information:
         Item_Name: "&cC4"
-        Item_Type: 69
-        Item_Lore: "&fRemote explosives.|&7Right click to place.|&7Left click to detonate."
+        Item_Type: stone_button
+        Item_Lore: "&fRemote explosives.|&bRight &fclick to place.|&cLeft &fclick to detonate."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Shooting:
         Cancel_Left_Click_Block_Damage: true
-#    Ammo:
-#        Enable: true
-#        Ammo_Item_ID: 46
-#        Take_Ammo_Per_Shot: true
+    #    Ammo:
+    #        Enable: true
+    #        Ammo_Item_ID: tnt
+    #        Take_Ammo_Per_Shot: true
     Explosive_Devices:
         Enable: true
         Device_Type: remote
@@ -115,8 +115,8 @@ C4:
 Airstrike:
     Item_Information:
         Item_Name: "&cHarrier Strike"
-        Item_Type: 76
-        Item_Lore: "&fCalls in an airstrike at the|&7position of the thrown flare."
+        Item_Type: fermented_spider_eye
+        Item_Lore: "&fCalls in an airstrike at the position of the thrown flare."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
     Shooting:
@@ -124,7 +124,7 @@ Airstrike:
         Cancel_Right_Click_Interactions: true
         Projectile_Amount: 1
         Projectile_Type: flare
-        Projectile_Subtype: 76
+        Projectile_Subtype: fermented_spider_eye
         Projectile_Speed: 10
         Sounds_Shoot: FIRE_IGNITE-2-0-0,FIZZ-2-0-0
     Airstrikes:
@@ -132,7 +132,7 @@ Airstrike:
         Flare_Activation_Delay: 60
         Particle_Call_Airstrike: lightning
         Message_Call_Airstrike: "&eFriendly airstrike on the way."
-        Block_Type: 85
+        Block_Type: oak_fence
         Area: 4
         Distance_Between_Bombs: 4
         Height_Dropped: 90
@@ -154,7 +154,7 @@ Airstrike:
 Grenade:
     Item_Information:
         Item_Name: "&cFrag Grenade"
-        Item_Type: 402
+        Item_Type: firework_star
         Item_Lore: "&fExplodes three seconds after launch."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
@@ -164,7 +164,7 @@ Grenade:
         Delay_Between_Shots: 10
         Projectile_Amount: 1
         Projectile_Type: grenade
-        Projectile_Subtype: 46
+        Projectile_Subtype: tnt
         Projectile_Speed: 10
         Sounds_Shoot: SHOOT_ARROW-2-0-0
     Explosions:
@@ -178,7 +178,7 @@ Grenade:
 Flashbang:
     Item_Information:
         Item_Name: "&cFlashbang"
-        Item_Type: 351~8
+        Item_Type: cyan_dye
         Item_Lore: "&fDisorientates the target upon detonation."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
@@ -188,7 +188,7 @@ Flashbang:
         Delay_Between_Shots: 10
         Projectile_Amount: 1
         Projectile_Type: grenade
-        Projectile_Subtype: 351~8
+        Projectile_Subtype: cyan_dye
         Projectile_Speed: 10
         Sounds_Shoot: SHOOT_ARROW-2-0-0
     Explosions:
@@ -206,7 +206,7 @@ Flashbang:
 Toaster:
     Item_Information:
         Item_Name: "&cToaster"
-        Item_Type: 343
+        Item_Type: furnace_minecart
         Item_Lore: "&fAnti-personnel mine.|&7Triggers a fiery explosion when:|&7- walked into by mobs or players|&7- struck with fists or items|&7- shot by projectiles"
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
@@ -216,7 +216,7 @@ Toaster:
     Explosive_Devices:
         Enable: true
         Device_Type: landmine
-        Device_Info: 46,MINECART
+        Device_Info: TNT,MINECART
         Sounds_Deploy: ORB_PICKUP-2-2-0
         Message_Trigger_Placer: "&e<victim> has triggered your mine!"
         Message_Trigger_Victim: "&eYou have triggered <shooter>'s mine!"

@@ -1,8 +1,8 @@
 Gauss:
     Item_Information:
         Item_Name: "&cGauss Shotgun"
-        Item_Type: 417
-        Item_Lore: "&fAdvanced pump-action shotgun.|&7Fires metal slugs that penetrate|&7all targets within 40 blocks.|&7Deals 200% damage to Zombies."
+        Item_Type: carrot_on_a_stick
+        Item_Lore: "&fAdvanced pump-action shotgun.|&fFires metal slugs that penetrate|&fall targets within 40 blocks.|&fDeals 200% damage to Zombies."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Shooting:
         Cancel_Left_Click_Block_Damage: true
@@ -37,8 +37,8 @@ Gauss:
 Carbine:
     Item_Information:
         Item_Name: "&cCarbine"
-        Item_Type: 417
-        Item_Lore: "&fDeals crits with a 10% chance.|&7Switch to the grenade launcher|&7with right click. Fired grenades|&7arm themselves in 0.25 seconds."
+        Item_Type: carrot_on_a_stick
+        Item_Lore: "&fDeals crits with a 10% chance.|&fSwitch to the grenade launcher|&fwith right click. Fired grenades|&farm themselves in 0.25 seconds."
         Attachments:
             Type: main
             Info: "M320"
@@ -87,8 +87,8 @@ Carbine:
 Deagle:
     Item_Information:
         Item_Name: "&cDesert Eagle"
-        Item_Type: 417
-        Item_Lore: "&fDual pistols.|&7Left/right click to shoot.|&7Shoot enemies in the back|&7for bonus backstab damage."
+        Item_Type: carrot_on_a_stick
+        Item_Lore: "&fDual pistols.|&fLeft/right click to shoot.|&fShoot enemies in the back|&ffor bonus backstab damage."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Shooting:
         Dual_Wield: true
@@ -132,8 +132,8 @@ Deagle:
 Bazooka:
     Item_Information:
         Item_Name: "&cBazooka"
-        Item_Type: 417
-        Item_Lore: "&fRocket launcher.|&7Fire down at your|&7feet to rocket-jump.|&7Negates fall damage."
+        Item_Type: carrot_on_a_stick
+        Item_Lore: "&fRocket launcher.|&fFire down at your|&ffeet to rocket-jump.|&fNegates fall damage."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Inventory_Control: Group_Bazookas
     Shooting:
@@ -159,7 +159,7 @@ Bazooka:
         Particle_Player_Shoot: BLOCK_BREAK-35
     Shrapnel:
         Enable: true
-        Block_Type: 77
+        Block_Type: stone_button
         Amount: 14
         Speed: 7
     Explosions:
@@ -173,8 +173,8 @@ Bazooka:
 Python:
     Item_Information:
         Item_Name: "&cPython &l/&e Knife"
-        Item_Type: 417
-        Item_Lore: "&fRevolver with high power.|&7Left click to melee enemies|&7with the tactical knife."
+        Item_Type: carrot_on_a_stick
+        Item_Lore: "&fRevolver with high power.|&fLeft click to melee enemies|&fwith the tactical knife."
         Melee_Attachment: Tactical_Knife
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Shooting:
@@ -208,8 +208,8 @@ Python:
 Riotshield:
     Item_Information:
         Item_Name: "&cRiot Shield"
-        Item_Type: 267
-        Item_Lore: "&fBlocks all melee and ranged attacks.|&7Ineffective against attacks from behind."
+        Item_Type: shield
+        Item_Lore: "&fBlocks all melee and ranged attacks. Ineffective against attacks from behind."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
     Riot_Shield:
@@ -221,8 +221,8 @@ Riotshield:
 Olympia:
     Item_Information:
         Item_Name: "&cOlympia"
-        Item_Type: 417
-        Item_Lore: "&fDouble-barreled shotgun.|&7Deadly at close range.|&7Ineffective at longer ranges.|&7Fires incendiary ammo."
+        Item_Type: carrot_on_a_stick
+        Item_Lore: "&fDouble-barreled shotgun.|&fDeadly at close range.|&fIneffective at longer ranges.|&fFires incendiary ammo."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Shooting:
         Cancel_Left_Click_Block_Damage: true
@@ -275,8 +275,8 @@ Olympia:
 Hunting:
     Item_Information:
         Item_Name: "&cHunting Rifle"
-        Item_Type: 417
-        Item_Lore: "&fBolt-action rifle with high accuracy.|&7Equipped with a night vision scope.|&7Deals double damage on headshots."
+        Item_Type: carrot_on_a_stick
+        Item_Lore: "&fBolt-action rifle with high accuracy.|&fEquipped with a night vision scope.|&fDeals double damage on headshots."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Shooting:
         Cancel_Left_Click_Block_Damage: true
@@ -329,13 +329,9 @@ Hunting:
 Type95:
     Item_Information:
         Item_Name: "&cType 95"
-        Item_Type: 417
-        Item_Lore: "&fSemi-automatic with three round burst fire.|&7Ghast Tears are required for reloads."
+        Item_Type: carrot_on_a_stick
+        Item_Lore: "&fSemi-automatic with three round burst fire.|&fGhast Tears are required for reloads."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
-    SignShops:
-        Enable: true
-        Price: 266-10
-        Sign_Gun_ID: 95
     Shooting:
         Cancel_Left_Click_Block_Damage: true
         Cancel_Right_Click_Interactions: true
@@ -357,7 +353,7 @@ Type95:
         Delay_Between_Shots_In_Burst: 1
     Ammo:
         Enable: true
-        Ammo_Item_ID: 370
+        Ammo_Item_ID: iron_nugget
         Sounds_Out_Of_Ammo: NOTE_PLING-1-2-0
         Sounds_Shoot_With_No_Ammo: NOTE_STICKS-1-2-0
     Reload:
@@ -384,8 +380,8 @@ Type95:
 AK-47:
     Item_Information:
         Item_Name: "&cAK-47"
-        Item_Type: 417
-        Item_Lore: "&fFully automatic with high power.|&7Effective at medium range.|&7Controls are inverted."
+        Item_Type: carrot_on_a_stick
+        Item_Lore: "&fFully automatic with high power.|&fEffective at medium range.|&fControls are inverted."
         Sounds_Acquired: BAT_TAKEOFF-1-1-0
     Shooting:
         Right_Click_To_Shoot: true

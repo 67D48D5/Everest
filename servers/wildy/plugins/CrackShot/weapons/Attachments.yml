@@ -36,7 +36,7 @@ M320:
 Tactical_Knife:
     Item_Information:
         Item_Name: "&cTactical Knife"
-        Item_Type: 288
+        Item_Type: feather
         Item_Lore: "&fA melee attachment.|&7Not intended for standalone use."
         Melee_Mode: true
         Sounds_Acquired: SHOOT_ARROW-1-0-0
