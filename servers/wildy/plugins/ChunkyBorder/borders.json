@@ -14,7 +14,7 @@
     "centerZ": 0.0,
     "radiusX": 4096.0,
     "radiusZ": 4096.0,
-    "shape": "pentagon",
+    "shape": "hexagon",
     "wrap": "none"
   },
   "wwild": {
