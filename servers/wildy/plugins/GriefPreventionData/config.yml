@@ -8,8 +8,8 @@ GriefPrevention:
   Claims:
     Mode:
       wwild: Survival
-      wwild_nether: Disabled
-      wwild_the_end: Disabled
+      wwild_nether: Survival
+      wwild_the_end: Survival
     PreventGlobalMonsterEggs: true
     PreventTheft: true
     ProtectCreatures: true
@@ -24,10 +24,10 @@ GriefPrevention:
     ProtectLlamas: true
     InitialBlocks: 128
     Claim Blocks Accrued Per Hour:
-      Default: 16
+      Default: 64
     Max Accrued Claim Blocks:
-      Default: 32768
-    Accrued Idle Threshold: 16
+      Default: 49152
+    Accrued Idle Threshold: 64
     AccruedIdlePercent: 4
     AbandonReturnRatio: 0.8
     AutomaticNewPlayerClaimsRadius: 8
@@ -43,8 +43,8 @@ GriefPrevention:
       UnusedClaimDays: 8
       AllClaims:
         DaysInactive: 128
-        ExceptWhenOwnerHasTotalClaimBlocks: 8192
-        ExceptWhenOwnerHasBonusClaimBlocks: 4096
+        ExceptWhenOwnerHasTotalClaimBlocks: 4096
+        ExceptWhenOwnerHasBonusClaimBlocks: 2048
       AutomaticNatureRestoration:
         SurvivalWorlds: true
     AllowTrappedInAdminClaims: true
@@ -61,7 +61,7 @@ GriefPrevention:
   Spam:
     Enabled: true
     LoginCooldownSeconds: 4
-    LoginLogoutNotificationsPerMinute: 5
+    LoginLogoutNotificationsPerMinute: 3
     ChatSlashCommands: /me;/global;/local
     WhisperSlashCommands: /tell;/pm;/r;/whisper;/msg
     WarningMessage: §cChat §8» §fIf you continue to send spam messages in chat, you
