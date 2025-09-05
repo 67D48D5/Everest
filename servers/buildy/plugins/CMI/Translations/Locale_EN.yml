@@ -963,15 +963,15 @@ command:
       info: Suspends players actions
       args: '[playername] (true/false) (-s)'
     info:
-      noChat: '&cAll your actions are suspended. You can''t chat.'
-      noCommand: '&cYou cant use commands while suspended. &eAllowed: &6/msg, /r,
-        /tell'
-      cuffed: '&6[playerDisplayName] &fcuffed'
-      unCuffed: '&6[playerDisplayName] &funcuffed'
-      free: '&eYou are free now'
-      gotCuffed: '&eYou have been cuffed'
-      cuffedInfo: '&eYou are cuffed'
-      cantCuff: '&cYou can''t cuff this player&o!'
+      noChat: '&cCuff &8» &fAll your actions are suspended. You can''t chat.'
+      noCommand: '&cCuff &8» &fYou cant use commands while suspended. &7Allowed: &7&o/msg,
+        /r, /tell'
+      cuffed: '&aCuff &8» &6[playerDisplayName] &fcuffed'
+      unCuffed: '&aCuff &8» &6[playerDisplayName] &funcuffed'
+      free: '&aYou are free now'
+      gotCuffed: '&cYou have been cuffed'
+      cuffedInfo: '&cYou are cuffed'
+      cantCuff: '&cCuff &8» &cYou can''t cuff this player&o!'
   customrecipe:
     help:
       info: Manages item custom recipes
@@ -997,15 +997,15 @@ command:
       info: Returns to death location
       args: (playerName) (-s)
     info:
-      noinfo: '&cdBack &8» &fThere is no saved location to return to&o!'
-      feedback: '&adBack &8» &fReturned to last saved location &7[x]&f, &7[y]&f, &7[z]
+      noinfo: '&cDBack &8» &fThere is no saved location to return to&o!'
+      feedback: '&aDBack &8» &fReturned to last saved location &7[x]&f, &7[y]&f, &7[z]
         &8@[world]&o!'
   dialogs:
     help:
       info: Shows specified dialog
       args: '[dialogName] (playerName) (-s)'
     info:
-      notFound: '&cDialog by this name was not found'
+      notFound: '&cDialogs &8» &fDialog by this name was not found'
   disableenchant:
     help:
       info: Disable enchantment
@@ -1700,16 +1700,16 @@ command:
       info: Teleport to home location
       args: (homeName) (playerName) (whoTeleport)
     info:
-      list: '&aHome &8» &fHomes: &6'
-      listNonePrivate: '&f'
-      listPrivate: '&2'
-      click: '&bHome &8» &fClick to teleport to &6[home]'
+      list: '&aHome &8» &fHomes: &6&o'
+      listNonePrivate: '&6'
+      listPrivate: '&3'
+      click: '&fClick to teleport'
       teleported: '&aHome &8» &fTeleported to home: &6[home]'
       noHomes: '&cHome &8» &fThere is no saved homes'
       private: '&cHome &8» &fThis home location is private&o!'
-      remove: '&cShift & Right click to remove home'
+      remove: '&8Shift & Right click to remove home'
       missingBed: '&cHome &8» &fMissing bed for your home location'
-      notAccessible: '&cHome &8» &fHome location world &7[worldName] &fdoesn''t exist&o!'
+      notAccessible: '&cHome &8» &fHome location world &6[worldName] &fdoesn''t exist&o!'
       guiTitle: '&0[playerDisplayName]&8''s homes ([current]/[max])'
   homes:
     help:
@@ -1731,7 +1731,7 @@ command:
         &7[world]
         &f[x]&7:&f[y]&7:&f[z]
       picker: '&7Click to change icon'
-      edit: '&7Click Q to edit'
+      edit: '&7Click &oQ &7to edit'
   hunger:
     help:
       info: Set players hunger
@@ -2090,17 +2090,17 @@ command:
       info: Jail player for time period
       args: '[playerName] (time) (jailName) (cellId) (-s) (r:jail_reason)'
     info:
-      jailed: '&eYou put &6[playerDisplayName] &finto jail for the next [time]'
+      jailed: '&eYou put &6[prefix][playerDisplayName] &finto jail for the next [time]'
       jailedPlayer: '&6[playerDisplayName] &fjailed for the next [time]'
       reason: ' &ffor: &c[reason]'
       leftTime: '!title!&7Jail time:!subtitle![time]'
-      jailedTarget: '&eYou have been jailed! [time]'
+      jailedTarget: '&cJail &8» &fYou have been jailed! &c[time]'
       jailedTimeChange: '&eJail time changed to [time]'
       cantTalk: '&cYou cant talk while you are jailed'
       cantTalkRange: '!actionbar!&fYour chat range is limited to &c[range] &fblocks'
       failed: '&cFailed to jail player. Check target jail name, cell id or time format'
       bossbar: '&7Jail time: [autoTimeLeft]'
-      noCommand: '&cYou can''t use this command while jailed&o!'
+      noCommand: '&cJail &8» &fYou can''t use this command while jailed&o!'
   jailedit:
     help:
       info: Edit jails
@@ -2130,17 +2130,18 @@ command:
       info: List jails
       args: (jailName) (cellId)
     info:
-      jailList: '&6&o[place] &8» &e[jailName] &7Cells:&e[cellCount] &7Jailed:&6[count]'
+      jailList: '&6&o[place] &8» &c[jailName] &7Cells:&e[cellCount] &7Jailed:&6[count]'
       cellList: '&6&o[place] &8» &7Id:&e[cellId] &7Jailed:&6[count]'
       jailedBy: '&6Jailed by: &6[playerDisplayName]'
-      cellJailedList: '&6&o[place] &8» &6[playerDisplayName] &7release in &e[time]'
-      Release: '&7Click to release'
+      cellJailedList: '&6&o[place] &8» &6[prefix][playerDisplayName] &frelease in
+        &c[time]'
+      Release: '&fClick to release'
   jump:
     help:
       info: Jump to target block
       args: ''
     info:
-      tooFar: '&cNo block in sight or it''s too far (max [max] blocks)'
+      tooFar: '&cJump &8» &fNo block in sight or it''s too far (max &c[max] &fblocks)'
   kick:
     help:
       info: Kick player with custom message
@@ -2148,30 +2149,30 @@ command:
       explanation:
       - cmi.command.kick.bypass - prevents from being kicked out
     info:
-      defaultMessage: '&eKicked from server'
-      cantKick: '&eCan''t kick this player'
-      messageToAll: '&6[playerDisplayName] &fgot kicked from server.'
-      kickReason: ' &eReason: &6[reason]'
-      all: '&eKicked &6[amount] &eplayers from server'
+      defaultMessage: '&cKicked from server'
+      cantKick: '&cKick &8» &fCan''t kick this player'
+      messageToAll: '&cKick &8» &6[prefix][playerDisplayName] &fgot kicked from server.'
+      kickReason: '&cReason &8» &f&o[reason]'
+      all: '&aKick &8» &fKicked &a[amount] &fplayers from server'
   kill:
     help:
       info: Kill player
       args: '[playerName] (-forced) (damageCause) (-s) (-lightning)'
     info:
-      cantKill: '&6Can''t kill, protected by another plugin, game/god mode. Use -forced
-        variable'
-      lackOfAccess: '&6Can''t use force kill without permission.'
-      killed: '&6Killed [playerDisplayName]'
+      cantKill: '&cKill &8» &fCan''t kill, protected by another plugin, game/god mode.
+        Use -forced variable'
+      lackOfAccess: '&cKill &8» &fCan''t use force kill without permission.'
+      killed: '&aKill &8» &fKilled &6[prefix][playerDisplayName]'
   killall:
     help:
       info: Kill mobs around you
       args: (-monsters/-pets/-npc/-animals/-ambient/-named/-f/-lightning/-list/-m:[mobType])
         (-r:range) (-s) (-w:[worldName])
     info:
-      infoList: '&2[category]&e: &7[amount] &e([list]&e)'
-      removedList: '&6[type]&e: &7[amount]'
-      total: '&eRemoved a total of: &7[amount] &e([list]&e)'
-      noRemove: '&eNothing to remove'
+      infoList: '&6[category] &8» &e[amount] &8» &7&o[list]'
+      removedList: '&6[type] &8» &e[amount]'
+      total: '&aKillAll &8» &fRemoved a total of &a[amount] &8» &7&o[list]'
+      noRemove: '&cKillAll &8» &fNothing to remove&f&o!'
       monsters: Monsters
       pets: Pets
       npc: NPCs
@@ -2194,23 +2195,23 @@ command:
       - '&6cmi.kit.bypass.onetimeuse &e- bypass one time use'
       - '&6/cmi kit [kitName] [playerName] &e- will give kit to another player'
     info:
-      noMoney: '&e&cnot &fenough money. Cost: &6[cost] &eyou have &6[balance]'
-      noExp: '&e&cnot &fenough exp. Cost: &6[cost] &eyou have &6[balance]'
-      noCondition: '&eYou don''t have special condition permission to use this kit:
-        &6[condition]'
+      noMoney: '&cKit &8» &cNot &fenough money. Cost: &c[cost] &fyou have &e[balance]'
+      noExp: '&cKit &8» &cNot &fenough exp. Cost: &c[cost] &fyou have &e[balance]'
+      noCondition: '&cKit &8» &fYou don''t have special condition permission to use
+        this kit: &c[condition]'
       oneTime: '&cThis is a one time use kit and you have already used it&o!'
-      cantUseNow: '&cYou can''t use this kit for the next [time]'
-      limitedTimeUseError: '&eCan''t use more than &6[times] &etimes'
-      limitedTimeUse: '&7Can use for &c[times] &7times'
+      cantUseNow: '&cYou can''t use this kit for the next &c[time]'
+      limitedTimeUseError: '&fCan''t use more than &c[times] &ftimes'
+      limitedTimeUse: '&fCan use for &c[times] &ftimes'
       limitedTimeAllUsed: '&cYou can''t get another one'
-      canUseIn: "&eCan use again in: \n[time]"
-      cooldown: "&eCooldown: \n[time]"
-      noKit: '&eCan''t find kit by this name'
-      kitDoesntExist: '&eCan''t find kit ([kitName])'
-      noKitAccess: '&cYou don''t have access to this kit'
-      noFoundKit: '&eCan''t find any kits'
-      givenKit: '&eYou have given &6[kit] &fto &6[playerDisplayName]'
-      title: '&8Kits'
+      canUseIn: '&fCan use again in: &b&o[time]'
+      cooldown: '&eCooldown: &6[time]'
+      noKit: '&cKit &8» &fCan''t find kit by this name'
+      kitDoesntExist: '&cKit &8» &fCan''t find kit: &c&o[kitName]'
+      noKitAccess: '&cKit &8» &fYou don''t have access to this kit'
+      noFoundKit: '&cKit &8» &fCan''t find any kits'
+      givenKit: '&aKit &8» &fYou have given &a[kit] &fto &6[prefix][playerDisplayName]'
+      title: '&0Kits'
       # [kitName] or [kitDisplayName] can be used
       kitGuiTitle: '&8[kitDisplayName]'
       # List of custom kit GUI titles based by page
@@ -2227,7 +2228,7 @@ command:
       eye: ' &e☬'
       use: '&2'
       cantuse: '&7'
-      list: '&6&o[number] &8» &e[kitName] &6- [description]'
+      list: '&6&o[number] &8» &e[kitName] &8» &f&o[description]'
   kitcdreset:
     help:
       info: Reset kit timer
@@ -3854,7 +3855,7 @@ command:
       args: '[playerName] (-s)'
     info:
       feedback: '&4Suicide &8» &fGoodbye cruel world...'
-      message: '&cSuicide &8» &6[playerDisplayName] &ftook their own life'
+      message: '&4Suicide &8» &6[playerDisplayName] &ftook their own life'
       totem: '&cSuicide &8» &fCan''t use while holding totem'
   switchplayerdata:
     help:
@@ -4171,7 +4172,7 @@ command:
       info: Makes item unbreakable
       args: (playerName) (true/false) (-o)
     info:
-      feedback: '&aUnbreakable &8» &fYou made item &e&o[state] &ffor &6[playerDisplayName]
+      feedback: '&aUnbreakable &8» &fYou made item &e[state] &ffor &6[playerDisplayName]
         &7([offon]&7)&f.'
       breakable: '&6breakable'
       unbreakable: '&6unbreakable'
