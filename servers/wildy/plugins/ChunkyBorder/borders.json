@@ -1,13 +1,4 @@
 {
-  "wwild": {
-    "world": "wwild",
-    "centerX": 0.0,
-    "centerZ": 0.0,
-    "radiusX": 12288.0,
-    "radiusZ": 12288.0,
-    "shape": "circle",
-    "wrap": "default"
-  },
   "wwild_nether": {
     "world": "wwild_nether",
     "centerX": 0.0,
@@ -25,5 +16,14 @@
     "radiusZ": 4096.0,
     "shape": "hexagon",
     "wrap": "none"
+  },
+  "wwild": {
+    "world": "wwild",
+    "centerX": 0.0,
+    "centerZ": 0.0,
+    "radiusX": 12288.0,
+    "radiusZ": 12288.0,
+    "shape": "circle",
+    "wrap": "default"
   }
 }
