@@ -1037,6 +1037,16 @@ VALUES (
         'global',
         0,
         '{}'
+    ),
+    (
+        221,
+        'default',
+        'cmi.command.sethome.iconpicker',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
     );
 
 /*!40000 ALTER TABLE `luckperms_group_permissions` ENABLE KEYS */
