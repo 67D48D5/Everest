@@ -185,6 +185,7 @@ info:
   outsideWorldBorder: '&cLocation is outside world border'
   noWorldAccess: '&cNo world access'
   IncorrectColor: '&4Color defined incorrectly&o!'
+  IncorrectFile: '&4File name defined incorrectly!'
   time:
     # Mainly for placeholder playtime output
     # Use + sign at the start of line to force include it even if specific and previous time values are 0
@@ -994,6 +995,15 @@ command:
       exact: '&2Require exact ingredients: [state]'
       exists: '&4Looks like recipe like this already exists'
       mainTitle: '&8Custom recipes (&7[current]&8/&7[total]&8)'
+  database:
+    help:
+      info: '&eManage backup data'
+      args: '[action] (playerName) (dataType) (fileName)'
+    info:
+      backupSuccess: '&6Backup created with name &e[name] &6Tables: [types]'
+      backupFailed: '&6Backup failed'
+      userDataRestored: '&6Restored &7[playerName] &6data. Tables: [types]'
+      userDataFailed: '&cRestoring failed for &7[playerName]'
   dback:
     help:
       info: Returns to death location
@@ -2552,40 +2562,82 @@ command:
       stopped: '&6Mirroring stopped'
       tooFar: '&cYou are too far from mirror center (max &6[blocks] &cblocks). Feature
         is paused&o!'
-      title: Mirror
-      notSet: '&cCenter &cnot &fset'
-      set: '&2Center set'
       noBlocks: '&c&cnot &fenough blocks'
       used: '&7Used: &7[blocks]'
+      title: Mirror
+      location: '&7Location'
+      offset: '&7Offset'
+      offsetPos: '&7X:[x] &fY:[y] &7Z:[z] - &2[id]'
+      sections: '&fSections: &7[sections]'
+      sectionsAdjust: '&7Shift + Mouse click to adjust'
+      blocksToPlace: '&7Blocks to be placed: &f[blocks]&7/&f[total]'
       Action:
-        Name:
-          X: X
-          Y: Y
-          Z: Z
-          XY: XY
-          ZY: ZY
-          XZ: XZ
-          ZX: ZX
-          Rotate90V: Rotate90V
-          Rotate90H: Rotate90H
-          Rotate90HC: Rotate90HC
-          Rotate180H: Rotate180H
-          Pause: Pause
-          Location: Location
-        Desc:
-          X: '&eMirrors by &6X &eaxis'
-          Y: '&eMirrors by &6Y &eaxis'
-          Z: '&eMirrors by &6Z &eaxis'
-          XY: '&eMirrors by &6X &fto &6Y &eaxis'
-          ZY: '&eMirrors by &6Z &fto &6Y &eaxis'
-          XZ: '&eMirrors by &6X &fto &6Z &eaxis'
-          ZX: '&eMirrors by &6Z &fto &6Y &eaxis'
-          Rotate90V: '&eRotates up'
-          Rotate90H: '&eRotates &690 &edegrees clock wise'
-          Rotate90HC: '&eRotates &690 &edegrees counter clock wise'
-          Rotate180H: '&eRotates &6180 &edegrees'
-          Pause: '&ePauses mirroring'
-          Location: '&eSets mirroring center location'
+        XR:
+          Name: XR
+          Desc: '&eMirrors on &6X &eaxis'
+        YR:
+          Name: YR
+          Desc: '&eMirrors on &6Y &eaxis'
+        ZR:
+          Name: ZR
+          Desc: '&eMirrors on &6Z &eaxis'
+        XS:
+          Name: XS
+          Desc: '&eSpreads on &6X &eaxis'
+        YS:
+          Name: YS
+          Desc: '&eSpreads on &6Y &eaxis'
+        ZS:
+          Name: ZS
+          Desc: '&eSpreads on &6Z &eaxis'
+        XY180:
+          Name: XY180
+          Desc: '&e180 on &6Z &eaxis'
+        YZ180:
+          Name: YZ180
+          Desc: '&e180 on &6X &eaxis'
+        ZX180:
+          Name: ZX180
+          Desc: '&e180 on &6Y &eaxis'
+        XYZ180:
+          Name: XYZ180
+          Desc: '&e180 on &6All &eaxis'
+        X90:
+          Name: X90
+          Desc: '&e90 on &6X &eaxis'
+        Y90:
+          Name: Y90
+          Desc: '&e90 on &6Y &eaxis'
+        Z90:
+          Name: Z90
+          Desc: '&e90 on &6Z &eaxis'
+        X90R:
+          Name: X90R
+          Desc: '&e-90 on &6X &eaxis'
+        Y90R:
+          Name: Y90R
+          Desc: '&e-90 on &6Y &eaxis'
+        Z90R:
+          Name: Z90R
+          Desc: '&e-90 on &6Z &eaxis'
+        XYM:
+          Name: XYM
+          Desc: '&eMirrors by &6X &eto &6Y &eplane'
+        XYMR:
+          Name: XYMR
+          Desc: '&eMirrors by &6X &eto &6Y &eplane reverse'
+        YZM:
+          Name: YZM
+          Desc: '&eMirrors by &6Z &eto &6Y &eplane'
+        YZMR:
+          Name: YZMR
+          Desc: '&eMirrors by &6Y &eto &6Z &eplane reverse'
+        ZXM:
+          Name: ZXM
+          Desc: '&eMirrors by &6X &eto &6Z &eplane'
+        ZXMR:
+          Name: ZXMR
+          Desc: '&eMirrors by &6X &eto &6Z &eplane reverse'
   mobhead:
     help:
       info: Get mob head

@@ -232,6 +232,10 @@ Alias:
   customrecipe:
     Enabled: true
     Tab: true
+  # /cmi database $1-
+  database:
+    Enabled: true
+    Tab: true
   # /cmi dback $1-
   dback:
     Enabled: true
