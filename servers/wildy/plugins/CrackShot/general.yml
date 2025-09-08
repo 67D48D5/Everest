@@ -29,13 +29,13 @@ Disabled_Worlds: []
 Inventory_Control:
     Group_Bazookas:
         Limit: 1
-        Message_Exceeded: "&e[IC] &bYou cannot have more than one Bazooka in the hot bar!"
-        Sounds_Exceeded: LAVA_POP-1-1-0
+        Message_Exceeded: "&cGuns &8» &fYou cannot have more than one Bazooka in the hot bar&o!"
+        Sounds_Exceeded: BLOCK_LAVA_POP-1-1-0
 
 #A merged reload refers to the act of reloading multiple weapons in the same slot.
 #Set "Disable" to true if you wish to prevent players from doing this.
 #Messages and sounds are optional.
 Merged_Reload:
     Disable: false
-    Message_Denied: "&eYou cannot reload slots that contain more than one weapon!"
-    Sounds_Denied: VILLAGER_NO-1-1-0
+    Message_Denied: "&cGuns &8» &fYou cannot reload slots that contain more than one weapon&o!"
+    Sounds_Denied: ENTITY_VILLAGER_NO-1-1-0

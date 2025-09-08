@@ -1,9 +1,9 @@
 Gauss:
     Item_Information:
         Item_Name: "&cGauss Shotgun"
-        Item_Type: carrot_on_a_stick
+        Item_Type: WARPED_FUNGUS_ON_A_STICK
         Item_Lore: "&fAdvanced pump-action shotgun.|&fFires metal slugs that penetrate|&fall targets within 40 blocks.|&fDeals 200% damage to Zombies."
-        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Sounds_Acquired: ENTITY_BAT_TAKEOFF-1-1-0
     Shooting:
         Cancel_Left_Click_Block_Damage: true
         Cancel_Right_Click_Interactions: true
@@ -11,51 +11,51 @@ Gauss:
         Projectile_Type: energy
         Projectile_Subtype: 40-1-NONE-0
         Projectile_Damage: 12
-        Sounds_Shoot: WITHER_SHOOT-1-2-0,EXPLODE-1-2-0
+        Sounds_Shoot: ENTITY_WITHER_SHOOT-1-2-0,ENTITY_GENERIC_EXPLODE-1-2-0
     Reload:
         Enable: true
         Reload_Amount: 8
         Reload_Bullets_Individually: true
         Reload_Duration: 10
-        Sounds_Reloading: IRONGOLEM_THROW-1-2-0
+        Sounds_Reloading: ENTITY_IRON_GOLEM_ATTACK-1-2-0
     Firearm_Action:
         Type: pump
         Open_Duration: 12
         Close_Duration: 3
-        Sound_Open: PISTON_EXTEND-1-2-0
-        Sound_Close: PISTON_EXTEND-1-2-0
+        Sound_Open: BLOCK_PISTON_EXTEND-1-2-0
+        Sound_Close: BLOCK_PISTON_EXTEND-1-2-0
     Abilities:
         Reset_Hit_Cooldown: true
         Super_Effective: ZOMBIE-2
     Particles:
         Enable: true
-        Particle_Player_Shoot: BLOCK_BREAK-57
+        Particle_Player_Shoot: BLOCK_BREAK-IRON_BLOCK
     Hit_Events:
         Enable: true
-        Sounds_Shooter: SHOOT_ARROW-1-2-0
+        Sounds_Shooter: ENTITY_ARROW_SHOOT-1-2-0
 
 Carbine:
     Item_Information:
         Item_Name: "&cCarbine"
-        Item_Type: carrot_on_a_stick
+        Item_Type: WARPED_FUNGUS_ON_A_STICK
         Item_Lore: "&fDeals crits with a 10% chance.|&fSwitch to the grenade launcher|&fwith right click. Fired grenades|&farm themselves in 0.25 seconds."
         Attachments:
             Type: main
             Info: "M320"
             Toggle_Delay: 5
-            Sounds_Toggle: NOTE_STICKS-1-2-0
-        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+            Sounds_Toggle: BLOCK_NOTE_BLOCK_BASS-1-2-0
+        Sounds_Acquired: ENTITY_BAT_TAKEOFF-1-1-0
     Shooting:
         Cancel_Left_Click_Block_Damage: true
         Cancel_Right_Click_Interactions: true
         Delay_Between_Shots: 3
         Recoil_Amount: 1
         Projectile_Amount: 1
-        Projectile_Type: snowball
+        Projectile_Type: SNOWBALL
         Projectile_Speed: 40
         Projectile_Damage: 4
         Bullet_Spread: 0.5
-        Sounds_Shoot: BLAZE_HIT-1-2-0,ZOMBIE_WOOD-1-2-0
+        Sounds_Shoot: ENTITY_BLAZE_HURT-1-2-0,BLOCK_WOOD_PLACE-1-2-0
     Sneak:
         Enable: true
         No_Recoil: true
@@ -64,32 +64,32 @@ Carbine:
         Enable: true
         Reload_Amount: 8
         Reload_Duration: 30
-        Sounds_Reloading: SKELETON_IDLE-1-0-0,FIRE_IGNITE-1-1-14,DOOR_OPEN-1-2-16,FIRE_IGNITE-1-1-26,HURT_FLESH-1-0-27,DOOR_CLOSE-1-2-28
+        Sounds_Reloading: ENTITY_SKELETON_AMBIENT-1-0-0,BLOCK_FIRE_EXTINGUISH-1-1-14,BLOCK_IRON_DOOR_OPEN-1-2-16,BLOCK_FIRE_EXTINGUISH-1-1-26,ENTITY_PLAYER_HURT-1-0-27,BLOCK_IRON_DOOR_CLOSE-1-2-28
     Firearm_Action:
         Type: slide
         Close_Duration: 8
-        Sound_Close: CLICK-1-1-0
+        Sound_Close: BLOCK_LEVER_CLICK-1-1-0
     Abilities:
         Reset_Hit_Cooldown: true
     Particles:
         Enable: true
-        Particle_Impact_Anything: BLOCK_BREAK-80
-        Particle_Critical: BLOCK_BREAK-55
+        Particle_Impact_Anything: BLOCK_BREAK-SNOW_BLOCK
+        Particle_Critical: BLOCK_BREAK-LIGHT_BLUE_CONCRETE
     Hit_Events:
         Enable: true
-        Sounds_Shooter: SHOOT_ARROW-1-2-0
+        Sounds_Shooter: ENTITY_ARROW_SHOOT-1-2-0
     Critical_Hits:
         Enable: true
         Bonus_Damage: 2
         Chance: 10
-        Sounds_Shooter: ORB_PICKUP-1-2-0
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-2-0
 
 Deagle:
     Item_Information:
         Item_Name: "&cDesert Eagle"
-        Item_Type: carrot_on_a_stick
+        Item_Type: WARPED_FUNGUS_ON_A_STICK
         Item_Lore: "&fDual pistols.|&fLeft/right click to shoot.|&fShoot enemies in the back|&ffor bonus backstab damage."
-        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Sounds_Acquired: ENTITY_BAT_TAKEOFF-1-1-0
     Shooting:
         Dual_Wield: true
         Cancel_Left_Click_Block_Damage: true
@@ -97,11 +97,11 @@ Deagle:
         Delay_Between_Shots: 2
         Recoil_Amount: 2
         Projectile_Amount: 1
-        Projectile_Type: egg
+        Projectile_Type: EGG
         Projectile_Speed: 40
         Projectile_Damage: 4
         Bullet_Spread: 1
-        Sounds_Shoot: ZOMBIE_WOOD-1-2-0,ZOMBIE_WOOD-1-0-0
+        Sounds_Shoot: BLOCK_WOOD_PLACE-1-2-0,BLOCK_WOOD_PLACE-1-0-0
     Sneak:
         Enable: true
         No_Recoil: true
@@ -110,40 +110,40 @@ Deagle:
         Enable: true
         Reload_Amount: 7
         Reload_Duration: 40
-        Sounds_Out_Of_Ammo: CLICK-1-1-0
-        Sounds_Reloading: DOOR_OPEN-1-2-4,DOOR_OPEN-1-2-8,DOOR_CLOSE-1-2-23,DOOR_CLOSE-1-2-38
+        Sounds_Out_Of_Ammo: BLOCK_LEVER_CLICK-1-1-0
+        Sounds_Reloading: BLOCK_IRON_DOOR_OPEN-1-2-4,BLOCK_IRON_DOOR_OPEN-1-2-8,BLOCK_IRON_DOOR_CLOSE-1-2-23,BLOCK_IRON_DOOR_CLOSE-1-2-38
         Dual_Wield:
             Single_Reload_Duration: 25
-            Sounds_Single_Reload: DOOR_OPEN-1-2-4,DOOR_CLOSE-1-2-23
-            Sounds_Shoot_With_No_Ammo: CLICK-1-2-0
+            Sounds_Single_Reload: BLOCK_IRON_DOOR_OPEN-1-2-4,BLOCK_IRON_DOOR_CLOSE-1-2-23
+            Sounds_Shoot_With_No_Ammo: BLOCK_LEVER_CLICK-1-2-0
     Abilities:
         Reset_Hit_Cooldown: true
     Backstab:
         Enable: true
         Bonus_Damage: 2
-        Sounds_Shooter: ORB_PICKUP-1-2-0
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-2-0
     Particles:
         Enable: true
-        Particle_Backstab: BLOCK_BREAK-55
+        Particle_Backstab: BLOCK_BREAK-LIGHT_BLUE_CONCRETE
     Hit_Events:
         Enable: true
-        Sounds_Shooter: SHOOT_ARROW-1-2-0
+        Sounds_Shooter: ENTITY_ARROW_SHOOT-1-2-0
 
 Bazooka:
     Item_Information:
         Item_Name: "&cBazooka"
-        Item_Type: carrot_on_a_stick
+        Item_Type: WARPED_FUNGUS_ON_A_STICK
         Item_Lore: "&fRocket launcher.|&fFire down at your|&ffeet to rocket-jump.|&fNegates fall damage."
-        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Sounds_Acquired: ENTITY_BAT_TAKEOFF-1-1-0
         Inventory_Control: Group_Bazookas
     Shooting:
         Cancel_Left_Click_Block_Damage: true
         Cancel_Right_Click_Interactions: true
         Recoil_Amount: 2
         Projectile_Amount: 1
-        Projectile_Type: fireball
+        Projectile_Type: FIREBALL
         Projectile_Speed: 10
-        Sounds_Shoot: ZOMBIE_WOOD-1-0-0,FIZZ-1-1-0
+        Sounds_Shoot: BLOCK_WOOD_PLACE-1-0-0,BLOCK_FIRE_EXTINGUISH-1-1-0
     Sneak:
         Enable: true
         No_Recoil: true
@@ -153,13 +153,13 @@ Bazooka:
         Enable: true
         Reload_Amount: 1
         Reload_Duration: 55
-        Sounds_Reloading: SKELETON_IDLE-1-0-10,PISTON_EXTEND-1-0-28,SKELETON_WALK-1-0-48
+        Sounds_Reloading: ENTITY_SKELETON_AMBIENT-1-0-10,BLOCK_PISTON_EXTEND-1-0-28,ENTITY_SKELETON_STEP-1-0-48
     Particles:
         Enable: true
-        Particle_Player_Shoot: BLOCK_BREAK-35
+        Particle_Player_Shoot: BLOCK_BREAK-WHITE_WOOL
     Shrapnel:
         Enable: true
-        Block_Type: stone_button
+        Block_Type: STONE_BUTTON
         Amount: 14
         Speed: 7
     Explosions:
@@ -168,69 +168,69 @@ Bazooka:
         Damage_Multiplier: 10
         Explosion_No_Grief: true
         Explosion_Radius: 6
-        Sounds_Shooter: SHOOT_ARROW-1-2-0
+        Sounds_Shooter: ENTITY_ARROW_SHOOT-1-2-0
 
 Python:
     Item_Information:
         Item_Name: "&cPython &l/&e Knife"
-        Item_Type: carrot_on_a_stick
+        Item_Type: WARPED_FUNGUS_ON_A_STICK
         Item_Lore: "&fRevolver with high power.|&fLeft click to melee enemies|&fwith the tactical knife."
         Melee_Attachment: Tactical_Knife
-        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Sounds_Acquired: ENTITY_BAT_TAKEOFF-1-1-0
     Shooting:
         Right_Click_To_Shoot: true
         Cancel_Left_Click_Block_Damage: true
         Cancel_Right_Click_Interactions: true
         Delay_Between_Shots: 2
         Projectile_Amount: 1
-        Projectile_Type: snowball
+        Projectile_Type: SNOWBALL
         Projectile_Speed: 40
         Projectile_Damage: 6
         Bullet_Spread: 0.5
-        Sounds_Shoot: IRONGOLEM_HIT-1-2-0,ZOMBIE_METAL-1-2-0
+        Sounds_Shoot: ENTITY_IRON_GOLEM_HURT-1-2-0,BLOCK_IRON_TRAPDOOR_CLOSE-1-2-0
     Reload:
         Enable: true
         Reload_Amount: 6
         Reload_Duration: 35
-        Sounds_Reloading: LEVEL_UP-1-1-10,FIRE_IGNITE-1-2-28
+        Sounds_Reloading: ENTITY_PLAYER_LEVELUP-1-1-10,BLOCK_FIRE_EXTINGUISH-1-2-28
     Firearm_Action:
         Type: revolver
         Open_Duration: 5
         Close_Duration: 5
-        Sound_Open: DOOR_OPEN-1-2-0
-        Sound_Close: DOOR_CLOSE-1-2-0
+        Sound_Open: BLOCK_IRON_DOOR_OPEN-1-2-0
+        Sound_Close: BLOCK_IRON_DOOR_CLOSE-1-2-0
     Abilities:
         Reset_Hit_Cooldown: true
     Hit_Events:
         Enable: true
-        Sounds_Shooter: SHOOT_ARROW-1-2-0
+        Sounds_Shooter: ENTITY_ARROW_SHOOT-1-2-0
 
 Riotshield:
     Item_Information:
         Item_Name: "&cRiot Shield"
-        Item_Type: shield
+        Item_Type: SHIELD
         Item_Lore: "&fBlocks all melee and ranged attacks. Ineffective against attacks from behind."
-        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Sounds_Acquired: ENTITY_BAT_TAKEOFF-1-1-0
         Remove_Unused_Tag: true
     Riot_Shield:
         Enable: true
         Durability_Loss_Per_Hit: 10
-        Sounds_Blocked: GLASS-2-2-0
-        Sounds_Break: ITEM_BREAK-2-1-0
+        Sounds_Blocked: BLOCK_GLASS_BREAK-2-2-0
+        Sounds_Break: ENTITY_ITEM_BREAK-2-1-0
 
 Olympia:
     Item_Information:
         Item_Name: "&cOlympia"
-        Item_Type: carrot_on_a_stick
+        Item_Type: WARPED_FUNGUS_ON_A_STICK
         Item_Lore: "&fDouble-barreled shotgun.|&fDeadly at close range.|&fIneffective at longer ranges.|&fFires incendiary ammo."
-        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Sounds_Acquired: ENTITY_BAT_TAKEOFF-1-1-0
     Shooting:
         Cancel_Left_Click_Block_Damage: true
         Cancel_Right_Click_Interactions: true
         Delay_Between_Shots: 3
         Recoil_Amount: 5
         Projectile_Amount: 8
-        Projectile_Type: egg
+        Projectile_Type: EGG
         Removal_Or_Drag_Delay: 4-false
         Projectile_Speed: 30
         Projectile_Damage: 5
@@ -240,7 +240,7 @@ Olympia:
             Duration: 80
         Bullet_Spread: 1
         Reset_Fall_Distance: true
-        Sounds_Shoot: ZOMBIE_WOOD-1-1-0,EXPLODE-1-2-0,GHAST_FIREBALL-1-1-0
+        Sounds_Shoot: BLOCK_WOOD_PLACE
     Sneak:
         Enable: true
         No_Recoil: true
@@ -250,19 +250,19 @@ Olympia:
         Reload_Amount: 2
         Reload_Bullets_Individually: true
         Reload_Duration: 15
-        Sounds_Reloading: NOTE_STICKS-1-1-0,NOTE_SNARE_DRUM-1-6-1
+        Sounds_Reloading: BLOCK_NOTE_BLOCK_PLING-1-1-0,BLOCK_NOTE_BLOCK_SNARE-1-6-1
     Firearm_Action:
         Type: break
         Open_Duration: 10
         Close_Duration: 15
-        Sound_Open: DOOR_OPEN-1-2-0
-        Sound_Close: DOOR_CLOSE-1-2-0
+        Sound_Open: BLOCK_WOODEN_DOOR_OPEN-1-2-0
+        Sound_Close: BLOCK_WOODEN_DOOR_CLOSE-1-2-0
     Abilities:
         Reset_Hit_Cooldown: true
         No_Fall_Damage: true
     Hit_Events:
         Enable: true
-        Sounds_Shooter: SHOOT_ARROW-1-2-0
+        Sounds_Shooter: ENTITY_ARROW_SHOOT-1-2-0
     Damage_Based_On_Flight_Time:
         Enable: true
         Bonus_Damage_Per_Tick: -1
@@ -270,14 +270,14 @@ Olympia:
     Particles:
         Enable: true
         Particle_Player_Shoot: FLAMES-1
-        Particle_Impact_Anything: BLOCK_BREAK-51
+        Particle_Impact_Anything: BLOCK_BREAK-FIRE
 
 Hunting:
     Item_Information:
         Item_Name: "&cHunting Rifle"
         Item_Type: carrot_on_a_stick
         Item_Lore: "&fBolt-action rifle with high accuracy.|&fEquipped with a night vision scope.|&fDeals double damage on headshots."
-        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Sounds_Acquired: ENTITY_BAT_TAKEOFF-1-1-0
     Shooting:
         Cancel_Left_Click_Block_Damage: true
         Cancel_Right_Click_Interactions: true
@@ -285,7 +285,7 @@ Hunting:
         Projectile_Type: snowball
         Projectile_Speed: 1000
         Projectile_Damage: 12
-        Sounds_Shoot: BLAZE_HIT-1-1-0,EXPLODE-1-2-0
+        Sounds_Shoot: ENTITY_BLAZE_HURT-1-1-0,ENTITY_GENERIC_EXPLODE-1-2-0
     Custom_Death_Message:
         Normal: "&e<victim> was sniped by <shooter>'s Hunting Rifle!"
     Reload:
@@ -294,25 +294,25 @@ Hunting:
         Reload_Amount: 5
         Reload_Bullets_Individually: true
         Reload_Duration: 10
-        Sounds_Reloading: NOTE_STICKS-1-1-0
+        Sounds_Reloading: BLOCK_NOTE_BLOCK_PLING-1-1-0
     Firearm_Action:
         Type: bolt
         Open_Duration: 8
         Close_Duration: 7
         Close_Shoot_Delay: 6
-        Sound_Open: NOTE_STICKS-1-0-0,PISTON_RETRACT-1-2-2
-        Sound_Close: PISTON_EXTEND-1-2-0
+        Sound_Open: BLOCK_NOTE_BLOCK_PLING-1-0-0,BLOCK_BLOCK_PISTON_CONTRACT-1-2-2
+        Sound_Close: BLOCK_PISTON_EXTEND-1-2-0
     Headshot:
         Enable: true
         Bonus_Damage: 12
-        Sounds_Shooter: NOTE_PLING-1-2-0
-        Sounds_Victim: VILLAGER_DEATH-1-1-0
+        Sounds_Shooter: BLOCK_NOTE_BLOCK_PLING-1-2-0
+        Sounds_Victim: ENTITY_VILLAGER_DEATH-1-1-0
     Abilities:
         Reset_Hit_Cooldown: true
         Knockback: 3
     Particles:
         Enable: true
-        Particle_Player_Shoot: BLOCK_BREAK-1
+        Particle_Player_Shoot: BLOCK_BREAK-STONE
         Particle_Terrain: true
     Fireworks:
         Enable: true
@@ -321,17 +321,17 @@ Hunting:
         Enable: true
         Night_Vision: true
         Zoom_Amount: 5
-        Sounds_Toggle_Zoom: NOTE_STICKS-1-2-0
+        Sounds_Toggle_Zoom: BLOCK_NOTE_BLOCK_PLING-1-2-0
     Hit_Events:
         Enable: true
-        Sounds_Shooter: SHOOT_ARROW-1-2-0
+        Sounds_Shooter: ENTITY_ARROW_SHOOT-1-2-0
 
 Type95:
     Item_Information:
         Item_Name: "&cType 95"
         Item_Type: carrot_on_a_stick
         Item_Lore: "&fSemi-automatic with three round burst fire.|&fGhast Tears are required for reloads."
-        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Sounds_Acquired: ENTITY_BAT_TAKEOFF-1-1-0
     Shooting:
         Cancel_Left_Click_Block_Damage: true
         Cancel_Right_Click_Interactions: true
@@ -342,7 +342,7 @@ Type95:
         Projectile_Speed: 40
         Projectile_Damage: 4
         Bullet_Spread: 2
-        Sounds_Shoot: ITEM_BREAK-1-2-2,NOTE_SNARE_DRUM-1-0-2
+        Sounds_Shoot: ENTITY_ITEM_BREAK-1-2-2,BLOCK_NOTE_BLOCK_SNARE-1-0-2
     Sneak:
         Enable: true
         No_Recoil: true
@@ -354,35 +354,35 @@ Type95:
     Ammo:
         Enable: true
         Ammo_Item_ID: iron_nugget
-        Sounds_Out_Of_Ammo: NOTE_PLING-1-2-0
-        Sounds_Shoot_With_No_Ammo: NOTE_STICKS-1-2-0
+        Sounds_Out_Of_Ammo: BLOCK_NOTE_BLOCK_PLING-1-2-0
+        Sounds_Shoot_With_No_Ammo: BLOCK_NOTE_BLOCK_SNARE-1-2-0
     Reload:
         Enable: true
         Reload_Amount: 30
         Take_Ammo_On_Reload: true
         Reload_Duration: 40
-        Sounds_Reloading: FIRE_IGNITE-1-1-4,DOOR_OPEN-1-2-6,FIRE_IGNITE-1-1-36,HURT_FLESH-1-0-37,DOOR_CLOSE-1-2-38
+        Sounds_Reloading: ITEM_FLINTANDSTEEL_USE-1-1-4,BLOCK_WOODEN_DOOR_OPEN-1-2-6,ITEM_FLINTANDSTEEL_USE-1-1-36,ENTITY_ZOMBIE_HURT-1-0-37,BLOCK_WOODEN_DOOR_CLOSE-1-2-38
     Firearm_Action:
         Type: slide
         Close_Duration: 10
-        Sound_Close: PISTON_RETRACT-1-2-0,PISTON_RETRACT-1-2-2
+        Sound_Close: BLOCK_PISTON_CONTRACT-1-2-0,BLOCK_PISTON_CONTRACT-1-2-2
     Scope:
         Enable: true
         Zoom_Amount: 5
         Zoom_Bullet_Spread: 0
-        Sounds_Toggle_Zoom: ENDERDRAGON_WINGS-1-2-0
+        Sounds_Toggle_Zoom: ENTITY_ENDER_DRAGON_FLAP-1-2-0
     Abilities:
         Reset_Hit_Cooldown: true
     Hit_Events:
         Enable: true
-        Sounds_Shooter: SHOOT_ARROW-1-2-0
+        Sounds_Shooter: ENTITY_ARROW_SHOOT-1-2-0
 
 AK-47:
     Item_Information:
         Item_Name: "&cAK-47"
         Item_Type: carrot_on_a_stick
         Item_Lore: "&fFully automatic with high power.|&fEffective at medium range.|&fControls are inverted."
-        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Sounds_Acquired: ENTITY_BAT_TAKEOFF-1-1-0
     Shooting:
         Right_Click_To_Shoot: true
         Cancel_Left_Click_Block_Damage: true
@@ -393,7 +393,7 @@ AK-47:
         Projectile_Speed: 40
         Projectile_Damage: 4
         Bullet_Spread: 2
-        Sounds_Shoot: IRONGOLEM_HIT-1-2-0,SKELETON_HURT-1-2-0,ZOMBIE_WOOD-1-2-0
+        Sounds_Shoot: ENTITY_IRON_GOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_ZOMBIE_BREAK_WOODEN_DOOR-1-2-0
     Sneak:
         Enable: true
         No_Recoil: true
@@ -405,20 +405,20 @@ AK-47:
         Enable: true
         Reload_Amount: 30
         Reload_Duration: 40
-        Sounds_Out_Of_Ammo: ITEM_BREAK-1-1-0
-        Sounds_Reloading: FIRE_IGNITE-1-1-4,DOOR_OPEN-1-2-6,FIRE_IGNITE-1-1-36,HURT_FLESH-1-0-37,DOOR_CLOSE-1-2-38
+        Sounds_Out_Of_Ammo: ENTITY_ITEM_BREAK-1-1-0
+        Sounds_Reloading: ITEM_FLINTANDSTEEL_USE-1-1-4,BLOCK_WOODEN_DOOR_OPEN-1-2-6,ITEM_FLINTANDSTEEL_USE-1-1-36,ENTITY_ZOMBIE_HURT-1-0-37,BLOCK_WOODEN_DOOR_CLOSE-1-2-38
     Firearm_Action:
         Type: slide
         Close_Duration: 10
         Close_Shoot_Delay: 12
-        Sound_Close: PISTON_RETRACT-1-2-0,PISTON_RETRACT-1-2-3
+        Sound_Close: BLOCK_PISTON_CONTRACT-1-2-0,BLOCK_PISTON_CONTRACT-1-2-3
     Scope:
         Enable: true
         Zoom_Amount: 5
         Zoom_Bullet_Spread: 0
-        Sounds_Toggle_Zoom: ENDERDRAGON_WINGS-1-2-0
+        Sounds_Toggle_Zoom: ENTITY_ENDER_DRAGON_FLAP-1-2-0
     Abilities:
         Reset_Hit_Cooldown: true
     Hit_Events:
         Enable: true
-        Sounds_Shooter: SHOOT_ARROW-1-2-0
+        Sounds_Shooter: ENTITY_ARROW_SHOOT-1-2-0
