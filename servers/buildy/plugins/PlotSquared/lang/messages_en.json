@@ -736,5 +736,6 @@
   "plotjukebox.reset_music": "<red>Click to remove the music<italic>!",
   "invalid.world_location_plot": "<red><prefix>The target plot is invalid.",
   "info.plot_info_categories.use_rating": "<green><prefix>Categories:  <gray>members, alias, biome, seen, denied, flags, id, size, trusted, owner, rating",
-  "info.plot_info_categories.use_likes": "<green><prefix>Categories:  <gray>members, alias, biome, seen, denied, flags, id, size, trusted, owner, likes"
+  "info.plot_info_categories.use_likes": "<green><prefix>Categories:  <gray>members, alias, biome, seen, denied, flags, id, size, trusted, owner, likes",
+  "deny.cannot_interact": "<prefix><red>You are denied from the plot <red><gold><plot></gold><red> and therefore cannot interact with it.</red>"
 }
