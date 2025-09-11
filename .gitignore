@@ -64,7 +64,7 @@ advancements/
 
 # But not these
 !.termux/termux.properties
-!/**/BentoBox/addons/*.jar
+!/**/CMI/Settings/BackUps.yml
 !/libraries
 !Dialogs/
 
