@@ -1462,6 +1462,8 @@ ShulkerBoxes:
   # When set to true, players will not have option to open shulker boxes while in combat
   # Combat timer can be defined under combat section
   PreventInCombat: true
+  # When set to true player will be required to have cmi.openshulker.edit permission to edit shulker box from inventory
+  RequirePermission: false
   # Money cost to open shulker box, if player doesn't have enough money then we will not allow to open shulker box from inventory
   # Setting this to 0 will disable money requirement
   # This can be bypassed with cmi.openshulker.free permission node
