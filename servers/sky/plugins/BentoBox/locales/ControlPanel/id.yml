@@ -1,0 +1,24 @@
+controlpanel:
+  messages:
+    import-count: Mengimpor [number] panel kontrol
+    control-panels-wiped: '&2 Semua panel kontrol di [gamemode] dihapus'
+  errors:
+    no-load: '&4 Tidak dapat memuat file [file]: [message]'
+    no-file: '&4 File [file] hilang'
+    not-a-gamemode-world: '&4 Tidak dapat menemukan mode permainan yang valid.'
+    no-valid-panels: '&4 Tidak dapat menemukan panel kontrol yang valid.'
+    no-valid-panels-op: '&4 Tidak dapat menemukan panel kontrol yang valid. Coba mengimpornya
+      menggunakan /[admin] cp import'
+  commands:
+    admin:
+      help:
+        description: menampilkan perintah bantuan admin
+      import:
+        parameters: '[file-name] - Nama file yang akan diimpor. Jika kosong maka akan
+          mengimpor templat bawaan.'
+        description: impor panel kontrol dari [file]
+        confirmation: Mohon konfirmasi bahwa kamu mau menghapus panel kontrol yang
+          sudah ada dari [gamemode] dan impor panel kontrol dari [file]
+    help:
+      parameters: ''
+      description: buka panel kontrol

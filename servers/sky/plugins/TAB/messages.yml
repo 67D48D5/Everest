@@ -1,0 +1,54 @@
+announce-command-usage: "&cTAB &8» &6/tab announce &f<type> <name> <length> &7Currently supported types: &lbar&7, &lscoreboard"
+bossbar-feature-not-enabled: "&cBossBar &8» &fThis command requires the bossbar feature to be enabled."
+bossbar-announce-command-usage: "&cTAB &8» &6/tab announce bar &f<bar name> <length>"
+bossbar-not-found: '&cBossBar &8» &fNo bossbar found with the name "&e&o%name%&f".'
+bossbar-already-announced: "&cBossBar &8» &fThis bossbar is already being announced"
+group-data-removed: "&aTAB &8» &fAll data has been successfully removed from group '&6%group%&f'."
+group-value-assigned: "&aTAB &8» &6%property% &f'&r%value%&r&3' has been successfully assigned to group '&6%group%&f'."
+group-value-removed: "&aTAB &8» &6%property% &fhas been successfully removed from group '&6%group%&f'."
+user-data-removed: "&aTAB &8» &fAll data has been successfully removed from player '&6%player%&f'."
+user-value-assigned: "&aTAB &8» &6%property% &f'&r%value%&r&3' has been successfully assigned to player '&6%player%&f'."
+user-value-removed: "&aTAB &8» &6%property% &fhas been successfully removed from player '&6%player%&f'."
+parse-command-usage: "&cTAB &8» &6/tab parse &f<player> <placeholder>"
+send-command-usage: "&cTAB &8» &6/tab send &f<type> <player> <bar name> <length> &7Currently supported types: &lbar"
+send-bar-command-usage: "&cTAB &8» &6/tab send bar &f<player> <bar name> <length>"
+team-feature-required: "&cTAB &8» &fThis command requires scoreboard teams feature enabled"
+collision-command-usage: "&cTAB &8» &6/tab setcollision &f<player> <true/false>"
+no-permission: "&cError &8» &fI'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error."
+command-only-from-game: "&cTAB &8» &fThis command must be ran from the game"
+player-not-online: '&cTAB &8» &fNo online player found with the name "&6%player%&f"'
+invalid-number: '&cTAB &8» &6"%input%" &fis not a number&o!'
+scoreboard-feature-not-enabled: "&cScoreBoard &8» &fThis command requires the scoreboard feature to be enabled."
+scoreboard-announce-command-usage: "&cTAB &8» &6/tab scoreboard announce &f<scoreboard name> <length>"
+scoreboard-not-found: '&cScoreBoard &8» &fNo scoreboard found with the name "&6%name%&f"'
+reload-success: "&aTAB &8» &fSuccessfully reloaded"
+reload-fail-file: "&aTAB &8» &f&4Failed to reload, file %file% has broken syntax. Check console for more info."
+scoreboard-toggle-on: "&aScoreBoard &8» &fScoreboard enabled"
+scoreboard-toggle-off: "&cScoreBoard &8» &fScoreboard disabled"
+bossbar-toggle-on: "&aBossBar &8» &fBossbar is now visible"
+bossbar-toggle-off: "&cBossBar &8» &fBossbar is no longer visible. Magic!"
+scoreboard-show-usage: "&cTAB &8» &6/tab scoreboard show &f<scoreboard> [player]"
+bossbar-not-marked-as-announcement: "&cBossBar &8» &fThis bossbar is not marked as an announcement bar and is therefore already displayed permanently (if display condition is met)"
+bossbar-announcement-success: "&aBossBar &8» &fAnnouncing bossbar &e%bossbar% &ffor &a%length% &fseconds."
+bossbar-send-success: "&aBossBar &8» &fSending bossbar &e%bossbar% &fto player &6%player% &ffor &a%length% &fseconds."
+help-menu: 
+  - "&bInfo &8» &fView more information at wiki page"
+mysql-help-menu: 
+  - "&bInfo &8» &fView more information at wiki page"
+mysql-fail-not-enabled: "&cTAB &8» &fCannot download/upload data from/to MySQL, because it's disabled."
+mysql-fail-error: "&cTAB &8» &fMySQL download failed due to an error. Check console for more info."
+mysql-download-success: "&aTAB &8» &fMySQL data downloaded successfully."
+mysql-upload-success: "&aTAB &8» &fMySQL data uploaded successfully."
+scoreboard-help-menu:
+  - "&bInfo &8» &fView more information at wiki page"
+bossbar-help-menu:
+  - "&bInfo &8» &fView more information at wiki page"
+nametag:
+  help-menu:
+    - "&bInfo &8» &fView more information at wiki page"
+  feature-not-enabled: "&cNameTag &8» &fThis command requires nametag feature to be enabled."
+  view-hidden: "&aNameTag &8» &fNametags of all players were hidden to you"
+  view-shown: "&aNameTag &8» &fNametags of all players were shown to you"
+  player-hidden: "&aNameTag &8» &fYour nametag was hidden"
+  player-shown: "&aNameTag &8» &fYour nametag was shown"
+  no-arg-from-console: "&cNameTag &8» &fYou need to specify player if running this command from the console"

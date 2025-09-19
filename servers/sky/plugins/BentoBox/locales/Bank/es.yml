@@ -1,0 +1,80 @@
+bank:
+  admin:
+    description: comando de administrador para el addon Bank
+    give:
+      parameters: <jugador> <cantidad>
+      description: agrega cierta cantidad a la cuenta de la isla del jugador
+      success: '&a ¡Éxito! El saldo del banco de la isla de [name] ahora es [number].'
+    take:
+      parameters: <jugador> <cantidad>
+      description: quita cierta cantidad a la cuenta de la isla del jugador
+    balance:
+      parameters: <jugador>
+      description: mirar la cantidad actual de la isla del jugador
+    set:
+      parameters: <jugador> <cantidad>
+      description: establece la cuenta de la isla del jugador a cierta cantidad
+      success: '&a La cuenta de la isla de [name] fue establecida a [number].'
+    statement:
+      parameters: <jugador>
+      description: ver extracto bancario de la isla para el jugador
+  balance:
+    description: muestra el saldo bancario de su isla
+    island-balance: '&a Saldo del banco de la isla es [number].'
+  baltop:
+    description: mostrar clasificaciones de equilibrio
+    description-syntax: '&d [number]'
+    highest: Ordenar por más alto
+    lowest: Ordenar por el más bajo
+    name-syntax: '& d [name]'
+    title: Saldos superiores
+  deposit:
+    description: depositar cantidad en su cuenta de la isla
+    parameters: <cantidad>
+    success: '&a ¡Éxito! Su nuevo saldo en el banco de la isla es [number].'
+    alert: '&a [name] ha depositado [number] en el banco de la isla.'
+  errors:
+    bank-error: '&c Error al cargar la información de la cuenta bancaria. Vuelve a
+      intentarlo más tarde.'
+    low-balance: '&c ¡El saldo del banco de su isla no es lo suficientemente alto!'
+    too-low: '&c El saldo de la isla es demasiado bajo.'
+    must-be-a-number: '&c La cantidad debe ser un número'
+    no-rank: '&c Tu rango no es lo suficientemente alto para usar el banco.'
+    too-much: '&c No tiene esa cantidad para depositar.'
+    value-must-be-positive: '&c La cantidad debe ser positiva.'
+    scientific: '&c No se admite la notación científica.'
+    too-long: '&c El valor debe tener menos de 10 dígitos'
+  statement:
+    balance:
+      name: '& 9 Equilibrio:'
+      description: '&6 [number]'
+    deposit: Depositar
+    description: muestra el historial de tu banco de la isla
+    give: Admin Dar
+    interest: Interesar
+    latest: Ordenar por más reciente
+    oldest: Ordenar por más antiguo
+    set: Admin Establecer
+    syntax: |
+      &9 [date]
+      &9 [time]
+      &7 [name]
+      &6 [number]
+    take: Admin Tomar
+    title: Historial de cuenta
+    unknown: Tipo desconocido
+    withdrawal: Retirada
+  user:
+    description: comando del banco de la isla
+  withdraw:
+    description: retirar cantidad de su cuenta de la isla
+    parameters: <cantidad>
+    success: '&a ¡Éxito! Su nuevo saldo en el banco de la isla es [number].'
+    alert: '&a [name] ha depositado [number] en el banco de la isla.'
+protection:
+  flags:
+    BANK_ACCESS:
+      description: |-
+        &f Permitir el acceso
+        &f al banco de la isla
+      name: Acceso al banco de la isla

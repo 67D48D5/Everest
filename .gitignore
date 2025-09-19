@@ -63,12 +63,15 @@ advancements/
 *.db
 
 # But not these
-!.termux/termux.properties
-!/**/CMI/Settings/BackUps.yml
 !/libraries
-!Dialogs/
+!/**/addons/*.jar
 
-!lwc_ko.properties
+!Dialogs
 !PlaceholderAPI
+
+!termux.properties
+!lwc_ko.properties
 !server.properties
+
 !Holograms.yml
+!BackUps.yml

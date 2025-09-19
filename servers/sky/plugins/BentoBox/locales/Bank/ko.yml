@@ -1,0 +1,79 @@
+bank:
+  admin:
+    description: 섬 은행 관리자 명령어
+    give:
+      parameters: <플레이어> <금액>
+      description: 플레이어의 섬 은행에 입금합니다.
+      success: '&a성공적으로 지급되었습니다! [name]님의 섬 은행 잔고는 [number]원 입니다.'
+    take:
+      parameters: <플레이어> <금액>
+      description: 플레이어 섬 은행에서 출금합니다.
+    balance:
+      parameters: <플레이어>
+      description: 플레이어의 섬 은행 잔고를 확인합니다.
+    set:
+      parameters: <플레이어> <금액>
+      description: 플레이어의 섬 은행 잔고를 설정합니다.
+      success: '&a[name]님의 섬 은행 잔고가[number]원으로 설정되었습니다.'
+    statement:
+      parameters: <플레이어>
+      description: 플레이어에 대한 섬 은행 명세서를 확인합니다.
+  balance:
+    description: 섬 은행 잔고를 확인합니다.
+    island-balance: '&a섬 은행 잔고는 [number]원입니다.'
+  baltop:
+    description: 섬 은행 순위를 확인합니다.
+    description-syntax: '&d[number]'
+    highest: 오름차순 정렬
+    lowest: 내림차순 정렬
+    name-syntax: '&d[name]'
+    title: 섬 은행 순위
+  deposit:
+    description: 자신의 섬 은행에 입금합니다.
+    parameters: <금액>
+    success: '&a성공적으로 입금되었습니다! 현재 섬 은행 잔고는 [number]입니다.'
+    alert: '&a[name]님이 [number]원을 입금하였습니다.'
+  errors:
+    bank-error: '&c은행 정보를 불러오는 동안 오류가 발생했습니다. 나중에 다시 시도하십시오.'
+    low-balance: '&c섬 은행 잔고가 충분하지 않습니다!'
+    too-low: '&c섬 은행 잔고가 너무 낮습니다.'
+    must-be-a-number: '&c금액은 숫자여야 합니다.'
+    no-rank: '&c랭크가 낮아 은행을 이용할 수 없습니다.'
+    too-much: '&c섬 은행에 입금할 금액이 없습니다.'
+    value-must-be-positive: '&c금액은 양수여야 합니다.'
+    scientific: '&c과학적 표기법은 지원되지 않습니다.'
+    too-long: '&c값은 10자리 미만이어야 합니다'
+  statement:
+    balance:
+      name: '&9은행 잔고:'
+      description: '&6[number]'
+    deposit: 예금
+    description: 섬 은행 기록을 확인합니다.
+    give: 관리자 입금
+    interest: 이자
+    latest: 최신순
+    oldest: 지난순
+    set: 관리자 설정
+    syntax: |
+      &9[date]
+      &9[time]
+      &7[name]
+      &6[number]
+    take: 관리자 출금
+    title: 계정 내역
+    unknown: 알 수 없는 유형
+    withdrawal: 출금
+  user:
+    description: 섬 은행 명령어
+  withdraw:
+    description: 섬 은행에서 금액을 인출합니다.
+    parameters: <금액>
+    success: '&a성공적으로 출금하였습니다! 현재 섬 은행 잔고는 [number]입니다.'
+    alert: '&a[name]님이 [number]원을 출금하였습니다.'
+protection:
+  flags:
+    BANK_ACCESS:
+      description: |-
+        &f섬의 은행 접근을
+        &f허가합니다.
+      name: 섬 은행 접근

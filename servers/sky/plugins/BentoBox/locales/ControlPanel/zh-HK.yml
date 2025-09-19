@@ -1,0 +1,21 @@
+controlpanel:
+  messages:
+    import-count: 已導入 [number]個控制面板
+    control-panels-wiped: '&2 所有[gamemode]遊戲模式的控制面板已被刪除'
+  errors:
+    no-load: '&4 無法載入檔案[file]: [message]'
+    no-file: '&4 找不到檔案[file]'
+    not-a-gamemode-world: '&4 無法找到有效的遊戲模式。'
+    no-valid-panels: '&4 無法找有任何有效的控制面板。'
+    no-valid-panels-op: '&4 無法找有任何有效的控制面板。 你可以使用指令 ''/[admin] cp import'' 重新導入'
+  commands:
+    admin:
+      help:
+        description: 顯示所有管理員幫助指令
+      import:
+        parameters: '[file-name] - 準備導入的檔案名稱。 留空代表使用預設模板。'
+        description: 已從檔案[file]載入控制面板
+        confirmation: 請確定你要移除所有[gamemode]遊戲模式的現有控制面板，並從檔案[file]導入控制面板
+    help:
+      parameters: ''
+      description: 打開控制面板

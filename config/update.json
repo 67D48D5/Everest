@@ -28,9 +28,6 @@
     }
   },
   "notes": {
-    "engines": {
-      "source": "https://papermc.io/downloads/"
-    },
     "plugins": {
       "velocity": {
         "CMIV": "https://www.zrips.net/cmiv/",

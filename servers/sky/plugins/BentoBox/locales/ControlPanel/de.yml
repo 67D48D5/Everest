@@ -1,0 +1,23 @@
+controlpanel:
+  messages:
+    import-count: 'Importiere [number] Controllpanel '
+    control-panels-wiped: '&2 Alle ControlPanels in [gamemode] werden entfernt'
+  errors:
+    no-load: '&4 [file] konnte nicht geladen werden: [message]'
+    no-file: '&4 [file] fehlt'
+    not-a-gamemode-world: '&4 Es konnte kein gültiger Spielmodus gefunden werden.'
+    no-valid-panels: '&4Konnte kein gültiges Controllpanel finden.'
+    no-valid-panels-op: '&4Konnte kein gültiges ControllPanel finden. Du solltest
+      versuchen, es mit /[admin] cp import zu importieren'
+  commands:
+    admin:
+      help:
+        description: shows admin help commands
+      import:
+        parameters: '[file-name] - Name der zu importierenden Datei. Bei leerem Namen
+          wird die Standardvorlage importiert.'
+        description: Importiert ControllPanels von [file]
+        confirmation: Bitte bestätigen Sie, dass Sie vorhandene Bedienfelder aus [gamemode]
+          entfernen und Bedienfelder aus [file] importieren möchten
+    help:
+      description: Öffnet das Bedienfeld

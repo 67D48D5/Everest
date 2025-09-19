@@ -1,0 +1,325 @@
+visit:
+  # This section contains translations which are used in commands.
+  commands:
+    # This section contains only admin commands translations.
+    admin:
+      main:
+        description: opens GUI that allows to edit default or targeted island settings.
+        parameters: <player>
+    # This section contains only player commands translations.
+    player:
+      main:
+        description: opens GUI or visits targeted player island.
+        parameters: <player>
+      configure:
+        description: opens GUI that allows to manage visiting settings.
+        parameters: ''
+      set-location:
+        description: allows to change visitors spawn location.
+        parameters: ''
+  # This section contains translations for items inside GUI interfaces.
+  gui:
+    # This section contains titles for all GUIs.
+    titles:
+      # Title for User GUI that has a list of all islands that are available for visiting.
+      choose: '&0&l Choose Island'
+      # Title for User GUI that allows to configure island visiting settings.
+      configure: '&0&l Configure Access'
+      # Title for Admin GUI.
+      main: '&0&l Admin Panel'
+      # Title for Admin GUI which allows to select an island.
+      select-island: '&0&l Select an Island'
+      # Title for Admin GUI which allows to select a block.
+      select-block: '&0&l Select Block'
+    # This section contains all button names and lore (description)
+    buttons:
+      # List of buttons in Visit GUI
+      # Button that is used in multi-page GUIs which allows to return to previous page.
+      previous:
+        name: '&f&l Previous Page'
+        description: '&7 Switch to [number] page' # Button that is used in multi-page GUIs which allows to go to next page.
+      next:
+        name: '&f&l Next Page'
+        description: '&7 Switch to [number] page' # Button for searching specific island.
+      search:
+        name: '&f&l Search'
+        description: |-
+          &7 Search for a specific
+          &7 island.
+        search: '&b Value: [value]'
+      # Button for allowing to change which islands are showed.
+      filter:
+        name: '&f&l Filter'
+        description: |-
+          &7 Allows to show only
+          &7 filtered islands.
+        value: '&7 Active filter: [value]'
+        all_islands: '&b&o none'
+        online_islands: '&b&o online'
+        can_visit: '&b&o visitable'
+      # Button in User GUI for each island
+      island:
+        name: '&f&l [name]'
+        description: |-
+          [owner]
+          [members]
+          [noone-online]
+          [payment]
+          [no-visit]
+# Text for [owner] in description.
+        owner: '&7&l Owner: &r&b [player]'
+        # Title before listing members for [members] in description
+        members-title: '&7&l Members:'
+        # List each member under the title for [members] in description
+        member: '&b - [player]'
+        # Name of unknown player.
+        unknown: unknown
+        # Message that is showed if noone from island is online.
+        noone-online: |-
+          &7 None of island members
+          &7 are online.
+# Message about cost for visiting island if that is enabled
+        payment: |-
+          &7 It costs [number] to visit
+          &7 this island.
+# Message that indicates that island cannot be visited
+        no-visit: '&c You cannot visit the island.'
+      # List of buttons in Configure GUI
+      # Button that allows to change payment value.
+      payment:
+        name: '&f&l Payment Value'
+        description: |-
+          &7 Allows to change payment
+          &7 for visiting your island.
+          &7 Current value: &b&o [number]
+# Button that allows to change if players can visit while members are offline.
+      offline:
+        name: '&f&l Offline Visits'
+        description: |-
+          &7 Allows to change if players
+          &7 can visit island while all
+          &7 members are offline.
+        enabled: '&7 Offline visits &a enabled'
+        disabled: '&7 Offline visits &c disabled'
+      # Button that allows to toggle if visits are allowed at all.
+      enabled:
+        name: '&f&l Allow Visits'
+        description: |-
+          &7 Allows to change if
+          &7 visits are enabled.
+        enabled: '&7 Visits are &a allowed'
+        disabled: '&7 Visits are &c disallowed'
+      # Button that allows to toggle if visits are allowed at all.
+      messaging:
+        name: '&f&l Receive Visiting Messages'
+        description: |-
+          &7 Allows to change if island
+          &7 members should receive
+          &7 messages when someone
+          &7 visits the island.
+        enabled: '&7 Messaging is &a enabled'
+        disabled: '&7 Messaging is &c disabled'
+      # List of buttons in Admin GUI
+      # Button that opens All island GUI for admin.
+      manage:
+        name: '&f&l Manage Island Settings'
+        description: |-
+          &7 Allows to edit island
+          &7 visit settings for
+          &7 selected island.
+# Button that allows to reset all island visit settings.
+      reset:
+        name: '&f&l Reset to Default'
+        description: |-
+          &7 Resets all island visit
+          &7 settings to default values.
+# Button that allows to change tax amount for visiting islands.
+      tax:
+        name: '&f&l Manage Tax'
+        description: |-
+          &7 Allows to set tax amount
+          &7 for visiting island.
+        value: '&7 Current tax: &b&o [number]'
+      # Button that allows to change default payment for visiting island.
+      default_payment:
+        name: '&f&l Default Payment'
+        description: |-
+          &7 Allows to change payment
+          &7 value.
+        value: '&7 Current payment: &b&o [number]'
+      # Button that allows to change default offline visiting value
+      default_offline:
+        name: '&f&l Default Offline'
+        description: |-
+          &7 Allows to change if players
+          &7 can visit island while all
+          &7 members are offline.
+        enabled: |-
+          &7 By default offline visits
+          &7 are &a enabled
+        disabled: |-
+          &7 By default offline visits
+          &7 are &c disabled
+# Button that allows to change default visiting enabled value
+      default_enabled:
+        name: '&f&l Default Visiting'
+        description: |-
+          &7 Allows to change if visits
+          &7 by default are enabled.
+        enabled: |-
+          &7 By default visits
+          &7 are &a enabled
+        disabled: |-
+          &7 By default visits
+          &7 are &c disabled
+# Button that allows to toggle economy
+      enable_economy:
+        name: '&f&l Enable Economy'
+        description: |-
+          &7 Allows to toggle economy part
+          &7 addon if Vault plugin is
+          &7 is present.
+        enabled: '&7 Economy is &a enabled.'
+        disabled: '&7 Economy is &c disabled.'
+      use_bank:
+        name: '&f&l Enable Bank'
+        description: |-
+          &7 Allows to toggle if all
+          &7 payments must be processed
+          &7 through island bank.
+          &7 Bank addon is required.
+        enabled: '&7 Bank Usage is &a enabled.'
+        disabled: '&7 Bank Usage is &c disabled.'
+      enable_confirmation:
+        name: '&f&l Payment Confirmation'
+        description: |-
+          &7 Allows to toggle if payments
+          &7 must be confirmed twice.
+        enabled: '&7 Confirmation is &a enabled.'
+        disabled: '&7 Confirmation is &c disabled.'
+      icon:
+        name: '&f&l Default Icon'
+        description: |-
+          &7 Allows to change default
+          &7 island icon.
+      max_value:
+        name: '&f&l Max Payment Value'
+        description: |-
+          &7 Allows to set max amount
+          &7 players can set as payment
+          &7 for visiting their island.
+          &7 0 or bellow disables any
+          &7 limitations.
+        value: '&7 Max value: &b&o [number]'
+      cancel:
+        name: '&f&l Cancel'
+        description: |-
+          &7 Cancel and return to
+          &7 previous menu.
+      material:
+        name: '&f&l [material]'
+        description: '&7 Material ID: [id]' # This section contains all tip messages.
+    tips:
+      click-to-switch: '&e Click &7 to switch.'
+      click-to-previous: '&e Click &7 to view previous page.'
+      click-to-next: '&e Click &7 to view next page.'
+      click-to-visit: '&e Click &7 to visit.'
+      click-to-toggle: '&e Click &7 to toggle.'
+      click-to-change: '&e Click &7 to change.'
+      click-to-edit: '&e Click &7 to edit.'
+      click-to-choose: '&e Click &7 to choose.'
+      click-to-reset: '&e Click &7 to reset.'
+      left-click-to-edit: '&e Left Click &7 to edit.'
+      right-click-to-clear: '&e Right Click &7 to clear.'
+      click-to-select: '&e Click &7 to select.'
+      click-to-deselect: '&e Click &7 to deselect.'
+      left-click-to-confirm: '&e Left Click &7 to confirm.'
+      right-click-to-cancel: '&e Right Click &7 to cancel.'
+      left-click-to-cycle: '&e Left Click &7 to cycle down.'
+      right-click-to-cycle: '&e Right Click &7 to cycle up.'
+  errors:
+    no-islands: '&r&c There are no islands for visiting in [gamemode]!'
+    noone-is-online: '&r&c Noone from this island is online!'
+    not-enough-credits: '&r&c You do not have enough money. Visiting costs &l&4 $[number].'
+    not-enough-credits-bank: '&r&c You do not have enough money in your bank account.
+      Visiting costs &l&4 $[number].'
+    cannot-withdraw-credits: '&r&c Cannot withdraw &l&4 $[number] &r&c from your account!
+      Operation is cancelled.'
+    cannot-deposit-credits: '&r&c Cannot deposit &l&4 $[number] &r&c into island owner
+      account! Operation is cancelled.'
+    not-in-overworld: '&rv You must be in overworld to change visitor spawn location!
+      Operation is cancelled.'
+    not-in-protected-area: '&r&c You must be in your island protected area! Operation
+      is cancelled.'
+    not-safe-location: '&r&c Cannot set this location, it is not safe for teleportation!
+      Operation is cancelled.'
+    not-in-correct-world: '&r&c You are not in [gamemode] world! Operation is cancelled.'
+  conversations:
+    # List of strings that are valid for confirming input. (separated with ,)
+    confirm-string: true, on, yes, confirm, y, valid, correct
+    # List of strings that are valid for denying input. (separated with ,)
+    deny-string: false, off, no, deny, n, invalid, incorrect
+    # String that allows to cancel conversation. (can be only one)
+    cancel-string: cancel
+    # List of strings that allows to exit conversation. (separated with ,)
+    exit-string: cancel, exit, quit
+    # Message that is send to user when conversation is cancelled.
+    cancelled: '&c Conversation cancelled!'
+    # Prefix for messages that are send from server.
+    prefix: '&l&6 [BentoBox]: &r'
+    # Error message that is showed if user input a value that is not a number.
+    numeric-only: '&c The given [value] is not a number!'
+    # Error message that is showed if user input a number that is smaller or larger that allowed.
+    not-valid-value: '&c The given number [value] is not valid. It must be larger
+      than [min] and smaller than [max]!'
+    # Below here starts messages and questions created by GUI.
+    # Message that asks for search value input.
+    write-search: '&e Please write a search value. (write ''cancel'' to exit)'
+    # Message that appears after updating search value.
+    search-updated: '&a Search value updated.'
+    # Message that appears when user clicks on number editing button.
+    input-number: '&e Please enter a number in chat.'
+    # Message that appears when admin clicks on island data deletion button.
+    confirm-island-data-deletion: '&e Confirm that you want to delete all user data
+      from the database for [gamemode].'
+    # Message that appears after successful user data removing.
+    user-data-removed: '&a Success, all user data for [gamemode] was removed!'
+    # Message that appears when user updates spawn point.
+    spawn-point-updated: '&a Success, spawn point is changed!'
+    # Message that appears when user process teleportation to the island with the associated cost.
+    # [tax], [earn], [payment], [island] and [owner] are available variables.
+    visit-payment: '&e Visiting &l&6 [owner] &r&e island will cost &l&6 $[payment].'
+    # Message that appears after user process teleportation to the island with the associated cost.
+    # [tax], [earn], [payment], [island] and [owner] are available variables.
+    visit-paid: '&e You paid &l&6 $[payment] &r&e for visiting &l&6 [owner] &r&e island.'
+    # Message that appears after user process teleportation to the island with the associated cost.
+    # [tax], [earn], [payment], [island] and [owner] are available variables.
+    visit-paid-bank: '&e You paid &l&6 $[payment] &r&e from your bank account for
+      visiting &l&6 [owner] &r&e island.'
+    # Message that appears for user who receives payment.
+    visit-earn: '&l&6 [player] &r&e paid you &l&6 $[payment] &r&e for visiting your
+      island.'
+    # Message that appears for user who receives payment.
+    visit-earn-bank: '&l&6 [player] &r&e deposited in your bank &l&6 $[payment] &r&e
+      for visiting your island.'
+    # Message that appears when someone visits player island.
+    player-visiting-island: '&e Player &l&6 [player] &r&e visited your island.'
+    # Message that appears when visitor leaves player island.
+    player-leaves-island: '&e Player &l&6 [player] &r&e leaved your island.'
+# Protection flags that are used in current addon.
+protection:
+  flags:
+    ALLOW_VISITS_FLAG:
+      name: Visit protection
+      description: |-
+        &a Toggle if island can be
+        &a visited by anyone.
+      hint: '&c Visits are disabled in this island'
+      icon: PUMPKIN_PIE
+    RECEIVE_VISIT_MESSAGE_FLAG:
+      name: Receive Visiting Messages
+      description: |-
+        &a Toggle if members should
+        &a receive a message if someone
+        &a visits their island.
+      icon: PAPER

@@ -1,0 +1,101 @@
+main_panel:
+  title: visit.gui.titles.choose
+  type: INVENTORY
+  background:
+    icon: BLACK_STAINED_GLASS_PANE
+    title: "&b&r" # Empty text
+  border:
+    icon: BLACK_STAINED_GLASS_PANE
+    title: "&b&r"  # Empty text
+  force-shown: []
+  content:
+    1:
+      5:
+        icon: PAPER
+        title: visit.gui.buttons.search.name
+        # description: visit.gui.buttons.search.description
+        data:
+          type: SEARCH
+        actions:
+          left:
+            type: INPUT
+            tooltip: visit.gui.tips.left-click-to-edit
+          right:
+            type: CLEAR
+            tooltip: visit.gui.tips.right-click-to-clear
+      9:
+        # icon: SANDSTONE
+        title: visit.gui.buttons.filter.name
+        # description: visit.gui.buttons.filter.description
+        data:
+          type: FILTER
+        actions:
+          left:
+            type: UP
+            tooltip: visit.gui.tips.left-click-to-cycle
+          right:
+            type: DOWN
+            tooltip: visit.gui.tips.right-click-to-cycle
+    2:
+      2: island_button
+      3: island_button
+      4: island_button
+      5: island_button
+      6: island_button
+      7: island_button
+      8: island_button
+    3:
+      1:
+        icon: TIPPED_ARROW:INSTANT_HEAL::::1
+        title: visit.gui.buttons.previous.name
+        description: visit.gui.buttons.previous.description
+        data:
+          type: PREVIOUS
+          indexing: true
+        actions:
+          left:
+            type: PREVIOUS
+            tooltip: visit.gui.tips.click-to-previous
+      2: island_button
+      3: island_button
+      4: island_button
+      5: island_button
+      6: island_button
+      7: island_button
+      8: island_button
+      9:
+        icon: TIPPED_ARROW:JUMP::::1
+        title: visit.gui.buttons.next.name
+        description: visit.gui.buttons.next.description
+        data:
+          type: NEXT
+          indexing: true
+        actions:
+          left:
+            type: NEXT
+            tooltip: visit.gui.tips.click-to-next
+    4:
+      2: island_button
+      3: island_button
+      4: island_button
+      5: island_button
+      6: island_button
+      7: island_button
+      8: island_button
+  reusable:
+    island_button:
+      # icon: PLAYER_HEAD
+      # title: visit.gui.buttons.island.name
+      # description: visit.gui.buttons.island.description
+      data:
+        type: ISLAND
+      actions:
+        - click-type: left
+          type: VISIT
+          tooltip: visit.gui.tips.click-to-visit
+        - click-type: left
+          type: CONFIRM
+          tooltip: visit.gui.tips.left-click-to-confirm
+        - click-type: right
+          type: CANCEL
+          tooltip: visit.gui.tips.right-click-to-cancel

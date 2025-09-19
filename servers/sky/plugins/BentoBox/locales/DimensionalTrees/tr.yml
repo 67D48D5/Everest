@@ -1,0 +1,4 @@
+dimensionaltrees:
+  invalid-material: '&c Ağacı büyütemiyorum. Geçersiz bir materyal tespit edildi.'
+  reloaded: '&a DimensionalTrees yeniden yüklendi.'
+  error: hata
