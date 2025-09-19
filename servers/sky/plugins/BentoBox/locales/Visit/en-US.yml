@@ -66,7 +66,7 @@ visit:
           [noone-online]
           [payment]
           [no-visit]
-# Text for [owner] in description.
+        # Text for [owner] in description.
         owner: '&7&l Owner: &r&b [player]'
         # Title before listing members for [members] in description
         members-title: '&7&l Members:'
@@ -78,11 +78,11 @@ visit:
         noone-online: |-
           &7 None of island members
           &7 are online.
-# Message about cost for visiting island if that is enabled
+        # Message about cost for visiting island if that is enabled
         payment: |-
           &7 It costs [number] to visit
           &7 this island.
-# Message that indicates that island cannot be visited
+        # Message that indicates that island cannot be visited
         no-visit: '&c You cannot visit the island.'
       # List of buttons in Configure GUI
       # Button that allows to change payment value.
@@ -92,7 +92,7 @@ visit:
           &7 Allows to change payment
           &7 for visiting your island.
           &7 Current value: &b&o [number]
-# Button that allows to change if players can visit while members are offline.
+      # Button that allows to change if players can visit while members are offline.
       offline:
         name: '&f&l Offline Visits'
         description: |-
@@ -127,13 +127,13 @@ visit:
           &7 Allows to edit island
           &7 visit settings for
           &7 selected island.
-# Button that allows to reset all island visit settings.
+      # Button that allows to reset all island visit settings.
       reset:
         name: '&f&l Reset to Default'
         description: |-
           &7 Resets all island visit
           &7 settings to default values.
-# Button that allows to change tax amount for visiting islands.
+      # Button that allows to change tax amount for visiting islands.
       tax:
         name: '&f&l Manage Tax'
         description: |-
@@ -160,7 +160,7 @@ visit:
         disabled: |-
           &7 By default offline visits
           &7 are &c disabled
-# Button that allows to change default visiting enabled value
+      # Button that allows to change default visiting enabled value
       default_enabled:
         name: '&f&l Default Visiting'
         description: |-
@@ -172,7 +172,7 @@ visit:
         disabled: |-
           &7 By default visits
           &7 are &c disabled
-# Button that allows to toggle economy
+      # Button that allows to toggle economy
       enable_economy:
         name: '&f&l Enable Economy'
         description: |-

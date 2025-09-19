@@ -77,7 +77,7 @@ biomes:
 
           &7 Update mode: &e [mode]
           &7 Update range: &e [number]
-# Button that is used to return to previous GUI or exit it completely.
+      # Button that is used to return to previous GUI or exit it completely.
       return:
         name: '&f&l Return'
         description: '&7 Return to previous menu.' # Button that is used in multi-page GUIs which allows to return to previous page.
@@ -619,7 +619,7 @@ biomes:
           [biome]
           [unlock]
           [change]
-# Text that will replace [biome]
+        # Text that will replace [biome]
         original: '&7 Biome: &e [biome]' # The text that will replace [unlock] message. If biome is unlocked, then this message will be generated empty.
         unlock:
           lore: |-
@@ -627,12 +627,12 @@ biomes:
             [money]
             [level]
             [permissions]
-# Text that will replace [money]
+          # Text that will replace [money]
           money: '&7 Unlock cost: &e [number]' # Text that will replace [level]
           level: |-
             &7 Requires to reach &e [number]
             &7 island level.
-# Text that will replace [permissions]
+          # Text that will replace [permissions]
           permission-single: '&7 Missing Permission: &c [permission]'
           permissions-title: '&c Missing Permissions:'
           permissions-list: '&c - [permission]' # Text that will replace [items]
@@ -648,7 +648,7 @@ biomes:
             [money]
             [mode]
             [usage]
-# Text that will replace [mode]
+          # Text that will replace [mode]
           mode:
             per_block: |-
               &b&o Biome costs per each
@@ -664,7 +664,7 @@ biomes:
           number-of-usage: |-
             |&7 This biome has been
             &7 applied &e [number] &r&7 times.
-# Text that replaces [color].
+          # Text that replaces [color].
           missing: '&c'
           has: '&e'
       bundle:
@@ -676,7 +676,7 @@ biomes:
           &7 Permission that must be
           &7 assigned to player:
           &7&o [gamemode].biomes.bundle.[id]
-# String that are before listing all biomes assigned to bundle.
+        # String that are before listing all biomes assigned to bundle.
         title: '&7 Bundle Biomes: '
         # Each biome name in listing
         value: '&7 - [biome]'

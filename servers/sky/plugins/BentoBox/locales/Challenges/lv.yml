@@ -69,14 +69,14 @@ challenges:
         description: |-
           &7 Attainos visus brīvos
           &7 uzdevumus
-# Button that is used to return to previous GUI or exit it completely.
+      # Button that is used to return to previous GUI or exit it completely.
       return:
         name: '&f&l Atgriezties'
         description: |-
           &7 Atgriežas uz iepriekšējo
           &7 izvēlni vai iziet no
           &7 izvēlnes.
-# Button that is used in multi-page GUIs which allows to return to previous page.
+      # Button that is used in multi-page GUIs which allows to return to previous page.
       previous:
         name: '&f&l Iepriekšējā Lapa'
         description: '&7 Pārslēgties uz &e [number] &7 lapu' # Button that is used in multi-page GUIs which allows to go to next page.
@@ -94,7 +94,7 @@ challenges:
         description: |-
           &7 Pabeigt uzdevumu &e [number]
           &7 reizi(-es)
-# Button that allows to quit the current gui.
+      # Button that allows to quit the current gui.
       quit:
         name: '&f&l Iziet'
         description: '&7 Iziet no izvēlnes.' # All following buttons are mainly for Admin GUI.
@@ -859,7 +859,7 @@ challenges:
           [cooldown]
           [requirements]
           [rewards]
-# Contains a text generated inside [status] lore
+        # Contains a text generated inside [status] lore
         status:
           # Status message for completed unrepeatable challenge
           completed: '&2&l Izpildīts'
@@ -875,7 +875,7 @@ challenges:
           lore: |-
             [timeout]
             [wait-time]
-# Text message that shows challenges timeout.
+          # Text message that shows challenges timeout.
           timeout: '&7&l Taimauts: &r&7 [time]'
           # Text message that shows challenges wait time if it is larger than 0.
           wait-time: '&c&l Jānogaida: &r&c [time]'
@@ -893,7 +893,7 @@ challenges:
             [environment]
             [type-requirement]
             [permissions]
-# Message that will replace [environment] placeholder if there is just a single environment.
+          # Message that will replace [environment] placeholder if there is just a single environment.
           environment-single: '&7 Limitēts iekš [environment]'
           # Message that will replace [environment] placeholder if there are multiple environments.
           environment-title: '&7 Limitēts iekš: '
@@ -913,7 +913,7 @@ challenges:
               [search-radius]
               [warning-block]
               [warning-entity]
-# Title that will be used if there are defined blocks in island challenge
+            # Title that will be used if there are defined blocks in island challenge
             blocks-title: '&7&l Nepieciešamie bloki:'
             # Listing of blocks that are required on the island.
             block-value: '  &7 - &e [material]'
@@ -927,7 +927,7 @@ challenges:
             search-radius: |-
               &7 Ne tālāk kā &e [number]
               &7 metru attālumā
-# Waning about block/entity removing
+            # Waning about block/entity removing
             warning-block: '&e Bloks(-i) tiks &c dzēsti'
             warning-entity: '&e Radība(-as) tiks &c dzēstas'
           # Message that will generate for inventory type requirements and replace [type-requirements]
@@ -935,7 +935,7 @@ challenges:
             lore: |-
               [items]
               [warning]
-# Title that will be used if there are list of items for challenge
+            # Title that will be used if there are list of items for challenge
             item-title: '&7&l Nepieciešamie Priekšmeti:'
             # Listing of an item that are required multiple times.
             item-value: '  &7 - &e [item]'
@@ -950,7 +950,7 @@ challenges:
               [money]
               [money-warning]
               [level]
-# Text for required experience
+            # Text for required experience
             experience: '&7&l Nepieciešamā pieredze: &r&e [number]'
             # Warning that experience will be reduced
             experience-warning: '&e Pieredze tiks &c noņemta'
@@ -965,7 +965,7 @@ challenges:
             lore: |-
               [statistic]
               [warning]
-# Type of statistic for multiple target counter. Target may be entity or material/block
+            # Type of statistic for multiple target counter. Target may be entity or material/block
             multiple-target: '&7&l [statistic]: &r&e [number] x [target]'
             # Type of statistic for single target. Target may be entity or material/block
             single-target: '&7&l [statistic]: &r&e [target]'
@@ -983,7 +983,7 @@ challenges:
             [experience]
             [money]
             [commands]
-# Title that will be used if there are list of items for rewards
+          # Title that will be used if there are list of items for rewards
           item-title: '&7 Priekšmeti:'
           # Listing of an item that are rewards multiple times.
           item-value: '  &7 - &e [item]'
@@ -1003,7 +1003,7 @@ challenges:
           [status]
           [waiver]
           [rewards]
-# Status is either challengeLevel.unlockMessage or current status of the level
+        # Status is either challengeLevel.unlockMessage or current status of the level
         status:
           # Status message for completed unrepeatable challenge
           completed: '&2&l Izpildīts'
@@ -1011,18 +1011,18 @@ challenges:
           completed-challenges-of: |-
             &2 Izpildīti &7&l [number] &r&2 no
             &7&l [max] &r&2 uzdevumiem.
-# Status message for locked level
+          # Status message for locked level
           locked: '&c&l Slēgts'
           # Status message for locked level that will show missing challenge count.
           missing-challenges: |-
             &7 Nepieciešams izpildīt vēl [number]
             &7 uzdevumus, lai atvērtu šo līmeni.
-# Contains a text for waiver amount to unlock next level
+        # Contains a text for waiver amount to unlock next level
         waiver: |-
           &7&l [number] uzdevums(-i) &r&7 var
           &7 palikt neizpildīti, lai atvērtu
           &7 nākošo līmeni.
-# Contains a text generated inside [rewards] lore
+        # Contains a text generated inside [rewards] lore
         rewards:
           # [text] comes from challengeLevel.rewardText
           lore: |-
@@ -1032,7 +1032,7 @@ challenges:
             [experience]
             [money]
             [commands]
-# Title that will be used if there are list of items for rewards
+          # Title that will be used if there are list of items for rewards
           item-title: '&7 Priekšmeti:'
           # Listing of an item that are rewards multiple times.
           item-value: '  &7 - &e [item]'

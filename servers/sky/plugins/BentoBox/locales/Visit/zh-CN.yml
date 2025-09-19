@@ -129,7 +129,7 @@ visit:
         disabled: |-
           &7 默认允许访问
           &c 禁用
-# 更改过滤器位置的按钮
+      # 更改过滤器位置的按钮
       at_top:
         name: '&f&l 过滤器置顶或置底'
         description: |-
