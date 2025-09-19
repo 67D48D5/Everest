@@ -68,7 +68,6 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
         "cache;cache;Paper Cache"
         "libraries;libraries;Paper Libraries"
         "versions;versions;Paper Versions"
-        "plugins/.paper-remapped;plugins/.paper-remapped;Paper Remapped Plugins"
     )
 
     # --- Process links based on engine type ---
