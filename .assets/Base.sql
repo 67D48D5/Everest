@@ -26,9 +26,6 @@ CREATE DATABASE msdwc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 # Database for the Buildy server
 CREATE DATABASE msdbd CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-# Database for the Sky server
-CREATE DATABASE msdsk CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
 # Apply the settings to the msdgl database
 # ************************************************************
 

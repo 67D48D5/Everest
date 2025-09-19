@@ -77,10 +77,9 @@ enable-player-address-logging = true
 # represents the IP address of the server to connect to.
 Wildy = "127.0.0.1:1422"
 Buildy = "127.0.0.1:3621"
-Sky = "127.0.0.1:2806"
 
 # In what order we should try servers when a player logs in or is kicked from a server.
-try = ["Wildy", "Buildy", "Sky"]
+try = ["Wildy", "Buildy"]
 
 [forced-hosts]
 # Configure your forced hosts here.
