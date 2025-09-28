@@ -68,3 +68,4 @@ command:
       Command: /tppos [x] [y] [z] [world]
       Hover: '&b[world]'
       notEnabled: '&c!prefix!Hopper control is not enabled&o!'
+      Changed: '&6Hoper control changed to &e[state]&6!'

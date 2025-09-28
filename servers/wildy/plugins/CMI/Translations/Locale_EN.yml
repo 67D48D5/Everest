@@ -3133,7 +3133,7 @@ command:
       info: Reloads plugins config and locale files
       args: ''
     info:
-      feedback: '&aCMI &8» &fCMI Configs and locale files reloaded&o! &7Took &a[ms]
+      feedback: '&aCMI &8» &fConfigs and locale files reloaded&o! &7Took &a[ms]
         &7ms'
       failedConfig: '&cCMI &8» &fFailed to load config file! Check spelling&o!'
       failedLocale: '&cCMI &8» &fFailed to load locale file! Check spelling&o!'
