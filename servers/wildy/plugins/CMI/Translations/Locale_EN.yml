@@ -1670,6 +1670,10 @@ command:
       fadeIn: '&7Fade in animation: &6[state]'
       textAlpha: '&7Text transparency: &6[alpha]'
       textWidth: '&7Text width: &6[width]'
+      textFiller: '&7Text filler: &6[width]'
+      textFillerExplanation: '&7Add %filler% to auto fill text'
+      # Should be single symbol/letter without color codes
+      filler: ' '
       bgAlpha: '&7Background transparency: &6[alpha]'
       bgColor: '&7Background color: &6[color]'
       scaleWidth: '&7Scale width: &6[scale]'
@@ -3133,8 +3137,7 @@ command:
       info: Reloads plugins config and locale files
       args: ''
     info:
-      feedback: '&aCMI &8» &fConfigs and locale files reloaded&o! &7Took &a[ms]
-        &7ms'
+      feedback: '&aCMI &8» &fConfigs and locale files reloaded&o! &7Took &a[ms] &7ms'
       failedConfig: '&cCMI &8» &fFailed to load config file! Check spelling&o!'
       failedLocale: '&cCMI &8» &fFailed to load locale file! Check spelling&o!'
   removehome:

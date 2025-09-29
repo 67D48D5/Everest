@@ -1668,6 +1668,10 @@ command:
       fadeIn: '&7Fade in animation: &6[state]'
       textAlpha: '&7Text transparency: &6[alpha]'
       textWidth: '&7Text width: &6[width]'
+      textFiller: '&7Text filler: &6[width]'
+      textFillerExplanation: '&7Add %filler% to auto fill text'
+      # Should be single symbol/letter without color codes
+      filler: ' '
       bgAlpha: '&7Background transparency: &6[alpha]'
       bgColor: '&7Background color: &6[color]'
       scaleWidth: '&7Scale width: &6[scale]'
