@@ -28,6 +28,7 @@ wepif.yml
 permissions.yml
 worldNames.yml
 SkinsCache.yml
+playerdata.yml
 
 banned-ips.json
 banned-players.json
