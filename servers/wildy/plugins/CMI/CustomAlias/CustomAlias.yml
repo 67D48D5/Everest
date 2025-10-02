@@ -30,6 +30,9 @@ CustomAlias:
     - papi reload
     Perm: true
     Tab: false
+  log:
+    Cmds:
+    - co i
   넴주:
     Cmds:
     - spawn
