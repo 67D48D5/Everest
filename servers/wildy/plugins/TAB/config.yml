@@ -1,33 +1,30 @@
 header-footer:
   enabled: true
-  header:
-    - ""
-    - "   &6&l&o⛰ &f&l&oEverest &a&l&oMC   "
-    - ""
-  footer:
-    - ""
-    - "%server_tps_1_colored% &8/ &e&o%ping% &7ms"
-    - ""
-  disable-condition: ""
-
+  designs:
+    default:
+      header:
+      - ''
+      - '   &6&l&o⛰ &f&l&oEverest &a&l&oMC   '
+      - ''
+      footer:
+      - ''
+      - '%server_tps_1_colored% &8/ &e&o%ping% &7ms'
+      - ''
 tablist-name-formatting:
   enabled: true
-  disable-condition: ""
-
+  disable-condition: ''
 scoreboard-teams:
   enabled: true
   enable-collision: true
   invisible-nametags: false
   sorting-types:
-    - GROUPS:admin,default
-    - PLACEHOLDER_A_TO_Z:%player%
+  - GROUPS:admin,default
+  - PLACEHOLDER_A_TO_Z:%player%
   case-sensitive-sorting: true
   can-see-friendly-invisibles: false
-  disable-condition: ""
-
+  disable-condition: ''
 prevent-spectator-effect:
   enabled: true
-
 bossbar:
   enabled: true
   toggle-command: /bossbar
@@ -36,10 +33,9 @@ bossbar:
   bars:
     Example:
       style: PROGRESS
-      color: "YELLOW"
-      progress: "81"
-      text: "&6&oEverest &lMC"
-
+      color: YELLOW
+      progress: '81'
+      text: '&6&oEverest &lMC'
 scoreboard:
   enabled: true
   toggle-command: /sb
@@ -50,17 +46,16 @@ scoreboard:
   delay-on-join-milliseconds: 0
   scoreboards:
     default:
-      title: "&6&l&o⛰ &f&l&oWildy"
+      title: '&6&l&o⛰ &f&l&oWildy'
       lines:
-        - "&8&m                    "
-        - "&7Rank &8| &f%cmi_user_rank_displayname%"
-        - "&7Playtime &8| &e%cmi_user_playtime_hourst%"
-        - "&8&m                    "
-        - "&7Money &8| &e%cmi_user_balance%"
-        - "&7cBlock &8| &e%griefprevention_remainingclaims%"
-        - "&7mcMMO &8| &e%mcmmo_power_level%"
-        - "&8&m                    "
-
+      - '&8&m                    '
+      - '&7Rank &8| &f%cmi_user_rank_displayname%'
+      - '&7Playtime &8| &e%cmi_user_playtime_hourst%'
+      - '&8&m                    '
+      - '&7Money &8| &e%cmi_user_balance%'
+      - '&7cBlock &8| &e%griefprevention_remainingclaims%'
+      - '&7mcMMO &8| &e%mcmmo_power_level%'
+      - '&8&m                    '
 mysql:
   enabled: true
   host: 127.0.0.1
@@ -69,25 +64,20 @@ mysql:
   username: 46770d6
   password: 7f04916
   useSSL: false
-
 placeholders:
   date-format: dd.MM.yyyy
-  time-format: "[HH:mm:ss / h:mm a]"
+  time-format: '[HH:mm:ss / h:mm a]'
   time-offset: 0
   register-tab-expansion: false
-
 placeholder-refresh-intervals:
   default-refresh-interval: 1000
-  "%server_tps_1_colored%": 700
-  "%player_ping%": 700
-
+  '%server_tps_1_colored%': 700
+  '%player_ping%': 700
 primary-group-finding-list:
-  - admin
-  - default
-
+- admin
+- default
 permission-refresh-interval: 10000
 use-online-uuid-in-tablist: true
-
 assign-groups-by-permissions: false
 compensate-for-packetevents-bug: false
 debug: false
@@ -104,11 +94,15 @@ ping-spoof:
 playerlist-objective:
   enabled: false
   title: TAB
-  value: ""
+  value: ''
   render-type: INTEGER
 belowname-objective:
   enabled: false
   fancy-value-default: NPC
-  fancy-value: "&c%health%"
+  fancy-value: '&c%health%'
 proxy-support:
   enabled: false
+config-version: 2
+components:
+  minimessage-support: true
+  disable-shadow-for-heads: true
