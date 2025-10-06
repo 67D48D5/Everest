@@ -1047,6 +1047,46 @@ VALUES (
         'global',
         0,
         '{}'
+    ),
+    (
+        222,
+        'default',
+        'cmi.command.rankup',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        223,
+        'default',
+        'cmi.command.rankinfo',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        224,
+        'default',
+        'cmi.command.ranklist',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        225,
+        'default',
+        'cmi.command.rankdown',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
     );
 
 /*!40000 ALTER TABLE `luckperms_group_permissions` ENABLE KEYS */
