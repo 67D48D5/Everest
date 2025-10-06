@@ -11,8 +11,8 @@
 #
 regions:
     spawn:
-        min: {x: -48, y: -64, z: -48}
-        max: {x: 48, y: 319, z: 48}
+        min: {x: -24, y: -64, z: -24}
+        max: {x: 24, y: 319, z: 24}
         members: {}
         flags: {build: deny}
         owners: {}
