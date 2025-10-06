@@ -73,6 +73,7 @@ advancements/
 !termux.properties
 !lwc_ko.properties
 !server.properties
+!database.properties
 
 !Holograms.yml
 !BackUps.yml
