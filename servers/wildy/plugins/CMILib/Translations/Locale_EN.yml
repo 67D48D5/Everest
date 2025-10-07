@@ -271,6 +271,7 @@ info:
     chicken: Chicken
     cod: Cod
     command_block_minecart: Command block minecart
+    copper_golem: Copper golem
     cow: Cow
     creaking: Creaking
     creeper: Creeper
@@ -326,6 +327,7 @@ info:
     magma_cube: Magma cube
     mangrove_boat: Mangrove boat
     mangrove_chest_boat: Mangrove chest boat
+    mannequin: Mannequin
     marker: Marker
     minecart: Minecart
     mooshroom: Mooshroom
@@ -397,127 +399,127 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
+    oxygen: Oxygen
+    frost_walker: Frost_walker
+    depth_strider: Depth_strider
+    dig_speed: Dig_speed
+    knockback: Knockback
+    protection_environmental: Protection_environmental
+    water_worker: Water_worker
+    arrow_damage: Arrow_damage
+    loot_bonus_blocks: Loot_bonus_blocks
+    riptide: Riptide
+    durability: Durability
+    arrow_infinite: Arrow_infinite
+    multishot: Multishot
+    channeling: Channeling
+    sweeping_edge: Sweeping_edge
+    damage_all: Damage_all
+    breach: Breach
+    wind_burst: Wind_burst
+    protection_explosions: Protection_explosions
+    arrow_fire: Arrow_fire
+    lure: Lure
+    silk_touch: Silk_touch
+    quick_charge: Quick_charge
+    protection_fire: Protection_fire
+    piercing: Piercing
+    mending: Mending
+    thorns: Thorns
+    density: Density
+    arrow_knockback: Arrow_knockback
+    swift_sneak: Swift_sneak
+    loyalty: Loyalty
+    impaling: Impaling
+    damage_arthropods: Damage_arthropods
+    fire_aspect: Fire_aspect
+    soul_speed: Soul_speed
+    luck: Luck
+    binding_curse: Binding_curse
+    protection_fall: Protection_fall
+    damage_undead: Damage_undead
     loot_bonus_mobs: Loot_bonus_mobs
     vanishing_curse: Vanishing_curse
-    arrow_knockback: Arrow_knockback
-    binding_curse: Binding_curse
-    loyalty: Loyalty
-    protection_fall: Protection_fall
-    loot_bonus_blocks: Loot_bonus_blocks
-    protection_explosions: Protection_explosions
-    impaling: Impaling
-    sweeping_edge: Sweeping_edge
-    damage_arthropods: Damage_arthropods
-    density: Density
-    lure: Lure
-    arrow_damage: Arrow_damage
     protection_projectile: Protection_projectile
-    luck: Luck
-    breach: Breach
-    depth_strider: Depth_strider
-    frost_walker: Frost_walker
-    mending: Mending
-    piercing: Piercing
-    oxygen: Oxygen
-    silk_touch: Silk_touch
-    riptide: Riptide
-    multishot: Multishot
-    damage_all: Damage_all
-    fire_aspect: Fire_aspect
-    damage_undead: Damage_undead
-    swift_sneak: Swift_sneak
-    dig_speed: Dig_speed
-    arrow_infinite: Arrow_infinite
-    thorns: Thorns
-    channeling: Channeling
-    protection_fire: Protection_fire
-    durability: Durability
-    wind_burst: Wind_burst
-    water_worker: Water_worker
-    arrow_fire: Arrow_fire
-    knockback: Knockback
-    soul_speed: Soul_speed
-    protection_environmental: Protection_environmental
-    quick_charge: Quick_charge
   PotionEffectAliases:
+    speed:
+    - Speed
+    healthboost:
+    - Health boost
+    miningfatigue:
+    - Mining fatigue
+    conduitpower:
+    - Conduit power
+    instanthealth:
+    - Instant health
+    strength:
+    - Strength
+    wither:
+    - Wither
+    nausea:
+    - Nausea
+    windcharged:
+    - Wind charged
+    hunger:
+    - Hunger
+    blindness:
+    - Blindness
+    resistance:
+    - Resistance
+    heroofthevillage:
+    - Hero of the village
+    slowness:
+    - Slowness
+    raidomen:
+    - Raid omen
+    trialomen:
+    - Trial omen
     haste:
     - Haste
     instantdamage:
     - Instant damage
-    healthboost:
-    - Health boost
-    saturation:
-    - Saturation
-    darkness:
-    - Darkness
-    jumpboost:
-    - Jump boost
-    levitation:
-    - Levitation
-    instanthealth:
-    - Instant health
-    badomen:
-    - Bad omen
-    resistance:
-    - Resistance
-    strength:
-    - Strength
-    dolphinsgrace:
-    - Dolphins grace
-    weaving:
-    - Weaving
-    glowing:
-    - Glowing
-    trialomen:
-    - Trial omen
-    invisibility:
-    - Invisibility
-    unluck:
-    - Unluck
-    infested:
-    - Infested
-    windcharged:
-    - Wind charged
-    conduitpower:
-    - Conduit power
-    hunger:
-    - Hunger
-    heroofthevillage:
-    - Hero of the village
-    waterbreathing:
-    - Water breathing
-    wither:
-    - Wither
-    blindness:
-    - Blindness
-    nausea:
-    - Nausea
-    luck:
-    - Luck
-    nightvision:
-    - Night vision
-    slowness:
-    - Slowness
-    absorption:
-    - Absorption
     weakness:
     - Weakness
-    poison:
-    - Poison
-    slowfalling:
-    - Slow falling
-    miningfatigue:
-    - Mining fatigue
-    raidomen:
-    - Raid omen
+    badomen:
+    - Bad omen
+    nightvision:
+    - Night vision
+    saturation:
+    - Saturation
     oozing:
     - Oozing
+    glowing:
+    - Glowing
+    invisibility:
+    - Invisibility
+    absorption:
+    - Absorption
     fireresistance:
     - Fire resistance
+    infested:
+    - Infested
+    luck:
+    - Luck
     regeneration:
     - Regeneration
-    speed:
-    - Speed
+    darkness:
+    - Darkness
+    dolphinsgrace:
+    - Dolphins grace
+    slowfalling:
+    - Slow falling
+    jumpboost:
+    - Jump boost
+    poison:
+    - Poison
+    unluck:
+    - Unluck
+    waterbreathing:
+    - Water breathing
+    weaving:
+    - Weaving
+    levitation:
+    - Levitation
 dialog:
   signEditor: Sign Editor
   update: Update
@@ -625,8 +627,8 @@ command:
       usage: '&cHelp &8» &6%usage%'
       cmdInfoFormat: '[command] &7- &f[description]'
       cmdFormat: '&6/[command]&f[arguments]'
-      helpPageDescription: '&f[description]'
-      explanation: '&f[explanation]'
+      helpPageDescription: ' &f[description]'
+      explanation: '  &f[explanation]'
       title: '&bHelp &8» &f'
   nocmd:
     help:

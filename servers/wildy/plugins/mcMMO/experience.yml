@@ -36,6 +36,7 @@ ExploitFix:
     PreventPluginNPCInteraction: true
     # This will limit XP gained from unnaturally tall plants, like those created by Bone Meal
     LimitTallPlantFarming: true
+    PreventMannequinInteraction: true
 Fishing_ExploitFix_Options:
     MoveRange: 3
     OverFishLimit: 10
@@ -577,6 +578,7 @@ Experience_Values:
         Redstone_Ore: 15
         Nether_Gold_Ore: 35
         Cobbled_Deepslate: 5
+        Copper_Nugget: 85
     Taming:
         Animal_Taming:
             Camel: 1300
@@ -682,3 +684,6 @@ Experience_Values:
             Breeze: 4.0
             Happy_Ghast: 1.0
             Ghastling: 0.5
+            Copper_Golem: 1.0
+            Armor_Stand: 0.0
+            Mannequin: 0.0

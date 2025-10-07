@@ -293,3 +293,57 @@ Repairables:
         RepairMaterial: BREEZE_ROD
         MinimumQuantity: 4
         MaximumDurability: 250
+    COPPER_SWORD:
+        MinimumLevel: 0
+        XpMultiplier: 0.3
+        ItemType: TOOL
+        ItemMaterialCategory: COPPER
+        RepairMaterial: COPPER_INGOT
+    COPPER_SHOVEL:
+        MinimumLevel: 0
+        XpMultiplier: 0.2
+        ItemType: TOOL
+        ItemMaterialCategory: COPPER
+        RepairMaterial: COPPER_INGOT
+    COPPER_PICKAXE:
+        MinimumLevel: 0
+        XpMultiplier: 0.6
+        ItemType: TOOL
+        ItemMaterialCategory: COPPER
+        RepairMaterial: COPPER_INGOT
+    COPPER_AXE:
+        MinimumLevel: 0
+        XpMultiplier: 0.6
+        ItemType: TOOL
+        ItemMaterialCategory: COPPER
+        RepairMaterial: COPPER_INGOT
+    COPPER_HOE:
+        MinimumLevel: 0
+        XpMultiplier: 0.3
+        ItemType: TOOL
+        ItemMaterialCategory: COPPER
+        RepairMaterial: COPPER_INGOT
+    COPPER_HELMET:
+        MinimumLevel: 0
+        XpMultiplier: 1.8
+        ItemType: ARMOR
+        ItemMaterialCategory: COPPER
+        RepairMaterial: COPPER_INGOT
+    COPPER_CHESTPLATE:
+        MinimumLevel: 0
+        XpMultiplier: 1.8
+        ItemType: ARMOR
+        ItemMaterialCategory: COPPER
+        RepairMaterial: COPPER_INGOT
+    COPPER_LEGGINGS:
+        MinimumLevel: 0
+        XpMultiplier: 1.8
+        ItemType: ARMOR
+        ItemMaterialCategory: COPPER
+        RepairMaterial: COPPER_INGOT
+    COPPER_BOOTS:
+        MinimumLevel: 0
+        XpMultiplier: 1.8
+        ItemType: ARMOR
+        ItemMaterialCategory: COPPER
+        RepairMaterial: COPPER_INGOT

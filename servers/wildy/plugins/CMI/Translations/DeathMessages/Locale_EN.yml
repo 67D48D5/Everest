@@ -221,6 +221,11 @@ Mob:
     Item:
     - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their hungry jaws, armed
       with &c[item]'
+  Copper_golem:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Cow:
     General:
     - '&6[playerDisplayName] &fwas milked dry by the relentless &c[mobName]'
@@ -378,6 +383,11 @@ Mob:
     Item:
     - '&6[playerDisplayName] &fmet their end at the hands of &c[mobName] &fand their
       searing heat, armed with &c[item]'
+  Mannequin:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Mooshroom:
     General:
     - '&6[playerDisplayName] &fkilled by &c[mobName]'

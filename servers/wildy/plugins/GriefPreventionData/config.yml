@@ -7,8 +7,8 @@ GriefPrevention:
     world_the_end: 24
   Claims:
     Mode:
-      world: Survival
       world_nether: Survival
+      world: Survival
       world_the_end: Survival
     PreventGlobalMonsterEggs: true
     PreventTheft: true
@@ -27,8 +27,6 @@ GriefPrevention:
       Default: 64
     Max Accrued Claim Blocks:
       Default: 49152
-    Accrued Idle Threshold: 64
-    AccruedIdlePercent: 4
     AbandonReturnRatio: 0.8
     AutomaticNewPlayerClaimsRadius: 8
     AutomaticNewPlayerClaimsRadiusMinimum: 4
@@ -40,16 +38,12 @@ GriefPrevention:
     ModificationTool: GOLDEN_SHOVEL
     Expiration:
       ChestClaimDays: 4
-      UnusedClaimDays: 8
       AllClaims:
         DaysInactive: 128
         ExceptWhenOwnerHasTotalClaimBlocks: 4096
         ExceptWhenOwnerHasBonusClaimBlocks: 2048
-      AutomaticNatureRestoration:
-        SurvivalWorlds: true
     AllowTrappedInAdminClaims: true
     MaximumNumberOfClaimsPerPlayer: 18
-    CreationRequiresWorldGuardBuildPermission: true
     VillagerTradingRequiresPermission: true
     CommandsRequiringAccessTrust: /sethome
     DeliverManuals: false
@@ -93,10 +87,6 @@ GriefPrevention:
       PvPWorlds: true
       NonPvPWorlds: false
     ProtectPetsOutsideLandClaims: false
-  Economy:
-    ClaimBlocksMaxBonus: 49152
-    ClaimBlocksPurchaseCost: 1.0
-    ClaimBlocksSellValue: 1.0
   ProtectItemsDroppedOnDeath:
     PvPWorlds: false
     NonPvPWorlds: true
@@ -116,54 +106,12 @@ GriefPrevention:
   Mute New Players Using Banned Words: true
   MaxPlayersPerIpAddress: 4
   SilenceBans: true
-  Siege:
-    Worlds: []
-    BreakableBlocks:
-    - BIRCH_PLANKS
-    - LIGHT_GRAY_WOOL
-    - ACACIA_PLANKS
-    - DIRT
-    - SPRUCE_PLANKS
-    - GRAVEL
-    - FERN
-    - WHITE_WOOL
-    - SHORT_GRASS
-    - SAND
-    - BLUE_WOOL
-    - GLASS_PANE
-    - PURPLE_WOOL
-    - DARK_OAK_PLANKS
-    - RED_WOOL
-    - SNOW
-    - COBBLESTONE
-    - MAGENTA_WOOL
-    - GRAY_WOOL
-    - BLACK_WOOL
-    - GLASS
-    - GREEN_WOOL
-    - PINK_WOOL
-    - YELLOW_WOOL
-    - OAK_PLANKS
-    - LIME_WOOL
-    - BROWN_WOOL
-    - DEAD_BUSH
-    - JUNGLE_PLANKS
-    - LIGHT_BLUE_WOOL
-    - CYAN_WOOL
-    - GRASS_BLOCK
-    - ORANGE_WOOL
-    DoorsOpenDelayInSeconds: 300
-    CooldownEndInMinutes: 60
   EndermenMoveBlocks: false
   SilverfishBreakBlocks: false
   CreaturesTrampleCrops: true
   RabbitsEatCrops: true
   HardModeZombiesBreakDoors: true
   MobProjectilesChangeBlocks: true
-  Database:
-    URL: jdbc:mysql://localhost:3306/msdwc
-    UserName: 46770d6
-    Password: 7f04916
   UseBanCommand: false
   BanCommandPattern: ban %name% %reason%
   Advanced:

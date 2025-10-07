@@ -150,6 +150,7 @@ SpawnReasons:
   LIGHTNING: true
   BUILD_SNOWMAN: true
   BUILD_IRONGOLEM: true
+  BUILD_COPPERGOLEM: true
   BUILD_WITHER: true
   VILLAGE_DEFENSE: true
   VILLAGE_INVASION: true
@@ -321,6 +322,9 @@ EntityTypes:
   COMMAND_BLOCK_MINECART:
     Use: true
     Limit: -1
+  COPPER_GOLEM:
+    Use: true
+    Limit: -1
   COW:
     Use: true
     Limit: 20
@@ -469,6 +473,9 @@ EntityTypes:
     Use: true
     Limit: -1
   MANGROVE_CHEST_BOAT:
+    Use: true
+    Limit: -1
+  MANNEQUIN:
     Use: true
     Limit: -1
   MARKER:
