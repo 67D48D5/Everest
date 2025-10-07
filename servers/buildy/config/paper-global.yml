@@ -13,7 +13,7 @@
 # Discord: https://discord.gg/papermc
 # Website: https://papermc.io/
 
-_version: 30
+_version: 31
 anticheat:
   obfuscation:
     items:
@@ -43,7 +43,6 @@ chunk-loading-basic:
   player-max-chunk-load-rate: 60.0
   player-max-chunk-send-rate: 60.0
 chunk-system:
-  gen-parallelism: default
   io-threads: -1
   worker-threads: -1
 collisions:
@@ -85,6 +84,7 @@ misc:
     chat-executor-max-size: -1
   client-interaction-leniency-distance: default
   compression-level: default
+  enable-nether: false
   load-permissions-yml-before-plugins: true
   max-joins-per-tick: 3
   prevent-negative-villager-demand: false

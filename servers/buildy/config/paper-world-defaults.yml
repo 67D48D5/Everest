@@ -295,7 +295,6 @@ misc:
   legacy-ender-pearl-behavior: false
   max-leash-distance: default
   redstone-implementation: VANILLA
-  shield-blocking-delay: 5
   show-sign-click-command-failure-msgs-to-player: false
   update-pathfinding-on-block-update: true
 scoreboards:
