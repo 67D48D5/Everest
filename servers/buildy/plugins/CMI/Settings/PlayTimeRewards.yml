@@ -6,7 +6,6 @@ hourly1:
   - "&2Free heal and 20 bucks into your pocket"
   PayEvery: 3600
   Commands:
-  - asConsole! cmi heal [playerName] -s
   - asConsole! cmi money give [playerName] 20
 daily1:
   DisplayName: "&7Daily reward"

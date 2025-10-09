@@ -13,7 +13,7 @@ hourly_patrol:
     # Gives the player a small amount of money
     - asConsole! cmi money give [playerName] 20
     # Heals the player to full health
-    - asConsole! cmi heal [playerName] -s
+    # - asConsole! cmi heal [playerName] -s
     # Gives the player a custom item from another plugin (if you have one)
     - asConsole! cmi give [playerName] custom_goodie_bag 1
 
