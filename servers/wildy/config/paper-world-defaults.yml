@@ -52,7 +52,7 @@ anticheat:
     use-permission: false
 chunks:
   auto-save-interval: default
-  delay-chunk-unloads-by: 10s
+  delay-chunk-unloads-by: 8s
   entity-per-chunk-save-limit:
     arrow: -1
     ender_pearl: -1
@@ -96,7 +96,7 @@ entities:
       - HARD
       zombified_piglin:
       - HARD
-    ender-dragons-death-always-places-dragon-egg: false
+    ender-dragons-death-always-places-dragon-egg: true
     experience-merge-max-value: 100
     mobs-can-always-pick-up-loot:
       skeletons: false
@@ -273,11 +273,11 @@ hopper:
 lootables:
   auto-replenish: true
   max-refills: -1
-  refresh-max: 2d
-  refresh-min: 12h
+  refresh-max: 12h
+  refresh-min: 4h
   reset-seed-on-fill: true
   restrict-player-reloot: true
-  restrict-player-reloot-time: 1d
+  restrict-player-reloot-time: 8h
   retain-unlooted-shulker-box-loot-table-on-non-player-break: true
 maps:
   item-frame-cursor-limit: 128
@@ -296,7 +296,7 @@ misc:
   disable-sprint-interruption-on-attack: false
   legacy-ender-pearl-behavior: false
   max-leash-distance: default
-  redstone-implementation: EIGENCRAFT
+  redstone-implementation: ALTERNATE_CURRENT
   show-sign-click-command-failure-msgs-to-player: false
   update-pathfinding-on-block-update: true
 scoreboards:
