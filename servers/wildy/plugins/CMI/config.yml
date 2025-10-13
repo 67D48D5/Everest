@@ -628,9 +628,13 @@ Holograms:
     # Default value for hologram view range
     # This defines from how far holograms will appear for the player or when they will disapear
     viewRange: 16
-    # Defines default update interval
-    # Bigger this number is better performance we will have
+    # Default value for hologram update range
+    # This defines how close player should get for hologram to start updating its text
+    # Keep it at reasoble numbers as there is no point to update hologram across map
     updateRange: 8
+    # Defines default update interval
+    # Higher values means that holograms will be updated less often
+    # When value is set to 0 or lower, holograms will not be updated
     updateInterval: 0.0
     # Defines default page change interval
     # When value is set to 0 or lower, pages will not be changed
