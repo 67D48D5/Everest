@@ -8,8 +8,8 @@ GriefPrevention:
   Claims:
     Mode:
       world: Survival
-      world_the_end: Survival
       world_nether: Survival
+      world_the_end: Survival
     PreventGlobalMonsterEggs: true
     PreventTheft: true
     ProtectCreatures: true
