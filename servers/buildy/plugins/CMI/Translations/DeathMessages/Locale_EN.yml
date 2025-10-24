@@ -138,6 +138,9 @@ Mob:
   Tnt_minecart:
     General:
     - '&6[playerDisplayName] &fblew up'
+  Area_effect_cloud:
+    General:
+    - '&2[playerDisplayName] &7was killed by magic cloud'
   Allay:
     General:
     - '&6[playerDisplayName] &fwas lured into the abyss by the enchanting call of
