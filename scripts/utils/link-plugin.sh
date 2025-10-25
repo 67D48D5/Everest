@@ -29,7 +29,7 @@ link_server_plugins() {
   local server_dir="$3"
 
   local dest_dir="${server_dir}/plugins"
-  local auto_dir="${PLUGIN_ROOT}/${engine}/auto"
+  local auto_dir="${PLUGIN_ROOT}/${engine}/managed"
   local static_dir="${PLUGIN_ROOT}/${engine}"
 
   # --- The Atomic Swap: Part 1 ---

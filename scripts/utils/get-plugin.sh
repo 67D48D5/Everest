@@ -122,7 +122,7 @@ jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
     # Define the parent directory for this engine's plugins.
     engine_plugin_dir="$PLUGIN_ROOT/$engine"
     # The final destination for the plugins.
-    auto_dir="$engine_plugin_dir/auto"
+    auto_dir="$engine_plugin_dir/managed"
 
     # Ensure the parent directory exists first.
     mkdir -p "$engine_plugin_dir"
