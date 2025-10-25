@@ -1,7 +1,7 @@
 # ************************************************************
 # Init SQL Script for Everest MC
 #
-# Database: msdgl, msdwc, msdbd
+# Database: msdgl, msdwc
 # Host: MySQL 11.8.2-MariaDB
 # ************************************************************
 
@@ -22,9 +22,6 @@ CREATE DATABASE msdgl CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 # Database for the Wildy server
 CREATE DATABASE msdwc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-# Database for the Buildy server
-CREATE DATABASE msdbd CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 # Apply the settings to the msdgl database
 # ************************************************************
