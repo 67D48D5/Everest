@@ -84,7 +84,7 @@ Economy:
     # if this is disabled then payments will be limited to whole numbers and in case player provides number with fraction we will round number down
     Fractions: true
     # Currency symbol to be used when showing balance or similar
-    CurrencySymbol: ₿
+    CurrencySymbol: $
     # Format used for displaying money
     MoneyFormat: '###,###'
     # Converts long numbers to short ones, like 12305122 to 12.3m
@@ -102,7 +102,7 @@ Economy:
     # Replaces to western format where decimals are separated by , and thousands by . In example 1,000,000.00 changes to 1.000.000,00
     SwitchPlaces: false
     # Placing of currency symbol
-    Placing: '[money] [symbol]'
+    Placing: '[symbol] [money]'
 FileSave:
   # Change this to true only if you have issues with drives I/O and you need to save players files in async mode to lower waiting time for mc server
   Async: false
