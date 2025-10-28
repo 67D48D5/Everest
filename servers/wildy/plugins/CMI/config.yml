@@ -102,7 +102,7 @@ Economy:
     # Replaces to western format where decimals are separated by , and thousands by . In example 1,000,000.00 changes to 1.000.000,00
     SwitchPlaces: false
     # Placing of currency symbol
-    Placing: '[symbol] [money]'
+    Placing: '[symbol][money]'
 FileSave:
   # Change this to true only if you have issues with drives I/O and you need to save players files in async mode to lower waiting time for mc server
   Async: false
