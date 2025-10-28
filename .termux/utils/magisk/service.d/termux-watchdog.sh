@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
-# Wait for 24 seconds to ensure all services are up
-sleep 24
+# Wait for 18 seconds to ensure all services are up
+sleep 18
 
 # First time start
 am start -n com.termux/.HomeActivity
@@ -19,7 +19,7 @@ log_msg() {
         if ! "$pid" >/dev/null; then
             log_msg "Termux app not running, starting..."
             am start -n "com.termux/.HomeActivity"
-            sleep 24
+            sleep 18
         fi
 
         if [ -n "$pid" ]; then
@@ -27,6 +27,6 @@ log_msg() {
             echo -1000 >/proc/$pid/oom_score_adj 2>/dev/null
         fi
 
-        sleep 48
+        sleep 24
     done
 ) &
