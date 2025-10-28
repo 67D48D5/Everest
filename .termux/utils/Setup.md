@@ -4,6 +4,8 @@ Setup Guide for Termux with Magisk
 
 ## On Android
 
+> Ensure to download **Debug** versions from **GitHub**, as the Play Store versions may have limitations.
+
 1. Install [Termux](https://github.com/termux/termux-app/releases) from **GitHub**.
 2. Install [Termux:Boot](https://github.com/termux/termux-boot/releases) from **GitHub**.
 3. Turn on **ADB** and **USB Debugging** in **Developer Options**.
@@ -71,7 +73,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # Install Zsh Auto Suggestions plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-Edit `.zshrc` to set the theme and add the new plugins
+# Edit `.zshrc` to set the theme and add the new plugins
 sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"powerlevel10k\/powerlevel10k\"/' ~/.zshrc
 sed -i '/plugins=(git)/c\plugins=(git zsh-autosuggestions zsh-syntax-highlighting)' ~/.zshrc
 ```

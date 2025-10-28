@@ -18,7 +18,7 @@ for blockdev in /sys/block/*/queue/scheduler; do
   echo noop >"$blockdev" 2>/dev/null
 done
 
-# Set swappiness to somewhat higher value in order to prevent `OOM Killer` from killing the processes
+# Set swappiness to somewhat higher value in order to prevent `OOM Killer` killing the processes
 echo 80 >/proc/sys/vm/swappiness 2>/dev/null
 
 # Set the CPU governor for the moderate cpuset
