@@ -1,5 +1,5 @@
 # Defines prefix for all death messages
-Prefix: '&4&l&o💀 '
+Prefix: '&cDeath &8» &f'
 # Defines hover over infomation about player who died. Use basic placeholders like %cmi_user_name% to include any information you would want
 # Set this like to '' if you want to avoid including hover over message
 PlayerHover:
