@@ -1413,7 +1413,7 @@ command:
       info: Manage gamerules
       args: (world) (gamerule) (value)
     info:
-      updated: '&aGameRule &8» &fGame rule &e[rule] changed for &6[world] &fto &a[value]'
+      updated: '&aGameRule &8» &fGame rule &3[rule] changed for &6[world] &fto &a[value]'
   generateworth:
     help:
       info: Auto generate possible item worth values
@@ -1570,14 +1570,14 @@ command:
       args: '[sourceName] (targetName) (-s) (amount)'
     info:
       Feedback: '&aHead &8» &6[headName] &fhead created&o!'
-      targetFeedback: '&aHead &8» &fYou got &6[headName] &fhead from &6[senderDisplayName]&f&o!'
+      targetFeedback: '&aHead &8» &fYou got &a[headName] &fhead from &6[senderDisplayName]&f&o!'
   heal:
     help:
       info: Heal player
       args: '[playerName/all] (healamount/healpercent) (-nofeed) (-ignoreffects) (-dontextinguish)'
     info:
       feedback: '&aHeal &8» &fYou have healed &6[playerDisplayName] &7([offon]&7)&f.'
-      feedbackMulti: '&aHeal &8» &fYou have healed &3[count] &fplayers.'
+      feedbackMulti: '&aHeal &8» &fYou have healed &a[count] &fplayers.'
       targetfeedback: '&aHeal &8» &fYou have been healed by &6[senderDisplayName]&f.'
   helpop:
     help:
@@ -2548,19 +2548,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@3e6efa86, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@56d89ddf, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@c25a19c,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@4809029d,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_leatherworker, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:leatherworker]=villagerprofession[name=translation{key='entity.minecraft.villager.leatherworker',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@3e6efa86,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@c25a19c,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@56d89ddf,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@4809029d,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           leatherworker, fixedrange=optional.empty]]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
@@ -2572,19 +2572,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@40b02f1e, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@3e5eb08b, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@4d74dbc7,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@4c2e854,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_mason, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:mason]=villagerprofession[name=translation{key='entity.minecraft.villager.mason',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@40b02f1e,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@4d74dbc7,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@3e5eb08b,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@4c2e854,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           mason, fixedrange=optional.empty]]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
@@ -2596,19 +2596,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@407b225, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@1666bb76, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@250fda78,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@167b5ecd,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_fletcher, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:fletcher]=villagerprofession[name=translation{key='entity.minecraft.villager.fletcher',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@407b225,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@250fda78,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@1666bb76,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@167b5ecd,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           fletcher, fixedrange=optional.empty]]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
@@ -2620,19 +2620,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@6406c918, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@5d6a7e61, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@fc79cbc,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@4ef9bdd0,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_weaponsmith, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:weaponsmith]=villagerprofession[name=translation{key='entity.minecraft.villager.weaponsmith',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@6406c918,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@fc79cbc,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@5d6a7e61,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@4ef9bdd0,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           weaponsmith, fixedrange=optional.empty]]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
@@ -2644,19 +2644,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@366881fb, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@6de70272, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@6def5154,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@2126a435,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_toolsmith, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:toolsmith]=villagerprofession[name=translation{key='entity.minecraft.villager.toolsmith',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@366881fb,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@6def5154,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@6de70272,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@2126a435,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           toolsmith, fixedrange=optional.empty]]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
@@ -2668,19 +2668,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@3f730bf8, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@2fb15f06, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@ce252d6,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@2c25601d,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_librarian, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:librarian]=villagerprofession[name=translation{key='entity.minecraft.villager.librarian',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@3f730bf8,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@ce252d6,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@2fb15f06,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@2c25601d,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           librarian, fixedrange=optional.empty]]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
@@ -2692,19 +2692,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@7e777de8, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@79040379, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@6985e683,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@6d971760,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_shepherd, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:shepherd]=villagerprofession[name=translation{key='entity.minecraft.villager.shepherd',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@7e777de8,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@6985e683,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@79040379,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@6d971760,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           shepherd, fixedrange=optional.empty]]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
@@ -2716,12 +2716,12 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6ee8@4e0e1c80, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaeee8@48fb3cbb, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa7148@50e48375,
+                                  ? villagerprofession$$lambda/0x00007c0001aaf148@4fd99831,
                                     requesteditems=[minecraft:wheat, minecraft:wheat_seeds,
                                     minecraft:beetroot_seeds, minecraft:bone_meal],
                                     secondarypoi=[block{minecraft:farmland}], worksound=soundevent[location=minecraft:entity
@@ -2729,8 +2729,8 @@ command:
                                       work_farmer, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:farmer]=villagerprofession[name=translation{key='entity.minecraft.villager.farmer',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6ee8@4e0e1c80,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa7148@50e48375,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaeee8@48fb3cbb,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaf148@4fd99831,
                                           requesteditems=[minecraft:wheat, minecraft:wheat
                                           seeds, minecraft:beetroot seeds, minecraft:bone
                                           meal], secondarypoi=[block{minecraft:farmland}],
@@ -2745,19 +2745,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@15b93cbc, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@161f4578, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@53ce7176,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@43e66ccc,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_cleric, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:cleric]=villagerprofession[name=translation{key='entity.minecraft.villager.cleric',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@15b93cbc,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@53ce7176,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@161f4578,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@43e66ccc,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           cleric, fixedrange=optional.empty]]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
@@ -2771,17 +2771,17 @@ command:
                       ai:
                         village:
                           poi:
-                            poitype$$lambda/0x000007fc01aa5ea0@6d1a9d93, acquirablejobsite=net:
+                            poitype$$lambda/0x00007c0001aadea0@52699eef, acquirablejobsite=net:
                               minecraft:
                                 world:
                                   entity:
                                     ai:
                                       village:
                                         poi:
-                                          poitype$$lambda/0x000007fc01aa5ea0@6d1a9d93, requesteditems=[], secondarypoi=[], worksound=null]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
+                                          poitype$$lambda/0x00007c0001aadea0@52699eef, requesteditems=[], secondarypoi=[], worksound=null]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                             profession / minecraft:nitwit]=villagerprofession[name=translation{key='entity.minecraft.villager.nitwit',
-                                            args=[]}, heldjobsite=net.minecraft.world.entity.ai.village.poi.poitype$$lambda/0x000007fc01aa5ea0@6d1a9d93,
-                                            acquirablejobsite=net.minecraft.world.entity.ai.village.poi.poitype$$lambda/0x000007fc01aa5ea0@6d1a9d93,
+                                            args=[]}, heldjobsite=net.minecraft.world.entity.ai.village.poi.poitype$$lambda/0x00007c0001aadea0@52699eef,
+                                            acquirablejobsite=net.minecraft.world.entity.ai.village.poi.poitype$$lambda/0x00007c0001aadea0@52699eef,
                                             requesteditems=[], secondarypoi=[], worksound=null]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
           / minecraft:cartographer]=villagerprofession[name=translation{key='entity
@@ -2792,19 +2792,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@1911546e, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@51f28c83, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@4591d72c,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@3daa3740,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_cartographer, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:cartographer]=villagerprofession[name=translation{key='entity.minecraft.villager.cartographer',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@1911546e,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@4591d72c,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@51f28c83,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@3daa3740,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           cartographer, fixedrange=optional.empty]]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
@@ -2816,19 +2816,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@65744b29, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@4d5abc35, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@5cbbb411,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@535acd97,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_armorer, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:armorer]=villagerprofession[name=translation{key='entity.minecraft.villager.armorer',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@65744b29,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@5cbbb411,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@4d5abc35,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@535acd97,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           armorer, fixedrange=optional.empty]]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
@@ -2840,19 +2840,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@4f9a29cc, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@1609d5eb, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@4f9afa4,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@7a75f05d,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_butcher, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:butcher]=villagerprofession[name=translation{key='entity.minecraft.villager.butcher',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@4f9a29cc,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@4f9afa4,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@1609d5eb,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@7a75f05d,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           butcher, fixedrange=optional.empty]]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
@@ -2866,15 +2866,15 @@ command:
                       ai:
                         village:
                           poi:
-                            poitype$$lambda/0x000007fc01aa5ea0@6d1a9d93, acquirablejobsite=net:
+                            poitype$$lambda/0x00007c0001aadea0@52699eef, acquirablejobsite=net:
                               minecraft:
                                 world:
                                   entity:
                                     npc:
-                                      villagerprofession$$lambda/0x000007fc01aa5c48@43139111, requesteditems=[], secondarypoi=[], worksound=null]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
+                                      villagerprofession$$lambda/0x00007c0001aadc48@62565032, requesteditems=[], secondarypoi=[], worksound=null]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                         profession / minecraft:none]=villagerprofession[name=translation{key='entity.minecraft.villager.none',
-                                        args=[]}, heldjobsite=net.minecraft.world.entity.ai.village.poi.poitype$$lambda/0x000007fc01aa5ea0@6d1a9d93,
-                                        acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa5c48@43139111,
+                                        args=[]}, heldjobsite=net.minecraft.world.entity.ai.village.poi.poitype$$lambda/0x00007c0001aadea0@52699eef,
+                                        acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aadc48@62565032,
                                         requesteditems=[], secondarypoi=[], worksound=null]}}
         ? craftprofession{holder=reference{resourcekey[minecraft:villager_profession
           / minecraft:fisherman]=villagerprofession[name=translation{key='entity
@@ -2885,19 +2885,19 @@ command:
                   world:
                     entity:
                       npc:
-                        villagerprofession$$lambda/0x000007fc01aa6a28@4289be5e, acquirablejobsite=net:
+                        villagerprofession$$lambda/0x00007c0001aaea28@67650f9a, acquirablejobsite=net:
                           minecraft:
                             world:
                               entity:
                                 npc:
-                                  ? villagerprofession$$lambda/0x000007fc01aa6c88@5c433b8a,
+                                  ? villagerprofession$$lambda/0x00007c0001aaec88@3f9b3810,
                                     requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity
                                   : villager:
                                       work_fisherman, fixedrange=optional:
                                         empty]]}}: Craftprofession{holder=reference{resourcekey[minecraft:villager
                                           profession / minecraft:fisherman]=villagerprofession[name=translation{key='entity.minecraft.villager.fisherman',
-                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6a28@4289be5e,
-                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x000007fc01aa6c88@5c433b8a,
+                                          args=[]}, heldjobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaea28@67650f9a,
+                                          acquirablejobsite=net.minecraft.world.entity.npc.villagerprofession$$lambda/0x00007c0001aaec88@3f9b3810,
                                           requesteditems=[], secondarypoi=[], worksound=soundevent[location=minecraft:entity.villager.work
                                           fisherman, fixedrange=optional.empty]]}}
   migratedatabase:
