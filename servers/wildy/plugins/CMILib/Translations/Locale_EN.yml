@@ -617,9 +617,9 @@ Location:
   Pitch: '&ePitch: &6[pitch]'
   Yaw: '&eYaw: &6[yaw]'
   WorldNames:
-  - world-&aOverworld
-  - world_nether-&aNether
-  - world_the_end-&aThe End
+  - wwild-&aOverworld
+  - wwild_nether-&aNether
+  - wwild_the_end-&aThe End
 Locations: '&bLocations &8» &f '
 command:
   help:
