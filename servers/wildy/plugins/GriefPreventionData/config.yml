@@ -24,9 +24,11 @@ GriefPrevention:
     ProtectLlamas: true
     InitialBlocks: 128
     Claim Blocks Accrued Per Hour:
-      Default: 64
+      Default: 24
     Max Accrued Claim Blocks:
-      Default: 49152
+      Default: 32768
+    Accrued Idle Threshold: 16
+    AccruedIdlePercent: 4
     AbandonReturnRatio: 0.8
     AutomaticNewPlayerClaimsRadius: 8
     AutomaticNewPlayerClaimsRadiusMinimum: 4
@@ -38,24 +40,28 @@ GriefPrevention:
     ModificationTool: GOLDEN_SHOVEL
     Expiration:
       ChestClaimDays: 4
+      UnusedClaimDays: 8
       AllClaims:
         DaysInactive: 128
-        ExceptWhenOwnerHasTotalClaimBlocks: 4096
-        ExceptWhenOwnerHasBonusClaimBlocks: 2048
+        ExceptWhenOwnerHasTotalClaimBlocks: 8192
+        ExceptWhenOwnerHasBonusClaimBlocks: 4096
+      AutomaticNatureRestoration:
+        SurvivalWorlds: true
     AllowTrappedInAdminClaims: true
     MaximumNumberOfClaimsPerPlayer: 18
+    CreationRequiresWorldGuardBuildPermission: true
     VillagerTradingRequiresPermission: true
     CommandsRequiringAccessTrust: /sethome
     DeliverManuals: false
     ManualDeliveryDelaySeconds: 30
     RavagersBreakBlocks: true
     FireSpreadsInClaims: false
-    FireDamagesInClaims: true
+    FireDamagesInClaims: false
     LecternReadingRequiresAccessTrust: true
   Spam:
     Enabled: true
     LoginCooldownSeconds: 4
-    LoginLogoutNotificationsPerMinute: 3
+    LoginLogoutNotificationsPerMinute: 5
     ChatSlashCommands: /me;/global;/local
     WhisperSlashCommands: /tell;/pm;/r;/whisper;/msg
     WarningMessage: §cChat §8» §fIf you continue to send spam messages in chat, you
@@ -87,6 +93,10 @@ GriefPrevention:
       PvPWorlds: true
       NonPvPWorlds: false
     ProtectPetsOutsideLandClaims: false
+  Economy:
+    ClaimBlocksMaxBonus: 49152
+    ClaimBlocksPurchaseCost: 1.0
+    ClaimBlocksSellValue: 1.0
   ProtectItemsDroppedOnDeath:
     PvPWorlds: false
     NonPvPWorlds: true
@@ -106,6 +116,44 @@ GriefPrevention:
   Mute New Players Using Banned Words: true
   MaxPlayersPerIpAddress: 4
   SilenceBans: true
+  Siege:
+    Worlds: []
+    BreakableBlocks:
+    - BIRCH_PLANKS
+    - LIGHT_GRAY_WOOL
+    - ACACIA_PLANKS
+    - DIRT
+    - SPRUCE_PLANKS
+    - GRAVEL
+    - FERN
+    - WHITE_WOOL
+    - SHORT_GRASS
+    - SAND
+    - BLUE_WOOL
+    - GLASS_PANE
+    - PURPLE_WOOL
+    - DARK_OAK_PLANKS
+    - RED_WOOL
+    - SNOW
+    - COBBLESTONE
+    - MAGENTA_WOOL
+    - GRAY_WOOL
+    - BLACK_WOOL
+    - GLASS
+    - GREEN_WOOL
+    - PINK_WOOL
+    - YELLOW_WOOL
+    - OAK_PLANKS
+    - LIME_WOOL
+    - BROWN_WOOL
+    - DEAD_BUSH
+    - JUNGLE_PLANKS
+    - LIGHT_BLUE_WOOL
+    - CYAN_WOOL
+    - GRASS_BLOCK
+    - ORANGE_WOOL
+    DoorsOpenDelayInSeconds: 300
+    CooldownEndInMinutes: 60
   EndermenMoveBlocks: false
   SilverfishBreakBlocks: false
   CreaturesTrampleCrops: true
