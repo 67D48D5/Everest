@@ -31,6 +31,23 @@
         "MobFarmManager": "manual://MobFarmManager*",
         "Vault": "manual://Vault-*"
       }
+    },
+    "buildy": {
+      "engine": "paper",
+      "plugins": {
+        "Chunky": "auto://Chunky-*",
+        "ChunkyBorder": "auto://ChunkyBorder-*",
+        "FastAsyncWorldEdit": "auto://FastAsyncWorldEdit-Paper-*",
+        "LuckPerms": "auto://LuckPerms-*",
+        "PlaceholderAPI": "auto://PlaceholderAPI-*",
+        "ProtocolLib": "auto://ProtocolLib*",
+        "TAB": "auto://TAB*",
+        "CMI": "manual://CMI-*",
+        "CMILib": "manual://CMILib*",
+        "CoreProtect": "manual://CoreProtect-*",
+        "PlotSquared": "manual://plotsquared-*",
+        "Vault": "manual://Vault-*"
+      }
     }
   }
 }

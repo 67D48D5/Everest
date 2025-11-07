@@ -1,7 +1,7 @@
 # ************************************************************
 # Init SQL Script for Everest MC
 #
-# Database: msdgl, msdwc
+# Database: msdgl, msdwc, msdbd
 # Host: MySQL 11.8.2-MariaDB
 # ************************************************************
 
@@ -22,6 +22,9 @@ CREATE DATABASE msdgl CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 # Database for the Wildy server
 CREATE DATABASE msdwc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+# Database for the Buildy server
+CREATE DATABASE msdbd CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 # Apply the settings to the msdgl database
 # ************************************************************
@@ -766,6 +769,156 @@ VALUES (
         '{}'
     ),
     (
+        176,
+        'default',
+        'fawe.plotsquared',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        177,
+        'default',
+        'fawe.permpack.basic',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        179,
+        'default',
+        'fawe.plotsquared.member',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        181,
+        'default',
+        'cmi.command.give',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        182,
+        'default',
+        'cmi.command.walkspeed',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        186,
+        'default',
+        'cmi.command.flyspeed.*',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        188,
+        'default',
+        'cmi.command.flyspeed',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        190,
+        'default',
+        'plots.permpack.basicinbox',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        191,
+        'default',
+        'plots.permpack.basicflags',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        192,
+        'default',
+        'plots.permpack.basic',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        196,
+        'default',
+        'plots.merge.*',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        197,
+        'default',
+        'plots.plot.48',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        198,
+        'default',
+        'worldedit.navigation.thru.tool',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        199,
+        'default',
+        'worldedit.navigation.jumpto.tool',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        200,
+        'default',
+        'worldedit.schematic.load.web',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
         201,
         'default',
         'velocity.command.glist',
@@ -851,6 +1004,36 @@ VALUES (
         'geyser.*',
         1,
         'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        216,
+        'default',
+        'cmi.command.gm',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        218,
+        'default',
+        'cmi.command.effect',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        220,
+        'default',
+        'cmi.command.gm.*',
+        1,
+        'buildy',
         'global',
         0,
         '{}'

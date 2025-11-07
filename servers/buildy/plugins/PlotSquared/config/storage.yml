@@ -1,0 +1,21 @@
+prefix: ''
+
+# SQLite section
+sqlite:
+  # Should SQLite be used?
+  use: false
+  # The file to use
+  db: "storage"
+
+# MySQL section
+mysql:
+  # Should MySQL be used?
+  use: true
+  host: "localhost"
+  port: "3306"
+  user: "46770d6"
+  password: "7f04916"
+  database: "msdbd"
+  # Set additional properties: https://dev.mysql.com/doc/connector-j/en/connector-j-reference-configuration-properties.html
+  properties: 
+  - "useSSL=false"
