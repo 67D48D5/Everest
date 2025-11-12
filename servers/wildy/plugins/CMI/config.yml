@@ -139,8 +139,12 @@ Optimizations:
     # This can help out to minimize posibility for players to manipulate armor stands when they don't have build permission in area where armorstand is standing
     CheckBlockPlace: false
     # Minimal armorstand scale which can be set in armor stand editor
+    # This is base min scale, can be overriden with cmi.command.armorstand.scalemin.[value] permission node
+    # Keep in mind that min value will be taken from this setting and permission node if both are set
     MinScale: 0.5
     # Max armorstand scale which can be set in armor stand editor
+    # This is base max scale, can be overriden with cmi.command.armorstand.scalemax.[value] permission node
+    # Keep in mind that max value will be taken from this setting and permission node if both are set
     MaxScale: 3
     Templates:
       # When set to true, the player will be required to have cmi.command.armorstand.template.[templatename] permission node to deploy saved template
@@ -821,6 +825,9 @@ NickName:
   MinLength: 4
   # Max length of nick name, can be bypassed with cmi.command.nick.bypass.length
   MaxLength: 16
+  # When enabled players will not be able to choose existing real player names
+  # Can be bypassed with cmi.command.nick.bypassrealname permission node
+  PreventRealNames: true
   # Adds prefix for players nickname to indicate that its not real name. This can be added to display name with {nicknameprefix}
   Prefix: '!'
   # When true, will only add nickname prefix when its not same as original name. This can allow colorization or capitalization change without adding prefix

@@ -1291,6 +1291,10 @@ Alias:
   tree:
     Enabled: true
     Tab: true
+  # /cmi trim $1-
+  trim:
+    Enabled: true
+    Tab: true
   # /cmi unban $1-
   unban:
     Enabled: true
