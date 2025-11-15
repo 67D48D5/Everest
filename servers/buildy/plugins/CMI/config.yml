@@ -341,8 +341,6 @@ Optimizations:
   # Do you want to run auto top playtime updater
   # This is responsible for providing players current top playtimes which gets updated on consistent intervals, useful for placeholders
   PlayTimeAutoUpdater: true
-  # When set to true, playtimetop list will be loaded on server startup
-  PreloadTopPlaytime: false
   # Do you want to use CMI playtime tracking
   # While this is enabled, player play time will be record for each hour he playied in server
   # This doesnt have effect on rankup or /playtime commands, it will only show more specific playtime by hours when using /cplaytime command
