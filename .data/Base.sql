@@ -1087,6 +1087,26 @@ VALUES (
         'global',
         0,
         '{}'
+    ),
+    (
+        226,
+        'default',
+        'plots.trust.8',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        227,
+        'default',
+        'plots.add.8',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
     );
 
 /*!40000 ALTER TABLE `luckperms_group_permissions` ENABLE KEYS */
