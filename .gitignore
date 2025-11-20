@@ -43,6 +43,8 @@ ops.json
 **flatfile**
 **backup**
 
+/**/custom/CoreProtect/
+
 /**/litebans/server.json
 /**/MobFarmManager/**Log**/
 /**/CMI/**Log**/
