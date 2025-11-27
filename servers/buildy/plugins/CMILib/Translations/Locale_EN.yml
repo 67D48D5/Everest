@@ -399,48 +399,48 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    aqua_affinity: Aqua_Affinity
-    unbreaking: Unbreaking
-    wind_burst: Wind_burst
-    bane_of_arthropods: Bane_Of_Arthropods
-    binding_curse: Binding_curse
-    depth_strider: Depth_strider
-    efficiency: Efficiency
-    mending: Mending
-    fortune: Fortune
-    impaling: Impaling
-    flame: Flame
-    multishot: Multishot
-    fire_protection: Fire_Protection
-    loyalty: Loyalty
-    lure: Lure
-    sweeping_edge: Sweeping_edge
-    knockback: Knockback
-    riptide: Riptide
-    quick_charge: Quick_charge
-    sharpness: Sharpness
-    soul_speed: Soul_speed
-    feather_falling: Feather_Falling
-    swift_sneak: Swift_sneak
-    fire_aspect: Fire_aspect
     punch: Punch
+    projectile_protection: Projectile_Protection
+    protection: Protection
+    quick_charge: Quick_charge
+    multishot: Multishot
+    unbreaking: Unbreaking
+    depth_strider: Depth_strider
     density: Density
-    thorns: Thorns
-    piercing: Piercing
+    frost_walker: Frost_walker
+    wind_burst: Wind_burst
+    lure: Lure
+    aqua_affinity: Aqua_Affinity
+    bane_of_arthropods: Bane_Of_Arthropods
+    fire_protection: Fire_Protection
+    flame: Flame
+    soul_speed: Soul_speed
     luck_of_the_sea: Luck_Of_The_Sea
+    riptide: Riptide
+    fire_aspect: Fire_aspect
+    power: Power
+    mending: Mending
+    respiration: Respiration
+    binding_curse: Binding_curse
+    channeling: Channeling
+    blast_protection: Blast_Protection
+    loyalty: Loyalty
+    thorns: Thorns
+    swift_sneak: Swift_sneak
+    sweeping_edge: Sweeping_edge
+    vanishing_curse: Vanishing_curse
+    piercing: Piercing
     breach: Breach
-    looting: Looting
+    feather_falling: Feather_Falling
+    efficiency: Efficiency
+    impaling: Impaling
+    infinity: Infinity
     silk_touch: Silk_touch
     smite: Smite
-    infinity: Infinity
-    channeling: Channeling
-    projectile_protection: Projectile_Protection
-    blast_protection: Blast_Protection
-    power: Power
-    protection: Protection
-    respiration: Respiration
-    frost_walker: Frost_walker
-    vanishing_curse: Vanishing_curse
+    looting: Looting
+    sharpness: Sharpness
+    knockback: Knockback
+    fortune: Fortune
   PotionEffectAliases:
     conduitpower:
     - Conduit power
