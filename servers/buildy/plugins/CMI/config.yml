@@ -69,6 +69,7 @@ Economy:
     IncludeFakes: false
     # Set to 0 or lower to disable this feature
     # Time in days of player being offline to exclude from being included in balance top list
+    # For full effect this will require server restart
     ExcludeInactive: 0
   Global:
     # Starting amount of money players will have
