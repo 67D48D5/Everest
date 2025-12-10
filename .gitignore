@@ -4,6 +4,7 @@
 
 # Ignore Files
 .DS_Store
+.assets/private/
 
 lib/
 spark/
@@ -42,8 +43,6 @@ ops.json
 **history**
 **flatfile**
 **backup**
-
-/**/custom/CoreProtect/
 
 /**/litebans/server.json
 /**/MobFarmManager/**Log**/
