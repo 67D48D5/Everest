@@ -73,16 +73,30 @@ CONFIG="$(cat "$CONFIG_FILE")"
 
 echo "[$(date '+%H:%M:%S') INFO] [get-engine]: Processing all engines..."
 
+# Track background job PIDs for better error handling
+declare -a JOB_PIDS=()
+
 # This process substitution `< <(...)` prevents the while loop from running
 # in a subshell. This ensures the 'wait' command below is in the correct
 # shell scope and will wait for all background jobs to finish.
 while IFS=$'\t' read -r engine version; do
     # The '&' at the end runs the function in the background!
     process_engine "$engine" "$version" &
+    JOB_PIDS+=($!)
 done < <(jq -r '.engines | to_entries[] | "\(.key)\t\(.value.version)"' <<<"$CONFIG")
 
 # This 'wait' will now correctly pause the script until every single
 # 'process_engine' job that we started has finished.
-wait
+# Track if any jobs failed
+failed_jobs=0
+for pid in "${JOB_PIDS[@]}"; do
+    if ! wait "$pid"; then
+        ((failed_jobs++))
+    fi
+done
+
+if [[ $failed_jobs -gt 0 ]]; then
+    echo "[$(date '+%H:%M:%S') WARN] [get-engine]: $failed_jobs engine(s) failed to update." >&2
+fi
 
 echo "[$(date '+%H:%M:%S') INFO] [get-engine]: All engine updates are finished."

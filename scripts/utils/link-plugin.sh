@@ -11,6 +11,26 @@ CONFIG_FILE="${ROOT_PATH}/config/server.json"
 PLUGIN_ROOT="${ROOT_PATH}/libraries/plugins"
 SERVERS_ROOT="${ROOT_PATH}/servers"
 
+# Track temporary directories for cleanup
+declare -a TEMP_DIRS=()
+
+# Cleanup function
+cleanup() {
+    local exit_code=$?
+    if [[ ${#TEMP_DIRS[@]} -gt 0 ]]; then
+        echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Cleaning up temporary directories..." >&2
+        for temp_dir in "${TEMP_DIRS[@]}"; do
+            if [[ -d "$temp_dir" ]]; then
+                rm -rf "$temp_dir"
+            fi
+        done
+    fi
+    exit "$exit_code"
+}
+
+# Set up trap for cleanup on exit
+trap cleanup EXIT INT TERM
+
 # --- Helper Functions ---
 # Find the latest file matching a pattern in a directory.
 # This function is great, no changes needed here.
@@ -38,6 +58,7 @@ link_server_plugins() {
   mkdir -p "$server_dir"
   local temp_plugins_dir
   temp_plugins_dir=$(mktemp -d -p "$server_dir")
+  TEMP_DIRS+=("$temp_plugins_dir")
   echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Building new plugin set in: $(basename "$temp_plugins_dir")"
 
   # --- Plugin Linking Loop ---
@@ -85,6 +106,8 @@ link_server_plugins() {
   
   # Clean up temp directory
   rm -rf "$temp_plugins_dir"
+  # Remove from tracking since it's been cleaned up
+  TEMP_DIRS=("${TEMP_DIRS[@]/$temp_plugins_dir}")
 }
 
 # --- Execution ---
