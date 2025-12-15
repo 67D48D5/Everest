@@ -27,11 +27,28 @@ done
 # --- Main Logic ---
 echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting downloading process..."
 
-bash "$SCRIPT_DIR/get-engine.sh"
-bash "$SCRIPT_DIR/get-plugin.sh"
+# Execute download scripts and check their exit status
+if ! bash "$SCRIPT_DIR/get-engine.sh"; then
+    echo "[$(date '+%H:%M:%S') ERROR] [updater]: Engine download failed." >&2
+    exit 1
+fi
+
+if ! bash "$SCRIPT_DIR/get-plugin.sh"; then
+    echo "[$(date '+%H:%M:%S') ERROR] [updater]: Plugin download failed." >&2
+    exit 1
+fi
 
 echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting linking process..."
-bash "$SCRIPT_DIR/link-library.sh"
-bash "$SCRIPT_DIR/link-plugin.sh"
+
+# Execute linking scripts and check their exit status
+if ! bash "$SCRIPT_DIR/link-library.sh"; then
+    echo "[$(date '+%H:%M:%S') ERROR] [updater]: Library linking failed." >&2
+    exit 1
+fi
+
+if ! bash "$SCRIPT_DIR/link-plugin.sh"; then
+    echo "[$(date '+%H:%M:%S') ERROR] [updater]: Plugin linking failed." >&2
+    exit 1
+fi
 
 echo "[$(date '+%H:%M:%S') INFO] [updater]: Updating processes completed."

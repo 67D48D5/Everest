@@ -10,6 +10,26 @@ ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
 CONFIG_FILE="${ROOT_PATH}/config/update.json"
 PLUGIN_ROOT="${ROOT_PATH}/libraries/plugins"
 
+# Track temporary directories for cleanup
+declare -a TEMP_DIRS=()
+
+# Cleanup function
+cleanup() {
+    local exit_code=$?
+    if [[ ${#TEMP_DIRS[@]} -gt 0 ]]; then
+        echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Cleaning up temporary directories..." >&2
+        for temp_dir in "${TEMP_DIRS[@]}"; do
+            if [[ -d "$temp_dir" ]]; then
+                rm -rf "$temp_dir"
+            fi
+        done
+    fi
+    exit "$exit_code"
+}
+
+# Set up trap for cleanup on exit
+trap cleanup EXIT INT TERM
+
 # --- Pre-flight Checks ---
 # Let's get that plugin directory ready.
 mkdir -p "$PLUGIN_ROOT"
@@ -48,7 +68,7 @@ resolve_enginehub() { # <url>
     html=$(curl -fsSL --retry 3 --retry-delay 5 "$final_url") || return 1
     jar_url=$(grep -Eo 'https://ci\.enginehub\.org/repository/download/[^"]+\.jar\?[^"]+' <<<"$html" | head -n1)
     [[ -z "$jar_url" ]] && return 1
-    jar_url=$(sed 's/&amp;/\&/g' <<<"$jar_url")
+    jar_url="${jar_url//&amp;/&}"
     printf '%s' "$jar_url"
 }
 
@@ -132,28 +152,51 @@ jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
     # This prevents race conditions where downloads from different engines
     # could write to the same place at the same time.
     temp_dir=$(mktemp -d -p "$engine_plugin_dir")
+    TEMP_DIRS+=("$temp_dir")
     echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Using temporary directory: $temp_dir"
 
     # --- Parallel Processing Loop ---
     # This process substitution `< <(...)` is the key. It prevents the
     # while loop from running in a subshell, so the 'wait' command
     # below is in the correct shell scope.
+    declare -a plugin_pids=()
     while IFS=$'\t' read -r plugin_name url; do
         # The '&' runs each plugin process in the background!
         process_plugin "$engine" "$plugin_name" "$url" "$temp_dir" &
+        plugin_pids+=($!)
     done < <(jq -r ".plugins[\"$engine\"] | to_entries[] | \"\\(.key)\\t\\(.value)\"" <<<"$CONFIG")
 
     # This 'wait' is now in the main shell for this engine's loop.
     # It will correctly wait for ALL background 'process_plugin' jobs to finish
     # before the script proceeds to the atomic swap or the next engine.
     echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Waiting for all '$engine' plugin downloads to complete..."
-    wait
+    
+    # Track failed downloads
+    failed_downloads=0
+    for pid in "${plugin_pids[@]}"; do
+        if ! wait "$pid"; then
+            ((failed_downloads++))
+        fi
+    done
+    
+    if [[ $failed_downloads -gt 0 ]]; then
+        echo "[$(date '+%H:%M:%S') WARN] [get-plugin]: $failed_downloads plugin(s) failed to download for '$engine'." >&2
+    fi
 
     # --- The Atomic Swap: Part 2 ---
     # Once all downloads for this engine are successful, we swap the directories.
     echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: All downloads for '$engine' complete. Swapping directories..."
     rm -rf "$auto_dir" || true
     mv "$temp_dir" "$auto_dir"
+    
+    # Remove from tracking since it's been successfully moved
+    # Rebuild array without this temp_dir
+    # Note: Cannot use 'local' here as we're not in a function context
+    new_temp_dirs=()
+    for dir in "${TEMP_DIRS[@]}"; do
+        [[ "$dir" != "$temp_dir" ]] && new_temp_dirs+=("$dir")
+    done
+    TEMP_DIRS=("${new_temp_dirs[@]}")
 
     echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Finished processing plugins for '$engine'."
 done
