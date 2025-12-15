@@ -89,18 +89,28 @@ velocity)
         -XX:MaxInlineLevel=15
     )
     ;;
+*)
+    echo "[$(date '+%H:%M:%S') WARN] [launcher]: Unknown engine type: '$ENGINE_TYPE', using default flags." >&2
+    ENGINE_FLAGS=()
+    ;;
 esac
 
 # Final Java command (wrap with restart loop)
+# Build the command string properly to avoid shellcheck warnings
+ENV_EXPORTS_STR="${ENV_EXPORTS[*]}"
+COMMON_FLAGS_STR="${COMMON_FLAGS[*]}"
+ENGINE_FLAGS_STR="${ENGINE_FLAGS[*]}"
+EXTRA_JAVA_FLAGS_STR="${EXTRA_JAVA_FLAGS[*]}"
+
 START_CMD=(
-    bash -c '
+    bash -c "
     while true; do
-      echo "[$(date '+%H:%M:%S') INFO] [launcher]: Starting server..."
-      env '"${ENV_EXPORTS[*]}"' java '"${COMMON_FLAGS[*]}"' '"${ENGINE_FLAGS[*]}"' '"${EXTRA_JAVA_FLAGS[*]}"' -jar "'"$JAR_FILE"'" nogui
-      echo "[$(date '+%H:%M:%S') WARN] [launcher]: Server stopped at $(date), restarting in 3 seconds..."
+      echo \"[\$(date '+%H:%M:%S') INFO] [launcher]: Starting server...\"
+      env ${ENV_EXPORTS_STR} java ${COMMON_FLAGS_STR} ${ENGINE_FLAGS_STR} ${EXTRA_JAVA_FLAGS_STR} -jar \"${JAR_FILE}\" nogui
+      echo \"[\$(date '+%H:%M:%S') WARN] [launcher]: Server stopped at \$(date), restarting in 3 seconds...\"
       sleep 3
     done
-  '
+  "
 )
 
 # Wrapper of tmux session

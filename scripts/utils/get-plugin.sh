@@ -48,7 +48,7 @@ resolve_enginehub() { # <url>
     html=$(curl -fsSL --retry 3 --retry-delay 5 "$final_url") || return 1
     jar_url=$(grep -Eo 'https://ci\.enginehub\.org/repository/download/[^"]+\.jar\?[^"]+' <<<"$html" | head -n1)
     [[ -z "$jar_url" ]] && return 1
-    jar_url=$(sed 's/&amp;/\&/g' <<<"$jar_url")
+    jar_url="${jar_url//&amp;/&}"
     printf '%s' "$jar_url"
 }
 

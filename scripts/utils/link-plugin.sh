@@ -69,8 +69,21 @@ link_server_plugins() {
   # Once all links are created in the temp dir, swap it with the live one.
   # This is an instantaneous operation.
   echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Swapping plugin directories..."
-  rm -rf "$dest_dir"/*.jar || true
-  mv "$temp_plugins_dir"/*.jar "$dest_dir"
+  
+  # Ensure the destination directory exists
+  mkdir -p "$dest_dir"
+  
+  # Remove old JAR files
+  rm -rf "$dest_dir"/*.jar 2>/dev/null || true
+  
+  # Move new JAR files if any exist
+  if compgen -G "$temp_plugins_dir"/*.jar > /dev/null; then
+    mv "$temp_plugins_dir"/*.jar "$dest_dir"
+  else
+    echo "[$(date '+%H:%M:%S') WARN] [link-plugin]: No plugins were linked for '$server_name'." >&2
+  fi
+  
+  # Clean up temp directory
   rm -rf "$temp_plugins_dir"
 }
 
