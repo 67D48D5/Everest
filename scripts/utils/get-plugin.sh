@@ -190,7 +190,12 @@ jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
     mv "$temp_dir" "$auto_dir"
     
     # Remove from tracking since it's been successfully moved
-    TEMP_DIRS=("${TEMP_DIRS[@]/$temp_dir}")
+    # Rebuild array without this temp_dir
+    new_temp_dirs=()
+    for dir in "${TEMP_DIRS[@]}"; do
+        [[ "$dir" != "$temp_dir" ]] && new_temp_dirs+=("$dir")
+    done
+    TEMP_DIRS=("${new_temp_dirs[@]}")
 
     echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Finished processing plugins for '$engine'."
 done

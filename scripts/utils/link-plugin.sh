@@ -107,7 +107,12 @@ link_server_plugins() {
   # Clean up temp directory
   rm -rf "$temp_plugins_dir"
   # Remove from tracking since it's been cleaned up
-  TEMP_DIRS=("${TEMP_DIRS[@]/$temp_plugins_dir}")
+  # Rebuild array without this temp_plugins_dir
+  local new_temp_dirs=()
+  for dir in "${TEMP_DIRS[@]}"; do
+      [[ "$dir" != "$temp_plugins_dir" ]] && new_temp_dirs+=("$dir")
+  done
+  TEMP_DIRS=("${new_temp_dirs[@]}")
 }
 
 # --- Execution ---
