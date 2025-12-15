@@ -191,6 +191,7 @@ jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
     
     # Remove from tracking since it's been successfully moved
     # Rebuild array without this temp_dir
+    # Note: Cannot use 'local' here as we're not in a function context
     new_temp_dirs=()
     for dir in "${TEMP_DIRS[@]}"; do
         [[ "$dir" != "$temp_dir" ]] && new_temp_dirs+=("$dir")
