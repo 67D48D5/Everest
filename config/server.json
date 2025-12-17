@@ -22,13 +22,13 @@
         "PlaceholderAPI": "auto://PlaceholderAPI-*",
         "ProtocolLib": "auto://ProtocolLib*",
         "TAB": "auto://TAB*",
-        "WorldGuard": "auto://worldguard-bukkit-*",
         "mcMMO": "auto://mcMMO*",
         "CMI": "manual://CMI-*",
         "CMILib": "manual://CMILib*",
         "CoreProtect": "manual://CoreProtect-*",
         "GriefPrevention": "manual://GriefPrevention*",
         "MobFarmManager": "manual://MobFarmManager*",
+        "WorldGuard": "manual://worldguard-bukkit-*",
         "Vault": "manual://Vault-*"
       }
     }
