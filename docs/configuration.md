@@ -426,8 +426,10 @@ Skills:
 Optional `.env` file in repository root:
 
 ```bash
-# Java configuration
-JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+# Java configuration (adjust path for your system)
+# For amd64: /usr/lib/jvm/java-21-openjdk-amd64
+# For arm64: /usr/lib/jvm/java-21-openjdk-arm64
+JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 
 # Timezone
 TZ=Asia/Seoul

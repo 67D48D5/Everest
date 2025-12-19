@@ -29,6 +29,7 @@ sudo apt install curl jq git
 ### 1. Clone Repository
 
 ```bash
+# Clone the repository (replace with your fork URL if applicable)
 git clone https://github.com/67D48D5/Everest.git
 cd Everest
 ```

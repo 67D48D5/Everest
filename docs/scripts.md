@@ -130,6 +130,7 @@ CUSTOM_VAR=value
 Checks if server is already running:
 
 ```bash
+# The [j]ava pattern prevents pgrep from matching itself
 pgrep -f "[j]ava.*$(basename "$JAR_FILE")"
 ```
 
