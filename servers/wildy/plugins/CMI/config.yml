@@ -16,6 +16,8 @@ Economy:
   Enabled: true
   # Determines if player needs to confirm money payment by clicking on chat message
   Confirmation: true
+  # Should we allow offline payments. This is primarily for pay command and will not block other payments like receiving money from other plugins
+  OfflinePayments: true
   # Set to true if you want to log money transfers between players
   LogEnabled: true
   log:
@@ -1567,7 +1569,8 @@ Player:
       notarget: BEDROCK
 WarmUps:
   # You can enable any command warmup to prevent instant command usage
-  # tp:5:false means that when player performs /tp command he will need to wait 5 sec
+  # tp:5:false means that when player performs /tp command he will need to wait 5 sec and will not be able to move outside current block
+  # tp:5:false-3 means that when player performs /tp command he will need to wait 5 sec and will be limited to movement of no more than 3 blocks from original position
   # false variable is optional and when its set to false player cant move while warmup is counting
   # If you don't want to deny empty warp command but want to deny any extra variable after that, then just add space, in example 'warp :5:false'
   # When setting warmups for CMI commands, use full command name and not allias, in example 'cmi warp:5:false'
