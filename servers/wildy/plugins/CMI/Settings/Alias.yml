@@ -1346,8 +1346,8 @@ Alias:
   version:
     Enabled: false
     Tab: true
-  # /cmi viewrange $1-
-  viewrange:
+  # /cmi viewdistance $1-
+  viewdistance:
     Enabled: true
     Tab: true
   # /cmi voteedit $1-

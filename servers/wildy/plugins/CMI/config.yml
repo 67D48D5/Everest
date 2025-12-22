@@ -1751,6 +1751,7 @@ Enchanting:
       damage_undead: 5
       piercing: 4
       lure: 3
+      lunge: 3
       riptide: 3
       arrow_damage: 5
       protection_explosions: 4

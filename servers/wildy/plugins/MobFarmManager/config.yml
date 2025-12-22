@@ -299,6 +299,9 @@ EntityTypes:
   CAMEL:
     Use: true
     Limit: 10
+  CAMEL_HUSK:
+    Use: true
+    Limit: -1
   CAT:
     Use: true
     Limit: -1
@@ -491,6 +494,9 @@ EntityTypes:
   MULE:
     Use: true
     Limit: -1
+  NAUTILUS:
+    Use: true
+    Limit: -1
   OAK_BOAT:
     Use: true
     Limit: -1
@@ -515,6 +521,9 @@ EntityTypes:
   PANDA:
     Use: true
     Limit: 20
+  PARCHED:
+    Use: true
+    Limit: -1
   PARROT:
     Use: true
     Limit: 10
@@ -674,6 +683,9 @@ EntityTypes:
   ZOMBIE_HORSE:
     Use: true
     Limit: 10
+  ZOMBIE_NAUTILUS:
+    Use: true
+    Limit: -1
   ZOMBIE_VILLAGER:
     Use: true
     Limit: -1

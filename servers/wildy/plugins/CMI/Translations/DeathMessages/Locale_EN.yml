@@ -199,6 +199,11 @@ Mob:
     Item:
     - '&6[playerDisplayName] &fsuccumbed to &c[mobName] &fand their desert encounter,
       armed with &c[item]'
+  Camel_husk:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Cat:
     General:
     - '&6[playerDisplayName] &fwas outmatched by the purring fury of a &c[mobName]'
@@ -402,6 +407,11 @@ Mob:
     Item:
     - '&6[playerDisplayName] &ffell to &c[mobName] &friding a mighty mule, wielding
       &c[item]'
+  Nautilus:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Ocelot:
     General:
     - '&6[playerDisplayName] &fcould not tame the wild spirit of a &c[mobName]'
@@ -414,6 +424,11 @@ Mob:
     Item:
     - '&6[playerDisplayName] &ffell to &c[mobName] &fand their bamboo justice, armed
       with &c[item]'
+  Parched:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Parrot:
     General:
     - '&6[playerDisplayName] &ffell silent after encountering the colorful menace
@@ -655,6 +670,11 @@ Mob:
     Item:
     - '&6[playerDisplayName] &fwas taken down by &c[mobName] &friding an undead horse,
       wielding &c[item]'
+  Zombie_nautilus:
+    General:
+    - '&2[playerDisplayName] &7killed by &2[mobName]'
+    Item:
+    - '&2[playerDisplayName] &7killed by &2[mobName] &7with &2[item]'
   Zombie_villager:
     General:
     - '&6[playerDisplayName] &fsuccumbed to the cursed transformation of a &c[mobName]'

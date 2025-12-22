@@ -1,7 +1,7 @@
 {
   "engines": {
     "paper": {
-      "version": "1.21.10"
+      "version": "1.21.11"
     },
     "velocity": {
       "version": "3.4.0-SNAPSHOT"
