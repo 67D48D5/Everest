@@ -8,7 +8,7 @@ info:
   WolfCount: '&c!prefix!To many wolfs following you, &c[amount] &fgot seated down'
   BlockLimit: '&c!prefix!To many &e[type] &fblocks in one chunk, You can only place
     &c[amount] &fof them'
-  cleanup: '&b!prefix!Auto cleaned entities: &c[amount]'
+  cleanup: '&b!prefix!Auto cleaned entities: &c[amount]&f&o!'
   hoverList: '&6[type] &f× &e[amount]'
 command:
   help:

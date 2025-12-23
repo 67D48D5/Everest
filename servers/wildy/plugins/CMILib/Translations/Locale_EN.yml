@@ -55,7 +55,7 @@
 
 info:
   # Use !prefix! in any locale line to automatically include this prefix
-  prefix: System &8» &f
+  prefix: Everest &8» &f
   NoPermission: '&cError &8» &fThe command does not exist or cannot be used&o!'
   CantHavePermission: '&cError &8» &fYou can''t have this permission&o!'
   WrongGroup: '&cError &8» &fYou are in wrong group for this&o!'
@@ -403,128 +403,128 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    aqua_affinity: Aqua_Affinity
-    fire_aspect: Fire_aspect
-    impaling: Impaling
-    riptide: Riptide
-    vanishing_curse: Vanishing_curse
-    fortune: Fortune
-    binding_curse: Binding_curse
-    piercing: Piercing
-    power: Power
-    lunge: Lunge
-    luck_of_the_sea: Luck_Of_The_Sea
-    infinity: Infinity
-    lure: Lure
-    bane_of_arthropods: Bane_Of_Arthropods
-    sharpness: Sharpness
-    feather_falling: Feather_Falling
-    frost_walker: Frost_walker
-    blast_protection: Blast_Protection
-    protection: Protection
     knockback: Knockback
-    swift_sneak: Swift_sneak
-    multishot: Multishot
-    projectile_protection: Projectile_Protection
-    efficiency: Efficiency
-    wind_burst: Wind_burst
-    channeling: Channeling
-    respiration: Respiration
     flame: Flame
+    lunge: Lunge
+    bane_of_arthropods: Bane_Of_Arthropods
+    piercing: Piercing
+    luck_of_the_sea: Luck_Of_The_Sea
+    wind_burst: Wind_burst
     soul_speed: Soul_speed
-    thorns: Thorns
-    unbreaking: Unbreaking
-    quick_charge: Quick_charge
-    depth_strider: Depth_strider
-    smite: Smite
-    mending: Mending
-    fire_protection: Fire_Protection
-    punch: Punch
+    vanishing_curse: Vanishing_curse
     density: Density
-    sweeping_edge: Sweeping_edge
-    looting: Looting
-    loyalty: Loyalty
+    projectile_protection: Projectile_Protection
+    channeling: Channeling
+    quick_charge: Quick_charge
+    efficiency: Efficiency
+    fire_aspect: Fire_aspect
     breach: Breach
+    smite: Smite
+    loyalty: Loyalty
+    mending: Mending
+    multishot: Multishot
+    unbreaking: Unbreaking
+    depth_strider: Depth_strider
+    infinity: Infinity
+    looting: Looting
+    aqua_affinity: Aqua_Affinity
+    swift_sneak: Swift_sneak
+    lure: Lure
+    power: Power
+    fire_protection: Fire_Protection
+    frost_walker: Frost_walker
+    protection: Protection
     silk_touch: Silk_touch
+    feather_falling: Feather_Falling
+    punch: Punch
+    fortune: Fortune
+    respiration: Respiration
+    binding_curse: Binding_curse
+    sweeping_edge: Sweeping_edge
+    impaling: Impaling
+    sharpness: Sharpness
+    riptide: Riptide
+    blast_protection: Blast_Protection
+    thorns: Thorns
   PotionEffectAliases:
-    absorption:
-    - Absorption
-    blindness:
-    - Blindness
-    jumpboost:
-    - Jump boost
+    fireresistance:
+    - Fire resistance
+    slowness:
+    - Slowness
     raidomen:
     - Raid omen
-    resistance:
-    - Resistance
-    unluck:
-    - Unluck
+    poison:
+    - Poison
+    trialomen:
+    - Trial omen
+    healthboost:
+    - Health boost
+    weakness:
+    - Weakness
+    dolphinsgrace:
+    - Dolphins grace
+    slowfalling:
+    - Slow falling
+    nausea:
+    - Nausea
+    glowing:
+    - Glowing
     instanthealth:
     - Instant health
     badomen:
     - Bad omen
-    poison:
-    - Poison
-    conduitpower:
-    - Conduit power
-    strength:
-    - Strength
-    waterbreathing:
-    - Water breathing
-    trialomen:
-    - Trial omen
-    wither:
-    - Wither
-    healthboost:
-    - Health boost
-    invisibility:
-    - Invisibility
-    saturation:
-    - Saturation
-    slowfalling:
-    - Slow falling
-    glowing:
-    - Glowing
-    fireresistance:
-    - Fire resistance
-    infested:
-    - Infested
-    regeneration:
-    - Regeneration
-    haste:
-    - Haste
+    resistance:
+    - Resistance
+    hunger:
+    - Hunger
     weaving:
     - Weaving
+    absorption:
+    - Absorption
+    strength:
+    - Strength
+    saturation:
+    - Saturation
+    levitation:
+    - Levitation
+    windcharged:
+    - Wind charged
+    luck:
+    - Luck
     nightvision:
     - Night vision
-    speed:
-    - Speed
-    miningfatigue:
-    - Mining fatigue
-    weakness:
-    - Weakness
+    wither:
+    - Wither
+    invisibility:
+    - Invisibility
+    infested:
+    - Infested
+    haste:
+    - Haste
+    waterbreathing:
+    - Water breathing
+    oozing:
+    - Oozing
+    conduitpower:
+    - Conduit power
     heroofthevillage:
     - Hero of the village
+    speed:
+    - Speed
     darkness:
     - Darkness
     instantdamage:
     - Instant damage
-    oozing:
-    - Oozing
-    hunger:
-    - Hunger
-    windcharged:
-    - Wind charged
-    nausea:
-    - Nausea
-    slowness:
-    - Slowness
-    luck:
-    - Luck
-    levitation:
-    - Levitation
-    dolphinsgrace:
-    - Dolphins grace
+    blindness:
+    - Blindness
+    unluck:
+    - Unluck
+    regeneration:
+    - Regeneration
+    miningfatigue:
+    - Mining fatigue
+    jumpboost:
+    - Jump boost
 dialog:
   signEditor: Sign Editor
   update: Update
@@ -598,10 +598,10 @@ teleportation:
   relocation: '&cTeleport &8» &fYour teleport location was obstructed. You have been
     teleported to a safe location.'
 econ:
-  noMoney: '&cMoney &8» &fYou have no money'
-  charged: '&aMoney &8» &fCharged: &a[amount]'
+  noMoney: '&cMoney &8» &fYou have no money&o!'
+  charged: '&aMoney &8» &fCharged: &a[amount]&o!'
   notEnoughMoney: '&cMoney &8» &fYou don''t have enough money. Required: &c[amount]'
-  tooMuchMoney: '&cMoney &8» &fYou have too much money'
+  tooMuchMoney: '&cMoney &8» &fYou have too much money&o!'
 Selection:
   SelectPoints: '&bSelection &8» &fSelect 2 points with selection tool! AKA: &b[tool]'
   PrimaryPoint: '&aSelection &8» &fPlaced &aPrimary &fSelection Point &o[point]'
@@ -611,16 +611,16 @@ Selection:
   Area: '&7[x1]&f, &7[y1]&f, &7[z1] to &7[x2]&f, &7[y2]&f, &7[z2] &8@[world]'
 Location:
   Title: '&8Players location'
-  Killer: '&eKiller: &6[killer]'
-  OneLiner: '&eLocation: &6[location]'
-  DeathReason: '&eDeath Reason: &6[reason]'
+  Killer: '&fKiller: &c[killer]'
+  OneLiner: '&fLocation: &6[location]'
+  DeathReason: '&fDeath Reason: &c&o[reason]'
   Full: '&7[x]&f, &7[y]&f, &7[z] &8@[world]'
-  World: '&eWorld: &6[world]'
-  X: '&eX: &6[x]'
-  Y: '&eY: &6[y]'
-  Z: '&eZ: &6[z]'
-  Pitch: '&ePitch: &6[pitch]'
-  Yaw: '&eYaw: &6[yaw]'
+  World: '&fWorld: &6[world]'
+  X: '&fX: &6[x]'
+  Y: '&fY: &6[y]'
+  Z: '&fZ: &6[z]'
+  Pitch: '&fPitch: &6[pitch]'
+  Yaw: '&fYaw: &6[yaw]'
   WorldNames:
   - wwild-&aOverworld
   - wwild_nether-&aNether
