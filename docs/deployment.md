@@ -53,6 +53,7 @@ Run the updater to download Paper, Velocity, and all plugins:
 ```
 
 This will:
+
 - Download Paper and Velocity engines
 - Download all configured plugins
 - Create symlinks in server directories
@@ -104,7 +105,7 @@ sudo ufw enable
 
 Edit `servers/wildy/eula.txt`:
 
-```
+```txt
 eula=true
 ```
 
@@ -113,11 +114,13 @@ eula=true
 ### Start in Correct Order
 
 1. **Start Proxy First** (if backend servers not ready, proxy will queue players)
+
 ```bash
 ./servers/proxy/start.sh
 ```
 
-2. **Start Backend Servers**
+1. **Start Backend Servers**
+
 ```bash
 ./servers/wildy/start.sh
 ```
@@ -154,7 +157,7 @@ tmux attach -t wildy
 
 Point your domain to the server IP:
 
-```
+```txt
 # DNS A Record
 play.67d48d5.me -> <SERVER_IP>
 ```
@@ -163,7 +166,7 @@ play.67d48d5.me -> <SERVER_IP>
 
 For custom port support:
 
-```
+```txt
 # DNS SRV Record
 _minecraft._tcp.play.67d48d5.me
 Priority: 0
@@ -177,12 +180,14 @@ Target: play.67d48d5.me
 ### 1. Set Up Permissions
 
 Attach to proxy console:
+
 ```bash
 tmux attach -t proxy
 ```
 
 Grant yourself admin permissions:
-```
+
+```txt
 lpv user <username> permission set *
 ```
 
@@ -191,6 +196,7 @@ lpv user <username> permission set *
 Key plugins to configure:
 
 **CoreProtect** (Block logging):
+
 ```bash
 tmux attach -t wildy
 # In console:
@@ -198,10 +204,12 @@ co inspect
 ```
 
 **GriefPrevention** (Land claims):
+
 - Players can claim land with a golden shovel
 - Configure claim blocks in `servers/wildy/plugins/GriefPreventionData/config.yml`
 
 **CMI** (Server management):
+
 - Extensive configuration in `servers/wildy/plugins/CMI/config.yml`
 - Set up economy, kits, warps, etc.
 
@@ -313,6 +321,7 @@ echo "Backup completed: $DATE"
 ```
 
 Schedule with cron:
+
 ```bash
 # Daily backup at 3 AM
 0 3 * * * /path/to/backup.sh
@@ -323,17 +332,20 @@ Schedule with cron:
 ### Server Won't Start
 
 1. Check Java version:
+
 ```bash
 java -version
 # Should be 21+
 ```
 
-2. Check if port is in use:
+1. Check if port is in use:
+
 ```bash
 netstat -tlnp | grep 25565
 ```
 
-3. Check logs:
+1. Check logs:
+
 ```bash
 tmux attach -t proxy
 # or
@@ -343,37 +355,43 @@ tmux attach -t wildy
 ### Can't Connect to Server
 
 1. Check if proxy is running:
+
 ```bash
 pgrep -af "java.*velocity"
 ```
 
-2. Check if port is open:
+1. Check if port is open:
+
 ```bash
 netstat -tlnp | grep 25565
 ```
 
-3. Check firewall:
+1. Check firewall:
+
 ```bash
 sudo ufw status
 ```
 
-4. Check velocity logs in tmux session
+1. Check velocity logs in tmux session
 
 ### Backend Server Not Connecting
 
 1. Check if wildy is running:
+
 ```bash
 pgrep -af "java.*paper"
 ```
 
-2. Verify forwarding secret matches:
+1. Verify forwarding secret matches:
+
 ```bash
 # Should be identical
 cat servers/proxy/fwkey.pem
 cat servers/wildy/fwkey.pem
 ```
 
-3. Check Paper configuration:
+1. Check Paper configuration:
+
 ```yaml
 # servers/wildy/config/paper-global.yml
 proxies:
@@ -384,6 +402,7 @@ proxies:
 ### High Memory Usage
 
 1. Adjust JVM flags in `servers/wildy/start.sh`:
+
 ```bash
 JAVA_FLAGS=(
   -Xms2048M  # Reduce minimum
@@ -391,13 +410,15 @@ JAVA_FLAGS=(
 )
 ```
 
-2. Reduce view distance in `servers/wildy/server.properties`:
+1. Reduce view distance in `servers/wildy/server.properties`:
+
 ```properties
 view-distance=8
 simulation-distance=6
 ```
 
-3. Use Paper's optimization features:
+1. Use Paper's optimization features:
+
 ```yaml
 # servers/wildy/config/paper-world-defaults.yml
 entities:
@@ -408,17 +429,20 @@ entities:
 ### Plugin Conflicts
 
 1. Disable suspect plugin:
+
 ```bash
 # Move plugin out of plugins directory
 mv servers/wildy/plugins/SuspectPlugin.jar servers/wildy/plugins/disabled/
 ```
 
-2. Restart server:
+1. Restart server:
+
 ```bash
 tmux send-keys -t wildy "stop" C-m
 ```
 
-3. Check logs:
+1. Check logs:
+
 ```bash
 tmux attach -t wildy
 ```
@@ -466,11 +490,13 @@ sudo apt update && sudo apt upgrade
 To add another server:
 
 1. Create server directory:
+
 ```bash
 mkdir servers/creative
 ```
 
-2. Add to `config/server.json`:
+1. Add to `config/server.json`:
+
 ```json
 {
   "servers": {
@@ -482,7 +508,8 @@ mkdir servers/creative
 }
 ```
 
-3. Add to `velocity.toml`:
+1. Add to `velocity.toml`:
+
 ```toml
 [servers]
 Wildy = "127.0.0.1:1422"
@@ -491,7 +518,8 @@ Creative = "127.0.0.1:1423"
 try = ["Wildy"]
 ```
 
-4. Create start script:
+1. Create start script:
+
 ```bash
 cp servers/wildy/start.sh servers/creative/start.sh
 # Edit port and memory settings
@@ -504,6 +532,7 @@ Edit `scripts/launcher` to add custom flags for specific engines.
 ### Performance Monitoring
 
 Install and configure:
+
 - Spark (plugin for profiling)
 - Prometheus exporter
 - Grafana dashboards
@@ -511,7 +540,8 @@ Install and configure:
 ## Support
 
 For issues with:
+
 - **Everest infrastructure**: Check GitHub issues
-- **Velocity**: https://velocitypowered.com/
-- **Paper**: https://docs.papermc.io/
+- **Velocity**: <https://velocitypowered.com/>
+- **Paper**: <https://docs.papermc.io/>
 - **Plugins**: Check respective plugin documentation

@@ -6,7 +6,7 @@ Everest MC uses a multi-tiered architecture designed for scalability, reliabilit
 
 ## Architecture Diagram
 
-```
+```txt
 ┌─────────────────────────────────────────────────────────┐
 │                       Internet                          │
 └────────────────────┬────────────────────────────────────┘
@@ -46,6 +46,7 @@ Everest MC uses a multi-tiered architecture designed for scalability, reliabilit
 **Purpose**: Frontend proxy that handles all player connections
 
 **Key Features**:
+
 - Player authentication with Mojang servers
 - Modern forwarding for player info to backend servers
 - Plugin ecosystem for proxy-level features
@@ -55,6 +56,7 @@ Everest MC uses a multi-tiered architecture designed for scalability, reliabilit
 **Configuration**: `servers/proxy/velocity.toml`
 
 **Plugins**:
+
 - **Geyser**: Bedrock edition support
 - **Floodgate**: Bedrock player authentication
 - **LuckPerms**: Permission management
@@ -63,6 +65,7 @@ Everest MC uses a multi-tiered architecture designed for scalability, reliabilit
 - **CMIV**: CMI integration for Velocity
 
 **Resource Allocation**:
+
 - RAM: 387MB min, 768MB max
 - JVM: G1GC with optimized flags
 
@@ -71,6 +74,7 @@ Everest MC uses a multi-tiered architecture designed for scalability, reliabilit
 **Purpose**: Backend survival game server
 
 **Key Features**:
+
 - Paper (high-performance Spigot fork)
 - Survival gameplay with enhanced features
 - World protection and management
@@ -80,6 +84,7 @@ Everest MC uses a multi-tiered architecture designed for scalability, reliabilit
 **Configuration**: `servers/wildy/server.properties`, `spigot.yml`, `bukkit.yml`
 
 **Plugins**:
+
 - **CMI**: Core management suite
 - **CoreProtect**: Block logging and rollback
 - **GriefPrevention**: Land claiming system
@@ -95,6 +100,7 @@ Everest MC uses a multi-tiered architecture designed for scalability, reliabilit
 - **ProtocolLib**: Protocol manipulation library
 
 **Resource Allocation**:
+
 - RAM: 3072MB (fixed)
 - JVM: Aikars flags optimized for Paper
 
@@ -105,6 +111,7 @@ Everest MC uses a multi-tiered architecture designed for scalability, reliabilit
 **Purpose**: Generic server launcher with auto-restart functionality
 
 **Features**:
+
 - Tmux session management
 - Auto-restart on crash
 - Engine-specific JVM tuning
@@ -112,6 +119,7 @@ Everest MC uses a multi-tiered architecture designed for scalability, reliabilit
 - Process monitoring
 
 **Usage**:
+
 ```bash
 launcher <server-name> <engine-type> [java-flags...]
 ```
@@ -123,6 +131,7 @@ launcher <server-name> <engine-type> [java-flags...]
 **Purpose**: Automated plugin and engine management
 
 **Components**:
+
 - `get-engine.sh`: Downloads Paper/Velocity from official sources
 - `get-plugin.sh`: Downloads plugins from various sources
 - `link-library.sh`: Creates symlinks for engines
@@ -171,6 +180,7 @@ launcher <server-name> <engine-type> [java-flags...]
 ### Tmux Sessions
 
 Each server runs in its own tmux session:
+
 - `proxy`: Velocity proxy server
 - `wildy`: Paper game server
 
@@ -181,6 +191,7 @@ Servers automatically restart on crash via the launcher script's restart loop.
 ### Monitoring
 
 Check server status:
+
 ```bash
 # List tmux sessions
 tmux ls
@@ -199,6 +210,7 @@ pgrep -f "java.*paper"
 ### Horizontal Scaling
 
 To add more game servers:
+
 1. Create new server directory in `servers/`
 2. Add server to `velocity.toml` under `[servers]`
 3. Create start script with appropriate port and resources
@@ -207,6 +219,7 @@ To add more game servers:
 ### Vertical Scaling
 
 Adjust JVM memory flags in each server's `start.sh`:
+
 - `-Xms`: Minimum heap size
 - `-Xmx`: Maximum heap size
 
@@ -221,6 +234,7 @@ Adjust JVM memory flags in each server's `start.sh`:
 ### Critical Data
 
 Directories to backup:
+
 - `servers/wildy/wwild/` - Main world
 - `servers/wildy/wwild_nether/` - Nether world
 - `servers/wildy/wwild_the_end/` - End world
@@ -240,6 +254,7 @@ Directories to backup:
 ### Server Crash
 
 Auto-restart is handled by the launcher script. Check logs:
+
 ```bash
 tmux attach -t <server-name>
 # View scrollback: Ctrl+B then [

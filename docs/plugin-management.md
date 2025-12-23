@@ -8,7 +8,7 @@ Everest includes an automated plugin management system that handles downloading,
 
 ### Architecture
 
-```
+```txt
 Plugin Lifecycle:
 1. Define in update.json (download source)
 2. Define in server.json (which servers need it)
@@ -19,7 +19,7 @@ Plugin Lifecycle:
 
 ### Directory Structure
 
-```
+```shell
 libraries/
 └── plugins/
     ├── velocity/        # Velocity proxy plugins
@@ -59,6 +59,7 @@ For plugins with public download URLs:
 ```
 
 Supported sources:
+
 - **Direct JAR URLs**: `https://example.com/plugin.jar`
 - **Jenkins CI**: `https://ci.example.com/job/PluginName`
 - **GitHub Releases**: `https://api.github.com/repos/user/plugin/releases`
@@ -89,6 +90,7 @@ The pattern `PluginName-*` will match any JAR starting with `PluginName-`.
 ```
 
 This will:
+
 - Download the plugin to `libraries/plugins/<engine>/`
 - Create a symlink in `servers/wildy/plugins/`
 
@@ -120,6 +122,7 @@ For premium or private plugins that require manual download:
 #### 2. Download Plugin Manually
 
 Download the plugin JAR and place in:
+
 ```bash
 libraries/plugins/paper/PremiumPlugin-1.0.0.jar
 ```
@@ -351,22 +354,26 @@ tar -czf plugin-configs-$(date +%Y%m%d).tar.gz servers/wildy/plugins/*/config.ym
 ### Plugin Not Loading
 
 1. **Check logs**:
+
 ```bash
 tmux attach -t wildy
 # Look for error messages
 ```
 
-2. **Verify symlink**:
+1. **Verify symlink**:
+
 ```bash
 ls -la servers/wildy/plugins/PluginName*
 # Should show symlink to libraries/plugins/
 ```
 
-3. **Check dependencies**:
+1. **Check dependencies**:
+
 - Read plugin documentation for required dependencies
 - Ensure all dependencies are installed
 
-4. **Check Paper version**:
+1. **Check Paper version**:
+
 - Some plugins require specific Paper versions
 - Update Paper if needed
 
@@ -375,17 +382,20 @@ ls -la servers/wildy/plugins/PluginName*
 Two plugins may conflict:
 
 1. **Identify conflict**:
+
 ```bash
 tmux attach -t wildy
 # Look for error messages mentioning plugin names
 ```
 
-2. **Disable one plugin**:
+1. **Disable one plugin**:
+
 ```bash
 mv servers/wildy/plugins/ConflictingPlugin.jar servers/wildy/plugins/disabled/
 ```
 
-3. **Restart and test**:
+1. **Restart and test**:
+
 ```bash
 tmux send-keys -t wildy "stop" C-m
 ```
@@ -395,22 +405,26 @@ tmux send-keys -t wildy "stop" C-m
 If updater fails:
 
 1. **Check internet connection**:
+
 ```bash
 curl -I https://ci.lucko.me/job/LuckPerms
 ```
 
-2. **Check update.json syntax**:
+1. **Check update.json syntax**:
+
 ```bash
 jq empty config/update.json
 ```
 
-3. **Manual download**:
+1. **Manual download**:
+
 ```bash
 # Download manually and place in libraries/plugins/
 wget https://example.com/plugin.jar -O libraries/plugins/paper/Plugin.jar
 ```
 
-4. **Check download script logs**:
+1. **Check download script logs**:
+
 ```bash
 bash -x scripts/updater
 ```
@@ -420,15 +434,18 @@ bash -x scripts/updater
 If a plugin is outdated:
 
 1. **Check for updates**:
+
 - Visit plugin's website/GitHub
 - Check if update.json URL is correct
 
-2. **Update manually**:
+1. **Update manually**:
+
 - Download latest version
 - Replace in `libraries/plugins/`
 - Run updater to update symlinks
 
-3. **Update source URL**:
+1. **Update source URL**:
+
 - If URL changed, update `update.json`
 
 ### Permission Issues
@@ -506,6 +523,7 @@ ls -la servers/wildy/plugins/*.jar | awk '{print $NF}' | sed 's/.*\///'
 ```
 
 Create version manifest:
+
 ```bash
 # Generate plugin list
 for jar in servers/wildy/plugins/*.jar; do

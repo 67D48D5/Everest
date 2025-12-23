@@ -6,7 +6,7 @@ Everest includes several scripts for managing servers, plugins, and engines. Thi
 
 ## Script Directory Structure
 
-```
+```shell
 scripts/
 ├── launcher           # Generic server launcher with auto-restart
 ├── updater           # Plugin/engine update orchestrator
@@ -77,6 +77,7 @@ done
 ```
 
 To stop permanently:
+
 ```bash
 # Method 1: Kill tmux session
 tmux kill-session -t wildy
@@ -89,6 +90,7 @@ tmux attach -t wildy
 #### 3. Engine-Specific JVM Flags
 
 **Paper Servers** (Aikars Flags):
+
 ```bash
 -XX:+UseG1GC
 -XX:+DisableExplicitGC
@@ -99,6 +101,7 @@ tmux attach -t wildy
 ```
 
 **Velocity Proxy**:
+
 ```bash
 -XX:+UseG1GC
 -XX:G1HeapRegionSize=4M
@@ -106,6 +109,7 @@ tmux attach -t wildy
 ```
 
 **Common Flags** (All Servers):
+
 ```bash
 -XX:+UseG1GC
 -XX:+AlwaysPreTouch
@@ -148,6 +152,7 @@ Edit `scripts/launcher` to customize:
 ### Troubleshooting
 
 **Session already exists**:
+
 ```bash
 # View existing sessions
 tmux ls
@@ -160,6 +165,7 @@ tmux kill-session -t wildy
 ```
 
 **Engine not found**:
+
 ```bash
 # Verify engine exists
 ls -la libraries/engines/
@@ -169,6 +175,7 @@ ls -la libraries/engines/
 ```
 
 **Java not found**:
+
 ```bash
 # Install Java 21
 sudo apt install openjdk-21-jdk
@@ -181,7 +188,7 @@ java -version
 
 Orchestrator script that manages engine and plugin updates.
 
-### Usage
+### `updater` Usage
 
 ```bash
 ./scripts/updater
@@ -200,7 +207,7 @@ No parameters needed - reads from `config/server.json` and `config/update.json`.
 
 ### Output
 
-```
+```shell
 [11:30:00 INFO] [updater]: Checking for required tools...
 [11:30:00 INFO] [updater]: Starting downloading process...
 [11:30:05 INFO] [get-engine]: Downloaded paper-1.21.10.jar
@@ -215,7 +222,7 @@ No parameters needed - reads from `config/server.json` and `config/update.json`.
 
 If any step fails, updater stops and reports error:
 
-```
+```shell
 [11:30:20 ERROR] [updater]: Plugin download failed.
 ```
 
@@ -238,11 +245,13 @@ Downloads Paper and Velocity engines from official sources.
 **Location**: `scripts/utils/get-engine.sh`
 
 **Usage**:
+
 ```bash
 bash scripts/utils/get-engine.sh
 ```
 
 **Configuration**: Reads from `config/update.json`:
+
 ```json
 {
   "engines": {
@@ -259,10 +268,12 @@ bash scripts/utils/get-engine.sh
 **Output Directory**: `libraries/engines/`
 
 **Download Sources**:
+
 - **Paper**: PaperMC API
 - **Velocity**: PaperMC API
 
 **Features**:
+
 - Version-aware downloads
 - Skips if already downloaded
 - Validates JAR files
@@ -275,11 +286,13 @@ Downloads plugins from various sources.
 **Location**: `scripts/utils/get-plugin.sh`
 
 **Usage**:
+
 ```bash
 bash scripts/utils/get-plugin.sh
 ```
 
 **Configuration**: Reads from `config/update.json`:
+
 ```json
 {
   "plugins": {
@@ -296,12 +309,14 @@ bash scripts/utils/get-plugin.sh
 **Output Directory**: `libraries/plugins/<engine>/`
 
 **Supported Sources**:
+
 - Direct JAR URLs
 - Jenkins CI servers
 - GitHub releases
 - Custom APIs
 
 **Features**:
+
 - Multi-source support
 - Parallel downloads
 - Retry on failure
@@ -314,6 +329,7 @@ Creates symlinks for engine JARs.
 **Location**: `scripts/utils/link-library.sh`
 
 **Usage**:
+
 ```bash
 bash scripts/utils/link-library.sh
 ```
@@ -321,12 +337,14 @@ bash scripts/utils/link-library.sh
 **Purpose**: Links latest engine JAR to server directories for easy access.
 
 **Example**:
+
 ```bash
 libraries/engines/paper-1.21.10.jar
   → servers/wildy/paper.jar (symlink)
 ```
 
 **Features**:
+
 - Version-aware (links latest)
 - Cleans old symlinks
 - Validates targets exist
@@ -338,6 +356,7 @@ Creates symlinks for plugin JARs in server directories.
 **Location**: `scripts/utils/link-plugin.sh`
 
 **Usage**:
+
 ```bash
 bash scripts/utils/link-plugin.sh
 ```
@@ -345,12 +364,14 @@ bash scripts/utils/link-plugin.sh
 **Configuration**: Reads from `config/server.json`
 
 **Features**:
+
 - Pattern matching for plugins
 - Cleans old symlinks
 - Supports auto and manual plugins
 - Reports missing plugins
 
 **Example**:
+
 ```bash
 libraries/plugins/paper/LuckPerms-5.4.jar
   → servers/wildy/plugins/LuckPerms-5.4.jar (symlink)
@@ -365,11 +386,13 @@ Starts Velocity proxy server.
 **Location**: `servers/proxy/start.sh`
 
 **Usage**:
+
 ```bash
 ./servers/proxy/start.sh
 ```
 
 **Configuration**:
+
 ```bash
 SERVER_NAME="proxy"
 SERVER_ENGINE="velocity"
@@ -380,6 +403,7 @@ JAVA_FLAGS=(
 ```
 
 **Customization**:
+
 - Adjust memory allocation in `JAVA_FLAGS`
 - Change server name (must match directory)
 - Add custom JVM flags
@@ -391,11 +415,13 @@ Starts Paper game server.
 **Location**: `servers/wildy/start.sh`
 
 **Usage**:
+
 ```bash
 ./servers/wildy/start.sh
 ```
 
 **Configuration**:
+
 ```bash
 SERVER_NAME="wildy"
 SERVER_ENGINE="paper"
@@ -406,6 +432,7 @@ JAVA_FLAGS=(
 ```
 
 **Customization**:
+
 - Adjust memory based on server load
 - Add performance flags
 - Configure timezone
