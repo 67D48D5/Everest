@@ -99,11 +99,7 @@ process_plugin() {
     local target_dir="$4"
     local resolved_url="$url" # Start with the original URL
 
-    # Skip plugins marked for manual download
-    if [[ "$url" == manual://* ]]; then
-        echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: '$plugin_name' is marked for manual download."
-        return 0
-    fi
+    # Skip plugins with empty URLs
     if [[ -z "$url" ]]; then
         echo "[$(date '+%H:%M:%S') WARN] [get-plugin]: '$plugin_name' has an empty URL. Skipping." >&2
         return 0
@@ -165,7 +161,7 @@ fi
 
 # Loop through each engine (paper, velocity, etc.) sequentially.
 jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
-    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Processing plugins for '$engine'..."
+    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Processing plugins for '$engine' engine..."
 
     # Define the parent directory for this engine's plugins.
     engine_plugin_dir="$PLUGIN_ROOT/$engine"
@@ -238,18 +234,18 @@ jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
     shopt -u nullglob
 
     if [[ $failed_downloads -gt 0 ]]; then
-        echo "[$(date '+%H:%M:%S') WARN] [get-plugin]: $failed_downloads plugin(s) failed to download for '$engine'." >&2
+        echo "[$(date '+%H:%M:%S') WARN] [get-plugin]: $failed_downloads plugin(s) failed to download for '$engine' engine." >&2
     fi
 
     # The Atomic Swap: Part 2
     # Once all downloads for this engine are complete, we swap the directories.
-    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: All downloads for '$engine' complete. Swapping directories..."
+    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: All downloads for '$engine' engine complete. Swapping directories..."
     atomic_swap_directory "$temp_dir" "$auto_dir"
 
     # Remove from tracking since it's been successfully moved
     remove_from_temp_dirs "$temp_dir"
 
-    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Finished processing plugins for '$engine'."
+    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Finished processing plugins for '$engine' engine."
 done
 
 echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: All plugin updates are complete."
