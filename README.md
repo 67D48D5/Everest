@@ -15,31 +15,6 @@ Everest is a production-ready Minecraft server infrastructure designed for runni
 - 🎮 **Cross-Platform**: Java and Bedrock edition support via `Geyser/Floodgate`
 - ⚡ **Performance Optimized**: `Aikars flags` for Paper, tuned JVM settings
 
-## Quick Start
-
-### Prerequisites
-
-- Java 21 or higher
-- `curl`, `jq` (for updater)
-- `bash`, `tmux`
-
-### Starting Servers
-
-```bash
-# Start the proxy server
-./servers/proxy/start.sh
-
-# Start the game server
-./servers/wildy/start.sh
-```
-
-### Updating Engines & Plugins
-
-```bash
-# Download latest engines and plugins
-./scripts/updater
-```
-
 ## Architecture
 
 Everest uses a proxy-based architecture:
@@ -75,16 +50,6 @@ The Velocity proxy handles player connections and routes them to backend Paper s
     ├── engines/        # Paper and Velocity JARs
     └── plugins/        # Downloaded plugins
 ```
-
-## Documentation
-
-Detailed documentation is available in the `docs/` directory:
-
-- [Architecture](docs/architecture.md) - Detailed server architecture
-- [Deployment](docs/deployment.md) - Setup and deployment guide
-- [Configuration](docs/configuration.md) - Configuration reference
-- [Plugin Management](docs/plugin-management.md) - Managing plugins
-- [Scripts](docs/scripts.md) - Script documentation
 
 ## Server Information
 
