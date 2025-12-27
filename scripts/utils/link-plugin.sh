@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# --- Configuration ---
+# Configuration
 # Setting up our paths relative to the script's location.
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
@@ -16,22 +16,22 @@ declare -a TEMP_DIRS=()
 
 # Cleanup function
 cleanup() {
-    local exit_code=$?
-    if [[ ${#TEMP_DIRS[@]} -gt 0 ]]; then
-        echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Cleaning up temporary directories..." >&2
-        for temp_dir in "${TEMP_DIRS[@]}"; do
-            if [[ -d "$temp_dir" ]]; then
-                rm -rf "$temp_dir"
-            fi
-        done
-    fi
-    exit "$exit_code"
+  local exit_code=$?
+  if [[ ${#TEMP_DIRS[@]} -gt 0 ]]; then
+    echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Cleaning up temporary directories..." >&2
+    for temp_dir in "${TEMP_DIRS[@]}"; do
+      if [[ -d "$temp_dir" ]]; then
+        rm -rf "$temp_dir"
+      fi
+    done
+  fi
+  exit "$exit_code"
 }
 
 # Set up trap for cleanup on exit
 trap cleanup EXIT INT TERM
 
-# --- Helper Functions ---
+# Helper Functions
 # Find the latest file matching a pattern in a directory.
 # This function is great, no changes needed here.
 pick_latest() { # <dir> <glob>
@@ -39,7 +39,7 @@ pick_latest() { # <dir> <glob>
   find "$dir" -maxdepth 1 -type f -iname "$pattern" 2>/dev/null | sort -V | tail -n1
 }
 
-# --- Main Logic ---
+# Main Logic
 # A reusable function to handle linking all plugins for a single server.
 # This uses an "atomic swap" method for safety, ensuring the server is never
 # left with an incomplete or empty plugin directory.
@@ -52,7 +52,7 @@ link_server_plugins() {
   local auto_dir="${PLUGIN_ROOT}/${engine}/Managed"
   local static_dir="${PLUGIN_ROOT}/${engine}"
 
-  # --- The Atomic Swap: Part 1 ---
+  # The Atomic Swap: Part 1
   # Create a secure, temporary directory to build the new plugin set.
   # We create it next to the real plugins/ dir to ensure it's on the same filesystem.
   mkdir -p "$server_dir"
@@ -61,18 +61,16 @@ link_server_plugins() {
   TEMP_DIRS+=("$temp_plugins_dir")
   echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Building new plugin set in: $(basename "$temp_plugins_dir")"
 
-  # --- Plugin Linking Loop ---
+  # Plugin Linking Loop
   # Use process substitution to avoid subshells and ensure robustness.
-  while IFS=$'\t' read -r plugin spec; do
-    local scheme="${spec%%://*}"
-    local pattern="${spec#*://}"
+  while IFS=$'\t' read -r plugin type pattern; do
     local src_file=""
 
-    case "$scheme" in
+    case "$type" in
     auto) src_file=$(pick_latest "$auto_dir" "$pattern") ;;
     manual) src_file=$(pick_latest "$static_dir" "$pattern") ;;
     *)
-      echo "[$(date '+%H:%M:%S') WARN] [link-plugin]: Unknown scheme '$scheme' for '$plugin'. Skipping." >&2
+      echo "[$(date '+%H:%M:%S') WARN] [link-plugin]: Unknown type '$type' for '$plugin'. Skipping." >&2
       continue
       ;;
     esac
@@ -84,38 +82,38 @@ link_server_plugins() {
     else
       printf "[$(date '+%H:%M:%S') WARN] [link-plugin]: %-22s NOT found (pattern: %s)\n" "$plugin" "$pattern" >&2
     fi
-  done < <(jq -r ".servers[\"$server_name\"].plugins | to_entries[] | \"\(.key)\t\(.value)\"" <<<"$CONFIG")
+  done < <(jq -r ".servers[\"$server_name\"].plugins | to_entries[] | \"\(.key)\t\(.value.type)\t\(.value.pattern)\"" <<<"$CONFIG")
 
-  # --- The Atomic Swap: Part 2 ---
+  # The Atomic Swap: Part 2
   # Once all links are created in the temp dir, swap it with the live one.
   # This is an instantaneous operation.
   echo "[$(date '+%H:%M:%S') INFO] [link-plugin]: Swapping plugin directories..."
-  
+
   # Ensure the destination directory exists
   mkdir -p "$dest_dir"
-  
+
   # Remove old JAR files
   rm -rf "$dest_dir"/*.jar 2>/dev/null || true
-  
+
   # Move new JAR files if any exist
-  if compgen -G "$temp_plugins_dir"/*.jar > /dev/null; then
+  if compgen -G "$temp_plugins_dir"/*.jar >/dev/null; then
     mv "$temp_plugins_dir"/*.jar "$dest_dir"
   else
     echo "[$(date '+%H:%M:%S') WARN] [link-plugin]: No plugins were linked for '$server_name'." >&2
   fi
-  
+
   # Clean up temp directory
   rm -rf "$temp_plugins_dir"
   # Remove from tracking since it's been cleaned up
   # Rebuild array without this temp_plugins_dir
   local new_temp_dirs=()
   for dir in "${TEMP_DIRS[@]}"; do
-      [[ "$dir" != "$temp_plugins_dir" ]] && new_temp_dirs+=("$dir")
+    [[ "$dir" != "$temp_plugins_dir" ]] && new_temp_dirs+=("$dir")
   done
   TEMP_DIRS=("${new_temp_dirs[@]}")
 }
 
-# --- Execution ---
+# Execution
 # Load the configuration file once.
 CONFIG="$(cat "$CONFIG_FILE")"
 

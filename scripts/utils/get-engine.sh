@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# --- Configuration ---
+# Configuration
 # Setting up our paths relative to the script's location.
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
@@ -10,11 +10,11 @@ ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
 CONFIG_FILE="${ROOT_PATH}/config/update.json"
 ENGINE_DIR="${ROOT_PATH}/libraries/engines"
 
-# --- Pre-flight Checks ---
+# Pre-flight Checks
 # Let's get that engine directory ready.
 mkdir -p "$ENGINE_DIR"
 
-# --- Main Logic ---
+# Main Logic
 # This is the core function that handles a single engine.
 # It checks, downloads, and cleans up.
 process_engine() {
@@ -22,52 +22,61 @@ process_engine() {
 
     echo "[$(date '+%H:%M:%S') INFO] [get-engine]: Processing '$project' version '$version'..."
 
-    # Let's ask the PaperMC API about the latest build.
+    # Query the PaperMC API for available builds
     local api_url="https://api.papermc.io/v2/projects/$project/versions/$version/builds"
     local api_response
-    api_response=$(curl -fsSL --retry 3 --retry-delay 5 "$api_url") || {
-        echo "[$(date '+%H:%M:%S') ERROR] [get-engine]: API fetch failed for '$project' '$version'. Skipping." >&2
-        return 1 # Return an error code
-    }
-
-    # Let's figure out the latest build number and the full filename.
-    local latest_build
-    latest_build=$(jq -r '.builds[-1].build' <<<"$api_response")
-
-    # If jq fails to find a build, it returns "null". Let's handle that.
-    if [[ "$latest_build" == "null" ]]; then
-        echo "[$(date '+%H:%M:%S') WARN] [get-engine]: No builds found for '$project' version '$version'. Skipping." >&2
-        return 0 # Not an error, just nothing to do.
+    if ! api_response=$(curl -fsSL --retry 3 --retry-delay 5 "$api_url" 2>&1); then
+        echo "[$(date '+%H:%M:%S') ERROR] [get-engine]: Failed to fetch builds for '$project' v$version" >&2
+        echo "[$(date '+%H:%M:%S') ERROR] [get-engine]: API URL: $api_url" >&2
+        return 1
     fi
 
-    local jar_name="${project}-${version}-${latest_build}.jar"
-    local target_path="$ENGINE_DIR/$jar_name"
+    # Extract the latest build number and application name
+    local latest_build application_name
+    latest_build=$(jq -r '.builds[-1].build // empty' <<<"$api_response")
+    application_name=$(jq -r '.builds[-1].downloads.application.name // empty' <<<"$api_response")
 
-    # --- The Smart Part: Skip if we already have it! ---
-    if [[ -f "$target_path" ]]; then
-        echo "[$(date '+%H:%M:%S') INFO] [get-engine]: Already have the latest version of '$project': $jar_name. Skipping."
+    if [[ -z "$latest_build" || -z "$application_name" ]]; then
+        echo "[$(date '+%H:%M:%S') WARN] [get-engine]: No builds available for '$project' v$version" >&2
         return 0
     fi
 
-    # --- If we got here, it's time to download. ---
-    local download_url="https://api.papermc.io/v2/projects/$project/versions/$version/builds/$latest_build/downloads/$jar_name"
-    echo "[$(date '+%H:%M:%S') INFO] [get-engine]: Downloading '$jar_name'..."
+    local target_path="$ENGINE_DIR/$application_name"
 
-    if curl -fsSL --retry 3 --retry-delay 5 -o "$target_path" "$download_url"; then
-        echo "[$(date '+%H:%M:%S') INFO] [get-engine]: Downloaded to '$target_path'"
+    # Skip if we already have the latest version
+    if [[ -f "$target_path" ]]; then
+        echo "[$(date '+%H:%M:%S') INFO] [get-engine]: Already up-to-date: $application_name"
+        return 0
+    fi
 
-        # --- Safer Cleanup: Only delete old files AFTER a successful download ---
-        echo "[$(date '+%H:%M:%S') INFO] [get-engine]: Cleaning up old versions of '$project'..."
-        find "$ENGINE_DIR" -maxdepth 1 -type f -name "${project}-*.jar" ! -name "$jar_name" -delete
+    # Download the latest build
+    local download_url="https://api.papermc.io/v2/projects/$project/versions/$version/builds/$latest_build/downloads/$application_name"
+    echo "[$(date '+%H:%M:%S') INFO] [get-engine]: Downloading $application_name..."
+
+    local temp_file="${target_path}.tmp"
+    if curl -fsSL --retry 3 --retry-delay 5 -o "$temp_file" "$download_url" 2>&1; then
+        # Atomic move to final destination
+        mv "$temp_file" "$target_path"
+        echo "[$(date '+%H:%M:%S') INFO] [get-engine]: Downloaded: $application_name"
+
+        # Clean up old versions after successful download
+        local old_count=0
+        while IFS= read -r old_file; do
+            rm -f "$old_file"
+            ((old_count++))
+        done < <(find "$ENGINE_DIR" -maxdepth 1 -type f -name "${project}-*.jar" ! -name "$application_name")
+
+        if [[ $old_count -gt 0 ]]; then
+            echo "[$(date '+%H:%M:%S') INFO] [get-engine]: Removed $old_count old version(s) of '$project'"
+        fi
     else
-        echo "[$(date '+%H:%M:%S') ERROR] [get-engine]: Download failed for '$jar_name'. Check the URL or your connection." >&2
-        # Clean up the potentially empty/corrupted file from the failed download.
-        rm -f "$target_path"
+        echo "[$(date '+%H:%M:%S') ERROR] [get-engine]: Download failed for $application_name" >&2
+        rm -f "$temp_file"
         return 1
     fi
 }
 
-# --- Execution ---
+# Execution
 # Load the configuration once.
 CONFIG="$(cat "$CONFIG_FILE")"
 

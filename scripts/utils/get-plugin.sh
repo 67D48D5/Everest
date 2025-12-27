@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# --- Configuration ---
+# Configuration
 # Setting up our paths relative to the script's location.
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
@@ -20,7 +20,7 @@ cleanup() {
         echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Cleaning up temporary directories..." >&2
         for temp_dir in "${TEMP_DIRS[@]}"; do
             if [[ -d "$temp_dir" ]]; then
-                rm -rf "$temp_dir"
+                rm -rf "$temp_dir" || echo "[$(date '+%H:%M:%S') WARN] [get-plugin]: Failed to clean up '$temp_dir'" >&2
             fi
         done
     fi
@@ -30,11 +30,11 @@ cleanup() {
 # Set up trap for cleanup on exit
 trap cleanup EXIT INT TERM
 
-# --- Pre-flight Checks ---
+# Pre-flight Checks
 # Let's get that plugin directory ready.
 mkdir -p "$PLUGIN_ROOT"
 
-# --- URL Resolver Functions ---
+# URL Resolver Functions
 resolve_jenkins() { # <url> <engineKeyword>
     local url="$1" key="$2" api final
     api="${url%/}/lastSuccessfulBuild/api/json"
@@ -72,7 +72,26 @@ resolve_enginehub() { # <url>
     printf '%s' "$jar_url"
 }
 
-# --- Main Logic ---
+# Perform atomic directory swap
+atomic_swap_directory() {
+    local temp_dir="$1"
+    local target_dir="$2"
+    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Performing atomic directory swap..."
+    rm -rf "$target_dir" || true
+    mv "$temp_dir" "$target_dir"
+}
+
+# Remove a directory from the TEMP_DIRS tracking array
+remove_from_temp_dirs() {
+    local dir_to_remove="$1"
+    local new_array=()
+    for dir in "${TEMP_DIRS[@]}"; do
+        [[ "$dir" != "$dir_to_remove" ]] && new_array+=("$dir")
+    done
+    TEMP_DIRS=("${new_array[@]}")
+}
+
+# Main Logic
 process_plugin() {
     local engine="$1"
     local plugin_name="$2"
@@ -80,7 +99,7 @@ process_plugin() {
     local target_dir="$4"
     local resolved_url="$url" # Start with the original URL
 
-    # --- Skip plugins marked for manual download ---
+    # Skip plugins marked for manual download
     if [[ "$url" == manual://* ]]; then
         echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: '$plugin_name' is marked for manual download."
         return 0
@@ -90,7 +109,7 @@ process_plugin() {
         return 0
     fi
 
-    # --- URL Resolution ---
+    # URL Resolution
     local resolution_type=""
     if [[ "$url" == https://builds.enginehub.org/job/* && "$url" != *.jar ]]; then
         resolution_type="EngineHub"
@@ -114,7 +133,7 @@ process_plugin() {
         fi
     fi
 
-    # --- Download ---
+    # Download
     local jar_name
     jar_name=$(basename "${resolved_url%%\?*}")
     if [[ "$jar_name" != *.jar ]]; then
@@ -131,9 +150,18 @@ process_plugin() {
     fi
 }
 
-# --- Execution ---
+# Execution
 # Load the configuration once.
+if [[ ! -f "$CONFIG_FILE" ]]; then
+    echo "[$(date '+%H:%M:%S') ERROR] [get-plugin]: Configuration file not found: '$CONFIG_FILE'" >&2
+    exit 1
+fi
+
 CONFIG="$(cat "$CONFIG_FILE")"
+if [[ -z "$CONFIG" ]]; then
+    echo "[$(date '+%H:%M:%S') ERROR] [get-plugin]: Configuration file is empty: '$CONFIG_FILE'" >&2
+    exit 1
+fi
 
 # Loop through each engine (paper, velocity, etc.) sequentially.
 jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
@@ -144,10 +172,14 @@ jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
     # The final destination for the plugins.
     auto_dir="$engine_plugin_dir/Managed"
 
+    # Reset arrays for this engine to prevent cross-contamination
+    declare -a plugin_pids=()
+    declare -a plugin_names=()
+
     # Ensure the parent directory exists first.
     mkdir -p "$engine_plugin_dir"
 
-    # --- The SAFER Atomic Swap: Part 1 ---
+    # The SAFER Atomic Swap: Part 1
     # Use mktemp to create a secure, unique temporary directory.
     # This prevents race conditions where downloads from different engines
     # could write to the same place at the same time.
@@ -155,48 +187,67 @@ jq -r '.plugins | keys[]' <<<"$CONFIG" | while read -r engine; do
     TEMP_DIRS+=("$temp_dir")
     echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Using temporary directory: $temp_dir"
 
-    # --- Parallel Processing Loop ---
+    # Parallel Processing Loop
     # This process substitution `< <(...)` is the key. It prevents the
     # while loop from running in a subshell, so the 'wait' command
     # below is in the correct shell scope.
-    declare -a plugin_pids=()
     while IFS=$'\t' read -r plugin_name url; do
         # The '&' runs each plugin process in the background!
         process_plugin "$engine" "$plugin_name" "$url" "$temp_dir" &
         plugin_pids+=($!)
+        plugin_names+=("$plugin_name")
     done < <(jq -r ".plugins[\"$engine\"] | to_entries[] | \"\\(.key)\\t\\(.value)\"" <<<"$CONFIG")
 
     # This 'wait' is now in the main shell for this engine's loop.
     # It will correctly wait for ALL background 'process_plugin' jobs to finish
     # before the script proceeds to the atomic swap or the next engine.
     echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Waiting for all '$engine' plugin downloads to complete..."
-    
-    # Track failed downloads
+
+    # Track failed downloads and fall back to existing plugins when available
+    shopt -s nullglob
     failed_downloads=0
-    for pid in "${plugin_pids[@]}"; do
+    for idx in "${!plugin_pids[@]}"; do
+        pid="${plugin_pids[$idx]}"
+        plugin_name="${plugin_names[$idx]}"
+
         if ! wait "$pid"; then
             ((failed_downloads++))
+            echo "[$(date '+%H:%M:%S') WARN] [get-plugin]: Download failed for '$plugin_name'. Attempting fallback..." >&2
+            # If a download fails, copy the existing plugin (if present) so the swap keeps it
+            if [[ -d "$auto_dir" ]]; then
+                existing_plugins=("$auto_dir"/${plugin_name}*.jar)
+                if ((${#existing_plugins[@]})); then
+                    echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Falling back to existing '$plugin_name' from '$auto_dir'."
+                    cp -p "${existing_plugins[@]}" "$temp_dir/" ||
+                        echo "[$(date '+%H:%M:%S') ERROR] [get-plugin]: Failed to copy existing '$plugin_name'." >&2
+                else
+                    echo "[$(date '+%H:%M:%S') WARN] [get-plugin]: No existing '$plugin_name' found in '$auto_dir' to fall back to." >&2
+                fi
+            else
+                echo "[$(date '+%H:%M:%S') WARN] [get-plugin]: Cannot fall back; '$auto_dir' does not exist." >&2
+            fi
         fi
     done
-    
+
+    # If every download failed and nothing new was staged, keep the previous Managed contents intact
+    staged_jars=("$temp_dir"/*.jar)
+    if [[ $failed_downloads -eq ${#plugin_pids[@]} && ${#staged_jars[@]} -eq 0 && -d "$auto_dir" ]]; then
+        echo "[$(date '+%H:%M:%S') WARN] [get-plugin]: All downloads failed for '$engine'; preserving existing plugins."
+        cp -p "$auto_dir"/*.jar "$temp_dir/" 2>/dev/null || true
+    fi
+    shopt -u nullglob
+
     if [[ $failed_downloads -gt 0 ]]; then
         echo "[$(date '+%H:%M:%S') WARN] [get-plugin]: $failed_downloads plugin(s) failed to download for '$engine'." >&2
     fi
 
-    # --- The Atomic Swap: Part 2 ---
-    # Once all downloads for this engine are successful, we swap the directories.
+    # The Atomic Swap: Part 2
+    # Once all downloads for this engine are complete, we swap the directories.
     echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: All downloads for '$engine' complete. Swapping directories..."
-    rm -rf "$auto_dir" || true
-    mv "$temp_dir" "$auto_dir"
-    
+    atomic_swap_directory "$temp_dir" "$auto_dir"
+
     # Remove from tracking since it's been successfully moved
-    # Rebuild array without this temp_dir
-    # Note: Cannot use 'local' here as we're not in a function context
-    new_temp_dirs=()
-    for dir in "${TEMP_DIRS[@]}"; do
-        [[ "$dir" != "$temp_dir" ]] && new_temp_dirs+=("$dir")
-    done
-    TEMP_DIRS=("${new_temp_dirs[@]}")
+    remove_from_temp_dirs "$temp_dir"
 
     echo "[$(date '+%H:%M:%S') INFO] [get-plugin]: Finished processing plugins for '$engine'."
 done

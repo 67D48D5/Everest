@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# --- Configuration ---
+# Configuration
 # Setting up our paths relative to the script's location.
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
@@ -11,7 +11,7 @@ CONFIG_FILE="${ROOT_PATH}/config/server.json"
 COMMON_ROOT="${ROOT_PATH}/libraries/common"
 SERVERS_ROOT="${ROOT_PATH}/servers"
 
-# --- Main Logic ---
+# Main Logic
 # A reusable function to handle the creation of a symbolic link.
 # It checks if the destination exists (as a link or directory) and cleans it up
 # before creating the new, correct symbolic link.
@@ -31,13 +31,13 @@ link_resource() {
 
     # Check if the destination already exists and clean it up.
     if [[ -L "$dest_path" ]]; then
-        echo "[$(date '+%H:%M:%S') INFO] [link-library]: '$resource_name' is already a symlink. Removing old link."
+        echo "[$(date '+%H:%M:%S') INFO] [link-library]: The '$resource_name' is already a symlink. Removing old link."
         rm "$dest_path"
     elif [[ -d "$dest_path" ]]; then
-        echo "[$(date '+%H:%M:%S') INFO] [link-library]: '$resource_name' is a directory. Removing existing directory."
+        echo "[$(date '+%H:%M:%S') INFO] [link-library]: The '$resource_name' is a directory. Removing existing directory."
         rm -rf "$dest_path"
     elif [[ -f "$dest_path" ]]; then
-        echo "[$(date '+%H:%M:%S') INFO] [link-library]: '$resource_name' is a file. Removing existing file."
+        echo "[$(date '+%H:%M:%S') INFO] [link-library]: The '$resource_name' is a file. Removing existing file."
         rm -f "$dest_path"
     fi
 
@@ -46,7 +46,7 @@ link_resource() {
     ln -sfn "$source_path" "$dest_path"
 }
 
-# --- Execution ---
+# Execution
 # Load the configuration file once.
 CONFIG="$(cat "$CONFIG_FILE")"
 
@@ -57,32 +57,14 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
 
     echo "[$(date '+%H:%M:%S') INFO] [link-library]: Processing server: ${SERVER} (engine: ${ENGINE})"
 
-    # --- Define links needed for all server types ---
-    # This is an array of "SourceSubPath;DestSubPath;FriendlyName"
-    common_links=(
-        "plugins/LuckPerms/libs;plugins/LuckPerms/libs;LuckPerms Libs"
-    )
+    # Process library links from configuration
+    jq -c ".servers[\"$SERVER\"].libraries[]? // empty" <<<"$CONFIG" | while read -r library; do
+        src=$(jq -r '.source' <<<"$library")
+        dest=$(jq -r '.destination' <<<"$library")
+        name=$(jq -r '.name' <<<"$library")
 
-    # --- Define links needed only for Paper servers ---
-    paper_links=(
-        "cache;cache;Paper Cache"
-        "libraries;libraries;Paper Libraries"
-        "versions;versions;Paper Versions"
-    )
-
-    # --- Process links based on engine type ---
-    if [[ "$ENGINE" == "paper" ]]; then
-        # Combine common links and paper-specific links
-        links_to_create=("${common_links[@]}" "${paper_links[@]}")
-        for link_info in "${links_to_create[@]}"; do
-            # Split the string by the semicolon delimiter
-            IFS=';' read -r src dest name <<<"$link_info"
-            link_resource "${COMMON_ROOT}/${src}" "${SERVER_DIR}/${dest}" "$name"
-        done
-    elif [[ "$ENGINE" == "velocity" ]]; then
-        # Velocity has a special path for LuckPerms
-        link_resource "${COMMON_ROOT}/plugins/LuckPerms/libs" "${SERVER_DIR}/plugins/luckperms/libs" "LuckPerms Libs"
-    fi
+        link_resource "${COMMON_ROOT}/${src}" "${SERVER_DIR}/${dest}" "$name"
+    done
 
 done
 

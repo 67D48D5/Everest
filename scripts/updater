@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# --- Configuration ---
+# Configuration
 # Setting up our paths relative to the script's location.
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)/utils"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../..")"
 
-# --- Pre-flight Checks ---
+# Pre-flight Checks
 # Make sure we have the tools we need.
 echo "[$(date '+%H:%M:%S') INFO] [updater]: Checking for required tools..."
 for cmd in jq realpath ln rm find sort tail mv mktemp curl grep sed head; do
@@ -24,7 +24,7 @@ for config_file in server.json update.json; do
     fi
 done
 
-# --- Main Logic ---
+# Main Logic
 echo "[$(date '+%H:%M:%S') INFO] [updater]: Starting downloading process..."
 
 # Execute download scripts and check their exit status

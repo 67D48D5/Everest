@@ -2,34 +2,129 @@
   "servers": {
     "proxy": {
       "engine": "velocity",
+      "libraries": [
+        {
+          "source": "plugins/LuckPerms/libs",
+          "destination": "plugins/luckperms/libs",
+          "name": "LuckPerms Libs"
+        }
+      ],
       "plugins": {
-        "floodgate": "auto://floodgate-velocity*",
-        "geyser": "auto://geyser-velocity*",
-        "luckperms": "auto://LuckPerms-Velocity-*",
-        "viabackwards": "auto://ViaBackwards-*",
-        "viaversion": "auto://ViaVersion-*",
-        "cmiv": "manual://CMIV-*",
-        "litebans": "manual://LiteBans*"
+        "floodgate": {
+          "type": "auto",
+          "pattern": "floodgate-velocity*"
+        },
+        "geyser": {
+          "type": "auto",
+          "pattern": "geyser-velocity*"
+        },
+        "luckperms": {
+          "type": "auto",
+          "pattern": "LuckPerms-Velocity-*"
+        },
+        "viabackwards": {
+          "type": "auto",
+          "pattern": "ViaBackwards-*"
+        },
+        "viaversion": {
+          "type": "auto",
+          "pattern": "ViaVersion-*"
+        },
+        "cmiv": {
+          "type": "manual",
+          "pattern": "CMIV-*"
+        },
+        "litebans": {
+          "type": "manual",
+          "pattern": "LiteBans*"
+        }
       }
     },
     "wildy": {
       "engine": "paper",
+      "libraries": [
+        {
+          "source": "plugins/LuckPerms/libs",
+          "destination": "plugins/LuckPerms/libs",
+          "name": "LuckPerms Libs"
+        },
+        {
+          "source": "cache",
+          "destination": "cache",
+          "name": "Paper Cache"
+        },
+        {
+          "source": "libraries",
+          "destination": "libraries",
+          "name": "Paper Libraries"
+        },
+        {
+          "source": "versions",
+          "destination": "versions",
+          "name": "Paper Versions"
+        }
+      ],
       "plugins": {
-        "Chunky": "auto://Chunky-*",
-        "ChunkyBorder": "auto://ChunkyBorder-*",
-        "FastAsyncWorldEdit": "auto://FastAsyncWorldEdit-Paper-*",
-        "LuckPerms": "auto://LuckPerms-*",
-        "PlaceholderAPI": "auto://PlaceholderAPI-*",
-        "ProtocolLib": "auto://ProtocolLib*",
-        "TAB": "auto://TAB*",
-        "mcMMO": "auto://mcMMO*",
-        "CMI": "manual://CMI-*",
-        "CMILib": "manual://CMILib*",
-        "CoreProtect": "manual://CoreProtect-*",
-        "GriefPrevention": "manual://GriefPrevention*",
-        "MobFarmManager": "manual://MobFarmManager*",
-        "WorldGuard": "manual://worldguard-bukkit-*",
-        "Vault": "manual://Vault-*"
+        "Chunky": {
+          "type": "auto",
+          "pattern": "Chunky-*"
+        },
+        "ChunkyBorder": {
+          "type": "auto",
+          "pattern": "ChunkyBorder-*"
+        },
+        "FastAsyncWorldEdit": {
+          "type": "auto",
+          "pattern": "FastAsyncWorldEdit-Paper-*"
+        },
+        "LuckPerms": {
+          "type": "auto",
+          "pattern": "LuckPerms-*"
+        },
+        "PlaceholderAPI": {
+          "type": "auto",
+          "pattern": "PlaceholderAPI-*"
+        },
+        "ProtocolLib": {
+          "type": "auto",
+          "pattern": "ProtocolLib*"
+        },
+        "TAB": {
+          "type": "auto",
+          "pattern": "TAB*"
+        },
+        "mcMMO": {
+          "type": "auto",
+          "pattern": "mcMMO*"
+        },
+        "CMI": {
+          "type": "manual",
+          "pattern": "CMI-*"
+        },
+        "CMILib": {
+          "type": "manual",
+          "pattern": "CMILib*"
+        },
+        "CoreProtect": {
+          "type": "manual",
+          "pattern": "CoreProtect-*"
+        },
+        "GriefPrevention": {
+          "type": "manual",
+          "pattern": "GriefPrevention*"
+        },
+        "MobFarmManager": {
+          "type": "manual",
+          "pattern": "MobFarmManager*"
+        },
+        "WorldGuard": {
+          "type": "manual",
+          "pattern": "worldguard-bukkit-*"
+        },
+        "Vault": {
+          "type": "manual",
+          "pattern": "Vault-*"
+        }
       }
     }
   }
