@@ -105,7 +105,8 @@ for pid in "${JOB_PIDS[@]}"; do
 done
 
 if [[ $failed_jobs -gt 0 ]]; then
-    echo "[$(date '+%H:%M:%S') WARN] [get-engine]: $failed_jobs engine(s) failed to update." >&2
+    echo "[$(date '+%H:%M:%S') ERROR] [get-engine]: $failed_jobs engine(s) failed to update." >&2
+    exit 1
 fi
 
 echo "[$(date '+%H:%M:%S') INFO] [get-engine]: All engine updates are finished."
