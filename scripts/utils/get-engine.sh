@@ -63,7 +63,7 @@ process_engine() {
         local old_count=0
         while IFS= read -r old_file; do
             rm -f "$old_file"
-            ((old_count++))
+            ((old_count += 1))
         done < <(find "$ENGINE_DIR" -maxdepth 1 -type f -name "${project}-*.jar" ! -name "$application_name")
 
         if [[ $old_count -gt 0 ]]; then
@@ -110,3 +110,4 @@ if [[ $failed_jobs -gt 0 ]]; then
 fi
 
 echo "[$(date '+%H:%M:%S') INFO] [get-engine]: All engine updates are finished."
+exit 0
