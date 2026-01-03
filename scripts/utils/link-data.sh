@@ -82,35 +82,40 @@ process_server() {
     link_data "$server_name" "logs" "logs"
 
     # Find and link world directories.
-    # Common world directory patterns for Minecraft servers.
-    local world_patterns=("world" "world_nether" "world_the_end")
+    # Detect worlds by looking for directories starting with 'w' that contain level.dat.
+    # This catches: world, world_nether, world_the_end, wwild, wwild_nether, etc.
+    local -a world_dirs=()
 
-    # Also detect custom world directories (e.g., wwild, wwild_nether, wwild_the_end).
     while IFS= read -r -d '' dir; do
         local dir_name
         dir_name="$(basename "$dir")"
-        # Skip if it's a symlink (already processed) or a known non-world directory.
+
+        # Skip symlinks (already processed).
         if [[ -L "$dir" ]]; then
+            # Check if symlink points to our storage - if so, it's already linked.
+            local link_target
+            link_target="$(readlink -f "$dir" 2>/dev/null || echo "")"
+            if [[ "$link_target" == "${STORAGE_ROOT}/${server_name}/worlds/"* ]]; then
+                echo "[$(date '+%H:%M:%S') INFO] [link-data]: World '$dir_name' is already linked to storage."
+            fi
             continue
         fi
-        # Check if this looks like a world directory (contains level.dat or region folder).
-        if [[ -f "$dir/level.dat" ]] || [[ -d "$dir/region" ]]; then
-            world_patterns+=("$dir_name")
-        fi
-    done < <(find "$server_dir" -maxdepth 1 -type d -print0 2>/dev/null)
 
-    # Remove duplicates and process each world.
-    local -A seen_worlds=()
-    for world_name in "${world_patterns[@]}"; do
-        if [[ -z "${seen_worlds[$world_name]:-}" ]]; then
-            seen_worlds["$world_name"]=1
-            local world_path="${server_dir}/${world_name}"
-            # Only process if it exists (as dir or symlink) or matches a known pattern.
-            if [[ -d "$world_path" ]] || [[ -L "$world_path" ]] || [[ "$world_name" =~ ^world ]]; then
-                link_data "$server_name" "worlds/${world_name}" "$world_name"
-            fi
+        # Check if this is a Minecraft world directory (contains level.dat).
+        if [[ -f "$dir/level.dat" ]]; then
+            world_dirs+=("$dir_name")
+            echo "[$(date '+%H:%M:%S') INFO] [link-data]: Detected world directory: '$dir_name' (contains level.dat)"
         fi
+    done < <(find "$server_dir" -maxdepth 1 -type d -name 'w*' -print0 2>/dev/null)
+
+    # Process each detected world directory.
+    for world_name in "${world_dirs[@]}"; do
+        link_data "$server_name" "worlds/${world_name}" "$world_name"
     done
+
+    if [[ ${#world_dirs[@]} -eq 0 ]]; then
+        echo "[$(date '+%H:%M:%S') INFO] [link-data]: No world directories detected for '$server_name'."
+    fi
 
     echo "[$(date '+%H:%M:%S') INFO] [link-data]: Finished processing server '$server_name'."
 }
