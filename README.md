@@ -8,12 +8,12 @@ Everest is a production-ready Minecraft server infrastructure designed for runni
 
 ## Features
 
-- 🚀 **Multi-Server Architecture**: `Velocity` proxy + `Paper` game servers
-- 🔄 **Automated Updates**: Smart plugin and engine version management
-- 🛠️ **Production-Ready**: `Tmux`-based process management with auto-restart
-- 🔌 **Plugin Management**: Auto-download and link plugins from official sources
-- 🎮 **Cross-Platform**: Java and Bedrock edition support via `Geyser/Floodgate`
-- ⚡ **Performance Optimized**: `Aikars flags` for Paper, tuned JVM settings
+- **Multi-Server Architecture**: `Velocity` proxy + `Paper` game servers
+- **Automated Updates**: Smart plugin and engine version management
+- **Production-Ready**: `Tmux`-based process management with auto-restart
+- **Plugin Management**: Auto-download and link plugins from official sources
+- **Cross-Platform**: Java and Bedrock edition support via `Geyser/Floodgate`
+- **Performance Optimized**: `Aikars flags` for Paper, tuned JVM settings
 
 ## Architecture
 
@@ -36,17 +36,17 @@ The Velocity proxy handles player connections and routes them to backend Paper s
 
 ```shell
 .
-├── config/              # Configuration files
-│   ├── server.json     # Server and plugin definitions
+├── bin/                # Management binaries
+│   ├── everest         # Main management script
+│   └── utils/          # Management utilities
+├── config/             # Configuration files
+│   ├── instances.json  # Server instance and plugin definitions
 │   └── update.json     # Update sources and versions
-├── scripts/            # Management scripts
-│   ├── launcher        # Generic server launcher
-│   ├── updater         # Plugin/engine update orchestrator
-│   └── utils/          # Update utilities
-├── servers/            # Server instances
-│   ├── proxy/          # Velocity proxy
+├── instances/          # Server instances
+│   ├── velocity/       # Velocity proxy
 │   └── wildy/          # Paper survival server
 └── libraries/          # Downloaded engines and plugins
+    ├── common/         # Shared libraries
     ├── engines/        # Paper and Velocity JARs
     └── plugins/        # Downloaded plugins
 ```
@@ -60,4 +60,6 @@ The Velocity proxy handles player connections and routes them to backend Paper s
 
 ## License
 
-This project is for the `Everest` MC community.
+> This project is for the `Everest MC` community.
+
+For mangement scripts and utilities, `MIT License` is applied.
