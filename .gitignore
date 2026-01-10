@@ -101,6 +101,10 @@ instances/**/plugins/Chunky/tasks/
 instances/**/plugins/CMILib/Saves/
 instances/**/plugins/CMILib/Translations/Items/
 
+# TAB plugin playerdata file
+instances/**/plugins/TAB/playerdata.yml
+instances/**/plugins/TAB/skincache.yml
+
 # ------------------------------------------------------------------------------
 # Security (Files that should never be committed for security reasons)
 # ------------------------------------------------------------------------------
