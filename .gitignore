@@ -91,8 +91,8 @@ servers/velocity/plugins/litebans/server.json
 servers/velocity/plugins/Geyser*/locales/*.json
 
 # LuckPerms locale files and symlink files
-servers/**/plugins/luckperms/translations
-servers/**/plugins/luckperms/libs
+servers/**/plugins/[Ll]uck[Pp]erms/translations
+servers/**/plugins/[Ll]uck[Pp]erms/libs
 
 # FastAsyncWorldEdit data files
 servers/**/plugins/FastAsyncWorldEdit/schematics/
