@@ -54,7 +54,7 @@ server.json
 /backups/
 
 # ------------------------------------------------------------------------------
-# Instances (Core Data Management)
+# Server Instances (Core Data Management)
 # ------------------------------------------------------------------------------
 # Map data (very large, recommended to exclude)
 *.dat_old
@@ -64,46 +64,47 @@ server.json
 *.dat
 
 # Ignore plugin symbolic links or JAR files but track configuration folders
-instances/**/plugins/*.jar
+servers/**/plugins/*.jar
 
 # Ignore spark plugin data
-instances/**/plugins/spark/
+servers/**/plugins/spark/
 
 # Statistics and player data (optional: exclude if frequent resets)
-instances/**/stats/
-instances/**/playerdata/
-instances/**/advancements/
+servers/**/stats/
+servers/**/playerdata/
+servers/**/advancements/
+servers/**/mcmmo_regions/
 
 # Unnecessary files related to Paper/Spigot
-instances/**/cache
-instances/**/versions
-instances/**/libraries
-instances/**/.console_history
+servers/**/cache
+servers/**/versions
+servers/**/libraries
+servers/**/.console_history
 
 # Velocity language files (can be large and are not usually modified)
-instances/velocity/lang
+servers/velocity/lang
 
 # GeyserMC locale files (can be large and are not usually modified)
-instances/velocity/plugins/Geyser**/locales/*.json
+servers/velocity/plugins/Geyser*/locales/*.json
 
 # LuckPerms locale files and symlink files
-instances/**/plugins/luckperms/translations
-instances/**/plugins/luckperms/libs
+servers/**/plugins/luckperms/translations
+servers/**/plugins/luckperms/libs
 
 # FastAsyncWorldEdit data files
-instances/**/plugins/FastAsyncWorldEdit/schematics/
-instances/**/plugins/FastAsyncWorldEdit/sessions/
+servers/**/plugins/FastAsyncWorldEdit/schematics/
+servers/**/plugins/FastAsyncWorldEdit/sessions/
 
 # Chunky plugin task files
-instances/**/plugins/Chunky/tasks/
+servers/**/plugins/Chunky/tasks/
 
 # CMILib plugin save and translation files
-instances/**/plugins/CMILib/Saves/
-instances/**/plugins/CMILib/Translations/Items/
+servers/**/plugins/CMILib/Saves/
+servers/**/plugins/CMILib/Translations/Items/
 
 # TAB plugin playerdata file
-instances/**/plugins/TAB/playerdata.yml
-instances/**/plugins/TAB/skincache.yml
+servers/**/plugins/TAB/playerdata.yml
+servers/**/plugins/TAB/skincache.yml
 
 # ------------------------------------------------------------------------------
 # Security (Files that should never be committed for security reasons)
