@@ -9,9 +9,9 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/..")"
 
-CONFIG_FILE="${ROOT_PATH}/config/instances.json"
+CONFIG_FILE="${ROOT_PATH}/config/server.json"
 ENGINE_DIR="${ROOT_PATH}/libraries/engines"
-UTILS_DIR="${ROOT_PATH}/bin/utils"
+UTILS_DIR="${ROOT_PATH}/scripts/utils"
 
 # Commands
 ACTION="${1:-help}"
@@ -51,7 +51,7 @@ load_env() {
 
 get_config() {
     local key="$1"
-    jq -r ".instances[\"${SERVER_NAME}\"].${key} // empty" "$CONFIG_FILE"
+    jq -r ".servers[\"${SERVER_NAME}\"].${key} // empty" "$CONFIG_FILE"
 }
 
 # ------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ cmd_update() {
     echo "" # Spacer
 
     # 1. Config Check
-    for config_file in instances.json update.json; do
+    for config_file in server.json update.json; do
         if [[ ! -f "${ROOT_PATH}/config/${config_file}" ]]; then
             log_err "Configuration file missing: config/${config_file}"
             exit 1
@@ -137,9 +137,9 @@ cmd_start() {
         exit 1
     fi
 
-    local SERVER_DIR="${ROOT_PATH}/instances/${SERVER_NAME}"
+    local SERVER_DIR="${ROOT_PATH}/servers/${SERVER_NAME}"
     if [[ ! -d "$SERVER_DIR" ]]; then
-        log_err "Instance directory not found: $SERVER_DIR"
+        log_err "Server instance directory not found: $SERVER_DIR"
         exit 1
     fi
 
@@ -188,7 +188,7 @@ cmd_start() {
         )
     fi
 
-    readarray -t EXTRA_FLAGS < <(jq -r ".instances[\"${SERVER_NAME}\"].java_flags[]? // empty" "$CONFIG_FILE")
+    readarray -t EXTRA_FLAGS < <(jq -r ".servers[\"${SERVER_NAME}\"].java_flags[]? // empty" "$CONFIG_FILE")
     JAVA_FLAGS+=("${EXTRA_FLAGS[@]}")
 
     local TMUX_SESSION="${SERVER_NAME}"
@@ -258,7 +258,7 @@ restart)
     ;;
 update) cmd_update ;;
 list)
-    jq -r '.instances | keys[]' "$CONFIG_FILE"
+    jq -r '.servers | keys[]' "$CONFIG_FILE"
     echo "--- Active Sessions ---"
     tmux list-sessions 2>/dev/null || echo "No active sessions."
     ;;

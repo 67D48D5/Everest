@@ -7,11 +7,11 @@ set -euo pipefail
 
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-ROOT_PATH="$(realpath "${SCRIPT_DIR}/../../")" # bin/utils/ -> root
+ROOT_PATH="$(realpath "${SCRIPT_DIR}/../../")" # scripts/utils/ -> root
 
-CONFIG_FILE="${ROOT_PATH}/config/instances.json"
+CONFIG_FILE="${ROOT_PATH}/config/server.json"
 COMMON_ROOT="${ROOT_PATH}/libraries/common"
-INSTANCES_ROOT="${ROOT_PATH}/instances"
+INSTANCES_ROOT="${ROOT_PATH}/servers"
 
 # Colors
 RED='\033[0;31m'
@@ -30,7 +30,7 @@ link_resource() {
     # [Safety Check 1] Check if source exists
     if [[ ! -e "$source_path" ]]; then
         echo -e "${RED}[ERROR] Source not found for '$resource_name': $source_path${NC}"
-        echo -e "${YELLOW} -> Please check 'libraries/common' or your 'instances.json' paths.${NC}"
+        echo -e "${YELLOW} -> Please check 'libraries/common' or your 'server.json' paths.${NC}"
         return 1
     fi
 
@@ -66,9 +66,9 @@ fi
 
 CONFIG="$(cat "$CONFIG_FILE")"
 
-# Iterate over instances
-jq -r '.instances | keys[]' <<<"$CONFIG" | while read -r SERVER; do
-    ENGINE=$(jq -r ".instances[\"$SERVER\"].engine" <<<"$CONFIG")
+# Iterate over servers
+jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
+    ENGINE=$(jq -r ".servers[\"$SERVER\"].engine" <<<"$CONFIG")
     SERVER_DIR="${INSTANCES_ROOT}/${SERVER}"
 
     # If the instance folder doesn't exist, warn and create it.
@@ -82,7 +82,7 @@ jq -r '.instances | keys[]' <<<"$CONFIG" | while read -r SERVER; do
     echo "-----------------------------------------------------"
 
     # Process library links
-    jq -c ".instances[\"$SERVER\"].libraries[]? // empty" <<<"$CONFIG" | while read -r library; do
+    jq -c ".servers[\"$SERVER\"].libraries[]? // empty" <<<"$CONFIG" | while read -r library; do
         src=$(jq -r '.source' <<<"$library")
         dest=$(jq -r '.destination' <<<"$library")
         name=$(jq -r '.name' <<<"$library")

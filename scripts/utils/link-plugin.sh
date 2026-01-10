@@ -9,9 +9,9 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../../")"
 
-CONFIG_FILE="${ROOT_PATH}/config/instances.json"
+CONFIG_FILE="${ROOT_PATH}/config/server.json"
 PLUGIN_LIB_ROOT="${ROOT_PATH}/libraries/plugins"
-INSTANCES_ROOT="${ROOT_PATH}/instances"
+INSTANCES_ROOT="${ROOT_PATH}/servers"
 
 # Colors
 RED='\033[0;31m'
@@ -76,7 +76,7 @@ link_server_plugins() {
       echo -e "${RED}[FAIL]${NC} ${plugin_key}.jar (Pattern: $pattern) - Not found in ${engine} libraries"
     fi
 
-  done < <(jq -r ".instances[\"${server_name}\"].plugins | to_entries[] | \"\(.key)\t\(.value.type)\t\(.value.pattern)\"" "$CONFIG_FILE")
+  done < <(jq -r ".servers[\"${server_name}\"].plugins | to_entries[] | \"\(.key)\t\(.value.type)\t\(.value.pattern)\"" "$CONFIG_FILE")
 
   # Apply Changes (Strict Mode)
   find "$dest_dir" -maxdepth 1 -name "*.jar" -delete
@@ -99,8 +99,8 @@ fi
 
 CONFIG="$(cat "$CONFIG_FILE")"
 
-jq -r '.instances | keys[]' <<<"$CONFIG" | while read -r SERVER; do
-  ENGINE=$(jq -r ".instances[\"$SERVER\"].engine" <<<"$CONFIG")
+jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
+  ENGINE=$(jq -r ".servers[\"$SERVER\"].engine" <<<"$CONFIG")
   SERVER_DIR="${INSTANCES_ROOT}/${SERVER}"
 
   if [[ ! -d "$SERVER_DIR" ]]; then
