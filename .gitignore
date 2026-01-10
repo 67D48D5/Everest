@@ -32,6 +32,10 @@ debug/
 crash-reports/
 .paper-remapped/
 
+# Ignore database files if exists
+*.sqlite
+*.db
+
 # Minecraft specific runtime files
 ops.json
 banned*.json
@@ -43,12 +47,7 @@ help.yml
 wepif.yml
 
 # Update date files
-.version
-.license
 lastupdate
-status.json
-server.json
-*.sqlite
 
 # Backups folder created by 'everest backup' command
 /backups/
@@ -84,6 +83,10 @@ servers/**/.console_history
 # Velocity language files (can be large and are not usually modified)
 servers/velocity/lang
 
+# LiteBans cache files
+servers/velocity/plugins/litebans/.version
+servers/velocity/plugins/litebans/server.json
+
 # GeyserMC locale files (can be large and are not usually modified)
 servers/velocity/plugins/Geyser*/locales/*.json
 
@@ -104,6 +107,9 @@ servers/**/plugins/CMI/**Log**/
 # CMILib plugin save and translation files
 servers/**/plugins/CMILib/Saves/
 servers/**/plugins/CMILib/Translations/Items/
+
+# CoreProtect license file
+servers/**/plugins/CoreProtect/.license
 
 # TAB plugin playerdata file
 servers/**/plugins/TAB/playerdata.yml
