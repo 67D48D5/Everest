@@ -1,80 +1,132 @@
-# Ignore Changing Files
-# If you change these files, don't forget to commit them!
-*.properties
+# .gitignore
 
-# Ignore Files
+# ------------------------------------------------------------------------------
+# System & IDE
+# ------------------------------------------------------------------------------
 .DS_Store
-.assets/private/
+.idea/
+.vscode/
 
-lib/
-spark/
-
-libs
-cache
-versions
-libraries
-
-history/
-schematics/
-clipboard/
-sessions/
-
-.license
-.version
-.paper-remapped
-
-lastupdate
-status.json
-wepif.yml
-permissions.yml
-worldNames.yml
-SkinsCache.yml
-playerdata.yml
-
-banned-ips.json
-banned-players.json
-whitelist.json
-ops.json
-
-**log**
-**old**
-**key**
-**cache**
-**history**
-**flatfile**
-**backup**
-
-/**/litebans/server.json
-/**/MobFarmManager/**Log**/
-/**/CMI/**Log**/
-
-stats/
-datapacks/
-advancements/
-
-*.template
-*.lock
-*.dat
+# Temporary files created by editors
+*.swp
 *.log
-*.mca
-*.mcm
-*.pem
+
+# ------------------------------------------------------------------------------
+# Binary Files (Compiled files & Libraries)
+# ------------------------------------------------------------------------------
+# Ignore all jar, zip, tar.gz files
 *.jar
 *.zip
-*.gz
-*.db
+*.tar.gz
 
-# But not these
-!/libraries
-!/**/addons/*.jar
+# But keep the library folder structure itself (with .gitkeep files)
+!/libraries/**/.gitkeep
 
-!Dialogs
-!PlaceholderAPI
+# ------------------------------------------------------------------------------
+# Runtime Data
+# ------------------------------------------------------------------------------
+# Log and cache files
+logs/
+cache/
+debug/
+crash-reports/
+.paper-remapped/
 
-!termux.properties
-!lwc_ko.properties
+# Minecraft specific runtime files
+ops.json
+banned*.json
+whitelist.json
+usercache.json
+version_history.json
+permissions.yml
+help.yml
+wepif.yml
+
+# Update date files
+.version
+.license
+lastupdate
+status.json
+server.json
+*.sqlite
+
+# Backups folder created by 'everest backup' command
+/backups/
+
+# ------------------------------------------------------------------------------
+# Instances (Core Data Management)
+# ------------------------------------------------------------------------------
+# Map data (very large, recommended to exclude)
+*.dat_old
+*.mcmeta
+*.lock
+*.mca
+*.dat
+
+# Ignore plugin symbolic links or JAR files but track configuration folders
+instances/**/plugins/*.jar
+
+# Ignore spark plugin data
+instances/**/plugins/spark/
+
+# Statistics and player data (optional: exclude if frequent resets)
+instances/**/stats/
+instances/**/playerdata/
+instances/**/advancements/
+
+# Unnecessary files related to Paper/Spigot
+instances/**/cache
+instances/**/versions
+instances/**/libraries
+instances/**/.console_history
+
+# Velocity language files (can be large and are not usually modified)
+instances/velocity/lang
+
+# GeyserMC locale files (can be large and are not usually modified)
+instances/velocity/plugins/Geyser**/locales/*.json
+
+# LuckPerms locale files and symlink files
+instances/**/plugins/luckperms/translations
+instances/**/plugins/luckperms/libs
+
+# FastAsyncWorldEdit data files
+instances/**/plugins/FastAsyncWorldEdit/schematics/
+instances/**/plugins/FastAsyncWorldEdit/sessions/
+
+# Chunky plugin task files
+instances/**/plugins/Chunky/tasks/
+
+# CMILib plugin save and translation files
+instances/**/plugins/CMILib/Saves/
+instances/**/plugins/CMILib/Translations/Items/
+
+# ------------------------------------------------------------------------------
+# Security (Files that should never be committed for security reasons)
+# ------------------------------------------------------------------------------
+.assets/private/
+
+# Ignore all private keys and certificates
+*.pem
+*.key
+*.gpg
+
+# If RCON passwords or similar are included, consider excluding server.properties as well
+# server.properties
+
+# ------------------------------------------------------------------------------
+# Exceptions (Files that should be tracked exceptionally)
+# ------------------------------------------------------------------------------
+# Keep script execution permissions (depends on Git settings)
+!*.sh
+
+# Template files must be tracked
+!*.template
+!/templates/**
+
+# Forcing tracking of specific configuration files
 !server.properties
-!database.properties
-
-!Holograms.yml
-!BackUps.yml
+!bukkit.yml
+!spigot.yml
+!velocity.toml
+!commands.yml
