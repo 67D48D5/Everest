@@ -37,18 +37,18 @@ The Velocity proxy handles player connections and routes them to backend Paper s
 ```shell
 .
 ├── config/             # Configuration files
-│   ├── instances.json  # Server instance and plugin definitions
+│   ├── server.json     # Server instance and plugin definitions
 │   └── update.json     # Update sources and versions
-├── instances/          # Server instances
-│   ├── velocity/       # Velocity proxy
-│   └── wildy/          # Paper survival server
 ├── libraries/          # Downloaded engines and plugins
 │   ├── common/         # Shared libraries
 │   ├── engines/        # Paper and Velocity JARs
 │   └── plugins/        # Downloaded plugins
-└── scripts/            # Management scripts
-    ├── everest         # Main management script
-    └── utils/          # Management utilities scripts
+├── scripts/            # Management scripts
+│   ├── everest         # Main management script
+│   └── utils/          # Management utilities scripts
+└── servers/            # Server instances
+    ├── velocity/       # Velocity proxy
+    └── wildy/          # Paper survival server
 ```
 
 ## Server Information
