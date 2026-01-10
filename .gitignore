@@ -98,6 +98,9 @@ servers/**/plugins/FastAsyncWorldEdit/sessions/
 # Chunky plugin task files
 servers/**/plugins/Chunky/tasks/
 
+# CMI plugin log files
+servers/**/plugins/CMI/**Log**/
+
 # CMILib plugin save and translation files
 servers/**/plugins/CMILib/Saves/
 servers/**/plugins/CMILib/Translations/Items/
