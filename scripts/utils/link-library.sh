@@ -52,7 +52,7 @@ link_resource() {
     # [Link] Create symbolic link
     # -s: symbolic, -f: force, -n: no dereference
     ln -sfn "$source_path" "$dest_path"
-    echo -e "${GREEN}[LINK] $resource_name${NC} -> $dest_path"
+    echo -e "${GREEN}[LINK]${NC} Created symlink for ${GREEN}$resource_name${NC} -> $dest_path${NC}"
 }
 
 # ------------------------------------------------------------------------------
