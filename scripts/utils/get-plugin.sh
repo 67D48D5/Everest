@@ -50,7 +50,9 @@ declare -a TEMP_DIRS=()
 cleanup() {
     local exit_code=$?
     local pids
+
     pids="$(jobs -pr || true)"
+
     if [[ -n "$pids" ]]; then
         # shellcheck disable=SC2086
         kill $pids 2>/dev/null || true
@@ -67,6 +69,7 @@ trap cleanup EXIT INT TERM
 
 curl_json() {
     local url="$1"
+
     curl -fsSL \
         -H "User-Agent: ${USER_AGENT}" \
         --retry "${CURL_RETRY}" \
@@ -83,6 +86,7 @@ curl_json() {
 
 resolve_jenkins() {
     local engine="$1" url="${2%/}" api meta rel
+
     api="${url}/lastSuccessfulBuild/api/json"
     meta="$(curl_json "$api")" || return 1
 
@@ -98,10 +102,14 @@ resolve_jenkins() {
     # Engine-aware preference
     if [[ "$engine" == "velocity" ]]; then
         rel="$(grep -Ei '(velocity)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -Ei '(bungee|waterfall)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -Ei '(all|universal)' <<<"$rels" | head -n1 || true)"
         [[ -z "$rel" ]] && rel="$(grep -viE '(paper|bukkit|spigot)' <<<"$rels" | head -n1 || true)"
     else
-        rel="$(grep -Ei '(paper|bukkit|spigot)' <<<"$rels" | head -n1 || true)"
-        [[ -z "$rel" ]] && rel="$(grep -viE '(velocity)' <<<"$rels" | head -n1 || true)"
+        rel="$(grep -Ei '(paper)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -Ei '(spigot|bukkit)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -Ei '(all|universal)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -viE '(velocity|bungee|waterfall)' <<<"$rels" | head -n1 || true)"
     fi
 
     [[ -z "$rel" ]] && rel="$(head -n1 <<<"$rels")"
@@ -113,6 +121,7 @@ resolve_jenkins() {
 resolve_github() {
     local engine="$1" url="$2"
     local repo api_url resp
+    local rels=""
 
     repo="$(sed -E 's|https://github.com/([^/]+/[^/]+).*|\1|' <<<"$url")"
     api_url="https://api.github.com/repos/$repo/releases/latest"
@@ -130,12 +139,15 @@ resolve_github() {
     # Engine-aware preference
     local preferred=""
     if [[ "$engine" == "velocity" ]]; then
-        preferred="$(grep -Ei '(velocity)' <<<"$urls" | head -n1 || true)"
-        [[ -z "$preferred" ]] && preferred="$(grep -viE '(paper|bukkit|spigot)' <<<"$urls" | head -n1 || true)"
+        rel="$(grep -Ei '(velocity)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -Ei '(bungee|waterfall)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -Ei '(all|universal)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -viE '(paper|bukkit|spigot)' <<<"$rels" | head -n1 || true)"
     else
-        # paper/spigot/etc preferred
-        preferred="$(grep -Ei '(paper|bukkit|spigot)' <<<"$urls" | head -n1 || true)"
-        [[ -z "$preferred" ]] && preferred="$(grep -viE '(velocity)' <<<"$urls" | head -n1 || true)"
+        rel="$(grep -Ei '(paper)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -Ei '(spigot|bukkit)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -Ei '(all|universal)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -viE '(velocity|bungee|waterfall)' <<<"$rels" | head -n1 || true)"
     fi
 
     # Universal/all-platform fallback
@@ -143,17 +155,21 @@ resolve_github() {
     [[ -z "$preferred" ]] && preferred="$(head -n1 <<<"$urls")"
 
     [[ -n "$preferred" ]] || return 1
+
     echo "$preferred"
 }
 
 resolve_enginehub() {
     local url="$1" final_url html jar_url
+
     final_url="$(curl -Ls -o /dev/null -w '%{url_effective}' "$url")" || return 1
     [[ -z "$final_url" ]] && return 1
 
     html="$(curl_json "$final_url")" || return 1
     jar_url="$(grep -Eo 'https://ci\.enginehub\.org/repository/download/[^"]+\.jar\?[^"]+' <<<"$html" | head -n1 || true)"
+
     [[ -z "$jar_url" ]] && return 1
+
     echo "${jar_url//&amp;/&}"
 }
 
@@ -193,7 +209,8 @@ download_plugin() {
 
         if [[ -z "$resolved_url" ]]; then
             echo -e "${RED}[FAIL]${NC} ${tag} Failed to resolve URL" >&2
-            # fallback
+
+            # Fallback: Copy a previous version if available
             if [[ -d "$previous_dir" ]]; then
                 local backup
                 backup="$(find "$previous_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
@@ -203,12 +220,16 @@ download_plugin() {
                     return 0
                 fi
             fi
+
+            echo -e "${RED}[FAIL]${NC} ${tag} No fallback available" >&2
+
             return 1
         fi
     fi
 
     # Filename extraction
     local filename
+
     filename="$(basename "${resolved_url%%\?*}")"
     [[ "$filename" != *.jar ]] && filename="${name}.jar"
 
@@ -223,8 +244,12 @@ download_plugin() {
         --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
         -o "$tmp" \
         "$resolved_url"; then
+
+        # Move to final location
         mv -f "$tmp" "$target"
+
         echo -e "${GREEN}[DONE]${NC} ${tag} Downloaded successfully: ${filename}"
+
         return 0
     fi
 
@@ -234,15 +259,19 @@ download_plugin() {
     # Fallback: Copy a previous version if available
     if [[ -d "$previous_dir" ]]; then
         local backup
+
         backup="$(find "$previous_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
+
         if [[ -n "$backup" ]]; then
             cp -p "$backup" "$dest_dir/"
             echo -e "${GREEN}[RESTORE]${NC} ${tag} Preserved previous version"
+
             return 0
         fi
     fi
 
     echo -e "${RED}[FAIL]${NC} ${tag} No fallback available" >&2
+
     return 1
 }
 
@@ -266,10 +295,12 @@ atomic_swap_dir() {
     # Attempt to move the new directory
     if ! mv "$src_dir" "$dest_dir"; then
         echo -e "${RED}[FATAL]${NC} Swap failed! Restoring backup..."
+
         # On failure, immediately attempt to restore backup
         if [[ -d "$backup" ]]; then
             mv "$backup" "$dest_dir"
         fi
+
         exit 1
     fi
 
@@ -286,7 +317,9 @@ need_cmd curl
 need_cmd realpath
 need_cmd find
 
+# Check config file
 [[ -f "$CONFIG_FILE" ]] || die "Config file missing: $CONFIG_FILE"
+
 mkdir -p "$PLUGIN_LIB_ROOT"
 
 # Load configuration file
