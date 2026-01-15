@@ -62,4 +62,6 @@ The Velocity proxy handles player connections and routes them to backend Paper s
 
 > This project is for the `Everest MC` community.
 
-For mangement scripts and utilities, `MIT License` is applied.
+For **mangement scripts and utilities**, [MIT License](LICENSE) is applied.
+
+For **all** other components, please refer to their `respective` licenses.
