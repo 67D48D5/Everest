@@ -2,78 +2,100 @@
 set -euo pipefail
 
 # ------------------------------------------------------------------------------
-# Link Library - Static Asset Manager for Everest
+# Everest - Link Library (Static Asset Manager)
+# ------------------------------------------------------------------------------
+# - Links resources from libraries/common into servers/<instance>
+# - Uses simple path concatenation (original behavior)
+# - No path normalization / no symlink resolution
 # ------------------------------------------------------------------------------
 
-# Configuration
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-ROOT_PATH="$(realpath "${SCRIPT_DIR}/../../")" # scripts/utils/ -> root
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_PATH="$(realpath "${SCRIPT_DIR}/../../")"
 
 CONFIG_FILE="${ROOT_PATH}/config/server.json"
 COMMON_ROOT="${ROOT_PATH}/libraries/common"
 INSTANCES_ROOT="${ROOT_PATH}/servers"
 
 # Colors
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+RED=$'\033[0;31m'
+GREEN=$'\033[0;32m'
+YELLOW=$'\033[1;33m'
+BLUE=$'\033[0;34m'
+NC=$'\033[0m'
 
 # ------------------------------------------------------------------------------
-# Function: Link Resource
+# Helpers
 # ------------------------------------------------------------------------------
+
+die() {
+    echo -e "${RED}[ERROR]${NC} $*" >&2
+    exit 1
+}
+warn() { echo -e "${YELLOW}[WARN]${NC} $*"; }
+info() { echo -e "${BLUE}[INFO]${NC} $*"; }
+
+need_cmd() { command -v "$1" >/dev/null 2>&1 || die "Missing dependency: '$1'"; }
+
+# ------------------------------------------------------------------------------
+# Core: Link Resource Function
+# ------------------------------------------------------------------------------
+
 link_resource() {
     local source_path="$1"
     local dest_path="$2"
     local resource_name="$3"
+    local tag="$4"
 
-    # [Safety Check 1] Check if source exists
     if [[ ! -e "$source_path" ]]; then
-        echo -e "${RED}[ERROR] Source not found for '$resource_name': $source_path${NC}"
-        echo -e "${YELLOW} -> Please check 'libraries/common' or your 'server.json' paths.${NC}"
-        return 1
+        echo -e "${YELLOW}[WARN]${NC} ${tag} Source not found for '$resource_name': $source_path" >&2
+        echo -e "${YELLOW}[WARN]${NC} ${tag} Creating empty directory for '$resource_name'" >&2
+        mkdir -p "$source_path"
     fi
 
-    # [Safety Check 2] Create parent directory for destination
     mkdir -p "$(dirname "$dest_path")"
 
-    # [Clean Up] Clean existing resource at destination
     if [[ -L "$dest_path" ]]; then
-        # echo "Replacing symlink for $resource_name..."
-        rm "$dest_path"
+        rm -f "$dest_path"
     elif [[ -d "$dest_path" ]]; then
-        echo -e "${YELLOW}[WARN] Replacing directory with symlink: $dest_path${NC}"
+        warn "${tag} Replacing directory with symlink: $dest_path"
         rm -rf "$dest_path"
     elif [[ -f "$dest_path" ]]; then
-        echo -e "${YELLOW}[WARN] Replacing file with symlink: $dest_path${NC}"
+        warn "${tag} Replacing file with symlink: $dest_path"
         rm -f "$dest_path"
     fi
 
-    # [Link] Create symbolic link
-    # -s: symbolic, -f: force, -n: no dereference
     ln -sfn "$source_path" "$dest_path"
-    echo -e "${GREEN}[LINK]${NC} Created symlink for ${GREEN}$resource_name${NC} -> $dest_path${NC}"
+    echo -e "${GREEN}[LINK]${NC} ${tag} ${resource_name} -> $dest_path"
 }
 
 # ------------------------------------------------------------------------------
-# Main Execution
+# Main
 # ------------------------------------------------------------------------------
 
-if [[ ! -f "$CONFIG_FILE" ]]; then
-    echo -e "${RED}[ERROR] Config file missing: $CONFIG_FILE${NC}"
-    exit 1
-fi
+need_cmd jq
+need_cmd realpath
 
+# Check config file
+[[ -f "$CONFIG_FILE" ]] || die "Config file missing: $CONFIG_FILE"
+
+mkdir -p "$INSTANCES_ROOT"
+
+# Load configuration file
 CONFIG="$(cat "$CONFIG_FILE")"
 
-# Iterate over servers
-jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
-    ENGINE=$(jq -r ".servers[\"$SERVER\"].engine" <<<"$CONFIG")
-    SERVER_DIR="${INSTANCES_ROOT}/${SERVER}"
+jq -e '.servers and (.servers | type=="object")' >/dev/null <<<"$CONFIG" ||
+    die "Invalid config: expected '.servers' object in ${CONFIG_FILE}"
 
-    # If the instance folder doesn't exist, warn and create it.
+# Get servers safely (no subshell loop)
+mapfile -t SERVERS < <(jq -r '.servers | keys[]' <<<"$CONFIG")
+
+for SERVER in "${SERVERS[@]}"; do
+    ENGINE="$(jq -r ".servers[\"$SERVER\"].engine // \"unknown\"" <<<"$CONFIG")"
+    SERVER_DIR="${INSTANCES_ROOT}/${SERVER}"
+    TAG="[${SERVER}]"
+
     if [[ ! -d "$SERVER_DIR" ]]; then
-        echo -e "${YELLOW}[WARN] Instance directory missing for '$SERVER'. Creating...${NC}"
+        warn "${TAG} Instance directory missing. Creating..."
         mkdir -p "$SERVER_DIR"
     fi
 
@@ -81,17 +103,25 @@ jq -r '.servers | keys[]' <<<"$CONFIG" | while read -r SERVER; do
     echo -e "Processing Server: ${GREEN}${SERVER}${NC} (${ENGINE})"
     echo "-----------------------------------------------------"
 
-    # Process library links
-    jq -c ".servers[\"$SERVER\"].libraries[]? // empty" <<<"$CONFIG" | while read -r library; do
-        src=$(jq -r '.source' <<<"$library")
-        dest=$(jq -r '.destination' <<<"$library")
-        name=$(jq -r '.name' <<<"$library")
+    # libraries section optional
+    if ! jq -e ".servers[\"$SERVER\"].libraries? | type==\"array\"" >/dev/null 2>&1 <<<"$CONFIG"; then
+        info "${TAG} No libraries configured. Skipping."
+        continue
+    fi
 
-        # libraries/common + source path
+    mapfile -t LIBS < <(jq -c ".servers[\"$SERVER\"].libraries[]?" <<<"$CONFIG")
+
+    for library in "${LIBS[@]}"; do
+        src="$(jq -r '.source // empty' <<<"$library")"
+        dest="$(jq -r '.destination // empty' <<<"$library")"
+        name="$(jq -r '.name // empty' <<<"$library")"
+
+        [[ -n "$src" && -n "$dest" && -n "$name" ]] || die "${TAG} Invalid library entry: $library"
+
         FULL_SRC="${COMMON_ROOT}/${src}"
         FULL_DEST="${SERVER_DIR}/${dest}"
 
-        link_resource "$FULL_SRC" "$FULL_DEST" "$name"
+        link_resource "$FULL_SRC" "$FULL_DEST" "$name" "$TAG"
     done
 done
 
