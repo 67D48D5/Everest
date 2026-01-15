@@ -76,43 +76,74 @@ curl_json() {
 }
 
 # ------------------------------------------------------------------------------
-# URL Resolvers (kept, hardened)
+# URL Resolvers
+# If you need other engine resolvers, add them here.
+# If you prefer specific engine then modify the priority order in download_plugin().
 # ------------------------------------------------------------------------------
 
 resolve_jenkins() {
-    local url="${1%/}" key="$2" api meta rel
+    local engine="$1" url="${2%/}" api meta rel
     api="${url}/lastSuccessfulBuild/api/json"
     meta="$(curl_json "$api")" || return 1
 
-    rel="$(jq -r '.artifacts[].relativePath' <<<"$meta" |
-        grep -Ei "\.jar$" |
-        grep -viE '(-sources|-javadoc)\.jar$' |
-        head -n1 || true)"
+    # List artifacts and pick jar
+    local rels
 
-    if [[ -z "$rel" ]]; then
-        rel="$(jq -r '.artifacts[].relativePath' <<<"$meta" |
-            grep -Ei '\.jar$' |
-            grep -viE '(-sources|-javadoc)\.jar$' |
-            head -n1 || true)"
+    rels="$(jq -r '.artifacts[].relativePath' <<<"$meta" |
+        grep -Ei '\.jar$' |
+        grep -viE '(-sources|-javadoc)\.jar$' || true)"
+
+    [[ -n "$rels" ]] || return 1
+
+    # Engine-aware preference
+    if [[ "$engine" == "velocity" ]]; then
+        rel="$(grep -Ei '(velocity)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -viE '(paper|bukkit|spigot)' <<<"$rels" | head -n1 || true)"
+    else
+        rel="$(grep -Ei '(paper|bukkit|spigot)' <<<"$rels" | head -n1 || true)"
+        [[ -z "$rel" ]] && rel="$(grep -viE '(velocity)' <<<"$rels" | head -n1 || true)"
     fi
 
+    [[ -z "$rel" ]] && rel="$(head -n1 <<<"$rels")"
     [[ -z "$rel" ]] && return 1
+
     echo "${url}/lastSuccessfulBuild/artifact/$rel"
 }
 
 resolve_github() {
-    local url="$1" repo api_url resp asset_url
+    local engine="$1" url="$2"
+    local repo api_url resp
+
     repo="$(sed -E 's|https://github.com/([^/]+/[^/]+).*|\1|' <<<"$url")"
     api_url="https://api.github.com/repos/$repo/releases/latest"
+
     resp="$(curl_json "$api_url")" || return 1
 
-    asset_url="$(jq -r '.assets[].browser_download_url' <<<"$resp" |
+    # Collect jar urls
+    local urls
+    urls="$(jq -r '.assets[].browser_download_url' <<<"$resp" |
         grep -Ei '\.jar$' |
-        grep -viE '(-sources|-javadoc)\.jar$' |
-        head -n1 || true)"
+        grep -viE '(-sources|-javadoc)\.jar$' || true)"
 
-    [[ -z "$asset_url" ]] && return 1
-    echo "$asset_url"
+    [[ -n "$urls" ]] || return 1
+
+    # Engine-aware preference
+    local preferred=""
+    if [[ "$engine" == "velocity" ]]; then
+        preferred="$(grep -Ei '(velocity)' <<<"$urls" | head -n1 || true)"
+        [[ -z "$preferred" ]] && preferred="$(grep -viE '(paper|bukkit|spigot)' <<<"$urls" | head -n1 || true)"
+    else
+        # paper/spigot/etc preferred
+        preferred="$(grep -Ei '(paper|bukkit|spigot)' <<<"$urls" | head -n1 || true)"
+        [[ -z "$preferred" ]] && preferred="$(grep -viE '(velocity)' <<<"$urls" | head -n1 || true)"
+    fi
+
+    # Universal/all-platform fallback
+    [[ -z "$preferred" ]] && preferred="$(grep -Ei '(all|universal|platform)' <<<"$urls" | head -n1 || true)"
+    [[ -z "$preferred" ]] && preferred="$(head -n1 <<<"$urls")"
+
+    [[ -n "$preferred" ]] || return 1
+    echo "$preferred"
 }
 
 resolve_enginehub() {
@@ -127,7 +158,7 @@ resolve_enginehub() {
 }
 
 # ------------------------------------------------------------------------------
-# Core: download one plugin (atomic)
+# Core: Download one plugin with fallback
 # ------------------------------------------------------------------------------
 
 download_plugin() {
@@ -153,11 +184,13 @@ download_plugin() {
 
     if [[ -n "$resolver" ]]; then
         echo -e "${PURPLE}[RESOLVE]${NC} ${tag} via ${resolver}..."
+
         case "$resolver" in
         EngineHub) resolved_url="$(resolve_enginehub "$url")" || resolved_url="" ;;
-        Jenkins) resolved_url="$(resolve_jenkins "$url" "$engine")" || resolved_url="" ;;
-        GitHub) resolved_url="$(resolve_github "$url")" || resolved_url="" ;;
+        Jenkins) resolved_url="$(resolve_jenkins "$engine" "$url")" || resolved_url="" ;;
+        GitHub) resolved_url="$(resolve_github "$engine" "$url")" || resolved_url="" ;;
         esac
+
         if [[ -z "$resolved_url" ]]; then
             echo -e "${RED}[FAIL]${NC} ${tag} Failed to resolve URL" >&2
             # fallback
@@ -174,7 +207,7 @@ download_plugin() {
         fi
     fi
 
-    # Filename
+    # Filename extraction
     local filename
     filename="$(basename "${resolved_url%%\?*}")"
     [[ "$filename" != *.jar ]] && filename="${name}.jar"
@@ -198,7 +231,7 @@ download_plugin() {
     rm -f "$tmp"
     echo -e "${YELLOW}[WARN]${NC} ${tag} Download failed. Trying fallback..." >&2
 
-    # Fallback: copy a previous version if available
+    # Fallback: Copy a previous version if available
     if [[ -d "$previous_dir" ]]; then
         local backup
         backup="$(find "$previous_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
@@ -214,7 +247,7 @@ download_plugin() {
 }
 
 # ------------------------------------------------------------------------------
-# Atomic dir swap: Managed.new -> Managed
+# Atomic directory swap: Managed.new -> Managed
 # ------------------------------------------------------------------------------
 
 atomic_swap_dir() {
@@ -225,12 +258,12 @@ atomic_swap_dir() {
     # Ensure dest parent exists
     mkdir -p "$(dirname "$dest_dir")"
 
-    # 1. If the existing directory exists, move it to backup
+    # If the existing directory exists, move it to backup
     if [[ -d "$dest_dir" ]]; then
         mv "$dest_dir" "$backup"
     fi
 
-    # 2. Attempt to move the new directory
+    # Attempt to move the new directory
     if ! mv "$src_dir" "$dest_dir"; then
         echo -e "${RED}[FATAL]${NC} Swap failed! Restoring backup..."
         # On failure, immediately attempt to restore backup
@@ -240,7 +273,7 @@ atomic_swap_dir() {
         exit 1
     fi
 
-    # 3. On success, remove backup
+    # On success, remove backup
     rm -rf "$backup" 2>/dev/null || true
 }
 
@@ -256,7 +289,9 @@ need_cmd find
 [[ -f "$CONFIG_FILE" ]] || die "Config file missing: $CONFIG_FILE"
 mkdir -p "$PLUGIN_LIB_ROOT"
 
+# Load configuration file
 CONFIG="$(cat "$CONFIG_FILE")"
+
 jq -e '.plugins and (.plugins | type=="object")' >/dev/null <<<"$CONFIG" ||
     die "Invalid config: expected '.plugins' object in ${CONFIG_FILE}"
 
@@ -323,7 +358,7 @@ for engine in "${ENGINES[@]}"; do
     echo -e "${BLUE}[SWAP]${NC} Updating 'Managed' directory for '$engine'..."
     atomic_swap_dir "$TEMP_DIR" "$TARGET_FINAL_DIR"
 
-    # TEMP_DIR moved, remove it from cleanup list
+    # `TEMP_DIR`` moved, remove it from cleanup list
     # (best-effort: rebuild TEMP_DIRS without that dir)
     if [[ ${#TEMP_DIRS[@]} -gt 0 ]]; then
         declare -a new_tmp=()
