@@ -6,9 +6,10 @@ set -euo pipefail
 # ------------------------------------------------------------------------------
 # - Links resources from libraries/common into servers/<instance>
 # - Uses simple path concatenation (original behavior)
-# - No path normalization / no symlink resolution
+# - No path normalization / No symlink resolution (keep it simple)
 # ------------------------------------------------------------------------------
 
+# Paths
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../../")"
 
@@ -64,7 +65,9 @@ link_resource() {
         rm -f "$dest_path"
     fi
 
+    # Create symlink (force, no-dereference)
     ln -sfn "$source_path" "$dest_path"
+
     echo -e "${GREEN}[LINK]${NC} ${tag} ${resource_name} -> $dest_path"
 }
 
