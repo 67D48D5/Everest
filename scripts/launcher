@@ -1,0 +1,179 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# ------------------------------------------------------------------------------
+# Everest Launcher - Generic Minecraft Server Launcher
+# ------------------------------------------------------------------------------
+# Launches a specified Minecraft server inside a tmux session,
+# automatically restarting it if it crashes.
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Arguments
+# ------------------------------------------------------------------------------
+
+# Define arguments
+SERVER_NAME="${1:-}"
+ENGINE_TYPE="${2:-paper}"
+
+shift 2
+EXTRA_JAVA_FLAGS=("$@")
+
+# Session name for tmux
+TMUX_SESSION="${SERVER_NAME}"
+
+# ------------------------------------------------------------------------------
+# Configuration
+# ------------------------------------------------------------------------------
+
+# Setting up our paths relative to the script's location.
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+ROOT_PATH="$(realpath "${SCRIPT_DIR}/..")"
+
+# For easier access later
+SERVER_DIR="${ROOT_PATH}/servers/${SERVER_NAME}"
+ENGINE_DIR="${ROOT_PATH}/libraries/engines"
+
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# ------------------------------------------------------------------------------
+# Helper Functions
+# ------------------------------------------------------------------------------
+
+# Logging helper functions
+log_info() { echo -e "[$(date '+%H:%M:%S') ${GREEN}INFO${NC}] [launcher]: $1"; }
+log_warn() { echo -e "[$(date '+%H:%M:%S') ${YELLOW}WARN${NC}] [launcher]: $1"; }
+log_err() { echo -e "[$(date '+%H:%M:%S') ${RED}ERROR${NC}] [launcher]: $1" >&2; }
+
+# ------------------------------------------------------------------------------
+# Pre-flight Checks
+# ------------------------------------------------------------------------------
+
+# Validate arguments
+if [[ -z "$SERVER_NAME" ]]; then
+    log_err "Usage: $0 <server-name> [engine-type] [java flags...]"
+    exit 1
+fi
+
+# Check for required dependencies
+for cmd in tmux java realpath; do
+    command -v "$cmd" &>/dev/null || {
+        log_err "'$cmd' not found"
+        exit 1
+    }
+done
+
+# ------------------------------------------------------------------------------
+# Main Process Logic
+# ------------------------------------------------------------------------------
+
+# Load environment variables
+ENV_EXPORTS=()
+if [[ -f "${ROOT_PATH}/.env" ]]; then
+    while IFS='=' read -r key val; do
+        [[ "$key" =~ ^#.*$ || -z "$key" ]] && continue
+        ENV_EXPORTS+=("$key=$val")
+        export "$key=$val"
+    done <"${ROOT_PATH}/.env"
+fi
+
+# Enter server directory
+cd "$SERVER_DIR" || {
+    log_err "Failed to enter '$SERVER_DIR'"
+    exit 1
+}
+
+# Find latest engine JAR (version-aware sort)
+JAR_FILE=$(find "$ENGINE_DIR" -maxdepth 1 -type f -name "${ENGINE_TYPE}*.jar" | sort -V | tail -n1)
+if [[ -z "$JAR_FILE" || ! -f "$JAR_FILE" ]]; then
+    log_err "Engine not found for: '$ENGINE_TYPE'"
+    exit 1
+fi
+
+# Common Java flags
+COMMON_FLAGS=(
+    -XX:+UseG1GC
+    -XX:+AlwaysPreTouch
+    -XX:+ParallelRefProcEnabled
+    -XX:+UnlockExperimentalVMOptions
+    -Duser.timezone=Asia/Seoul
+)
+
+case "$ENGINE_TYPE" in
+paper)
+    ENGINE_FLAGS=(
+        -XX:+DisableExplicitGC
+        -XX:+PerfDisableSharedMem
+        -XX:G1HeapRegionSize=8M
+        -XX:G1HeapWastePercent=5
+        -XX:G1MaxNewSizePercent=40
+        -XX:G1MixedGCCountTarget=4
+        -XX:G1MixedGCLiveThresholdPercent=90
+        -XX:G1NewSizePercent=30
+        -XX:G1RSetUpdatingPauseTimePercent=5
+        -XX:G1ReservePercent=20
+        -XX:InitiatingHeapOccupancyPercent=15
+        -XX:MaxGCPauseMillis=200
+        -XX:MaxTenuringThreshold=1
+        -XX:SurvivorRatio=32
+        -Dusing.aikars.flags=https://mcflags.emc.gs
+        -Daikars.new.flags=true
+    )
+    ;;
+velocity)
+    ENGINE_FLAGS=(
+        -XX:G1HeapRegionSize=4M
+        -XX:MaxInlineLevel=15
+    )
+    ;;
+*)
+    log_warn "Unknown engine type: '$ENGINE_TYPE', using default flags."
+    ENGINE_FLAGS=()
+    ;;
+esac
+
+# Final Java command (wrap with restart loop)
+# Build the command string properly to avoid shellcheck warnings
+ENV_EXPORTS_STR="${ENV_EXPORTS[*]}"
+COMMON_FLAGS_STR="${COMMON_FLAGS[*]}"
+ENGINE_FLAGS_STR="${ENGINE_FLAGS[*]}"
+EXTRA_JAVA_FLAGS_STR="${EXTRA_JAVA_FLAGS[*]}"
+
+# Command to start the server with automatic restart
+START_CMD=(
+    bash -c "
+    while true; do
+      echo \"[$(date '+%H:%M:%S') \033[0;32mINFO\033[0m] [launcher]: Starting server...\"
+      env ${ENV_EXPORTS_STR} java ${COMMON_FLAGS_STR} ${ENGINE_FLAGS_STR} ${EXTRA_JAVA_FLAGS_STR} -jar \"${JAR_FILE}\" nogui
+      echo \"[$(date '+%H:%M:%S') \033[1;33mWARN\033[0m] [launcher]: Server stopped at $(date), restarting in 3 seconds...\"
+      sleep 3
+    done
+  "
+)
+
+# Wrapper of tmux session
+if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
+    log_warn "Tmux session '$TMUX_SESSION' already exists."
+
+    # Check if server process is alive
+    if ! pgrep -f "[j]ava.*$(basename "$JAR_FILE")" >/dev/null; then
+        log_warn "Session alive, but server is down. Restarting..."
+        tmux send-keys -t "$TMUX_SESSION" "stop" C-m
+        sleep 1
+        tmux send-keys -t "$TMUX_SESSION" "${START_CMD[@]}" C-m
+        log_info "Restarted server at $(date)"
+    else
+        log_info "Server is already running."
+    fi
+else
+    # Create new detached tmux session
+    tmux new-session -s "$TMUX_SESSION" -d -- "${START_CMD[@]}"
+fi
+
+log_info "Server '$SERVER_NAME' is running in tmux session '$TMUX_SESSION'."
+exit 0

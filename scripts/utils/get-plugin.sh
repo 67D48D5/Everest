@@ -10,7 +10,11 @@ set -euo pipefail
 # - Atomic swap of Managed directory
 # ------------------------------------------------------------------------------
 
-# Paths
+# ------------------------------------------------------------------------------
+# Configuration
+# ------------------------------------------------------------------------------
+
+# Setting up our paths relative to the script's location.
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../../")"
 
@@ -26,23 +30,20 @@ CURL_RETRY_DELAY=2
 CURL_CONNECT_TIMEOUT=14
 
 # Colors
-RED=$'\033[0;31m'
-GREEN=$'\033[0;32m'
-YELLOW=$'\033[1;33m'
-BLUE=$'\033[0;34m'
-PURPLE=$'\033[0;35m'
-NC=$'\033[0m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
 # ------------------------------------------------------------------------------
-# Helpers
+# Helper Functions
 # ------------------------------------------------------------------------------
 
-die() {
-    echo -e "${RED}[ERROR]${NC} $*" >&2
-    exit 1
-}
-
-need_cmd() { command -v "$1" >/dev/null 2>&1 || die "Missing dependency: '$1'"; }
+# Logging helper functions
+log_info() { echo -e "[$(date '+%H:%M:%S') ${GREEN}INFO${NC}] [get-plugin]: $1"; }
+log_warn() { echo -e "[$(date '+%H:%M:%S') ${YELLOW}WARN${NC}] [get-plugin]: $1"; }
+log_err() { echo -e "[$(date '+%H:%M:%S') ${RED}ERROR${NC}] [get-plugin]: $1" >&2; }
 
 # Global temp dirs for cleanup
 declare -a TEMP_DIRS=()
@@ -77,6 +78,27 @@ curl_json() {
         --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
         "$url"
 }
+
+# ------------------------------------------------------------------------------
+# Pre-flight Checks
+# ------------------------------------------------------------------------------
+
+# Check for required dependencies
+for cmd in jq curl realpath find; do
+    command -v "$cmd" &>/dev/null || {
+        log_err "'$cmd' not found"
+        exit 1
+    }
+done
+
+# Check config file
+[[ -f "$CONFIG_FILE" ]] || {
+    log_err "Config file missing: $CONFIG_FILE"
+    exit 1
+}
+
+# Ensure plugin lib root exists
+mkdir -p "$PLUGIN_LIB_ROOT"
 
 # ------------------------------------------------------------------------------
 # URL Resolvers
@@ -154,6 +176,7 @@ resolve_github() {
     [[ -z "$preferred" ]] && preferred="$(grep -Ei '(all|universal|platform)' <<<"$urls" | head -n1 || true)"
     [[ -z "$preferred" ]] && preferred="$(head -n1 <<<"$urls")"
 
+    # If still empty, failed
     [[ -n "$preferred" ]] || return 1
 
     echo "$preferred"
@@ -186,7 +209,7 @@ download_plugin() {
     local resolved_url="$url"
     local resolver=""
 
-    local tag="[${engine}:${name}]"
+    local tag="${name} (${engine})"
 
     [[ -z "${url:-}" || "$url" == "null" ]] && return 0
 
@@ -199,7 +222,7 @@ download_plugin() {
     fi
 
     if [[ -n "$resolver" ]]; then
-        echo -e "${PURPLE}[RESOLVE]${NC} ${tag} via ${resolver}..."
+        log_info "Resolving URL for ${tag} via ${resolver}..."
 
         case "$resolver" in
         EngineHub) resolved_url="$(resolve_enginehub "$url")" || resolved_url="" ;;
@@ -208,35 +231,34 @@ download_plugin() {
         esac
 
         if [[ -z "$resolved_url" ]]; then
-            echo -e "${RED}[FAIL]${NC} ${tag} Failed to resolve URL" >&2
+            log_err "Failed to resolve URL for ${tag} (via ${resolver})"
 
             # Fallback: Copy a previous version if available
             if [[ -d "$previous_dir" ]]; then
-                local backup
-                backup="$(find "$previous_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
+                local backup="$(find "$previous_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
+
                 if [[ -n "$backup" ]]; then
                     cp -p "$backup" "$dest_dir/"
-                    echo -e "${GREEN}[RESTORE]${NC} ${tag} Preserved previous version"
+                    log_info "Preserved previous version for ${tag} : $(basename "$backup")"
+
                     return 0
                 fi
             fi
 
-            echo -e "${RED}[FAIL]${NC} ${tag} No fallback available" >&2
+            log_err "No fallback available for ${tag}"
 
             return 1
         fi
     fi
 
     # Filename extraction
-    local filename
-
-    filename="$(basename "${resolved_url%%\?*}")"
+    local filename="$(basename "${resolved_url%%\?*}")"
     [[ "$filename" != *.jar ]] && filename="${name}.jar"
 
     local target="${dest_dir}/${filename}"
     local tmp="${target}.tmp.$$"
 
-    echo -e "${BLUE}[DOWN]${NC} ${tag} Downloading ${filename}..."
+    log_info "Downloading for ${tag}: ${filename}..."
 
     if curl -fsSL \
         --retry "${CURL_RETRY}" \
@@ -248,29 +270,29 @@ download_plugin() {
         # Move to final location
         mv -f "$tmp" "$target"
 
-        echo -e "${GREEN}[DONE]${NC} ${tag} Downloaded successfully: ${filename}"
+        log_info "Downloaded successfully for ${tag}: ${filename}"
 
         return 0
     fi
 
     rm -f "$tmp"
-    echo -e "${YELLOW}[WARN]${NC} ${tag} Download failed. Trying fallback..." >&2
+    log_warn "Download failed for ${tag}. Trying fallback..."
 
     # Fallback: Copy a previous version if available
     if [[ -d "$previous_dir" ]]; then
-        local backup
+        local backup="$(find "$previous_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
 
-        backup="$(find "$previous_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
-
+        # If found, copy to dest
         if [[ -n "$backup" ]]; then
+            # Copy previous version
             cp -p "$backup" "$dest_dir/"
-            echo -e "${GREEN}[RESTORE]${NC} ${tag} Preserved previous version"
+            log_info "Preserved previous version for ${tag} : $(basename "$backup")"
 
             return 0
         fi
     fi
 
-    echo -e "${RED}[FAIL]${NC} ${tag} No fallback available" >&2
+    log_err "No fallback available for ${tag}"
 
     return 1
 }
@@ -294,7 +316,7 @@ atomic_swap_dir() {
 
     # Attempt to move the new directory
     if ! mv "$src_dir" "$dest_dir"; then
-        echo -e "${RED}[FATAL]${NC} Swap failed! Restoring backup..."
+        log_err "Swap failed! Restoring backup..."
 
         # On failure, immediately attempt to restore backup
         if [[ -d "$backup" ]]; then
@@ -305,39 +327,32 @@ atomic_swap_dir() {
     fi
 
     # On success, remove backup
+    log_info "Swap successful. Removing backup..."
     rm -rf "$backup" 2>/dev/null || true
 }
 
 # ------------------------------------------------------------------------------
-# Main
+# Main Process Logic
 # ------------------------------------------------------------------------------
-
-need_cmd jq
-need_cmd curl
-need_cmd realpath
-need_cmd find
-
-# Check config file
-[[ -f "$CONFIG_FILE" ]] || die "Config file missing: $CONFIG_FILE"
-
-mkdir -p "$PLUGIN_LIB_ROOT"
 
 # Load configuration file
 CONFIG="$(cat "$CONFIG_FILE")"
 
 jq -e '.plugins and (.plugins | type=="object")' >/dev/null <<<"$CONFIG" ||
-    die "Invalid config: expected '.plugins' object in ${CONFIG_FILE}"
+    {
+        log_err "Invalid config: expected '.plugins' object in ${CONFIG_FILE}"
+        exit 1
+    }
 
-echo -e "${BLUE}[INFO]${NC} Starting plugin updates..."
+log_info "Starting plugin updates..."
 
 # Get engines safely (no subshell loop)
 mapfile -t ENGINES < <(jq -r '.plugins | keys[]' <<<"$CONFIG")
 
 for engine in "${ENGINES[@]}"; do
-    echo "-----------------------------------------------------"
-    echo -e "Processing Engine: ${GREEN}${engine}${NC}"
-    echo "-----------------------------------------------------"
+    log_info "Processing for '${engine}' engine..."
 
+    # Prepare directories
     ENGINE_ROOT="${PLUGIN_LIB_ROOT}/${engine}"
     TARGET_FINAL_DIR="${ENGINE_ROOT}/Managed"
 
@@ -355,7 +370,11 @@ for engine in "${ENGINES[@]}"; do
     for entry in "${PLUGINS[@]}"; do
         name="${entry%%$'\t'*}"
         url="${entry#*$'\t'}"
+
+        # Download in parallel
         download_plugin "$engine" "$name" "$url" "$TEMP_DIR" "$TARGET_FINAL_DIR" &
+
+        # Collect PID
         pids+=("$!")
     done
 
@@ -368,47 +387,53 @@ for engine in "${ENGINES[@]}"; do
 
     # If empty, skip swap
     if [[ -z "$(ls -A "$TEMP_DIR" 2>/dev/null || true)" ]]; then
-        echo -e "${YELLOW}[SKIP]${NC} No plugins downloaded/restored for '$engine'."
+        log_warn "No plugins downloaded/restored for '$engine'."
         rm -rf "$TEMP_DIR"
+
         continue
     fi
 
     # Abort if any plugin failed
     if [[ $failed -gt 0 ]]; then
-        echo -e "${RED}[ERROR]${NC} '$engine': ${failed} plugin(s) failed. Aborting swap to preserve existing state."
+        log_err "'$engine': ${failed} plugin(s) failed. Aborting swap to preserve existing state."
         rm -rf "$TEMP_DIR"
+
         continue
     fi
 
     # If empty skip swap
     if [[ -z "$(ls -A "$TEMP_DIR" 2>/dev/null || true)" ]]; then
-        echo -e "${YELLOW}[SKIP]${NC} No plugins downloaded/restored for '$engine'."
+        log_warn "No plugins downloaded/restored for '$engine'."
         rm -rf "$TEMP_DIR"
+
         continue
     fi
 
     # Atomic swap
-    echo -e "${BLUE}[SWAP]${NC} Updating 'Managed' directory for '$engine'..."
+    log_info "Updating 'Managed' directory for '$engine'..."
     atomic_swap_dir "$TEMP_DIR" "$TARGET_FINAL_DIR"
 
-    # `TEMP_DIR`` moved, remove it from cleanup list
+    # `TEMP_DIR` moved, remove it from cleanup list
     # (best-effort: rebuild TEMP_DIRS without that dir)
     if [[ ${#TEMP_DIRS[@]} -gt 0 ]]; then
         declare -a new_tmp=()
+
         for d in "${TEMP_DIRS[@]}"; do
             [[ "$d" == "$TARGET_FINAL_DIR" ]] && continue
             [[ "$d" == "$TEMP_DIR" ]] && continue
+
             new_tmp+=("$d")
         done
+
         TEMP_DIRS=("${new_tmp[@]}")
     fi
 
     if [[ $failed -gt 0 ]]; then
-        echo -e "${YELLOW}[WARN]${NC} '$engine': ${failed} plugin(s) failed (fallback may have applied)."
+        log_warn "${failed} plugin(s) failed for '$engine'. (fallback may have applied)"
     else
-        echo -e "${GREEN}[OK]${NC} '$engine': all plugins updated."
+        log_info "All plugins updated for '$engine' engine."
     fi
 done
 
-echo "-----------------------------------------------------"
-echo -e "${GREEN}[SUCCESS]${NC} All plugin updates complete."
+log_info "All plugin updates complete."
+exit 0

@@ -9,7 +9,11 @@ set -euo pipefail
 # - Builds desired jar set in temp dir, then swaps jars safely.
 # ------------------------------------------------------------------------------
 
-# Paths
+# ------------------------------------------------------------------------------
+# Configuration
+# ------------------------------------------------------------------------------
+
+# Setting up our paths relative to the script's location.
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../../")"
 
@@ -18,24 +22,20 @@ PLUGIN_LIB_ROOT="${ROOT_PATH}/libraries/plugins"
 INSTANCES_ROOT="${ROOT_PATH}/servers"
 
 # Colors
-RED=$'\033[0;31m'
-GREEN=$'\033[0;32m'
-YELLOW=$'\033[1;33m'
-BLUE=$'\033[0;34m'
-NC=$'\033[0m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
 # ------------------------------------------------------------------------------
-# Helpers
+# Helper Functions
 # ------------------------------------------------------------------------------
 
-die() {
-  echo -e "${RED}[ERROR]${NC} $*" >&2
-  exit 1
-}
-warn() { echo -e "${YELLOW}[WARN]${NC} $*"; }
-info() { echo -e "${BLUE}[INFO]${NC} $*"; }
-
-need_cmd() { command -v "$1" >/dev/null 2>&1 || die "Missing dependency: '$1'"; }
+# Logging helper functions
+log_info() { echo -e "[$(date '+%H:%M:%S') ${GREEN}INFO${NC}] [link-library]: $1"; }
+log_warn() { echo -e "[$(date '+%H:%M:%S') ${YELLOW}WARN${NC}] [link-library]: $1"; }
+log_err() { echo -e "[$(date '+%H:%M:%S') ${RED}ERROR${NC}] [link-library]: $1" >&2; }
 
 # Pick latest file matching pattern in dir
 pick_latest() { # <dir> <glob>
@@ -54,6 +54,31 @@ pick_latest() { # <dir> <glob>
 }
 
 # ------------------------------------------------------------------------------
+# Pre-flight Checks
+# ------------------------------------------------------------------------------
+
+# Make sure we have the tools we need.
+for cmd in jq realpath find awk sort mktemp mv ln rm; do
+  if ! command -v "$cmd" >/dev/null; then
+    log_err "Missing dependency: '$cmd'. Please install it first."
+
+    exit 1
+  fi
+done
+
+# Check config file
+[[ -f "$CONFIG_FILE" ]] || {
+  log_err "Config file missing: $CONFIG_FILE"
+  exit 1
+}
+
+# Ensure plugin lib root exists
+mkdir -p "$PLUGIN_LIB_ROOT"
+
+# Ensure instance root exists
+mkdir -p "$INSTANCES_ROOT"
+
+# ------------------------------------------------------------------------------
 # Plugin Linking Logic
 # ------------------------------------------------------------------------------
 
@@ -62,7 +87,7 @@ link_server_plugins() {
   local server_name="$1"
   local engine="$2"
   local instance_dir="$3"
-  local tag="[${server_name}]"
+  local tag="${server_name}"
 
   local dest_dir="${instance_dir}/plugins"
   local engine_lib_root="${PLUGIN_LIB_ROOT}/${engine}"
@@ -72,7 +97,7 @@ link_server_plugins() {
 
   # plugins config may be missing
   if ! jq -e ".servers[\"${server_name}\"].plugins? | type==\"object\"" "$CONFIG_FILE" >/dev/null 2>&1; then
-    warn "${tag} No plugins configured. Skipping."
+    log_warn "No plugins configured for ${server_name}. Skipping."
 
     return 0
   fi
@@ -106,24 +131,24 @@ link_server_plugins() {
     auto) src_file="$(pick_latest "$managed_lib_dir" "$pattern")" ;;
     manual) src_file="$(pick_latest "$engine_lib_root" "$pattern")" ;;
     *)
-      warn "${tag} Unknown type '$type' for '${plugin_key}' (skipping)"
+      log_warn "Unknown type '$type' for '${plugin_key}' in ${server_name} (skipping)"
       continue
       ;;
     esac
 
     if [[ -n "${src_file:-}" && -f "$src_file" ]]; then
       ln -sfn "$src_file" "${temp_build_dir}/${plugin_key}.jar"
-      echo -e "${GREEN}[LINK]${NC} ${tag} ${plugin_key}.jar -> $(basename "$src_file")"
+      log_info "Linked ${plugin_key}.jar for ${server_name} -> $(basename "$src_file")"
       ((linked++)) || true
     else
-      echo -e "${RED}[MISS]${NC} ${tag} ${plugin_key}.jar (pattern: ${pattern}) not found for engine=${engine}"
+      log_warn "${plugin_key}.jar (pattern: ${pattern}) not found for engine=${engine} in ${server_name}"
       ((missing++)) || true
     fi
   done
 
   # If nothing linked, preserve existing jars
   if [[ $linked -eq 0 ]]; then
-    warn "${tag} No plugins linked. Preserving existing *.jar in ${dest_dir}"
+    log_warn "No plugins linked for ${server_name}. Preserving existing *.jar in ${dest_dir}"
     return 0
   fi
 
@@ -145,6 +170,7 @@ link_server_plugins() {
   for entry in "${ENTRIES[@]}"; do
     local plugin_key="${entry%%$'\t'*}"
     local target="${dest_dir}/${plugin_key}.jar"
+
     if [[ -e "$target" || -L "$target" ]]; then
       mv -f "$target" "$backup_dir/" 2>/dev/null || true
     fi
@@ -152,7 +178,9 @@ link_server_plugins() {
 
   # Move new jars into place
   local failed_apply=0
+
   shopt -s nullglob
+
   for f in "${temp_build_dir}"/*.jar; do
     if ! mv -f "$f" "$dest_dir/"; then
       failed_apply=1
@@ -164,7 +192,7 @@ link_server_plugins() {
 
   if [[ $failed_apply -ne 0 ]]; then
     # Rollback: restore backups
-    warn "${tag} Apply failed. Rolling back..."
+    log_warn "Apply failed for ${server_name}. Rolling back..."
     shopt -s nullglob
 
     for b in "$backup_dir"/*.jar; do
@@ -173,40 +201,35 @@ link_server_plugins() {
     shopt -u nullglob
 
     rm -rf "$backup_dir" 2>/dev/null || true
-    die "${tag} Failed to apply plugins."
+    log_err "Failed to apply plugins for ${server_name}."
+
+    return 1
   fi
 
   # Cleanup backups (managed jars only)
   rm -rf "$backup_dir" 2>/dev/null || true
 
   if [[ $missing -gt 0 ]]; then
-    warn "${tag} Linked with ${missing} missing plugin(s)."
+    log_warn "Linked for ${server_name}, but with ${missing} missing plugin(s)."
   else
-    info "${tag} All plugins linked."
+    log_info "All plugins linked for ${server_name}."
   fi
 }
 
 # ------------------------------------------------------------------------------
-# Main
+# Main Process Logic
 # ------------------------------------------------------------------------------
-
-need_cmd jq
-need_cmd realpath
-need_cmd find
-need_cmd awk
-need_cmd sort
-need_cmd mktemp
-need_cmd mv
-
-# Check config file
-[[ -f "$CONFIG_FILE" ]] || die "Config file missing: $CONFIG_FILE"
 
 # Load configuration file
 CONFIG="$(cat "$CONFIG_FILE")"
 
 jq -e '.servers and (.servers | type=="object")' >/dev/null <<<"$CONFIG" ||
-  die "Invalid config: expected '.servers' object in ${CONFIG_FILE}"
+  {
+    log_err "Invalid config: expected '.servers' object in ${CONFIG_FILE}"
+    exit 1
+  }
 
+# Get servers safely (no subshell loop)
 mapfile -t SERVERS < <(jq -r '.servers | keys[]' <<<"$CONFIG")
 
 for SERVER in "${SERVERS[@]}"; do
@@ -215,21 +238,21 @@ for SERVER in "${SERVERS[@]}"; do
 
   # Validate engine and server dir
   if [[ -z "$ENGINE" ]]; then
-    warn "[${SERVER}] Missing engine in config. Skipping plugins."
+    log_warn "Missing engine for ${SERVER} in config. Skipping plugins."
+
     continue
   fi
 
   if [[ ! -d "$SERVER_DIR" ]]; then
-    warn "[${SERVER}] Instance directory missing for '$SERVER'. Skipping plugins."
+    log_warn "Instance directory missing for ${SERVER} in config. Skipping plugins."
+
     continue
   fi
 
-  echo "-----------------------------------------------------"
-  echo -e "Linking Plugins: ${BLUE}${SERVER}${NC} (${ENGINE})"
-  echo "-----------------------------------------------------"
+  log_info "Linking Plugins: ${BLUE}${SERVER}${NC} (${ENGINE})"
 
   link_server_plugins "$SERVER" "$ENGINE" "$SERVER_DIR"
 done
 
-echo "-----------------------------------------------------"
-echo -e "${GREEN}Plugin linking complete.${NC}"
+log_info "Plugin linking complete."
+exit 0
