@@ -148,9 +148,9 @@ EXTRA_JAVA_FLAGS_STR="${EXTRA_JAVA_FLAGS[*]}"
 START_CMD=(
     bash -c "
     while true; do
-      echo \"[$(date '+%H:%M:%S') \033[0;32mINFO\033[0m] [launcher]: Starting server...\"
+      echo \"[$(date '+%H:%M:%S') INFO] [launcher]: Starting server...\"
       env ${ENV_EXPORTS_STR} java ${COMMON_FLAGS_STR} ${ENGINE_FLAGS_STR} ${EXTRA_JAVA_FLAGS_STR} -jar \"${JAR_FILE}\" nogui
-      echo \"[$(date '+%H:%M:%S') \033[1;33mWARN\033[0m] [launcher]: Server stopped at $(date), restarting in 3 seconds...\"
+      echo \"[$(date '+%H:%M:%S') WARN] [launcher]: Server stopped at $(date), restarting in 3 seconds...\"
       sleep 3
     done
   "
@@ -164,16 +164,22 @@ if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
     if ! pgrep -f "[j]ava.*$(basename "$JAR_FILE")" >/dev/null; then
         log_warn "Session alive, but server is down. Restarting..."
         tmux send-keys -t "$TMUX_SESSION" "stop" C-m
-        sleep 1
-        tmux send-keys -t "$TMUX_SESSION" "${START_CMD[@]}" C-m
+        sleep 8
+
+        tmux kill-session -t "$TMUX_SESSION"
+        tmux new-session -s "$TMUX_SESSION" -d -- "${START_CMD[@]}"
+
         log_info "Restarted server at $(date)"
     else
-        log_info "Server is already running."
+        log_warn "Server is already running."
     fi
 else
     # Create new detached tmux session
     tmux new-session -s "$TMUX_SESSION" -d -- "${START_CMD[@]}"
+
+    log_info "Server '$SERVER_NAME' is now running in tmux session '$TMUX_SESSION'."
 fi
 
-log_info "Server '$SERVER_NAME' is running in tmux session '$TMUX_SESSION'."
+log_info "Attach to the session using: tmux attach -t $TMUX_SESSION"
+
 exit 0
