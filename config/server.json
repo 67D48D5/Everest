@@ -2,13 +2,6 @@
     "servers": {
         "velocity": {
             "engine": "velocity",
-            "memory": {
-                "min": "387M",
-                "max": "768M"
-            },
-            "java_flags": [
-                "-Duser.timezone=Asia/Seoul"
-            ],
             "libraries": [
                 {
                     "name": "LuckPerms Libs",
@@ -49,13 +42,6 @@
         },
         "wildy": {
             "engine": "paper",
-            "memory": {
-                "min": "3G",
-                "max": "3G"
-            },
-            "java_flags": [
-                "-Duser.timezone=Asia/Seoul"
-            ],
             "libraries": [
                 {
                     "name": "LuckPerms Libs",
