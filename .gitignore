@@ -48,9 +48,7 @@ wepif.yml
 
 # Update date files
 lastupdate
-
-# Backups folder created by 'everest backup' command
-/backups/
+.license
 
 # ------------------------------------------------------------------------------
 # Server Instances (Core Data Management)
@@ -107,9 +105,6 @@ servers/**/plugins/CMI/**Log**/
 # CMILib plugin save and translation files
 servers/**/plugins/CMILib/Saves/
 servers/**/plugins/CMILib/Translations/Items/
-
-# CoreProtect license file
-servers/**/plugins/CoreProtect/.license
 
 # TAB plugin playerdata file
 servers/**/plugins/TAB/playerdata.yml
