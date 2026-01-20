@@ -117,7 +117,7 @@ resolve_jenkins() {
 
     rels="$(jq -r '.artifacts[].relativePath' <<<"$meta" |
         grep -Ei '\.jar$' |
-        grep -viE '(-sources|-javadoc)\.jar$' || true)"
+        grep -viE '(-sources|-javadoc|-plain)\.jar$' || true)"
 
     [[ -n "$rels" ]] || return 1
 
