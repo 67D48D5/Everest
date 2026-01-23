@@ -268,11 +268,11 @@ Chat:
   shoutDeduction: '!actionbar!&cChat &8» &fDeducted &c[amount] &ffor shout'
   # Use \n to add new line
   publicHover: '&bRank &8» &r%cmi_user_rank_displayname%\n&bPlayTime &8» &f%cmi_user_playtime_hourst%\n&bMoney
-    &8» &f%cmi_user_balance%\n\n&eSent On &8» &f%server_time_hh:mm:ss%\n&fClick
-    to message'
+    &8» &f%cmi_user_balance%\n\n&eSent On &8» &f%server_time_hh:mm:ss%\n&fClick to
+    message'
   privateHover: '&bRank &8» &r%cmi_user_rank_displayname%\n&bPlayTime &8» &f%cmi_user_playtime_hourst%\n&bMoney
-    &8» &f%cmi_user_balance%\n/\n&eSent On &8»
-    &f%server_time_hh:mm:ss%\n&fClick to message'
+    &8» &f%cmi_user_balance%\n/\n&eSent On &8» &f%server_time_hh:mm:ss%\n&fClick to
+    message'
   staffHover: '&eSent On &8» &f%server_time_hh:mm:ss%\n&fClick to message'
   helpopHover: '&eSent On &8» &f%server_time_hh:mm:ss%\n&fClick to message'
   link: '&7&oLink'
