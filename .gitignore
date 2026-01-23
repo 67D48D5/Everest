@@ -110,6 +110,10 @@ servers/**/plugins/CMILib/Translations/Items/
 servers/**/plugins/TAB/playerdata.yml
 servers/**/plugins/TAB/skincache.yml
 
+# PlotSquared template files
+servers/**/plugins/PlotSquared/templates/
+servers/**/plugins/PlotSquared/backups/
+
 # ------------------------------------------------------------------------------
 # Security (Files that should never be committed for security reasons)
 # ------------------------------------------------------------------------------
