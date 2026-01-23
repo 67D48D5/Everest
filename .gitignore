@@ -113,7 +113,7 @@ servers/**/plugins/TAB/skincache.yml
 # ------------------------------------------------------------------------------
 # Security (Files that should never be committed for security reasons)
 # ------------------------------------------------------------------------------
-.assets/private/
+*.dev.*
 
 # Ignore all private keys and certificates
 *.pem
