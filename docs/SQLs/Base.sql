@@ -2,7 +2,7 @@
 # Init SQL Script for Everest MC
 #
 # Database: msdgl, msdwc, msdbd
-# Host: MySQL 11.8.2-MariaDB
+# Host: MySQL 12.1.2-MariaDB
 # ************************************************************
 
 # Base settings for the MySQL server
@@ -68,16 +68,7 @@ LOCK TABLES `luckperms_group_permissions` WRITE;
 ;
 
 INSERT INTO
-    `luckperms_group_permissions` (
-        `id`,
-        `name`,
-        `permission`,
-        `value`,
-        `server`,
-        `world`,
-        `expiry`,
-        `contexts`
-    )
+    `luckperms_group_permissions`
 VALUES (
         1,
         'default',
@@ -729,26 +720,6 @@ VALUES (
         '{}'
     ),
     (
-        167,
-        'admin',
-        'prefix.100.&cA &8∥ &c',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        168,
-        'default',
-        'prefix.10.&6U &8∥ &6',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
         169,
         'default',
         'displayname.User',
@@ -1091,7 +1062,7 @@ VALUES (
     (
         226,
         'default',
-        'plots.trust.8',
+        'plots.add.8',
         1,
         'buildy',
         'global',
@@ -1101,9 +1072,29 @@ VALUES (
     (
         227,
         'default',
-        'plots.add.8',
+        'plots.trust.8',
         1,
         'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        234,
+        'admin',
+        'prefix.100.&cA &8∥ &c',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        235,
+        'default',
+        'prefix.10.&6U &8∥ &6',
+        1,
+        'global',
         'global',
         0,
         '{}'
