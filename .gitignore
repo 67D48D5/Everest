@@ -114,6 +114,9 @@ servers/**/plugins/TAB/skincache.yml
 servers/**/plugins/PlotSquared/templates/
 servers/**/plugins/PlotSquared/backups/
 
+# DiscordSRV plugin data files
+servers/**/plugins/DiscordSRV/
+
 # ------------------------------------------------------------------------------
 # Security (Files that should never be committed for security reasons)
 # ------------------------------------------------------------------------------
