@@ -8,9 +8,9 @@ Everest is a production-ready Minecraft server infrastructure designed for runni
 
 ## Features
 
-- **Multi-Server Architecture**: `Velocity` proxy + `Paper` game servers
+- **Multi-Server Architecture**: `Velocity` proxy + `Paper` game servers (modular design)
 - **Automated Updates**: Smart plugin and engine version management
-- **Production-Ready**: `Tmux`-based process management with auto-restart
+- **Production-Ready**: `tmux`-based process management with auto-restart
 - **Plugin Management**: Auto-download and link plugins from official sources
 - **Cross-Platform**: Java and Bedrock edition support via `Geyser/Floodgate`
 - **Performance Optimized**: `Aikars flags` for Paper, tuned JVM settings
@@ -20,7 +20,7 @@ Everest is a production-ready Minecraft server infrastructure designed for runni
 Everest uses a proxy-based architecture:
 
 ```txt
-Players → Velocity Proxy (port 25565)
+Players → Velocity Proxy (port 25565) → Buildy Server (Paper, port 3621)
               ↓
          Wildy Server (Paper, port 1422)
 ```
@@ -44,11 +44,13 @@ The Velocity proxy handles player connections and routes them to backend Paper s
 │   ├── engines/        # Paper and Velocity JARs
 │   └── plugins/        # Downloaded plugins
 ├── scripts/            # Management scripts
-│   ├── everest         # Main management script
+│   ├── launcher        # Main launcher script
+│   ├── updater         # Main updater script
 │   └── utils/          # Management utilities scripts
 └── servers/            # Server instances
-    ├── velocity/       # Velocity proxy
-    └── wildy/          # Paper survival server
+    ├── proxy/          # Velocity proxy
+    ├── buildy/         # Build server    
+    └── wildy/          # Survival server
 ```
 
 ## Server Information
