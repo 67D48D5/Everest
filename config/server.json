@@ -73,6 +73,10 @@
                     "type": "auto",
                     "pattern": "ChunkyBorder-*"
                 },
+                "DiscordSRV": {
+                    "type": "auto",
+                    "pattern": "DiscordSRV-*"
+                },
                 "FastAsyncWorldEdit": {
                     "type": "auto",
                     "pattern": "FastAsyncWorldEdit-Paper-*"
@@ -120,6 +124,85 @@
                 "WorldGuard": {
                     "type": "manual",
                     "pattern": "worldguard-bukkit-*"
+                },
+                "Vault": {
+                    "type": "manual",
+                    "pattern": "Vault-*"
+                }
+            }
+        },
+        "buildy": {
+            "engine": "paper",
+            "libraries": [
+                {
+                    "name": "LuckPerms Libs",
+                    "source": "plugins/LuckPerms/libs",
+                    "destination": "plugins/LuckPerms/libs"
+                },
+                {
+                    "name": "Paper Cache",
+                    "source": "cache",
+                    "destination": "cache"
+                },
+                {
+                    "name": "Paper Libraries",
+                    "source": "libraries",
+                    "destination": "libraries"
+                },
+                {
+                    "name": "Paper Versions",
+                    "source": "versions",
+                    "destination": "versions"
+                }
+            ],
+            "plugins": {
+                "Chunky": {
+                    "type": "auto",
+                    "pattern": "Chunky-*"
+                },
+                "ChunkyBorder": {
+                    "type": "auto",
+                    "pattern": "ChunkyBorder-*"
+                },
+                "DiscordSRV": {
+                    "type": "auto",
+                    "pattern": "DiscordSRV-*"
+                },
+                "FastAsyncWorldEdit": {
+                    "type": "auto",
+                    "pattern": "FastAsyncWorldEdit-Paper-*"
+                },
+                "LuckPerms": {
+                    "type": "auto",
+                    "pattern": "LuckPerms-*"
+                },
+                "Logger": {
+                    "type": "auto",
+                    "pattern": "Logger-*"
+                },
+                "PlaceholderAPI": {
+                    "type": "auto",
+                    "pattern": "PlaceholderAPI-*"
+                },
+                "ProtocolLib": {
+                    "type": "auto",
+                    "pattern": "ProtocolLib*"
+                },
+                "TAB": {
+                    "type": "auto",
+                    "pattern": "TAB*"
+                },
+                "CMI": {
+                    "type": "manual",
+                    "pattern": "CMI-*"
+                },
+                "CMILib": {
+                    "type": "manual",
+                    "pattern": "CMILib*"
+                },
+                "PlotSquared": {
+                    "type": "manual",
+                    "pattern": "plotsquared-*"
                 },
                 "Vault": {
                     "type": "manual",
