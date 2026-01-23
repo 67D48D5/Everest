@@ -79,14 +79,14 @@ servers/**/libraries
 servers/**/.console_history
 
 # Velocity language files (can be large and are not usually modified)
-servers/velocity/lang
+servers/proxy/lang
 
 # LiteBans cache files
-servers/velocity/plugins/litebans/.version
-servers/velocity/plugins/litebans/server.json
+servers/proxy/plugins/litebans/.version
+servers/proxy/plugins/litebans/server.json
 
 # GeyserMC locale files (can be large and are not usually modified)
-servers/velocity/plugins/Geyser*/locales/*.json
+servers/proxy/plugins/Geyser*/locales/*.json
 
 # LuckPerms locale files and symlink files
 servers/**/plugins/[Ll]uck[Pp]erms/translations
