@@ -295,7 +295,7 @@ use_display_names: false
 dupeip_scan_all_ips: false
 
 # If disabled, all previous IP addresses will be recorded, allowing /iphistory to work.
-delete_previous_history: true
+delete_previous_history: false
 
 # If enabled, LiteBans performs an additional database query on login to provide case-insensitive name bans and mutes.
 # This also prevents players from evading bans by switching from offline-mode to online-mode (through FastLogin, for example), or from Geyser to Java Edition in offline-mode.
