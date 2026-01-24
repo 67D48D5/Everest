@@ -2678,6 +2678,7 @@ command:
         players'
       giveAll: '&aMoney &8» &fGive out &6[totalAmount] &ffor &6[playerCount] &eplayers'
       takeAll: '&aMoney &8» &fTook &6[totalAmount] &ffrom &6[playerCount] &eplayers'
+      taxes: '{gcp}Taxes: {gcs}[taxes]'
       overLimit: '&cMoney &8» &6[playerDisplayName] &fcan''t receive your money due
         limitations in how many he can hold at once'
   more:

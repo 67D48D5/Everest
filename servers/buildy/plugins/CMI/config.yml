@@ -106,6 +106,25 @@ Economy:
     SwitchPlaces: false
     # Placing of currency symbol
     Placing: '[money][symbol]'
+    # Taxing for /pay command usage
+    # This is only for this specific command at the moment and will not tax other actions
+    Tax:
+      # Type of taxing. None, Flat, Percentage
+      # Where flat type will deduct specific amount of money for each pay command usage
+      # Percentage type will deduct percentage of money for each pay command usage based on transfer amount
+      Type: None
+      # Either flat amount or percentage on transaction amount
+      # Percentage is defined between 0 and 100
+      Amount: 4.0
+      # Minimal amount to tax player, mostly used when taxing based on percentage
+      Min: 0.0
+      # Maximal amount to tax player, mostly used when taxing based on percentage
+      # Set to 0 if you don't want to have max limit
+      Max: 1000.0
+      # When set to true tax will be added on top of transfered amount, so if player transfers 100 and tax is 10 then receiving player receives 100 and sender player looses 110
+      # If its set to false tax will be subtracted from transfered amount, so if player transfers 100 and tax is 10 then receiving player receives 90 and sender player pays 100
+      # Recommended to keep it at true just to avoid confusion why receiving player got less money
+      DeductOnTop: true
 FileSave:
   # Change this to true only if you have issues with drives I/O and you need to save players files in async mode to lower waiting time for mc server
   Async: false
