@@ -41,8 +41,6 @@ scoreboard:
   toggle-command: /sb
   remember-toggle-choice: false
   hidden-by-default: false
-  use-numbers: true
-  static-number: 0
   delay-on-join-milliseconds: 0
   scoreboards:
     default:
@@ -102,7 +100,8 @@ belowname-objective:
   fancy-value: '&c%health%'
 proxy-support:
   enabled: false
-config-version: 2
+  channel-name-suffix: TAB
+config-version: 5
 components:
   minimessage-support: true
   disable-shadow-for-heads: true
