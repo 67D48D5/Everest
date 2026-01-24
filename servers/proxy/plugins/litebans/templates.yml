@@ -23,41 +23,63 @@
 # - Template names cannot contain dots or spaces.
 # If you wish to start from scratch, clearing all templates from existing punishments, use "/litebans reset-templates".
 ban-templates:
-  # A simple example ban template with a mute action.
-  Example-Ban-Template:
-    reason: "Example"
-    message: "Ban message"
-    permission: litebans.group.example
+  Hack:
+    reason: "Unfair Advantage (Cheating)"
+    message: "&cYou have been banned for using illegal clients."
     ladder:
-      third:
-        duration: 30d
-        actions: ["/mute $playerName 60d"]
-      second:
-        duration: 10d
+      final:
+        duration: permanent
+        message: "&4[Detect] &cCheating is not allowed on this server."
       first:
-        duration: 5d
-    expire_ladder: 90d
-    ip_template: false
+        duration: 30d
+    expire_ladder: 6 months
+
+  Grief:
+    reason: "Griefing / Gameplay Sabotage"
+    ladder:
+      step3:
+        duration: 30d
+      step2:
+        duration: 7d
+      step1:
+        duration: 1d
+    expire_ladder: 3 months
+
+  General:
+    reason: "Violation of Community Standards"
+    ladder:
+      step3:
+        duration: 7d
+      step2:
+        duration: 3d
+      step1:
+        duration: 12h
+    expire_ladder: 2 months
 
 mute-templates:
-  Example-Spam:
-    reason: "Spamming"
-    message: "You have been muted for spamming!"
-    permission: litebans.group.example
+  Chat:
+    reason: "Inappropriate Chat Behavior (Spam/Swearing)"
     ladder:
-      fourth:
-        duration: 2 weeks
-      third:
-        duration: 5 days
-      second:
-        duration: 12 hours
+      step4:
+        duration: 7d
+      step3:
+        duration: 1d
+      step2:
+        duration: 1h
+      step1:
+        duration: 10m
+        message: "&eThis is a warning. Next time you will be muted for 1 hour."
+    expire_ladder: 1 month
+
+  Ad:
+    reason: "Advertising"
+    ladder:
+      final:
+        duration: permanent
       first:
-        message: '&cPlease stop spamming!\nThis is your first and only warning. If you do this again, you will be muted for 12 hours.'
-        duration: 5s
-    expire_ladder: 30d
-    ip_template: false
+        duration: 30d
+    expire_ladder: 6 months
 
 warn-templates: {}
 kick-templates: {}
-
 template-groups: {}
