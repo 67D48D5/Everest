@@ -25,6 +25,12 @@ CustomAlias:
     - gamerule wwild_nether spectatorsGenerateChunks false
     - gamerule wwild_the_end announceAdvancements false
     - gamerule wwild_the_end spectatorsGenerateChunks false
+    - gamerule wsrc announceAdvancements false
+    - gamerule wsrc spectatorsGenerateChunks false
+    - gamerule wsrc_nether announceAdvancements false
+    - gamerule wsrc_nether spectatorsGenerateChunks false
+    - gamerule wsrc_the_end announceAdvancements false
+    - gamerule wsrc_the_end spectatorsGenerateChunks false
     - papi ecloud download GriefPrevention
     - papi ecloud download Server
     - papi reload
