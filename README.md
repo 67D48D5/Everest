@@ -53,13 +53,6 @@ The Velocity proxy handles player connections and routes them to backend Paper s
     └── wildy/          # Survival server
 ```
 
-## Server Information
-
-- **Address**: `play.67d48d5.me`
-- **Version Support**: Latest Minecraft version + backwards compatibility
-- **Editions**: Java Edition & Bedrock Edition
-- **Discord**: <https://discord.gg/gc9F7eTYt4>
-
 ## Git File Ignore Instructions
 
 Some configuration files are intended to be customized per deployment and should not be tracked by Git.
@@ -115,6 +108,13 @@ servers/buildy/server.properties \
 servers/buildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/buildy/plugins/CMILib/Translations/Locale_EN.yml
 ```
+
+## Server Information
+
+- **Address**: `play.67d48d5.me`
+- **Version Support**: Latest Minecraft version + backwards compatibility
+- **Editions**: Java Edition & Bedrock Edition
+- **Discord**: <https://discord.gg/gc9F7eTYt4>
 
 ## Scope
 
