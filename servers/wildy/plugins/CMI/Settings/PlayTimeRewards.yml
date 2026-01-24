@@ -1,4 +1,4 @@
-# --- RECURRING REWARDS (PayEvery) ---
+# RECURRING REWARDS (PayEvery)
 # These rewards are automatically given to players every 'X' seconds of online time.
 # They are great for encouraging active play sessions.
 
@@ -11,11 +11,9 @@ hourly_patrol:
   PayEvery: 3600
   Commands:
     # Gives the player a small amount of money
-    - asConsole! cmi money give [playerName] 20
+    - asConsole! cmi money give [playerName] 10
     # Heals the player to full health
-    # - asConsole! cmi heal [playerName] -s
-    # Gives the player a custom item from another plugin (if you have one)
-    - asConsole! cmi give [playerName] custom_goodie_bag 1
+    - asConsole! cmi heal [playerName]
 
 daily_login:
   DisplayName: "&eDaily Login Bonus"
@@ -26,9 +24,9 @@ daily_login:
   PayEvery: 86400
   Commands:
     # Gives the player a larger sum of money
-    - asConsole! cmi money give [playerName] 2000
+    - asConsole! cmi money give [playerName] 10
 
-# --- PLAYTIME MILESTONE REWARDS (PayFor) ---
+# PLAYTIME MILESTONE REWARDS (PayFor)
 # These are one-time rewards given to players when their total online time reaches a specific duration.
 # Players must manually claim these.
 
@@ -40,6 +38,7 @@ milestone_1_hour:
     - "&fClaim your first playtime milestone reward."
   PayFor: 3600
   Commands:
+    # Gives the player a small amount of money
     - asConsole! cmi money give [playerName] 500
 
 milestone_6_hours:
@@ -50,9 +49,8 @@ milestone_6_hours:
     - "&fClaim your reward and a little extra experience."
   PayFor: 21600
   Commands:
+    # Gives the player a larger sum of money
     - asConsole! cmi money give [playerName] 2000
-    # Gives the player some experience levels
-    - asConsole! cmi exp give [playerName] 5L
 
 milestone_12_hours:
   DisplayName: "&dHalf-Day Hero"
@@ -62,9 +60,8 @@ milestone_12_hours:
     - "&fClaim a valuable reward and a special token."
   PayFor: 43200
   Commands:
+    # Gives the player a larger sum of money
     - asConsole! cmi money give [playerName] 5000
-    # Gives the player a custom token item
-    - asConsole! cmi give [playerName] custom_token 1
 
 milestone_24_hours:
   DisplayName: "&6Full Day Survivor"
@@ -74,9 +71,8 @@ milestone_24_hours:
     - "&fClaim a huge reward and a Rare Crate Key."
   PayFor: 86400
   Commands:
+    # Gives the player a larger sum of money
     - asConsole! cmi money give [playerName] 15000
-    # Gives the player a special crate key
-    - asConsole! cmi give [playerName] rare_crate_key 1
 
 milestone_7_days:
   DisplayName: "&c7-Day Champion"
@@ -86,9 +82,8 @@ milestone_7_days:
     - "&fClaim your reward and a VIP crate key."
   PayFor: 604800
   Commands:
+    # Gives the player a larger sum of money
     - asConsole! cmi money give [playerName] 50000
-    # Gives the player an even more valuable key
-    - asConsole! cmi give [playerName] vip_crate_key 1
 
 milestone_30_days:
   DisplayName: "&530-Day Legend"
@@ -98,6 +93,5 @@ milestone_30_days:
     - "&fClaim the ultimate reward and a special title."
   PayFor: 2592000
   Commands:
+    # Gives the player a larger sum of money
     - asConsole! cmi money give [playerName] 500000
-    # Gives the player a permission node for a custom title
-    - asConsole! cmi perms add [playerName] title.legendary_player
