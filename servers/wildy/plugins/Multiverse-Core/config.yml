@@ -217,7 +217,7 @@ command:
   #   disable_command_blocks: `/mv confirm` not required for command blocks.
   #   disable_console: `/mv confirm` not required for the console.
   #   disable: `/mv confirm` is not required.
-  confirm-mode: enable
+  confirm-mode: player_only
   
   # If this is set to true, `/mv confirm` will include a 3 digit random number that must be entered to confirm the command.
   # For example: `/mv confirm 726`
