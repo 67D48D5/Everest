@@ -141,6 +141,8 @@ servers/**/plugins/**DiscordSRV/
 !/templates/**
 
 # Forcing tracking of specific configuration files
+!servers/**/plugins/CMI/Dialogs/
+
 !server.properties
 !bukkit.yml
 !spigot.yml
