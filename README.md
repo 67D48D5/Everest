@@ -69,6 +69,9 @@ Ignore the following when using this repository:
 ```bash
 git update-index --skip-worktree \ 
 servers/wildy/server.properties \
+servers/wildy/wsrc/level.dat \
+servers/wildy/wsrc_nether/level.dat \
+servers/wildy/wsrc_the_end/level.dat \
 servers/wildy/plugins/Multiverse-Core/worlds.yml \
 servers/wildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/wildy/plugins/CMILib/Translations/Locale_EN.yml \
