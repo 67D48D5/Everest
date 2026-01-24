@@ -78,36 +78,39 @@
 # Example time format with hours + minutes:
 # time_format: 'dd/MM/yyyy HH:mm'
 # Example locales: [en, fr, de] (system locale is used by default)
-locale: system
+locale: en
 time_format: MM/dd/yyyy
-default_ban_reason: The Ban Hammer has spoken!
-default_mute_reason: Spamming
-default_unban_reason: No reason specified.
-default_unmute_reason: No reason specified.
-default_unwarn_reason: No reason specified.
-banned_message_base: |
-  &8&m+              &r&8[ &4&lBanned&8 ]&m              +
-
-  &8&l» &7&lBanned on: &f$dateStart
-  &8&l» &7&lBanned by: &c&o$executor
-  &8&l» &7&lReason: &f$reason&f
+hex_formats: |-
+  &%s
+  <%s>
+  {%s}
+default_ban_reason: Violation of Community Guidelines
+default_mute_reason: Chat Violation
+default_unban_reason: Appeal Accepted / Time Expired
+default_unmute_reason: Time Expired
+default_unwarn_reason: Expired
+banned_message_base: "&8&m                                                      &r\n\
+  \n&c&lACCESS DENIED\n\n&fYour account has been restricted from accessing this network\n\
+  due to a violation of our Community Guidelines.\n\n&8&m                        \
+  \                              &r\n\n&fBanned on &7$dateStart\n&fUnban Date &8»\
+  \ &7$dateEnd \n&fRemaining &8» &7$duration\n\n&fBanned by &6$executor\n&fReason\
+  \ &8» &7&o$reason\n"
 banned_message: |-
   $base
-  &8&l» &7&lExpires in: &f$duration
+  &8&m                                                      &r
+  &fExpires in &7$duration
   $appealMessage
-
-  &8&m+                                       +
 banned_message_permanent: |-
   $base
-  &8&l» &c&lYou are permanently banned!
+  &8&m                                                      &r
+  &cThis ban is permanent.
   $appealMessage
-
-  &8&m+                                       +
-banned_message_appeal_message: '&8&l» &7&lAppeal on &oDiscord'
+banned_message_appeal_message: '&fTo appeal this punishment, please open a ticket
+  on our Discord.'
 banned_message_geoip_blacklist: |-
-  &8&l» &c&lYou are banned from this server!&f
+  &cYou are banned from this server!&f
 
-  Your location is blacklisted: $geoip
+  Your location is blacklisted: &7$geoip
 proxy_switch_banned: |-
   &cYou are banned on $serverScope! Reason:
   $reason
@@ -121,60 +124,43 @@ muted: |-
 muted_permanent: |-
   &cYou are permanently muted!
   &cReason: &e$reason
-warned_join: '&cWarn &8» &fYou have &cnew &fwarnings:'
+warned_join: '&cWarn &8» &fYou have new warnings:'
 warned_join_entry: |-
   &4 - Warned by &c$executor&4: &c$reason
      &4(&c$timeSince ago&4)
 notify:
-  banned_player_join: '&cLiteBans &8» &6$player &ftried to join, but is banned ($duration)&o!'
-  banned_geoip_blacklist: '&cLiteBans &8» &6$player &ftried to join, but is blacklisted
-    ($geoip)&o!'
-permission_error: '&cError &8» &fYou don''t have permission&o!'
-error_no_template_provided: '&cError &8» &fYou must provide a template for this punishment&o!'
-error_no_reason_provided: '&cError &8» &fYou must provide a reason for this punishment&o!'
-error_no_reason_removal: '&cError &8» &fYou must provide a reason to remove this punishment&o!'
-error_no_sql_connection: '&cError &8» &fLiteBans is &cnot &fconnected to a database&o!'
-error_no_uuid_found: '&cError &8» &fPlayer does &cnot &fexist.'
-error_no_duration: '&cError &8» &fNo valid time specification detected&o!'
+  banned_player_join: '&cBan &8» &6$player &ftried to join, but is banned for &7$duration&f!'
+  banned_geoip_blacklist: '&cBan &8» &6$player &ftried to join, but is blacklisted
+    (&7&o$geoip&f)!'
+permission_error: '&cError &8» &fThe command does not exist or cannot be used!'
+error_no_template_provided: '&cError &8» &fYou must provide a template for this punishment!'
+error_no_reason_provided: '&cError &8» &fYou must provide a reason for this punishment!'
+error_no_reason_removal: '&cError &8» &fYou must provide a reason to remove this punishment!'
+error_no_sql_connection: '&cError &8» &fLiteBans is not connected to a database!'
+error_no_uuid_found: '&cError &8» &fPlayer does not exist.'
+error_no_duration: '&cError &8» &fNo valid time specification detected!'
+error_stack_overflow: '&cError &8» &fStack overflow detected.'
 error_console_only: '&cError &8» &fThis command can only be used from console.'
-duration_limit_error: '&cError &8» &fMaximum duration allowed: &c$duration'
-internal_error: '&cError &8» &fAn internal error occurred while attempting to perform
+duration_limit_error: '&cError &8» &fMaximum duration allowed: &7&o$duration'
+internal_error: '&cLiteBans &8» &fAn internal error occurred while attempting to perform
   this command.'
 command:
   ban:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f[-s] <player> [time spec] [reason]'
-    example: '&fExample: &6$command &fNotch 7d [reason]'
-    silent_prefix: '&cSilent &8»  &f'
-    broadcast_ban: '&cBan &8» &a$executor &fbanned &6$playerDisplayName &ffor ''&a$reason&f'''
-    broadcast_tempban: '&cBan &8» &a$executor &ftempbanned &6$playerDisplayName &ffor
-      &e$tempDuration for ''&a$reason&f'''
-    broadcast_ip_ban: '&cBan &8» &a$executor &fIP-banned &6$playerDisplayName &ffor
-      ''&a$reason&f'''
-    broadcast_temp_ip_ban: '&cBan &8» &a$executor &ftemp IP-banned &6$playerDisplayName
-      &ffor $tempDuration for ''&a$reason&f'''
-    previous_ban_removed: '&aLiteBans &8» &fPrevious ban for &6$playerName &fremoved.'
-    previous_ban_existing: '&cLiteBans &8» &6$playerName &fis already banned, and
-      you do not have permission to replace existing bans.'
-    unban_fail: '&cLiteBans &8» &fTarget is not banned&o!'
-    no_override: '&cLiteBans &8» &fPlayer is already banned&o!'
-    alts_guardrail_ban_self: |-
-      &cLiteBans &8» &fError: Banning associated accounts for &6$playerName &fwould also ban your account!
-      No additional players will be banned.
-    alts_guardrail_ban_many: |-
-      &eWarning: Banning this player will also ban $num players!
-      These players will be banned if you click here to confirm:
-      $list
-       {run: $command $commandArgs --confirm}
-    exempt: '&cLiteBans &8» &fYou can''t ban &6$player&o!'
-    cooldown: '&cLiteBans &8» &fYou need to wait &c$duration &fbefore you can use
-      this command again.'
-    response: ''
-    modify_success: '&aPunishment modified successfully.'
-    ip_hidden: '[IP Address]'
-    unban_usage: '&cLiteBans &8» &fUsage: &6$command &f<player>'
-    broadcast_unban: '&cBan &8» &a$executor &funbanned &6$playerName &ffor ''&a$removalReason&f'''
-    unban_queued: '&cTarget is not banned!&6 If they try to reconnect, they will be
-      unbanned.'
+    usage: '&cBan &8» &fUsage: $command [-s] <player> [duration] [reason]'
+    example: ''
+    silent_prefix: '&7Silent &8» &f'
+    broadcast_ban: '&cBan &8» &6$executor &fbanned &c$playerDisplayName &ffor ''&7&o$reason&f'''
+    broadcast_tempban: '&cBan &8» &6$executor &ftempbanned &c$playerDisplayName &ffor
+      &7&o$tempDuration &ffor ''&7&o$reason&f'''
+    broadcast_ip_ban: '&cBan &8» &6$executor &fIP-banned &c$playerDisplayName &ffor
+      ''&7&o$reason&f'''
+    broadcast_temp_ip_ban: '&cBan &8» &6$executor &ftemp IP-banned &c$playerDisplayName
+      &ffor &7&o$tempDuration &ffor ''&7&o$reason&f'''
+    previous_ban_removed: '&aBan &8» &fPrevious ban for &a$playerName &fhas been removed.'
+    previous_ban_existing: '&cBan &8» &c$playerName is already banned, and you do
+      not have permission to replace existing bans.'
+    unban_fail: '&cBan &8» &fTarget is not banned!'
+    no_override: '&cBan &8» &fPlayer is already banned!'
     alts_guardrail_disclaimer: |-
       &e// WARNING WARNING WARNING WARNING WARNING //
       &6Automatically banning accounts can result in unintended and unexpected outcomes, such as causing innocent players to be banned automatically.
@@ -185,64 +171,81 @@ command:
       &c4) If you have an offline-mode network or permit non-premium users to join, please add your authentication or lobby server to ignored_iphistory_servers to prevent falsely associated accounts (since anyone can join any account).
       &e// WARNING WARNING WARNING WARNING WARNING //
       &aIf you acknowledge and accept this disclaimer, please type &dlitebans accept&a to enable automatic bans.
-    delete_success: '&aPunishment deleted successfully.'
-  mute:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f[-s] <player> [time spec] [reason]'
-    example: '&fExample: &6$command &fNotch 7d [reason]'
-    broadcast: '&cMute &8» &a$executor &fmuted &6$playerDisplayName &ffor ''&a$reason&f'''
-    broadcast_tempmute: '&cMute &8» &a$executor &ftempmuted &6$playerDisplayName &ffor
-      &e$tempDuration for ''&a$reason&f'''
-    broadcast_ip_mute: '&cMute &8» &a$executor &fIP-muted &6$playerDisplayName &ffor
-      ''&a$reason&f'''
-    broadcast_temp_ip_mute: '&cMute &8» &a$executor &ftemp IP-muted &6$playerDisplayName
-      &ffor &e$tempDuration for ''&a$reason&f'''
-    message: |-
-      &4You have been muted by $executor&4 for &c'&4$reason&c'&4.
-      &4This mute will expire in $duration.
-    message_permanent: |-
-      &4You have been permanently muted by $executor&4 for &c'&4$reason&c'&4.
-      &4This mute will not expire.
-    unmute_fail: '&cTarget is not muted&o!'
-    no_override: '&cPlayer is already muted&o!'
-    previous_mute_removed: '&aPrevious mute for &6$playerName &fremoved.'
-    previous_mute_existing: '&c&6$playerName &fis already muted, and you do not have
-      permission to replace existing mutes.'
-    exempt: '&cYou can''t mute $player&o!'
-    notification: '&c$playerDisplayName tried to speak, but is muted.'
-    error_not_enabled: '&cMuting is not enabled in the configuration&o!'
+    alts_guardrail_ban_self: |-
+      &cBan &8» &fError: Banning associated accounts for $playerName would also ban your account!
+        No additional players will be banned.
+    alts_guardrail_ban_many: |-
+      &cBan &8» &fWarning: Banning this player will also ban $num players!
+        These players will be banned if you click here to confirm:
+        $list
+        {run: $command $commandArgs --confirm}
+    exempt: '&cBan &8» &fYou can''t ban $player!'
+    cooldown: '&cBan &8» &fYou need to wait &7&o$duration &fbefore you can use this
+      command again.'
     response: ''
-    unmute_usage: '&cLiteBans &8» &fUsage: &6$command &f<player>'
-    broadcast_unmute: '&cMute &8» &a$executor &funmuted &6$playerDisplayName &ffor
-      ''&a$removalReason&f'''
-  warn:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f[-s] <player> [reason]'
-    example: '&fExample: &6$command &fNotch &f[reason]'
-    broadcast: '&cWarn &8» &c$executor &fwarned &6$playerDisplayName &ffor ''&7$reason&f'''
+    modify_success: '&aBan &8» &fPunishment modified successfully.'
+    delete_success: '&aBan &8» &fPunishment deleted successfully.'
+    ip_hidden: '[IP Address]'
+    unban_usage: '&cBan &8» &fUsage: $command <player>'
+    broadcast_unban: '&aBan &8» &6$executor &funbanned &a$playerName &ffor ''&7&o$removalReason&f'''
+    unban_queued: '&cBan &8» &fTarget is not banned! If they try to reconnect, they
+      will be unbanned.'
+  mute:
+    usage: '&cMute &8» &fUsage: $command [-s] <player> [time spec] [reason]'
+    example: ''
+    broadcast: '&cMute &8» &6$executor &fmuted &c$playerDisplayName &ffor ''&7&o$reason&f'''
+    broadcast_tempmute: '&cMute &8» &6$executor &ftempmuted &c$playerDisplayName &ffor
+      $tempDuration for ''&7&o$reason&f'''
+    broadcast_ip_mute: '&cMute &8» &6$executor &fIP-muted &c$playerDisplayName &ffor
+      ''&7&o$reason&f'''
+    broadcast_temp_ip_mute: '&cMute &8» &6$executor &ftemp IP-muted &c$playerDisplayName
+      &ffor $tempDuration for ''&7&o$reason&f'''
     message: |-
-      &4You have been warned by $executor&4 for &c'&4$reason&c'&4.
-      &4This warning will expire in $duration.
+      &cMute &8» &fYou have been muted by &6$executor &ffor '&7&o$reason&f'.
+        &fThis mute will expire in &7&o$duration&f.
+    message_permanent: |-
+      &cMute &8» &fYou have been permanently muted by &6$executor &ffor '&7&o$reason&f'.
+        &fThis mute will &lnot &fexpire.
+    unmute_fail: '&cMute &8» &fTarget is not muted!'
+    no_override: '&cMute &8» &fPlayer is already muted!'
+    previous_mute_removed: '&aMute &8» &fPrevious mute for &a$playerName &fhas been
+      removed.'
+    previous_mute_existing: '&cMute &8» &c$playerName &fis already muted, and you
+      do not have permission to replace existing mutes.'
+    exempt: '&cMute &8» &fYou can''t mute &c$player&f!'
+    notification: '&cMute &8» &c$playerDisplayName &ftried to speak, but is muted.'
+    error_not_enabled: '&cMute &8» &fMuting is not enabled in the configuration!'
+    response: ''
+    unmute_usage: '&cMute &8» &fUsage: $command <player>'
+    broadcast_unmute: '&aMute &8» &fUnmuted &a$playerDisplayName &ffor ''&7&o$removalReason&f'''
+  warn:
+    usage: '&cWarn &8» &fUsage: $command [-s] <player> [reason]'
+    example: ''
+    broadcast: '&cWarn &8» &6$executor &fwarned &a$playerDisplayName &ffor ''&7&o$reason&f'''
+    message: |-
+      &cWarn &8» &fYou have been warned by &6$executor &ffor '&7&o$reason&f'.
+        &4This warning will expire in &7&o$duration&f.
     list_entry: ' &f\- Warned by $executor: ''$reason&f'''
-    unwarn_response: '&aLiteBans &8» &fLast warning removed for &6$player&f.'
-    unwarn_fail: '&cLiteBans &8» &fTarget has &cno &fwarnings&o!'
-    exempt: '&cLiteBans &8» &fYou can''t warn &6$player&f&o!'
-    response: '&aLiteBans &8» &6$playerDisplayName &fhas been warned.'
-    unwarn_usage: '&cLiteBans &8» &fUsage: &6$command &f<player>'
-    broadcast_unwarn: '&aWarn &8» &6$executor &funwarned &a$playerDisplayName&f.'
+    unwarn_response: '&aLast warning removed for $player.'
+    unwarn_fail: '&cWarn &8» &fTarget has no warnings!'
+    exempt: '&cWarn &8» &fYou can''t warn $player!'
+    response: ''
+    unwarn_usage: '&cWarn &8» &fUsage: $command <player>'
+    broadcast_unwarn: '&aWarn &8» &fUnwarned &a$playerDisplayName'
   kick:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player> [reason]'
-    no_match: '&cLiteBans &8» &fPlayer not found.'
-    kick_requested: '&cLiteBans &8» &fPlayer &6$player &fis not online on this server.
-      Cross-server kick has been requested.'
+    usage: '&cKick &8» &fUsage: $command <player> [reason]'
+    no_match: '&cKick &8» &fError: &4Player not found.'
+    kick_requested: '&cKick &8» &fPlayer $player is not online on this server. Cross-server
+      kick has been requested.'
     message: 'Kicked by $executor: $reason'
     message_no_reason: Kicked by $executor.
-    response: '&aLiteBans &8» &f&6$playerDisplayName has been kicked.'
-    broadcast: '&cKick &8» &6$playerDisplayName &fwas kicked by &c$executor &ffor
-      ''&7$reason&f''.'
-    broadcast_no_reason: '&cKick &8» &6$playerDisplayName &fwas kicked by &c$executor&f.'
-    exempt: '&cLiteBans &8» &fYou can''t kick &6$player&f&o!'
+    response: '&aKick &8» &6$playerDisplayName &fhas been kicked.'
+    broadcast: '&cKick &8» &6$executor &fkicked &c$playerDisplayName &ffor ''&7&o$reason&f''.'
+    broadcast_no_reason: '&cKick &8» &c$playerDisplayName &fwas kicked by &6$executor&f.'
+    exempt: '&cKick &8» &fYou can''t kick &c$player&f!'
   history:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player> [entries=10]'
-    start: '&aLiteBans &8» &fHistory for &6$target &f(Limit: $limit):'
+    usage: '&cHistory &8» &fUsage: $command <player> [entries=10]'
+    start: '&bHistory &8» &fHistory for &6$target &f(Limit: $limit):'
     ban_entry: |-
       &a -- [&f$timeSince ago&a] --&f
        &f$name was &cbanned &fby $executor: '&a$reason&f'
@@ -261,46 +264,46 @@ command:
     unmute_entry: |2-
 
        &f$name was &7unmuted &fby $executor: '&7$removalReason&f'
+    unwarn_entry: |2-
+
+       &f$name was &7unwarned &fby $executor: '&7$removalReason&f'
     active_suffix: ' &f[&cActive&f]'
     active_suffix_temp: |-
       &f[&cActive&f]
       &fExpires in $duration.
     expired_suffix: ' &f[&8Expired&f]'
-    error_no_loginrecord: '&cLiteBans &8» &fUser has not joined before.'
-    error_no_user: '&cLiteBans &8» &fUser not found.'
-    unwarn_entry: |2-
-
-       &f$name was &7unwarned &fby $executor: '&7$removalReason&f'
+    error_no_loginrecord: '&cUser has not joined before.'
+    error_no_user: '&cUser not found.'
   warnings:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player>'
-    start: '&aLiteBans &8» &fActive warnings for &6$target&f:'
+    usage: '&cWarnings &8» &fUsage: $command <player>'
+    start: '&bWarnings &8» &fActive warnings for &6$target&f:'
   prunehistory:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player> [duration]'
-    message: '&aLiteBans &8» &fHistory pruned.'
+    usage: '&cPruneHistory &8» &fUsage: $command <player> [duration]'
+    message: '&aPruneHistory &8» &fHistory pruned.'
   staffhistory:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player> [entries=10]'
-    start: '&aLiteBans &8» &fStaff history for &6$target &f(Limit: $limit):'
+    usage: '&cStaffHistory &8» &fUsage: $command <player> [entries=10]'
+    start: '&aStaffHistory &8» &fStaff history for &6$target &f(Limit: $limit):'
   staffrollback:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player> [duration]'
-    message: '&aLiteBans &8» &fRollback completed, total entries removed: &a$amount'
+    usage: '&cStaffRollback &8» &fUsage: $command <player> [duration]'
+    message: '&aRollback completed, total entries removed: $amount'
   banlist:
-    start: '&f=== &aPage &6$page&a out of &6$total &f==='
+    start: '&bBanList &8» &fPage &e$page &fout of &6$total'
   iphistory:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player> [entries=10]'
-    start: '&aLiteBans &8» &fLogin history for $target (Limit: $limit):'
+    usage: '&cIPHistory &8» &fUsage: $command <player> [entries=10]'
+    start: '&aIPHistory &8» &fLogin history for &6$target &f(Limit: $limit):'
     entry: '&a - [&f$date&a] &f$name&a: &f$ip'
-    error_no_history: '&cLiteBans &8» &fNo history found.'
+    error_no_history: '&cIPHistory &8» &fNo history found.'
   namehistory:
-    start: '&aLiteBans &8» &fName history for $target (Limit: $limit):'
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player> [entries=10]'
+    start: '&aNameHistory &8» &fName history for &6$target &f(Limit: $limit):'
+    usage: '&cNameHistory &8» &fUsage: $command <player> [entries=10]'
     entry: '&a - [&f$playerLoginDate&a]&6 $playerName'
   dupeip:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player>'
+    usage: '&cDupeIP &8» &fUsage: $command <player>'
     start: |-
-      &aLiteBans &8» &fScanning &6$name &fon &a$ip&f.
+      &fScanning &a$name &fon &a$ip&f.
       &f[&aOnline&f] [&7Offline&f] [&cBanned&f] [&eIPBanned&f]
     start_no_ip: |-
-      &a&cLiteBans &8» &fScanning &6$name&f.
+      &fScanning &7$name&f.
       &f[&aOnline&f] [&7Offline&f] [&cBanned&f] [&eIPBanned&f]
     end: ''
     multiple_addresses: '[$num addresses]'
@@ -311,109 +314,108 @@ command:
     ip_banned: '&e'
     muted: '&6'
   ipreport:
-    start: '&aLiteBans &8» &fScanning &a$num &fonline players.. [&aOnline&f] [&7Offline&f]
+    start: '&cIPReport &8» &fScanning &a$num &fonline players.. [&aOnline&f] [&7Offline&f]
       [&cBanned&f]'
-    entry: '&6$player &f: &e$result'
+    entry: '&f$player&a: $result'
   checkban:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player>'
-    no_ban: '&cLiteBans &8» &fTarget is &cnot &fbanned&o!'
+    usage: '&cCheckBan &8» &fUsage: $command <player>'
+    no_ban: '&cCheckBan &8» &fTarget is not banned!'
     banned: |-
       &aTarget &f[&a$target&f]&a is banned:
       &aBanned by: $executor
       &aReason: $reason&a
       &aBanned on: $dateStart
       &aBanned until: $dateEnd ($duration)
-      &aBanned on server &6&a$serverOrigin&a, server scope: &6$serverScope
+      &fBanned on server &6$serverOrigin&f, server scope: &6$serverScope
       &aIP ban: $ipban, silent: $silent, permanent: $permanent
   checkmute:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player>'
-    no_mute: '&cLiteBans &8» &fTarget is &cnot &fmuted&o!'
+    usage: '&cCheckMute &8» &fUsage: $command <player>'
+    no_mute: '&cCheckMute &8» &fTarget is not muted!'
     muted: |-
       &aTarget &f[&a$target&f]&a is muted:
       &aMuted by: $executor
       &aReason: $reason&r
       &aMuted on: $dateStart
       &aMuted until: $dateEnd ($duration)
-      &aMuted on server &6$serverOrigin&a, server scope: &6$serverScope
+      &fMuted on server &6$serverOrigin&f, server scope: &6$serverScope
       &aIP mute: $ipban, silent: $silent, permanent: $permanent
-  lastuuid:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player|IP>'
-    message: '&aLiteBans &8» &fLast UUID for &6$name &f: &e$uuid'
-  geoip:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player|IP>'
-    message: '&aLiteBans &8» &6$target &fis from: &a$result'
-    error_disabled: '&cLiteBans &8» &fGeoIP support is not enabled in the configuration&o!'
-    error_unavailable: '&cLiteBans &8» &fGeoIP support is currently unavailable, has
-      it been downloaded yet?'
-    error_not_found: '&cLiteBans &8» &fGeoIP information for &6$target &fnot found.'
-  lockdown:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<reason> | $command end'
-    message: '&cLiteBans &8» &fServer lockdown &cactivated &f(reason: &7"$reason"&f)'
-    stopped: '&aLiteBans &8» &fLockdown has been &adeactivated&f.'
-    kick_message: |-
-      Server lockdown active, try again later.
-      Reason: $reason
-    kick_message_global: |-
-      Network lockdown active, try again later.
-      Reason: $reason
-    error_not_active: '&cLiteBans &8» &fLockdown is &cnot &factive&o!'
-  litebans:
-    reload_success: '&aLiteBans &8» &fLiteBans reloaded successfully.'
-    reload_fail: '&cLiteBans &8» &fReload failed.'
-    reload_fail_connect: '&aLiteBans &8» &fReloaded. &cFailed to connect to database.'
-    reload_fail_config: |-
-      &cLiteBans &8» &4config.yml &fis not valid and could not be loaded, the default configuration will be used.
-      &fPlease check the server console for more information.
-    reload_fail_messages: |-
-      &cLiteBans &8» &cmessages.yml &fis not valid and could not be loaded, default messages will be used.
-      &fPlease check the server console for more information.
-    fix_history: '&aLiteBans &8» &fFixing history for table &a$table&f...'
-    fix_history_result: '&aLiteBans &8» &fAdded &a$amount &fentries.'
-    fix_history_offline_uuids: '&cLiteBans &8» &c$amount &fUUIDs were not fetched
-      from Mojang since they are offline-mode UUIDs.'
-    import_usage: '&cLiteBans &8» &fUsage: &6$command &fimport start'
-    import_start: '&aLiteBans &8» &fImporting from &a$db&f, this might take a while...'
-    import_finish: '&aLiteBans &8» &fImport finished successfully. $bans bans imported,
-      $ipbans IP-bans.'
-    import_finish_litebans: '&aLiteBans &8» &fImport finished successfully. Added
-      $amount entries to the database.'
-    import_fail: '&cLiteBans &8» &fImport failed. Check console.'
-    import_unsupported: '&cLiteBans &8» &fImporting from &6''$name'' &fis not supported
-      yet&o!'
-    allow_usage: '&cLiteBans &8» &fUsage: &6/litebans &fallow <add/remove/check> <user>'
-    allow_added: '&cLiteBans &8» &fPlayer &6$playerName &fhas been &aallowed to join
-      the server&e.'
-    allow_removed: '&cLiteBans &8» &fPlayer &6$playerName &fhas been &cremoved &ffrom
-      the allow list.'
-    allow_check_true: '&cLiteBans &8» &fPlayer &6$playerName &fis allowed to join
-      the server.'
-    allow_check_false: '&cLiteBans &8» &fPlayer &6$playerName &fis not allowed to
-      join the server.'
-    allow_error_add: '&cLiteBans &8» &fError: &6$playerName &fis already allowed to
-      join the server.'
-    allow_error_remove: '&cLiteBans &8» &fError: &6$playerName &fis not allowed to
-      join the server.'
-    reload_fail_templates: |-
-      &cLiteBans &8» &ctemplates.yml &fis not valid and could not be loaded. Configured templates will be unavailable until this has been fixed.
-      &fPlease check the server console for more information.
-    reset_database_confirm_quoted: |2-
-
-      &cWARNING: &eThis command will reset your database, removing all active and inactive punishments permanently.
-      &cWARNING: &nThis operation is irreversible without restoring a database backup.
-      &eRun '&clitebans $commandArgs confirm&e' to continue.
-    reset_database_result: '&aLiteBans &8» &fRemoved &a$amount &b$type &ffrom server:
-      &6$serverScope&f.'
   checkwarn:
-    usage: '&cLiteBans &8» &fUsage: &6$command &f<player>'
-    no_warn: '&cLiteBans &8» &fTarget is not warned&o!'
+    usage: '&cCheckWarn &8» &fUsage: $command <player>'
+    no_warn: '&cCheckWarn &8» &fTarget is not warned!'
     warned: |-
       &aTarget &f[&a$target&f]&a is warned:
       &aWarned by: $executor
       &aReason: $reason&r
       &aWarned on: $dateStart
       &aWarned until: $dateEnd ($duration)
-      &aWarned on server &6$serverOrigin&a, server scope: &6$serverScope
+      &fWarned on server &6$serverOrigin&f, server scope: &6$serverScope
       &aIP warning: $ipban, silent: $silent, permanent: $permanent
+  lastuuid:
+    usage: '&cLastUUID &8» &fUsage: $command <player|IP>'
+    message: '&aLastUUID &8» &fLast UUID for &6$name &fis ''&7&o$uuid&f'''
+  geoip:
+    usage: '&cGeoIP &8» &fUsage: $command <player|IP>'
+    message: '&bGeoIP &8» &6$target &fis from: &7&o$result'
+    error_disabled: '&cGeoIP &8» &fGeoIP support is not enabled in the configuration!'
+    error_unavailable: '&cGeoIP &8» &fGeoIP support is currently unavailable, has
+      it been downloaded yet?'
+    error_not_found: '&cGeoIP &8» &fGeoIP information for &c$target &fnot found.'
+  lockdown:
+    usage: '&cLockdown &8» &fUsage: $command <reason> | $command end'
+    message: '&cLockdown &8» &fServer lockdown activated for reason: &7&o$reason'
+    stopped: '&aLockdown &8» &fLockdown has been deactivated.'
+    kick_message: |-
+      Server lockdown active, try again later.
+      Reason: $reason
+    kick_message_global: |-
+      Network lockdown active, try again later.
+      Reason: $reason
+    error_not_active: '&cLockdown &8» &fLockdown is not active!'
+  litebans:
+    reload_success: '&aLiteBans &8» &fPlugin reloaded successfully.'
+    reload_fail: '&cLiteBans &8» &fPlugin reload failed.'
+    reload_fail_connect: '&cLiteBans &8» &fPlugin reloaded. but failed to connect
+      to database.'
+    reload_fail_config: |-
+      &cLiteBans &8» &fThe file config.yml is not valid and could not be loaded, the default configuration will be used.
+        &fPlease check the server console for more information.
+    reload_fail_messages: |-
+      &cLiteBans &8» &fThe file messages.yml is not valid and could not be loaded, default messages will be used.
+        &fPlease check the server console for more information.
+    reload_fail_templates: |-
+      &cLiteBans &8» &fThe file templates.yml is not valid and could not be loaded. Configured templates will be unavailable until this has been fixed.
+        &fPlease check the server console for more information.
+    fix_history: '&aLiteBans &8» &fFixing history for table &7&o$table&f...'
+    fix_history_result: '&aLiteBans &8» &fAdded &a$amount &fentries.'
+    fix_history_offline_uuids: '&cLiteBans &8» &c$amount &fUUIDs were not fetched
+      from Mojang since they are offline-mode UUIDs.'
+    import_usage: '&cLiteBans &8» &fUsage: $command import start'
+    import_start: '&aLiteBans &8» &fImporting from &7&o$db&f, this might take a while...'
+    import_finish: '&aLiteBans &8» &fImport finished successfully. &a$bans &fbans
+      imported, &a$ipbans &fIP-bans.'
+    import_finish_litebans: '&aLiteBans &8» &fImport finished successfully. Added
+      &a$amount &fentries to the database.'
+    import_fail: '&cLiteBans &8» &fImport failed. Check console.'
+    import_unsupported: '&cLiteBans &8» &fImporting from ''&7&o$name&f'' is not supported
+      yet!'
+    allow_usage: '&cLiteBans &8» &fUsage: $command allow <add/remove/check> <user>'
+    allow_added: '&aLiteBans &8» &fPlayer &6$playerName &fhas been &aallowed &fto
+      join the server.'
+    allow_removed: '&aLiteBans &8» &fPlayer &6$playerName &fhas been &cremoved &ffrom
+      the allow list.'
+    allow_check_true: '&aLiteBans &8» &fPlayer &6$playerName &fis allowed to join
+      the server.'
+    allow_check_false: '&aLiteBans &8» &fPlayer &6$playerName &fis not allowed to
+      join the server.'
+    allow_error_add: '&aLiteBans &8» &cError: &6$playerName &fis already allowed to
+      join the server.'
+    allow_error_remove: '&aLiteBans &8» &cError: &6$playerName &fis not allowed to
+      join the server.'
+    reset_database_confirm_quoted: |-
+      &cLiteBans &8» &fThis command will reset your database, removing all active and inactive punishments permanently.
+        &fWARNING: This operation is irreversible without restoring a database backup.
+        &fRun '&7&olitebans $commandArgs confirm&f' to continue.
+    reset_database_result: '&aLiteBans &8» &fRemoved &a$amount &f$type from &7&oserverScope&f.'
 duration:
   expired: expired
   forever: forever
@@ -444,74 +446,69 @@ webhook:
       title: Banned
       color: '#CC2200'
       content: |-
-        &6$playerName &fhas been banned!
+        $playerName has been banned!
         • Banned by: $executor
         • Duration: $duration
         • Reason: $reason
-      thumbnail: ''
       fields: ''
+      thumbnail: ''
     embed_unban:
       title: Unbanned
       color: '#727374'
       content: |-
-        &6$playerName &fhas been unbanned!
+        $playerName has been unbanned!
         • Unbanned by: $executor
         • Reason: $removalReason
-      thumbnail: ''
       fields: ''
+      thumbnail: ''
     embed_mute:
       title: Muted
       color: '#BB9000'
       content: |-
-        &6$playerName &fhas been muted!
+        $playerName has been muted!
         • Muted by: $executor
         • Duration: $duration
         • Reason: $reason
-      thumbnail: ''
       fields: ''
+      thumbnail: ''
     embed_unmute:
       title: Unmuted
       color: '#727374'
       content: |-
-        &6$playerName &fhas been unmuted!
+        $playerName has been unmuted!
         • Unmuted by: $executor
         • Reason: $removalReason
-      thumbnail: ''
       fields: ''
+      thumbnail: ''
     embed_warn:
       title: Warned
       color: '#FFAA11'
       content: |-
-        &6$playerName &fhas been warned!
+        $playerName has been warned!
         • Warned by: $executor
         • Duration: $duration
         • Reason: $reason
-      thumbnail: ''
       fields: ''
+      thumbnail: ''
     embed_unwarn:
       title: Unwarned
       color: '#727374'
       content: |-
-        &6$playerName &fhas been unwarned!
+        $playerName has been unwarned!
         • Unwarned by: $executor
         • Reason: $removalReason
-      thumbnail: ''
       fields: ''
+      thumbnail: ''
     embed_kick:
       title: Kicked
       color: '#999900'
       content: |-
-        &6$playerName &fhas been kicked!
+        $playerName has been kicked!
         • Kicked by: $executor
         • Reason: $reason
-      thumbnail: ''
       fields: ''
+      thumbnail: ''
     embed_alts:
       title: Scanned $playerName
       color: '#999999'
       thumbnail: ''
-hex_formats: |-
-  &%s
-  <%s>
-  {%s}
-error_stack_overflow: '&cStack overflow detected.'
