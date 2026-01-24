@@ -73,6 +73,7 @@ servers/wildy/plugins/Multiverse-Core/worlds.yml \
 servers/wildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/wildy/plugins/CMILib/Translations/Locale_EN.yml \
 servers/wildy/plugins/GriefPreventionData/config.yml \
+servers/wildy/plugins/WorldGuard/config.yml \
 servers/buildy/server.properties \
 servers/buildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/buildy/plugins/CMILib/Translations/Locale_EN.yml
@@ -93,6 +94,7 @@ servers/wildy/plugins/Multiverse-Core/worlds.yml \
 servers/wildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/wildy/plugins/CMILib/Translations/Locale_EN.yml \
 servers/wildy/plugins/GriefPreventionData/config.yml \
+servers/wildy/plugins/WorldGuard/config.yml \
 servers/buildy/server.properties \
 servers/buildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/buildy/plugins/CMILib/Translations/Locale_EN.yml
