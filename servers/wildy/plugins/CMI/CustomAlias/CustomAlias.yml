@@ -36,12 +36,8 @@ CustomAlias:
     - papi reload
     Perm: true
     Tab: false
-  log:
+  wsrc:
     Cmds:
-    - co i
-  넴주:
-    Cmds:
-    - spawn
-  넴:
-    Cmds:
-    - spawn
+    - asConsole! cmi effect [playerName] blindness 3 1 -s
+    - cmi rt [playerName] wsrc
+    Tab: true
