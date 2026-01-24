@@ -41,80 +41,41 @@
 # Supports PlaceHolderAPI variables
 # More information about specialized commands can be found at https://www.zrips.net/cmi/commands/specialized/
 
-GiveDiamonds:
-  Enabled: false
-  MinPlayers: 3
-  FeedBack: true
-  Repeat: true
+RegenWorld:
+  Enabled: true
   PerformOn:
     '1':
-      Hour: 18
+      Day: 28
+      Hour: 5
   Commands:
-  - cmi give [randomPlayer] diamond %rand/1-5%
-  - msg! [randomPlayer] &eYou just got diamonds!
-StopServer:
-  Enabled: false
-  PerformOn:
-    '1':
-      Hour: 3
-      Minute: 59
-      Second: 30
-  Commands:
-  - actionbar! &eServer will stop in &630 &esec!
+  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c30 &fseconds&o!
   - delay! 5
-  - actionbar! &eServer will stop in &625 &esec!
+  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c25 &fseconds&o!
   - delay! 5
-  - actionbar! &eServer will stop in &620 &esec!
+  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c20 &fseconds&o!
   - delay! 5
-  - actionbar! &eServer will stop in &615 &esec!
+  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c15 &fseconds&o!
   - delay! 5
-  - actionbar! &eServer will stop in &610 &esec!
+  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c10 &fseconds&o!
   - delay! 5
-  - actionbar! &eServer will stop in &65 &esec!
+  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c5 &fseconds&o!
   - delay! 1
-  - actionbar! &eServer will stop in &64 &esec!
+  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c4 &fseconds&o!
   - delay! 1
-  - actionbar! &eServer will stop in &63 &esec!
+  - title! &c&oRegen
+  - subtitle! &fResource worlds regenerating soon&o!
+  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c3 &fseconds&o!
   - delay! 1
-  - actionbar! &eServer will stop in &62 &esec!
+  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c2 &fseconds&o!
   - delay! 1
-  - actionbar! &eServer will stop in &61 &esec!
+  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c1 &fsecond&o!
   - delay! 1
-  - kickall! &eServer will be back online soon!
+  - kickall! &cRegen &8» &fServer will be back online soon&o!
   - delay! 1
-  - stop
-AllInOneJustExample:
-  Enabled: false
-  MinPlayers: 3
-  MaxPlayers: 10
-  FeedBack: false
-  Delay: 600
-  Repeat: true
-  PerformOn:
-    '1':
-      Month: 12
-      Day: monday
-      Hour: 18
-      Minute: 36
-      Second: 15
-    '2':
-      Hour: 18
-  Commands:
-  - cmi give [randomPlayer] diamond %rand/1-5%
-  - msg! [randomPlayer] &eYou just got diamonds!
-  - broadcast! &e[randomPlayer] just got some stuff!
-  - delay! 1
-  - actionbar! &eServer will stop in &61 &esec!
-  - kickall! &eServer will be back online soon!
-Announcer:
-  Enabled: false
-  MinPlayers: 1
-  FeedBack: false
-  Delay: 600
-  Repeat: true
-  Randomize: true
-  Commands:
-  - broadcast! &eRules can be found at &e/rules
-  - broadcast! &eKits can be accesed with &e/kits
-  - broadcast! &eIf you need help, ask staff
-  - broadcast! &eAdvertisement of other servers will be punished
+  - mv regen wsrc --seed
+  - delay! 10
+  - mv regen wsrc_nether --seed
+  - delay! 10
+  - mv regen wsrc_the_end --seed
+  - delay! 10
+  - broadcast! &aRegen &8» &fResource worlds have been regenerated successfully&o!
