@@ -60,6 +60,44 @@ The Velocity proxy handles player connections and routes them to backend Paper s
 - **Editions**: Java Edition & Bedrock Edition
 - **Discord**: <https://discord.gg/gc9F7eTYt4>
 
+## Git File Ignore Instructions
+
+Some configuration files are intended to be customized per deployment and should not be tracked by Git.
+
+Ignore the following when using this repository:
+
+```bash
+git update-index --skip-worktree \ 
+servers/wildy/server.properties \
+servers/wildy/plugins/Multiverse-Core/worlds.yml \
+servers/wildy/plugins/CMI/Translations/Locale_EN.yml \
+servers/wildy/plugins/CMILib/Translations/Locale_EN.yml \
+servers/wildy/plugins/GriefPreventionData/config.yml \
+servers/buildy/server.properties \
+servers/buildy/plugins/CMI/Translations/Locale_EN.yml \
+servers/buildy/plugins/CMILib/Translations/Locale_EN.yml
+```
+
+To see which files are being ignored, use:
+
+```bash
+git ls-files -v | grep ^S
+```
+
+If you need to re-include any of these files, use:
+
+```bash
+git update-index --no-skip-worktree \
+servers/wildy/server.properties \
+servers/wildy/plugins/Multiverse-Core/worlds.yml \
+servers/wildy/plugins/CMI/Translations/Locale_EN.yml \
+servers/wildy/plugins/CMILib/Translations/Locale_EN.yml \
+servers/wildy/plugins/GriefPreventionData/config.yml \
+servers/buildy/server.properties \
+servers/buildy/plugins/CMI/Translations/Locale_EN.yml \
+servers/buildy/plugins/CMILib/Translations/Locale_EN.yml
+```
+
 ## Scope
 
 This repository focuses on **server orchestration and automation**.
