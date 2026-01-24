@@ -49,14 +49,17 @@ RegenWorld:
       Hour: 5
   Commands:
   - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c30 &fseconds&o!
+  - co purge t:30d r:#wsrc
   - delay! 5
   - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c25 &fseconds&o!
   - delay! 5
   - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c20 &fseconds&o!
+  - co purge t:30d r:#wsrc_nether
   - delay! 5
   - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c15 &fseconds&o!
   - delay! 5
   - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c10 &fseconds&o!
+  - co purge t:30d r:#wsrc_the_end
   - delay! 5
   - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c5 &fseconds&o!
   - delay! 1
