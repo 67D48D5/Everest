@@ -1,5 +1,5 @@
 wsrc:
-  adjust-spawn: true
+  adjust-spawn: false
   alias: ''
   allow-advancement-grant: true
   allow-flight: false
@@ -9,7 +9,7 @@ wsrc:
   auto-load: true
   bed-respawn: true
   biome: ''
-  difficulty: easy
+  difficulty: hard
   entry-fee:
     enabled: false
     amount: 0.0
@@ -77,7 +77,7 @@ wsrc:
   world-blacklist: []
   version: 1.2
 wsrc_nether:
-  adjust-spawn: true
+  adjust-spawn: false
   alias: ''
   allow-advancement-grant: true
   allow-flight: false
@@ -87,7 +87,7 @@ wsrc_nether:
   auto-load: true
   bed-respawn: true
   biome: ''
-  difficulty: easy
+  difficulty: hard
   entry-fee:
     enabled: false
     amount: 0.0
@@ -155,7 +155,7 @@ wsrc_nether:
   world-blacklist: []
   version: 1.2
 wsrc_the_end:
-  adjust-spawn: true
+  adjust-spawn: false
   alias: ''
   allow-advancement-grant: true
   allow-flight: false
@@ -165,7 +165,7 @@ wsrc_the_end:
   auto-load: true
   bed-respawn: true
   biome: ''
-  difficulty: easy
+  difficulty: hard
   entry-fee:
     enabled: false
     amount: 0.0
@@ -185,7 +185,7 @@ wsrc_the_end:
   spawn-location:
     ==: MVSpawnLocation
     x: 0.0
-    y: 63.0
+    y: 64.0
     z: 0.0
     pitch: 0.0
     yaw: 0.0
@@ -233,7 +233,7 @@ wsrc_the_end:
   world-blacklist: []
   version: 1.2
 wwild:
-  adjust-spawn: true
+  adjust-spawn: false
   alias: ''
   allow-advancement-grant: true
   allow-flight: false
@@ -263,7 +263,7 @@ wwild:
   spawn-location:
     ==: MVSpawnLocation
     x: 0.0
-    y: 68.0
+    y: 64.0
     z: 0.0
     pitch: 0.0
     yaw: 0.0
@@ -311,7 +311,7 @@ wwild:
   world-blacklist: []
   version: 1.2
 wwild_nether:
-  adjust-spawn: true
+  adjust-spawn: false
   alias: ''
   allow-advancement-grant: true
   allow-flight: false
@@ -389,7 +389,7 @@ wwild_nether:
   world-blacklist: []
   version: 1.2
 wwild_the_end:
-  adjust-spawn: true
+  adjust-spawn: false
   alias: ''
   allow-advancement-grant: true
   allow-flight: false
