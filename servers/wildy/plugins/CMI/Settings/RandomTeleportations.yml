@@ -128,6 +128,12 @@ RandomTeleportation:
         X: 0
         Z: 0
       Circle: false
+      SurfaceOnly: false
+      FromAnotherWorld: true
+      RequireWorldPermission: false
+      YLimits:
+        Min: -64
+        Max: 320
       Ignore:
         Water: true
         Lava: true
@@ -137,12 +143,6 @@ RandomTeleportation:
         Materials: []
         Biomes: []
       PreferredBiomes: []
-      SurfaceOnly: false
-      FromAnotherWorld: true
-      RequireWorldPermission: false
-      YLimits:
-        Min: -64
-        Max: 320
     wsrc_the_end:
       Enabled: true
       MaxTries: 0
@@ -154,6 +154,12 @@ RandomTeleportation:
         X: 0
         Z: 0
       Circle: false
+      SurfaceOnly: false
+      FromAnotherWorld: true
+      RequireWorldPermission: false
+      YLimits:
+        Min: 0
+        Max: 256
       Ignore:
         Water: true
         Lava: true
@@ -163,12 +169,6 @@ RandomTeleportation:
         Materials: []
         Biomes: []
       PreferredBiomes: []
-      SurfaceOnly: false
-      FromAnotherWorld: true
-      RequireWorldPermission: false
-      YLimits:
-        Min: 0
-        Max: 256
     wsrc_nether:
       Enabled: true
       MaxTries: 0
@@ -180,6 +180,12 @@ RandomTeleportation:
         X: 0
         Z: 0
       Circle: false
+      SurfaceOnly: false
+      FromAnotherWorld: true
+      RequireWorldPermission: false
+      YLimits:
+        Min: 0
+        Max: 128
       Ignore:
         Water: true
         Lava: true
@@ -189,9 +195,3 @@ RandomTeleportation:
         Materials: []
         Biomes: []
       PreferredBiomes: []
-      SurfaceOnly: false
-      FromAnotherWorld: true
-      RequireWorldPermission: false
-      YLimits:
-        Min: 0
-        Max: 128
