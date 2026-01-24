@@ -117,3 +117,81 @@ RandomTeleportation:
         Materials: []
         Biomes: []
       PreferredBiomes: []
+    wsrc:
+      Enabled: true
+      MaxTries: 0
+      Cooldown: 0
+      Range:
+        Max: 1000
+        Min: 500
+      Center:
+        X: 0
+        Z: 0
+      Circle: false
+      Ignore:
+        Water: true
+        Lava: true
+        Leaves: true
+        PowderSnow: false
+        CrawlSpaces: false
+        Materials: []
+        Biomes: []
+      PreferredBiomes: []
+      SurfaceOnly: false
+      FromAnotherWorld: true
+      RequireWorldPermission: false
+      YLimits:
+        Min: -64
+        Max: 320
+    wsrc_the_end:
+      Enabled: true
+      MaxTries: 0
+      Cooldown: 0
+      Range:
+        Max: 1000
+        Min: 500
+      Center:
+        X: 0
+        Z: 0
+      Circle: false
+      Ignore:
+        Water: true
+        Lava: true
+        Leaves: true
+        PowderSnow: false
+        CrawlSpaces: false
+        Materials: []
+        Biomes: []
+      PreferredBiomes: []
+      SurfaceOnly: false
+      FromAnotherWorld: true
+      RequireWorldPermission: false
+      YLimits:
+        Min: 0
+        Max: 256
+    wsrc_nether:
+      Enabled: true
+      MaxTries: 0
+      Cooldown: 0
+      Range:
+        Max: 1000
+        Min: 500
+      Center:
+        X: 0
+        Z: 0
+      Circle: false
+      Ignore:
+        Water: true
+        Lava: true
+        Leaves: true
+        PowderSnow: false
+        CrawlSpaces: false
+        Materials: []
+        Biomes: []
+      PreferredBiomes: []
+      SurfaceOnly: false
+      FromAnotherWorld: true
+      RequireWorldPermission: false
+      YLimits:
+        Min: 0
+        Max: 128
