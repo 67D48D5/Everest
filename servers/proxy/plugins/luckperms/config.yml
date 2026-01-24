@@ -31,7 +31,7 @@
 # - When set to "global" this setting is effectively ignored.
 # - In all other cases, the value here is added to all players in a "server" context.
 # - See: https://luckperms.net/wiki/Context
-server: global
+server: proxy
 
 # +----------------------------------------------------------------------------------------------+ #
 # |                                                                                              | #
