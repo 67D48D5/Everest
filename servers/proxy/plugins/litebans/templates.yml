@@ -33,7 +33,6 @@ ban-templates:
       first:
         duration: 30d
     expire_ladder: 6 months
-
   Grief:
     reason: "Griefing / Gameplay Sabotage"
     ladder:
@@ -44,7 +43,6 @@ ban-templates:
       step1:
         duration: 1d
     expire_ladder: 3 months
-
   General:
     reason: "Violation of Community Standards"
     ladder:
@@ -70,7 +68,6 @@ mute-templates:
         duration: 10m
         message: "&eThis is a warning. Next time you will be muted for 1 hour."
     expire_ladder: 1 month
-
   Ad:
     reason: "Advertising"
     ladder:
