@@ -1,9 +1,9 @@
 RandomTeleportation:
   # How long force player to wait before using command again.
-  Cooldown: 14
+  Cooldown: 120
   # How many times to try find correct location for teleportation.
   # Keep it at low number, as player always can try again after delay
-  MaxTries: 16
+  MaxTries: 4
   # List of biomes to exclude from random teleportation
   ExcludedBiomes:
   - Ocean
