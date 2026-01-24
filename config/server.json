@@ -89,6 +89,10 @@
                     "type": "auto",
                     "pattern": "Logger-*"
                 },
+                "Multiverse-Core": {
+                    "type": "auto",
+                    "pattern": "multiverse-core-*"
+                },
                 "PlaceholderAPI": {
                     "type": "auto",
                     "pattern": "PlaceholderAPI-*"
