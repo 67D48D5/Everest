@@ -67,17 +67,22 @@ Some configuration files are intended to be customized per deployment and should
 Ignore the following when using this repository:
 
 ```bash
-git update-index --skip-worktree \ 
+git update-index --skip-worktree \
+# Wildy server.properties
 servers/wildy/server.properties \
+# Dummy level data files
 servers/wildy/wsrc/level.dat \
 servers/wildy/wsrc_nether/level.dat \
 servers/wildy/wsrc_the_end/level.dat \
-servers/wildy/plugins/Multiverse-Core/worlds.yml \
+# Translation files and configs
 servers/wildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/wildy/plugins/CMILib/Translations/Locale_EN.yml \
 servers/wildy/plugins/GriefPreventionData/config.yml \
+servers/wildy/plugins/Multiverse-Core/worlds.yml \
 servers/wildy/plugins/WorldGuard/config.yml \
+# Buildy server.properties
 servers/buildy/server.properties \
+# Translation files and configs
 servers/buildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/buildy/plugins/CMILib/Translations/Locale_EN.yml
 ```
@@ -92,13 +97,21 @@ If you need to re-include any of these files, use:
 
 ```bash
 git update-index --no-skip-worktree \
+# Wildy server.properties
 servers/wildy/server.properties \
-servers/wildy/plugins/Multiverse-Core/worlds.yml \
+# Dummy level data files
+servers/wildy/wsrc/level.dat \
+servers/wildy/wsrc_nether/level.dat \
+servers/wildy/wsrc_the_end/level.dat \
+# Translation files and configs
 servers/wildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/wildy/plugins/CMILib/Translations/Locale_EN.yml \
 servers/wildy/plugins/GriefPreventionData/config.yml \
+servers/wildy/plugins/Multiverse-Core/worlds.yml \
 servers/wildy/plugins/WorldGuard/config.yml \
+# Buildy server.properties
 servers/buildy/server.properties \
+# Translation files and configs
 servers/buildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/buildy/plugins/CMILib/Translations/Locale_EN.yml
 ```
