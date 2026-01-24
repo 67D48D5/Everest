@@ -101,6 +101,10 @@
                     "type": "auto",
                     "pattern": "TAB*"
                 },
+                "WorldGuard": {
+                    "type": "auto",
+                    "pattern": "worldguard-bukkit-*"
+                },
                 "mcMMO": {
                     "type": "auto",
                     "pattern": "mcMMO*"
@@ -120,10 +124,6 @@
                 "MobFarmManager": {
                     "type": "manual",
                     "pattern": "MobFarmManager*"
-                },
-                "WorldGuard": {
-                    "type": "manual",
-                    "pattern": "worldguard-bukkit-*"
                 },
                 "Vault": {
                     "type": "manual",

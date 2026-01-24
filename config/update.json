@@ -25,6 +25,7 @@
       "PlaceholderAPI": "https://ci.extendedclip.com/job/PlaceholderAPI",
       "ProtocolLib": "https://github.com/dmulloy2/ProtocolLib/releases/tag/dev-build",
       "TAB": "https://github.com/NEZNAMY/TAB/releases",
+      "WorldGuard": "https://builds.enginehub.org/job/worldguard/last-successful?branch=version/7.0.x",
       "mcMMO": "https://popicraft.net/jenkins/job/mcMMO"
     }
   },
@@ -40,8 +41,6 @@
         "GriefPrevention": "https://dev.bukkit.org/projects/grief-prevention/files/",
         "MobFarmManager": "https://www.spigotmc.org/resources/mob-farm-manager-supports-1-7-10-up-to-1-21-hopper-support.15127/updates/",
         "PlotSquared": "https://www.spigotmc.org/resources/plotsquared-v7.77506/updates/",
-        "JobsReborn": "https://www.spigotmc.org/resources/jobs-reborn.4216/updates/",
-        "WorldGuard": "https://dev.bukkit.org/projects/worldguard/files/",
         "Vault": "https://www.zrips.net/cmivault/"
       }
     }

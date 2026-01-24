@@ -183,17 +183,21 @@ resolve_github() {
 }
 
 resolve_enginehub() {
-    local url="$1" final_url html jar_url
+    local url="$1"
+    local html jar_url
 
-    final_url="$(curl -Ls -o /dev/null -w '%{url_effective}' "$url")" || return 1
-    [[ -z "$final_url" ]] && return 1
+    # Get HTML content via curl
+    html="$(curl -Ls "$url")" || return 1
 
-    html="$(curl_json "$final_url")" || return 1
-    jar_url="$(grep -Eo 'https://ci\.enginehub\.org/repository/download/[^"]+\.jar\?[^"]+' <<<"$html" | head -n1 || true)"
+    # Extract .jar URL from HTML
+    # Pattern: https://ci.enginehub.org starting and including .jar with parameters
+    # [^"]+ : match all characters until a quote (")
+    jar_url="$(echo "$html" | grep -Eo 'https://ci\.enginehub\.org/repository/download/[^"]+\.jar[^"]*' | head -n1)"
 
     [[ -z "$jar_url" ]] && return 1
 
-    echo "${jar_url//&amp;/&}"
+    # Convert HTML Entity (&amp;) to normal character (&) and output
+    echo "$jar_url" | sed 's/&amp;/\&/g'
 }
 
 # ------------------------------------------------------------------------------
