@@ -76,7 +76,7 @@ VALUES (
     (
         6,
         'admin',
-        'prefix.100.&c',
+        'prefix.100.&cA &8∥ &c',
         1,
         'global',
         'global',
@@ -826,7 +826,7 @@ VALUES (
     (
         81,
         'default',
-        'prefix.10.&6',
+        'prefix.10.&6U &8∥ &6',
         1,
         'global',
         'global',
