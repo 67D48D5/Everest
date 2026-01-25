@@ -12,7 +12,7 @@ START TRANSACTION;
 -- ---------------------------------------------------------
 
 INSERT INTO
-    msdgl.luckperms_groups (`name`)
+    msdgl.luckperms_groups
 VALUES ('admin'),
     ('default');
 
