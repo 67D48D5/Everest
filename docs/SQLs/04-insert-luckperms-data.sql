@@ -1064,5 +1064,7 @@ VALUES (
         '{}'
     );
 
+ALTER TABLE msdgl.luckperms_group_permissions AUTO_INCREMENT = 105;
+
 -- Finalize the transaction
 COMMIT;
