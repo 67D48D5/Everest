@@ -1,736 +1,30 @@
-# ************************************************************
-# Init SQL Script for Everest MC
-#
-# Database: msdgl, msdwc, msdbd
-# Host: MySQL 12.1.2-MariaDB
-# ************************************************************
+-- ---------------------------------------------------------
+-- WARNING:
+-- This script is for INITIALIZATION ONLY.
+-- It resets LuckPerms group permissions for admin/default.
+-- ---------------------------------------------------------
 
-# Base settings for the MySQL server
-# ************************************************************
+-- Start a transaction to ensure data integrity
+START TRANSACTION;
 
-# Create the local user with the specified password
-CREATE USER '46770d6'@'localhost' IDENTIFIED BY '7f04916';
-
-# Grant all privileges to the user on all databases
-GRANT ALL PRIVILEGES ON *.* TO '46770d6'@'localhost';
-
-# Apply the changes
-FLUSH PRIVILEGES;
-
-# Database for the Global server
-CREATE DATABASE msdgl CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-# Database for the Wildy server
-CREATE DATABASE msdwc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-# Database for the Buildy server
-CREATE DATABASE msdbd CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-# Apply the settings to the msdgl database
-# ************************************************************
-
-USE msdgl;
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */
-;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */
-;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */
-;
-SET NAMES utf8mb4;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */
-;
-/*!40101 SET @OLD_SQL_MODE='NO_AUTO_VALUE_ON_ZERO', SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */
-;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */
-;
-
-# Dump of table luckperms_group_permissions
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `luckperms_group_permissions`;
-
-CREATE TABLE `luckperms_group_permissions` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `name` varchar(36) NOT NULL,
-    `permission` varchar(200) NOT NULL,
-    `value` tinyint(1) NOT NULL,
-    `server` varchar(36) NOT NULL,
-    `world` varchar(64) NOT NULL,
-    `expiry` bigint(20) NOT NULL,
-    `contexts` varchar(200) NOT NULL,
-    PRIMARY KEY (`id`),
-    KEY `luckperms_group_permissions_name` (`name`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_uca1400_ai_ci;
-
-LOCK TABLES `luckperms_group_permissions` WRITE;
-/*!40000 ALTER TABLE `luckperms_group_permissions` DISABLE KEYS */
-;
+-- ---------------------------------------------------------
+-- LuckPerms groups
+-- ---------------------------------------------------------
 
 INSERT INTO
-    `luckperms_group_permissions`
+    msdgl.luckperms_groups (`name`)
+VALUES ('admin'),
+    ('default');
+
+-- ---------------------------------------------------------
+-- LuckPerms group permissions
+-- (reset + insert for idempotency)
+-- ---------------------------------------------------------
+
+INSERT INTO
+    msdgl.luckperms_group_permissions
 VALUES (
         1,
-        'default',
-        'coreprotect.inspect',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        2,
-        'default',
-        'weight.10',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        4,
-        'admin',
-        'weight.20',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        5,
-        'admin',
-        'displayname.Admin',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        7,
-        'default',
-        'cmi.command.sit',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        8,
-        'default',
-        'cmi.command.back',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        9,
-        'default',
-        'cmi.command.tpahere',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        10,
-        'default',
-        'cmi.command.sethome',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        11,
-        'default',
-        'cmi.command.tpaccept',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        12,
-        'default',
-        'cmi.command.tpa',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        22,
-        'default',
-        'cmi.command.home',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        23,
-        'default',
-        'cmi.command.homes',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        28,
-        'default',
-        'cmi.command.sethome.unlimited',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        29,
-        'default',
-        'cmi.command.sethome.overwrite',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        31,
-        'default',
-        'cmi.command.baltop',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        33,
-        'default',
-        'cmi.bedhome',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        36,
-        'default',
-        'cmi.command.warp.showlist',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        37,
-        'default',
-        'cmi.command.nick.different',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        40,
-        'default',
-        'cmi.command.playtimetop',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        41,
-        'default',
-        'cmi.command.warp',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        43,
-        'default',
-        'cmi.deathlocation',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        60,
-        'default',
-        'mcmmo.defaults',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        61,
-        'default',
-        'cmi.command.chatcolor',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        62,
-        'default',
-        'cmi.command.spawn',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        63,
-        'default',
-        'cmi.command.dback',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        65,
-        'default',
-        'cmi.command.nick',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        66,
-        'default',
-        'cmi.command.balance',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        67,
-        'default',
-        'cmi.command.hat',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        68,
-        'default',
-        'cmi.command.removehome',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        69,
-        'default',
-        'cmi.command.glow',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        71,
-        'default',
-        'cmi.command.glow.color.*',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        72,
-        'default',
-        'cmi.command.nick.bypass.length',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        74,
-        'default',
-        'cmi.command.nick.bypassblacklist',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        75,
-        'default',
-        'cmi.colors.*',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        79,
-        'default',
-        'cmi.command.sell',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        80,
-        'default',
-        'cmi.command.sell.all',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        81,
-        'default',
-        'cmi.command.worth',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        82,
-        'default',
-        'cmi.command.worthlist',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        86,
-        'default',
-        'cmi.informdurability',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        88,
-        'default',
-        'cmi.command.pay',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        89,
-        'default',
-        'cmi.command.reply',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        90,
-        'default',
-        'cmi.command.msg',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        91,
-        'default',
-        'cmi.command.cheque.withdraw',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        92,
-        'default',
-        'cmi.command.helpop',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        93,
-        'default',
-        'cmi.command.cheque',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        94,
-        'default',
-        'cmi.command.donate',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        95,
-        'default',
-        'cmi.command.kit',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        110,
-        'default',
-        'griefprevention.transferclaim',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        111,
-        'default',
-        'griefprevention.seeinactivity',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        112,
-        'default',
-        'griefprevention.buysellclaimblocks',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        113,
-        'default',
-        'griefprevention.visualizenearbyclaims',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        114,
-        'default',
-        'griefprevention.claims',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        115,
-        'default',
-        'griefprevention.trapped',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        116,
-        'default',
-        'griefprevention.seeclaimsize',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        117,
-        'default',
-        'griefprevention.createclaims',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        125,
-        'default',
-        'cmi.elytra.superboost',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        126,
-        'default',
-        'cmi.elytra.boost',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        127,
-        'default',
-        'cmi.elytra',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        128,
-        'default',
-        'cmi.elytra.freeflight',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        129,
-        'default',
-        'cmi.elytra.speedometer',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        132,
-        'default',
-        'cmi.command.prewards',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        162,
-        'default',
-        'cmi.kit.Newbie',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        164,
-        'default',
-        'cmi.command.sit.stairs',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        165,
-        'default',
-        'cmi.prewards.notification',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        166,
-        'default',
-        'cmi.prewards.*',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        169,
-        'default',
-        'displayname.User',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        175,
         'admin',
         '*',
         1,
@@ -740,199 +34,9 @@ VALUES (
         '{}'
     ),
     (
-        176,
-        'default',
-        'fawe.plotsquared',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        177,
-        'default',
-        'fawe.permpack.basic',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        179,
-        'default',
-        'fawe.plotsquared.member',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        181,
-        'default',
-        'cmi.command.give',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        182,
-        'default',
-        'cmi.command.walkspeed',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        186,
-        'default',
-        'cmi.command.flyspeed.*',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        188,
-        'default',
-        'cmi.command.flyspeed',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        190,
-        'default',
-        'plots.permpack.basicinbox',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        191,
-        'default',
-        'plots.permpack.basicflags',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        192,
-        'default',
-        'plots.permpack.basic',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        196,
-        'default',
-        'plots.merge.*',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        197,
-        'default',
-        'plots.plot.48',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        198,
-        'default',
-        'worldedit.navigation.thru.tool',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        199,
-        'default',
-        'worldedit.navigation.jumpto.tool',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        200,
-        'default',
-        'worldedit.schematic.load.web',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        201,
-        'default',
-        'velocity.command.glist',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        202,
-        'default',
-        'floodgate.command.unlinkaccount',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        203,
-        'default',
-        'floodgate.command.linkaccount',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        204,
-        'default',
-        'velocity.command.server',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        208,
+        2,
         'admin',
-        'viaversion.*',
+        'displayname.Admin',
         1,
         'global',
         'global',
@@ -940,27 +44,7 @@ VALUES (
         '{}'
     ),
     (
-        209,
-        'admin',
-        'litebans.*',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        210,
-        'admin',
-        'velocity.*',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        211,
+        3,
         'admin',
         'floodgate.*',
         1,
@@ -970,7 +54,7 @@ VALUES (
         '{}'
     ),
     (
-        212,
+        4,
         'admin',
         'geyser.*',
         1,
@@ -980,39 +64,9 @@ VALUES (
         '{}'
     ),
     (
-        216,
-        'default',
-        'cmi.command.gm',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        218,
-        'default',
-        'cmi.command.effect',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        220,
-        'default',
-        'cmi.command.gm.*',
-        1,
-        'buildy',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        221,
-        'default',
-        'cmi.command.sethome.iconpicker',
+        5,
+        'admin',
+        'litebans.*',
         1,
         'global',
         'global',
@@ -1020,9 +74,9 @@ VALUES (
         '{}'
     ),
     (
-        222,
-        'default',
-        'cmi.command.rankup',
+        6,
+        'admin',
+        'prefix.100.&c',
         1,
         'global',
         'global',
@@ -1030,9 +84,9 @@ VALUES (
         '{}'
     ),
     (
-        223,
-        'default',
-        'cmi.command.rankinfo',
+        7,
+        'admin',
+        'velocity.*',
         1,
         'global',
         'global',
@@ -1040,9 +94,9 @@ VALUES (
         '{}'
     ),
     (
-        224,
-        'default',
-        'cmi.command.ranklist',
+        8,
+        'admin',
+        'viaversion.*',
         1,
         'global',
         'global',
@@ -1050,7 +104,267 @@ VALUES (
         '{}'
     ),
     (
-        225,
+        9,
+        'admin',
+        'weight.20',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        10,
+        'default',
+        'cmi.bedhome',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        11,
+        'default',
+        'cmi.colors.*',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        12,
+        'default',
+        'cmi.command.back',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        13,
+        'default',
+        'cmi.command.balance',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        14,
+        'default',
+        'cmi.command.baltop',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        15,
+        'default',
+        'cmi.command.chatcolor',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        16,
+        'default',
+        'cmi.command.cheque',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        17,
+        'default',
+        'cmi.command.cheque.withdraw',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        18,
+        'default',
+        'cmi.command.dback',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        19,
+        'default',
+        'cmi.command.donate',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        20,
+        'default',
+        'cmi.command.glow',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        21,
+        'default',
+        'cmi.command.glow.color.*',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        22,
+        'default',
+        'cmi.command.hat',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        23,
+        'default',
+        'cmi.command.helpop',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        24,
+        'default',
+        'cmi.command.home',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        25,
+        'default',
+        'cmi.command.homes',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        26,
+        'default',
+        'cmi.command.kit',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        27,
+        'default',
+        'cmi.command.msg',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        28,
+        'default',
+        'cmi.command.nick',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        29,
+        'default',
+        'cmi.command.nick.bypass.length',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        30,
+        'default',
+        'cmi.command.nick.bypassblacklist',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        31,
+        'default',
+        'cmi.command.nick.different',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        32,
+        'default',
+        'cmi.command.pay',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        33,
+        'default',
+        'cmi.command.playtimetop',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        34,
+        'default',
+        'cmi.command.prewards',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        35,
         'default',
         'cmi.command.rankdown',
         1,
@@ -1060,7 +374,597 @@ VALUES (
         '{}'
     ),
     (
-        226,
+        36,
+        'default',
+        'cmi.command.rankinfo',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        37,
+        'default',
+        'cmi.command.ranklist',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        38,
+        'default',
+        'cmi.command.rankup',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        39,
+        'default',
+        'cmi.command.removehome',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        40,
+        'default',
+        'cmi.command.reply',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        41,
+        'default',
+        'cmi.command.rt',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        42,
+        'default',
+        'cmi.command.sell',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        43,
+        'default',
+        'cmi.command.sell.all',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        44,
+        'default',
+        'cmi.command.sethome',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        45,
+        'default',
+        'cmi.command.sethome.iconpicker',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        46,
+        'default',
+        'cmi.command.sethome.overwrite',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        47,
+        'default',
+        'cmi.command.sethome.unlimited',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        48,
+        'default',
+        'cmi.command.sit',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        49,
+        'default',
+        'cmi.command.sit.stairs',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        50,
+        'default',
+        'cmi.command.spawn',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        51,
+        'default',
+        'cmi.command.tpa',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        52,
+        'default',
+        'cmi.command.tpaccept',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        53,
+        'default',
+        'cmi.command.tpahere',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        54,
+        'default',
+        'cmi.command.warp',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        55,
+        'default',
+        'cmi.command.warp.showlist',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        56,
+        'default',
+        'cmi.command.worth',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        57,
+        'default',
+        'cmi.command.worthlist',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        58,
+        'default',
+        'cmi.deathlocation',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        59,
+        'default',
+        'cmi.elytra',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        60,
+        'default',
+        'cmi.elytra.boost',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        61,
+        'default',
+        'cmi.elytra.freeflight',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        62,
+        'default',
+        'cmi.elytra.speedometer',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        63,
+        'default',
+        'cmi.elytra.superboost',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        64,
+        'default',
+        'cmi.informdurability',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        65,
+        'default',
+        'cmi.kit.Newbie',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        66,
+        'default',
+        'cmi.prewards.*',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        67,
+        'default',
+        'cmi.prewards.notification',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        68,
+        'default',
+        'coreprotect.inspect',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        69,
+        'default',
+        'displayname.User',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        70,
+        'default',
+        'floodgate.command.linkaccount',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        71,
+        'default',
+        'floodgate.command.unlinkaccount',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        72,
+        'default',
+        'griefprevention.buysellclaimblocks',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        73,
+        'default',
+        'griefprevention.claims',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        74,
+        'default',
+        'griefprevention.createclaims',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        75,
+        'default',
+        'griefprevention.seeclaimsize',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        76,
+        'default',
+        'griefprevention.seeinactivity',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        77,
+        'default',
+        'griefprevention.transferclaim',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        78,
+        'default',
+        'griefprevention.trapped',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        79,
+        'default',
+        'griefprevention.visualizenearbyclaims',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        80,
+        'default',
+        'mcmmo.defaults',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        81,
+        'default',
+        'prefix.10.&6',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        82,
+        'default',
+        'velocity.command.glist',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        83,
+        'default',
+        'velocity.command.server',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        84,
+        'default',
+        'weight.10',
+        1,
+        'global',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        85,
+        'default',
+        'cmi.command.effect',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        86,
+        'default',
+        'cmi.command.flyspeed',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        87,
+        'default',
+        'cmi.command.flyspeed.*',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        88,
+        'default',
+        'cmi.command.give',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        89,
+        'default',
+        'cmi.command.gm',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        90,
+        'default',
+        'cmi.command.gm.*',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        91,
+        'default',
+        'cmi.command.walkspeed',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        92,
+        'default',
+        'fawe.permpack.basic',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        93,
+        'default',
+        'fawe.plotsquared',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        94,
+        'default',
+        'fawe.plotsquared.member',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        95,
         'default',
         'plots.add.8',
         1,
@@ -1070,7 +974,57 @@ VALUES (
         '{}'
     ),
     (
-        227,
+        96,
+        'default',
+        'plots.merge.*',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        97,
+        'default',
+        'plots.permpack.basic',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        98,
+        'default',
+        'plots.permpack.basicflags',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        99,
+        'default',
+        'plots.permpack.basicinbox',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        100,
+        'default',
+        'plots.plot.48',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        101,
         'default',
         'plots.trust.8',
         1,
@@ -1080,127 +1034,35 @@ VALUES (
         '{}'
     ),
     (
-        234,
-        'admin',
-        'prefix.100.&cA &8∥ &c',
-        1,
-        'global',
-        'global',
-        0,
-        '{}'
-    ),
-    (
-        235,
+        102,
         'default',
-        'prefix.10.&6U &8∥ &6',
+        'worldedit.navigation.jumpto.tool',
         1,
+        'buildy',
         'global',
+        0,
+        '{}'
+    ),
+    (
+        103,
+        'default',
+        'worldedit.navigation.thru.tool',
+        1,
+        'buildy',
+        'global',
+        0,
+        '{}'
+    ),
+    (
+        104,
+        'default',
+        'worldedit.schematic.load.web',
+        1,
+        'buildy',
         'global',
         0,
         '{}'
     );
 
-/*!40000 ALTER TABLE `luckperms_group_permissions` ENABLE KEYS */
-;
-UNLOCK TABLES;
-
-# Dump of table luckperms_groups
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `luckperms_groups`;
-
-CREATE TABLE `luckperms_groups` (
-    `name` varchar(36) NOT NULL,
-    PRIMARY KEY (`name`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_uca1400_ai_ci;
-
-LOCK TABLES `luckperms_groups` WRITE;
-/*!40000 ALTER TABLE `luckperms_groups` DISABLE KEYS */
-;
-
-INSERT INTO
-    `luckperms_groups` (`name`)
-VALUES ('admin'),
-    ('default');
-
-/*!40000 ALTER TABLE `luckperms_groups` ENABLE KEYS */
-;
-UNLOCK TABLES;
-
-# Dump of table tab_groups
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `tab_groups`;
-
-CREATE TABLE `tab_groups` (
-    `group` varchar(64) DEFAULT NULL,
-    `property` varchar(16) DEFAULT NULL,
-    `value` varchar(1024) DEFAULT NULL,
-    `world` varchar(64) DEFAULT NULL,
-    `server` varchar(64) DEFAULT NULL
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
-
-LOCK TABLES `tab_groups` WRITE;
-/*!40000 ALTER TABLE `tab_groups` DISABLE KEYS */
-;
-
-INSERT INTO
-    `tab_groups` (
-        `group`,
-        `property`,
-        `value`,
-        `world`,
-        `server`
-    )
-VALUES (
-        '_DEFAULT_',
-        'tabprefix',
-        '%luckperms-prefix%',
-        NULL,
-        NULL
-    ),
-    (
-        '_DEFAULT_',
-        'tagprefix',
-        '%luckperms-prefix%',
-        NULL,
-        NULL
-    ),
-    (
-        '_DEFAULT_',
-        'customtabname',
-        '%displayname%',
-        NULL,
-        NULL
-    ),
-    (
-        '_DEFAULT_',
-        'tabsuffix',
-        '%luckperms-suffix%',
-        NULL,
-        NULL
-    ),
-    (
-        '_DEFAULT_',
-        'tagsuffix',
-        '%luckperms-suffix%',
-        NULL,
-        NULL
-    );
-
-/*!40000 ALTER TABLE `tab_groups` ENABLE KEYS */
-;
-UNLOCK TABLES;
-
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */
-;
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */
-;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */
-;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
-;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
-;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
-;
+-- Finalize the transaction
+COMMIT;
