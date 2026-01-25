@@ -22,10 +22,10 @@
 # and if possible spread them out with a delay by using "delay! 0.3" or similar variable
 # This will allow server to catch up with his calculation instead of forcing him to do all of those commands at once
 firstJoinServer:
-  Enabled: false
+  Enabled: true
   Commands:
-  - cmi msg [playerName] !This is event command example!
-  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
+  - asConsole! cmi effect [playerName] blindness 3 1 -s
+  - cmi spawn [playerName]
 joinServer:
   Enabled: false
   Commands:
