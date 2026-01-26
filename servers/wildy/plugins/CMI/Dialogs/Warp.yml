@@ -10,6 +10,7 @@ WorldRTP:
       - "&c⚠ Warning:"
       - "&7It might be dangerous at night."
       - "&7Please prepare your gear!"
+      - ""
   Buttons:
     Columns: 2
     List:
@@ -23,6 +24,35 @@ WorldRTP:
         Width: 200
         Commands:
           - "cmi rt [playerName] wsrc"
+  Close:
+    Label: "Close"
+    Width: 100
+
+# Velocity server selector dialog
+MVServer:
+  Enabled: true
+  Label: "{#00e5ff}✈ &bSelect Server {#00e5ff}✈"
+  Description:
+    Width: 300
+    Lines:
+      - "&fWelcome, &6%cmi_user_display_name%"
+      - "&fWhere would you like to travel?"
+      - ""
+      - "{#4caf50}Wildy &fOnline: &7%cmi_server_online% {#white}Players"
+      - ""
+  Buttons:
+    Columns: 2
+    List:
+      - Label: "{#4caf50}🌲 Wildy {#81c784}(Survival)"
+        Width: 120
+        Commands:
+          - "server Wildy"
+        Close: true
+      - Label: "{#ffb74d}🧱 Buildy {#ffcc80}(Creative)"
+        Width: 200
+        Commands:
+          - "server Buildy"
+        Close: true
   Close:
     Label: "Close"
     Width: 100
