@@ -1,0 +1,39 @@
+Stats:
+  Enabled: true
+  Label: "{#00bcd4}📊 {#e0f7fa}Stats: {#white}%cmi_user_display_name% {#00bcd4}📊"
+  Description:
+    Width: 320
+    Lines:
+      - "{#b2ebf2}Here are your server statistics."
+      - ""
+      - "{#80deea}First Join: {#white}%cmi_user_first_join%"
+      - "{#80deea}Last Seen: {#white}%cmi_user_last_seen%"
+  Buttons:
+    Columns: 2
+    List:
+      - Label: "{#ffca28}💰 Balance: {#fff9c4}%cmi_user_balance_formatted%"
+        Width: 155
+        Commands: "balance"
+        Close: true
+      - Label: "{#66bb6a}📶 Ping: {#e8f5e9}%player_ping% ms"
+        Width: 155
+        Commands: "ping"
+        Close: true
+      - Label: "{#ef5350}⚔ Total Kills: {#ffebee}%statistic_player_kills%"
+        Width: 155
+        Commands: "cmi stats"
+        Close: true
+      - Label: "{#bdbdbd}☠ Total Deaths: {#f5f5f5}%statistic_deaths%"
+        Width: 155
+        Close: true
+      - Label: "{#42a5f5}⏳ Playtime: {#e3f2fd}%cmi_user_playtime_formatted%"
+        Width: 155
+        Commands: "cmi playtime"
+        Close: true
+      - Label: "{#ab47bc}🏆 User Rank: {#f3e5f5}%vault_rank%"
+        Width: 155
+        Commands: "list"
+        Close: true
+  Close:
+    Label: "{#red}Close"
+    Width: 100
