@@ -1251,14 +1251,14 @@ Spawn:
   # RespawnLocation will indicate if you want to use this location as possible respawn point for player after death
   # TeleportFrom will indicate list of worlds from which player should be teleported to this spawn point
   Main:
-    Location: wwild;0.5;13.0;0.5;-135.09;-0.15
+    Location: wwild;0.5;14.0;0.5;-135.0;0
     RespawnLocation: false
     Rng: 0
     TeleportFrom: []
   # Defines players first spawn point when he logs into server for the first time
   FirstSpawn:
     Use: true
-    Location: wwild;0.5;13.2;0.5;-134.93;7.35
+    Location: wwild;0.5;14.0;0.5;-135.0;0
 Newbie:
   # Kit name to give for new players joining server
   Kit: Newbie
@@ -1287,7 +1287,7 @@ Kits:
       - closeinv!
     InfoButton:
       # Extra button to be used in case you want to provide any aditional information when clicking on it
-      Use: false
+      Use: true
       Slot: 1
       Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDZiYTYzMzQ0ZjQ5ZGQxYzRmNTQ4OGU5MjZiZjNkOWUyYjI5OTE2YTZjNTBkNjEwYmI0MGE1MjczZGM4YzgyIn19fQ==
       Commands:
@@ -1327,7 +1327,7 @@ DynamicViewRange:
   Enabled: false
 WorldLimits:
   # By setting to true fly and gamemode limitations per world will be aplied for player on world change if they don't have appropiate permission node
-  Enabled: false
+  Enabled: true
   # World list with default game modes
   # If player will have cmi.worldlimit.gamemode.bypass permission node, game mode wont be changed
   # Possible modes: creative, survival, adventure, spectator, 
@@ -1341,7 +1341,9 @@ WorldLimits:
   # If player will have cmi.worldlimit.elytra.bypass permission node, elytra flight will not be prevented
   # Players joining worlds with disable elytra flight will get their elytra dismounted if possible
   ElytraFlight:
-  - worldName:False
+  - wsrc:False
+  - wsrc_nether:False
+  - wsrc_the_end:False
   # When set to false, only players with cmi.worldlimit.fly.aboveroof can fly above world build limit
   FlyAboveRoof: true
   # When set to false, only players with cmi.worldlimit.fly.aboveroof can fly above world build limit
@@ -1489,6 +1491,8 @@ Cooldowns:
   - back:48
   - cmi spawn:128
   - spawn:128
+  - cmi rt:120
+  - rt:120
 ShulkerBoxes:
   # When set to true, players will not have option to open shulker boxes while in combat
   # Combat timer can be defined under combat section
