@@ -7,9 +7,9 @@ WorldRTP:
     Lines:
       - "&fTeleport to a random location"
       - ""
-      - "&c⚠ Warning:"
-      - "&7It might be dangerous at night."
-      - "&7Please prepare your gear!"
+      - "&c⚠ Warning ⚠"
+      - "&fIt might be dangerous at night."
+      - "&fPlease prepare your gear!"
       - ""
   Buttons:
     Columns: 2
@@ -38,7 +38,9 @@ MVServer:
       - "&fWelcome, &6%cmi_user_display_name%"
       - "&fWhere would you like to travel?"
       - ""
-      - "{#4caf50}Wildy &fOnline: &7%cmi_server_online% {#white}Players"
+      - "&fOnline Players"
+      - "{#4caf50}Wildy &fServer &8» &e%cmi_bungee_current_Wildy% {#white}Players"
+      - "{#ffb74d}Buildy &fServer &8» &e%cmi_bungee_current_Buildy% {#white}Players"
       - ""
   Buttons:
     Columns: 2
@@ -46,12 +48,12 @@ MVServer:
       - Label: "{#4caf50}🌲 Wildy {#81c784}(Survival)"
         Width: 120
         Commands:
-          - "server Wildy"
+          - "server Wildy [playerName]"
         Close: true
       - Label: "{#ffb74d}🧱 Buildy {#ffcc80}(Creative)"
         Width: 200
         Commands:
-          - "server Buildy"
+          - "server Buildy [playerName]"
         Close: true
   Close:
     Label: "Close"
