@@ -6,34 +6,38 @@ Stats:
     Lines:
       - "{#b2ebf2}Here are your server statistics."
       - ""
-      - "{#80deea}First Join: {#white}%cmi_user_first_join%"
-      - "{#80deea}Last Seen: {#white}%cmi_user_last_seen%"
+      - "{#80deea}First Join: {#white}%player_first_join_date%"
+      - "{#80deea}Total Playtime: {#white}%cmi_user_playtime_hours%"
+      - ""
+      - "%cmi_user_playtimetop%"
+      - "%cmi_user_baltop%"
+      - ""
   Buttons:
     Columns: 2
     List:
       - Label: "{#ffca28}💰 Balance: {#fff9c4}%cmi_user_balance_formatted%"
         Width: 155
-        Commands: "balance"
+        Commands: "balancetop"
         Close: true
-      - Label: "{#66bb6a}📶 Ping: {#e8f5e9}%player_ping% ms"
+      - Label: "{#66bb6a}📶 Ping: {#e8f5e9}%cmi_user_ping% ms"
         Width: 155
         Commands: "ping"
         Close: true
-      - Label: "{#ef5350}⚔ Total Kills: {#ffebee}%statistic_player_kills%"
+      - Label: "{#ef5350}⚔ Total Kills: {#ffebee}%cmi_user_stats_"
         Width: 155
         Commands: "cmi stats"
         Close: true
-      - Label: "{#bdbdbd}☠ Total Deaths: {#f5f5f5}%statistic_deaths%"
+      - Label: "{#bdbdbd}☠ Total Deaths: {#f5f5f5}%cmi_user_stats_"
         Width: 155
         Close: true
       - Label: "{#42a5f5}⏳ Playtime: {#e3f2fd}%cmi_user_playtime_formatted%"
         Width: 155
-        Commands: "cmi playtime"
+        Commands: "playtimetop"
         Close: true
-      - Label: "{#ab47bc}🏆 User Rank: {#f3e5f5}%vault_rank%"
+      - Label: "{#ab47bc}🏆 User Rank: {#f3e5f5}%cmi_user_rank_displayname%"
         Width: 155
-        Commands: "list"
+        Commands: "rankup"
         Close: true
   Close:
-    Label: "{#red}Close"
+    Label: "Close"
     Width: 100
