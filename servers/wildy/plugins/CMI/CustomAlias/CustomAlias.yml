@@ -32,7 +32,6 @@ CustomAlias:
     - gamerule wsrc_the_end announceAdvancements false
     - gamerule wsrc_the_end spectatorsGenerateChunks false
     - papi ecloud download GriefPrevention
-    - papi ecloud download Statistic
     - papi ecloud download Server
     - papi reload
     Perm: true

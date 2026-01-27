@@ -21,7 +21,7 @@ CustomAlias:
     Cmds:
     - gamerule world announceAdvancements false
     - gamerule world spectatorsGenerateChunks false
-    - papi ecloud download server
+    - papi ecloud download Server
     - papi reload
     Perm: true
     Tab: false
