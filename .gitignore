@@ -3,83 +3,82 @@
 # ------------------------------------------------------------------------------
 # System & IDE
 # ------------------------------------------------------------------------------
-.DS_Store
-.idea/
+
+# Visual Studio Code
 .vscode/
 
-# Temporary files created by editors
-*.swp
-*.log
+# macOS
+.DS_Store
+
+# ------------------------------------------------------------------------------
+# Security (Files that should never be committed for security reasons)
+# ------------------------------------------------------------------------------
+
+# Private resources
+*.dev.*
+
+# Ignore all private keys and certificates
+*.pem
+*.key
+
+# If RCON passwords or similar are included, consider excluding server.properties
+# server.properties
 
 # ------------------------------------------------------------------------------
 # Binary Files (Compiled files & Libraries)
 # ------------------------------------------------------------------------------
-# Ignore all jar, zip, tar.gz files
+
+# Java binary files
 *.jar
-*.zip
-*.tar.gz
 
-# But keep the library folder structure itself (with .gitkeep files)
-!/libraries/**/.gitkeep
-
-# ------------------------------------------------------------------------------
-# Runtime Data
-# ------------------------------------------------------------------------------
-# Log and cache files
-logs/
-cache/
-debug/
-crash-reports/
+# Paper remapped jar directory
 .paper-remapped/
 
-# Ignore database files if exists
-*.sqlite
-*.db
-
-# Minecraft specific runtime files
-ops.json
-banned*.json
-whitelist.json
-usercache.json
-version_history.json
-permissions.yml
-help.yml
-wepif.yml
-
-# Update date files
-lastupdate
-.license
-
 # ------------------------------------------------------------------------------
-# Server Instances (Core Data Management)
+# Server Instances Data (Runtime Data)
 # ------------------------------------------------------------------------------
-# Map data (very large, recommended to exclude)
-*.dat_old
-*.mcmeta
-*.lock
-*.mca
-*.dat
 
-# Ignore plugin symbolic links or JAR files but track configuration folders
-servers/**/plugins/*.jar
+# Default runtime data files
+servers/**/ops.json
+servers/**/banned*.json
+servers/**/whitelist.json
+servers/**/usercache.json
+servers/**/version_history.json
 
-# Ignore spark plugin data
-servers/**/plugins/spark/
+servers/**/help.yml
+servers/**/wepif.yml
+servers/**/permissions.yml
 
-# Statistics and player data (optional: exclude if frequent resets)
-servers/**/stats/
-servers/**/playerdata/
-servers/**/advancements/
-servers/**/mcmmo_regions/
+servers/**/.console_history
 
-# Unnecessary files related to Paper/Spigot
+# World and player data
+servers/**/**/advancements/*.json
+servers/**/**/stats/*.json
+
+servers/**/*.dat**
+servers/**/*.lock
+servers/**/*.mcmeta
+servers/**/*.mca
+servers/**/*.mcm
+
+# Symbolic link files
 servers/**/cache
 servers/**/versions
 servers/**/libraries
-servers/**/.console_history
+
+# Database files if exists
+servers/**/*.sqlite
+servers/**/*.db
+
+# Log files
+servers/**/*.log**
+
+# ------------------------------------------------------------------------------
+# Specific Plugin Files
+# ------------------------------------------------------------------------------
 
 # Velocity language files (can be large and are not usually modified)
-servers/proxy/lang
+servers/proxy/lang/*.properties
 
 # LiteBans cache files
 servers/proxy/plugins/litebans/.version
@@ -92,59 +91,38 @@ servers/proxy/plugins/Geyser*/locales/*.json
 servers/**/plugins/[Ll]uck[Pp]erms/translations
 servers/**/plugins/[Ll]uck[Pp]erms/libs
 
-# FastAsyncWorldEdit data files
-servers/**/plugins/FastAsyncWorldEdit/schematics/
-servers/**/plugins/FastAsyncWorldEdit/sessions/
+# CMI plugin log files
+servers/**/plugins/CMI/**Log/*.yml
+
+# CMILib plugin save and translation files
+servers/**/plugins/CMILib/Saves/*.yml
+servers/**/plugins/CMILib/Translations/Items/*.yml
 
 # Chunky plugin task files
 servers/**/plugins/Chunky/tasks/
 
-# CMI plugin log files
-servers/**/plugins/CMI/**Log**/
+# CoreProtect license file
+servers/**/plugins/Logger/.license
 
-# CMILib plugin save and translation files
-servers/**/plugins/CMILib/Saves/
-servers/**/plugins/CMILib/Translations/Items/
+# FastAsyncWorldEdit data files
+servers/**/plugins/FastAsyncWorldEdit/schematics/
+servers/**/plugins/FastAsyncWorldEdit/sessions/
 
 # TAB plugin playerdata file
 servers/**/plugins/TAB/playerdata.yml
 servers/**/plugins/TAB/skincache.yml
 
+# Spark plugin data
+servers/**/plugins/spark/
+
 # PlotSquared template files
 servers/**/plugins/PlotSquared/templates/
 servers/**/plugins/PlotSquared/backups/
 
-# DiscordSRV plugin data files
-servers/**/plugins/**DiscordSRV/
-
-# ------------------------------------------------------------------------------
-# Security (Files that should never be committed for security reasons)
-# ------------------------------------------------------------------------------
-*.dev.*
-
-# Ignore all private keys and certificates
-*.pem
-*.key
-*.gpg
-
-# If RCON passwords or similar are included, consider excluding server.properties as well
-# server.properties
+# ProtocolLib update file
+servers/**/plugins/ProtocolLib/lastupdate
 
 # ------------------------------------------------------------------------------
 # Exceptions (Files that should be tracked exceptionally)
 # ------------------------------------------------------------------------------
-# Keep script execution permissions (depends on Git settings)
-!*.sh
-
-# Template files must be tracked
-!*.template
-!/templates/**
-
-# Forcing tracking of specific configuration files
-!servers/**/plugins/CMI/Dialogs/
-
-!server.properties
-!bukkit.yml
-!spigot.yml
-!velocity.toml
-!commands.yml
+!servers/**/server.properties
