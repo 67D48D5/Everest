@@ -2,7 +2,7 @@
 
 wwild:
   spawn:
-    Loc: -4.0:14.0:-4.0:4.0:8.0:4.0
+    Loc: -4.0:13.0:-4.0:4.0:8.0:4.0
     enabled: true
     effect: Dust
     color: 8224125
@@ -16,6 +16,6 @@ wwild:
     activationRange: 16
     commandsWithoutTp: true
     commands:
-    - asConsole! cmi effect [playerName] waterBreathing 4 1 -s
+    - asConsole! cmi effect [playerName] waterBreathing 14 1 -s
     - asConsole! cmi effect [playerName] blindness 4 1 -s
     - asConsole! cmi dialogs worldrtp [playerName]
