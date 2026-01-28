@@ -2,7 +2,7 @@
 
 wwild:
   spawn:
-    Loc: -4.0:12.0:-4.0:4.0:8.0:4.0
+    Loc: -4.0:14.0:-4.0:4.0:8.0:4.0
     enabled: true
     effect: Dust
     color: 8224125
