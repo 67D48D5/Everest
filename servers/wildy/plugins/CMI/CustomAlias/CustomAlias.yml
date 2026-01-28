@@ -36,8 +36,20 @@ CustomAlias:
     - papi reload
     Perm: true
     Tab: false
+  worlds:
+    Cmds:
+    - asConsole! cmi dialogs worldrtp [playerName]
+    Tab: true
+  servers:
+    Cmds:
+    - asConsole! cmi dialogs mvserver [playerName]
+    Tab: true
+  stats:
+    Cmds:
+    - asConsole! cmi dialogs stats [playerName]
+    Tab: true
   wsrc:
     Cmds:
     - asConsole! cmi effect [playerName] blindness 3 1 -s
-    - cmi rt [playerName] wsrc
+    - asConsole! cmi dialogs worldrtp [playerName]
     Tab: true
