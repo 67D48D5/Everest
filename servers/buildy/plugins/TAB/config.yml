@@ -3,39 +3,39 @@ header-footer:
   designs:
     default:
       header:
-      - ''
-      - '   &6&l&o⛰ &f&l&oEverest &a&l&oMC   '
-      - ''
+        - ""
+        - "   &6&l&o⛰ &f&l&oEverest &a&l&oMC   "
+        - ""
       footer:
-      - ''
-      - '%server_tps_1_colored% &8/ &e&o%ping% &7ms'
-      - ''
+        - ""
+        - "%server_tps_1_colored% &8/ &e&o%ping% &7ms"
+        - ""
 tablist-name-formatting:
   enabled: true
-  disable-condition: ''
+  disable-condition: ""
 scoreboard-teams:
   enabled: true
   enable-collision: true
   invisible-nametags: false
   sorting-types:
-  - GROUPS:admin,default
-  - PLACEHOLDER_A_TO_Z:%player%
+    - GROUPS:admin,default
+    - PLACEHOLDER_A_TO_Z:%player%
   case-sensitive-sorting: true
   can-see-friendly-invisibles: false
-  disable-condition: ''
+  disable-condition: ""
 prevent-spectator-effect:
   enabled: true
 bossbar:
   enabled: true
   toggle-command: /bossbar
   remember-toggle-choice: false
-  hidden-by-default: true
+  hidden-by-default: false
   bars:
     Example:
       style: PROGRESS
       color: YELLOW
-      progress: '81'
-      text: '&6&oEverest &lMC'
+      progress: "100"
+      text: "&6&l&oEverest &f&l&oMC"
 scoreboard:
   enabled: true
   toggle-command: /sb
@@ -44,14 +44,14 @@ scoreboard:
   delay-on-join-milliseconds: 0
   scoreboards:
     default:
-      title: '&6&l&o⛰ &f&l&oBuildy'
+      title: "&6&l&o⛰ &f&l&oBuildy"
       lines:
-      - '&8&m                 '
-      - '&7Playtime &8| &e%cmi_user_playtime_hourst%'
-      - '&8&m                 '
-      - '&6%plotsquared_currentplot_owner%'
-      - '&7Address &8| &e&o%plotsquared_currentplot_xy%'
-      - '&8&m                 '
+        - "&8&m                 "
+        - "&7Playtime &8| &e%cmi_user_playtime_hourst%"
+        - "&8&m                 "
+        - "&6%plotsquared_currentplot_owner%"
+        - "&7Address &8| &e&o%plotsquared_currentplot_xy%"
+        - "&8&m                 "
 mysql:
   enabled: true
   host: 127.0.0.1
@@ -61,17 +61,15 @@ mysql:
   password: 7f04916
   useSSL: false
 placeholders:
-  date-format: dd.MM.yyyy
-  time-format: '[HH:mm:ss / h:mm a]'
+  date-format: MM/dd/yyyy
+  time-format: "[HH:mm:ss / h:mm a]"
   time-offset: 0
   register-tab-expansion: false
 placeholder-refresh-intervals:
   default-refresh-interval: 1000
-  '%server_tps_1_colored%': 700
-  '%player_ping%': 700
 primary-group-finding-list:
-- admin
-- default
+  - admin
+  - default
 permission-refresh-interval: 10000
 use-online-uuid-in-tablist: true
 assign-groups-by-permissions: false
@@ -90,12 +88,12 @@ ping-spoof:
 playerlist-objective:
   enabled: false
   title: TAB
-  value: ''
+  value: ""
   render-type: INTEGER
 belowname-objective:
   enabled: false
   fancy-value-default: NPC
-  fancy-value: '&c%health%'
+  fancy-value: "&c%health%"
 proxy-support:
   enabled: false
   channel-name-suffix: TAB
