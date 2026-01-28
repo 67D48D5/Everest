@@ -1,33 +1,3 @@
-# For random teleportation to different worlds
-WorldRTP:
-  Enabled: true
-  Label: "{#4caf50}⛏ {#81c784}World RTP {#4caf50}⛏"
-  Description:
-    Width: 300
-    Lines:
-      - "&fTeleport to a random location"
-      - ""
-      - "&c⚠ Warning ⚠"
-      - "&fIt might be dangerous at night."
-      - "&fPlease prepare your gear!"
-      - ""
-  Buttons:
-    Columns: 2
-    List:
-      - Label: "&fGo to &aWild &fWorld"
-        Close: true
-        Width: 120
-        Commands:
-          - "cmi rt [playerName] wwild"
-      - Label: "&fGo to &bResource &fWorld"
-        Close: true
-        Width: 200
-        Commands:
-          - "cmi rt [playerName] wsrc"
-  Close:
-    Label: "Close"
-    Width: 100
-
 # Velocity server selector dialog
 MVServer:
   Enabled: true
