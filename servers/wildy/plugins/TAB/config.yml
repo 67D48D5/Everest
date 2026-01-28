@@ -29,13 +29,14 @@ bossbar:
   enabled: true
   toggle-command: /bossbar
   remember-toggle-choice: false
-  hidden-by-default: true
+  hidden-by-default: false
   bars:
-    Example:
+    wsrc:
       style: PROGRESS
-      color: YELLOW
-      progress: "81"
-      text: "&6&oEverest &lMC"
+      color: BLUE
+      progress: "100"
+      text: "&3&oResource &fWorld"
+      display-condition: "%world%=wsrc|%world%=wsrc_nether|%world%=wsrc_the_end"
 scoreboard:
   enabled: true
   toggle-command: /sb
@@ -43,18 +44,6 @@ scoreboard:
   hidden-by-default: false
   delay-on-join-milliseconds: 0
   scoreboards:
-    wsrc:
-      display-condition: "%world%=wsrc|%world%=wsrc_nether|%world%=wsrc_the_end"
-      title: "&6&l&o⛰ &f&l&oWildy"
-      lines:
-        - "&8&m                    "
-        - "&7Rank &8| &f%cmi_user_rank_displayname%"
-        - "&7Playtime &8| &e%cmi_user_playtime_hourst%"
-        - "&8&m                    "
-        - "&7World &8| &7&o@wsrc"
-        - "&7Money &8| &e%cmi_user_balance_formatted%"
-        - "&7mcMMO &8| &e%mcmmo_power_level%"
-        - "&8&m                    "
     default:
       title: "&6&l&o⛰ &f&l&oWildy"
       lines:
