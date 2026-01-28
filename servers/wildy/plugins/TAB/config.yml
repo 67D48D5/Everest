@@ -64,14 +64,12 @@ mysql:
   password: 7f04916
   useSSL: false
 placeholders:
-  date-format: dd.MM.yyyy
+  date-format: MM/dd/yyyy
   time-format: "[HH:mm:ss / h:mm a]"
   time-offset: 0
   register-tab-expansion: false
 placeholder-refresh-intervals:
   default-refresh-interval: 1000
-  "%server_tps_1_colored%": 700
-  "%player_ping%": 700
 primary-group-finding-list:
   - admin
   - default
