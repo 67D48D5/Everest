@@ -81,4 +81,4 @@ RegenWorld:
   - delay! 10
   - mv regen wsrc_the_end --seed
   - delay! 10
-  - stop
+  - restart
