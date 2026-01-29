@@ -1,5 +1,5 @@
-# For random teleportation to different worlds
-WorldRTP:
+# For random teleportation and moving dialog
+Move:
   Enabled: true
   Label: "{#4caf50}⛏ {#81c784}World RTP {#4caf50}⛏"
   Description:
@@ -8,53 +8,32 @@ WorldRTP:
       - "&fTeleport to a random location"
       - ""
       - "&c⚠ Warning ⚠"
-      - "&fIt might be dangerous at night."
-      - "&fPlease prepare your gear!"
+      - "&7It might be dangerous at night."
+      - "&7Please prepare your gear!"
       - ""
   Buttons:
-    Columns: 2
+    Columns: 1
     List:
-      - Label: "&fGo to &aWild &fWorld"
-        Close: true
-        Width: 120
-        Commands:
-          - "cmi rt [playerName] wwild"
-      - Label: "&fGo to &bResource &fWorld"
+      - Label: "&fGo to &6Home"
         Close: true
         Width: 200
         Commands:
-          - "cmi rt [playerName] wsrc"
-  Close:
-    Label: "Close"
-    Width: 100
+          - "closeinv!"
+          - "asPlayer! cmi homes"
 
-# Velocity server selector dialog
-MVServer:
-  Enabled: true
-  Label: "{#00e5ff}✈ &bSelect Server {#00e5ff}✈"
-  Description:
-    Width: 300
-    Lines:
-      - "&fWelcome, &6%cmi_user_display_name%"
-      - "&fWhere would you like to travel?"
-      - ""
-      - "&fOnline Players"
-      - "{#4caf50}Wildy &8» &e%cmi_bungee_current_Wildy% {#white}Players"
-      - "{#ffb74d}Buildy &8» &e%cmi_bungee_current_Buildy% {#white}Players"
-      - ""
-  Buttons:
-    Columns: 2
-    List:
-      - Label: "{#4caf50}🌲 Wildy {#81c784}(Survival)"
-        Width: 120
-        Commands:
-          - "server Wildy [playerName]"
+      - Label: "&fGo to &cLast Death &fLocation"
         Close: true
-      - Label: "{#ffb74d}🧱 Buildy {#ffcc80}(Creative)"
         Width: 200
         Commands:
-          - "server Buildy [playerName]"
+          - "closeinv!"
+          - "asPlayer! cmi dback"
+
+      - Label: "&fRandom Teleport to &aOverworld"
         Close: true
+        Width: 200
+        Commands:
+          - "closeinv!"
+          - "asPlayer! cmi rt [playerName] wwild"
   Close:
     Label: "Close"
     Width: 100
