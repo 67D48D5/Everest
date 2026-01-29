@@ -45,10 +45,6 @@ CustomAlias:
     Cmds:
       - asConsole! cmi dialogs server [playerName]
     Tab: true
-  server:
-    Cmds:
-      - asConsole! cmi dialogs server [playerName]
-    Tab: true
   servers:
     Cmds:
       - asConsole! cmi dialogs server [playerName]
