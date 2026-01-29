@@ -6,8 +6,8 @@
 # You can specify a different format per channel. Let's say you have a channel named: "mychannel".
 # If you want it to have other formatting than the one defined globally you can add following properties:
 #
-# DiscordToMinecraftChatMessageFormat_mychannel: "[&bDiscord From MyChannel &r| %toprolecolor%%toprole%&r] %name% » %message%"
-# DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&r] %name% » %message%"
+# DiscordToMinecraftChatMessageFormat_mychannel: "[&bDiscord From MyChannel &r| %toprolecolor%%toprole%&r] %name% &8» &r%message%"
+# DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&r] %name% &8» &r%message%"
 #
 # Available placeholders:
 # %allroles%:       all of the person's roles combined with DiscordToMinecraftAllRolesSeparator between them all
@@ -49,10 +49,10 @@
 #
 # NOTE: The %reply% placeholder needs to be present in the format if you want the DiscordToMinecraftMessageReplyFormat to display in your message.
 #
-DiscordToMinecraftChatMessageFormat: "[<aqua>Discord</aqua> | %toprolecolor%%toprolealias%<reset>] %name%%reply% » %message%"
-DiscordToMinecraftChatMessageFormatNoRole: "[<aqua>Discord</aqua>] %name%%reply% » %message%"
-DiscordToMinecraftAllRolesSeparator: " | "
-DiscordToMinecraftMessageReplyFormat: " (replying to %name%)"
+DiscordToMinecraftChatMessageFormat: "&3Discord &8» &r%toprolecolor%%name%%reply% &8» %message%"
+DiscordToMinecraftChatMessageFormatNoRole: "&3Discord &8» &6%name%%reply% &8» &r%message%"
+DiscordToMinecraftAllRolesSeparator: " / "
+DiscordToMinecraftMessageReplyFormat: " &r(replying to &6%name%&r)"
 
 # Minecraft -> Discord message
 #
@@ -82,8 +82,8 @@ DiscordToMinecraftMessageReplyFormat: " (replying to %name%)"
 #                  example: Global
 # PlaceholderAPI placeholders are also supported
 #
-MinecraftChatToDiscordMessageFormat: "**%primarygroup%** %displayname% » %message%"
-MinecraftChatToDiscordMessageFormatNoPrimaryGroup: "%displayname% » %message%"
+MinecraftChatToDiscordMessageFormat: "%displayname% &8» &r%message%"
+MinecraftChatToDiscordMessageFormatNoPrimaryGroup: "%displayname% &8» &r%message%"
 
 # Chat channel plugin message
 # This is a special message that's only used when a supported chat channel plugin is hooked
@@ -120,7 +120,7 @@ ChatChannelHookMessageFormat: "%channelcolor%[%channelnickname%]&r %message%"
 #
 DynmapNameFormat: "[Discord | %toprolealias%] %username%"
 DynmapChatFormat: "%message%"
-DynmapDiscordFormat: "[Dynmap] %name% » %message%"
+DynmapDiscordFormat: "[Dynmap] %name% &8» &r%message%"
 
 # Discord console channel message
 # This is the format used when sending a line from the console to the console channel, if enabled
@@ -377,7 +377,7 @@ ChannelTopicUpdaterConsoleChannelTopicAtServerShutdownFormat: "Server is offline
 # This is the message sent to players when they run "/discord". It's recommended to leave command syntax as a part of this
 # Use {INVITE} as a placeholder for the invite link people need to join the Discord server, uses DiscordInviteLink configured in config.yml
 #
-DiscordCommandFormat: "&bJoin us on Discord at {INVITE}&b. For command help, do \"/discord ?\""
+DiscordCommandFormat: '&bJoin us on Discord at {INVITE}&b. For command help, do "/discord ?"'
 
 # No permission message
 NoPermissionMessage: "&cYou do not have permission to perform this command."
@@ -445,4 +445,4 @@ LinkedCommandSuccess: "&bYour Minecraft account is associated with %name%."
 UnlinkCommandSuccess: "&bYour Minecraft account is no longer associated with %name%."
 MinecraftNoLinkedAccount: "&cYour Minecraft account isn't associated with a Discord account."
 LinkingError: "&cCurrently unable to link accounts due to an internal error. Contact your server administration team."
-MinecraftNobodyFound: "&cNobody found with Discord ID/Discord name/Minecraft name/Minecraft UUID matching \"%target%\" to look up."
+MinecraftNobodyFound: '&cNobody found with Discord ID/Discord name/Minecraft name/Minecraft UUID matching "%target%" to look up.'
