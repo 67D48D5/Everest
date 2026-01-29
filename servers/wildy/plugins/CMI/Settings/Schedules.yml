@@ -41,44 +41,44 @@
 # Supports PlaceHolderAPI variables
 # More information about specialized commands can be found at https://www.zrips.net/cmi/commands/specialized/
 
-RegenWorld:
+TIP:
   Enabled: true
+  MinPlayers: 1
+  FeedBack: false
+  Delay: 600
+  Repeat: true
+  Randomize: true
+  Commands:
+  - actionbar! &bTIP &8» &fRules can be found at &b/rules&f&o!
+  - actionbar! &bTIP &8» &fAdvertisement of other servers will be punished&f&o!
+  - actionbar! &bTIP &8» &fTo move between servers use &b/sv &fcommand&o!
+  - actionbar! &bTIP &8» &fTo view your stats use &b/stats &fcommand&o!
+Restart:
+  Enabled: false
   PerformOn:
     '1':
-      Day: 28
       Hour: 5
   Commands:
-  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c30 &fseconds&o!
-  - co purge t:30d r:#wsrc
+  - broadcast! &cRestart &8» &fServer will restart in &c30 &fseconds&o!
   - delay! 5
-  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c25 &fseconds&o!
+  - broadcast! &cRestart &8» &fServer will restart in &c25 &fseconds&o!
   - delay! 5
-  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c20 &fseconds&o!
-  - co purge t:30d r:#wsrc_nether
+  - broadcast! &cRestart &8» &fServer will restart in &c20 &fseconds&o!
   - delay! 5
-  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c15 &fseconds&o!
+  - broadcast! &cRestart &8» &fServer will restart in &c15 &fseconds&o!
   - delay! 5
-  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c10 &fseconds&o!
-  - co purge t:30d r:#wsrc_the_end
+  - broadcast! &cRestart &8» &fServer will restart in &c10 &fseconds&o!
   - delay! 5
-  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c5 &fseconds&o!
+  - broadcast! &cRestart &8» &fServer will restart in &c5 &fseconds&o!
   - delay! 1
-  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c4 &fseconds&o!
+  - broadcast! &cRestart &8» &fServer will restart in &c4 &fseconds&o!
   - delay! 1
-  - title! &c&oRegen
-  - subtitle! &fResource worlds regenerating soon&o!
-  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c3 &fseconds&o!
+  - broadcast! &cRestart &8» &fServer will restart in &c3 &fseconds&o!
   - delay! 1
-  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c2 &fseconds&o!
+  - broadcast! &cRestart &8» &fServer will restart in &c2 &fseconds&o!
   - delay! 1
-  - broadcast! &cRegen &8» &fResource worlds will be regenerated in &c1 &fsecond&o!
+  - broadcast! &cRestart &8» &fServer will restart in &c1 &fsecond&o!
   - delay! 1
-  - kickall! &cRegen &8» &fServer will be back online soon&o!
+  - kickall! Server will be back online soon!
   - delay! 1
-  - mv regen wsrc --seed
-  - delay! 10
-  - mv regen wsrc_nether --seed
-  - delay! 10
-  - mv regen wsrc_the_end --seed
-  - delay! 10
   - restart
