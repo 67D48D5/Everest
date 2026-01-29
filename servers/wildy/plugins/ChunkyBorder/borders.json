@@ -3,8 +3,8 @@
     "world": "wwild_nether",
     "centerX": 0.0,
     "centerZ": 0.0,
-    "radiusX": 4096.0,
-    "radiusZ": 4096.0,
+    "radiusX": 8192.0,
+    "radiusZ": 8192.0,
     "shape": "pentagon",
     "wrap": "none"
   },
@@ -12,8 +12,8 @@
     "world": "wwild_the_end",
     "centerX": 0.0,
     "centerZ": 0.0,
-    "radiusX": 4096.0,
-    "radiusZ": 4096.0,
+    "radiusX": 8192.0,
+    "radiusZ": 8192.0,
     "shape": "hexagon",
     "wrap": "none"
   },
@@ -21,8 +21,8 @@
     "world": "wwild",
     "centerX": 0.0,
     "centerZ": 0.0,
-    "radiusX": 4096.0,
-    "radiusZ": 4096.0,
+    "radiusX": 8192.0,
+    "radiusZ": 8192.0,
     "shape": "circle",
     "wrap": "default"
   }
