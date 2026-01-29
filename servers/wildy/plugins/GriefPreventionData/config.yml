@@ -5,17 +5,11 @@ GriefPrevention:
     wwild: 48
     wwild_nether: 36
     wwild_the_end: 24
-    wsrc: 64
-    wsrc_nether: 48
-    wsrc_the_end: 36
   Claims:
     Mode:
       wwild: Survival
       wwild_nether: Survival
       wwild_the_end: Survival
-      wsrc: Disabled
-      wsrc_the_end: Disabled
-      wsrc_nether: Disabled
     PreventGlobalMonsterEggs: true
     PreventTheft: true
     ProtectCreatures: true
@@ -83,9 +77,6 @@ GriefPrevention:
       wwild: true
       wwild_nether: true
       wwild_the_end: true
-      wsrc: true
-      wsrc_the_end: true
-      wsrc_nether: true
     ProtectFreshSpawns: true
     PunishLogout: true
     CombatTimeoutSeconds: 16

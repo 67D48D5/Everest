@@ -89,14 +89,6 @@
                     "type": "auto",
                     "pattern": "Logger-*"
                 },
-                "Multiverse-Core": {
-                    "type": "auto",
-                    "pattern": "multiverse-core-*"
-                },
-                "Multiverse-NetherPortals": {
-                    "type": "auto",
-                    "pattern": "multiverse-netherportals-*"
-                },
                 "PlaceholderAPI": {
                     "type": "auto",
                     "pattern": "PlaceholderAPI-*"

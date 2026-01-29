@@ -31,12 +31,12 @@ bossbar:
   remember-toggle-choice: false
   hidden-by-default: false
   bars:
-    wsrc:
+    default:
       style: PROGRESS
-      color: BLUE
+      color: YELLOW
       progress: "100"
-      text: "&3&oResource &fWorld"
-      display-condition: "%world%=wsrc|%world%=wsrc_nether|%world%=wsrc_the_end"
+      text: "&6&oEverest &f&lMC"
+      display-condition: ""
 scoreboard:
   enabled: true
   toggle-command: /sb

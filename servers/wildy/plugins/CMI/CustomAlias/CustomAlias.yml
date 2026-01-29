@@ -25,20 +25,18 @@ CustomAlias:
     - gamerule wwild_nether spectatorsGenerateChunks false
     - gamerule wwild_the_end announceAdvancements false
     - gamerule wwild_the_end spectatorsGenerateChunks false
-    - gamerule wsrc announceAdvancements false
-    - gamerule wsrc spectatorsGenerateChunks false
-    - gamerule wsrc_nether announceAdvancements false
-    - gamerule wsrc_nether spectatorsGenerateChunks false
-    - gamerule wsrc_the_end announceAdvancements false
-    - gamerule wsrc_the_end spectatorsGenerateChunks false
     - papi ecloud download GriefPrevention
     - papi ecloud download Server
     - papi reload
     Perm: true
     Tab: false
-  worlds:
+  mv:
     Cmds:
-    - asConsole! cmi dialogs worldrtp [playerName]
+    - asConsole! cmi dialogs move [playerName]
+    Tab: true
+  move:
+    Cmds:
+    - asConsole! cmi dialogs move [playerName]
     Tab: true
   servers:
     Cmds:
@@ -47,9 +45,4 @@ CustomAlias:
   stats:
     Cmds:
     - asConsole! cmi dialogs stats [playerName]
-    Tab: true
-  wsrc:
-    Cmds:
-    - asConsole! cmi effect [playerName] blindness 3 1 -s
-    - asConsole! cmi dialogs worldrtp [playerName]
     Tab: true
