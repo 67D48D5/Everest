@@ -62,14 +62,10 @@ Ignore the following when using this repository:
 ```bash
 git update-index --skip-worktree \
 servers/wildy/server.properties \
-servers/wildy/wsrc/level.dat \
-servers/wildy/wsrc_nether/level.dat \
-servers/wildy/wsrc_the_end/level.dat \
 servers/wildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/wildy/plugins/CMILib/Translations/Locale_EN.yml \
 servers/wildy/plugins/GriefPreventionData/config.yml \
 servers/wildy/plugins/FastAsyncWorldEdit/config.yml \
-servers/wildy/plugins/Multiverse-Core/worlds.yml \
 servers/wildy/plugins/WorldGuard/config.yml \
 servers/buildy/server.properties \
 servers/buildy/plugins/CMI/Translations/Locale_EN.yml \
@@ -88,14 +84,10 @@ If you need to re-include any of these files, use:
 ```bash
 git update-index --no-skip-worktree \
 servers/wildy/server.properties \
-servers/wildy/wsrc/level.dat \
-servers/wildy/wsrc_nether/level.dat \
-servers/wildy/wsrc_the_end/level.dat \
 servers/wildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/wildy/plugins/CMILib/Translations/Locale_EN.yml \
 servers/wildy/plugins/GriefPreventionData/config.yml \
 servers/wildy/plugins/FastAsyncWorldEdit/config.yml \
-servers/wildy/plugins/Multiverse-Core/worlds.yml \
 servers/wildy/plugins/WorldGuard/config.yml \
 servers/buildy/server.properties \
 servers/buildy/plugins/CMI/Translations/Locale_EN.yml \
