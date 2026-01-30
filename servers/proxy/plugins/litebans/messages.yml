@@ -78,7 +78,7 @@
 # Example time format with hours + minutes:
 # time_format: 'dd/MM/yyyy HH:mm'
 # Example locales: [en, fr, de] (system locale is used by default)
-locale: en
+locale: system
 time_format: MM/dd/yyyy
 hex_formats: |-
   &%s
