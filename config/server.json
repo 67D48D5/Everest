@@ -85,10 +85,6 @@
                     "type": "auto",
                     "pattern": "LuckPerms-*"
                 },
-                "Logger": {
-                    "type": "auto",
-                    "pattern": "Logger-*"
-                },
                 "PlaceholderAPI": {
                     "type": "auto",
                     "pattern": "PlaceholderAPI-*"
@@ -120,6 +116,10 @@
                 "GriefPrevention": {
                     "type": "manual",
                     "pattern": "GriefPrevention*"
+                },
+                "Logger": {
+                    "type": "manual",
+                    "pattern": "Logger-*"
                 },
                 "MobFarmManager": {
                     "type": "manual",
@@ -176,10 +176,6 @@
                     "type": "auto",
                     "pattern": "LuckPerms-*"
                 },
-                "Logger": {
-                    "type": "auto",
-                    "pattern": "Logger-*"
-                },
                 "PlaceholderAPI": {
                     "type": "auto",
                     "pattern": "PlaceholderAPI-*"
@@ -199,6 +195,10 @@
                 "CMILib": {
                     "type": "manual",
                     "pattern": "CMILib*"
+                },
+                "Logger": {
+                    "type": "manual",
+                    "pattern": "Logger-*"
                 },
                 "PlotSquared": {
                     "type": "manual",
