@@ -144,7 +144,7 @@ enabled = true
 port = 25565
 
 # This is the map name that is reported to the query services.
-map = "Everest"
+map = "Everest MC"
 
 # Whether plugins should be shown in query response by default or not
 show-plugins = false
