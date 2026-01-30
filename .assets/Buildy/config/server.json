@@ -1,0 +1,214 @@
+{
+    "servers": {
+        "proxy": {
+            "engine": "velocity",
+            "libraries": [
+                {
+                    "name": "LuckPerms Libs",
+                    "source": "plugins/LuckPerms/libs",
+                    "destination": "plugins/luckperms/libs"
+                }
+            ],
+            "plugins": {
+                "floodgate": {
+                    "type": "auto",
+                    "pattern": "floodgate*"
+                },
+                "geyser": {
+                    "type": "auto",
+                    "pattern": "geyser*"
+                },
+                "luckperms": {
+                    "type": "auto",
+                    "pattern": "LuckPerms-Velocity-*"
+                },
+                "viabackwards": {
+                    "type": "auto",
+                    "pattern": "ViaBackwards-*"
+                },
+                "viaversion": {
+                    "type": "auto",
+                    "pattern": "ViaVersion-*"
+                },
+                "cmiv": {
+                    "type": "manual",
+                    "pattern": "CMIV-*"
+                },
+                "litebans": {
+                    "type": "manual",
+                    "pattern": "LiteBans*"
+                }
+            }
+        },
+        "wildy": {
+            "engine": "paper",
+            "libraries": [
+                {
+                    "name": "LuckPerms Libs",
+                    "source": "plugins/LuckPerms/libs",
+                    "destination": "plugins/LuckPerms/libs"
+                },
+                {
+                    "name": "Paper Cache",
+                    "source": "cache",
+                    "destination": "cache"
+                },
+                {
+                    "name": "Paper Libraries",
+                    "source": "libraries",
+                    "destination": "libraries"
+                },
+                {
+                    "name": "Paper Versions",
+                    "source": "versions",
+                    "destination": "versions"
+                }
+            ],
+            "plugins": {
+                "Chunky": {
+                    "type": "auto",
+                    "pattern": "Chunky-*"
+                },
+                "ChunkyBorder": {
+                    "type": "auto",
+                    "pattern": "ChunkyBorder-*"
+                },
+                "DiscordSRV": {
+                    "type": "auto",
+                    "pattern": "DiscordSRV-*"
+                },
+                "FastAsyncWorldEdit": {
+                    "type": "auto",
+                    "pattern": "FastAsyncWorldEdit-Paper-*"
+                },
+                "LuckPerms": {
+                    "type": "auto",
+                    "pattern": "LuckPerms-*"
+                },
+                "PlaceholderAPI": {
+                    "type": "auto",
+                    "pattern": "PlaceholderAPI-*"
+                },
+                "ProtocolLib": {
+                    "type": "auto",
+                    "pattern": "ProtocolLib*"
+                },
+                "TAB": {
+                    "type": "auto",
+                    "pattern": "TAB*"
+                },
+                "WorldGuard": {
+                    "type": "auto",
+                    "pattern": "worldguard-bukkit-*"
+                },
+                "mcMMO": {
+                    "type": "auto",
+                    "pattern": "mcMMO*"
+                },
+                "CMI": {
+                    "type": "manual",
+                    "pattern": "CMI-*"
+                },
+                "CMILib": {
+                    "type": "manual",
+                    "pattern": "CMILib*"
+                },
+                "GriefPrevention": {
+                    "type": "manual",
+                    "pattern": "GriefPrevention*"
+                },
+                "Logger": {
+                    "type": "manual",
+                    "pattern": "Logger-*"
+                },
+                "MobFarmManager": {
+                    "type": "manual",
+                    "pattern": "MobFarmManager*"
+                },
+                "Vault": {
+                    "type": "manual",
+                    "pattern": "Vault-*"
+                }
+            }
+        },
+        "buildy": {
+            "engine": "paper",
+            "libraries": [
+                {
+                    "name": "LuckPerms Libs",
+                    "source": "plugins/LuckPerms/libs",
+                    "destination": "plugins/LuckPerms/libs"
+                },
+                {
+                    "name": "Paper Cache",
+                    "source": "cache",
+                    "destination": "cache"
+                },
+                {
+                    "name": "Paper Libraries",
+                    "source": "libraries",
+                    "destination": "libraries"
+                },
+                {
+                    "name": "Paper Versions",
+                    "source": "versions",
+                    "destination": "versions"
+                }
+            ],
+            "plugins": {
+                "Chunky": {
+                    "type": "auto",
+                    "pattern": "Chunky-*"
+                },
+                "ChunkyBorder": {
+                    "type": "auto",
+                    "pattern": "ChunkyBorder-*"
+                },
+                "DiscordSRV": {
+                    "type": "auto",
+                    "pattern": "DiscordSRV-*"
+                },
+                "FastAsyncWorldEdit": {
+                    "type": "auto",
+                    "pattern": "FastAsyncWorldEdit-Paper-*"
+                },
+                "LuckPerms": {
+                    "type": "auto",
+                    "pattern": "LuckPerms-*"
+                },
+                "PlaceholderAPI": {
+                    "type": "auto",
+                    "pattern": "PlaceholderAPI-*"
+                },
+                "ProtocolLib": {
+                    "type": "auto",
+                    "pattern": "ProtocolLib*"
+                },
+                "TAB": {
+                    "type": "auto",
+                    "pattern": "TAB*"
+                },
+                "CMI": {
+                    "type": "manual",
+                    "pattern": "CMI-*"
+                },
+                "CMILib": {
+                    "type": "manual",
+                    "pattern": "CMILib*"
+                },
+                "Logger": {
+                    "type": "manual",
+                    "pattern": "Logger-*"
+                },
+                "PlotSquared": {
+                    "type": "manual",
+                    "pattern": "plotsquared-*"
+                },
+                "Vault": {
+                    "type": "manual",
+                    "pattern": "Vault-*"
+                }
+            }
+        }
+    }
+}

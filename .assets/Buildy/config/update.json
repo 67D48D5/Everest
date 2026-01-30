@@ -1,0 +1,47 @@
+{
+  "engines": {
+    "paper": {
+      "version": "1.21.11"
+    },
+    "velocity": {
+      "version": "3.4.0-SNAPSHOT"
+    }
+  },
+  "plugins": {
+    "velocity": {
+      "floodgate": "https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/velocity",
+      "geyser": "https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/velocity",
+      "luckperms": "https://ci.lucko.me/job/LuckPerms",
+      "viabackwards": "https://ci.viaversion.com/job/ViaBackwards",
+      "viaversion": "https://ci.viaversion.com/job/ViaVersion"
+    },
+    "paper": {
+      "Chunky": "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky",
+      "ChunkyBorder": "https://ci.codemc.io/view/Author/job/pop4959/job/ChunkyBorder",
+      "DiscordSRV": "https://github.com/DiscordSRV/DiscordSRV/releases",
+      "FastAsyncWorldEdit": "https://ci.athion.net/job/FastAsyncWorldEdit",
+      "LuckPerms": "https://ci.lucko.me/job/LuckPerms",
+      "PlaceholderAPI": "https://ci.extendedclip.com/job/PlaceholderAPI",
+      "ProtocolLib": "https://github.com/dmulloy2/ProtocolLib/releases/tag/dev-build",
+      "TAB": "https://github.com/NEZNAMY/TAB/releases",
+      "WorldGuard": "https://builds.enginehub.org/job/worldguard/last-successful?branch=version/7.0.x",
+      "mcMMO": "https://popicraft.net/jenkins/job/mcMMO"
+    }
+  },
+  "notes": {
+    "plugins": {
+      "velocity": {
+        "CMIV": "https://www.zrips.net/cmiv/",
+        "LiteBans": "https://www.spigotmc.org/resources/litebans.3715/updates/"
+      },
+      "paper": {
+        "CMI": "https://www.spigotmc.org/resources/cmi-300-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/updates/",
+        "CMILib": "https://www.zrips.net/cmilib/",
+        "GriefPrevention": "https://dev.bukkit.org/projects/grief-prevention/files/",
+        "MobFarmManager": "https://www.spigotmc.org/resources/mob-farm-manager-supports-1-7-10-up-to-1-21-hopper-support.15127/updates/",
+        "PlotSquared": "https://www.spigotmc.org/resources/plotsquared-v7.77506/updates/",
+        "Vault": "https://www.zrips.net/cmivault/"
+      }
+    }
+  }
+}
