@@ -17,9 +17,9 @@
 Metrics:
     bstats: true
 Feedback:
-    PlayerTips: true
+    PlayerTips: false
     SkillCommand:
-        BlankLinesAboveHeader: true
+        BlankLinesAboveHeader: false
     # If sendtitles is true, messages will be sent using the title api (BIG TEXT ON SCREEN)
     Events:
         XP:
@@ -47,7 +47,7 @@ Feedback:
             SendCopyOfMessageToChat: false
         Holiday:
             Enabled: true
-            SendCopyOfMessageToChat: true
+            SendCopyOfMessageToChat: false
         ToolReady:
             Enabled: true
             SendCopyOfMessageToChat: false
@@ -56,7 +56,7 @@ Feedback:
             SendCopyOfMessageToChat: false
         SubSkillFailed:
             Enabled: false
-            SendCopyOfMessageToChat: true
+            SendCopyOfMessageToChat: false
         SubSkillUnlocked:
             Enabled: true
             SendCopyOfMessageToChat: false
@@ -65,7 +65,7 @@ Feedback:
             SendCopyOfMessageToChat: false
         SuperAbilityAlertOthers:
             Enabled: true
-            SendCopyOfMessageToChat: true
+            SendCopyOfMessageToChat: false
         ExperienceGain:
             Enabled: true
             SendCopyOfMessageToChat: false
