@@ -49,10 +49,10 @@
 #
 # NOTE: The %reply% placeholder needs to be present in the format if you want the DiscordToMinecraftMessageReplyFormat to display in your message.
 #
-DiscordToMinecraftChatMessageFormat: "&3Discord &8» &r%toprolecolor%%name%%reply% &8» %message%"
-DiscordToMinecraftChatMessageFormatNoRole: "&3Discord &8» &6%name%%reply% &8» &r%message%"
+DiscordToMinecraftChatMessageFormat: "&bD &8∥ &8» &r%toprolecolor%%name% &r%reply% &8» &r%message%"
+DiscordToMinecraftChatMessageFormatNoRole: "&bD &8∥ &8» &6%name% &r%reply% &8» &r%message%"
 DiscordToMinecraftAllRolesSeparator: " / "
-DiscordToMinecraftMessageReplyFormat: " &r(replying to &6%name%&r)"
+DiscordToMinecraftMessageReplyFormat: "(replying to &6%name%&r)"
 
 # Minecraft -> Discord message
 #
@@ -82,8 +82,8 @@ DiscordToMinecraftMessageReplyFormat: " &r(replying to &6%name%&r)"
 #                  example: Global
 # PlaceholderAPI placeholders are also supported
 #
-MinecraftChatToDiscordMessageFormat: "%displayname% &8» &r%message%"
-MinecraftChatToDiscordMessageFormatNoPrimaryGroup: "%displayname% &8» &r%message%"
+MinecraftChatToDiscordMessageFormat: "**%primarygroup%** » %displayname% » %message%"
+MinecraftChatToDiscordMessageFormatNoPrimaryGroup: "%displayname% » %message%"
 
 # Chat channel plugin message
 # This is a special message that's only used when a supported chat channel plugin is hooked
