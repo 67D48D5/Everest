@@ -19,10 +19,8 @@ Everest is a production-ready Minecraft server infrastructure designed for runni
 
 Everest uses a proxy-based architecture:
 
-```txt
-Players → Velocity Proxy (port 25565) → Buildy Server (Paper, port 3621)
-              ↓
-         Wildy Server (Paper, port 1422)
+```text
+Players → Velocity Proxy (port 25565) → Wildy Server (Paper, port 1422)
 ```
 
 The Velocity proxy handles player connections and routes them to backend Paper servers. This allows for:
@@ -49,7 +47,6 @@ The Velocity proxy handles player connections and routes them to backend Paper s
 │   └── utils/          # Management utilities scripts
 └── servers/            # Server instances
     ├── proxy/          # Velocity proxy
-    ├── buildy/         # Build server    
     └── wildy/          # Survival server
 ```
 
@@ -66,11 +63,7 @@ servers/wildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/wildy/plugins/CMILib/Translations/Locale_EN.yml \
 servers/wildy/plugins/GriefPreventionData/config.yml \
 servers/wildy/plugins/FastAsyncWorldEdit/config.yml \
-servers/wildy/plugins/WorldGuard/config.yml \
-servers/buildy/server.properties \
-servers/buildy/plugins/CMI/Translations/Locale_EN.yml \
-servers/buildy/plugins/CMILib/Translations/Locale_EN.yml \
-servers/buildy/plugins/FastAsyncWorldEdit/config.yml
+servers/wildy/plugins/WorldGuard/config.yml
 ```
 
 To see which files are being ignored, use:
@@ -88,11 +81,7 @@ servers/wildy/plugins/CMI/Translations/Locale_EN.yml \
 servers/wildy/plugins/CMILib/Translations/Locale_EN.yml \
 servers/wildy/plugins/GriefPreventionData/config.yml \
 servers/wildy/plugins/FastAsyncWorldEdit/config.yml \
-servers/wildy/plugins/WorldGuard/config.yml \
-servers/buildy/server.properties \
-servers/buildy/plugins/CMI/Translations/Locale_EN.yml \
-servers/buildy/plugins/CMILib/Translations/Locale_EN.yml \
-servers/buildy/plugins/FastAsyncWorldEdit/config.yml
+servers/wildy/plugins/WorldGuard/config.yml
 ```
 
 ## Server Information

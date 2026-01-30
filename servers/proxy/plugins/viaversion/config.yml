@@ -73,7 +73,6 @@ velocity-ping-save: true
 velocity-servers:
   default: 393
   Wildy: 774
-  Buildy: 774
 #
 #----------------------------------------------------------#
 #                  GLOBAL PACKET LIMITER                   #

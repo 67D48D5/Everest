@@ -40,15 +40,6 @@ CustomAlias:
     Cmds:
       - asConsole! cmi dialogs move [playerName]
     Tab: true
-  # Shortcut for server selector dialog
-  sv:
-    Cmds:
-      - asConsole! cmi dialogs server [playerName]
-    Tab: true
-  servers:
-    Cmds:
-      - asConsole! cmi dialogs server [playerName]
-    Tab: true
   # Shortcut for stats dialog
   stats:
     Cmds:
