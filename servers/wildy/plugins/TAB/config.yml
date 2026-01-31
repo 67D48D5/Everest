@@ -35,7 +35,7 @@ bossbar:
       style: PROGRESS
       color: YELLOW
       progress: "100"
-      text: "&6&oEverest &f&lMC"
+      text: "&6&l&oEverest &f&lMC"
       display-condition: ""
 scoreboard:
   enabled: true
