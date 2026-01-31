@@ -6,3 +6,16 @@
 # World: wwild_nether (minecraft:the_nether)
 
 _version: 31
+anticheat:
+  anti-xray:
+    enabled: true
+    engine-mode: 1
+    hidden-blocks:
+    - ancient_debris
+    - nether_gold_ore
+    - nether_quartz_ore
+    lava-obscures: false
+    max-block-height: 128
+    replacement-blocks: []
+    update-radius: 2
+    use-permission: false
