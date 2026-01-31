@@ -1711,6 +1711,88 @@ command:
       addInfo: '&eEnter new line text. Type &6cancel &fto cancel. Extra variables:
         &6ICON:&7[Value] &6SICON:&7[Value] &fwhere &7Value&e- &7[MaterialName-amount]%enchanted%&e,
         &7%itemInHand%&e, &7Head:[headOwner]'
+  hologram2:
+    help:
+      info: Manage holograms
+      args: ''
+    info:
+      gui: '{gcs}---- {gcp}<Open settings gui> {gcs}----'
+      guiHover: '{gcp}Open hologram settings GUI'
+      pageInterval: '{gcp}Change page every {gcs}[second] {gcp}seconds'
+      pageIntervalLore:
+      - '{gcp}How often, in seconds, hologram page is changed automatically'
+      pageIntervalNoPages: '{gcd}This hologram doesn''t have any pages yet'
+      reqPermission: '{gcp}Requires permission to see: {gcs}[state]'
+      teleport: '{gcp}Teleport to hologram location'
+      material: '{gcp}Current material: {gcs}[material]'
+      range: '{gcp}Show range: {gcs}[blocks]'
+      rangeLore:
+      - '{gcp}Defines area around hologram to show or hide it'
+      updateRange: '{gcp}Update range: {gcs}[blocks]'
+      updateRangeLore:
+      - '{gcp}Defines area around hologram to trigger update'
+      relocate: '{gcp}Relocate'
+      relocateLore:
+      - '{gcp}Relocates hologram to your current location'
+      holoYaw: '{gcp}Yaw: {gcs}[angle]'
+      los: '{gcp}Consider line of sight: {gcs}[state]'
+      interact: '{gcp}Interactable: {gcs}[state]'
+      particles: '{gcp}Show particles: {gcs}[state]'
+      commands: '{gcp}Commands:'
+      hoverParticles: '{gcp}Show hover particles: {gcs}[state]'
+      particleCount: '{gcp}Particles: {gcs}[count]'
+      particleType: '{gcp}Particle type: {gcs}[type]'
+      particleSpacing: '{gcp}Particle spacing: {gcs}[amount]'
+      particleExtraDimension: '{gcp}Particle extra dimension'
+      particleOffset: '{gcp}Particle offset'
+      basePrefix: '{gcp}Base prefix: &r[prefix]'
+      hoverPrefix: '{gcp}Hover prefix: &r[prefix]'
+      InteractionExtraDimension: '{gcp}Interaction extra dimension'
+      locationRange: '{gcp}Modify location and range'
+      interactions: '{gcp}Modify interactions'
+      newDisplayMethod: '{gcp}Use new display method: {gcs}[state]'
+      enabled: '{gcp}Activated: {gcs}[state]'
+      followType: '{gcp}Follow type: {gcs}[type]'
+      doubleSided: '{gcp}Double sided: {gcs}[state]'
+      alignment: '{gcp}Text alignment: {gcs}[type]'
+      shadow: '{gcp}Text shadow: {gcs}[state]'
+      textAlpha: '{gcp}Text transparency: {gcs}[alpha]'
+      textWidth: '{gcp}Text width: {gcs}[width]'
+      order: '{gcp}Downwards placement: {gcs}[state]'
+      fadeIn: '{gcp}Fade In: {gcs}[state]'
+      fadeOut: '{gcp}Fade Out: {gcs}[state]'
+      board: '{gcp}Board enabled: {gcs}[state]'
+      lightLevels: '{gcp}Light levels'
+      levels: |-
+        {gcp}Sky: {gcs}[sky]
+        {gcp}Block: {gcs}[block]
+      bgColor: '{gcp}Background color: {gcs}[color]'
+      bgAlpha: '{gcp}Background transparency: {gcs}[alpha]'
+      textFiller: '{gcp}Text filler: {gcs}[width]'
+      textFillerExplanation: '{gcp}Add %filler% to auto fill text'
+      interval: '{gcp}Update every {gcs}[second] {gcp}seconds'
+      intervalLore:
+      - '{gcp}How often, in seconds, information on the hologram is updated'
+      - '{gcp}If text is not changing, set it to 0'
+      scale: '{gcp}Scale'
+      offset: '{gcp}Center Offset'
+      iconFullScale: '{gcp}Icon scale'
+      iconDirection: '{gcp}Icon direction'
+      iconOffset: '{gcp}Icon offset'
+      reset: '{gcp}Press {gcs}Q {gcp}to reset'
+      directionBasic: '{gcp}Pitch: {gcs}[pitch] {gcp}Yaw: {gcs}[yaw]'
+      directionFull: '{gcp}Pitch: {gcs}[pitch] {gcp}Yaw: {gcs}[yaw] {gcp}Roll: {gcs}[roll]'
+      scaleBasic: '{gcp}Width: {gcs}[width] {gcp}Height: {gcs}[height]'
+      scaleFull: '{gcp}Width: {gcs}[width] {gcp}Height: {gcs}[height] {gcp}Depth:
+        {gcs}[depth]'
+      vectorFull: '{gcp}X: {gcs}[x] {gcp}Y: {gcs}[y] {gcp}Z: {gcs}[z]'
+      vectorBasic: '{gcp}X: {gcs}[x] {gcp}Y: {gcs}[y]'
+      embeddedAutoButton: '{gcp}Enabled pagination buttons: [state]'
+      autoPage: <T><<<<  </T><C>[prevPage]</C><T>  >>>></T><C>[nextPage]</C>
+      moveX: '{gcp}X: {gcs}[x]'
+      moveY: '{gcp}Y: {gcs}[y]'
+      moveZ: '{gcp}Z: {gcs}[z]'
+      listFormat: '{gcp}[name]{gcp}: &r[extra]'
   hologrampages:
     help:
       info: Change hologram page

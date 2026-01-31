@@ -446,6 +446,10 @@ Optimizations:
         Time2: 86400
         Time3: 604800
         Time4: 2592000
+    CheckAccount:
+      # List of users/ip's to be excluded from checkaccount command
+      ExcludedUsers:
+      - Zrips
     Inv:
       # List of players which you should not be able to open inventories
       # This can still be bypassed if you are OP
