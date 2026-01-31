@@ -1076,7 +1076,7 @@ Elytra:
   # cmi.elytra.speedometer - allows to see speedometer
   Boost:
     # Max speed until player wont get any boost
-    SpeedLimit: 48
+    SpeedLimit: 128
     # When enabled items/exp wont be consumed if player is over speed limit
     SpeedLimitStop: false
     # Do you want to show decimals in speed
