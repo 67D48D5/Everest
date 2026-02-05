@@ -124,8 +124,3 @@ servers/**/plugins/PlotSquared/backups/
 
 # ProtocolLib update file
 servers/**/plugins/ProtocolLib/lastupdate
-
-# ------------------------------------------------------------------------------
-# Exceptions (Files that should be tracked exceptionally)
-# ------------------------------------------------------------------------------
-!servers/**/server.properties
