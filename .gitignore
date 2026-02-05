@@ -24,8 +24,8 @@
 *.pem
 *.key
 
-# If RCON passwords or similar are included, consider excluding server.properties
-# server.properties
+# Ignore server.properties files
+server.properties
 
 # ------------------------------------------------------------------------------
 # Binary Files (Compiled files & Libraries)
