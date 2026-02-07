@@ -1716,6 +1716,26 @@ command:
       info: Manage holograms
       args: ''
     info:
+      base: '{gcp}Base'
+      board: '{gcp}Board enabled: {gcs}[state]'
+      icon: '{gcp}Icon'
+      particle: '{gcp}Particle'
+      interaction: '{gcp}Interaction'
+      state: '{gcp}[state]'
+      offset: '{gcp}Center Offset'
+      scale: '{gcp}Scale'
+      direction: '{gcs}Direction'
+      material: '{gcp}Current material: {gcs}[material]'
+      light: |-
+        {gcp}Light levels Sky: {gcs}[sky]
+        {gcp}Block: {gcs}[block]
+      reset: '{gcp}Press {gcs}Q {gcp}to reset'
+      basicDirection: '{gcp}Pitch: {gcs}[x] {gcp}Yaw: {gcs}[y]'
+      fullDirection: '{gcp}Pitch: {gcs}[x] {gcp}Yaw: {gcs}[y] {gcp}Roll: {gcs}[z]'
+      basicScale: '{gcp}Width: {gcs}[x] {gcp}Height: {gcs}[y]'
+      fullScale: '{gcp}Width: {gcs}[x] {gcp}Height: {gcs}[y] {gcp}Depth: {gcs}[z]'
+      basicVector: '{gcp}X: {gcs}[x] {gcp}Y: {gcs}[y]'
+      fullVector: '{gcp}X: {gcs}[x] {gcp}Y: {gcs}[y] {gcp}Z: {gcs}[z]'
       gui: '{gcs}---- {gcp}<Open settings gui> {gcs}----'
       guiHover: '{gcp}Open hologram settings GUI'
       pageInterval: '{gcp}Change page every {gcs}[second] {gcp}seconds'
@@ -1724,7 +1744,6 @@ command:
       pageIntervalNoPages: '{gcd}This hologram doesn''t have any pages yet'
       reqPermission: '{gcp}Requires permission to see: {gcs}[state]'
       teleport: '{gcp}Teleport to hologram location'
-      material: '{gcp}Current material: {gcs}[material]'
       range: '{gcp}Show range: {gcs}[blocks]'
       rangeLore:
       - '{gcp}Defines area around hologram to show or hide it'
@@ -1743,17 +1762,15 @@ command:
       particleCount: '{gcp}Particles: {gcs}[count]'
       particleType: '{gcp}Particle type: {gcs}[type]'
       particleSpacing: '{gcp}Particle spacing: {gcs}[amount]'
-      particleExtraDimension: '{gcp}Particle extra dimension'
-      particleOffset: '{gcp}Particle offset'
       basePrefix: '{gcp}Base prefix: &r[prefix]'
       hoverPrefix: '{gcp}Hover prefix: &r[prefix]'
-      InteractionExtraDimension: '{gcp}Interaction extra dimension'
       locationRange: '{gcp}Modify location and range'
       interactions: '{gcp}Modify interactions'
       newDisplayMethod: '{gcp}Use new display method: {gcs}[state]'
       enabled: '{gcp}Activated: {gcs}[state]'
       followType: '{gcp}Follow type: {gcs}[type]'
       doubleSided: '{gcp}Double sided: {gcs}[state]'
+      autoRotate: '{gcp}Auto rotate: {gcs}[angle]'
       alignment: '{gcp}Text alignment: {gcs}[type]'
       shadow: '{gcp}Text shadow: {gcs}[state]'
       textAlpha: '{gcp}Text transparency: {gcs}[alpha]'
@@ -1761,11 +1778,6 @@ command:
       order: '{gcp}Downwards placement: {gcs}[state]'
       fadeIn: '{gcp}Fade In: {gcs}[state]'
       fadeOut: '{gcp}Fade Out: {gcs}[state]'
-      board: '{gcp}Board enabled: {gcs}[state]'
-      lightLevels: '{gcp}Light levels'
-      levels: |-
-        {gcp}Sky: {gcs}[sky]
-        {gcp}Block: {gcs}[block]
       bgColor: '{gcp}Background color: {gcs}[color]'
       bgAlpha: '{gcp}Background transparency: {gcs}[alpha]'
       textFiller: '{gcp}Text filler: {gcs}[width]'
@@ -1774,19 +1786,6 @@ command:
       intervalLore:
       - '{gcp}How often, in seconds, information on the hologram is updated'
       - '{gcp}If text is not changing, set it to 0'
-      scale: '{gcp}Scale'
-      offset: '{gcp}Center Offset'
-      iconFullScale: '{gcp}Icon scale'
-      iconDirection: '{gcp}Icon direction'
-      iconOffset: '{gcp}Icon offset'
-      reset: '{gcp}Press {gcs}Q {gcp}to reset'
-      directionBasic: '{gcp}Pitch: {gcs}[pitch] {gcp}Yaw: {gcs}[yaw]'
-      directionFull: '{gcp}Pitch: {gcs}[pitch] {gcp}Yaw: {gcs}[yaw] {gcp}Roll: {gcs}[roll]'
-      scaleBasic: '{gcp}Width: {gcs}[width] {gcp}Height: {gcs}[height]'
-      scaleFull: '{gcp}Width: {gcs}[width] {gcp}Height: {gcs}[height] {gcp}Depth:
-        {gcs}[depth]'
-      vectorFull: '{gcp}X: {gcs}[x] {gcp}Y: {gcs}[y] {gcp}Z: {gcs}[z]'
-      vectorBasic: '{gcp}X: {gcs}[x] {gcp}Y: {gcs}[y]'
       embeddedAutoButton: '{gcp}Enabled pagination buttons: [state]'
       autoPage: <T><<<<  </T><C>[prevPage]</C><T>  >>>></T><C>[nextPage]</C>
       moveX: '{gcp}X: {gcs}[x]'

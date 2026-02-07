@@ -52,6 +52,11 @@ Economy:
     - t-1000000000000
     - q-1000000000000000
   BalTop:
+    # When enabled we will preload all players balances in baltop list on server startup
+    # If you have 3rd party economy plugin this might increase initial load times
+    # If set to false then baltop will only include newly modified players balances and not all of them
+    # Keep it disabled if you are not using baltop from CMI
+    LoadInAll: true
     # List of players to exclude from baltop list
     Exclude:
     - E098B8A
