@@ -1,6 +1,6 @@
 #
 #  mcMMO configuration
-#  Last updated on 2.2.046-SNAPSHOT-b${BUILD_NUMBER}
+#  Last updated on 2.2.050-SNAPSHOT-b${BUILD_NUMBER}
 #
 #####
 
@@ -229,6 +229,7 @@ Hardcore:
             Tridents: false
             Crossbows: false
             Maces: false
+            Spears: false
     Vampirism:
         Leech_Percentage: 5.0
         Level_Threshold: 0
@@ -249,6 +250,7 @@ Hardcore:
             Tridents: false
             Crossbows: false
             Maces: false
+            Spears: false
 
 #
 #  Settings for SMP Mods
@@ -427,6 +429,10 @@ Skills:
         Enabled_For_PVP: true
         Enabled_For_PVE: true
         Level_Cap: 0
+    Spears:
+        Enabled_For_PVP: true
+        Enabled_For_PVE: true
+        Level_Cap: 0
     Taming:
         Enabled_For_PVP: true
         Enabled_For_PVE: true
@@ -478,6 +484,7 @@ Green_Thumb_Replanting_Crops:
     Potatoes: true
     Beetroots: true
     Cocoa: true
+    Sweet_Berry_Bush: true
 #
 #  Settings for Double Drops
 ###

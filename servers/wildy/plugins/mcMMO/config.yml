@@ -229,6 +229,7 @@ Hardcore:
             Tridents: false
             Crossbows: false
             Maces: false
+            Spears: false
     Vampirism:
         Leech_Percentage: 5.0
         Level_Threshold: 0
@@ -249,6 +250,7 @@ Hardcore:
             Tridents: false
             Crossbows: false
             Maces: false
+            Spears: false
 
 #
 #  Settings for SMP Mods
@@ -470,6 +472,10 @@ Skills:
     Woodcutting:
         Tree_Feller_Sounds: true
         Level_Cap: 0
+    Spears:
+        Enabled_For_PVP: true
+        Enabled_For_PVE: true
+        Level_Cap: 0
 
 # Disable or Enable the Green Thumb auto replant feature for specific crops, use the name of the block not the crop itemstack
 Green_Thumb_Replanting_Crops:
@@ -479,6 +485,7 @@ Green_Thumb_Replanting_Crops:
     Potatoes: true
     Beetroots: true
     Cocoa: true
+    Sweet_Berry_Bush: true
 #
 #  Settings for Double Drops
 # ##
