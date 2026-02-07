@@ -101,10 +101,6 @@
                     "type": "auto",
                     "pattern": "worldguard-bukkit-*"
                 },
-                "mcMMO": {
-                    "type": "auto",
-                    "pattern": "mcMMO*"
-                },
                 "CMI": {
                     "type": "manual",
                     "pattern": "CMI-*"
@@ -128,6 +124,10 @@
                 "Vault": {
                     "type": "manual",
                     "pattern": "Vault-*"
+                },
+                "mcMMO": {
+                    "type": "manual",
+                    "pattern": "mcMMO*"
                 }
             }
         }
