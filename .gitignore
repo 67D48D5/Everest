@@ -96,6 +96,7 @@ servers/**/plugins/[Ll]uck[Pp]erms/libs
 
 # CMI plugin log files
 servers/**/plugins/CMI/**Log/*.yml
+servers/**/plugins/CMI/sellLogs/*.yml
 
 # CMILib plugin save and translation files
 servers/**/plugins/CMILib/Saves/*.yml
