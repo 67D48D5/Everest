@@ -22,7 +22,7 @@ CONFIG_FILE="${ROOT_PATH}/config/update.json"
 PLUGIN_LIB_ROOT="${ROOT_PATH}/libraries/plugins"
 
 # User Agent
-USER_AGENT="Everest/2.0.1 (https://github.com/67D48D5/Everest)"
+USER_AGENT="Everest/2.0.1 (https://github.com/E414CF6/Everest)"
 
 # Download settings
 CURL_RETRY=1

@@ -85,5 +85,5 @@ eval "$(ssh-agent -s)"
 ssh-keygen -t ed25519 -C "Everest"
 ssh-add ~/.ssh/id_ed25519 && cat ~/.ssh/id_ed25519.pub
 
-git clone git@github.com:67D48D5/Everest.git
+git clone git@github.com:E414CF6/Everest.git
 ```

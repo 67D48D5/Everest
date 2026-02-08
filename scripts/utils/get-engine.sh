@@ -21,7 +21,7 @@ ENGINE_DIR="${ROOT_PATH}/libraries/engines"
 
 # API Url & User Agent
 FILL_API="https://fill.papermc.io/v3"
-USER_AGENT="Everest/2.0.1 (https://github.com/67D48D5/Everest)"
+USER_AGENT="Everest/2.0.1 (https://github.com/E414CF6/Everest)"
 
 # Download settings
 CURL_RETRY=1
