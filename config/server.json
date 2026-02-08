@@ -109,13 +109,13 @@
                     "type": "manual",
                     "pattern": "CMILib*"
                 },
+                "CoreProtect": {
+                    "type": "manual",
+                    "pattern": "CoreProtect-*"
+                },
                 "GriefPrevention": {
                     "type": "manual",
                     "pattern": "GriefPrevention*"
-                },
-                "Logger": {
-                    "type": "manual",
-                    "pattern": "Logger-*"
                 },
                 "MobFarmManager": {
                     "type": "manual",

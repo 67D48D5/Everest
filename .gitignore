@@ -105,7 +105,7 @@ servers/**/plugins/CMILib/Translations/Items/*.yml
 servers/**/plugins/Chunky/tasks/
 
 # CoreProtect license file
-servers/**/plugins/Logger/.license
+servers/**/plugins/CoreProtect/.license
 
 # FastAsyncWorldEdit data files
 servers/**/plugins/FastAsyncWorldEdit/schematics/
