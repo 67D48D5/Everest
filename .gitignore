@@ -1,5 +1,3 @@
-# .gitignore
-
 # ------------------------------------------------------------------------------
 # System & IDE
 # ------------------------------------------------------------------------------
@@ -26,6 +24,10 @@
 
 # Ignore server.properties files
 server.properties
+
+# Database files if exists
+*.sqlite
+*.db
 
 # ------------------------------------------------------------------------------
 # Binary Files (Compiled files & Libraries)
@@ -69,59 +71,5 @@ servers/**/cache
 servers/**/versions
 servers/**/libraries
 
-# Database files if exists
-servers/**/*.sqlite
-servers/**/*.db
-
 # Log files
 servers/**/*.log**
-
-# ------------------------------------------------------------------------------
-# Specific Plugin Files
-# ------------------------------------------------------------------------------
-
-# Velocity language files (can be large and are not usually modified)
-servers/proxy/lang/*.properties
-
-# LiteBans cache files
-servers/proxy/plugins/litebans/.version
-servers/proxy/plugins/litebans/server.json
-
-# GeyserMC locale files (can be large and are not usually modified)
-servers/proxy/plugins/Geyser*/locales/*.json
-
-# LuckPerms locale files and symlink files
-servers/**/plugins/[Ll]uck[Pp]erms/translations
-servers/**/plugins/[Ll]uck[Pp]erms/libs
-
-# CMI plugin log files
-servers/**/plugins/CMI/**Log/*.yml
-servers/**/plugins/CMI/sellLogs/*.yml
-
-# CMILib plugin save and translation files
-servers/**/plugins/CMILib/Saves/*.yml
-servers/**/plugins/CMILib/Translations/Items/*.yml
-
-# Chunky plugin task files
-servers/**/plugins/Chunky/tasks/
-
-# CoreProtect license file
-servers/**/plugins/CoreProtect/.license
-
-# FastAsyncWorldEdit data files
-servers/**/plugins/FastAsyncWorldEdit/schematics/
-servers/**/plugins/FastAsyncWorldEdit/sessions/
-
-# TAB plugin playerdata file
-servers/**/plugins/TAB/playerdata.yml
-servers/**/plugins/TAB/skincache.yml
-
-# Spark plugin data
-servers/**/plugins/spark/
-
-# PlotSquared template files
-servers/**/plugins/PlotSquared/templates/
-servers/**/plugins/PlotSquared/backups/
-
-# ProtocolLib update file
-servers/**/plugins/ProtocolLib/lastupdate

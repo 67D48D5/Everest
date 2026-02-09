@@ -1,0 +1,34 @@
+# LuckPerms locale files and symlink files
+/plugins/LuckPerms/translations
+/plugins/LuckPerms/libs
+
+# CMI plugin log files
+/plugins/CMI/**Log/*.yml
+/plugins/CMI/sellLogs/*.yml
+
+# CMILib plugin save and translation files
+/plugins/CMILib/Saves/*.yml
+/plugins/CMILib/Translations/Items/*.yml
+
+# Chunky plugin task files
+/plugins/Chunky/tasks/
+
+# CoreProtect license file
+/plugins/CoreProtect/.license
+
+# FastAsyncWorldEdit data files
+/plugins/FastAsyncWorldEdit/schematics/
+/plugins/FastAsyncWorldEdit/sessions/
+
+# TAB plugin playerdata file
+/plugins/TAB/playerdata.yml
+/plugins/TAB/skincache.yml
+
+# ProtocolLib update file
+/plugins/ProtocolLib/lastupdate
+
+# Votifier plugin data
+/plugins/Votifier/
+
+# Spark plugin data
+/plugins/spark/

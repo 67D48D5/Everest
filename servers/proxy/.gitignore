@@ -1,0 +1,13 @@
+# Velocity language files (can be large and are not usually modified)
+/lang/*.properties
+
+# LiteBans cache files
+/plugins/litebans/.version
+/plugins/litebans/server.json
+
+# GeyserMC locale files (can be large and are not usually modified)
+/plugins/Geyser*/locales/*.json
+
+# LuckPerms locale files and symlink files
+/plugins/luckperms/translations
+/plugins/luckperms/libs
