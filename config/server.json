@@ -121,6 +121,10 @@
                     "type": "manual",
                     "pattern": "MobFarmManager*"
                 },
+                "NuVotifier": {
+                    "type": "manual",
+                    "pattern": "NuVotifier*"
+                },
                 "Vault": {
                     "type": "manual",
                     "pattern": "Vault-*"
