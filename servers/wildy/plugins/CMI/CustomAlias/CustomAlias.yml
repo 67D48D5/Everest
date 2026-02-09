@@ -50,3 +50,8 @@ CustomAlias:
     Cmds:
       - asConsole! cmi dialogs mcmmo [playerName]
     Tab: true
+  # Shortcut for votes dialog
+  votes:
+    Cmds:
+      - asConsole! cmi dialogs votes [playerName]
+    Tab: true

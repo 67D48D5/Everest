@@ -49,10 +49,13 @@ TIP:
   Repeat: true
   Randomize: true
   Commands:
-  - actionbar! &bTIP &8» &fRules can be found at &b/rules&f&o!
+  - actionbar! &bTIP &8» &fBe respectful to other players&o!
   - actionbar! &bTIP &8» &fAdvertisement of other servers will be punished&f&o!
-  - actionbar! &bTIP &8» &fTo move between servers use &b/sv &fcommand&o!
+  - actionbar! &bTIP &8» &fMove easily using &b/mv &fcommand&o!
+  - actionbar! &bTIP &8» &fRules can be found at &b/rules&f&o!
+  - actionbar! &bTIP &8» &fProtect your land using &b/claim &fcommand&o!
   - actionbar! &bTIP &8» &fTo view your stats use &b/stats &fcommand&o!
+  - actionbar! &bTIP &8» &fVote for the server using &b/votes &fcommand&o!
 Restart:
   Enabled: false
   PerformOn:

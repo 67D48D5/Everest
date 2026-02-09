@@ -690,9 +690,9 @@ Votifier:
   # Supports specialized commands and placeholders
   # [serviceName] variable can be used to insert address
   CommandsOnVote:
-  - ''
+  - cmi money give [playerName] 50
   # Keep it at false if you don't want to give out extra rewards
-  ExtraRewardsEnabled: false
+  ExtraRewardsEnabled: true
   # Commands will be performed when player collect determined amount of votes
   ExtraRewards:
     '10':
