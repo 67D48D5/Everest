@@ -22,14 +22,6 @@
                     "type": "auto",
                     "pattern": "LuckPerms-Velocity-*"
                 },
-                "viabackwards": {
-                    "type": "auto",
-                    "pattern": "ViaBackwards-*"
-                },
-                "viaversion": {
-                    "type": "auto",
-                    "pattern": "ViaVersion-*"
-                },
                 "cmiv": {
                     "type": "manual",
                     "pattern": "CMIV-*"

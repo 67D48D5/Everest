@@ -11,9 +11,7 @@
     "velocity": {
       "floodgate": "https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/velocity",
       "geyser": "https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/velocity",
-      "luckperms": "https://ci.lucko.me/job/LuckPerms",
-      "viabackwards": "https://ci.viaversion.com/job/ViaBackwards",
-      "viaversion": "https://ci.viaversion.com/job/ViaVersion"
+      "luckperms": "https://ci.lucko.me/job/LuckPerms"
     },
     "paper": {
       "Chunky": "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky",
