@@ -1,0 +1,172 @@
+#!/usr/bin/env bash
+# ------------------------------------------------------------------------------
+# Everest - Shared Library
+# ------------------------------------------------------------------------------
+# Common functions used across all Everest scripts.
+# Source this file at the top of each script.
+# ------------------------------------------------------------------------------
+
+# Colors
+# shellcheck disable=SC2034
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+# Defaults
+USER_AGENT="Everest/3.0.0 (https://github.com/E414CF6/Everest)"
+CURL_RETRY=1
+CURL_RETRY_DELAY=2
+CURL_CONNECT_TIMEOUT=4
+
+# ------------------------------------------------------------------------------
+# Logging
+# ------------------------------------------------------------------------------
+
+log_info() { echo -e "[$(date '+%H:%M:%S') ${GREEN}INFO${NC}] [${LOG_TAG:-everest}]: $1"; }
+log_warn() { echo -e "[$(date '+%H:%M:%S') ${YELLOW}WARN${NC}] [${LOG_TAG:-everest}]: $1"; }
+log_err() { echo -e "[$(date '+%H:%M:%S') ${RED}ERROR${NC}] [${LOG_TAG:-everest}]: $1" >&2; }
+
+# ------------------------------------------------------------------------------
+# Networking
+# ------------------------------------------------------------------------------
+
+curl_json() {
+    local url="$1"
+    curl -fsSL \
+        -H "User-Agent: ${USER_AGENT}" \
+        -H "Accept: application/json" \
+        --retry "${CURL_RETRY}" \
+        --retry-delay "${CURL_RETRY_DELAY}" \
+        --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
+        "$url"
+}
+
+curl_html() {
+    local url="$1"
+    curl -fsSL \
+        -H "User-Agent: ${USER_AGENT}" \
+        --retry "${CURL_RETRY}" \
+        --retry-delay "${CURL_RETRY_DELAY}" \
+        --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
+        "$url"
+}
+
+curl_download() {
+    local url="$1" dest="$2"
+    curl -fsSL -L \
+        -H "User-Agent: ${USER_AGENT}" \
+        --retry "${CURL_RETRY}" \
+        --retry-delay "${CURL_RETRY_DELAY}" \
+        --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
+        -o "$dest" \
+        "$url"
+}
+
+# ------------------------------------------------------------------------------
+# Branch Resolution
+# ------------------------------------------------------------------------------
+# Resolves a branch config with parent inheritance (deep merge).
+# Usage: resolve_branch <full_config_json> [branch_name]
+# If branch_name is omitted, uses $EVEREST_BRANCH or defaultBranch from config.
+# Returns: the resolved config object for that branch.
+# ------------------------------------------------------------------------------
+
+resolve_branch() {
+    local config="$1"
+    local branch="${2:-${EVEREST_BRANCH:-}}"
+
+    jq --arg b "$branch" '
+        def resolve($name):
+            .branches[$name] as $br |
+            if $br == null then
+                error("Branch not found: " + $name)
+            elif $br.parent then
+                resolve($br.parent) * ($br | del(.parent))
+            else
+                $br
+            end;
+        if $b == "" then
+            resolve(.defaultBranch)
+        else
+            resolve($b)
+        end
+    ' <<<"$config"
+}
+
+# ------------------------------------------------------------------------------
+# Template Interpolation
+# ------------------------------------------------------------------------------
+# Replaces {key} placeholders in a template string with provided values.
+# Usage: interpolate "https://{host}/job/{project}" host value project value ...
+# ------------------------------------------------------------------------------
+
+interpolate() {
+    local result="$1"
+    shift
+    while [[ $# -ge 2 ]]; do
+        result="${result//\{$1\}/$2}"
+        shift 2
+    done
+    echo "$result"
+}
+
+# ------------------------------------------------------------------------------
+# Cleanup Helper
+# ------------------------------------------------------------------------------
+
+cleanup_jobs() {
+    local pids
+    pids="$(jobs -pr 2>/dev/null || true)"
+    if [[ -n "$pids" ]]; then
+        # shellcheck disable=SC2086
+        kill $pids 2>/dev/null || true
+    fi
+}
+
+# ------------------------------------------------------------------------------
+# Pick Latest File
+# ------------------------------------------------------------------------------
+# Finds the latest file matching a glob pattern in a directory (version-sorted).
+# Usage: pick_latest <dir> <glob_pattern>
+# Returns: full path to the latest file, or empty string.
+# ------------------------------------------------------------------------------
+
+pick_latest() {
+    local dir="$1" pattern="$2"
+    [[ -d "$dir" ]] || {
+        echo ""
+        return 0
+    }
+
+    find "$dir" -maxdepth 1 -type f -iname "$pattern" 2>/dev/null |
+        awk -F/ '{print $NF "\t" $0}' |
+        sort -V |
+        tail -n1 |
+        cut -f2-
+}
+
+# ------------------------------------------------------------------------------
+# Atomic Directory Swap
+# ------------------------------------------------------------------------------
+
+atomic_swap() {
+    local src="$1" dest="$2"
+    local backup="${dest}.bak.$$"
+
+    mkdir -p "$(dirname "$dest")"
+
+    if [[ -d "$dest" ]]; then
+        mv "$dest" "$backup"
+    fi
+
+    if ! mv "$src" "$dest"; then
+        log_err "Swap failed! Restoring backup..."
+        [[ -d "$backup" ]] && mv "$backup" "$dest"
+        return 1
+    fi
+
+    rm -rf "$backup" 2>/dev/null || true
+}

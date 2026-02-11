@@ -1,131 +1,115 @@
 {
-    "servers": {
-        "proxy": {
-            "engine": "velocity",
-            "libraries": [
-                {
-                    "name": "LuckPerms Libs",
-                    "source": "plugins/LuckPerms/libs",
-                    "destination": "plugins/luckperms/libs"
+    "defaultBranch": "main",
+    "branches": {
+        "main": {
+            "proxy": {
+                "engine": "velocity",
+                "plugins": {
+                    "floodgate": {
+                        "type": "managed",
+                        "pattern": "floodgate*"
+                    },
+                    "geyser": {
+                        "type": "managed",
+                        "pattern": "geyser*"
+                    },
+                    "cmiv": {
+                        "type": "managed",
+                        "pattern": "cmiv*"
+                    },
+                    "litbans": {
+                        "type": "manual",
+                        "pattern": "LiteBans*"
+                    }
                 }
-            ],
-            "plugins": {
-                "floodgate": {
-                    "type": "auto",
-                    "pattern": "floodgate*"
+            },
+            "wildy": {
+                "engine": "paper",
+                "mounts": {
+                    "paper-cache": {
+                        "src": "cache",
+                        "dest": "cache"
+                    },
+                    "paper-libs": {
+                        "src": "libraries",
+                        "dest": "libraries"
+                    },
+                    "paper-versions": {
+                        "src": "versions",
+                        "dest": "versions"
+                    },
+                    "luckperms-libs": {
+                        "src": "plugins/LuckPerms/libs",
+                        "dest": "plugins/LuckPerms/libs"
+                    }
                 },
-                "geyser": {
-                    "type": "auto",
-                    "pattern": "geyser*"
-                },
-                "luckperms": {
-                    "type": "auto",
-                    "pattern": "LuckPerms-Velocity-*"
-                },
-                "cmiv": {
-                    "type": "manual",
-                    "pattern": "CMIV-*"
-                },
-                "litebans": {
-                    "type": "manual",
-                    "pattern": "LiteBans*"
+                "plugins": {
+                    "Managed": {
+                        "CMILib": {
+                            "pattern": "CMILib*"
+                        },
+                        "Chunky": {
+                            "pattern": "Chunky-*"
+                        },
+                        "ChunkyBorder": {
+                            "pattern": "ChunkyBorder-*"
+                        },
+                        "DiscordSRV": {
+                            "pattern": "DiscordSRV-*"
+                        },
+                        "FastAsyncWorldEdit": {
+                            "pattern": "FastAsyncWorldEdit-Paper-*"
+                        },
+                        "LuckPerms": {
+                            "pattern": "LuckPerms-*"
+                        },
+                        "PlaceholderAPI": {
+                            "pattern": "PlaceholderAPI-*"
+                        },
+                        "ProtocolLib": {
+                            "pattern": "ProtocolLib*"
+                        },
+                        "TAB": {
+                            "pattern": "TAB*"
+                        },
+                        "WorldGuard": {
+                            "pattern": "worldguard-bukkit-*"
+                        },
+                        "GriefPrevention": {
+                            "pattern": "GriefPrevention*"
+                        },
+                        "NuVotifier": {
+                            "pattern": "NuVotifier*"
+                        },
+                        "Vault": {
+                            "pattern": "Vault*"
+                        },
+                        "mcMMO": {
+                            "pattern": "mcMMO*"
+                        }
+                    },
+                    "Manual": {
+                        "CMI": {
+                            "pattern": "CMI-*"
+                        },
+                        "MobFarmManager": {
+                            "pattern": "MobFarmManager*"
+                        },
+                        "CoreProtect": {
+                            "pattern": "CoreProtect-*"
+                        }
+                    }
                 }
             }
         },
-        "wildy": {
-            "engine": "paper",
-            "libraries": [
-                {
-                    "name": "LuckPerms Libs",
-                    "source": "plugins/LuckPerms/libs",
-                    "destination": "plugins/LuckPerms/libs"
-                },
-                {
-                    "name": "Paper Cache",
-                    "source": "cache",
-                    "destination": "cache"
-                },
-                {
-                    "name": "Paper Libraries",
-                    "source": "libraries",
-                    "destination": "libraries"
-                },
-                {
-                    "name": "Paper Versions",
-                    "source": "versions",
-                    "destination": "versions"
-                }
-            ],
-            "plugins": {
-                "Chunky": {
-                    "type": "auto",
-                    "pattern": "Chunky-*"
-                },
-                "ChunkyBorder": {
-                    "type": "auto",
-                    "pattern": "ChunkyBorder-*"
-                },
-                "DiscordSRV": {
-                    "type": "auto",
-                    "pattern": "DiscordSRV-*"
-                },
-                "FastAsyncWorldEdit": {
-                    "type": "auto",
-                    "pattern": "FastAsyncWorldEdit-Paper-*"
-                },
-                "LuckPerms": {
-                    "type": "auto",
-                    "pattern": "LuckPerms-*"
-                },
-                "PlaceholderAPI": {
-                    "type": "auto",
-                    "pattern": "PlaceholderAPI-*"
-                },
-                "ProtocolLib": {
-                    "type": "auto",
-                    "pattern": "ProtocolLib*"
-                },
-                "TAB": {
-                    "type": "auto",
-                    "pattern": "TAB*"
-                },
-                "WorldGuard": {
-                    "type": "auto",
-                    "pattern": "worldguard-bukkit-*"
-                },
-                "CMI": {
-                    "type": "manual",
-                    "pattern": "CMI-*"
-                },
-                "CMILib": {
-                    "type": "manual",
-                    "pattern": "CMILib*"
-                },
-                "CoreProtect": {
-                    "type": "manual",
-                    "pattern": "CoreProtect-*"
-                },
-                "GriefPrevention": {
-                    "type": "manual",
-                    "pattern": "GriefPrevention*"
-                },
-                "MobFarmManager": {
-                    "type": "manual",
-                    "pattern": "MobFarmManager*"
-                },
-                "NuVotifier": {
-                    "type": "manual",
-                    "pattern": "NuVotifier*"
-                },
-                "Vault": {
-                    "type": "manual",
-                    "pattern": "Vault-*"
-                },
-                "mcMMO": {
-                    "type": "manual",
-                    "pattern": "mcMMO*"
-                }
-            }
+        "dev": {
+            "parent": "main"
+        }
+    },
+    "definitions": {
+        "paths": {
+            "Managed": "libraries/plugins/{engine}/Managed",
+            "Manual": "libraries/plugins/{engine}"
         }
     }
 }

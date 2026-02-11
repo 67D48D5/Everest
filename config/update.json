@@ -1,46 +1,174 @@
 {
-  "engines": {
-    "paper": {
-      "version": "1.21.11"
-    },
-    "velocity": {
-      "version": "3.4.0-SNAPSHOT"
-    }
-  },
-  "plugins": {
-    "velocity": {
-      "floodgate": "https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/velocity",
-      "geyser": "https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/velocity",
-      "luckperms": "https://ci.lucko.me/job/LuckPerms"
-    },
-    "paper": {
-      "Chunky": "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky",
-      "ChunkyBorder": "https://ci.codemc.io/view/Author/job/pop4959/job/ChunkyBorder",
-      "DiscordSRV": "https://github.com/DiscordSRV/DiscordSRV/releases",
-      "FastAsyncWorldEdit": "https://ci.athion.net/job/FastAsyncWorldEdit",
-      "LuckPerms": "https://ci.lucko.me/job/LuckPerms",
-      "PlaceholderAPI": "https://ci.extendedclip.com/job/PlaceholderAPI",
-      "ProtocolLib": "https://github.com/dmulloy2/ProtocolLib/releases/tag/dev-build",
-      "TAB": "https://github.com/NEZNAMY/TAB/releases",
-      "WorldGuard": "https://builds.enginehub.org/job/worldguard/last-successful?branch=version/7.0.x"
-    }
-  },
-  "notes": {
-    "plugins": {
+  "defaultBranch": "main",
+  "branches": {
+    "main": {
       "velocity": {
-        "CMIV": "https://www.zrips.net/cmiv/",
-        "LiteBans": "https://www.spigotmc.org/resources/litebans.3715/updates/"
+        "version": "3.4.0-SNAPSHOT",
+        "plugins": {
+          "geyser": {
+            "strategy": "Direct",
+            "url": "https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/velocity"
+          },
+          "floodgate": {
+            "strategy": "Direct",
+            "url": "https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/velocity"
+          },
+          "LuckPerms": {
+            "strategy": "Jenkins",
+            "host": "ci.lucko.me",
+            "project": "LuckPerms"
+          },
+          "cmiv": {
+            "strategy": "Zrips",
+            "project": "cmiv"
+          },
+          "litbans": {
+            "strategy": "Manual",
+            "url": "https://www.spigotmc.org/resources/litebans.3715/updates/"
+          }
+        }
       },
       "paper": {
-        "CMI": "https://www.spigotmc.org/resources/cmi-300-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/updates/",
-        "CMILib": "https://www.zrips.net/cmilib/",
-        "CoreProtect": "https://github.com/PlayPro/CoreProtect/",
-        "GriefPrevention": "https://dev.bukkit.org/projects/grief-prevention/files/",
-        "MobFarmManager": "https://www.spigotmc.org/resources/mob-farm-manager-supports-1-7-10-up-to-1-21-hopper-support.15127/updates/",
-        "NuVotifier": "https://github.com/NuVotifier/NuVotifier",
-        "Vault": "https://www.zrips.net/cmivault/",
-        "mcMMO": "https://github.com/mcMMO-Dev/mcMMO/"
+        "version": "1.21.11",
+        "plugins": {
+          "Chunky": {
+            "strategy": "Jenkins",
+            "host": "ci.codemc.io",
+            "project": "view/Author/job/pop4959/job/Chunky"
+          },
+          "ChunkyBorder": {
+            "strategy": "Jenkins",
+            "host": "ci.codemc.io",
+            "project": "view/Author/job/pop4959/job/ChunkyBorder"
+          },
+          "CMI": {
+            "strategy": "Manual",
+            "url": "https://www.spigotmc.org/resources/cmi-300-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/updates/"
+          },
+          "CMILib": {
+            "strategy": "Zrips",
+            "project": "cmilib"
+          },
+          "CoreProtect": {
+            "strategy": "Manual",
+            "url": "https://github.com/PlayPro/CoreProtect/"
+          },
+          "DiscordSRV": {
+            "strategy": "Github",
+            "owner": "DiscordSRV",
+            "repo": "DiscordSRV"
+          },
+          "FastAsyncWorldEdit": {
+            "strategy": "Jenkins",
+            "host": "ci.athion.net",
+            "project": "FastAsyncWorldEdit"
+          },
+          "GriefPrevention": {
+            "strategy": "Jenkins",
+            "host": "ci.codemc.io",
+            "project": "view/All/job/ThirdParty/job/GriefPrevention"
+          },
+          "LuckPerms": {
+            "strategy": "Jenkins",
+            "host": "ci.lucko.me",
+            "project": "LuckPerms"
+          },
+          "mcMMO": {
+            "strategy": "Jenkins",
+            "host": "ci.codemc.io",
+            "project": "view/All/job/ThirdParty/job/mcMMO"
+          },
+          "MobFarmManager": {
+            "strategy": "Manual",
+            "url": "https://www.spigotmc.org/resources/mob-farm-manager-supports-1-7-10-up-to-1-21-hopper-support.15127/updates/"
+          },
+          "NuVotifier": {
+            "strategy": "Github",
+            "owner": "NuVotifier",
+            "repo": "NuVotifier"
+          },
+          "PlaceholderAPI": {
+            "strategy": "Jenkins",
+            "host": "ci.extendedclip.com",
+            "project": "PlaceholderAPI"
+          },
+          "ProtocolLib": {
+            "strategy": "Github",
+            "owner": "dmulloy2",
+            "repo": "ProtocolLib"
+          },
+          "TAB": {
+            "strategy": "Github",
+            "owner": "NEZNAMY",
+            "repo": "TAB"
+          },
+          "Vault": {
+            "strategy": "Zrips",
+            "project": "cmivault"
+          },
+          "WorldGuard": {
+            "strategy": "EngineHub",
+            "project": "WorldGuard"
+          }
+        }
       }
+    },
+    "dev": {
+      "parent": "main"
+    }
+  },
+  "strategies": {
+    "Direct": {
+      "type": "static",
+      "description": "Direct URL download",
+      "download_template": "{url}"
+    },
+    "Jenkins": {
+      "type": "api",
+      "description": "Standard Jenkins Artifacts",
+      "api_template": "https://{host}/job/{project}/lastSuccessfulBuild/api/json",
+      "artifact_filter": ".artifacts[].relativePath",
+      "download_template": "https://{host}/job/{project}/lastSuccessfulBuild/artifact/{artifact}",
+      "priority": [
+        "(?i){platform}",
+        "(?i)universal",
+        "(?i)all",
+        "(?i).jar$"
+      ]
+    },
+    "Github": {
+      "type": "api",
+      "description": "GitHub Latest Release",
+      "api_template": "https://api.github.com/repos/{owner}/{repo}/releases/latest",
+      "artifact_filter": ".assets[].browser_download_url",
+      "download_template": "{artifact}",
+      "priority": [
+        "(?i){platform}",
+        "(?i)paper",
+        "(?i)spigot",
+        "(?i).jar$"
+      ]
+    },
+    "EngineHub": {
+      "type": "web-scrape",
+      "description": "Scrapes EngineHub file list (Specific Implementation)",
+      "api_template": "https://ci.enginehub.org/job/{project}/lastSuccessfulBuild/api/json",
+      "artifact_filter": ".artifacts[].relativePath",
+      "download_template": "https://ci.enginehub.org/job/{project}/lastSuccessfulBuild/artifact/{artifact}",
+      "priority": [
+        "(?i){platform}",
+        "(?i).jar$"
+      ]
+    },
+    "Zrips": {
+      "type": "web-scrape",
+      "description": "Scrapes Zrips file list (Specific Implementation)",
+      "download_template": "https://www.zrips.net/{project}"
+    },
+    "Manual": {
+      "type": "manual",
+      "description": "Requires browser interaction or external auth",
+      "download_template": "{url}"
     }
   }
 }

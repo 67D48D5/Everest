@@ -34,21 +34,11 @@ ROOT_PATH="$(realpath "${SCRIPT_DIR}/..")"
 SERVER_DIR="${ROOT_PATH}/servers/${SERVER_NAME}"
 ENGINE_DIR="${ROOT_PATH}/libraries/engines"
 
-# Colors
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+# shellcheck disable=SC1091
+source "${SCRIPT_DIR}/core/library"
 
-# ------------------------------------------------------------------------------
-# Helper Functions
-# ------------------------------------------------------------------------------
-
-# Logging helper functions
-log_info() { echo -e "[$(date '+%H:%M:%S') ${GREEN}INFO${NC}] [launcher]: $1"; }
-log_warn() { echo -e "[$(date '+%H:%M:%S') ${YELLOW}WARN${NC}] [launcher]: $1"; }
-log_err() { echo -e "[$(date '+%H:%M:%S') ${RED}ERROR${NC}] [launcher]: $1" >&2; }
+# shellcheck disable=SC2034
+LOG_TAG="launcher"
 
 # ------------------------------------------------------------------------------
 # Pre-flight Checks
