@@ -38,9 +38,13 @@ mkdir -p "$ENGINE_DIR"
 
 trap cleanup_jobs SIGINT SIGTERM
 
-# Resolve branch
-CONFIG="$(cat "$CONFIG_FILE")"
-RESOLVED="$(resolve_branch "$CONFIG")"
+# Resolve branch (use pre-resolved if available)
+if [[ -n "${EVEREST_RESOLVED_UPDATE:-}" ]]; then
+    RESOLVED="$EVEREST_RESOLVED_UPDATE"
+else
+    CONFIG="$(cat "$CONFIG_FILE")"
+    RESOLVED="$(resolve_branch "$CONFIG")"
+fi
 
 # ------------------------------------------------------------------------------
 # Engine Processing

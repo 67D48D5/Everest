@@ -35,9 +35,13 @@ done
 }
 mkdir -p "$SERVERS_ROOT"
 
-# Resolve branch
-CONFIG="$(cat "$CONFIG_FILE")"
-RESOLVED="$(resolve_branch "$CONFIG")"
+# Resolve branch (use pre-resolved if available)
+if [[ -n "${EVEREST_RESOLVED_SERVER:-}" ]]; then
+    RESOLVED="$EVEREST_RESOLVED_SERVER"
+else
+    CONFIG="$(cat "$CONFIG_FILE")"
+    RESOLVED="$(resolve_branch "$CONFIG")"
+fi
 
 # ------------------------------------------------------------------------------
 # Core: Symlink a resource

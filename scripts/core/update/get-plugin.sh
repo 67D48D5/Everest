@@ -56,10 +56,19 @@ cleanup() {
 
 trap cleanup EXIT INT TERM
 
-# Resolve branch
-CONFIG="$(cat "$CONFIG_FILE")"
-RESOLVED="$(resolve_branch "$CONFIG")"
-STRATEGIES="$(jq '.strategies' <<<"$CONFIG")"
+# Resolve branch (use pre-resolved if available)
+if [[ -n "${EVEREST_RESOLVED_UPDATE:-}" ]]; then
+    RESOLVED="$EVEREST_RESOLVED_UPDATE"
+else
+    CONFIG="$(cat "$CONFIG_FILE")"
+    RESOLVED="$(resolve_branch "$CONFIG")"
+fi
+
+if [[ -n "${EVEREST_STRATEGIES:-}" ]]; then
+    STRATEGIES="$EVEREST_STRATEGIES"
+else
+    STRATEGIES="$(jq '.strategies' "$CONFIG_FILE")"
+fi
 
 # ==============================================================================
 # Artifact Selection
@@ -298,15 +307,7 @@ download_plugin() {
         log_warn "Manual download required: ${tag}"
         [[ -n "$manual_url" ]] && log_warn "  → ${manual_url}"
 
-        # Preserve existing jar
-        if [[ -d "$fallback_dir" ]]; then
-            local backup
-            backup="$(find "$fallback_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
-            if [[ -n "$backup" ]]; then
-                cp -p "$backup" "$dest_dir/"
-                log_info "Preserved: ${tag} ($(basename "$backup"))"
-            fi
-        fi
+        try_fallback "$name" "$tag" "$fallback_dir" "$dest_dir" || true
         return 0
     fi
 
@@ -341,15 +342,7 @@ download_plugin() {
     # Resolution failure → fallback
     if [[ -z "$resolved_url" ]]; then
         log_err "Failed to resolve URL for ${tag}"
-        if [[ -d "$fallback_dir" ]]; then
-            local backup
-            backup="$(find "$fallback_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
-            if [[ -n "$backup" ]]; then
-                cp -p "$backup" "$dest_dir/"
-                log_info "Preserved previous: ${tag} ($(basename "$backup"))"
-                return 0
-            fi
-        fi
+        try_fallback "$name" "$tag" "$fallback_dir" "$dest_dir" && return 0
         return 1
     fi
 
@@ -373,15 +366,7 @@ download_plugin() {
     log_warn "Download failed for ${tag}. Trying fallback..."
 
     # Download failure → fallback
-    if [[ -d "$fallback_dir" ]]; then
-        local backup
-        backup="$(find "$fallback_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
-        if [[ -n "$backup" ]]; then
-            cp -p "$backup" "$dest_dir/"
-            log_info "Preserved previous: ${tag} ($(basename "$backup"))"
-            return 0
-        fi
-    fi
+    try_fallback "$name" "$tag" "$fallback_dir" "$dest_dir" && return 0
 
     log_err "No fallback available for ${tag}"
     return 1

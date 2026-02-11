@@ -23,65 +23,81 @@ source "${SCRIPT_DIR}/core/library"
 LOG_TAG="updater"
 
 # Pre-flight
-log_info "Checking for required tools..."
-
-for cmd in jq realpath ln rm find sort tail mv mktemp curl grep sed head; do
-    if ! command -v "$cmd" >/dev/null; then
-        log_err "Missing dependency: '$cmd'. Please install it first."
+for cmd in jq curl realpath; do
+    command -v "$cmd" >/dev/null || {
+        log_err "Missing dependency: '$cmd'"
         exit 1
-    fi
+    }
 done
 
 for config_file in "${ROOT_PATH}/config/server.json" "${ROOT_PATH}/config/update.json"; do
-    if [[ ! -f "${config_file}" ]]; then
-        log_err "File '${config_file}' not found."
+    [[ -f "${config_file}" ]] || {
+        log_err "Config not found: ${config_file}"
         exit 1
-    fi
+    }
 done
 
-if [[ ! -d "$UPDATER_PATH" ]]; then
-    log_err "Update script directory not found at: $UPDATER_PATH"
+[[ -d "$UPDATER_PATH" ]] || {
+    log_err "Update scripts not found: $UPDATER_PATH"
     exit 1
-fi
+}
 
 # Export branch for child scripts
 export EVEREST_BRANCH="${EVEREST_BRANCH:-}"
+[[ -n "$EVEREST_BRANCH" ]] && log_info "Using branch: ${EVEREST_BRANCH}"
 
-if [[ -n "$EVEREST_BRANCH" ]]; then
-    log_info "Using branch: ${EVEREST_BRANCH}"
-fi
+# Pre-resolve configs and export for child scripts (avoids redundant I/O + jq)
+log_info "Resolving configuration..."
+
+UPDATE_CONFIG="$(cat "${ROOT_PATH}/config/update.json")"
+SERVER_CONFIG="$(cat "${ROOT_PATH}/config/server.json")"
+
+# shellcheck disable=SC2155
+export EVEREST_RESOLVED_UPDATE="$(resolve_branch "$UPDATE_CONFIG")"
+# shellcheck disable=SC2155
+export EVEREST_RESOLVED_SERVER="$(resolve_branch "$SERVER_CONFIG")"
+# shellcheck disable=SC2155
+export EVEREST_STRATEGIES="$(jq '.strategies' <<<"$UPDATE_CONFIG")"
+# shellcheck disable=SC2155
+export EVEREST_DEFINITIONS="$(jq '.definitions // {}' <<<"$SERVER_CONFIG")"
 
 # Main
 failed_processes=()
 fail_count=0
 
-log_info "Starting download process..."
+log_info "Starting download phase..."
+bash "$UPDATER_PATH/get-engine.sh" &
+pid_engine=$!
+bash "$UPDATER_PATH/get-plugin.sh" &
+pid_plugin=$!
 
-if ! bash "$UPDATER_PATH/get-engine.sh"; then
-    log_err "Engine download failed."
+wait "$pid_engine" || {
+    log_err "get-engine failed."
     ((fail_count++)) || true
     failed_processes+=("get-engine")
-fi
-
-if ! bash "$UPDATER_PATH/get-plugin.sh"; then
-    log_err "Plugin download failed."
+}
+wait "$pid_plugin" || {
+    log_err "get-plugin failed."
     ((fail_count++)) || true
     failed_processes+=("get-plugin")
-fi
+}
 
-log_info "Starting linking process..."
+log_info "Starting linking phase..."
+bash "$UPDATER_PATH/link-library.sh" &
+pid_lib=$!
+bash "$UPDATER_PATH/link-plugin.sh" &
+pid_plug=$!
 
-if ! bash "$UPDATER_PATH/link-library.sh"; then
-    log_err "Mount linking failed."
+wait "$pid_lib" || {
+    log_err "link-library failed."
     ((fail_count++)) || true
-    failed_processes+=("link-mount")
-fi
-
-if ! bash "$UPDATER_PATH/link-plugin.sh"; then
-    log_err "Plugin linking failed."
+    failed_processes+=("link-library")
+}
+wait "$pid_plug" || {
+    log_err "link-plugin failed."
     ((fail_count++)) || true
     failed_processes+=("link-plugin")
-fi
+}
 
 # Report
 if [[ $fail_count -gt 0 ]]; then

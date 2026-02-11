@@ -16,10 +16,10 @@ CYAN='\033[0;36m'
 NC='\033[0m'
 
 # Defaults
-USER_AGENT="Everest/3.0.0 (https://github.com/E414CF6/Everest)"
 CURL_RETRY=1
 CURL_RETRY_DELAY=2
 CURL_CONNECT_TIMEOUT=4
+CURL_USER_AGENT="Everest/3.0.0 (https://github.com/E414CF6/Everest)"
 
 # ------------------------------------------------------------------------------
 # Logging
@@ -33,37 +33,18 @@ log_err() { echo -e "[$(date '+%H:%M:%S') ${RED}ERROR${NC}] [${LOG_TAG:-everest}
 # Networking
 # ------------------------------------------------------------------------------
 
-curl_json() {
-    local url="$1"
+_curl() {
     curl -fsSL \
-        -H "User-Agent: ${USER_AGENT}" \
-        -H "Accept: application/json" \
+        -H "User-Agent: ${CURL_USER_AGENT}" \
         --retry "${CURL_RETRY}" \
         --retry-delay "${CURL_RETRY_DELAY}" \
         --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
-        "$url"
+        "$@"
 }
 
-curl_html() {
-    local url="$1"
-    curl -fsSL \
-        -H "User-Agent: ${USER_AGENT}" \
-        --retry "${CURL_RETRY}" \
-        --retry-delay "${CURL_RETRY_DELAY}" \
-        --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
-        "$url"
-}
-
-curl_download() {
-    local url="$1" dest="$2"
-    curl -fsSL -L \
-        -H "User-Agent: ${USER_AGENT}" \
-        --retry "${CURL_RETRY}" \
-        --retry-delay "${CURL_RETRY_DELAY}" \
-        --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
-        -o "$dest" \
-        "$url"
-}
+curl_json() { _curl -H "Accept: application/json" "$1"; }
+curl_html() { _curl "$1"; }
+curl_download() { _curl -o "$2" "$1"; }
 
 # ------------------------------------------------------------------------------
 # Branch Resolution
@@ -136,16 +117,26 @@ cleanup_jobs() {
 
 pick_latest() {
     local dir="$1" pattern="$2"
-    [[ -d "$dir" ]] || {
-        echo ""
-        return 0
-    }
+    [[ -d "$dir" ]] || return 0
+    find "$dir" -maxdepth 1 -type f -iname "$pattern" 2>/dev/null | sort -V | tail -n1
+}
 
-    find "$dir" -maxdepth 1 -type f -iname "$pattern" 2>/dev/null |
-        awk -F/ '{print $NF "\t" $0}' |
-        sort -V |
-        tail -n1 |
-        cut -f2-
+# ------------------------------------------------------------------------------
+# Fallback Jar Recovery
+# ------------------------------------------------------------------------------
+# Tries to recover a jar from a fallback directory.
+# Usage: try_fallback <name> <tag> <fallback_dir> <dest_dir>
+# Returns: 0 if found and copied, 1 otherwise.
+# ------------------------------------------------------------------------------
+
+try_fallback() {
+    local name="$1" tag="$2" fallback_dir="$3" dest_dir="$4"
+    [[ -d "$fallback_dir" ]] || return 1
+    local backup
+    backup="$(find "$fallback_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
+    [[ -n "$backup" ]] || return 1
+    cp -p "$backup" "$dest_dir/"
+    log_info "Preserved: ${tag} ($(basename "$backup"))"
 }
 
 # ------------------------------------------------------------------------------

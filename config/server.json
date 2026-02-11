@@ -5,21 +5,21 @@
             "proxy": {
                 "engine": "velocity",
                 "plugins": {
-                    "floodgate": {
-                        "type": "managed",
-                        "pattern": "floodgate*"
+                    "Managed": {
+                        "floodgate": {
+                            "pattern": "floodgate*"
+                        },
+                        "geyser": {
+                            "pattern": "geyser*"
+                        },
+                        "cmiv": {
+                            "pattern": "cmiv*"
+                        }
                     },
-                    "geyser": {
-                        "type": "managed",
-                        "pattern": "geyser*"
-                    },
-                    "cmiv": {
-                        "type": "managed",
-                        "pattern": "cmiv*"
-                    },
-                    "litbans": {
-                        "type": "manual",
-                        "pattern": "LiteBans*"
+                    "Manual": {
+                        "litbans": {
+                            "pattern": "LiteBans*"
+                        }
                     }
                 }
             },

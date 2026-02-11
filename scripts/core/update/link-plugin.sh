@@ -38,10 +38,19 @@ done
 }
 mkdir -p "$PLUGIN_LIB_ROOT" "$SERVERS_ROOT"
 
-# Resolve config
-CONFIG="$(cat "$CONFIG_FILE")"
-RESOLVED="$(resolve_branch "$CONFIG")"
-DEFINITIONS="$(jq '.definitions // {}' <<<"$CONFIG")"
+# Resolve config (use pre-resolved if available)
+if [[ -n "${EVEREST_RESOLVED_SERVER:-}" ]]; then
+    RESOLVED="$EVEREST_RESOLVED_SERVER"
+else
+    CONFIG="$(cat "$CONFIG_FILE")"
+    RESOLVED="$(resolve_branch "$CONFIG")"
+fi
+
+if [[ -n "${EVEREST_DEFINITIONS:-}" ]]; then
+    DEFINITIONS="$EVEREST_DEFINITIONS"
+else
+    DEFINITIONS="$(jq '.definitions // {}' "$CONFIG_FILE")"
+fi
 
 # ------------------------------------------------------------------------------
 # Detect plugin config format
@@ -52,14 +61,7 @@ DEFINITIONS="$(jq '.definitions // {}' <<<"$CONFIG")"
 # ------------------------------------------------------------------------------
 
 detect_format() {
-    local plugins_json="$1"
-    local first_val
-    first_val="$(jq 'to_entries | first | .value' <<<"$plugins_json")"
-    if jq -e 'has("pattern")' <<<"$first_val" >/dev/null 2>&1; then
-        echo "flat"
-    else
-        echo "grouped"
-    fi
+    jq -r 'to_entries | first | .value | if has("pattern") then "flat" else "grouped" end' <<<"$1"
 }
 
 # ------------------------------------------------------------------------------
@@ -72,6 +74,25 @@ resolve_src_dir() {
     path_template="$(jq -r --arg c "$category" '.paths[$c] // empty' <<<"$DEFINITIONS")"
     [[ -n "$path_template" ]] || return 1
     echo "${ROOT_PATH}/$(interpolate "$path_template" engine "$engine")"
+}
+
+# ------------------------------------------------------------------------------
+# Link a single plugin jar (shared by both formats)
+# ------------------------------------------------------------------------------
+
+link_one_plugin() {
+    local name="$1" pattern="$2" src_dir="$3" temp_dir="$4"
+    local src_file
+    src_file="$(pick_latest "$src_dir" "$pattern")"
+
+    if [[ -n "$src_file" && -f "$src_file" ]]; then
+        ln -sfn "$src_file" "${temp_dir}/${name}.jar"
+        log_info "Linked: ${name}.jar → $(basename "$src_file")"
+        return 0
+    else
+        log_warn "Not found: ${name} (${pattern}) in ${src_dir}"
+        return 1
+    fi
 }
 
 # ------------------------------------------------------------------------------
@@ -105,7 +126,6 @@ link_server_plugins() {
         while IFS=$'\t' read -r name type pattern; do
             [[ -n "$name" ]] || continue
 
-            # Map type to category for path resolution
             local category
             case "$type" in
             managed) category="Managed" ;;
@@ -122,15 +142,9 @@ link_server_plugins() {
                 continue
             }
 
-            local src_file
-            src_file="$(pick_latest "$src_dir" "$pattern")"
-
-            if [[ -n "$src_file" && -f "$src_file" ]]; then
-                ln -sfn "$src_file" "${temp_dir}/${name}.jar"
-                log_info "Linked: ${name}.jar → $(basename "$src_file")"
+            if link_one_plugin "$name" "$pattern" "$src_dir" "$temp_dir"; then
                 ((linked++)) || true
             else
-                log_warn "Not found: ${name} (${pattern}) in ${src_dir}"
                 ((missing++)) || true
             fi
         done < <(jq -r 'to_entries[] | "\(.key)\t\(.value.type)\t\(.value.pattern)"' <<<"$plugins_json")
@@ -147,16 +161,9 @@ link_server_plugins() {
 
             while IFS=$'\t' read -r name pattern; do
                 [[ -n "$name" ]] || continue
-
-                local src_file
-                src_file="$(pick_latest "$src_dir" "$pattern")"
-
-                if [[ -n "$src_file" && -f "$src_file" ]]; then
-                    ln -sfn "$src_file" "${temp_dir}/${name}.jar"
-                    log_info "Linked: ${name}.jar → $(basename "$src_file")"
+                if link_one_plugin "$name" "$pattern" "$src_dir" "$temp_dir"; then
                     ((linked++)) || true
                 else
-                    log_warn "Not found: ${name} (${pattern}) in ${src_dir}"
                     ((missing++)) || true
                 fi
             done < <(jq -r --arg c "$category" '.[$c] | to_entries[] | "\(.key)\t\(.value.pattern)"' <<<"$plugins_json")

@@ -63,11 +63,9 @@ done
 # ------------------------------------------------------------------------------
 
 # Load environment variables
-ENV_EXPORTS=()
 if [[ -f "${ROOT_PATH}/.env" ]]; then
     while IFS='=' read -r key val; do
         [[ "$key" =~ ^#.*$ || -z "$key" ]] && continue
-        ENV_EXPORTS+=("$key=$val")
         export "$key=$val"
     done <"${ROOT_PATH}/.env"
 fi
@@ -127,23 +125,27 @@ velocity)
     ;;
 esac
 
-# Final Java command (wrap with restart loop)
-# Build the command string properly to avoid shellcheck warnings
-ENV_EXPORTS_STR="${ENV_EXPORTS[*]}"
-COMMON_FLAGS_STR="${COMMON_FLAGS[*]}"
-ENGINE_FLAGS_STR="${ENGINE_FLAGS[*]}"
-EXTRA_JAVA_FLAGS_STR="${EXTRA_JAVA_FLAGS[*]}"
+# Build the restart wrapper (heredoc avoids fragile string escaping)
+WRAPPER="${SERVER_DIR}/.everest-restart.sh"
+cat >"$WRAPPER" <<'RESTART_EOF'
+#!/usr/bin/env bash
+while true; do
+    echo "[$(date '+%H:%M:%S') INFO] [launcher]: Starting server..."
+    "$@"
+    EXIT_CODE=$?
+    echo "[$(date '+%H:%M:%S') WARN] [launcher]: Server exited (code $EXIT_CODE), restarting in 3 seconds..."
+    sleep 3
+done
+RESTART_EOF
+chmod +x "$WRAPPER"
 
-# Command to start the server with automatic restart
-START_CMD=(
-    bash -c "
-    while true; do
-      echo \"[$(date '+%H:%M:%S') INFO] [launcher]: Starting server...\"
-      env ${ENV_EXPORTS_STR} java ${COMMON_FLAGS_STR} ${ENGINE_FLAGS_STR} ${EXTRA_JAVA_FLAGS_STR} -jar \"${JAR_FILE}\" nogui
-      echo \"[$(date '+%H:%M:%S') WARN] [launcher]: Server stopped at $(date), restarting in 3 seconds...\"
-      sleep 3
-    done
-  "
+# Final Java command
+JAVA_CMD=(
+    java
+    "${COMMON_FLAGS[@]}"
+    "${ENGINE_FLAGS[@]}"
+    "${EXTRA_JAVA_FLAGS[@]}"
+    -jar "$JAR_FILE" nogui
 )
 
 # Wrapper of tmux session
@@ -157,7 +159,7 @@ if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
         sleep 8
 
         tmux kill-session -t "$TMUX_SESSION"
-        tmux new-session -s "$TMUX_SESSION" -d -- "${START_CMD[@]}"
+        tmux new-session -s "$TMUX_SESSION" -d -- "$WRAPPER" "${JAVA_CMD[@]}"
 
         log_info "Restarted server at $(date)"
     else
@@ -165,7 +167,7 @@ if tmux has-session -t "$TMUX_SESSION" 2>/dev/null; then
     fi
 else
     # Create new detached tmux session
-    tmux new-session -s "$TMUX_SESSION" -d -- "${START_CMD[@]}"
+    tmux new-session -s "$TMUX_SESSION" -d -- "$WRAPPER" "${JAVA_CMD[@]}"
 
     log_info "Server '$SERVER_NAME' is now running in tmux session '$TMUX_SESSION'."
 fi
