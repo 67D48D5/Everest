@@ -126,7 +126,7 @@ velocity)
 esac
 
 # Build the restart wrapper (heredoc avoids fragile string escaping)
-WRAPPER="${SERVER_DIR}/.everest-restart.sh"
+WRAPPER="${SERVER_DIR}/restart.sh"
 cat >"$WRAPPER" <<'RESTART_EOF'
 #!/usr/bin/env bash
 while true; do
