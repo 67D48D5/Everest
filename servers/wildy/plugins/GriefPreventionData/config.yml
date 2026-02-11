@@ -7,7 +7,6 @@ GriefPrevention:
     wwild_the_end: 24
   Claims:
     Mode:
-      
       wwild: Survival
       wwild_nether: Survival
       wwild_the_end: Disabled
