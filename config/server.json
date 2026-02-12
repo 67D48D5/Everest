@@ -12,6 +12,12 @@
                         "geyser": {
                             "pattern": "geyser*"
                         },
+                        "luckperms": {
+                            "pattern": "LuckPerms-Velocity-*"
+                        },
+                        "viaversion": {
+                            "pattern": "ViaVersion-*"
+                        },
                         "cmiv": {
                             "pattern": "cmiv*"
                         }

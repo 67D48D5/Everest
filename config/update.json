@@ -13,10 +13,15 @@
             "strategy": "Direct",
             "url": "https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/velocity"
           },
-          "LuckPerms": {
+          "luckperms": {
             "strategy": "Jenkins",
             "host": "ci.lucko.me",
             "project": "LuckPerms"
+          },
+          "viaversion": {
+            "strategy": "Jenkins",
+            "host": "ci.viaversion.com",
+            "project": "ViaVersion"
           },
           "cmiv": {
             "strategy": "Zrips",
