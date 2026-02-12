@@ -4,6 +4,12 @@
         "main": {
             "proxy": {
                 "engine": "velocity",
+                "mounts": {
+                    "luckperms-libs": {
+                        "src": "plugins/LuckPerms/libs",
+                        "dest": "plugins/luckperms/libs"
+                    }
+                },
                 "plugins": {
                     "Managed": {
                         "floodgate": {
