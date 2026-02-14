@@ -1,9 +1,11 @@
+//! Module for linking library resources into server instances based on mounts configuration.
+
 use std::path::Path;
 
 use anyhow::Result;
 use serde_json::Value;
 
-use log::{info, trace, warn};
+use log::{info, warn};
 
 /// Symlinks resources from libraries/common into server instances based on mounts config.
 pub async fn run(resolved: &Value, root: &Path) -> Result<()> {
@@ -47,7 +49,7 @@ pub async fn run(resolved: &Value, root: &Path) -> Result<()> {
             }
         };
 
-        info!("Processing mounts: {}", server.green());
+        info!("Processing mounts: {server}");
 
         for (name, mount) in mounts {
             let src = mount.get("src").and_then(|v| v.as_str()).unwrap_or("");
@@ -71,11 +73,7 @@ pub async fn run(resolved: &Value, root: &Path) -> Result<()> {
 
 fn link_resource(source_path: &Path, dest_path: &Path, name: &str, tag: &str) -> Result<()> {
     if !source_path.exists() {
-        warn!(
-            TAG,
-            "Source missing for {tag}/{name}: {}",
-            source_path.display()
-        );
+        warn!("Source missing for {tag}/{name}: {}", source_path.display());
         warn!("Creating empty directory: {}", source_path.display());
         std::fs::create_dir_all(source_path)?;
     }
@@ -88,11 +86,7 @@ fn link_resource(source_path: &Path, dest_path: &Path, name: &str, tag: &str) ->
     if dest_path.is_symlink() {
         std::fs::remove_file(dest_path)?;
     } else if dest_path.is_dir() {
-        warn!(
-            TAG,
-            "Replacing directory with symlink: {}",
-            dest_path.display()
-        );
+        warn!("Replacing directory with symlink: {}", dest_path.display());
         std::fs::remove_dir_all(dest_path)?;
     } else if dest_path.is_file() {
         warn!("Replacing file with symlink: {}", dest_path.display());

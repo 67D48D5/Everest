@@ -1,6 +1,6 @@
 //! Utility functions for the Everest services, including file management and HTTP operations.
 
-// pub mod http;
+pub mod http;
 
 use std::{
     fs,
@@ -19,13 +19,18 @@ pub fn interpolate(template: &str, vars: &[(&str, &str)]) -> String {
 }
 
 /// Finds the latest file matching a glob pattern in a directory (version-sorted).
+/// Glob matching is case-insensitive for cross-platform consistency.
 pub fn pick_latest(dir: &Path, pattern: &str) -> Option<PathBuf> {
     if !dir.is_dir() {
         return None;
     }
 
     let glob_pattern = dir.join(pattern).to_string_lossy().to_string();
-    let mut matches: Vec<PathBuf> = glob::glob(&glob_pattern)
+    let options = glob::MatchOptions {
+        case_sensitive: false,
+        ..Default::default()
+    };
+    let mut matches: Vec<PathBuf> = glob::glob_with(&glob_pattern, options)
         .ok()?
         .filter_map(|e| e.ok())
         .filter(|p| p.is_file())

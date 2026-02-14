@@ -16,8 +16,6 @@ use std::path::Path;
 #[serde(rename_all = "camelCase")]
 pub struct RawConfig {
     pub default_branch: String,
-    #[allow(dead_code)]
-    pub branches: HashMap<String, Value>,
     #[serde(default)]
     pub strategies: HashMap<String, StrategyDef>,
     #[serde(default)]
@@ -28,9 +26,6 @@ pub struct RawConfig {
 pub struct StrategyDef {
     #[serde(rename = "type")]
     pub strategy_type: String,
-    #[serde(default)]
-    #[allow(dead_code)]
-    pub description: Option<String>,
     #[serde(default)]
     pub api_template: Option<String>,
     #[serde(default)]
@@ -65,13 +60,13 @@ pub struct ResolvedServer {
 // Config loading
 // ---------------------------------------------------------------------------
 
-pub fn load_update_config(root: &Path, branch: &str) -> Result<ResolvedUpdate> {
-    let path = root.join("config/update.json");
-    let text = std::fs::read_to_string(&path)
+/// Shared helper: reads a JSON config file, parses the raw shape, and resolves
+/// the requested branch (falling back to `defaultBranch` when empty).
+fn load_and_resolve(path: &Path, branch: &str) -> Result<(RawConfig, Value)> {
+    let text = std::fs::read_to_string(path)
         .with_context(|| format!("Failed to read {}", path.display()))?;
     let raw: RawConfig = serde_json::from_str(&text)
         .with_context(|| format!("Failed to parse {}", path.display()))?;
-
     let full: Value = serde_json::from_str(&text)?;
 
     let branch_name = if branch.is_empty() {
@@ -81,7 +76,11 @@ pub fn load_update_config(root: &Path, branch: &str) -> Result<ResolvedUpdate> {
     };
 
     let resolved = resolve_branch(&full, branch_name)?;
+    Ok((raw, resolved))
+}
 
+pub fn load_update_config(root: &Path, branch: &str) -> Result<ResolvedUpdate> {
+    let (raw, resolved) = load_and_resolve(&root.join("config/update.json"), branch)?;
     Ok(ResolvedUpdate {
         resolved,
         strategies: raw.strategies,
@@ -89,21 +88,7 @@ pub fn load_update_config(root: &Path, branch: &str) -> Result<ResolvedUpdate> {
 }
 
 pub fn load_server_config(root: &Path, branch: &str) -> Result<ResolvedServer> {
-    let path = root.join("config/server.json");
-    let text = std::fs::read_to_string(&path)
-        .with_context(|| format!("Failed to read {}", path.display()))?;
-    let raw: RawConfig = serde_json::from_str(&text)
-        .with_context(|| format!("Failed to parse {}", path.display()))?;
-
-    let full: Value = serde_json::from_str(&text)?;
-
-    let branch_name = if branch.is_empty() {
-        &raw.default_branch
-    } else {
-        branch
-    };
-
-    let resolved = resolve_branch(&full, branch_name)?;
+    let (raw, resolved) = load_and_resolve(&root.join("config/server.json"), branch)?;
 
     let definitions: Definitions = if raw.definitions.is_object() {
         serde_json::from_value(raw.definitions)?

@@ -138,7 +138,7 @@
         "(?i){platform}",
         "(?i)universal",
         "(?i)all",
-        "(?i).jar$"
+        "(?i)^(?!.*(-javadoc|-sources|-tests)).*\\.jar$"
       ]
     },
     "Github": {

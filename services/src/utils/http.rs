@@ -1,19 +1,27 @@
-//! Generic HTTP utilities for fetching JSON, HTML, and downloading files with retries and timeouts.
+//! Generic HTTP utilities for fetching JSON, HTML, and downloading files.
+//!
+//! Provides a reusable [`HttpClient`] with automatic retries, exponential backoff,
+//! streaming downloads, and content-length validation.
 
 use std::{path::Path, time::Duration};
 
 use anyhow::{Context, Result, bail};
+use log::{debug, warn};
 use reqwest::{Client, StatusCode};
 use serde::de::DeserializeOwned;
 use tokio::{fs::File, io::AsyncWriteExt};
 
-// Structure for HTTP client configuration, allowing customization of user agent, timeouts, retry behavior, etc.
+// ---------------------------------------------------------------------------
+// Configuration
+// ---------------------------------------------------------------------------
+
+/// Configuration for the HTTP client.
 #[derive(Debug, Clone)]
 pub struct ClientConfig {
     pub user_agent: String,
     pub connect_timeout: Duration,
     pub request_timeout: Duration,
-    pub retry_delay: Duration,
+    pub initial_retry_delay: Duration,
     pub max_retries: u32,
 }
 
@@ -21,14 +29,19 @@ impl Default for ClientConfig {
     fn default() -> Self {
         Self {
             user_agent: "Everest/3.0.0 (https://github.com/E414CF6/Everest)".into(),
-            connect_timeout: Duration::from_secs(4),
-            request_timeout: Duration::from_secs(60),
-            retry_delay: Duration::from_secs(2),
-            max_retries: 3, // 기본 재시도 횟수 증가
+            connect_timeout: Duration::from_secs(5),
+            request_timeout: Duration::from_secs(120),
+            initial_retry_delay: Duration::from_secs(1),
+            max_retries: 3,
         }
     }
 }
 
+// ---------------------------------------------------------------------------
+// Client
+// ---------------------------------------------------------------------------
+
+/// Reusable HTTP client with retry logic and exponential backoff.
 #[derive(Clone)]
 pub struct HttpClient {
     client: Client,
@@ -36,12 +49,12 @@ pub struct HttpClient {
 }
 
 impl HttpClient {
-    /// 기본 설정으로 클라이언트 생성
+    /// Creates a client with default configuration.
     pub fn new() -> Result<Self> {
         Self::with_config(ClientConfig::default())
     }
 
-    /// 사용자 정의 설정으로 클라이언트 생성
+    /// Creates a client with custom configuration.
     pub fn with_config(config: ClientConfig) -> Result<Self> {
         let client = Client::builder()
             .user_agent(&config.user_agent)
@@ -53,124 +66,145 @@ impl HttpClient {
         Ok(Self { client, config })
     }
 
-    /// 내부용: 재시도 로직이 포함된 요청 실행기
-    /// `request_builder_fn`: 매 시도마다 새로운 RequestBuilder를 생성하는 클로저
-    async fn execute_with_retry<F, Fut>(&self, request_maker: F) -> Result<reqwest::Response>
+    // -----------------------------------------------------------------------
+    // Retry engine
+    // -----------------------------------------------------------------------
+
+    /// Executes a request with automatic retries and exponential backoff.
+    ///
+    /// Only retries on:
+    /// - Server errors (5xx)
+    /// - Rate limiting (429)
+    /// - Connection / timeout errors
+    ///
+    /// Client errors (4xx except 429) are returned immediately without retry.
+    async fn execute_with_retry<F>(&self, url: &str, build_request: F) -> Result<reqwest::Response>
     where
-        F: Fn() -> Fut,
-        Fut: std::future::Future<Output = Result<reqwest::RequestBuilder, reqwest::Error>>,
+        F: Fn() -> reqwest::RequestBuilder,
     {
         let mut last_err = None;
 
         for attempt in 0..=self.config.max_retries {
             if attempt > 0 {
-                // 지수 백오프(Exponential Backoff) 적용 가능 (여기선 단순 고정 딜레이)
-                tokio::time::sleep(self.config.retry_delay).await;
+                let delay = self.config.initial_retry_delay * 2u32.pow(attempt - 1);
+                warn!(
+                    "Retry {attempt}/{} for {url} (backoff {delay:?})",
+                    self.config.max_retries
+                );
+                tokio::time::sleep(delay).await;
             }
 
-            // 매 시도마다 RequestBuilder를 새로 생성 (RequestBuilder는 1회용)
-            let builder = match request_maker().await {
-                Ok(b) => b,
-                Err(e) => {
-                    last_err = Some(anyhow::anyhow!("Failed to build request: {}", e));
-                    continue;
-                }
-            };
-
-            match builder.send().await {
+            match build_request().send().await {
                 Ok(resp) => {
                     let status = resp.status();
+
                     if status.is_success() {
                         return Ok(resp);
-                    } else if status.is_server_error() || status == StatusCode::TOO_MANY_REQUESTS {
-                        // 5xx 에러나 429(Rate Limit)일 때만 재시도
-                        last_err = Some(anyhow::anyhow!("HTTP Server Error: {}", status));
-                        continue;
-                    } else {
-                        // 404 등 클라이언트 에러는 재시도하지 않고 바로 실패 처리
-                        bail!("HTTP Request failed with status: {}", status);
                     }
+
+                    // Retryable server-side errors
+                    if status.is_server_error() || status == StatusCode::TOO_MANY_REQUESTS {
+                        last_err = Some(anyhow::anyhow!("HTTP {status} from {url}"));
+                        continue;
+                    }
+
+                    // Non-retryable client errors (400, 401, 403, 404, …)
+                    bail!("HTTP {status} from {url}");
+                }
+                Err(e) if e.is_timeout() || e.is_connect() => {
+                    last_err = Some(anyhow::anyhow!("Connection error for {url}: {e}"));
                 }
                 Err(e) => {
-                    last_err = Some(anyhow::anyhow!("Connection failed: {}", e));
+                    // Non-retryable request error (e.g. invalid URL, redirect loop)
+                    bail!("Request failed for {url}: {e}");
                 }
             }
         }
 
-        Err(last_err.unwrap_or_else(|| anyhow::anyhow!("Max retries exceeded")))
+        Err(last_err.unwrap_or_else(|| anyhow::anyhow!("Max retries exceeded for {url}")))
     }
 
-    /// JSON 데이터 가져오기 (Generic 적용)
+    // -----------------------------------------------------------------------
+    // Public API
+    // -----------------------------------------------------------------------
+
+    /// Fetches and deserializes JSON from a URL.
     pub async fn fetch_json<T: DeserializeOwned>(&self, url: &str) -> Result<T> {
-        let url = url.to_string(); // 클로저로 이동시키기 위해 소유권 복제
         let resp = self
-            .execute_with_retry(|| async {
-                Ok(self.client.get(&url).header("Accept", "application/json"))
+            .execute_with_retry(url, || {
+                self.client.get(url).header("Accept", "application/json")
             })
             .await
             .with_context(|| format!("Failed to fetch JSON from {url}"))?;
 
-        let data = resp
-            .json::<T>()
+        resp.json::<T>()
             .await
-            .with_context(|| format!("Failed to parse JSON body from {url}"))?;
-
-        Ok(data)
+            .with_context(|| format!("Failed to parse JSON from {url}"))
     }
 
-    /// HTML 문자열 가져오기
+    /// Fetches a URL and returns the response body as a string.
     pub async fn fetch_html(&self, url: &str) -> Result<String> {
-        let url = url.to_string();
         let resp = self
-            .execute_with_retry(|| async { Ok(self.client.get(&url)) })
+            .execute_with_retry(url, || self.client.get(url))
             .await
             .with_context(|| format!("Failed to fetch HTML from {url}"))?;
 
-        let text = resp
-            .text()
+        resp.text()
             .await
-            .with_context(|| format!("Failed to read text body from {url}"))?;
-
-        Ok(text)
+            .with_context(|| format!("Failed to read body from {url}"))
     }
 
-    /// 파일 다운로드 (Streaming 방식 적용 - 메모리 효율적)
+    /// Downloads a file via streaming chunks to a temporary path, then atomically renames it.
+    ///
+    /// If the server provided a `Content-Length` header the downloaded size is validated
+    /// after streaming completes — a mismatch removes the temp file and returns an error.
     pub async fn download_file(&self, url: &str, dest: &Path) -> Result<()> {
-        let url = url.to_string();
-
-        // 1. 응답 헤더만 먼저 받아옴
         let resp = self
-            .execute_with_retry(|| async { Ok(self.client.get(&url)) })
+            .execute_with_retry(url, || self.client.get(url))
             .await
-            .with_context(|| format!("Failed to initiate download from {url}"))?;
+            .with_context(|| format!("Failed to start download from {url}"))?;
 
-        // 2. 임시 파일 생성
+        let content_length = resp.content_length();
+
+        // Write to a temp file first so a failed download never leaves a partial artifact.
         let tmp_path = dest.with_extension(format!("tmp.{}", std::process::id()));
         let mut file = File::create(&tmp_path)
             .await
             .with_context(|| format!("Failed to create temp file: {}", tmp_path.display()))?;
 
-        // 3. 스트리밍으로 파일 쓰기 (Chunk 단위)
-        let mut stream = resp.bytes_stream();
+        let mut downloaded: u64 = 0;
+        let mut resp = resp;
 
-        while let Some(chunk_result) = stream.next().await {
-            let chunk = chunk_result.context("Error while reading download stream")?;
+        // Stream download via chunk() — no extra feature flags required.
+        while let Some(chunk) = resp
+            .chunk()
+            .await
+            .context("Error reading download stream")?
+        {
             file.write_all(&chunk)
                 .await
-                .context("Error while writing to temp file")?;
+                .context("Error writing to temp file")?;
+            downloaded += chunk.len() as u64;
         }
 
-        // 버퍼 플러시
-        file.flush().await.context("Failed to flush file buffer")?;
-        // 파일 핸들을 닫기 위해 스코프 종료 또는 drop이 필요하지만,
-        // rename 전에 명시적으로 sync_all을 호출하는 것이 안전함
-        file.sync_all().await.context("Failed to sync file data")?;
-        drop(file); // 파일 락 해제
+        // Validate against Content-Length when available.
+        if let Some(expected) = content_length {
+            if downloaded != expected {
+                let _ = tokio::fs::remove_file(&tmp_path).await;
+                bail!("Size mismatch for {url}: expected {expected} bytes, got {downloaded}");
+            }
+        }
 
-        // 4. 파일 이름 변경 (Atomic)
+        debug!("Downloaded {downloaded} bytes from {url}");
+
+        // Flush → sync → close → rename (atomic on the same filesystem).
+        file.flush().await.context("Failed to flush file buffer")?;
+        file.sync_all().await.context("Failed to sync file data")?;
+        drop(file);
+
         tokio::fs::rename(&tmp_path, dest).await.with_context(|| {
             format!(
-                "Failed to rename {} to {}",
+                "Failed to rename {} → {}",
                 tmp_path.display(),
                 dest.display()
             )

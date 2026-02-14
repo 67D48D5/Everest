@@ -1,8 +1,11 @@
+//! Strategy for resolving download URLs from GitHub Releases.
+
 use anyhow::{Context, Result};
 
 use crate::config::StrategyDef;
-use crate::modules::getter::strategy::select_artifact;
 use crate::utils::{http::HttpClient, interpolate};
+
+use super::{extract_artifacts, json_str, select_artifact};
 
 /// Resolves a download URL from GitHub Releases.
 pub async fn resolve(
@@ -33,12 +36,11 @@ pub async fn resolve(
         &[("owner", &owner), ("repo", &repo), ("platform", platform)],
     );
 
-    let response = client
+    let response: serde_json::Value = client
         .fetch_json(&api_url)
         .await
         .with_context(|| format!("GitHub API fetch failed for {name}: {api_url}"))?;
 
-    // Extract artifacts
     let artifacts = extract_artifacts(&response, artifact_filter);
     if artifacts.is_empty() {
         anyhow::bail!("No artifacts for {name}");
@@ -48,7 +50,6 @@ pub async fn resolve(
     let selected = select_artifact(&artifacts, platform, priorities)
         .with_context(|| format!("No matching artifact for {name}"))?;
 
-    // GitHub download_template is typically just "{artifact}" (the URL itself)
     let dl_url = interpolate(
         download_template,
         &[
@@ -60,33 +61,4 @@ pub async fn resolve(
     );
 
     Ok(Some(dl_url))
-}
-
-fn json_str(v: &serde_json::Value, key: &str) -> String {
-    v.get(key)
-        .and_then(|v| v.as_str())
-        .unwrap_or("")
-        .to_string()
-}
-
-fn extract_artifacts(response: &serde_json::Value, filter: &str) -> Vec<String> {
-    let filter = filter.trim_start_matches('.');
-    let parts: Vec<&str> = filter.split("[].").collect();
-    if parts.len() != 2 {
-        return Vec::new();
-    }
-
-    let array_key = parts[0];
-    let field_key = parts[1];
-
-    response
-        .get(array_key)
-        .and_then(|v| v.as_array())
-        .map(|arr| {
-            arr.iter()
-                .filter_map(|item| item.get(field_key).and_then(|v| v.as_str()))
-                .map(|s| s.to_string())
-                .collect()
-        })
-        .unwrap_or_default()
 }

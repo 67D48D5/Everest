@@ -1,4 +1,7 @@
+//! Module for handling engine updates using the Fill API v3.
+
 use anyhow::{Context, Result};
+use log::{info, warn};
 use serde_json::Value;
 use std::path::Path;
 
@@ -67,7 +70,7 @@ async fn process_engine(
 
     // 1. Fetch version metadata
     let version_url = format!("{FILL_API}/projects/{project}/versions/{version}");
-    let version_resp = client
+    let version_resp: Value = client
         .fetch_json(&version_url)
         .await
         .with_context(|| format!("Failed to fetch version meta: {tag}"))?;
@@ -97,7 +100,7 @@ async fn process_engine(
     // 3. Fetch build detail
     let build_url =
         format!("{FILL_API}/projects/{project}/versions/{version}/builds/{latest_build}");
-    let build_resp = client
+    let build_resp: Value = client
         .fetch_json(&build_url)
         .await
         .with_context(|| format!("Failed to fetch build detail: {tag} (#{latest_build})"))?;
@@ -173,9 +176,6 @@ async fn cleanup_old_builds(engine_dir: &Path, project: &str, version: &str, cur
     }
 
     if removed > 0 {
-        warn!(
-            TAG,
-            "Removed {removed} old build(s) for {project} ({version})"
-        );
+        warn!("Removed {removed} old build(s) for {project} ({version})");
     }
 }

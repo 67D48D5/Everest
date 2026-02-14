@@ -1,7 +1,10 @@
+//! Module for linking plugin JARs from libraries/plugins into server plugin directories.
+
 use std::collections::HashMap;
 use std::path::{Path, PathBuf};
 
 use anyhow::Result;
+use log::{error, info, warn};
 use serde_json::Value;
 
 use crate::utils::{interpolate, pick_latest};
@@ -39,7 +42,7 @@ pub async fn run(
             continue;
         }
 
-        info!("Linking plugins: {} ({})", server.blue(), engine);
+        info!("Linking plugins: {server} ({engine})");
         link_server_plugins(resolved, definitions, server, engine, &server_dir, root)?;
     }
 
@@ -89,10 +92,7 @@ fn link_server_plugins(
                     "managed" => "Managed",
                     "manual" => "Manual",
                     other => {
-                        warn!(
-                            TAG,
-                            "Unknown type '{other}' for {name} in {server}. Skipping."
-                        );
+                        warn!("Unknown type '{other}' for {name} in {server}. Skipping.");
                         continue;
                     }
                 };
@@ -119,10 +119,7 @@ fn link_server_plugins(
                 let src_dir = match resolve_src_dir(definitions, category, engine, root) {
                     Some(d) => d,
                     None => {
-                        warn!(
-                            TAG,
-                            "No path definition for category '{category}'. Skipping."
-                        );
+                        warn!("No path definition for category '{category}'. Skipping.");
                         continue;
                     }
                 };
@@ -247,11 +244,7 @@ fn link_one_plugin(name: &str, pattern: &str, src_dir: &Path, temp_dir: &Path) -
             false
         }
         _ => {
-            warn!(
-                TAG,
-                "Not found: {name} ({pattern}) in {}",
-                src_dir.display()
-            );
+            warn!("Not found: {name} ({pattern}) in {}", src_dir.display());
             false
         }
     }

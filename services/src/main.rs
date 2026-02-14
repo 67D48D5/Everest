@@ -35,6 +35,13 @@ enum Commands {
         #[arg(last = true)]
         java_flags: Vec<String>,
     },
+
+    /// Update engines and plugins from configured sources
+    Update {
+        /// Config branch to use (defaults to defaultBranch in config)
+        #[arg(long, default_value = "")]
+        branch: String,
+    },
 }
 
 fn find_root() -> Result<PathBuf> {
@@ -56,11 +63,15 @@ fn find_root() -> Result<PathBuf> {
         dir = d.parent().map(|p| p.to_path_buf());
     }
 
-    anyhow::bail!("Could not find Everest project root (no config/ directory found)");
+    anyhow::bail!("Could not find Everest project root (no `config` directory found)");
 }
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info"))
+        .format_timestamp_secs()
+        .init();
+
     let cli = Cli::parse();
     let root = find_root()?;
 
@@ -76,6 +87,9 @@ async fn main() -> Result<()> {
                 extra_java_flags: java_flags,
             };
             modules::launcher::run(&args, &root)?;
+        }
+        Commands::Update { branch } => {
+            modules::updater::run(&root, &branch).await?;
         }
     }
 

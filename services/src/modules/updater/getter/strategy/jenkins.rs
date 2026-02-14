@@ -1,8 +1,11 @@
+//! Strategy for resolving download URLs from Jenkins CI.
+
 use anyhow::{Context, Result};
 
 use crate::config::StrategyDef;
-use crate::modules::getter::strategy::select_artifact;
 use crate::utils::{http::HttpClient, interpolate};
+
+use super::{extract_artifacts, json_str, select_artifact};
 
 /// Resolves a download URL from Jenkins CI.
 pub async fn resolve(
@@ -51,12 +54,11 @@ pub async fn resolve(
         ],
     );
 
-    let response = client
+    let response: serde_json::Value = client
         .fetch_json(&api_url)
         .await
         .with_context(|| format!("Jenkins API fetch failed for {name}: {api_url}"))?;
 
-    // Extract artifacts using the filter path
     let artifacts = extract_artifacts(&response, artifact_filter);
     if artifacts.is_empty() {
         anyhow::bail!("No artifacts for {name}");
@@ -80,38 +82,4 @@ pub async fn resolve(
     );
 
     Ok(Some(dl_url))
-}
-
-fn json_str(v: &serde_json::Value, key: &str) -> String {
-    v.get(key)
-        .and_then(|v| v.as_str())
-        .unwrap_or("")
-        .to_string()
-}
-
-/// Extracts artifact paths from a JSON response using a jq-like filter.
-/// Supports `.artifacts[].relativePath` and `.assets[].browser_download_url`.
-fn extract_artifacts(response: &serde_json::Value, filter: &str) -> Vec<String> {
-    // Parse the filter to find array key and field key
-    // e.g. ".artifacts[].relativePath" -> ("artifacts", "relativePath")
-    // e.g. ".assets[].browser_download_url" -> ("assets", "browser_download_url")
-    let filter = filter.trim_start_matches('.');
-    let parts: Vec<&str> = filter.split("[].").collect();
-    if parts.len() != 2 {
-        return Vec::new();
-    }
-
-    let array_key = parts[0];
-    let field_key = parts[1];
-
-    response
-        .get(array_key)
-        .and_then(|v| v.as_array())
-        .map(|arr| {
-            arr.iter()
-                .filter_map(|item| item.get(field_key).and_then(|v| v.as_str()))
-                .map(|s| s.to_string())
-                .collect()
-        })
-        .unwrap_or_default()
 }

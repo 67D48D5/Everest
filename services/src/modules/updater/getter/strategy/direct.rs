@@ -1,3 +1,5 @@
+//! Strategy for resolving direct (static) download URLs.
+
 use anyhow::Result;
 
 use crate::config::StrategyDef;

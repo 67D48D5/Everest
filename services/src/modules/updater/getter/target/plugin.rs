@@ -6,6 +6,7 @@ use log::{error, info, warn};
 use serde_json::Value;
 
 use crate::config::StrategyDef;
+use crate::modules::updater::getter::strategy;
 use crate::utils::{atomic_swap, http::HttpClient, try_fallback};
 
 /// Downloads plugins using strategy definitions.
@@ -35,7 +36,7 @@ pub async fn run(
     let mut total_failed = 0u32;
 
     for platform in &platforms {
-        info!("Processing platform: {}", platform.cyan());
+        info!("Processing platform: {platform}");
 
         let platform_root = plugin_lib_root.join(platform);
         let target_dir = platform_root.join("Managed");
@@ -107,10 +108,7 @@ pub async fn run(
         }
 
         if failed > 0 {
-            error!(
-                TAG,
-                "{platform}: {failed} plugin(s) failed. Preserving existing Managed dir."
-            );
+            error!("{platform}: {failed} plugin(s) failed. Preserving existing Managed dir.");
             let _ = tokio::fs::remove_dir_all(&temp_dir).await;
             total_failed += failed;
             continue;
@@ -175,23 +173,15 @@ async fn download_plugin(
     )
     .await;
 
-    let resolved_url = match resolved_url {
+    let resolved_url: String = match resolved_url {
         Ok(Some(url)) => url,
-        Ok(None) => {
-            error!("Failed to resolve URL for {tag}");
-            if try_fallback(name, fallback_dir, dest_dir)? {
-                info!("Preserved: {tag} (fallback)");
-                return Ok(());
+        other => {
+            if let Err(e) = &other {
+                error!("Failed to resolve URL for {tag}: {e:#}");
+            } else {
+                error!("Failed to resolve URL for {tag}");
             }
-            anyhow::bail!("No fallback available for {tag}");
-        }
-        Err(e) => {
-            error!("Failed to resolve URL for {tag}: {e:#}");
-            if try_fallback(name, fallback_dir, dest_dir)? {
-                info!("Preserved: {tag} (fallback)");
-                return Ok(());
-            }
-            anyhow::bail!("No fallback available for {tag}");
+            return use_fallback(name, &tag, fallback_dir, dest_dir);
         }
     };
 
@@ -215,13 +205,18 @@ async fn download_plugin(
         }
         Err(e) => {
             warn!("Download failed for {tag}: {e:#}. Trying fallback...");
-            if try_fallback(name, fallback_dir, dest_dir)? {
-                info!("Preserved: {tag} (fallback)");
-                Ok(())
-            } else {
-                anyhow::bail!("No fallback available for {tag}");
-            }
+            use_fallback(name, &tag, fallback_dir, dest_dir)
         }
+    }
+}
+
+/// Attempts to recover a plugin from the fallback (previous Managed) directory.
+fn use_fallback(name: &str, tag: &str, fallback_dir: &Path, dest_dir: &Path) -> Result<()> {
+    if try_fallback(name, fallback_dir, dest_dir)? {
+        info!("Preserved: {tag} (fallback)");
+        Ok(())
+    } else {
+        anyhow::bail!("No fallback available for {tag}")
     }
 }
 

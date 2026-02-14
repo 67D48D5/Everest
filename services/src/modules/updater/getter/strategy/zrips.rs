@@ -1,3 +1,5 @@
+//! Strategy for resolving download URLs from Zrips.net (HTML scrape).
+
 use anyhow::{Context, Result};
 use regex::Regex;
 
