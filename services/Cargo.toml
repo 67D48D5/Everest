@@ -1,0 +1,41 @@
+[package]
+name = "everest"
+version = "0.1.0"
+
+# Rust Edition
+edition = "2024"
+
+[dependencies]
+# Command-line argument parsing
+clap = { version = "4.5.58", features = ["derive"] }
+
+# HTTP client library with async support
+reqwest = { version = "0.13.2", features = ["json"], default-features = false }
+
+# Error handling utility
+anyhow = "1.0.101"
+
+# Date and time library
+chrono = "0.4.43"
+
+# Support for matching file paths against Unix shell style patterns
+glob = "0.3.3"
+
+# Regular expressions, used for pattern matching and text processing
+regex = "1.12.3"
+
+# HTML parsing library, used to extract data from HTML documents
+scraper = "0.25.0"
+
+# Serialization and deserialization library, used for working with JSON data
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.149"
+
+# Asynchronous runtime for handling concurrent tasks
+tokio = { version = "1.49.0", features = ["full"] }
+
+# Logging library for structured logging and debugging
+log = "0.4.29"
+
+# Environment variable management library, used for loading configuration from .env files
+dotenvy = "0.15.7"
