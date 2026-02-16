@@ -15,7 +15,7 @@ BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 NC='\033[0m'
 
-# Defaults
+# Networking defaults
 CURL_RETRY=1
 CURL_RETRY_DELAY=2
 CURL_CONNECT_TIMEOUT=4

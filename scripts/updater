@@ -14,10 +14,10 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_PATH="$(realpath "${SCRIPT_DIR}/../")"
 
-UPDATER_PATH="${SCRIPT_DIR}/core/update"
+UPDATER_PATH="${SCRIPT_DIR}/modules/update"
 
 # shellcheck disable=SC1091
-source "${SCRIPT_DIR}/core/library"
+source "${SCRIPT_DIR}/modules/library"
 
 # shellcheck disable=SC2034
 LOG_TAG="updater"

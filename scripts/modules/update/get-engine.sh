@@ -20,7 +20,7 @@ FILL_API="https://fill.papermc.io/v3"
 LOG_TAG="get-engine"
 
 # shellcheck disable=SC1091
-source "${SCRIPT_DIR}/core/library"
+source "${SCRIPT_DIR}/modules/library"
 
 # Pre-flight
 for cmd in jq curl; do

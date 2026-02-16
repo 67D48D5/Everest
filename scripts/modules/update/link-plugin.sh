@@ -22,7 +22,7 @@ SERVERS_ROOT="${ROOT_PATH}/servers"
 LOG_TAG="link-plugin"
 
 # shellcheck disable=SC1091
-source "${SCRIPT_DIR}/core/library"
+source "${SCRIPT_DIR}/modules/library"
 
 # Pre-flight
 for cmd in jq find awk sort ln mktemp mv; do

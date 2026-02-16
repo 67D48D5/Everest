@@ -24,7 +24,7 @@ PLUGIN_LIB_ROOT="${ROOT_PATH}/libraries/plugins"
 LOG_TAG="get-plugin"
 
 # shellcheck disable=SC1091
-source "${SCRIPT_DIR}/core/library"
+source "${SCRIPT_DIR}/modules/library"
 
 # Pre-flight
 for cmd in jq curl; do
