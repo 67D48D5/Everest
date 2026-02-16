@@ -1,3 +1,3 @@
-[submodule "docs/Wiki"]
-	path = docs/Wiki
-	url = https://github.com/E414CF6/Everest.wiki.git
+[submodule "docs"]
+path = wiki
+url = https://github.com/E414CF6/Everest.wiki.git
