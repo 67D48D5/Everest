@@ -135,10 +135,10 @@
       "artifact_filter": ".artifacts[].relativePath",
       "download_template": "https://{host}/job/{project}/lastSuccessfulBuild/artifact/{artifact}",
       "priority": [
-        "(?i){platform}",
-        "(?i)universal",
-        "(?i)all",
-        "(?i).jar$"
+        "{platform}",
+        "universal",
+        "all",
+        "\\.jar$"
       ]
     },
     "Github": {
@@ -148,10 +148,10 @@
       "artifact_filter": ".assets[].browser_download_url",
       "download_template": "{artifact}",
       "priority": [
-        "(?i){platform}",
-        "(?i)paper",
-        "(?i)spigot",
-        "(?i).jar$"
+        "{platform}",
+        "paper",
+        "spigot",
+        "\\.jar$"
       ]
     },
     "EngineHub": {
@@ -161,8 +161,8 @@
       "artifact_filter": ".artifacts[].relativePath",
       "download_template": "https://ci.enginehub.org/job/{project}/lastSuccessfulBuild/artifact/{artifact}",
       "priority": [
-        "(?i){platform}",
-        "(?i).jar$"
+        "{platform}",
+        "\\.jar$"
       ]
     },
     "Zrips": {

@@ -43,10 +43,12 @@ mkdir -p "$PLUGIN_LIB_ROOT"
 # Cleanup tracking
 declare -a TEMP_DIRS=()
 
+# shellcheck disable=SC2329
 cleanup() {
     local ec=$?
     local pids
     pids="$(jobs -pr 2>/dev/null || true)"
+    # shellcheck disable=SC2086
     [[ -n "$pids" ]] && kill $pids 2>/dev/null || true
     for d in "${TEMP_DIRS[@]}"; do
         [[ -d "$d" ]] && rm -rf "$d"
@@ -90,9 +92,11 @@ select_artifact() {
 
     # Apply priority patterns
     for pattern in "${priorities[@]}"; do
-        local p="${pattern//\{platform\}/$platform}"
+        # Strip PCRE-style (?i) flags (not supported by grep -E / POSIX ERE)
+        local stripped="${pattern#'(?i)'}"
+        local p="${stripped//\{platform\}/$platform}"
         local match
-        match="$(grep -E "$p" <<<"$jars" | head -n1 || true)"
+        match="$(grep -Ei "$p" <<<"$jars" | head -n1 || true)"
         [[ -n "$match" ]] && {
             echo "$match"
             return 0
@@ -211,7 +215,7 @@ resolve_enginehub() {
     [[ -z "$selected" ]] && selected="$(head -n1 <<<"$jars")"
 
     # Fix HTML entities
-    echo "$selected" | sed 's/&amp;/\&/g'
+    echo "${selected//&amp;/&}"
 }
 
 # --- Zrips: scrape zrips.net download page ---
@@ -248,7 +252,7 @@ resolve_zrips() {
     # Pattern A: download.php?file=XXX.jar (cmiv, cmivault)
     local jar_link
     jar_link="$(echo "$html" |
-        grep -oEi 'href="download\.php\?file=[^"]*\.jar"' |
+        grep -oEi 'href="download\.php[?]file=[^"]*\.jar"' |
         head -n1 | sed 's/href="//;s/"$//' || true)"
     if [[ -n "$jar_link" ]]; then
         echo "${page_url}${jar_link}"
