@@ -20,6 +20,9 @@
 /plugins/FastAsyncWorldEdit/schematics/
 /plugins/FastAsyncWorldEdit/sessions/
 
+# MobFarmManager plugin data files
+/plugins/MobFarmManager/Logs/
+
 # TAB plugin playerdata file
 /plugins/TAB/playerdata.yml
 /plugins/TAB/skincache.yml
