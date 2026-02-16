@@ -16,15 +16,13 @@ log_msg() {
 (
     while true; do
         pid=$(pidof "com.termux")
-        if ! "$pid" >/dev/null; then
+        if [ -z "$pid" ]; then
             log_msg "Termux app not running, starting..."
             am start -n "com.termux/.HomeActivity"
             sleep 18
-        fi
-
-        if [ -n "$pid" ]; then
-            echo -17 >/proc/$pid/oom_adj 2>/dev/null
-            echo -1000 >/proc/$pid/oom_score_adj 2>/dev/null
+        else
+            echo -17 >/proc/"$pid"/oom_adj 2>/dev/null
+            echo -1000 >/proc/"$pid"/oom_score_adj 2>/dev/null
         fi
 
         sleep 24
