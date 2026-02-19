@@ -26,6 +26,9 @@
                         },
                         "cmiv": {
                             "pattern": "cmiv*"
+                        },
+                        "nuvotifier": {
+                            "pattern": "nuvotifier*"
                         }
                     },
                     "Manual": {
@@ -91,7 +94,7 @@
                             "pattern": "GriefPrevention*"
                         },
                         "NuVotifier": {
-                            "pattern": "NuVotifier*"
+                            "pattern": "nuvotifier*"
                         },
                         "Vault": {
                             "pattern": "Vault*"

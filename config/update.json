@@ -27,6 +27,11 @@
             "strategy": "Zrips",
             "project": "cmiv"
           },
+          "nuvotifier": {
+            "strategy": "Github",
+            "owner": "NuVotifier",
+            "repo": "NuVotifier"
+          },
           "litbans": {
             "strategy": "Manual",
             "url": "https://www.spigotmc.org/resources/litebans.3715/updates/"
