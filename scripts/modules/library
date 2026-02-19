@@ -30,6 +30,24 @@ log_warn() { echo -e "[$(date '+%H:%M:%S') ${YELLOW}WARN${NC}] [${LOG_TAG:-evere
 log_err() { echo -e "[$(date '+%H:%M:%S') ${RED}ERROR${NC}] [${LOG_TAG:-everest}]: $1" >&2; }
 
 # ------------------------------------------------------------------------------
+# Dependency Checking
+# ------------------------------------------------------------------------------
+
+check_deps() {
+    local missing=()
+    for cmd in "$@"; do
+        if ! command -v "$cmd" &>/dev/null; then
+            missing+=("$cmd")
+        fi
+    done
+
+    if [[ ${#missing[@]} -gt 0 ]]; then
+        log_err "Missing dependencies: ${missing[*]}"
+        exit 1
+    fi
+}
+
+# ------------------------------------------------------------------------------
 # Networking
 # ------------------------------------------------------------------------------
 

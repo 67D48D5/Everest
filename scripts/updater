@@ -23,12 +23,7 @@ source "${SCRIPT_DIR}/modules/library"
 LOG_TAG="updater"
 
 # Pre-flight
-for cmd in jq curl realpath; do
-    command -v "$cmd" >/dev/null || {
-        log_err "Missing dependency: '$cmd'"
-        exit 1
-    }
-done
+check_deps jq curl realpath
 
 for config_file in "${ROOT_PATH}/config/server.json" "${ROOT_PATH}/config/update.json"; do
     [[ -f "${config_file}" ]] || {

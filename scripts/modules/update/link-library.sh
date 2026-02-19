@@ -22,12 +22,7 @@ LOG_TAG="link-library"
 source "${SCRIPT_DIR}/modules/library"
 
 # Pre-flight
-for cmd in jq ln; do
-    command -v "$cmd" &>/dev/null || {
-        log_err "'$cmd' not found"
-        exit 1
-    }
-done
+check_deps jq ln
 
 [[ -f "$CONFIG_FILE" ]] || {
     log_err "Config missing: $CONFIG_FILE"

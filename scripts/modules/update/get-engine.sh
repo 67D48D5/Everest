@@ -23,12 +23,7 @@ LOG_TAG="get-engine"
 source "${SCRIPT_DIR}/modules/library"
 
 # Pre-flight
-for cmd in jq curl; do
-    command -v "$cmd" &>/dev/null || {
-        log_err "'$cmd' not found"
-        exit 1
-    }
-done
+check_deps jq curl
 
 [[ -f "$CONFIG_FILE" ]] || {
     log_err "Config missing: $CONFIG_FILE"

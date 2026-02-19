@@ -25,12 +25,7 @@ LOG_TAG="link-plugin"
 source "${SCRIPT_DIR}/modules/library"
 
 # Pre-flight
-for cmd in jq find awk sort ln mktemp mv; do
-    command -v "$cmd" &>/dev/null || {
-        log_err "'$cmd' not found"
-        exit 1
-    }
-done
+check_deps jq find awk sort ln mktemp mv
 
 [[ -f "$CONFIG_FILE" ]] || {
     log_err "Config missing: $CONFIG_FILE"
