@@ -11,3 +11,6 @@
 # LuckPerms locale files and symlink files
 /plugins/luckperms/translations
 /plugins/luckperms/libs
+
+# Votifier plugin data
+/plugins/nuvotifier/
