@@ -116,6 +116,10 @@
             "strategy": "Zrips",
             "project": "cmivault"
           },
+          "PlotSquared": {
+            "strategy": "Manual",
+            "url": "https://www.spigotmc.org/resources/plotsquared-v7.77506/updates/"
+          },
           "WorldGuard": {
             "strategy": "EngineHub",
             "project": "WorldGuard"

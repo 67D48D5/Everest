@@ -1,0 +1,31 @@
+# Server selection dialog
+Server:
+  Enabled: true
+  Label: "{#00e5ff}✈ &bSelect Server {#00e5ff}✈"
+  Description:
+    Width: 300
+    Lines:
+      - "&fWelcome, &6%cmi_user_display_name%"
+      - "&7Where would you like to travel?"
+      - ""
+      - "&bServer Population"
+      - "{#4caf50}Wildy &8» &e%cmi_bungee_current_Wildy% {#white}Players"
+      - "{#ffb74d}Buildy &8» &e%cmi_bungee_current_Buildy% {#white}Players"
+      - ""
+  Buttons:
+    Columns: 1
+    List:
+      - Label: "{#4caf50}🌲 Wildy {#81c784}(Survival)"
+        Width: 200
+        Commands:
+          - "closeinv!"
+          - "asConsole! cmi server Wildy [playerName]"
+
+      - Label: "{#ffb74d}🧱 Buildy {#ffcc80}(Creative)"
+        Width: 200
+        Commands:
+          - "closeinv!"
+          - "asConsole! cmi server Buildy [playerName]"
+  Close:
+    Label: "Close"
+    Width: 100

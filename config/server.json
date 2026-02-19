@@ -118,13 +118,110 @@
             }
         },
         "dev": {
-            "parent": "main"
+            "parent": "main",
+            "buildy": {
+                "engine": "paper",
+                "mounts": {
+                    "paper-cache": {
+                        "src": "cache",
+                        "dest": "cache"
+                    },
+                    "paper-libs": {
+                        "src": "libraries",
+                        "dest": "libraries"
+                    },
+                    "paper-versions": {
+                        "src": "versions",
+                        "dest": "versions"
+                    },
+                    "luckperms-libs": {
+                        "src": "plugins/LuckPerms/libs",
+                        "dest": "plugins/LuckPerms/libs"
+                    }
+                },
+                "plugins": {
+                    "Managed": {
+                        "CMILib": {
+                            "pattern": "CMILib*"
+                        },
+                        "Chunky": {
+                            "pattern": "Chunky-*"
+                        },
+                        "ChunkyBorder": {
+                            "pattern": "ChunkyBorder-*"
+                        },
+                        "DiscordSRV": {
+                            "pattern": "DiscordSRV-*"
+                        },
+                        "FastAsyncWorldEdit": {
+                            "pattern": "FastAsyncWorldEdit-Paper-*"
+                        },
+                        "LuckPerms": {
+                            "pattern": "LuckPerms-*"
+                        },
+                        "PlaceholderAPI": {
+                            "pattern": "PlaceholderAPI-*"
+                        },
+                        "ProtocolLib": {
+                            "pattern": "ProtocolLib*"
+                        },
+                        "TAB": {
+                            "pattern": "TAB*"
+                        },
+                        "NuVotifier": {
+                            "pattern": "nuvotifier*"
+                        },
+                        "Vault": {
+                            "pattern": "Vault*"
+                        }
+                    },
+                    "Manual": {
+                        "CMI": {
+                            "pattern": "CMI-*"
+                        },
+                        "CoreProtect": {
+                            "pattern": "CoreProtect-*"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
         "paths": {
             "Managed": "libraries/plugins/{engine}/Managed",
             "Manual": "libraries/plugins/{engine}"
+        },
+        "jvm_options": {
+            "common": [
+                "-XX:+UseG1GC",
+                "-XX:+AlwaysPreTouch",
+                "-XX:+ParallelRefProcEnabled",
+                "-XX:+UnlockExperimentalVMOptions",
+                "-Duser.timezone=Asia/Seoul"
+            ],
+            "paper": [
+                "-XX:+DisableExplicitGC",
+                "-XX:+PerfDisableSharedMem",
+                "-XX:G1HeapRegionSize=8M",
+                "-XX:G1HeapWastePercent=5",
+                "-XX:G1MaxNewSizePercent=40",
+                "-XX:G1MixedGCCountTarget=4",
+                "-XX:G1MixedGCLiveThresholdPercent=90",
+                "-XX:G1NewSizePercent=30",
+                "-XX:G1RSetUpdatingPauseTimePercent=5",
+                "-XX:G1ReservePercent=20",
+                "-XX:InitiatingHeapOccupancyPercent=15",
+                "-XX:MaxGCPauseMillis=200",
+                "-XX:MaxTenuringThreshold=1",
+                "-XX:SurvivorRatio=32",
+                "-Dusing.aikars.flags=https://mcflags.emc.gs",
+                "-Daikars.new.flags=true"
+            ],
+            "velocity": [
+                "-XX:G1HeapRegionSize=4M",
+                "-XX:MaxInlineLevel=15"
+            ]
         }
     }
 }
