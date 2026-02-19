@@ -51,12 +51,7 @@ if [[ -z "$SERVER_NAME" ]]; then
 fi
 
 # Check for required dependencies
-for cmd in tmux java realpath; do
-    command -v "$cmd" &>/dev/null || {
-        log_err "'$cmd' not found"
-        exit 1
-    }
-done
+check_deps tmux java realpath
 
 # ------------------------------------------------------------------------------
 # Main Process Logic
