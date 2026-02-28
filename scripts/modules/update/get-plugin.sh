@@ -183,7 +183,13 @@ resolve_enginehub() {
         return 1
     }
 
-    local page_url="https://builds.enginehub.org/job/${project,,}/last-successful?branch=master"
+    # Build page URL; use optional branch from config, otherwise let
+    # EngineHub resolve the project's default branch automatically.
+    local branch
+    branch="$(jq -r '.branch // empty' <<<"$plugin_json")"
+    local page_url="https://builds.enginehub.org/job/${project,,}/last-successful"
+    [[ -n "$branch" ]] && page_url+="?branch=${branch}"
+
     local html
     html="$(curl_html "$page_url")" || {
         log_err "EngineHub fetch failed: ${name}"
@@ -209,8 +215,8 @@ resolve_enginehub() {
     fi
     [[ -z "$selected" ]] && selected="$(head -n1 <<<"$jars")"
 
-    # Fix HTML entities
-    echo "${selected//&amp;/&}"
+    # Decode HTML entities (bash ${//} cannot match literal ';' in patterns)
+    echo "$selected" | sed 's/&amp;/\&/g'
 }
 
 # --- Zrips: scrape zrips.net download page ---
