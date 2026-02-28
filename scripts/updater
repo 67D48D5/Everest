@@ -47,14 +47,29 @@ log_info "Resolving configuration..."
 UPDATE_CONFIG="$(cat "${ROOT_PATH}/config/update.json")"
 SERVER_CONFIG="$(cat "${ROOT_PATH}/config/server.json")"
 
-# shellcheck disable=SC2155
-export EVEREST_RESOLVED_UPDATE="$(resolve_branch "$UPDATE_CONFIG")"
-# shellcheck disable=SC2155
-export EVEREST_RESOLVED_SERVER="$(resolve_branch "$SERVER_CONFIG")"
-# shellcheck disable=SC2155
-export EVEREST_STRATEGIES="$(jq '.strategies' <<<"$UPDATE_CONFIG")"
-# shellcheck disable=SC2155
-export EVEREST_DEFINITIONS="$(jq '.definitions // {}' <<<"$SERVER_CONFIG")"
+EVEREST_RESOLVED_UPDATE="$(resolve_branch "$UPDATE_CONFIG")" || {
+    log_err "Failed to resolve update branch config"
+    exit 1
+}
+export EVEREST_RESOLVED_UPDATE
+
+EVEREST_RESOLVED_SERVER="$(resolve_branch "$SERVER_CONFIG")" || {
+    log_err "Failed to resolve server branch config"
+    exit 1
+}
+export EVEREST_RESOLVED_SERVER
+
+EVEREST_STRATEGIES="$(jq '.strategies' <<<"$UPDATE_CONFIG")" || {
+    log_err "Failed to extract strategies from update config"
+    exit 1
+}
+export EVEREST_STRATEGIES
+
+EVEREST_DEFINITIONS="$(jq '.definitions // {}' <<<"$SERVER_CONFIG")" || {
+    log_err "Failed to extract definitions from server config"
+    exit 1
+}
+export EVEREST_DEFINITIONS
 
 # Main
 failed_processes=()

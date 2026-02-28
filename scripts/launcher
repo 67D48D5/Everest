@@ -15,9 +15,7 @@ set -euo pipefail
 # Define arguments
 SERVER_NAME="${1:-}"
 ENGINE_TYPE="${2:-paper}"
-
-shift 2
-EXTRA_JAVA_FLAGS=("$@")
+EXTRA_JAVA_FLAGS=("${@:3}")
 
 # Session name for tmux
 TMUX_SESSION="${SERVER_NAME}"
@@ -33,6 +31,7 @@ ROOT_PATH="$(realpath "${SCRIPT_DIR}/..")"
 # For easier access later
 SERVER_DIR="${ROOT_PATH}/servers/${SERVER_NAME}"
 ENGINE_DIR="${ROOT_PATH}/libraries/engines"
+CONFIG_FILE="${ROOT_PATH}/config/server.json"
 
 # shellcheck disable=SC1091
 source "${SCRIPT_DIR}/modules/library"
@@ -51,7 +50,7 @@ if [[ -z "$SERVER_NAME" ]]; then
 fi
 
 # Check for required dependencies
-check_deps tmux java realpath
+check_deps tmux java realpath jq
 
 # ------------------------------------------------------------------------------
 # Main Process Logic
@@ -80,65 +79,35 @@ if [[ -z "$JAR_FILE" || ! -f "$JAR_FILE" ]]; then
     exit 1
 fi
 
-# Common Java flags
-COMMON_FLAGS=(
-    -XX:+UseG1GC
-    -XX:+AlwaysPreTouch
-    -XX:+ParallelRefProcEnabled
-    -XX:+UnlockExperimentalVMOptions
-    -Duser.timezone=Asia/Seoul
+# Load JVM flags from config/server.json definitions
+mapfile -t COMMON_FLAGS < <(jq -r '.definitions.jvm_options.common[]' "$CONFIG_FILE")
+
+ENGINE_FLAGS=()
+if jq -e --arg e "$ENGINE_TYPE" '.definitions.jvm_options[$e]' "$CONFIG_FILE" >/dev/null 2>&1; then
+    mapfile -t ENGINE_FLAGS < <(jq -r --arg e "$ENGINE_TYPE" '.definitions.jvm_options[$e][]' "$CONFIG_FILE")
+else
+    log_warn "No JVM options defined for engine '$ENGINE_TYPE' in config."
+fi
+
+# Build the full Java command as an array (safe from injection)
+JAVA_CMD=(java "${COMMON_FLAGS[@]}" "${ENGINE_FLAGS[@]}" "${EXTRA_JAVA_FLAGS[@]}" -jar "$JAR_FILE" nogui)
+
+# Write a restart wrapper script that tmux will execute
+WRAPPER_SCRIPT=$(
+    cat <<'WRAPPER_EOF'
+while true; do
+    echo "[$(date '+%H:%M:%S') INFO]: [launcher] Starting server..."
+    "$@"
+    echo "[$(date '+%H:%M:%S') WARN]: [launcher] Server stopped at $(date), restarting in 3 seconds..."
+    sleep 3
+done
+WRAPPER_EOF
 )
 
-case "$ENGINE_TYPE" in
-paper)
-    ENGINE_FLAGS=(
-        -XX:+DisableExplicitGC
-        -XX:+PerfDisableSharedMem
-        -XX:G1HeapRegionSize=8M
-        -XX:G1HeapWastePercent=5
-        -XX:G1MaxNewSizePercent=40
-        -XX:G1MixedGCCountTarget=4
-        -XX:G1MixedGCLiveThresholdPercent=90
-        -XX:G1NewSizePercent=30
-        -XX:G1RSetUpdatingPauseTimePercent=5
-        -XX:G1ReservePercent=20
-        -XX:InitiatingHeapOccupancyPercent=15
-        -XX:MaxGCPauseMillis=200
-        -XX:MaxTenuringThreshold=1
-        -XX:SurvivorRatio=32
-        -Dusing.aikars.flags=https://mcflags.emc.gs
-        -Daikars.new.flags=true
-    )
-    ;;
-velocity)
-    ENGINE_FLAGS=(
-        -XX:G1HeapRegionSize=4M
-        -XX:MaxInlineLevel=15
-    )
-    ;;
-*)
-    log_warn "Unknown engine type: '$ENGINE_TYPE', using default flags."
-    ENGINE_FLAGS=()
-    ;;
-esac
-
-# Final Java command (wrap with restart loop)
-# Build the command string properly to avoid shellcheck warnings
-ENV_EXPORTS_STR="${ENV_EXPORTS[*]}"
-COMMON_FLAGS_STR="${COMMON_FLAGS[*]}"
-ENGINE_FLAGS_STR="${ENGINE_FLAGS[*]}"
-EXTRA_JAVA_FLAGS_STR="${EXTRA_JAVA_FLAGS[*]}"
-
 # Command to start the server with automatic restart
+# Uses bash -c '...' _ args... pattern to pass arguments safely
 START_CMD=(
-    bash -c "
-    while true; do
-      echo \"[$(date '+%H:%M:%S') INFO]: [launcher] Starting server...\"
-      env ${ENV_EXPORTS_STR} java ${COMMON_FLAGS_STR} ${ENGINE_FLAGS_STR} ${EXTRA_JAVA_FLAGS_STR} -jar \"${JAR_FILE}\" nogui
-      echo \"[$(date '+%H:%M:%S') WARN]: [launcher] Server stopped at $(date), restarting in 3 seconds...\"
-      sleep 3
-    done
-  "
+    bash -c "$WRAPPER_SCRIPT" _ env "${ENV_EXPORTS[@]}" "${JAVA_CMD[@]}"
 )
 
 # Wrapper of tmux session
