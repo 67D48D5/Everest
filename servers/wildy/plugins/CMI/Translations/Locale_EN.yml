@@ -184,6 +184,7 @@ info:
     subinvslots: '&eYour sub inventory should have atleast &6[count] &eempty slots&o!'
   Relog: '&eRelog might be needed for change to take effect'
   Any: Any
+  Reset: '{gcp}Press {gcs}Q {gcp}to reset'
   outsideWorldBorder: '&cLocation is outside world border'
   noWorldAccess: '&cNo world access'
   IncorrectColor: '&4Color defined incorrectly&o!'
