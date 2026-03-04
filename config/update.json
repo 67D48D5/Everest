@@ -55,10 +55,6 @@
             "strategy": "Manual",
             "url": "https://www.spigotmc.org/resources/cmi-300-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/updates/"
           },
-          "CMILib": {
-            "strategy": "Zrips",
-            "project": "cmilib"
-          },
           "CoreProtect": {
             "strategy": "Manual",
             "url": "https://github.com/PlayPro/CoreProtect/"

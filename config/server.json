@@ -60,9 +60,6 @@
                 },
                 "plugins": {
                     "Managed": {
-                        "CMILib": {
-                            "pattern": "CMILib*"
-                        },
                         "Chunky": {
                             "pattern": "Chunky-*"
                         },
@@ -106,6 +103,9 @@
                     "Manual": {
                         "CMI": {
                             "pattern": "CMI-*"
+                        },
+                        "CMILib": {
+                            "pattern": "CMILib*"
                         },
                         "MobFarmManager": {
                             "pattern": "MobFarmManager*"
