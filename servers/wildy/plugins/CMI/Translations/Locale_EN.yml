@@ -3362,7 +3362,7 @@ command:
       IncorrectLocation: '&cRT &8» &fCould &cnot &ffind correct teleport location,
         please wait &c[time] &fand try again.'
       teleported: '!actionbar!&6Whoosh&o!'
-      searching: '!actionbar!&7Searching'
+      ongoingSearch: '!actionbar!{gcn}[dots]Searching ({gcs}[current]{gcn}/{gcs}[max]{gcn})[dots]'
   sameip:
     help:
       info: List players logged in from same ip
