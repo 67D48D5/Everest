@@ -2929,6 +2929,10 @@ command:
       args: (variable/playerName/stopAll) (stop)
       explanation:
       - Information on usage can be found at https://www.zrips.net/cmi/extra/particles/
+  particlepicker:
+    help:
+      info: Pick particle
+      args: (particlename)
   patrol:
     help:
       info: Patrol
@@ -3010,8 +3014,6 @@ command:
       redefine: '&eRedefine area from current selection'
       particles: '&eParticles: &6[state]'
       particleType: '&eParticle type: &6[type]'
-      particleColor: '&eParticle color: &6[color]'
-      particleSize: '&eParticle size: &6[size]'
       particleAmount: '&eParticle amount: &6[amount]'
       particlePercent: '&ePercentage of sides shrinked particles: &6[amount]%'
       activationRange: '&eActivation range: &6[amount]'

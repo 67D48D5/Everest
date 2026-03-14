@@ -799,6 +799,10 @@ Alias:
   panimation:
     Enabled: true
     Tab: true
+  # /cmi particlepicker $1-
+  particlepicker:
+    Enabled: true
+    Tab: true
   # /cmi patrol $1-
   patrol:
     Enabled: true
