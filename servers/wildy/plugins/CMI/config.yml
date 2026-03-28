@@ -882,6 +882,8 @@ Spawners:
     # If enabled player will get spawner if using silktouch pickaxe and have cmi.dropspawner permission node
     # If player has cmi.dropspawner.nosilk permission node, player is not required to use silk touch pickaxe to get droped spawner
     Enabled: true
+    # When enabled item stack will receive custom name based on spawners type
+    CustomName: false
     # When enabled instead of dropping spawner on the ground, player will received this item directly into their inventory
     # In case inventory is full then item will be dropped on the ground
     IntoInventory: true
