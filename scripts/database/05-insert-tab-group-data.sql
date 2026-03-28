@@ -11,49 +11,36 @@ START TRANSACTION;
 -- TAB groups (reset + insert for idempotency)
 -- ---------------------------------------------------------
 
-INSERT INTO
-    msdgl.tab_groups (
-        `group`,
-        `property`,
-        `value`,
-        `world`,
-        `server`
-    )
-VALUES (
-        '_DEFAULT_',
+INSERT INTO msdgl.tab_groups (`group`,
+                              `property`,
+                              `value`,
+                              `world`,
+                              `server`)
+VALUES ('_DEFAULT_',
         'tabprefix',
         '%luckperms-prefix%',
         NULL,
-        NULL
-    ),
-    (
-        '_DEFAULT_',
+        NULL),
+       ('_DEFAULT_',
         'tagprefix',
         '%luckperms-prefix%',
         NULL,
-        NULL
-    ),
-    (
-        '_DEFAULT_',
+        NULL),
+       ('_DEFAULT_',
         'customtabname',
         '%displayname%',
         NULL,
-        NULL
-    ),
-    (
-        '_DEFAULT_',
+        NULL),
+       ('_DEFAULT_',
         'tabsuffix',
         '%luckperms-suffix%',
         NULL,
-        NULL
-    ),
-    (
-        '_DEFAULT_',
+        NULL),
+       ('_DEFAULT_',
         'tagsuffix',
         '%luckperms-suffix%',
         NULL,
-        NULL
-    );
+        NULL);
 
 -- Finalize the transaction
 COMMIT;

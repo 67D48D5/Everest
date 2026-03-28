@@ -25,17 +25,17 @@ source "${SCRIPT_DIR}/modules/library"
 check_deps jq ln
 
 [[ -f "$CONFIG_FILE" ]] || {
-    log_err "Config missing: $CONFIG_FILE"
-    exit 1
+  log_err "Config missing: $CONFIG_FILE"
+  exit 1
 }
 mkdir -p "$SERVERS_ROOT"
 
 # Resolve branch (use pre-resolved if available)
 if [[ -n "${EVEREST_RESOLVED_SERVER:-}" ]]; then
-    RESOLVED="$EVEREST_RESOLVED_SERVER"
+  RESOLVED="$EVEREST_RESOLVED_SERVER"
 else
-    CONFIG="$(cat "$CONFIG_FILE")"
-    RESOLVED="$(resolve_branch "$CONFIG")"
+  CONFIG="$(cat "$CONFIG_FILE")"
+  RESOLVED="$(resolve_branch "$CONFIG")"
 fi
 
 # ------------------------------------------------------------------------------
@@ -43,29 +43,29 @@ fi
 # ------------------------------------------------------------------------------
 
 link_resource() {
-    local source_path="$1" dest_path="$2" name="$3" tag="$4"
+  local source_path="$1" dest_path="$2" name="$3" tag="$4"
 
-    if [[ ! -e "$source_path" ]]; then
-        log_warn "Source missing for ${tag}/${name}: $source_path"
-        log_warn "Creating empty directory: $source_path"
-        mkdir -p "$source_path"
-    fi
+  if [[ ! -e "$source_path" ]]; then
+    log_warn "Source missing for ${tag}/${name}: $source_path"
+    log_warn "Creating empty directory: $source_path"
+    mkdir -p "$source_path"
+  fi
 
-    mkdir -p "$(dirname "$dest_path")"
+  mkdir -p "$(dirname "$dest_path")"
 
-    # Remove existing target (symlink, dir, or file)
-    if [[ -L "$dest_path" ]]; then
-        rm -f "$dest_path"
-    elif [[ -d "$dest_path" ]]; then
-        log_warn "Replacing directory with symlink: $dest_path"
-        rm -rf "$dest_path"
-    elif [[ -f "$dest_path" ]]; then
-        log_warn "Replacing file with symlink: $dest_path"
-        rm -f "$dest_path"
-    fi
+  # Remove existing target (symlink, dir, or file)
+  if [[ -L "$dest_path" ]]; then
+    rm -f "$dest_path"
+  elif [[ -d "$dest_path" ]]; then
+    log_warn "Replacing directory with symlink: $dest_path"
+    rm -rf "$dest_path"
+  elif [[ -f "$dest_path" ]]; then
+    log_warn "Replacing file with symlink: $dest_path"
+    rm -f "$dest_path"
+  fi
 
-    ln -sfn "$source_path" "$dest_path"
-    log_info "${tag}: ${name} → ${dest_path}"
+  ln -sfn "$source_path" "$dest_path"
+  log_info "${tag}: ${name} → ${dest_path}"
 }
 
 # ------------------------------------------------------------------------------
@@ -80,30 +80,30 @@ mapfile -t SERVERS < <(jq -r '
 ' <<<"$RESOLVED")
 
 for server in "${SERVERS[@]}"; do
-    SERVER_DIR="${SERVERS_ROOT}/${server}"
+  SERVER_DIR="${SERVERS_ROOT}/${server}"
 
-    if [[ ! -d "$SERVER_DIR" ]]; then
-        log_warn "Server directory missing: ${server}. Creating..."
-        mkdir -p "$SERVER_DIR"
-    fi
+  if [[ ! -d "$SERVER_DIR" ]]; then
+    log_warn "Server directory missing: ${server}. Creating..."
+    mkdir -p "$SERVER_DIR"
+  fi
 
-    # Check for mounts
-    has_mounts="$(jq -r --arg s "$server" '.[$s].mounts // null | type' <<<"$RESOLVED")"
+  # Check for mounts
+  has_mounts="$(jq -r --arg s "$server" '.[$s].mounts // null | type' <<<"$RESOLVED")"
 
-    if [[ "$has_mounts" != "object" ]]; then
-        log_info "No mounts for ${server}. Skipping."
-        continue
-    fi
+  if [[ "$has_mounts" != "object" ]]; then
+    log_info "No mounts for ${server}. Skipping."
+    continue
+  fi
 
-    log_info "Processing mounts: ${GREEN}${server}${NC}"
+  log_info "Processing mounts: ${GREEN}${server}${NC}"
 
-    while IFS=$'\t' read -r name src dest; do
-        [[ -n "$name" && -n "$src" && -n "$dest" ]] || {
-            log_warn "Invalid mount entry in ${server}: name=${name}"
-            continue
-        }
-        link_resource "${COMMON_ROOT}/${src}" "${SERVER_DIR}/${dest}" "$name" "$server"
-    done < <(jq -r --arg s "$server" '
+  while IFS=$'\t' read -r name src dest; do
+    [[ -n "$name" && -n "$src" && -n "$dest" ]] || {
+      log_warn "Invalid mount entry in ${server}: name=${name}"
+      continue
+    }
+    link_resource "${COMMON_ROOT}/${src}" "${SERVER_DIR}/${dest}" "$name" "$server"
+  done < <(jq -r --arg s "$server" '
         .[$s].mounts
         | to_entries[]
         | "\(.key)\t\(.value.src)\t\(.value.dest)"

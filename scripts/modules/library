@@ -34,17 +34,17 @@ log_err() { echo -e "[$(date '+%H:%M:%S') ${RED}ERROR${NC}] [${LOG_TAG:-everest}
 # ------------------------------------------------------------------------------
 
 check_deps() {
-    local missing=()
-    for cmd in "$@"; do
-        if ! command -v "$cmd" &>/dev/null; then
-            missing+=("$cmd")
-        fi
-    done
-
-    if [[ ${#missing[@]} -gt 0 ]]; then
-        log_err "Missing dependencies: ${missing[*]}"
-        exit 1
+  local missing=()
+  for cmd in "$@"; do
+    if ! command -v "$cmd" &>/dev/null; then
+      missing+=("$cmd")
     fi
+  done
+
+  if [[ ${#missing[@]} -gt 0 ]]; then
+    log_err "Missing dependencies: ${missing[*]}"
+    exit 1
+  fi
 }
 
 # ------------------------------------------------------------------------------
@@ -52,12 +52,12 @@ check_deps() {
 # ------------------------------------------------------------------------------
 
 _curl() {
-    curl -fsSL \
-        -H "User-Agent: ${CURL_USER_AGENT}" \
-        --retry "${CURL_RETRY}" \
-        --retry-delay "${CURL_RETRY_DELAY}" \
-        --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
-        "$@"
+  curl -fsSL \
+    -H "User-Agent: ${CURL_USER_AGENT}" \
+    --retry "${CURL_RETRY}" \
+    --retry-delay "${CURL_RETRY_DELAY}" \
+    --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
+    "$@"
 }
 
 curl_json() { _curl -H "Accept: application/json" "$1"; }
@@ -74,10 +74,10 @@ curl_download() { _curl -o "$2" "$1"; }
 # ------------------------------------------------------------------------------
 
 resolve_branch() {
-    local config="$1"
-    local branch="${2:-${EVEREST_BRANCH:-}}"
+  local config="$1"
+  local branch="${2:-${EVEREST_BRANCH:-}}"
 
-    jq --arg b "$branch" '
+  jq --arg b "$branch" '
         def resolve($name):
             .branches[$name] as $br |
             if $br == null then
@@ -103,13 +103,13 @@ resolve_branch() {
 # ------------------------------------------------------------------------------
 
 interpolate() {
-    local result="$1"
-    shift
-    while [[ $# -ge 2 ]]; do
-        result="${result//\{$1\}/$2}"
-        shift 2
-    done
-    echo "$result"
+  local result="$1"
+  shift
+  while [[ $# -ge 2 ]]; do
+    result="${result//\{$1\}/$2}"
+    shift 2
+  done
+  echo "$result"
 }
 
 # ------------------------------------------------------------------------------
@@ -117,12 +117,12 @@ interpolate() {
 # ------------------------------------------------------------------------------
 
 cleanup_jobs() {
-    local pids
-    pids="$(jobs -pr 2>/dev/null || true)"
-    if [[ -n "$pids" ]]; then
-        # shellcheck disable=SC2086
-        kill $pids 2>/dev/null || true
-    fi
+  local pids
+  pids="$(jobs -pr 2>/dev/null || true)"
+  if [[ -n "$pids" ]]; then
+    # shellcheck disable=SC2086
+    kill $pids 2>/dev/null || true
+  fi
 }
 
 # ------------------------------------------------------------------------------
@@ -134,9 +134,9 @@ cleanup_jobs() {
 # ------------------------------------------------------------------------------
 
 pick_latest() {
-    local dir="$1" pattern="$2"
-    [[ -d "$dir" ]] || return 0
-    find "$dir" -maxdepth 1 -type f -iname "$pattern" 2>/dev/null | sort -V | tail -n1
+  local dir="$1" pattern="$2"
+  [[ -d "$dir" ]] || return 0
+  find "$dir" -maxdepth 1 -type f -iname "$pattern" 2>/dev/null | sort -V | tail -n1
 }
 
 # ------------------------------------------------------------------------------
@@ -148,13 +148,13 @@ pick_latest() {
 # ------------------------------------------------------------------------------
 
 try_fallback() {
-    local name="$1" tag="$2" fallback_dir="$3" dest_dir="$4"
-    [[ -d "$fallback_dir" ]] || return 1
-    local backup
-    backup="$(find "$fallback_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
-    [[ -n "$backup" ]] || return 1
-    cp -p "$backup" "$dest_dir/"
-    log_info "Preserved: ${tag} ($(basename "$backup"))"
+  local name="$1" tag="$2" fallback_dir="$3" dest_dir="$4"
+  [[ -d "$fallback_dir" ]] || return 1
+  local backup
+  backup="$(find "$fallback_dir" -maxdepth 1 -type f -iname "*${name}*.jar" | head -n1 || true)"
+  [[ -n "$backup" ]] || return 1
+  cp -p "$backup" "$dest_dir/"
+  log_info "Preserved: ${tag} ($(basename "$backup"))"
 }
 
 # ------------------------------------------------------------------------------
@@ -162,20 +162,20 @@ try_fallback() {
 # ------------------------------------------------------------------------------
 
 atomic_swap() {
-    local src="$1" dest="$2"
-    local backup="${dest}.bak.$$"
+  local src="$1" dest="$2"
+  local backup="${dest}.bak.$$"
 
-    mkdir -p "$(dirname "$dest")"
+  mkdir -p "$(dirname "$dest")"
 
-    if [[ -d "$dest" ]]; then
-        mv "$dest" "$backup"
-    fi
+  if [[ -d "$dest" ]]; then
+    mv "$dest" "$backup"
+  fi
 
-    if ! mv "$src" "$dest"; then
-        log_err "Swap failed! Restoring backup..."
-        [[ -d "$backup" ]] && mv "$backup" "$dest"
-        return 1
-    fi
+  if ! mv "$src" "$dest"; then
+    log_err "Swap failed! Restoring backup..."
+    [[ -d "$backup" ]] && mv "$backup" "$dest"
+    return 1
+  fi
 
-    rm -rf "$backup" 2>/dev/null || true
+  rm -rf "$backup" 2>/dev/null || true
 }

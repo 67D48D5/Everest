@@ -4,7 +4,9 @@ Modern Minecraft Server Infrastructure
 
 ## Overview
 
-Everest is a production-ready Minecraft server infrastructure designed for running multi-server networks. It features a Velocity proxy for player routing and Paper servers for game worlds, with automated plugin management and deployment scripts.
+Everest is a production-ready Minecraft server infrastructure designed for running multi-server networks. It features a
+Velocity proxy for player routing and Paper servers for game worlds, with automated plugin management and deployment
+scripts.
 
 ## Features
 

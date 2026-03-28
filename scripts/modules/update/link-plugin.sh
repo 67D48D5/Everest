@@ -28,23 +28,23 @@ source "${SCRIPT_DIR}/modules/library"
 check_deps jq find awk sort ln mktemp mv
 
 [[ -f "$CONFIG_FILE" ]] || {
-    log_err "Config missing: $CONFIG_FILE"
-    exit 1
+  log_err "Config missing: $CONFIG_FILE"
+  exit 1
 }
 mkdir -p "$PLUGIN_LIB_ROOT" "$SERVERS_ROOT"
 
 # Resolve config (use pre-resolved if available)
 if [[ -n "${EVEREST_RESOLVED_SERVER:-}" ]]; then
-    RESOLVED="$EVEREST_RESOLVED_SERVER"
+  RESOLVED="$EVEREST_RESOLVED_SERVER"
 else
-    CONFIG="$(cat "$CONFIG_FILE")"
-    RESOLVED="$(resolve_branch "$CONFIG")"
+  CONFIG="$(cat "$CONFIG_FILE")"
+  RESOLVED="$(resolve_branch "$CONFIG")"
 fi
 
 if [[ -n "${EVEREST_DEFINITIONS:-}" ]]; then
-    DEFINITIONS="$EVEREST_DEFINITIONS"
+  DEFINITIONS="$EVEREST_DEFINITIONS"
 else
-    DEFINITIONS="$(jq '.definitions // {}' "$CONFIG_FILE")"
+  DEFINITIONS="$(jq '.definitions // {}' "$CONFIG_FILE")"
 fi
 
 # ------------------------------------------------------------------------------
@@ -56,7 +56,7 @@ fi
 # ------------------------------------------------------------------------------
 
 detect_format() {
-    jq -r 'to_entries | first | .value | if has("pattern") then "flat" else "grouped" end' <<<"$1"
+  jq -r 'to_entries | first | .value | if has("pattern") then "flat" else "grouped" end' <<<"$1"
 }
 
 # ------------------------------------------------------------------------------
@@ -64,11 +64,11 @@ detect_format() {
 # ------------------------------------------------------------------------------
 
 resolve_src_dir() {
-    local category="$1" engine="$2"
-    local path_template
-    path_template="$(jq -r --arg c "$category" '.paths[$c] // empty' <<<"$DEFINITIONS")"
-    [[ -n "$path_template" ]] || return 1
-    echo "${ROOT_PATH}/$(interpolate "$path_template" engine "$engine")"
+  local category="$1" engine="$2"
+  local path_template
+  path_template="$(jq -r --arg c "$category" '.paths[$c] // empty' <<<"$DEFINITIONS")"
+  [[ -n "$path_template" ]] || return 1
+  echo "${ROOT_PATH}/$(interpolate "$path_template" engine "$engine")"
 }
 
 # ------------------------------------------------------------------------------
@@ -76,18 +76,18 @@ resolve_src_dir() {
 # ------------------------------------------------------------------------------
 
 link_one_plugin() {
-    local name="$1" pattern="$2" src_dir="$3" temp_dir="$4"
-    local src_file
-    src_file="$(pick_latest "$src_dir" "$pattern")"
+  local name="$1" pattern="$2" src_dir="$3" temp_dir="$4"
+  local src_file
+  src_file="$(pick_latest "$src_dir" "$pattern")"
 
-    if [[ -n "$src_file" && -f "$src_file" ]]; then
-        ln -sfn "$src_file" "${temp_dir}/${name}.jar"
-        log_info "Linked: ${name}.jar → $(basename "$src_file")"
-        return 0
-    else
-        log_warn "Not found: ${name} (${pattern}) in ${src_dir}"
-        return 1
-    fi
+  if [[ -n "$src_file" && -f "$src_file" ]]; then
+    ln -sfn "$src_file" "${temp_dir}/${name}.jar"
+    log_info "Linked: ${name}.jar → $(basename "$src_file")"
+    return 0
+  else
+    log_warn "Not found: ${name} (${pattern}) in ${src_dir}"
+    return 1
+  fi
 }
 
 # ------------------------------------------------------------------------------
@@ -95,127 +95,127 @@ link_one_plugin() {
 # ------------------------------------------------------------------------------
 
 link_server_plugins() {
-    local server="$1" engine="$2" server_dir="$3"
-    local dest_dir="${server_dir}/plugins"
-    mkdir -p "$dest_dir"
+  local server="$1" engine="$2" server_dir="$3"
+  local dest_dir="${server_dir}/plugins"
+  mkdir -p "$dest_dir"
 
-    # Get plugins config
-    local plugins_json
-    plugins_json="$(jq -r --arg s "$server" '.[$s].plugins // null' <<<"$RESOLVED")"
-    if [[ -z "$plugins_json" || "$plugins_json" == "null" ]]; then
-        log_warn "No plugins configured for ${server}. Skipping."
-        return 0
-    fi
+  # Get plugins config
+  local plugins_json
+  plugins_json="$(jq -r --arg s "$server" '.[$s].plugins // null' <<<"$RESOLVED")"
+  if [[ -z "$plugins_json" || "$plugins_json" == "null" ]]; then
+    log_warn "No plugins configured for ${server}. Skipping."
+    return 0
+  fi
 
-    # Build in temp dir
-    local temp_dir
-    temp_dir="$(mktemp -d -p "$server_dir" ".plugins_build_XXXXXX")"
-    trap 'rm -rf "$temp_dir" 2>/dev/null || true' RETURN
+  # Build in temp dir
+  local temp_dir
+  temp_dir="$(mktemp -d -p "$server_dir" ".plugins_build_XXXXXX")"
+  trap 'rm -rf "$temp_dir" 2>/dev/null || true' RETURN
 
-    local linked=0 missing=0
-    local format
-    format="$(detect_format "$plugins_json")"
+  local linked=0 missing=0
+  local format
+  format="$(detect_format "$plugins_json")"
 
-    if [[ "$format" == "flat" ]]; then
-        # Flat: { "name": { "type": "managed|manual", "pattern": "glob" } }
-        while IFS=$'\t' read -r name type pattern; do
-            [[ -n "$name" ]] || continue
+  if [[ "$format" == "flat" ]]; then
+    # Flat: { "name": { "type": "managed|manual", "pattern": "glob" } }
+    while IFS=$'\t' read -r name type pattern; do
+      [[ -n "$name" ]] || continue
 
-            local category
-            case "$type" in
-            managed) category="Managed" ;;
-            manual) category="Manual" ;;
-            *)
-                log_warn "Unknown type '${type}' for ${name} in ${server}. Skipping."
-                continue
-                ;;
-            esac
+      local category
+      case "$type" in
+      managed) category="Managed" ;;
+      manual) category="Manual" ;;
+      *)
+        log_warn "Unknown type '${type}' for ${name} in ${server}. Skipping."
+        continue
+        ;;
+      esac
 
-            local src_dir
-            src_dir="$(resolve_src_dir "$category" "$engine")" || {
-                log_warn "No path definition for category '${category}'"
-                continue
-            }
+      local src_dir
+      src_dir="$(resolve_src_dir "$category" "$engine")" || {
+        log_warn "No path definition for category '${category}'"
+        continue
+      }
 
-            if link_one_plugin "$name" "$pattern" "$src_dir" "$temp_dir"; then
-                ((linked++)) || true
-            else
-                ((missing++)) || true
-            fi
-        done < <(jq -r 'to_entries[] | "\(.key)\t\(.value.type)\t\(.value.pattern)"' <<<"$plugins_json")
-    else
-        # Grouped: { "Managed": { "name": { "pattern": "..." } }, "Manual": {...} }
-        mapfile -t CATEGORIES < <(jq -r 'keys[]' <<<"$plugins_json")
+      if link_one_plugin "$name" "$pattern" "$src_dir" "$temp_dir"; then
+        ((linked++)) || true
+      else
+        ((missing++)) || true
+      fi
+    done < <(jq -r 'to_entries[] | "\(.key)\t\(.value.type)\t\(.value.pattern)"' <<<"$plugins_json")
+  else
+    # Grouped: { "Managed": { "name": { "pattern": "..." } }, "Manual": {...} }
+    mapfile -t CATEGORIES < <(jq -r 'keys[]' <<<"$plugins_json")
 
-        for category in "${CATEGORIES[@]}"; do
-            local src_dir
-            src_dir="$(resolve_src_dir "$category" "$engine")" || {
-                log_warn "No path definition for category '${category}'. Skipping."
-                continue
-            }
+    for category in "${CATEGORIES[@]}"; do
+      local src_dir
+      src_dir="$(resolve_src_dir "$category" "$engine")" || {
+        log_warn "No path definition for category '${category}'. Skipping."
+        continue
+      }
 
-            while IFS=$'\t' read -r name pattern; do
-                [[ -n "$name" ]] || continue
-                if link_one_plugin "$name" "$pattern" "$src_dir" "$temp_dir"; then
-                    ((linked++)) || true
-                else
-                    ((missing++)) || true
-                fi
-            done < <(jq -r --arg c "$category" '.[$c] | to_entries[] | "\(.key)\t\(.value.pattern)"' <<<"$plugins_json")
-        done
-    fi
-
-    # Nothing linked → preserve existing
-    if [[ $linked -eq 0 ]]; then
-        log_warn "No plugins linked for ${server}. Preserving existing."
-        return 0
-    fi
-
-    # -------------------------------------------------------------------------
-    # Safe apply: only touch jars we manage
-    # -------------------------------------------------------------------------
-    local backup_dir="${server_dir}/.plugins_backup_$$"
-    mkdir -p "$backup_dir"
-
-    # Backup existing managed jars
-    shopt -s nullglob
-    for f in "${temp_dir}"/*.jar; do
-        local jar_name
-        jar_name="$(basename "$f")"
-        local target="${dest_dir}/${jar_name}"
-        [[ -e "$target" || -L "$target" ]] && mv -f "$target" "$backup_dir/" 2>/dev/null || true
-    done
-
-    # Apply new jars
-    local failed_apply=0
-    for f in "${temp_dir}"/*.jar; do
-        if ! mv -f "$f" "$dest_dir/"; then
-            failed_apply=1
-            break
+      while IFS=$'\t' read -r name pattern; do
+        [[ -n "$name" ]] || continue
+        if link_one_plugin "$name" "$pattern" "$src_dir" "$temp_dir"; then
+          ((linked++)) || true
+        else
+          ((missing++)) || true
         fi
+      done < <(jq -r --arg c "$category" '.[$c] | to_entries[] | "\(.key)\t\(.value.pattern)"' <<<"$plugins_json")
+    done
+  fi
+
+  # Nothing linked → preserve existing
+  if [[ $linked -eq 0 ]]; then
+    log_warn "No plugins linked for ${server}. Preserving existing."
+    return 0
+  fi
+
+  # -------------------------------------------------------------------------
+  # Safe apply: only touch jars we manage
+  # -------------------------------------------------------------------------
+  local backup_dir="${server_dir}/.plugins_backup_$$"
+  mkdir -p "$backup_dir"
+
+  # Backup existing managed jars
+  shopt -s nullglob
+  for f in "${temp_dir}"/*.jar; do
+    local jar_name
+    jar_name="$(basename "$f")"
+    local target="${dest_dir}/${jar_name}"
+    [[ -e "$target" || -L "$target" ]] && mv -f "$target" "$backup_dir/" 2>/dev/null || true
+  done
+
+  # Apply new jars
+  local failed_apply=0
+  for f in "${temp_dir}"/*.jar; do
+    if ! mv -f "$f" "$dest_dir/"; then
+      failed_apply=1
+      break
+    fi
+  done
+  shopt -u nullglob
+
+  # Rollback on failure
+  if [[ $failed_apply -ne 0 ]]; then
+    log_warn "Apply failed for ${server}. Rolling back..."
+    shopt -s nullglob
+    for b in "$backup_dir"/*.jar; do
+      mv -f "$b" "$dest_dir/" 2>/dev/null || true
     done
     shopt -u nullglob
-
-    # Rollback on failure
-    if [[ $failed_apply -ne 0 ]]; then
-        log_warn "Apply failed for ${server}. Rolling back..."
-        shopt -s nullglob
-        for b in "$backup_dir"/*.jar; do
-            mv -f "$b" "$dest_dir/" 2>/dev/null || true
-        done
-        shopt -u nullglob
-        rm -rf "$backup_dir" 2>/dev/null || true
-        log_err "Failed to apply plugins for ${server}."
-        return 1
-    fi
-
     rm -rf "$backup_dir" 2>/dev/null || true
+    log_err "Failed to apply plugins for ${server}."
+    return 1
+  fi
 
-    if [[ $missing -gt 0 ]]; then
-        log_warn "Linked for ${server}, but ${missing} plugin(s) missing."
-    else
-        log_info "All plugins linked for ${server}."
-    fi
+  rm -rf "$backup_dir" 2>/dev/null || true
+
+  if [[ $missing -gt 0 ]]; then
+    log_warn "Linked for ${server}, but ${missing} plugin(s) missing."
+  else
+    log_info "All plugins linked for ${server}."
+  fi
 }
 
 # ------------------------------------------------------------------------------
@@ -229,20 +229,20 @@ mapfile -t SERVERS < <(jq -r '
 ' <<<"$RESOLVED")
 
 for server in "${SERVERS[@]}"; do
-    engine="$(jq -r --arg s "$server" '.[$s].engine' <<<"$RESOLVED")"
-    server_dir="${SERVERS_ROOT}/${server}"
+  engine="$(jq -r --arg s "$server" '.[$s].engine' <<<"$RESOLVED")"
+  server_dir="${SERVERS_ROOT}/${server}"
 
-    [[ -n "$engine" ]] || {
-        log_warn "No engine for ${server}. Skipping."
-        continue
-    }
-    [[ -d "$server_dir" ]] || {
-        log_warn "Server dir missing: ${server}. Skipping."
-        continue
-    }
+  [[ -n "$engine" ]] || {
+    log_warn "No engine for ${server}. Skipping."
+    continue
+  }
+  [[ -d "$server_dir" ]] || {
+    log_warn "Server dir missing: ${server}. Skipping."
+    continue
+  }
 
-    log_info "Linking plugins: ${BLUE}${server}${NC} (${engine})"
-    link_server_plugins "$server" "$engine" "$server_dir"
+  log_info "Linking plugins: ${BLUE}${server}${NC} (${engine})"
+  link_server_plugins "$server" "$engine" "$server_dir"
 done
 
 log_info "Plugin linking complete."

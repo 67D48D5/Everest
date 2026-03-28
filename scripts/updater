@@ -26,15 +26,15 @@ LOG_TAG="updater"
 check_deps jq curl realpath
 
 for config_file in "${ROOT_PATH}/config/server.json" "${ROOT_PATH}/config/update.json"; do
-    [[ -f "${config_file}" ]] || {
-        log_err "Config not found: ${config_file}"
-        exit 1
-    }
+  [[ -f "${config_file}" ]] || {
+    log_err "Config not found: ${config_file}"
+    exit 1
+  }
 done
 
 [[ -d "$UPDATER_PATH" ]] || {
-    log_err "Update scripts not found: $UPDATER_PATH"
-    exit 1
+  log_err "Update scripts not found: $UPDATER_PATH"
+  exit 1
 }
 
 # Export branch for child scripts
@@ -48,26 +48,26 @@ UPDATE_CONFIG="$(cat "${ROOT_PATH}/config/update.json")"
 SERVER_CONFIG="$(cat "${ROOT_PATH}/config/server.json")"
 
 EVEREST_RESOLVED_UPDATE="$(resolve_branch "$UPDATE_CONFIG")" || {
-    log_err "Failed to resolve update branch config"
-    exit 1
+  log_err "Failed to resolve update branch config"
+  exit 1
 }
 export EVEREST_RESOLVED_UPDATE
 
 EVEREST_RESOLVED_SERVER="$(resolve_branch "$SERVER_CONFIG")" || {
-    log_err "Failed to resolve server branch config"
-    exit 1
+  log_err "Failed to resolve server branch config"
+  exit 1
 }
 export EVEREST_RESOLVED_SERVER
 
 EVEREST_STRATEGIES="$(jq '.strategies' <<<"$UPDATE_CONFIG")" || {
-    log_err "Failed to extract strategies from update config"
-    exit 1
+  log_err "Failed to extract strategies from update config"
+  exit 1
 }
 export EVEREST_STRATEGIES
 
 EVEREST_DEFINITIONS="$(jq '.definitions // {}' <<<"$SERVER_CONFIG")" || {
-    log_err "Failed to extract definitions from server config"
-    exit 1
+  log_err "Failed to extract definitions from server config"
+  exit 1
 }
 export EVEREST_DEFINITIONS
 
@@ -82,14 +82,14 @@ bash "$UPDATER_PATH/get-plugin.sh" &
 pid_plugin=$!
 
 wait "$pid_engine" || {
-    log_err "get-engine failed."
-    ((fail_count++)) || true
-    failed_processes+=("get-engine")
+  log_err "get-engine failed."
+  ((fail_count++)) || true
+  failed_processes+=("get-engine")
 }
 wait "$pid_plugin" || {
-    log_err "get-plugin failed."
-    ((fail_count++)) || true
-    failed_processes+=("get-plugin")
+  log_err "get-plugin failed."
+  ((fail_count++)) || true
+  failed_processes+=("get-plugin")
 }
 
 log_info "Starting linking phase..."
@@ -99,22 +99,22 @@ bash "$UPDATER_PATH/link-plugin.sh" &
 pid_plug=$!
 
 wait "$pid_lib" || {
-    log_err "link-library failed."
-    ((fail_count++)) || true
-    failed_processes+=("link-library")
+  log_err "link-library failed."
+  ((fail_count++)) || true
+  failed_processes+=("link-library")
 }
 wait "$pid_plug" || {
-    log_err "link-plugin failed."
-    ((fail_count++)) || true
-    failed_processes+=("link-plugin")
+  log_err "link-plugin failed."
+  ((fail_count++)) || true
+  failed_processes+=("link-plugin")
 }
 
 # Report
 if [[ $fail_count -gt 0 ]]; then
-    log_err "$fail_count process(es) failed: ${failed_processes[*]}"
+  log_err "$fail_count process(es) failed: ${failed_processes[*]}"
 else
-    log_info "All processes completed successfully."
-    log_info "Restart servers to apply changes."
+  log_info "All processes completed successfully."
+  log_info "Restart servers to apply changes."
 fi
 
 exit $fail_count

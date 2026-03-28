@@ -1,227 +1,227 @@
 {
-    "defaultBranch": "main",
-    "branches": {
-        "main": {
-            "proxy": {
-                "engine": "velocity",
-                "mounts": {
-                    "luckperms-libs": {
-                        "src": "plugins/LuckPerms/libs",
-                        "dest": "plugins/luckperms/libs"
-                    }
-                },
-                "plugins": {
-                    "Managed": {
-                        "floodgate": {
-                            "pattern": "floodgate*"
-                        },
-                        "geyser": {
-                            "pattern": "geyser*"
-                        },
-                        "luckperms": {
-                            "pattern": "LuckPerms-Velocity-*"
-                        },
-                        "viaversion": {
-                            "pattern": "ViaVersion-*"
-                        },
-                        "cmiv": {
-                            "pattern": "cmiv*"
-                        },
-                        "nuvotifier": {
-                            "pattern": "nuvotifier*"
-                        }
-                    },
-                    "Manual": {
-                        "litbans": {
-                            "pattern": "LiteBans*"
-                        }
-                    }
-                }
+  "defaultBranch": "main",
+  "branches": {
+    "main": {
+      "proxy": {
+        "engine": "velocity",
+        "mounts": {
+          "luckperms-libs": {
+            "src": "plugins/LuckPerms/libs",
+            "dest": "plugins/luckperms/libs"
+          }
+        },
+        "plugins": {
+          "Managed": {
+            "floodgate": {
+              "pattern": "floodgate*"
             },
-            "wildy": {
-                "engine": "paper",
-                "mounts": {
-                    "paper-cache": {
-                        "src": "cache",
-                        "dest": "cache"
-                    },
-                    "paper-libs": {
-                        "src": "libraries",
-                        "dest": "libraries"
-                    },
-                    "paper-versions": {
-                        "src": "versions",
-                        "dest": "versions"
-                    },
-                    "luckperms-libs": {
-                        "src": "plugins/LuckPerms/libs",
-                        "dest": "plugins/LuckPerms/libs"
-                    }
-                },
-                "plugins": {
-                    "Managed": {
-                        "Chunky": {
-                            "pattern": "Chunky-*"
-                        },
-                        "ChunkyBorder": {
-                            "pattern": "ChunkyBorder-*"
-                        },
-                        "DiscordSRV": {
-                            "pattern": "DiscordSRV-*"
-                        },
-                        "FastAsyncWorldEdit": {
-                            "pattern": "FastAsyncWorldEdit-Paper-*"
-                        },
-                        "LuckPerms": {
-                            "pattern": "LuckPerms-*"
-                        },
-                        "PlaceholderAPI": {
-                            "pattern": "PlaceholderAPI-*"
-                        },
-                        "ProtocolLib": {
-                            "pattern": "ProtocolLib*"
-                        },
-                        "TAB": {
-                            "pattern": "TAB*"
-                        },
-                        "WorldGuard": {
-                            "pattern": "worldguard-bukkit-*"
-                        },
-                        "GriefPrevention": {
-                            "pattern": "GriefPrevention*"
-                        },
-                        "NuVotifier": {
-                            "pattern": "nuvotifier*"
-                        },
-                        "Vault": {
-                            "pattern": "Vault*"
-                        },
-                        "mcMMO": {
-                            "pattern": "mcMMO*"
-                        }
-                    },
-                    "Manual": {
-                        "CMI": {
-                            "pattern": "CMI-*"
-                        },
-                        "CMILib": {
-                            "pattern": "CMILib*"
-                        },
-                        "MobFarmManager": {
-                            "pattern": "MobFarmManager*"
-                        },
-                        "CoreProtect": {
-                            "pattern": "CoreProtect-*"
-                        }
-                    }
-                }
+            "geyser": {
+              "pattern": "geyser*"
+            },
+            "luckperms": {
+              "pattern": "LuckPerms-Velocity-*"
+            },
+            "viaversion": {
+              "pattern": "ViaVersion-*"
+            },
+            "cmiv": {
+              "pattern": "cmiv*"
+            },
+            "nuvotifier": {
+              "pattern": "nuvotifier*"
             }
-        },
-        "dev": {
-            "parent": "main",
-            "buildy": {
-                "engine": "paper",
-                "mounts": {
-                    "paper-cache": {
-                        "src": "cache",
-                        "dest": "cache"
-                    },
-                    "paper-libs": {
-                        "src": "libraries",
-                        "dest": "libraries"
-                    },
-                    "paper-versions": {
-                        "src": "versions",
-                        "dest": "versions"
-                    },
-                    "luckperms-libs": {
-                        "src": "plugins/LuckPerms/libs",
-                        "dest": "plugins/LuckPerms/libs"
-                    }
-                },
-                "plugins": {
-                    "Managed": {
-                        "CMILib": {
-                            "pattern": "CMILib*"
-                        },
-                        "Chunky": {
-                            "pattern": "Chunky-*"
-                        },
-                        "ChunkyBorder": {
-                            "pattern": "ChunkyBorder-*"
-                        },
-                        "DiscordSRV": {
-                            "pattern": "DiscordSRV-*"
-                        },
-                        "FastAsyncWorldEdit": {
-                            "pattern": "FastAsyncWorldEdit-Paper-*"
-                        },
-                        "LuckPerms": {
-                            "pattern": "LuckPerms-*"
-                        },
-                        "PlaceholderAPI": {
-                            "pattern": "PlaceholderAPI-*"
-                        },
-                        "ProtocolLib": {
-                            "pattern": "ProtocolLib*"
-                        },
-                        "TAB": {
-                            "pattern": "TAB*"
-                        },
-                        "NuVotifier": {
-                            "pattern": "nuvotifier*"
-                        },
-                        "Vault": {
-                            "pattern": "Vault*"
-                        }
-                    },
-                    "Manual": {
-                        "CMI": {
-                            "pattern": "CMI-*"
-                        },
-                        "CoreProtect": {
-                            "pattern": "CoreProtect-*"
-                        }
-                    }
-                }
+          },
+          "Manual": {
+            "litbans": {
+              "pattern": "LiteBans*"
             }
+          }
         }
+      },
+      "wildy": {
+        "engine": "paper",
+        "mounts": {
+          "paper-cache": {
+            "src": "cache",
+            "dest": "cache"
+          },
+          "paper-libs": {
+            "src": "libraries",
+            "dest": "libraries"
+          },
+          "paper-versions": {
+            "src": "versions",
+            "dest": "versions"
+          },
+          "luckperms-libs": {
+            "src": "plugins/LuckPerms/libs",
+            "dest": "plugins/LuckPerms/libs"
+          }
+        },
+        "plugins": {
+          "Managed": {
+            "Chunky": {
+              "pattern": "Chunky-*"
+            },
+            "ChunkyBorder": {
+              "pattern": "ChunkyBorder-*"
+            },
+            "DiscordSRV": {
+              "pattern": "DiscordSRV-*"
+            },
+            "FastAsyncWorldEdit": {
+              "pattern": "FastAsyncWorldEdit-Paper-*"
+            },
+            "LuckPerms": {
+              "pattern": "LuckPerms-*"
+            },
+            "PlaceholderAPI": {
+              "pattern": "PlaceholderAPI-*"
+            },
+            "ProtocolLib": {
+              "pattern": "ProtocolLib*"
+            },
+            "TAB": {
+              "pattern": "TAB*"
+            },
+            "WorldGuard": {
+              "pattern": "worldguard-bukkit-*"
+            },
+            "GriefPrevention": {
+              "pattern": "GriefPrevention*"
+            },
+            "NuVotifier": {
+              "pattern": "nuvotifier*"
+            },
+            "Vault": {
+              "pattern": "Vault*"
+            },
+            "mcMMO": {
+              "pattern": "mcMMO*"
+            }
+          },
+          "Manual": {
+            "CMI": {
+              "pattern": "CMI-*"
+            },
+            "CMILib": {
+              "pattern": "CMILib*"
+            },
+            "MobFarmManager": {
+              "pattern": "MobFarmManager*"
+            },
+            "CoreProtect": {
+              "pattern": "CoreProtect-*"
+            }
+          }
+        }
+      }
     },
-    "definitions": {
-        "paths": {
-            "Managed": "libraries/plugins/{engine}/Managed",
-            "Manual": "libraries/plugins/{engine}"
+    "dev": {
+      "parent": "main",
+      "buildy": {
+        "engine": "paper",
+        "mounts": {
+          "paper-cache": {
+            "src": "cache",
+            "dest": "cache"
+          },
+          "paper-libs": {
+            "src": "libraries",
+            "dest": "libraries"
+          },
+          "paper-versions": {
+            "src": "versions",
+            "dest": "versions"
+          },
+          "luckperms-libs": {
+            "src": "plugins/LuckPerms/libs",
+            "dest": "plugins/LuckPerms/libs"
+          }
         },
-        "jvm_options": {
-            "common": [
-                "-XX:+UseG1GC",
-                "-XX:+AlwaysPreTouch",
-                "-XX:+ParallelRefProcEnabled",
-                "-XX:+UnlockExperimentalVMOptions",
-                "-Duser.timezone=Asia/Seoul"
-            ],
-            "paper": [
-                "-XX:+DisableExplicitGC",
-                "-XX:+PerfDisableSharedMem",
-                "-XX:G1HeapRegionSize=8M",
-                "-XX:G1HeapWastePercent=5",
-                "-XX:G1MaxNewSizePercent=40",
-                "-XX:G1MixedGCCountTarget=4",
-                "-XX:G1MixedGCLiveThresholdPercent=90",
-                "-XX:G1NewSizePercent=30",
-                "-XX:G1RSetUpdatingPauseTimePercent=5",
-                "-XX:G1ReservePercent=20",
-                "-XX:InitiatingHeapOccupancyPercent=15",
-                "-XX:MaxGCPauseMillis=200",
-                "-XX:MaxTenuringThreshold=1",
-                "-XX:SurvivorRatio=32",
-                "-Dusing.aikars.flags=https://mcflags.emc.gs",
-                "-Daikars.new.flags=true"
-            ],
-            "velocity": [
-                "-XX:G1HeapRegionSize=4M",
-                "-XX:MaxInlineLevel=15"
-            ]
+        "plugins": {
+          "Managed": {
+            "CMILib": {
+              "pattern": "CMILib*"
+            },
+            "Chunky": {
+              "pattern": "Chunky-*"
+            },
+            "ChunkyBorder": {
+              "pattern": "ChunkyBorder-*"
+            },
+            "DiscordSRV": {
+              "pattern": "DiscordSRV-*"
+            },
+            "FastAsyncWorldEdit": {
+              "pattern": "FastAsyncWorldEdit-Paper-*"
+            },
+            "LuckPerms": {
+              "pattern": "LuckPerms-*"
+            },
+            "PlaceholderAPI": {
+              "pattern": "PlaceholderAPI-*"
+            },
+            "ProtocolLib": {
+              "pattern": "ProtocolLib*"
+            },
+            "TAB": {
+              "pattern": "TAB*"
+            },
+            "NuVotifier": {
+              "pattern": "nuvotifier*"
+            },
+            "Vault": {
+              "pattern": "Vault*"
+            }
+          },
+          "Manual": {
+            "CMI": {
+              "pattern": "CMI-*"
+            },
+            "CoreProtect": {
+              "pattern": "CoreProtect-*"
+            }
+          }
         }
+      }
     }
+  },
+  "definitions": {
+    "paths": {
+      "Managed": "libraries/plugins/{engine}/Managed",
+      "Manual": "libraries/plugins/{engine}"
+    },
+    "jvm_options": {
+      "common": [
+        "-XX:+UseG1GC",
+        "-XX:+AlwaysPreTouch",
+        "-XX:+ParallelRefProcEnabled",
+        "-XX:+UnlockExperimentalVMOptions",
+        "-Duser.timezone=Asia/Seoul"
+      ],
+      "paper": [
+        "-XX:+DisableExplicitGC",
+        "-XX:+PerfDisableSharedMem",
+        "-XX:G1HeapRegionSize=8M",
+        "-XX:G1HeapWastePercent=5",
+        "-XX:G1MaxNewSizePercent=40",
+        "-XX:G1MixedGCCountTarget=4",
+        "-XX:G1MixedGCLiveThresholdPercent=90",
+        "-XX:G1NewSizePercent=30",
+        "-XX:G1RSetUpdatingPauseTimePercent=5",
+        "-XX:G1ReservePercent=20",
+        "-XX:InitiatingHeapOccupancyPercent=15",
+        "-XX:MaxGCPauseMillis=200",
+        "-XX:MaxTenuringThreshold=1",
+        "-XX:SurvivorRatio=32",
+        "-Dusing.aikars.flags=https://mcflags.emc.gs",
+        "-Daikars.new.flags=true"
+      ],
+      "velocity": [
+        "-XX:G1HeapRegionSize=4M",
+        "-XX:MaxInlineLevel=15"
+      ]
+    }
+  }
 }
