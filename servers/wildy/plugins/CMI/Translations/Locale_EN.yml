@@ -3015,6 +3015,7 @@ command:
       particles: '&eParticles: &6[state]'
       particleType: '&eParticle type: &6[type]'
       particleAmount: '&eParticle amount: &6[amount]'
+      particleOrigin: '{gcp}Particle origin: {gcs}[value]'
       particlePercent: '&ePercentage of sides shrinked particles: &6[amount]%'
       activationRange: '&eActivation range: &6[amount]'
       particlePermission: '&eShow particles without permission: &6[state]'
