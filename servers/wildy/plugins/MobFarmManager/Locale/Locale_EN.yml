@@ -28,6 +28,15 @@ command:
       args: ''
     info:
       response: '&a!prefix!Configuration files was reloaded&o!'
+  list:
+    help:
+      info: '&7List chunks with most entities in them'
+      args: (range)
+    info:
+      ListP: '&6&o[place] &8» &e[amount] &8» &7[x]&f, &7[z]'
+      around: ' &6Around: &7[near]'
+      Command: /tppos [x] [y] [z] [world]
+      Hover: '&7[x]&f, &7[y]&f, &7[z] &8@[world]'
   clean:
     help:
       info: '&7Cleans chunks around players'
@@ -38,15 +47,6 @@ command:
         [list]'
       Nothing: '&c!prefix!Nothing to remove&o!'
       Hover: '&a[time] &fms to check &c[count] &fchunks'
-  list:
-    help:
-      info: '&7List chunks with most entities in them'
-      args: (range)
-    info:
-      ListP: '&6&o[place] &8» &e[amount] &8» &7[x]&f, &7[z]'
-      around: ' &6Around: &7[near]'
-      Command: /tppos [x] [y] [z] [world]
-      Hover: '&7[x]&f, &7[y]&f, &7[z] &8@[world]'
   limits:
     help:
       info: '&7Show limits by your location'

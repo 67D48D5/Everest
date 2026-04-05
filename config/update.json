@@ -39,7 +39,7 @@
         }
       },
       "paper": {
-        "version": "1.21.11",
+        "version": "26.1.1",
         "plugins": {
           "Chunky": {
             "strategy": "Jenkins",
